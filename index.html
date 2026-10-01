@@ -11,15 +11,16 @@
   <style>
     :root {
       --primary: #0B6E7F;
+      --primary-dark: #08515E;
       --secondary: #19B4B4;
       --background: #F4FCFC;
       --card: #FFFFFF;
       --text: #173042;
-      --muted: #607887;
-      --line: rgba(11, 110, 127, 0.13);
-      --shadow: 0 18px 50px rgba(17, 76, 89, 0.10);
-      --shadow-hover: 0 26px 64px rgba(17, 76, 89, 0.17);
-      --radius: 20px;
+      --muted: #5B7482;
+      --line: rgba(11, 110, 127, 0.12);
+      --shadow: 0 14px 40px rgba(17, 76, 89, 0.09);
+      --shadow-hover: 0 24px 60px rgba(17, 76, 89, 0.16);
+      --radius: 22px;
       --container: 1240px;
       --ease: cubic-bezier(.2, .7, .2, 1);
       --nav-h: 76px;
@@ -143,7 +144,7 @@
       z-index: 30;
       padding: 14px 0;
       border-bottom: 1px solid rgba(11, 110, 127, 0.08);
-      background: rgba(244, 252, 252, 0.9);
+      background: rgba(244, 252, 252, 0.92);
       backdrop-filter: blur(16px);
     }
 
@@ -180,13 +181,15 @@
       box-shadow: 0 8px 18px rgba(11, 110, 127, 0.20);
     }
 
-    .filter-btn:focus-visible,
-    .project-image:focus-visible {
-      outline: 3px solid rgba(25, 180, 180, 0.55);
+    .filter-btn .short { display: none; }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(25, 180, 180, 0.6);
       outline-offset: 3px;
     }
 
-    /* ---------- All Services overview ---------- */
+    /* ---------- All Services intro ---------- */
     .overview { padding: 80px 0 12px; }
 
     .section-heading {
@@ -195,9 +198,6 @@
       justify-content: space-between;
       gap: 24px;
     }
-
-    /* Short menu labels are only used on phones */
-    .filter-btn .short { display: none; }
 
     .section-heading h2,
     .service-head h2 {
@@ -227,7 +227,7 @@
 
     .service-panel {
       padding: clamp(28px, 4vw, 56px);
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.62) 100%);
+      background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.55) 100%);
       border: 1px solid rgba(11, 110, 127, 0.09);
       border-radius: 32px;
       box-shadow: 0 30px 80px rgba(17, 76, 89, 0.07);
@@ -262,7 +262,7 @@
       margin-top: 14px;
       padding: 6px 12px;
       color: var(--primary);
-      background: #edfafa;
+      background: #e4f6f6;
       border-radius: 999px;
       font-size: 0.74rem;
       font-weight: 600;
@@ -280,13 +280,14 @@
       flex-direction: column;
       overflow: hidden;
       background: var(--card);
-      border: 1px solid rgba(11, 110, 127, 0.08);
+      border: 1px solid rgba(11, 110, 127, 0.1);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s ease;
     }
 
     .project-card:hover {
+      border-color: rgba(25, 180, 180, 0.35);
       box-shadow: var(--shadow-hover);
       transform: translateY(-6px);
     }
@@ -305,167 +306,188 @@
 
     .project-card.reveal.visible:hover { transform: translateY(-6px); }
 
-    .project-image {
+    /* Media: every picture sits in the same soft frame, whatever its shape */
+    .media {
       position: relative;
-      display: block;
-      width: 100%;
       aspect-ratio: 16 / 10;
-      padding: 0;
-      cursor: zoom-in;
       overflow: hidden;
-      border: 0;
-      background: #e3f3f4;
+      background:
+        radial-gradient(circle at 20% 15%, rgba(255, 255, 255, 0.85), transparent 45%),
+        linear-gradient(135deg, #e3f5f5 0%, #cdeced 100%);
     }
+
+    .track {
+      display: flex;
+      height: 100%;
+      cursor: zoom-in;
+      transition: transform 0.9s cubic-bezier(.45, .05, .25, 1);
+      will-change: transform;
+    }
+
+    .track.no-anim { transition: none; }
 
     .slide {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top center;
-      opacity: 0;
-      transform: scale(1);
-      transition: opacity 1s ease, transform 0.7s var(--ease);
+      display: flex;
+      flex: 0 0 100%;
+      align-items: center;
+      justify-content: center;
+      padding: 22px 26px 34px;
     }
 
-    .slide.is-active { opacity: 1; }
-
-    .project-image.fit-contain { background: #f3f8f8; }
-
-    .project-image.fit-contain .slide {
-      padding: 14px;
-      object-fit: contain;
-      object-position: center;
+    .slide img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 34px rgba(17, 76, 89, 0.18), 0 2px 6px rgba(17, 76, 89, 0.08);
+      transition: transform 0.6s var(--ease);
     }
 
-    .project-card:hover .slide.is-active { transform: scale(1.05); }
+    .project-card:hover .slide img { transform: scale(1.03); }
 
-    .image-label {
+    .media-btn {
       position: absolute;
       z-index: 2;
-      top: 16px;
-      left: 16px;
-      padding: 7px 11px;
+      display: grid;
+      width: 40px;
+      height: 40px;
+      padding: 0;
       color: var(--primary);
-      background: rgba(255, 255, 255, 0.92);
-      border-radius: 999px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-      backdrop-filter: blur(8px);
+      cursor: pointer;
+      place-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(11, 110, 127, 0.12);
+      border-radius: 50%;
+      box-shadow: 0 6px 16px rgba(9, 24, 34, 0.14);
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s var(--ease), box-shadow 0.25s ease;
     }
+
+    .media-btn svg { width: 18px; height: 18px; }
+
+    .media-btn:hover {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 8px 20px rgba(11, 110, 127, 0.3);
+    }
+
+    .slide-prev,
+    .slide-next {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .slide-prev { left: 12px; }
+    .slide-next { right: 12px; }
+
+    .slide-prev:hover,
+    .slide-next:hover { transform: translateY(-50%) scale(1.06); }
+
+    .zoom-btn { top: 12px; right: 12px; }
+    .zoom-btn:hover { transform: scale(1.06); }
 
     .slide-dots {
       position: absolute;
       z-index: 2;
       left: 50%;
-      bottom: 16px;
+      bottom: 10px;
       display: flex;
-      gap: 6px;
-      padding: 6px 9px;
-      background: rgba(9, 24, 34, 0.45);
-      border-radius: 999px;
+      gap: 4px;
       transform: translateX(-50%);
-      backdrop-filter: blur(6px);
     }
 
-    .slide-dots i {
-      width: 6px;
-      height: 6px;
-      background: rgba(255, 255, 255, 0.5);
+    .slide-dots button {
+      display: grid;
+      width: 18px;
+      height: 18px;
+      padding: 0;
+      cursor: pointer;
+      place-items: center;
+      background: none;
+      border: 0;
+    }
+
+    .slide-dots button::before {
+      width: 7px;
+      height: 7px;
+      content: "";
+      background: rgba(11, 110, 127, 0.28);
       border-radius: 999px;
       transition: width 0.4s var(--ease), background 0.4s ease;
     }
 
-    .slide-dots i.is-active {
+    .slide-dots button.is-active::before {
       width: 18px;
-      background: #fff;
-    }
-
-    .zoom-icon {
-      position: absolute;
-      z-index: 2;
-      right: 16px;
-      bottom: 16px;
-      display: grid;
-      width: 40px;
-      height: 40px;
-      color: var(--primary);
-      place-items: center;
-      background: rgba(255, 255, 255, 0.94);
-      border-radius: 50%;
-      box-shadow: 0 6px 16px rgba(9, 24, 34, 0.15);
-      transition: transform 0.3s var(--ease), background 0.3s ease, color 0.3s ease;
-    }
-
-    .zoom-icon svg { width: 18px; height: 18px; }
-
-    .project-card:hover .zoom-icon {
-      color: #fff;
       background: var(--primary);
-      transform: scale(1.08);
     }
 
     .project-content {
       display: flex;
       flex: 1;
       flex-direction: column;
-      padding: 28px;
+      padding: 26px 28px 28px;
     }
 
     .project-category {
-      margin-bottom: 8px;
-      color: var(--secondary);
-      font-size: 0.7rem;
+      align-self: flex-start;
+      margin-bottom: 12px;
+      padding: 6px 12px;
+      color: var(--primary-dark);
+      background: #e4f6f6;
+      border-radius: 999px;
+      font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
     .project-content h3 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 700;
-      letter-spacing: -0.035em;
+      letter-spacing: -0.03em;
+      line-height: 1.3;
     }
 
     .intro {
-      margin: 12px 0 24px;
+      margin: 8px 0 20px;
       color: var(--muted);
       font-size: 0.9rem;
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .case-study {
       display: grid;
-      gap: 15px;
+      gap: 10px;
     }
 
     .case-row {
-      padding-left: 15px;
-      border-left: 2px solid #c9eeee;
-      transition: border-color 0.3s ease;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      align-items: start;
+      gap: 12px;
     }
 
-    .project-card:hover .case-row { border-left-color: rgba(25, 180, 180, 0.55); }
-
-    .case-row strong {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--primary);
-      font-size: 0.71rem;
+    .case-tag {
+      padding: 5px 0;
+      text-align: center;
+      border-radius: 8px;
+      font-size: 0.68rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
+    .case-tag.challenge { color: #4A5F6D; background: #EEF2F5; }
+    .case-tag.solution  { color: var(--primary-dark); background: #DDF3F3; }
+    .case-tag.result    { color: #fff; background: var(--primary); }
+
     .case-row p {
       margin: 0;
-      color: #526b79;
-      font-size: 0.82rem;
-      line-height: 1.65;
+      padding-top: 2px;
+      color: #3F5867;
+      font-size: 0.86rem;
+      line-height: 1.55;
     }
 
     .tools {
@@ -477,14 +499,15 @@
       border-top: 1px solid var(--line);
     }
 
-    .case-study + .tools { margin-top: 25px; }
+    .case-study + .tools { margin-top: 22px; }
 
     .tool {
-      padding: 6px 10px;
-      color: var(--primary);
-      background: #edfafa;
+      padding: 5px 11px;
+      color: var(--muted);
+      background: #fff;
+      border: 1px solid var(--line);
       border-radius: 999px;
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 600;
     }
 
@@ -611,7 +634,14 @@
       .hero-stat { gap: 16px; }
       .stat { padding-right: 16px; }
       .service-panel { padding: 22px 16px; border-radius: 24px; }
-      .project-content { padding: 22px; }
+      .project-content { padding: 22px 20px 24px; }
+      .media { aspect-ratio: 4 / 3; }
+      .slide { padding: 14px 14px 30px; }
+      .media-btn { width: 36px; height: 36px; }
+      .slide-prev { left: 8px; }
+      .slide-next { right: 8px; }
+      .case-row { grid-template-columns: 1fr; gap: 6px; }
+      .case-tag { justify-self: start; padding: 4px 10px; }
       /* Compact sticky menu on phones: short labels so it stays small while scrolling */
       .filter-wrap { padding: 10px 0; }
       .filters { gap: 6px; }
@@ -653,7 +683,7 @@
   </nav>
 
   <main>
-    <!-- All Services overview -->
+    <!-- All Services intro -->
     <section class="overview service-section" id="all-services">
       <div class="container">
         <div class="section-heading reveal">
@@ -694,49 +724,49 @@
       HOW TO ADD OR EDIT A PROJECT
       Each { ... } block below is one card. To add one, copy a block and change:
         category  -> admin, website, social, crm, support or operations
-        images    -> picture files inside the "images" folder (the first one is the cover)
+        images    -> picture files inside the "images" folder (the first one is shown first)
         title, intro, challenge, solution, result, tools
-      fit: "contain" shows the whole picture (good for logos and tall designs).
+      Keep challenge / solution / result to one short sentence each.
     */
     const projects = [
       /* ---------- ADMIN ---------- */
       {
         category: "admin",
         title: "Notion Business Hub",
-        intro: "A central Notion workspace that keeps a wellness business's brand, schedules, services and plans in one place.",
-        challenge: "Brand assets, website links, schedules, offers and planning notes were spread across different apps, making it hard for the team to find what they needed.",
-        solution: "Designed and built a structured Notion \"Internal Office\" with a clickable main menu: Branding, Website Links, Social Media, Services, Business Planning, Audio Files, Photos & Videos and Client Onboarding.",
-        result: "One organized, easy-to-navigate home for the whole business, so the team can plan and work with clarity and consistency.",
+        intro: "One organized Notion workspace for a wellness business.",
+        challenge: "Brand files, schedules and plans were scattered across apps.",
+        solution: "Built a Notion \"Internal Office\" with a simple clickable menu.",
+        result: "Everything the team needs, in one easy place.",
         tools: ["Notion"],
         images: ["notion-home.jpg", "notion-menu.jpg", "notion-planning.jpg", "notion-offers.jpg"]
       },
       {
         category: "admin",
         title: "Booking & Events Management",
-        intro: "Setting up and managing online booking calendars for classes, events and treatments.",
-        challenge: "The business ran many services, from sound baths and breathwork to beauty treatments, each needing its own booking setup, pricing and schedule.",
-        solution: "Built and organized booking calendars into service groups, created recurring \"Buy 3 Get 1 Free\" class bookings, and set durations, seat limits, scheduling notice and time zones.",
-        result: "A clear booking system managing 61 calendars, giving clients a simple way to book and the business an organized schedule.",
-        tools: ["GoHighLevel", "Calendars", "Online Booking"],
+        intro: "Online booking calendars for classes, events and treatments.",
+        challenge: "Many services, each needing its own booking setup.",
+        solution: "Set up 61 booking calendars with groups, seat limits and recurring offers.",
+        result: "Easy booking for clients and an organized schedule.",
+        tools: ["GoHighLevel", "Calendars"],
         images: ["ghl-calendars.jpg", "ghl-booking-widget.jpg", "ghl-recurring.jpg"]
       },
       {
         category: "admin",
         title: "Google Calendar Management",
-        intro: "Keeping busy schedules organized with clear, well-prepared calendar events.",
-        challenge: "A packed day of onboarding sessions, client orientations, strategy calls and progress updates needed careful coordination across time zones.",
-        solution: "Scheduled and organized meetings, added guests, meeting links and lead notes to each event, and kept every appointment accurate and up to date.",
-        result: "A structured calendar with fewer conflicts, where everyone arrives at each meeting prepared.",
-        tools: ["Google Calendar", "Google Meet", "Zoom", "Gmail"],
+        intro: "Clear, well-prepared calendar events for busy teams.",
+        challenge: "Back-to-back meetings across different time zones.",
+        solution: "Scheduled meetings with guests, links and notes in every event.",
+        result: "Fewer conflicts and better-prepared meetings.",
+        tools: ["Google Calendar", "Google Meet", "Zoom"],
         images: ["gcal-event.jpg", "gcal-day.jpg"]
       },
       {
         category: "admin",
         title: "Weekly Progress Reports",
-        intro: "Clear end-of-day reports that keep managers informed without needing to ask.",
-        challenge: "Remote work needs visibility. The manager needed a quick way to see what was done and what's next.",
-        solution: "Sent structured daily and weekly reports listing completed tasks with results, links to work files, and the plan for the next day.",
-        result: "Transparent, accountable communication. For example, one report covered 32 franchises assessed and 53 new contacts added.",
+        intro: "Clear daily and weekly updates for managers.",
+        challenge: "Managers needed visibility on remote work.",
+        solution: "Sent structured reports: tasks done, results and next steps.",
+        result: "Transparent work, like 32 franchises assessed and 53 contacts added in a day.",
         tools: ["Gmail", "Google Sheets"],
         images: ["weekly-report.jpg"]
       },
@@ -745,10 +775,10 @@
       {
         category: "website",
         title: "Love & Sound Natural Therapies Website",
-        intro: "Website pages and event offer pages for a wellness and sound therapy business.",
-        challenge: "The business needed attractive pages for each program and special event that make it easy for visitors to understand the offer and book.",
-        solution: "Built and updated booking and offer pages, including the Midweek and Monday Nervous System Reset and a Mother's Day event page with package details, benefits, FAQs and clear booking buttons.",
-        result: "Professional, on-brand pages that guide visitors from interest to booking.",
+        intro: "Booking and event pages for a sound therapy business.",
+        challenge: "Each program and event needed its own booking page.",
+        solution: "Built offer pages with details, FAQs and clear Book Now buttons.",
+        result: "On-brand pages that turn visitors into bookings.",
         tools: ["GoHighLevel Sites", "Canva"],
         images: ["web-loveandsound.jpg", "web-loveandsound-2.jpg", "web-loveandsound-3.jpg", "web-loveandsound-4.jpg"]
       },
@@ -756,39 +786,39 @@
         category: "website",
         title: "The Kerbing King & Landscaping Website",
         intro: "A complete website for a family-owned landscaping business.",
-        challenge: "The business needed a modern online presence to show its services and turn visitors into quote requests.",
-        solution: "Designed the full website: a hero section with clear calls to action, service cards, a simple \"How it Works\" process and service area information.",
-        result: "A clean, trustworthy website that makes it easy for customers to call or request a free quote.",
+        challenge: "No modern online presence to win new customers.",
+        solution: "Designed the full site: services, process and quote buttons.",
+        result: "A trustworthy website that brings in quote requests.",
         tools: ["Website Builder", "Canva"],
         images: ["web-kerbingking.jpg", "web-kerbingking-2.jpg", "web-kerbingking-3.jpg", "web-kerbingking-4.jpg"]
       },
       {
         category: "website",
         title: "Real Estate Website Concept",
-        intro: "\"Haven & Co.\": an elegant real estate website design concept.",
-        challenge: "Show how a property business can feel calm, premium and easy to search.",
-        solution: "Designed a homepage with a property search bar, a clear brand message and a neighborhood showcase section.",
-        result: "A polished concept that shows modern, conversion-focused web design.",
+        intro: "\"Haven & Co.\", a real estate website design concept.",
+        challenge: "Make property search feel calm and premium.",
+        solution: "Designed a homepage with a search bar and neighborhood showcase.",
+        result: "A polished, modern real estate design.",
         tools: ["Web Design", "UI/UX"],
         images: ["web-realestate.jpg", "web-realestate-2.jpg"]
       },
       {
         category: "website",
         title: "Restaurant Website Concept",
-        intro: "\"Saltbush\": a modern Australian restaurant website design concept.",
-        challenge: "Capture the feel of a restaurant online and make booking a table effortless.",
-        solution: "Designed a bold hero with strong food photography, clear \"Reserve your table\" buttons and an \"Our Approach\" storytelling section.",
-        result: "An inviting concept that shows strong visual design and clear calls to action.",
+        intro: "\"Saltbush\", a modern restaurant website design concept.",
+        challenge: "Make a restaurant feel inviting online.",
+        solution: "Bold food photography with clear \"Reserve a table\" buttons.",
+        result: "An appetizing design that drives bookings.",
         tools: ["Web Design", "UI/UX"],
         images: ["web-restaurant.jpg", "web-restaurant-2.jpg"]
       },
       {
         category: "website",
         title: "Solar Company Website Concept",
-        intro: "\"HelioGrid\": a solar energy website design concept.",
-        challenge: "Explain a technical product simply and capture leads.",
-        solution: "Designed a high-impact hero with a built-in savings estimate form, trust badges and a customer stories section.",
-        result: "A lead-focused concept that turns visitors into quote requests.",
+        intro: "\"HelioGrid\", a solar energy website design concept.",
+        challenge: "Explain solar simply and capture leads.",
+        solution: "A high-impact homepage with a built-in savings form.",
+        result: "A design focused on getting quote requests.",
         tools: ["Web Design", "Lead Generation"],
         images: ["web-solar.jpg", "web-solar-2.jpg"]
       },
@@ -797,74 +827,72 @@
       {
         category: "social",
         title: "Social Media Management",
-        intro: "Planning, scheduling and tracking content for Facebook and Instagram.",
-        challenge: "The business needed consistent, purposeful posting and a way to see what content was working.",
-        solution: "Built a social media content studio in Notion with daily content themes, a posting schedule of 2 posts per day, a feed preview, and monthly analytics tracking views, reach and engagement.",
-        result: "A consistent content rhythm with clear data. Top posts reached over 6,500 people.",
-        tools: ["Notion", "Facebook", "Instagram", "Meta Business Suite"],
+        intro: "Planning, scheduling and tracking Facebook & Instagram content.",
+        challenge: "Posting was inconsistent, with no performance tracking.",
+        solution: "Built a content calendar, posting schedule and analytics tracker.",
+        result: "Consistent posting, with top posts reaching 6,500+ people.",
+        tools: ["Notion", "Facebook", "Instagram"],
         images: ["smm-content-plan.jpg", "smm-calendar.jpg", "smm-posting-schedule.jpg", "smm-analytics.jpg"]
       },
       {
         category: "social",
         title: "Graphic Design for Social Media",
-        intro: "Eye-catching event posters, promotions and educational posts.",
-        challenge: "Events and offers needed scroll-stopping graphics that clearly show dates, prices and how to book.",
-        solution: "Designed on-brand posters and Instagram posts for breathwork and sound bath events, promotions and educational tips.",
-        result: "A cohesive library of graphics that promote events and build the brand online.",
+        intro: "Event posters, promos and educational posts.",
+        challenge: "Events needed eye-catching, easy-to-read graphics.",
+        solution: "Designed on-brand posters and posts in Canva.",
+        result: "A cohesive look that promotes every event.",
         tools: ["Canva", "Instagram", "Facebook"],
-        images: ["design-breathwork-events.jpg", "design-stress-relief.jpg", "design-9dmt-trip.jpg", "design-9d-breathwork.jpg", "design-promo.jpg", "design-education.jpg"],
-        fit: "contain"
+        images: ["design-breathwork-events.jpg", "design-stress-relief.jpg", "design-9dmt-trip.jpg", "design-9d-breathwork.jpg", "design-promo.jpg", "design-education.jpg"]
       },
       {
         category: "social",
         title: "Logo & Branding",
-        intro: "Logo design and brand identity for The Kerbing King & Landscaping.",
-        challenge: "A growing landscaping business needed a memorable brand that works across its website, vehicles and social media.",
-        solution: "Created logo variations, including a bold crown script logo, a clean house-and-lawn icon and a simple wordmark, in different colour versions.",
-        result: "A flexible, professional brand identity used across the business's website and marketing.",
+        intro: "Brand identity for The Kerbing King & Landscaping.",
+        challenge: "A growing business with no memorable brand.",
+        solution: "Created a crown logo, icon and wordmark in several versions.",
+        result: "A professional brand used across web and marketing.",
         tools: ["Canva", "Branding"],
-        images: ["logo-kerbing-king-wordmark.jpg", "logo-kerbing-king.png", "logo-kerbing-king-alt.jpg", "logo-kerbing-king-icon.jpg"],
-        fit: "contain"
+        images: ["logo-kerbing-king-wordmark.jpg", "logo-kerbing-king.png", "logo-kerbing-king-alt.jpg", "logo-kerbing-king-icon.jpg"]
       },
 
       /* ---------- CRM & AUTOMATION ---------- */
       {
         category: "crm",
         title: "CRM Workflow System",
-        intro: "Organizing automations so a business runs smoothly in the background.",
-        challenge: "Many automations for leads, bookings, marketing and payments needed a clear structure to stay manageable.",
-        solution: "Organized workflows into clear folders: Outbound, Inbound, Reputation, Bookings, Marketing & Campaigns, eCommerce, and Finance & Admin.",
-        result: "A tidy, scalable automation system that's easy to find, update and maintain.",
+        intro: "An organized automation system in GoHighLevel.",
+        challenge: "Many automations were hard to find and manage.",
+        solution: "Sorted all workflows into 7 clear folders by purpose.",
+        result: "Easy to find, update and maintain.",
         tools: ["GoHighLevel", "Workflows"],
         images: ["crm-workflow-list.jpg"]
       },
       {
         category: "crm",
         title: "Event Ticket Purchase Automation",
-        intro: "Automatic follow-up after a client buys an event ticket.",
-        challenge: "Every ticket buyer needed to receive and sign a disclaimer before attending, and checking this by hand was time-consuming.",
-        solution: "Built a workflow that emails the disclaimer, waits two days, checks if it's signed, and sends reminders or an internal notification if it isn't.",
-        result: "Hands-free compliance. Every attendee is followed up automatically.",
-        tools: ["GoHighLevel", "Email Automation"],
+        intro: "Automatic follow-up after an event ticket purchase.",
+        challenge: "Checking signed disclaimers by hand took time.",
+        solution: "A workflow sends the disclaimer, checks it and sends reminders.",
+        result: "Every attendee is followed up automatically.",
+        tools: ["GoHighLevel", "Email"],
         images: ["crm-ticket-workflow.jpg"]
       },
       {
         category: "crm",
         title: "Call Confirmation & Reminders",
-        intro: "Automated SMS and email reminders that reduce no-shows.",
-        challenge: "Unconfirmed appointments led to missed calls and wasted time slots.",
-        solution: "Built a workflow that sends an SMS and confirmation email, waits for a \"YES\" reply, tags confirmed contacts, and releases the slot with a notification if there's no reply.",
-        result: "Better attendance and an always-accurate schedule, without manual follow-up.",
+        intro: "Automated SMS and email appointment reminders.",
+        challenge: "Unconfirmed appointments caused no-shows.",
+        solution: "Clients reply YES to confirm; unconfirmed slots are freed up.",
+        result: "Better attendance with no manual chasing.",
         tools: ["GoHighLevel", "SMS", "Email"],
         images: ["crm-call-confirmation.jpg", "crm-call-confirmation-2.jpg"]
       },
       {
         category: "crm",
         title: "Post-Event Follow-Up Calls",
-        intro: "Personalized follow-up after events, based on each client's preference.",
-        challenge: "Clients prefer different ways to connect, such as Zoom, Google Meet or phone.",
-        solution: "Built conditional branches that check each client's preferred calling method and send the right follow-up message automatically.",
-        result: "Every client gets a timely, personal follow-up in the way that suits them.",
+        intro: "Follow-up calls based on each client's preference.",
+        challenge: "Clients prefer Zoom, Google Meet or a phone call.",
+        solution: "Smart branches send the right follow-up for each choice.",
+        result: "A personal follow-up for every client.",
         tools: ["GoHighLevel", "Zoom", "Google Meet"],
         images: ["crm-follow-up.jpg", "crm-follow-up-2.jpg"]
       },
@@ -873,20 +901,20 @@
       {
         category: "support",
         title: "Messenger Inquiries & Bookings",
-        intro: "Warm, helpful replies that turn questions into bookings.",
-        challenge: "Clients message with questions about sessions, dates and prices, and slow or unclear replies lose bookings.",
-        solution: "Answered inquiries quickly with clear session details, suggested alternatives when dates didn't work, shared booking links and sent friendly event reminders.",
-        result: "Happy, well-informed clients and more confirmed bookings.",
-        tools: ["Facebook Messenger", "GoHighLevel Conversations"],
+        intro: "Friendly replies that turn questions into bookings.",
+        challenge: "Slow or unclear replies lose bookings.",
+        solution: "Quick replies with session details and booking links.",
+        result: "Well-informed clients and more bookings.",
+        tools: ["Facebook Messenger", "GoHighLevel"],
         images: ["cs-inquiry.jpg", "cs-inquiry-2.jpg", "cs-booking-link.jpg", "cs-reminder.jpg"]
       },
       {
         category: "support",
         title: "Email Follow-Up",
-        intro: "Timely email follow-ups that keep clients engaged.",
-        challenge: "Interested clients sometimes don't complete their booking after receiving information.",
-        solution: "Sent personalized follow-up emails with session details and direct booking links.",
-        result: "More inquiries converted into bookings, with a caring, professional touch.",
+        intro: "Timely follow-up emails to interested clients.",
+        challenge: "Interested clients didn't always finish booking.",
+        solution: "Sent personal emails with details and a booking link.",
+        result: "More inquiries turned into bookings.",
         tools: ["GoHighLevel", "Email"],
         images: ["cs-email-follow-up.jpg"]
       },
@@ -895,30 +923,30 @@
       {
         category: "operations",
         title: "Franchise Partnership Research",
-        intro: "Lead research and database building for business development.",
-        challenge: "The sales team needed a reliable list of franchise decision-makers to contact.",
-        solution: "Researched franchise companies, assessed their fit, and built a database of contacts with titles, companies and contact details. Also joined daily team meetings and reported progress.",
-        result: "A growing, organized partnership database with over 1,400 rows, ready for outreach.",
-        tools: ["Google Sheets", "LinkedIn", "Google Meet"],
+        intro: "Lead research for franchise partnerships.",
+        challenge: "Sales needed a reliable list of decision-makers.",
+        solution: "Researched companies and built a contact database.",
+        result: "1,400+ organized rows, ready for outreach.",
+        tools: ["Google Sheets", "LinkedIn"],
         images: ["franchise-database.jpg"]
       },
       {
         category: "operations",
         title: "Payments & Product Setup",
-        intro: "Setting up products, pricing and order tracking for online sales.",
-        challenge: "Event tickets, bundles and single sessions all needed to be sold and tracked online.",
-        solution: "Created and managed 67 products with correct pricing (including bundles and \"Buy 3 Get 1 Free\" offers) and monitored incoming orders.",
-        result: "Smooth online payments and a clear view of every order.",
+        intro: "Products, pricing and order tracking for online sales.",
+        challenge: "Tickets, bundles and sessions needed online checkout.",
+        solution: "Set up 67 products and offers, and tracked every order.",
+        result: "Smooth payments and a clear view of sales.",
         tools: ["GoHighLevel Payments", "Stripe"],
         images: ["ghl-products.jpg", "ghl-orders.jpg"]
       },
       {
         category: "operations",
         title: "Marketing & Sales Strategy",
-        intro: "Written strategy plans for events and promotions.",
-        challenge: "Special events like Mother's Day needed a clear plan to sell out limited spots.",
-        solution: "Wrote a marketing and sales strategy including a Facebook contest to boost reach and engagement, with clear goals, entry rules and timelines.",
-        result: "A ready-to-run promotion plan aimed at selling out all 16 event spots.",
+        intro: "Written promotion plans for special events.",
+        challenge: "A Mother's Day event needed to sell out 16 spots.",
+        solution: "Wrote a plan with a Facebook contest, rules and timeline.",
+        result: "A ready-to-run plan to fill every spot.",
         tools: ["Google Docs", "Facebook"],
         images: ["strategy-doc.jpg"]
       }
@@ -926,52 +954,61 @@
 
     /* Sections appear on the page in this order */
     const categories = [
-      { key: "admin",      label: "Administrative Support", short: "Admin",      title: "Admin That Keeps Business Organized.",      text: "Calendars, bookings, reports and workspaces that keep every day running smoothly." },
-      { key: "website",    label: "Website Designs",        short: "Websites",   title: "Websites That Turn Visitors Into Clients.", text: "Real client websites and design concepts built to look great and drive bookings." },
+      { key: "admin",      label: "Administrative Support", short: "Admin",        title: "Admin That Keeps Business Organized.",      text: "Calendars, bookings, reports and workspaces that keep every day running smoothly." },
+      { key: "website",    label: "Website Designs",        short: "Websites",     title: "Websites That Turn Visitors Into Clients.", text: "Real client websites and design concepts built to look great and drive bookings." },
       { key: "social",     label: "Social Media",           short: "Social Media", title: "Content That Builds the Brand.",            text: "Planning, design and analytics for a consistent, engaging social presence." },
-      { key: "crm",        label: "CRM & Automation",       short: "CRM",        title: "Automations That Work While You Sleep.",    text: "Workflows that follow up, confirm and remind, so nothing falls through the cracks." },
-      { key: "support",    label: "Customer Support",       short: "Support",    title: "Support That Clients Remember.",            text: "Friendly, fast and clear communication that turns questions into bookings." },
-      { key: "operations", label: "Business Operations",    short: "Operations", title: "Operations That Support Growth.",           text: "Research, payments and strategy behind a business that's ready to scale." }
+      { key: "crm",        label: "CRM & Automation",       short: "CRM",          title: "Automations That Work While You Sleep.",    text: "Workflows that follow up, confirm and remind, so nothing falls through the cracks." },
+      { key: "support",    label: "Customer Support",       short: "Support",      title: "Support That Clients Remember.",            text: "Friendly, fast and clear communication that turns questions into bookings." },
+      { key: "operations", label: "Business Operations",    short: "Operations",   title: "Operations That Support Growth.",           text: "Research, payments and strategy behind a business that's ready to scale." }
     ];
 
     const SLIDE_SECONDS = 4.5;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     const pad = (n) => String(n).padStart(2, "0");
-    const zoomSvg = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>';
+    const plural = (n) => `${n} project${n === 1 ? "" : "s"}`;
+    const countFor = (key) => projects.filter((p) => p.category === key).length;
+    const icon = {
+      zoom: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>',
+      prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"/></svg>',
+      next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>'
+    };
 
-    /* ---------- Build menu, overview tiles and sections ---------- */
+    /* ---------- Build menu and sections ---------- */
     document.getElementById("filters").innerHTML =
       `<a class="filter-btn active" href="#all-services" data-target="all-services"><span class="full">All Services</span><span class="short">All</span></a>` +
       categories.map((c) => `<a class="filter-btn" href="#${c.key}" data-target="${c.key}"><span class="full">${esc(c.label)}</span><span class="short">${esc(c.short)}</span></a>`).join("");
 
-    const countFor = (key) => projects.filter((p) => p.category === key).length;
-    const plural = (n) => `${n} project${n === 1 ? "" : "s"}`;
-
     const cardHtml = (p, i, label) => {
       const many = p.images.length > 1;
-      const slides = p.images.map((src, n) =>
-        n === 0
-          ? `<img class="slide is-active" src="images/${src}" alt="${esc(p.title)}" loading="lazy" decoding="async" />`
-          : `<img class="slide" data-src="images/${src}" alt="" decoding="async" />`
+      // The first image is repeated at the end so the slideshow can loop smoothly
+      const list = many ? [...p.images, p.images[0]] : p.images;
+      const slides = list.map((src, n) =>
+        `<div class="slide"${n >= p.images.length ? ' aria-hidden="true"' : ""}>` +
+        (n === 0
+          ? `<img src="images/${src}" alt="${esc(p.title)}" loading="lazy" decoding="async" />`
+          : `<img data-src="images/${src}" alt="" decoding="async" />`) +
+        `</div>`
       ).join("");
-      const dots = many ? `<span class="slide-dots" aria-hidden="true">${p.images.map((_, n) => `<i${n === 0 ? ' class="is-active"' : ""}></i>`).join("")}</span>` : "";
+      const controls = many ? `
+            <button class="media-btn slide-prev" type="button" aria-label="Previous picture">${icon.prev}</button>
+            <button class="media-btn slide-next" type="button" aria-label="Next picture">${icon.next}</button>
+            <div class="slide-dots">${p.images.map((_, n) => `<button type="button" aria-label="Show picture ${n + 1}"${n === 0 ? ' class="is-active"' : ""}></button>`).join("")}</div>` : "";
       return `
-        <article class="project-card reveal">
-          <button class="project-image${p.fit === "contain" ? " fit-contain" : ""}" type="button" data-index="${i}" aria-label="View ${esc(p.title)}${many ? ` (${p.images.length} images)` : ""}">
-            ${slides}
-            <span class="image-label">${esc(label)}</span>
-            ${dots}
-            <span class="zoom-icon" aria-hidden="true">${zoomSvg}</span>
-          </button>
+        <article class="project-card reveal" data-index="${i}">
+          <div class="media">
+            <div class="track" role="button" tabindex="0" aria-label="Open ${esc(p.title)} pictures">${slides}</div>
+            <button class="media-btn zoom-btn" type="button" aria-label="View larger">${icon.zoom}</button>
+            ${controls}
+          </div>
           <div class="project-content">
-            <div class="project-category">${esc(label)}</div>
+            <span class="project-category">${esc(label)}</span>
             <h3>${esc(p.title)}</h3>
             <p class="intro">${esc(p.intro)}</p>
             <div class="case-study">
-              <div class="case-row"><strong>Challenge</strong><p>${esc(p.challenge)}</p></div>
-              <div class="case-row"><strong>Solution</strong><p>${esc(p.solution)}</p></div>
-              <div class="case-row"><strong>Result</strong><p>${esc(p.result)}</p></div>
+              <div class="case-row"><span class="case-tag challenge">Challenge</span><p>${esc(p.challenge)}</p></div>
+              <div class="case-row"><span class="case-tag solution">Solution</span><p>${esc(p.solution)}</p></div>
+              <div class="case-row"><span class="case-tag result">Result</span><p>${esc(p.result)}</p></div>
             </div>
             <div class="tools">${p.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</div>
           </div>
@@ -1011,12 +1048,11 @@
     /* ---------- Highlight the menu item for the section on screen ---------- */
     const menuLinks = [...document.querySelectorAll(".filter-btn")];
     const sectionEls = [...document.querySelectorAll(".service-section")];
-    const setActive = (id) => menuLinks.forEach((a) => a.classList.toggle("active", a.dataset.target === id));
     const spy = () => {
       const line = window.innerHeight * 0.35;
       let current = sectionEls[0].id;
       sectionEls.forEach((s) => { if (s.getBoundingClientRect().top <= line) current = s.id; });
-      setActive(current);
+      menuLinks.forEach((a) => a.classList.toggle("active", a.dataset.target === current));
     };
     window.addEventListener("scroll", spy, { passive: true });
     spy();
@@ -1026,63 +1062,109 @@
       entries.forEach((entry) => {
         if (!entry.isIntersecting) return;
         const siblings = [...entry.target.parentElement.children].filter((el) => el.classList.contains("reveal"));
-        const delay = Math.max(0, siblings.indexOf(entry.target)) % 2 * 90;
+        const delay = (Math.max(0, siblings.indexOf(entry.target)) % 2) * 90;
         setTimeout(() => entry.target.classList.add("visible"), delay);
         revealObserver.unobserve(entry.target);
       });
     }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
     document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
 
-    /* ---------- Card slideshows ---------- */
-    const slideshows = [];
-    document.querySelectorAll(".project-image").forEach((frame) => {
-      const slides = [...frame.querySelectorAll(".slide")];
-      const dots = [...frame.querySelectorAll(".slide-dots i")];
-      const show = { frame, slides, dots, index: 0, inView: false, paused: false, loaded: false };
-      if (slides.length > 1) slideshows.push(show);
-      frame.addEventListener("mouseenter", () => (show.paused = true));
-      frame.addEventListener("mouseleave", () => (show.paused = false));
-      frame.addEventListener("focus", () => (show.paused = true));
-      frame.addEventListener("blur", () => (show.paused = false));
+    /* ---------- Card slideshows (slide to the right, loop) ---------- */
+    const modal = document.getElementById("imageModal");
+    const sliders = new Map();
+
+    document.querySelectorAll(".project-card").forEach((card) => {
+      const project = projects[Number(card.dataset.index)];
+      const track = card.querySelector(".track");
+      const s = {
+        card, project, track,
+        count: project.images.length,
+        pos: 0,           // position in the track (can briefly be the copy of the first slide)
+        inView: false, hover: false, loaded: false, busy: false, timer: null,
+        dots: [...card.querySelectorAll(".slide-dots button")]
+      };
+      sliders.set(card, s);
+
+      const open = () => openModal(project, s.pos % s.count);
+      track.addEventListener("click", open);
+      track.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+      card.querySelector(".zoom-btn").addEventListener("click", open);
+
+      if (s.count < 2) return;
+      card.querySelector(".slide-prev").addEventListener("click", () => { move(s, -1); restart(s); });
+      card.querySelector(".slide-next").addEventListener("click", () => { move(s, 1); restart(s); });
+      s.dots.forEach((dot, n) => dot.addEventListener("click", () => { goTo(s, n); restart(s); }));
+      card.querySelector(".media").addEventListener("mouseenter", () => (s.hover = true));
+      card.querySelector(".media").addEventListener("mouseleave", () => (s.hover = false));
+
+      // Swipe on phones
+      let startX = null;
+      track.addEventListener("touchstart", (e) => (startX = e.touches[0].clientX), { passive: true });
+      track.addEventListener("touchend", (e) => {
+        if (startX === null) return;
+        const dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) { move(s, dx < 0 ? 1 : -1); restart(s); }
+        startX = null;
+      });
+
+      track.addEventListener("transitionend", (e) => {
+        if (e.target !== track || e.propertyName !== "transform") return; // ignore the picture hover zoom
+        s.busy = false;
+        // Reached the copy of the first slide: jump back to the real first slide without animation
+        if (s.pos === s.count) setPos(s, 0, false);
+      });
     });
 
-    const goToSlide = (show, n) => {
-      show.slides[show.index].classList.remove("is-active");
-      show.dots[show.index]?.classList.remove("is-active");
-      show.index = n;
-      show.slides[n].classList.add("is-active");
-      show.dots[n]?.classList.add("is-active");
+    const setPos = (s, pos, animate) => {
+      s.track.classList.toggle("no-anim", !animate);
+      s.pos = pos;
+      s.track.style.transform = `translateX(-${pos * 100}%)`;
+      if (!animate) { void s.track.offsetWidth; s.track.classList.remove("no-anim"); }
+      const active = pos % s.count;
+      s.dots.forEach((d, n) => d.classList.toggle("is-active", n === active));
     };
 
-    // Extra images only download once a card comes near the screen
-    const slideObserver = new IntersectionObserver((entries) => {
+    const move = (s, delta) => {
+      if (s.busy) return;
+      if (delta > 0) {
+        s.busy = !reduceMotion;
+        setPos(s, s.pos + 1, !reduceMotion);
+        if (reduceMotion && s.pos === s.count) setPos(s, 0, false);
+      } else {
+        // From the first slide, jump to the copy at the end, then slide back one
+        if (s.pos === 0) setPos(s, s.count, false);
+        s.busy = !reduceMotion;
+        setPos(s, s.pos - 1, !reduceMotion);
+      }
+    };
+
+    const goTo = (s, n) => { if (!s.busy && n !== s.pos % s.count) { s.busy = !reduceMotion; setPos(s, n, !reduceMotion); } };
+
+    const tick = (s) => {
+      if (!s.inView || s.hover || document.hidden || modal.classList.contains("open")) return;
+      move(s, 1);
+    };
+
+    const restart = (s) => {
+      clearInterval(s.timer);
+      if (!reduceMotion) s.timer = setInterval(() => tick(s), SLIDE_SECONDS * 1000);
+    };
+
+    // Load the extra pictures only when a card comes near the screen, then start its slideshow
+    const sliderObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        const show = slideshows.find((s) => s.frame === entry.target);
-        show.inView = entry.isIntersecting;
-        if (entry.isIntersecting && !show.loaded) {
-          show.slides.forEach((img) => { if (img.dataset.src) { img.src = img.dataset.src; img.removeAttribute("data-src"); } });
-          show.loaded = true;
+        const s = sliders.get(entry.target);
+        s.inView = entry.isIntersecting;
+        if (entry.isIntersecting && !s.loaded) {
+          s.card.querySelectorAll("img[data-src]").forEach((img) => { img.src = img.dataset.src; img.removeAttribute("data-src"); });
+          s.loaded = true;
+          if (s.count > 1) setTimeout(() => restart(s), Math.random() * 1500);
         }
       });
     }, { rootMargin: "200px 0px" });
-    slideshows.forEach((s) => slideObserver.observe(s.frame));
-
-    if (!reduceMotion) {
-      slideshows.forEach((show, i) => {
-        // Stagger so cards don't all change at the same moment
-        setTimeout(() => {
-          setInterval(() => {
-            if (!show.inView || show.paused || document.hidden || modal.classList.contains("open")) return;
-            const next = show.slides[(show.index + 1) % show.slides.length];
-            if (!next.complete) return;
-            goToSlide(show, (show.index + 1) % show.slides.length);
-          }, SLIDE_SECONDS * 1000);
-        }, (i % 4) * 1100);
-      });
-    }
+    sliders.forEach((s) => sliderObserver.observe(s.card));
 
     /* ---------- Lightbox ---------- */
-    const modal = document.getElementById("imageModal");
     const modalImage = document.getElementById("modalImage");
     const modalCaption = document.getElementById("modalCaption");
     const prevButton = document.querySelector(".modal-prev");
@@ -1095,7 +1177,7 @@
       const p = current.project;
       const update = () => {
         modalImage.src = "images/" + p.images[current.index];
-        modalImage.alt = `${p.title}, image ${current.index + 1} of ${p.images.length}`;
+        modalImage.alt = `${p.title}, picture ${current.index + 1} of ${p.images.length}`;
         modalCaption.textContent = p.images.length > 1 ? `${p.title} · ${current.index + 1} / ${p.images.length}` : p.title;
         modalImage.classList.remove("is-fading");
       };
@@ -1113,27 +1195,20 @@
       renderModal(true);
     };
 
-    const openModal = (projectIndex, imageIndex) => {
+    function openModal(project, imageIndex) {
       lastFocus = document.activeElement;
-      current = { project: projects[projectIndex], index: imageIndex };
+      current = { project, index: imageIndex };
       renderModal(false);
       modal.classList.add("open");
       document.body.style.overflow = "hidden";
       closeButton.focus();
-    };
+    }
 
     const closeModal = () => {
       modal.classList.remove("open");
       document.body.style.overflow = "";
       lastFocus?.focus();
     };
-
-    document.querySelectorAll(".project-image").forEach((button) => {
-      button.addEventListener("click", () => {
-        const show = slideshows.find((s) => s.frame === button);
-        openModal(Number(button.dataset.index), show ? show.index : 0);
-      });
-    });
 
     prevButton.addEventListener("click", () => step(-1));
     nextButton.addEventListener("click", () => step(1));
@@ -1148,7 +1223,6 @@
       if (event.key === "ArrowRight") step(1);
     });
 
-    // Swipe left/right in the lightbox on phones
     let touchX = null;
     modal.addEventListener("touchstart", (e) => (touchX = e.touches[0].clientX), { passive: true });
     modal.addEventListener("touchend", (e) => {
