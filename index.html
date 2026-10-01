@@ -449,6 +449,79 @@
       line-height: 1.3;
     }
 
+    .clients {
+      margin: 10px 0 0;
+      color: var(--text);
+      font-size: 0.84rem;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .clients span {
+      margin-right: 8px;
+      color: var(--secondary);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .description {
+      margin: 12px 0 22px;
+      color: #3F5867;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .live-link {
+      display: inline-flex;
+      align-self: flex-start;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+      padding: 11px 20px;
+      color: #fff;
+      text-decoration: none;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(11, 110, 127, 0.22);
+      font-size: 0.84rem;
+      font-weight: 600;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s ease;
+    }
+
+    .live-link span { transition: transform 0.3s var(--ease); }
+
+    .live-link:hover {
+      box-shadow: 0 12px 26px rgba(11, 110, 127, 0.3);
+      transform: translateY(-2px);
+    }
+
+    .live-link:hover span { transform: translateX(3px); }
+
+    .case-study + .live-link { margin-top: 22px; }
+
+    .group-title {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin: 0;
+      color: var(--primary);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .group-title::after {
+      flex: 1;
+      height: 1px;
+      content: "";
+      background: var(--line);
+    }
+
+    .group-title ~ .group-title { margin-top: 18px; }
+
     .intro {
       margin: 8px 0 20px;
       color: var(--muted);
@@ -670,7 +743,7 @@
       <div class="hero-stat" aria-label="Portfolio highlights">
         <div class="stat"><strong id="projectCount">21</strong><span>Featured Projects</span></div>
         <div class="stat"><strong>6</strong><span>Service Areas</span></div>
-        <div class="stat"><strong>Real</strong><span>Client Work</span></div>
+        <div class="stat"><strong>3</strong><span>Business Clients</span></div>
       </div>
     </div>
   </header>
@@ -729,226 +802,206 @@
       Keep challenge / solution / result to one short sentence each.
     */
     const projects = [
-      /* ---------- ADMIN ---------- */
+      /* ---------- ADMINISTRATIVE SUPPORT ---------- */
       {
         category: "admin",
-        title: "Notion Business Hub",
-        intro: "One organized Notion workspace for a wellness business.",
-        challenge: "Brand files, schedules and plans were scattered across apps.",
-        solution: "Built a Notion \"Internal Office\" with a simple clickable menu.",
-        result: "Everything the team needs, in one easy place.",
-        tools: ["Notion"],
-        images: ["notion-home.jpg", "notion-menu.jpg", "notion-planning.jpg", "notion-offers.jpg"]
-      },
-      {
-        category: "admin",
-        title: "Booking & Events Management",
-        intro: "Online booking calendars for classes, events and treatments.",
-        challenge: "Many services, each needing its own booking setup.",
-        solution: "Set up 61 booking calendars with groups, seat limits and recurring offers.",
-        result: "Easy booking for clients and an organized schedule.",
-        tools: ["GoHighLevel", "Calendars"],
-        images: ["ghl-calendars.jpg", "ghl-booking-widget.jpg", "ghl-recurring.jpg"]
-      },
-      {
-        category: "admin",
-        title: "Google Calendar Management",
-        intro: "Clear, well-prepared calendar events for busy teams.",
-        challenge: "Back-to-back meetings across different time zones.",
-        solution: "Scheduled meetings with guests, links and notes in every event.",
-        result: "Fewer conflicts and better-prepared meetings.",
-        tools: ["Google Calendar", "Google Meet", "Zoom"],
+        title: "Calendar Management & Appointment Scheduling",
+        clients: ["EO Staff", "Love & Sound Therapies", "The Kerbing King"],
+        intro: "Keeping busy teams' schedules organized across platforms.",
+        challenge: "Growing meetings, onboarding sessions and consultations led to scheduling conflicts.",
+        solution: "Managed 200+ calendar events, coordinating availability and recurring meetings.",
+        result: "Fewer conflicts and smoother team coordination.",
+        tools: ["Google Calendar", "Google Meet", "Zoom", "Gmail"],
         images: ["gcal-event.jpg", "gcal-day.jpg"]
       },
       {
         category: "admin",
         title: "Weekly Progress Reports",
-        intro: "Clear daily and weekly updates for managers.",
-        challenge: "Managers needed visibility on remote work.",
-        solution: "Sent structured reports: tasks done, results and next steps.",
-        result: "Transparent work, like 32 franchises assessed and 53 contacts added in a day.",
-        tools: ["Gmail", "Google Sheets"],
+        clients: ["EO Staff", "Love & Sound Therapies", "The Kerbing King"],
+        intro: "Clear daily and weekly updates for business owners.",
+        challenge: "Owners had to keep asking for updates on completed work.",
+        solution: "Prepared 200+ structured reports on tasks, priorities and next steps.",
+        result: "More transparency and confidence that projects stay on track.",
+        tools: ["Google Docs", "Google Sheets", "Notion", "Gmail"],
         images: ["weekly-report.jpg"]
+      },
+      {
+        category: "admin",
+        title: "Business Planning (Notion)",
+        clients: ["Love & Sound Therapies", "The Kerbing King"],
+        intro: "A central Notion hub for planning, SOPs and marketing.",
+        challenge: "Plans, documents and resources were scattered across platforms.",
+        solution: "Built one Notion workspace for planning, SOPs, marketing strategies and resources.",
+        result: "Information that's easy to find, and one place for the team to collaborate.",
+        tools: ["Notion", "Google Drive", "Google Docs", "Canva"],
+        images: ["notion-home.jpg", "notion-menu.jpg", "notion-planning.jpg", "notion-offers.jpg", "strategy-doc.jpg"]
+      },
+      {
+        category: "admin",
+        title: "GoHighLevel Event Booking Management",
+        clients: ["Love & Sound Therapies"],
+        intro: "Online bookings for events, classes and treatments.",
+        challenge: "Handling registrations and bookings manually caused extra work and errors.",
+        solution: "Managed bookings across 61 GoHighLevel calendars, including recurring class offers.",
+        result: "A smoother booking process for the business and its clients.",
+        tools: ["GoHighLevel", "Google Calendar", "Gmail"],
+        images: ["ghl-calendars.jpg", "ghl-booking-widget.jpg", "ghl-recurring.jpg"]
       },
 
       /* ---------- WEBSITE DESIGNS ---------- */
       {
         category: "website",
-        title: "Love & Sound Natural Therapies Website",
-        intro: "Booking and event pages for a sound therapy business.",
-        challenge: "Each program and event needed its own booking page.",
-        solution: "Built offer pages with details, FAQs and clear Book Now buttons.",
-        result: "On-brand pages that turn visitors into bookings.",
-        tools: ["GoHighLevel Sites", "Canva"],
-        images: ["web-loveandsound.jpg", "web-loveandsound-2.jpg", "web-loveandsound-3.jpg", "web-loveandsound-4.jpg"]
-      },
-      {
-        category: "website",
-        title: "The Kerbing King & Landscaping Website",
-        intro: "A complete website for a family-owned landscaping business.",
-        challenge: "No modern online presence to win new customers.",
-        solution: "Designed the full site: services, process and quote buttons.",
-        result: "A trustworthy website that brings in quote requests.",
-        tools: ["Website Builder", "Canva"],
+        group: "Real Client Websites",
+        title: "The Kerbing King Landscaping Services",
+        description: "A professional landscaping website that showcases services, builds trust and encourages quote requests with a clean, modern design.",
+        link: { label: "View Live Site", url: "https://thekerbingking.com.au/" },
+        tools: ["Wix Studio", "HTML", "CSS", "JavaScript", "Canva"],
         images: ["web-kerbingking.jpg", "web-kerbingking-2.jpg", "web-kerbingking-3.jpg", "web-kerbingking-4.jpg"]
       },
       {
         category: "website",
-        title: "Real Estate Website Concept",
-        intro: "\"Haven & Co.\", a real estate website design concept.",
-        challenge: "Make property search feel calm and premium.",
-        solution: "Designed a homepage with a search bar and neighborhood showcase.",
-        result: "A polished, modern real estate design.",
-        tools: ["Web Design", "UI/UX"],
+        group: "Real Client Websites",
+        title: "Love & Sound Natural Therapies",
+        description: "A calming holistic wellness website that showcases natural therapy services and makes it easy for clients to explore and enquire.",
+        link: { label: "View Live Site", url: "https://loveandsoundtherapies.com/" },
+        tools: ["Wix Studio", "HTML", "CSS", "JavaScript", "Canva"],
+        images: ["web-loveandsound.jpg", "web-loveandsound-2.jpg", "web-loveandsound-3.jpg", "web-loveandsound-4.jpg"]
+      },
+      {
+        category: "website",
+        group: "Website Design Concepts",
+        title: "Solar Energy",
+        description: "A modern solar website concept that educates homeowners and encourages consultation enquiries.",
+        link: { label: "View Design Concept", url: "https://solar-panel.yveriel-simbajon.workers.dev/" },
+        images: ["web-solar.jpg", "web-solar-2.jpg"]
+      },
+      {
+        category: "website",
+        group: "Website Design Concepts",
+        title: "Real Estate",
+        description: "A real estate website concept that showcases premium listings and connects buyers and sellers with an agent.",
+        link: { label: "View Design Concept", url: "https://real-estate.yveriel-simbajon.workers.dev/" },
         images: ["web-realestate.jpg", "web-realestate-2.jpg"]
       },
       {
         category: "website",
-        title: "Restaurant Website Concept",
-        intro: "\"Saltbush\", a modern restaurant website design concept.",
-        challenge: "Make a restaurant feel inviting online.",
-        solution: "Bold food photography with clear \"Reserve a table\" buttons.",
-        result: "An appetizing design that drives bookings.",
-        tools: ["Web Design", "UI/UX"],
+        group: "Website Design Concepts",
+        title: "Australian Food Restaurant",
+        description: "A restaurant website concept that showcases signature dishes and the menu, and encourages table reservations and orders.",
+        link: { label: "View Design Concept", url: "https://restaurant-saltbush.yveriel-simbajon.workers.dev/" },
         images: ["web-restaurant.jpg", "web-restaurant-2.jpg"]
-      },
-      {
-        category: "website",
-        title: "Solar Company Website Concept",
-        intro: "\"HelioGrid\", a solar energy website design concept.",
-        challenge: "Explain solar simply and capture leads.",
-        solution: "A high-impact homepage with a built-in savings form.",
-        result: "A design focused on getting quote requests.",
-        tools: ["Web Design", "Lead Generation"],
-        images: ["web-solar.jpg", "web-solar-2.jpg"]
       },
 
       /* ---------- SOCIAL MEDIA ---------- */
       {
         category: "social",
-        title: "Social Media Management",
-        intro: "Planning, scheduling and tracking Facebook & Instagram content.",
-        challenge: "Posting was inconsistent, with no performance tracking.",
-        solution: "Built a content calendar, posting schedule and analytics tracker.",
-        result: "Consistent posting, with top posts reaching 6,500+ people.",
-        tools: ["Notion", "Facebook", "Instagram"],
-        images: ["smm-content-plan.jpg", "smm-calendar.jpg", "smm-posting-schedule.jpg", "smm-analytics.jpg"]
+        title: "Brand Identity Design",
+        clients: ["The Kerbing King"],
+        description: "Logos, promotional materials and visual identity elements for a consistent, professional brand across digital platforms.",
+        tools: ["Canva", "Adobe Express"],
+        images: ["logo-kerbing-king-wordmark.jpg", "logo-kerbing-king.png", "logo-kerbing-king-alt.jpg", "logo-kerbing-king-icon.jpg"]
       },
       {
         category: "social",
-        title: "Graphic Design for Social Media",
-        intro: "Event posters, promos and educational posts.",
-        challenge: "Events needed eye-catching, easy-to-read graphics.",
-        solution: "Designed on-brand posters and posts in Canva.",
-        result: "A cohesive look that promotes every event.",
-        tools: ["Canva", "Instagram", "Facebook"],
+        title: "Graphic Design",
+        clients: ["Love & Sound Therapies", "The Kerbing King"],
+        description: "Social media posts, event posters, promos and educational graphics designed to grab attention and build brand recognition.",
+        tools: ["Canva"],
         images: ["design-breathwork-events.jpg", "design-stress-relief.jpg", "design-9dmt-trip.jpg", "design-9d-breathwork.jpg", "design-promo.jpg", "design-education.jpg"]
       },
       {
         category: "social",
-        title: "Logo & Branding",
-        intro: "Brand identity for The Kerbing King & Landscaping.",
-        challenge: "A growing business with no memorable brand.",
-        solution: "Created a crown logo, icon and wordmark in several versions.",
-        result: "A professional brand used across web and marketing.",
-        tools: ["Canva", "Branding"],
-        images: ["logo-kerbing-king-wordmark.jpg", "logo-kerbing-king.png", "logo-kerbing-king-alt.jpg", "logo-kerbing-king-icon.jpg"]
+        title: "Social Media Management",
+        clients: ["Love & Sound Therapies", "The Kerbing King"],
+        intro: "Planning, scheduling and tracking Facebook & Instagram content.",
+        challenge: "Staying consistent across multiple campaigns needed a clear process.",
+        solution: "Planned content calendars, scheduled posts and tracked performance.",
+        result: "An active, on-brand presence, with top posts reaching 6,500+ people.",
+        tools: ["Canva", "Meta Business Suite", "Google Drive", "Notion"],
+        images: ["smm-content-plan.jpg", "smm-calendar.jpg", "smm-posting-schedule.jpg", "smm-analytics.jpg"]
       },
 
       /* ---------- CRM & AUTOMATION ---------- */
       {
         category: "crm",
-        title: "CRM Workflow System",
-        intro: "An organized automation system in GoHighLevel.",
-        challenge: "Many automations were hard to find and manage.",
-        solution: "Sorted all workflows into 7 clear folders by purpose.",
-        result: "Easy to find, update and maintain.",
-        tools: ["GoHighLevel", "Workflows"],
-        images: ["crm-workflow-list.jpg"]
+        title: "Event Follow-up Calls",
+        clients: ["Love & Sound Therapies"],
+        intro: "Consistent follow-up after every wellness event.",
+        challenge: "Attendees needed timely follow-up to stay engaged after events.",
+        solution: "Automated follow-ups by each client's preferred call method, and tracked calls and notes.",
+        result: "Every attendee is contacted, and client relationships grow stronger.",
+        tools: ["GoHighLevel", "Google Sheets", "Gmail"],
+        images: ["crm-follow-up.jpg", "crm-follow-up-2.jpg"]
       },
       {
         category: "crm",
-        title: "Event Ticket Purchase Automation",
-        intro: "Automatic follow-up after an event ticket purchase.",
-        challenge: "Checking signed disclaimers by hand took time.",
-        solution: "A workflow sends the disclaimer, checks it and sends reminders.",
-        result: "Every attendee is followed up automatically.",
-        tools: ["GoHighLevel", "Email"],
-        images: ["crm-ticket-workflow.jpg"]
-      },
-      {
-        category: "crm",
-        title: "Call Confirmation & Reminders",
-        intro: "Automated SMS and email appointment reminders.",
-        challenge: "Unconfirmed appointments caused no-shows.",
-        solution: "Clients reply YES to confirm; unconfirmed slots are freed up.",
-        result: "Better attendance with no manual chasing.",
-        tools: ["GoHighLevel", "SMS", "Email"],
+        title: "Call Confirmation",
+        clients: ["Love & Sound Therapies"],
+        intro: "Appointment confirmations that cut down no-shows.",
+        challenge: "Unconfirmed appointments led to no-shows.",
+        solution: "Set up SMS and email confirmations and kept booking records up to date.",
+        result: "Fewer missed appointments and more accurate scheduling.",
+        tools: ["GoHighLevel", "Gmail", "Google Calendar"],
         images: ["crm-call-confirmation.jpg", "crm-call-confirmation-2.jpg"]
       },
       {
         category: "crm",
-        title: "Post-Event Follow-Up Calls",
-        intro: "Follow-up calls based on each client's preference.",
-        challenge: "Clients prefer Zoom, Google Meet or a phone call.",
-        solution: "Smart branches send the right follow-up for each choice.",
-        result: "A personal follow-up for every client.",
-        tools: ["GoHighLevel", "Zoom", "Google Meet"],
-        images: ["crm-follow-up.jpg", "crm-follow-up-2.jpg"]
+        title: "Ticket Purchase Management",
+        clients: ["Love & Sound Therapies"],
+        intro: "Organized event ticket sales and attendee records.",
+        challenge: "Tracking ticket purchases by hand risked missing attendee details.",
+        solution: "Automated post-purchase steps like disclaimers and reminders, and kept records accurate.",
+        result: "Simpler event admin and reliable customer records.",
+        tools: ["GoHighLevel", "Google Sheets", "Gmail"],
+        images: ["crm-ticket-workflow.jpg"]
+      },
+      {
+        category: "crm",
+        title: "CRM Workflow System",
+        clients: ["Love & Sound Therapies"],
+        intro: "An organized automation system in GoHighLevel.",
+        challenge: "Many automations were hard to find and manage.",
+        solution: "Sorted all workflows into 7 clear folders by purpose.",
+        result: "Automations that are easy to find, update and maintain.",
+        tools: ["GoHighLevel"],
+        images: ["crm-workflow-list.jpg"]
       },
 
       /* ---------- CUSTOMER SUPPORT ---------- */
       {
         category: "support",
-        title: "Messenger Inquiries & Bookings",
-        intro: "Friendly replies that turn questions into bookings.",
-        challenge: "Slow or unclear replies lose bookings.",
-        solution: "Quick replies with session details and booking links.",
-        result: "Well-informed clients and more bookings.",
-        tools: ["Facebook Messenger", "GoHighLevel"],
-        images: ["cs-inquiry.jpg", "cs-inquiry-2.jpg", "cs-booking-link.jpg", "cs-reminder.jpg"]
-      },
-      {
-        category: "support",
-        title: "Email Follow-Up",
-        intro: "Timely follow-up emails to interested clients.",
-        challenge: "Interested clients didn't always finish booking.",
-        solution: "Sent personal emails with details and a booking link.",
-        result: "More inquiries turned into bookings.",
-        tools: ["GoHighLevel", "Email"],
-        images: ["cs-email-follow-up.jpg"]
+        title: "Customer Communication & Support",
+        clients: ["Love & Sound Therapies", "The Kerbing King"],
+        intro: "Timely, professional replies across every conversation.",
+        challenge: "Customers expected quick, clear answers across many conversations.",
+        solution: "Answered enquiries, helped with bookings and shared accurate session details.",
+        result: "A better client experience and stronger trust.",
+        tools: ["Gmail", "GoHighLevel", "Messenger", "Google Calendar"],
+        images: ["cs-inquiry.jpg", "cs-inquiry-2.jpg", "cs-booking-link.jpg", "cs-reminder.jpg", "cs-email-follow-up.jpg"]
       },
 
       /* ---------- BUSINESS OPERATIONS ---------- */
       {
         category: "operations",
-        title: "Franchise Partnership Research",
-        intro: "Lead research for franchise partnerships.",
-        challenge: "Sales needed a reliable list of decision-makers.",
-        solution: "Researched companies and built a contact database.",
-        result: "1,400+ organized rows, ready for outreach.",
-        tools: ["Google Sheets", "LinkedIn"],
+        title: "Sales & Marketing Support",
+        clients: ["EO Staff"],
+        intro: "Prospect research and lead data for outreach campaigns.",
+        challenge: "The sales team needed accurate, organized prospect data.",
+        solution: "Researched prospects and built a lead database of 1,400+ rows.",
+        result: "Reliable data that supports outreach and business growth.",
+        tools: ["Apollo.io", "Seamless.AI", "Google Sheets", "GoHighLevel"],
         images: ["franchise-database.jpg"]
       },
       {
         category: "operations",
-        title: "Payments & Product Setup",
-        intro: "Products, pricing and order tracking for online sales.",
-        challenge: "Tickets, bundles and sessions needed online checkout.",
-        solution: "Set up 67 products and offers, and tracked every order.",
-        result: "Smooth payments and a clear view of sales.",
-        tools: ["GoHighLevel Payments", "Stripe"],
+        title: "Database Management",
+        clients: ["Love & Sound Therapies"],
+        intro: "Structured business records that are easy to find.",
+        challenge: "Business data was spread across many sheets and documents.",
+        solution: "Organized records, including 67 products and every customer order.",
+        result: "Faster access to accurate data and less manual searching.",
+        tools: ["Google Sheets", "Excel", "Notion", "GoHighLevel"],
         images: ["ghl-products.jpg", "ghl-orders.jpg"]
-      },
-      {
-        category: "operations",
-        title: "Marketing & Sales Strategy",
-        intro: "Written promotion plans for special events.",
-        challenge: "A Mother's Day event needed to sell out 16 spots.",
-        solution: "Wrote a plan with a Facebook contest, rules and timeline.",
-        result: "A ready-to-run plan to fill every spot.",
-        tools: ["Google Docs", "Facebook"],
-        images: ["strategy-doc.jpg"]
       }
     ];
 
@@ -1002,15 +1055,19 @@
             ${controls}
           </div>
           <div class="project-content">
-            <span class="project-category">${esc(label)}</span>
+            <span class="project-category">${esc(p.group || label)}</span>
             <h3>${esc(p.title)}</h3>
-            <p class="intro">${esc(p.intro)}</p>
+            ${p.clients ? `<p class="clients"><span>${p.clients.length > 1 ? "Clients" : "Client"}</span>${p.clients.map(esc).join(" · ")}</p>` : ""}
+            ${p.description
+              ? `<p class="description">${esc(p.description)}</p>`
+              : `<p class="intro">${esc(p.intro)}</p>
             <div class="case-study">
               <div class="case-row"><span class="case-tag challenge">Challenge</span><p>${esc(p.challenge)}</p></div>
               <div class="case-row"><span class="case-tag solution">Solution</span><p>${esc(p.solution)}</p></div>
               <div class="case-row"><span class="case-tag result">Result</span><p>${esc(p.result)}</p></div>
-            </div>
-            <div class="tools">${p.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</div>
+            </div>`}
+            ${p.link ? `<a class="live-link" href="${esc(p.link.url)}" target="_blank" rel="noopener">${esc(p.link.label)} <span aria-hidden="true">&#8594;</span></a>` : ""}
+            ${p.tools ? `<div class="tools">${p.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</div>` : ""}
           </div>
         </article>`;
     };
@@ -1031,7 +1088,16 @@
               </div>
             </header>
             <div class="portfolio-grid">
-              ${projects.map((p, i) => (p.category === c.key ? cardHtml(p, i, c.label) : "")).join("")}
+              ${(() => {
+                // Sub-headings appear when a project starts a new group (e.g. Real Client Websites)
+                let lastGroup = null;
+                return projects.map((p, i) => {
+                  if (p.category !== c.key) return "";
+                  const heading = p.group && p.group !== lastGroup ? `<h3 class="group-title reveal">${esc(p.group)}</h3>` : "";
+                  lastGroup = p.group || null;
+                  return heading + cardHtml(p, i, c.label);
+                }).join("");
+              })()}
             </div>
           </div>
         </div>
