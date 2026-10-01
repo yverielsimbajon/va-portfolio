@@ -667,6 +667,122 @@
     .modal-prev { left: 20px; }
     .modal-next { right: 20px; }
 
+    /* ---------- Website preview popup ---------- */
+    .site-modal {
+      position: fixed;
+      z-index: 110;
+      inset: 0;
+      display: grid;
+      padding: 3vh 3vw;
+      visibility: hidden;
+      place-items: center;
+      background: rgba(9, 24, 34, 0);
+      opacity: 0;
+      transition: opacity 0.35s ease, background 0.35s ease, visibility 0.35s;
+    }
+
+    .site-modal.open {
+      visibility: visible;
+      background: rgba(9, 24, 34, 0.88);
+      opacity: 1;
+    }
+
+    .site-window {
+      display: flex;
+      flex-direction: column;
+      width: min(100%, 1400px);
+      height: 100%;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.4);
+      transform: translateY(14px) scale(0.98);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .site-modal.open .site-window { transform: none; }
+
+    .site-bar {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px 12px 20px;
+      background: #f2fafa;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-dots { display: flex; gap: 6px; }
+
+    .site-dots i {
+      width: 11px;
+      height: 11px;
+      background: #cfe3e5;
+      border-radius: 50%;
+    }
+
+    .site-title {
+      flex: 1;
+      min-width: 0;
+      overflow: hidden;
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .site-newtab {
+      color: var(--primary);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .site-newtab:hover { text-decoration: underline; }
+
+    .site-close {
+      display: grid;
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      color: #fff;
+      cursor: pointer;
+      place-items: center;
+      background: var(--primary);
+      border: 0;
+      border-radius: 50%;
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: background 0.25s ease, transform 0.25s var(--ease);
+    }
+
+    .site-close:hover { background: var(--secondary); transform: rotate(90deg); }
+
+    .site-frame-wrap {
+      position: relative;
+      flex: 1;
+      background: #f7fbfb;
+    }
+
+    .site-loading {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      color: var(--muted);
+      place-items: center;
+      font-size: 0.9rem;
+    }
+
+    .site-frame-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: 0;
+    }
+
     /* ---------- Footer ---------- */
     .footer {
       padding: 30px 0 42px;
@@ -698,6 +814,9 @@
       .modal-prev { left: calc(50% - 60px); }
       .modal-next { right: calc(50% - 60px); }
       .modal-close { top: -12px; right: -6px; }
+      .site-modal { padding: 0; }
+      .site-window { height: 100%; border-radius: 0; }
+      .site-dots { display: none; }
     }
 
     /* ---------- Mobile ---------- */
@@ -790,6 +909,22 @@
       <div class="modal-caption" id="modalCaption"></div>
     </div>
     <button class="modal-nav modal-next" type="button" aria-label="Next image">&#8250;</button>
+  </div>
+
+  <!-- Website preview popup: visitors see a site without leaving the portfolio -->
+  <div class="site-modal" id="siteModal" role="dialog" aria-modal="true" aria-labelledby="siteTitle">
+    <div class="site-window">
+      <div class="site-bar">
+        <span class="site-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="site-title" id="siteTitle"></span>
+        <a class="site-newtab" id="siteNewTab" href="#" target="_blank" rel="noopener">Open in new tab &#8599;</a>
+        <button class="site-close" type="button" aria-label="Close website preview">&times;</button>
+      </div>
+      <div class="site-frame-wrap">
+        <div class="site-loading">Loading website…</div>
+        <iframe id="siteFrame" title="Website preview" src="about:blank"></iframe>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -1287,6 +1422,42 @@
       if (event.key === "Escape") closeModal();
       if (event.key === "ArrowLeft") step(-1);
       if (event.key === "ArrowRight") step(1);
+    });
+
+    /* ---------- Website preview popup ---------- */
+    const siteModal = document.getElementById("siteModal");
+    const siteFrame = document.getElementById("siteFrame");
+    const siteClose = siteModal.querySelector(".site-close");
+    let siteReturnFocus = null;
+
+    const openSite = (url, title) => {
+      siteReturnFocus = document.activeElement;
+      document.getElementById("siteTitle").textContent = title;
+      document.getElementById("siteNewTab").href = url;
+      siteFrame.src = url;
+      siteModal.classList.add("open");
+      document.body.style.overflow = "hidden";
+      siteClose.focus();
+    };
+
+    const closeSite = () => {
+      siteModal.classList.remove("open");
+      document.body.style.overflow = "";
+      setTimeout(() => (siteFrame.src = "about:blank"), 350);
+      siteReturnFocus?.focus();
+    };
+
+    document.querySelectorAll(".live-link").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        openSite(link.href, link.closest(".project-card").querySelector("h3").textContent);
+      });
+    });
+
+    siteClose.addEventListener("click", closeSite);
+    siteModal.addEventListener("click", (event) => { if (event.target === siteModal) closeSite(); });
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && siteModal.classList.contains("open")) closeSite();
     });
 
     let touchX = null;
