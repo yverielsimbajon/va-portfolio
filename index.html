@@ -673,7 +673,7 @@
       z-index: 110;
       inset: 0;
       display: grid;
-      padding: 3vh 3vw;
+      padding: 6vh 5vw;
       visibility: hidden;
       place-items: center;
       background: rgba(9, 24, 34, 0);
@@ -681,16 +681,18 @@
       transition: opacity 0.35s ease, background 0.35s ease, visibility 0.35s;
     }
 
+    /* Lighter backdrop so the portfolio stays visible behind the floating window */
     .site-modal.open {
       visibility: visible;
-      background: rgba(9, 24, 34, 0.88);
+      background: rgba(9, 24, 34, 0.55);
+      backdrop-filter: blur(2px);
       opacity: 1;
     }
 
     .site-window {
       display: flex;
       flex-direction: column;
-      width: min(100%, 1400px);
+      width: min(100%, 1200px);
       height: 100%;
       overflow: hidden;
       background: #fff;
@@ -741,23 +743,28 @@
 
     .site-newtab:hover { text-decoration: underline; }
 
+    /* Big, labelled close button so every visitor can find it */
     .site-close {
-      display: grid;
+      display: inline-flex;
       flex: 0 0 auto;
-      width: 40px;
-      height: 40px;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px 10px 14px;
       color: #fff;
       cursor: pointer;
-      place-items: center;
       background: var(--primary);
       border: 0;
-      border-radius: 50%;
-      font-size: 1.4rem;
+      border-radius: 999px;
+      box-shadow: 0 6px 16px rgba(11, 110, 127, 0.3);
+      font-size: 0.9rem;
+      font-weight: 700;
       line-height: 1;
       transition: background 0.25s ease, transform 0.25s var(--ease);
     }
 
-    .site-close:hover { background: var(--secondary); transform: rotate(90deg); }
+    .site-close span { font-size: 1.3rem; line-height: 0.8; }
+
+    .site-close:hover { background: var(--primary-dark); transform: translateY(-1px); }
 
     .site-frame-wrap {
       position: relative;
@@ -814,9 +821,10 @@
       .modal-prev { left: calc(50% - 60px); }
       .modal-next { right: calc(50% - 60px); }
       .modal-close { top: -12px; right: -6px; }
-      .site-modal { padding: 0; }
-      .site-window { height: 100%; border-radius: 0; }
-      .site-dots { display: none; }
+      .site-modal { padding: 7vh 14px; }
+      .site-window { border-radius: 16px; }
+      .site-dots, .site-newtab { display: none; }
+      .site-bar { padding: 10px 10px 10px 16px; }
     }
 
     /* ---------- Mobile ---------- */
@@ -918,7 +926,7 @@
         <span class="site-dots" aria-hidden="true"><i></i><i></i><i></i></span>
         <span class="site-title" id="siteTitle"></span>
         <a class="site-newtab" id="siteNewTab" href="#" target="_blank" rel="noopener">Open in new tab &#8599;</a>
-        <button class="site-close" type="button" aria-label="Close website preview">&times;</button>
+        <button class="site-close" type="button" aria-label="Close website preview"><span aria-hidden="true">&times;</span> Close</button>
       </div>
       <div class="site-frame-wrap">
         <div class="site-loading">Loading website…</div>
