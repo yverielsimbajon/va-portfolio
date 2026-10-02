@@ -1246,14 +1246,14 @@
       About / Services / Pricing add "?section=..." so the Wix page can scroll to that
       section (see the Wix page code in the instructions).
     */
-    const SITE = "https://yverielsimbajon.wixstudio.com/workingwithmaria";
+    const SITE = "https://yverielsimbajon.wixstudio.com/mariasimbajon-va";
     const withSection = (section) => { const u = new URL(SITE); u.searchParams.set("section", section); return u.href; };
     const SITE_LINKS = {
       home: SITE,
       about: withSection("about"),
       services: withSection("services"),
       pricing: withSection("pricing"),
-      booking: "https://yverielsimbajon.wixstudio.com/workingwithmaria/home-1"
+      booking: "https://yverielsimbajon.wixstudio.com/mariasimbajon-va/home-1"
     };
     document.querySelectorAll("[data-link]").forEach((a) => (a.href = SITE_LINKS[a.dataset.link]));
 
