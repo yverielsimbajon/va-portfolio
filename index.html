@@ -24,6 +24,7 @@
       --container: 1240px;
       --ease: cubic-bezier(.2, .7, .2, 1);
       --nav-h: 76px;
+      --header-h: 72px;
     }
 
     * { box-sizing: border-box; }
@@ -143,10 +144,159 @@
       font-size: 0.78rem;
     }
 
+    /* ---------- Site header (links back to the main Wix website) ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: #DAF4F4;
+      border-bottom: 1px solid rgba(11, 110, 127, 0.1);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: var(--header-h);
+    }
+
+    .brand { display: flex; flex: 0 0 auto; }
+    .brand img { width: 46px; height: auto; display: block; }
+
+    .main-nav {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .main-nav a {
+      padding: 8px 14px;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+
+    .main-nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.7); }
+    .main-nav a[aria-current="page"] { color: var(--primary); font-weight: 600; }
+
+    .header-cta {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      color: #fff;
+      text-decoration: none;
+      background: var(--primary);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(25, 180, 180, 0.45);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.25s ease, transform 0.25s var(--ease), box-shadow 0.25s ease;
+    }
+
+    .header-cta:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 10px 24px rgba(25, 180, 180, 0.55); }
+    .header-cta svg { width: 18px; height: 18px; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      color: var(--text);
+      cursor: pointer;
+      background: none;
+      border: 0;
+    }
+
+    .menu-toggle svg { width: 34px; height: 34px; }
+
+    /* Mobile slide-in menu */
+    .drawer {
+      position: fixed;
+      z-index: 120;
+      inset: 0;
+      visibility: hidden;
+      background: rgba(9, 24, 34, 0);
+      transition: background 0.35s ease, visibility 0.35s;
+    }
+
+    .drawer.open { visibility: visible; background: rgba(9, 24, 34, 0.55); }
+
+    .drawer-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      width: min(88vw, 380px);
+      padding: 18px 24px 28px;
+      background: #F6F8FA;
+      border-radius: 18px 0 0 18px;
+      box-shadow: -20px 0 60px rgba(9, 24, 34, 0.25);
+      transform: translateX(100%);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .drawer.open .drawer-panel { transform: none; }
+
+    .drawer-close {
+      align-self: flex-end;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      color: var(--text);
+      cursor: pointer;
+      place-items: center;
+      background: none;
+      border: 0;
+    }
+
+    .drawer-close svg { width: 28px; height: 28px; }
+
+    .drawer nav { display: flex; flex-direction: column; margin-top: 4px; }
+
+    .drawer nav a {
+      padding: 16px 4px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(11, 110, 127, 0.08);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .drawer nav a[aria-current="page"] { color: var(--primary); font-weight: 600; }
+
+    .drawer .header-cta { justify-content: center; margin-top: 28px; padding: 15px 20px; font-size: 1rem; }
+
+    .header-cta .cta-short { display: none; }
+
+    /* Smaller screens: menu moves into the slide-in panel; the booking button stays visible */
+    @media (max-width: 900px) {
+      .main-nav { display: none; }
+      .site-header .container { gap: 12px; }
+      .site-header .header-cta { margin-left: auto; }
+      .menu-toggle { display: grid; place-items: center; }
+    }
+
+    @media (max-width: 540px) {
+      .site-header .header-cta { padding: 9px 14px; border-radius: 10px; font-size: 0.82rem; }
+      .site-header .header-cta svg { width: 15px; height: 15px; }
+      .site-header .header-cta .cta-full { display: none; }
+      .site-header .header-cta .cta-short { display: inline; }
+    }
+
     /* ---------- Category menu (wraps, never scrolls sideways) ---------- */
     .filter-wrap {
       position: sticky;
-      top: 0;
+      top: var(--header-h);
       z-index: 30;
       padding: 14px 0;
       border-bottom: 1px solid rgba(11, 110, 127, 0.08);
@@ -226,7 +376,7 @@
     /* ---------- Category sections ---------- */
     .service-section {
       padding: 44px 0;
-      scroll-margin-top: calc(var(--nav-h) + 8px);
+      scroll-margin-top: calc(var(--header-h) + var(--nav-h) + 8px);
     }
 
     .service-section:last-of-type { padding-bottom: 104px; }
@@ -930,6 +1080,8 @@
       .case-row { grid-template-columns: 1fr; gap: 6px; }
       .case-tag { justify-self: start; padding: 4px 10px; }
       /* Compact sticky menu on phones: short labels so it stays small while scrolling */
+      :root { --header-h: 60px; }
+      .brand img { width: 40px; }
       .filter-wrap { padding: 10px 0; }
       .filters { gap: 6px; }
       .filter-btn { padding: 8px 13px; font-size: 0.8rem; }
@@ -946,6 +1098,47 @@
 </head>
 <body>
   <!-- Hero -->
+  <!-- Site header: links back to Maria's main website (addresses are set in SITE_LINKS below) -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" data-link="home" href="#"><img src="images/logo.png" alt="Maria Simbajon home" width="46" height="44" /></a>
+      <nav class="main-nav" aria-label="Main">
+        <a data-link="home" href="#">Home</a>
+        <a data-link="about" href="#">About</a>
+        <a data-link="services" href="#">Services</a>
+        <a href="#top" aria-current="page">My Portfolio</a>
+        <a data-link="pricing" href="#">Pricing</a>
+      </nav>
+      <a class="header-cta" data-link="booking" href="#" target="_blank" rel="noopener">
+        <span class="cta-full">Book a Discovery Call</span><span class="cta-short">Book a Call</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button class="drawer-close" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <nav aria-label="Main">
+        <a data-link="home" href="#">Home</a>
+        <a data-link="about" href="#">About</a>
+        <a data-link="services" href="#">Services</a>
+        <a href="#top" aria-current="page">My Portfolio</a>
+        <a data-link="pricing" href="#">Pricing</a>
+      </nav>
+      <a class="header-cta" data-link="booking" href="#" target="_blank" rel="noopener">
+        Book a Discovery Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
   <header class="hero" id="top">
     <div class="container">
       <div class="eyebrow">Maria Simbajon · Virtual Assistant</div>
@@ -993,7 +1186,7 @@
       <h2><span>Get All These Services.</span> One Person to Pay.</h2>
       <p>No separate freelancers — just one point of contact for everything above.</p>
       <div class="cta-buttons">
-        <a class="cta-btn primary" href="https://yverielsimbajon.wixstudio.com/workingwithmaria/home-1?rc=test-site" target="_blank" rel="noopener">
+        <a class="cta-btn primary" data-link="booking" href="#" target="_blank" rel="noopener">
           Book a Free Discovery Call
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
         </a>
@@ -1045,6 +1238,39 @@
   </div>
 
   <script>
+    /*
+      LINKS TO MARIA'S MAIN WEBSITE
+      Change these addresses in one place and every menu item and button follows.
+      About / Services / Pricing add "?section=..." so the Wix page can scroll to that
+      section (see the Wix page code in the instructions).
+    */
+    const SITE = "https://yverielsimbajon.wixstudio.com/workingwithmaria?rc=test-site";
+    const withSection = (section) => { const u = new URL(SITE); u.searchParams.set("section", section); return u.href; };
+    const SITE_LINKS = {
+      home: SITE,
+      about: withSection("about"),
+      services: withSection("services"),
+      pricing: withSection("pricing"),
+      booking: "https://yverielsimbajon.wixstudio.com/workingwithmaria/home-1?rc=test-site"
+    };
+    document.querySelectorAll("[data-link]").forEach((a) => (a.href = SITE_LINKS[a.dataset.link]));
+
+    /* Mobile menu */
+    const drawer = document.getElementById("drawer");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const setDrawer = (open) => {
+      drawer.classList.toggle("open", open);
+      drawer.setAttribute("aria-hidden", String(!open));
+      menuToggle.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
+      if (open) drawer.querySelector(".drawer-close").focus(); else menuToggle.focus();
+    };
+    menuToggle.addEventListener("click", () => setDrawer(true));
+    drawer.querySelector(".drawer-close").addEventListener("click", () => setDrawer(false));
+    drawer.addEventListener("click", (e) => { if (e.target === drawer) setDrawer(false); });
+    drawer.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => { if (a.getAttribute("href") === "#top") setDrawer(false); }));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && drawer.classList.contains("open")) setDrawer(false); });
+
     /*
       HOW TO ADD OR EDIT A PROJECT
       Each { ... } block below is one card. To add one, copy a block and change:
