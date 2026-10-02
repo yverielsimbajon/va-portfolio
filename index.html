@@ -1168,7 +1168,7 @@
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
     const pad = (n) => String(n).padStart(2, "0");
-    const plural = (n) => `${n} project${n === 1 ? "" : "s"}`;
+    const plural = (n) => `${n} Featured Project${n === 1 ? "" : "s"}`;
     const countFor = (key) => projects.filter((p) => p.category === key).length;
     const icon = {
       zoom: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg>',
