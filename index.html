@@ -659,6 +659,214 @@
 
     .case-study + .live-link { margin-top: 22px; }
 
+    /* ---------- Wide feature cards: design gallery + social media results ---------- */
+    .feature-card {
+      grid-column: 1 / -1;
+      padding: clamp(22px, 3vw, 34px);
+      background: var(--card);
+      border: 1px solid rgba(11, 110, 127, 0.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-card h3 {
+      margin: 0;
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.3;
+    }
+
+    .feature-card .description { margin-bottom: 0; }
+    .feature-card .tools { margin-top: 0; padding-top: 0; border-top: 0; }
+
+    .feature-head {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px 32px;
+    }
+
+    .feature-head > div { max-width: 640px; }
+    .feature-head .tools { justify-content: flex-end; }
+
+    .design-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 26px;
+    }
+
+    .design-item {
+      position: relative;
+      display: block;
+      aspect-ratio: 4 / 5;
+      padding: 0;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #e3f5f5;
+      border: 0;
+      border-radius: 16px;
+      box-shadow: 0 8px 22px rgba(17, 76, 89, 0.1);
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+
+    .design-item.extra { display: none; }
+    .design-grid.expanded .design-item.extra { display: block; animation: fadeUp 0.6s var(--ease) both; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .design-item img,
+    .design-item video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+
+    .design-item:hover {
+      box-shadow: 0 18px 40px rgba(17, 76, 89, 0.18);
+      transform: translateY(-4px);
+    }
+
+    .design-item:hover img,
+    .design-item:hover video { transform: scale(1.04); }
+
+    .design-zoom {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: grid;
+      width: 38px;
+      height: 38px;
+      color: var(--primary);
+      place-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      box-shadow: 0 6px 16px rgba(9, 24, 34, 0.18);
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s ease, transform 0.3s var(--ease);
+    }
+
+    .design-zoom svg { width: 18px; height: 18px; }
+
+    .design-item:hover .design-zoom,
+    .shot:hover .design-zoom,
+    .design-item:focus-visible .design-zoom,
+    .shot:focus-visible .design-zoom { opacity: 1; transform: none; }
+
+    .video-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 5px 10px;
+      color: #fff;
+      background: rgba(9, 24, 34, 0.7);
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+    }
+
+    .show-more {
+      display: block;
+      margin: 24px auto 0;
+      padding: 12px 24px;
+      color: var(--primary);
+      cursor: pointer;
+      background: #fff;
+      border: 1px solid var(--primary);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.25s ease, color 0.25s ease, transform 0.25s var(--ease);
+    }
+
+    .show-more:hover { color: #fff; background: var(--primary); transform: translateY(-1px); }
+
+    .results-card {
+      background:
+        radial-gradient(circle at 100% 0%, rgba(25, 180, 180, 0.12), transparent 40%),
+        var(--card);
+    }
+
+    .results-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 22px 0 18px;
+    }
+
+    .stat-tile {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 18px 18px 16px;
+      background: #F2FAFA;
+      border: 1px solid rgba(11, 110, 127, 0.1);
+      border-radius: 16px;
+    }
+
+    .stat-tile strong {
+      color: var(--primary);
+      font-size: clamp(1.6rem, 3vw, 2.1rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+    }
+
+    .stat-label { color: var(--text); font-size: 0.88rem; font-weight: 600; }
+    .stat-note { color: #1E8E5A; font-size: 0.76rem; font-weight: 600; }
+
+    .results-highlight {
+      margin: 0 0 18px;
+      padding: 12px 14px;
+      color: #3F5867;
+      background: #FFF8E6;
+      border-radius: 12px;
+      font-size: 0.86rem;
+      line-height: 1.55;
+    }
+
+    .shots {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .shot {
+      position: relative;
+      display: block;
+      aspect-ratio: 9 / 16;
+      padding: 0;
+      overflow: hidden;
+      cursor: zoom-in;
+      background: #222;
+      border: 0;
+      border-radius: 14px;
+      box-shadow: 0 12px 28px rgba(17, 76, 89, 0.18);
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+
+    .shot:nth-child(2) { transform: translateY(-14px); }
+    .shot:hover { box-shadow: 0 20px 40px rgba(17, 76, 89, 0.26); transform: translateY(-4px); }
+    .shot:nth-child(2):hover { transform: translateY(-18px); }
+
+    .shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+
     .group-title {
       grid-column: 1 / -1;
       display: flex;
@@ -770,6 +978,17 @@
     }
 
     .modal.open .modal-content { transform: none; }
+
+    .modal video {
+      display: block;
+      width: auto;
+      max-width: 100%;
+      max-height: 80vh;
+      margin: 0 auto;
+      background: #000;
+      border-radius: 14px;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
 
     .modal img {
       display: block;
@@ -1043,6 +1262,19 @@
     /* ---------- Tablet ---------- */
     @media (max-width: 1024px) {
       .portfolio-grid { grid-template-columns: 1fr; }
+      .results-layout { grid-template-columns: 1fr; }
+      .feature-head .tools { justify-content: flex-start; }
+    }
+
+    /* Phones: designs in 2 columns (3 rows shown), analytics screenshots stay side by side */
+    @media (max-width: 600px) {
+      .design-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .design-item { border-radius: 12px; }
+      .design-zoom { display: none; }
+      .stat-grid { gap: 10px; }
+      .stat-tile { padding: 14px 12px; }
+      .shots { gap: 8px; }
+      .shot:nth-child(2) { transform: none; }
     }
 
     @media (max-width: 800px) {
@@ -1214,6 +1446,7 @@
     <div class="modal-content">
       <button class="modal-close" type="button" aria-label="Close image preview">&times;</button>
       <img id="modalImage" src="" alt="" />
+      <video id="modalVideo" controls playsinline hidden></video>
       <div class="modal-caption" id="modalCaption"></div>
     </div>
     <button class="modal-nav modal-next" type="button" aria-label="Next image">&#8250;</button>
@@ -1375,19 +1608,42 @@
       /* ---------- SOCIAL MEDIA ---------- */
       {
         category: "social",
+        layout: "results",   // full-width card with result numbers and analytics screenshots
+        title: "Social Media Results",
+        subtitle: "Facebook Page · Last 90 days",
+        description: "Consistent, on-brand content that grew reach, engagement and followers for a wellness business.",
+        stats: [
+          { value: "265K", label: "Post views", note: "↑ 50% in 90 days" },
+          { value: "44K", label: "People reached", note: "Unique viewers" },
+          { value: "+147%", label: "Follower growth", note: "+121 new followers" },
+          { value: "+49%", label: "Interactions", note: "1.1K in the last 28 days" }
+        ],
+        highlight: "Audience insight: 86% women, mostly aged 35–54, so content was tailored to the ideal client.",
+        tools: ["Meta Business Suite", "Canva", "Facebook", "Instagram"],
+        images: ["results-views.jpg", "results-followers.jpg", "results-interactions.jpg"]
+      },
+      {
+        category: "social",
+        layout: "gallery",   // full-width card with a 3 × 2 design grid
+        title: "Graphic Design",
+        clients: ["Love & Sound Therapies", "The Kerbing King", "Taxi Roman"],
+        description: "Social media posts, event posters, promos, videos and educational graphics designed to grab attention and build brand recognition.",
+        tools: ["Canva", "Adobe Express"],
+        images: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-video-1.mp4",
+          "design-stress-relief.jpg", "design-valentine-pink.webp", "design-9d-breathwork.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-coupon-5.webp",
+          "design-valentine-call.jpg", "design-breathwork-events.jpg", "design-9dmt-trip.jpg",
+          "design-promo.jpg", "design-education.jpg"
+        ]
+      },
+      {
+        category: "social",
         title: "Brand Identity Design",
         clients: ["The Kerbing King"],
         description: "Logos, promotional materials and visual identity elements for a consistent, professional brand across digital platforms.",
         tools: ["Canva", "Adobe Express"],
         images: ["logo-kerbing-king-wordmark.jpg", "logo-kerbing-king.png", "logo-kerbing-king-alt.jpg", "logo-kerbing-king-icon.jpg"]
-      },
-      {
-        category: "social",
-        title: "Graphic Design",
-        clients: ["Love & Sound Therapies", "The Kerbing King"],
-        description: "Social media posts, event posters, promos and educational graphics designed to grab attention and build brand recognition.",
-        tools: ["Canva"],
-        images: ["design-breathwork-events.jpg", "design-stress-relief.jpg", "design-9dmt-trip.jpg", "design-9d-breathwork.jpg", "design-promo.jpg", "design-education.jpg"]
       },
       {
         category: "social",
@@ -1552,6 +1808,64 @@
         </article>`;
     };
 
+    const isVideo = (src) => /\.mp4$/i.test(src);
+    const SHOWN_DESIGNS = 6; // 3 columns × 2 rows before "View all"
+
+    // Shared header for the wide feature cards
+    const featureHead = (p, label) => `
+            <span class="project-category">${esc(p.subtitle || label)}</span>
+            <h3>${esc(p.title)}</h3>
+            ${p.clients ? `<p class="clients"><span>${p.clients.length > 1 ? "Clients" : "Client"}</span>${p.clients.map(esc).join(" · ")}</p>` : ""}
+            <p class="description">${esc(p.description)}</p>`;
+    const toolsHtml = (p) => p.tools ? `<div class="tools">${p.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</div>` : "";
+
+    const galleryHtml = (p, i, label) => `
+        <article class="feature-card reveal" data-index="${i}">
+          <div class="feature-head">
+            <div>${featureHead(p, label)}</div>
+            ${toolsHtml(p)}
+          </div>
+          <div class="design-grid">
+            ${p.images.map((src, n) => `
+              <button class="design-item${n >= SHOWN_DESIGNS ? " extra" : ""}" type="button" data-n="${n}" aria-label="View ${isVideo(src) ? "video" : "design"} ${n + 1}">
+                ${isVideo(src)
+                  ? `<video src="images/${src}#t=0.5" muted loop playsinline preload="metadata"></video><span class="video-badge" aria-hidden="true">▶ Video</span>`
+                  : `<img src="images/${src}" alt="" loading="lazy" decoding="async" />`}
+                <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
+              </button>`).join("")}
+          </div>
+          ${p.images.length > SHOWN_DESIGNS ? `<button class="show-more" type="button" aria-expanded="false">View all ${p.images.length} designs</button>` : ""}
+        </article>`;
+
+    const resultsHtml = (p, i, label) => `
+        <article class="feature-card results-card reveal" data-index="${i}">
+          <div class="results-layout">
+            <div>
+              ${featureHead(p, label)}
+              <div class="stat-grid">
+                ${p.stats.map((s) => `
+                  <div class="stat-tile">
+                    <strong>${esc(s.value)}</strong>
+                    <span class="stat-label">${esc(s.label)}</span>
+                    <span class="stat-note">${esc(s.note)}</span>
+                  </div>`).join("")}
+              </div>
+              ${p.highlight ? `<p class="results-highlight">💡 ${esc(p.highlight)}</p>` : ""}
+              ${toolsHtml(p)}
+            </div>
+            <div class="shots">
+              ${p.images.map((src, n) => `
+                <button class="shot" type="button" data-n="${n}" aria-label="View analytics screenshot ${n + 1}">
+                  <img src="images/${src}" alt="" loading="lazy" decoding="async" />
+                  <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
+                </button>`).join("")}
+            </div>
+          </div>
+        </article>`;
+
+    const renderProject = (p, i, label) =>
+      p.layout === "gallery" ? galleryHtml(p, i, label) : p.layout === "results" ? resultsHtml(p, i, label) : cardHtml(p, i, label);
+
     document.getElementById("sections").innerHTML = categories.map((c, ci) => `
       <section class="service-section" id="${c.key}" aria-labelledby="${c.key}-title">
         <div class="container">
@@ -1575,7 +1889,7 @@
                   if (p.category !== c.key) return "";
                   const heading = p.group && p.group !== lastGroup ? `<h3 class="group-title reveal">${esc(p.group)}</h3>` : "";
                   lastGroup = p.group || null;
-                  return heading + cardHtml(p, i, c.label);
+                  return heading + renderProject(p, i, c.label);
                 }).join("");
               })()}
             </div>
@@ -1710,8 +2024,36 @@
     }, { rootMargin: "200px 0px" });
     sliders.forEach((s) => sliderObserver.observe(s.card));
 
+    /* ---------- Wide feature cards (design gallery + results) ---------- */
+    document.querySelectorAll(".feature-card").forEach((card) => {
+      const project = projects[Number(card.dataset.index)];
+      card.querySelectorAll("[data-n]").forEach((btn) =>
+        btn.addEventListener("click", () => openModal(project, Number(btn.dataset.n))));
+
+      const more = card.querySelector(".show-more");
+      if (more) {
+        more.addEventListener("click", () => {
+          const grid = card.querySelector(".design-grid");
+          const open = grid.classList.toggle("expanded");
+          more.setAttribute("aria-expanded", String(open));
+          more.textContent = open ? "Show fewer designs" : `View all ${project.images.length} designs`;
+          if (!open) card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
+        });
+      }
+    });
+
+    // Design videos play silently while they're on screen
+    const videoObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !reduceMotion) entry.target.play().catch(() => {});
+        else entry.target.pause();
+      });
+    }, { threshold: 0.4 });
+    document.querySelectorAll(".design-item video").forEach((v) => videoObserver.observe(v));
+
     /* ---------- Lightbox ---------- */
     const modalImage = document.getElementById("modalImage");
+    const modalVideo = document.getElementById("modalVideo");
     const modalCaption = document.getElementById("modalCaption");
     const prevButton = document.querySelector(".modal-prev");
     const nextButton = document.querySelector(".modal-next");
@@ -1722,7 +2064,18 @@
     const renderModal = (animate) => {
       const p = current.project;
       const update = () => {
-        modalImage.src = "images/" + p.images[current.index];
+        const src = p.images[current.index];
+        const video = isVideo(src);
+        modalVideo.pause();
+        modalImage.hidden = video;
+        modalVideo.hidden = !video;
+        if (video) {
+          modalVideo.src = "images/" + src;
+          modalVideo.play().catch(() => {});
+        } else {
+          modalVideo.removeAttribute("src");
+          modalImage.src = "images/" + src;
+        }
         modalImage.alt = `${p.title}, picture ${current.index + 1} of ${p.images.length}`;
         modalCaption.textContent = p.images.length > 1 ? `${p.title} · ${current.index + 1} / ${p.images.length}` : p.title;
         modalImage.classList.remove("is-fading");
@@ -1751,6 +2104,7 @@
     }
 
     const closeModal = () => {
+      modalVideo.pause();
       modal.classList.remove("open");
       document.body.style.overflow = "";
       lastFocus?.focus();
