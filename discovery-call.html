@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Keeps the page out of Google while it's only shared by link. Remove this line to let search engines list it. -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Book a Free Discovery Call | Maria Simbajon</title>
+  <meta name="description" content="Book a free, no-obligation 30-minute discovery call with Maria Simbajon, All-in-One Virtual Assistant." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --primary: #0B6E7F;
+      --primary-dark: #08515E;
+      --secondary: #19B4B4;
+      --background: #F4FCFC;
+      --card: #FFFFFF;
+      --text: #173042;
+      --muted: #5B7482;
+      --line: rgba(11, 110, 127, 0.12);
+      --container: 1180px;
+      --header-h: 72px;
+      --ease: cubic-bezier(.2, .7, .2, 1);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--background);
+      font-family: "Poppins", sans-serif;
+      overflow-x: hidden;
+    }
+
+    button { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 48px), var(--container));
+      margin: 0 auto;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid rgba(25, 180, 180, 0.6);
+      outline-offset: 3px;
+    }
+
+    /* ---------- Site header ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: #DAF4F4;
+      border-bottom: 1px solid rgba(11, 110, 127, 0.1);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: var(--header-h);
+    }
+
+    .brand { display: flex; flex: 0 0 auto; }
+    .brand img { display: block; width: 46px; height: auto; }
+
+    .main-nav {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .main-nav a {
+      padding: 8px 14px;
+      color: var(--text);
+      text-decoration: none;
+      border-radius: 999px;
+      font-size: 0.92rem;
+      font-weight: 500;
+      transition: color 0.25s ease, background 0.25s ease;
+    }
+
+    .main-nav a:hover { color: var(--primary); background: rgba(255, 255, 255, 0.7); }
+
+    .header-cta {
+      display: inline-flex;
+      flex: 0 0 auto;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 20px;
+      color: #fff;
+      text-decoration: none;
+      background: var(--primary);
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(25, 180, 180, 0.45);
+      font-size: 0.9rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.25s ease, transform 0.25s var(--ease), box-shadow 0.25s ease;
+    }
+
+    .header-cta:hover { background: var(--primary-dark); transform: translateY(-1px); }
+    .header-cta svg { width: 18px; height: 18px; }
+    .header-cta .cta-short { display: none; }
+
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      color: var(--text);
+      cursor: pointer;
+      background: none;
+      border: 0;
+    }
+
+    .menu-toggle svg { width: 34px; height: 34px; }
+
+    .drawer {
+      position: fixed;
+      z-index: 120;
+      inset: 0;
+      visibility: hidden;
+      background: rgba(9, 24, 34, 0);
+      transition: background 0.35s ease, visibility 0.35s;
+    }
+
+    .drawer.open { visibility: visible; background: rgba(9, 24, 34, 0.55); }
+
+    .drawer-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      flex-direction: column;
+      width: min(88vw, 380px);
+      padding: 18px 24px 28px;
+      background: #F6F8FA;
+      border-radius: 18px 0 0 18px;
+      box-shadow: -20px 0 60px rgba(9, 24, 34, 0.25);
+      transform: translateX(100%);
+      transition: transform 0.4s var(--ease);
+    }
+
+    .drawer.open .drawer-panel { transform: none; }
+
+    .drawer-close {
+      align-self: flex-end;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      color: var(--text);
+      cursor: pointer;
+      place-items: center;
+      background: none;
+      border: 0;
+    }
+
+    .drawer-close svg { width: 28px; height: 28px; }
+
+    .drawer nav { display: flex; flex-direction: column; margin-top: 4px; }
+
+    .drawer nav a {
+      padding: 16px 4px;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(11, 110, 127, 0.08);
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .drawer .header-cta { justify-content: center; margin-top: 28px; padding: 15px 20px; font-size: 1rem; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 84px 0 64px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(25, 180, 180, 0.18), transparent 32%),
+        radial-gradient(circle at 88% 60%, rgba(11, 110, 127, 0.12), transparent 30%),
+        linear-gradient(180deg, #f7ffff 0%, var(--background) 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--primary);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      width: 30px;
+      height: 2px;
+      content: "";
+      background: var(--secondary);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 1.05;
+    }
+
+    .hero h1 span { display: block; color: var(--primary); }
+
+    .hero-band {
+      display: inline-block;
+      margin-top: 26px;
+      padding: 12px 28px;
+      color: #fff;
+      background: var(--primary);
+      border-radius: 14px;
+      box-shadow: 0 14px 34px rgba(11, 110, 127, 0.25);
+      font-size: clamp(1.05rem, 2.4vw, 1.5rem);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 24px auto 0;
+      color: var(--muted);
+      font-size: clamp(0.98rem, 1.6vw, 1.1rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px 18px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 24px;
+      text-decoration: none;
+      border-radius: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: transform 0.3s var(--ease), box-shadow 0.3s ease, background 0.3s ease;
+    }
+
+    .btn svg { width: 22px; height: 22px; flex: 0 0 auto; }
+
+    .btn.primary {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 8px 26px rgba(25, 180, 180, 0.5);
+    }
+
+    .btn.primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
+
+    .btn.outline {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--primary);
+    }
+
+    .btn.outline:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 10px 26px rgba(11, 110, 127, 0.15); }
+
+    /* ---------- What happens on the call ---------- */
+    .section { padding: 64px 0; }
+
+    .section-title {
+      margin: 0 0 10px;
+      text-align: center;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+    }
+
+    .section-sub {
+      max-width: 560px;
+      margin: 0 auto 40px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .step {
+      padding: 28px 26px;
+      background: var(--card);
+      border: 1px solid rgba(11, 110, 127, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 14px 40px rgba(17, 76, 89, 0.08);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+    }
+
+    .step:hover { transform: translateY(-4px); box-shadow: 0 22px 50px rgba(17, 76, 89, 0.13); }
+
+    .step-icon {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      margin-bottom: 18px;
+      color: #fff;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 14px;
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    .step h3 { margin: 0 0 8px; font-size: 1.12rem; font-weight: 700; letter-spacing: -0.02em; }
+    .step p { margin: 0; color: var(--muted); font-size: 0.93rem; line-height: 1.65; }
+
+    /* ---------- Booking calendar ---------- */
+    .booking {
+      padding: 24px 0 72px;
+      scroll-margin-top: calc(var(--header-h) + 12px);
+    }
+
+    .booking-card {
+      padding: clamp(20px, 3vw, 36px);
+      background: var(--card);
+      border: 1px solid rgba(11, 110, 127, 0.1);
+      border-radius: 28px;
+      box-shadow: 0 30px 80px rgba(17, 76, 89, 0.09);
+    }
+
+    .booking-head { margin-bottom: 18px; text-align: center; }
+    .booking-head h2 { margin: 0; font-size: clamp(1.5rem, 2.6vw, 2rem); font-weight: 800; letter-spacing: -0.035em; }
+    .booking-head p { margin: 8px 0 0; color: var(--muted); font-size: 0.94rem; }
+
+    #my-cal-inline-discovery-call {
+      width: 100%;
+      min-height: 720px;
+      overflow: auto;
+    }
+
+    .booking-note {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 22px;
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    /* ---------- Prepare + FAQ ---------- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+    }
+
+    .panel {
+      padding: 30px 30px 26px;
+      background: var(--card);
+      border: 1px solid rgba(11, 110, 127, 0.1);
+      border-radius: 22px;
+      box-shadow: 0 14px 40px rgba(17, 76, 89, 0.07);
+    }
+
+    .panel h2 { margin: 0 0 16px; font-size: 1.35rem; font-weight: 800; letter-spacing: -0.03em; }
+
+    .checklist { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+
+    .checklist li {
+      position: relative;
+      padding-left: 30px;
+      color: #3F5867;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .checklist li::before {
+      position: absolute;
+      top: 1px;
+      left: 0;
+      color: var(--primary);
+      content: "✓";
+      font-weight: 700;
+    }
+
+    details {
+      border-bottom: 1px solid var(--line);
+    }
+
+    details:last-child { border-bottom: 0; }
+
+    summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+      cursor: pointer;
+      list-style: none;
+      font-size: 0.97rem;
+      font-weight: 600;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      flex: 0 0 auto;
+      color: var(--primary);
+      content: "+";
+      font-size: 1.4rem;
+      line-height: 1;
+      transition: transform 0.3s var(--ease);
+    }
+
+    details[open] summary::after { transform: rotate(45deg); }
+
+    details p { margin: 0 0 16px; color: var(--muted); font-size: 0.93rem; line-height: 1.7; }
+
+    /* ---------- Closing ---------- */
+    .cta {
+      padding: 72px 0 80px;
+      text-align: center;
+      background: #DAF4F4;
+    }
+
+    .cta h2 { margin: 0; font-size: clamp(1.7rem, 3.4vw, 2.6rem); font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; }
+    .cta h2 span { color: var(--primary); }
+    .cta p { max-width: 600px; margin: 18px auto 0; font-size: 1.02rem; line-height: 1.6; }
+    .cta .hero-actions { margin-top: 34px; }
+
+    .footer {
+      padding: 26px 0 34px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.8rem;
+      line-height: 1.8;
+    }
+
+    .footer strong { color: var(--primary); }
+
+    /* ---------- Reveal ---------- */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s var(--ease), transform 0.7s var(--ease); }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+      .main-nav { display: none; }
+      .site-header .container { gap: 12px; }
+      .site-header .header-cta { margin-left: auto; }
+      .menu-toggle { display: grid; place-items: center; }
+      .steps { grid-template-columns: 1fr; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 540px) {
+      :root { --header-h: 60px; }
+      .container { width: min(calc(100% - 32px), var(--container)); }
+      .brand img { width: 40px; }
+      .site-header .header-cta { padding: 9px 14px; border-radius: 10px; font-size: 0.82rem; }
+      .site-header .header-cta svg { width: 15px; height: 15px; }
+      .site-header .header-cta .cta-full { display: none; }
+      .site-header .header-cta .cta-short { display: inline; }
+      .hero { padding: 56px 0 44px; }
+      .hero-band { padding: 10px 18px; }
+      .btn { width: 100%; justify-content: center; }
+      .booking-card { padding: 14px 10px; border-radius: 22px; }
+      #my-cal-inline-discovery-call { min-height: 900px; }
+      .panel { padding: 24px 20px 20px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Site header -->
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" data-link="home" href="#"><img src="images/logo.png" alt="Maria Simbajon home" width="46" height="44" /></a>
+      <nav class="main-nav" aria-label="Main">
+        <a data-link="home" href="#">Home</a>
+        <a data-link="about" href="#">About</a>
+        <a data-link="services" href="#">Services</a>
+        <a href="index.html">My Portfolio</a>
+        <a data-link="pricing" href="#">Pricing</a>
+      </nav>
+      <a class="header-cta" href="#book">
+        <span class="cta-full">Book a Discovery Call</span><span class="cta-short">Book a Call</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-controls="drawer" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+      <button class="drawer-close" type="button" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+      </button>
+      <nav aria-label="Main">
+        <a data-link="home" href="#">Home</a>
+        <a data-link="about" href="#">About</a>
+        <a data-link="services" href="#">Services</a>
+        <a href="index.html">My Portfolio</a>
+        <a data-link="pricing" href="#">Pricing</a>
+      </nav>
+      <a class="header-cta" href="#book">
+        Book a Discovery Call
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container reveal">
+        <div class="eyebrow">Free Discovery Call</div>
+        <h1>Let's talk about<span>your business.</span></h1>
+        <div class="hero-band">Free, no obligation, 30 minutes.</div>
+        <p>A relaxed, friendly conversation about what's taking up your time, and how the right support could give it back to you.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#book">
+            Pick a Time That Suits You
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+          </a>
+          <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener">
+            Message Me on WhatsApp
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- What happens on the call -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title reveal">What Happens on the Call</h2>
+        <p class="section-sub reveal">Thirty minutes, just you and me. No scripts, no pressure.</p>
+        <div class="steps">
+          <article class="step reveal">
+            <div class="step-icon" aria-hidden="true">1</div>
+            <h3>We talk about your business</h3>
+            <p>What's taking up your time, and where support would actually help.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-icon" aria-hidden="true">2</div>
+            <h3>I share how I could help</h3>
+            <p>Based on what you tell me, not a generic pitch.</p>
+          </article>
+          <article class="step reveal">
+            <div class="step-icon" aria-hidden="true">3</div>
+            <h3>No pressure, no hard sell</h3>
+            <p>You'll leave with clarity, whether we work together or not.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking calendar -->
+    <section class="booking" id="book">
+      <div class="container">
+        <div class="booking-card reveal">
+          <div class="booking-head">
+            <h2>Choose a Time That Suits You</h2>
+            <p>Times are shown in your own time zone automatically.</p>
+          </div>
+
+          <!-- Cal inline embed code begins -->
+          <div id="my-cal-inline-discovery-call"></div>
+          <script type="text/javascript">
+            (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+            Cal("init", "discovery-call", {origin:"https://app.cal.com"});
+            Cal.config = Cal.config || {};
+            Cal.config.forwardQueryParams = true;
+
+            Cal.ns["discovery-call"]("inline", {
+              elementOrSelector:"#my-cal-inline-discovery-call",
+              config: {"layout":"month_view","useSlotsViewOnSmallScreen":"true","theme":"light"},
+              calLink: "maria-simbajon-gt09iq/discovery-call",
+            });
+
+            Cal.ns["discovery-call"]("ui", {"theme":"light","cssVarsPerTheme":{"light":{"cal-brand":"#0B6E7F"}},"hideEventTypeDetails":false,"layout":"month_view"});
+          </script>
+          <!-- Cal inline embed code ends -->
+
+          <div class="booking-note">
+            <span>🎥 Google Meet</span>
+            <span>⏱ 30 minutes</span>
+            <span>📩 Confirmation email with a calendar invitation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prepare + FAQ -->
+    <section class="section" style="padding-top: 8px;">
+      <div class="container two-col">
+        <div class="panel reveal">
+          <h2>Helpful to Think About</h2>
+          <p style="margin: 0 0 16px; color: var(--muted); font-size: 0.93rem; line-height: 1.7;">There's nothing you need to prepare, but if you'd like to get the most out of our time together:</p>
+          <ul class="checklist">
+            <li>The tasks that take up most of your day</li>
+            <li>The tools and apps you currently use</li>
+            <li>What you'd love to hand off first</li>
+            <li>Any questions you'd like to ask me about my services</li>
+          </ul>
+        </div>
+
+        <div class="panel reveal">
+          <h2>Good to Know</h2>
+          <details>
+            <summary>Is the call really free?</summary>
+            <p>Yes. It's completely free and there's no obligation to work together afterwards.</p>
+          </details>
+          <details>
+            <summary>Which time zone are the times in?</summary>
+            <p>The calendar shows times in your own time zone automatically, and your confirmation email and calendar invitation use your local time too.</p>
+          </details>
+          <details>
+            <summary>How do we meet?</summary>
+            <p>On Google Meet. The link is in your confirmation email, and you can join from your computer, tablet or phone.</p>
+          </details>
+          <details>
+            <summary>What if I need to reschedule?</summary>
+            <p>No problem at all. Use the reschedule link in your confirmation email, or message me on WhatsApp.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Closing -->
+    <section class="cta">
+      <div class="container reveal">
+        <h2><span>Not ready to book yet?</span> Let's just chat.</h2>
+        <p>Have a quick question first? Send me a message, or have a look at my recent work.</p>
+        <div class="hero-actions">
+          <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener">
+            Message Me on WhatsApp
+            <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+          </a>
+          <a class="btn primary" href="index.html">
+            View My Portfolio
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <strong>Maria Simbajon</strong> · All-in-One Virtual Assistant<br />
+      WhatsApp +63 909 492 8860 · simbajonmaria89@gmail.com
+    </div>
+  </footer>
+
+  <!-- Elfsight WhatsApp Chat (floating button) -->
+  <script src="https://elfsightcdn.com/platform.js" async></script>
+  <div class="elfsight-app-4ed2b3b1-71ff-4271-ad11-68c432ed63f1" data-elfsight-app-lazy></div>
+
+  <script>
+    /* Links back to Maria's main website (same addresses as the portfolio) */
+    const SITE = "https://yverielsimbajon.wixstudio.com/mariasimbajon-va";
+    const withSection = (section) => { const u = new URL(SITE); u.searchParams.set("section", section); return u.href; };
+    const SITE_LINKS = {
+      home: SITE,
+      about: withSection("about"),
+      services: withSection("services"),
+      pricing: withSection("pricing")
+    };
+    document.querySelectorAll("[data-link]").forEach((a) => (a.href = SITE_LINKS[a.dataset.link]));
+
+    const WHATSAPP_URL = "https://wa.me/639094928860?text=" + encodeURIComponent("Hi Maria, I'd like to know more about your services.");
+    document.querySelectorAll(".whatsapp-link").forEach((a) => (a.href = WHATSAPP_URL));
+
+    /* Mobile menu */
+    const drawer = document.getElementById("drawer");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const setDrawer = (open) => {
+      drawer.classList.toggle("open", open);
+      drawer.setAttribute("aria-hidden", String(!open));
+      menuToggle.setAttribute("aria-expanded", String(open));
+      document.body.style.overflow = open ? "hidden" : "";
+      if (open) drawer.querySelector(".drawer-close").focus(); else menuToggle.focus();
+    };
+    menuToggle.addEventListener("click", () => setDrawer(true));
+    drawer.querySelector(".drawer-close").addEventListener("click", () => setDrawer(false));
+    drawer.addEventListener("click", (e) => { if (e.target === drawer) setDrawer(false); });
+    drawer.querySelectorAll('a[href="#book"]').forEach((a) => a.addEventListener("click", () => setDrawer(false)));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && drawer.classList.contains("open")) setDrawer(false); });
+
+    /* Fade up on scroll */
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
+    document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+  </script>
+</body>
+</html>
