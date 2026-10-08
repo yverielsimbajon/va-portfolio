@@ -797,6 +797,135 @@
 
     .show-more:hover { color: #fff; background: var(--primary); transform: translateY(-1px); }
 
+    /* ---------- Reels in phone frames ---------- */
+    .reels-row {
+      display: flex;
+      justify-content: center;
+      gap: clamp(18px, 4vw, 52px);
+      margin-top: 32px;
+      padding: 6px 0 10px;
+    }
+
+    .phone {
+      position: relative;
+      flex: 0 1 252px;
+      min-width: 0;
+      aspect-ratio: 9 / 18.6;
+      padding: 9px;
+      background: linear-gradient(145deg, #3a3f47 0%, #15181c 45%, #0b0d10 100%);
+      border-radius: 44px;
+      box-shadow:
+        inset 0 0 0 1.5px rgba(255, 255, 255, 0.12),
+        0 26px 50px rgba(9, 24, 34, 0.28),
+        0 8px 18px rgba(9, 24, 34, 0.16);
+      transition: transform 0.5s var(--ease);
+    }
+
+    .phone:hover { transform: translateY(-6px); }
+
+    /* Side buttons */
+    .phone::before,
+    .phone::after {
+      position: absolute;
+      width: 3px;
+      background: #23272d;
+      border-radius: 2px;
+      content: "";
+    }
+    .phone::before { top: 24%; right: -3px; height: 64px; }
+    .phone::after { top: 18%; left: -3px; height: 42px; box-shadow: 0 58px 0 #23272d; }
+
+    .phone-screen {
+      position: relative;
+      height: 100%;
+      overflow: hidden;
+      cursor: pointer;
+      background: #000;
+      border-radius: 35px;
+    }
+
+    .phone-screen video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .phone-island {
+      position: absolute;
+      top: 9px;
+      left: 50%;
+      z-index: 3;
+      width: 32%;
+      height: 22px;
+      background: #000;
+      border-radius: 999px;
+      transform: translateX(-50%);
+    }
+
+    /* Instagram/Facebook-style overlay */
+    .reel-top,
+    .reel-bottom {
+      position: absolute;
+      right: 0;
+      left: 0;
+      z-index: 2;
+      color: #fff;
+      pointer-events: none;
+    }
+
+    .reel-top {
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 40px 12px 26px 14px;
+      background: linear-gradient(rgba(0, 0, 0, 0.45), transparent);
+    }
+
+    .reel-top strong { font-size: 0.95rem; font-weight: 700; letter-spacing: -0.01em; }
+
+    .reel-sound {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 11px;
+      color: #fff;
+      cursor: pointer;
+      pointer-events: auto;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      border-radius: 999px;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 600;
+      backdrop-filter: blur(6px);
+      transition: background 0.25s ease, transform 0.25s var(--ease);
+    }
+
+    .reel-sound svg { width: 15px; height: 15px; flex: none; }
+    .reel-sound:hover { transform: scale(1.05); }
+    .reel-sound[aria-pressed="true"] { background: var(--primary); border-color: transparent; }
+
+    .reel-bottom {
+      bottom: 0;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 40px 12px 18px 14px;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
+    }
+
+    .reel-account { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 0.78rem; font-weight: 600; }
+    .reel-account img { width: 28px; height: 28px; flex: none; object-fit: cover; background: #fff; border: 1.5px solid #fff; border-radius: 50%; }
+    .reel-account span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+    .reel-actions { display: flex; flex-direction: column; gap: 14px; }
+    .reel-actions svg { display: block; width: 21px; height: 21px; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4)); }
+
+    .reels-hint { display: none; }
+
     .results-card {
       background:
         radial-gradient(circle at 100% 0%, rgba(25, 180, 180, 0.12), transparent 40%),
@@ -1282,6 +1411,32 @@
       .stat-tile { padding: 14px 12px; }
       .shots { gap: 8px; }
       .shot:nth-child(2) { transform: none; }
+
+      /* Reels: swipe sideways, the next phone peeks in */
+      .reels-row {
+        justify-content: flex-start;
+        gap: 16px;
+        margin-right: calc(-1 * clamp(22px, 3vw, 34px));
+        margin-left: calc(-1 * clamp(22px, 3vw, 34px));
+        padding: 6px clamp(22px, 3vw, 34px) 14px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+      .reels-row::-webkit-scrollbar { display: none; }
+      .phone { flex: 0 0 78%; scroll-snap-align: center; }
+      .reel-top { padding-right: 10px; padding-left: 12px; }
+      .reel-top strong { font-size: 0.85rem; }
+      .reel-sound { padding: 6px 9px; font-size: 0.68rem; white-space: nowrap; }
+      .phone:hover { transform: none; }
+      .reels-hint {
+        display: block;
+        margin: 6px 0 0;
+        color: var(--muted);
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 600;
+      }
     }
 
     @media (max-width: 800px) {
@@ -1646,6 +1801,16 @@
       },
       {
         category: "social",
+        layout: "reels",     // full-width card with reels playing inside phone frames
+        title: "Facebook Reels, I Edit For You",
+        clients: ["The Kerbing King"],
+        description: "Short, scroll-stopping Reels with before-and-after transformations, bold captions and music, edited to showcase the work and bring in local enquiries.",
+        account: { name: "The Kerbing King", avatar: "logo-kerbing-king-icon.jpg" },
+        tools: ["Canva", "Meta Business Suite", "Facebook", "Instagram"],
+        images: ["reel-1.mp4", "reel-2.mp4", "reel-3.mp4"]
+      },
+      {
+        category: "social",
         title: "Brand Identity Design",
         clients: ["The Kerbing King"],
         description: "Logos, promotional materials and visual identity elements for a consistent, professional brand across digital platforms.",
@@ -1870,8 +2035,48 @@
           </div>
         </article>`;
 
+    const soundIcon = {
+      off: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M23 9l-6 6M17 9l6 6"/></svg>',
+      on: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>'
+    };
+    const reelActions = `
+                    <div class="reel-actions">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 6.6a4.5 4.5 0 0 1 8 2.9c0 6.1-8 11-8 11z"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg>
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L2 10.5l8 3 3 8L22 3z"/><path d="M10 13.5L22 3"/></svg>
+                    </div>`;
+
+    const reelsHtml = (p, i, label) => `
+        <article class="feature-card reveal" data-index="${i}">
+          <div class="feature-head">
+            <div>${featureHead(p, label)}</div>
+            ${toolsHtml(p)}
+          </div>
+          <div class="reels-row">
+            ${p.images.map((src, n) => `
+              <div class="phone">
+                <div class="phone-screen" role="button" tabindex="0" aria-label="Reel ${n + 1}: turn sound on or off">
+                  <span class="phone-island" aria-hidden="true"></span>
+                  <video src="images/${src}" poster="images/${src.replace(/\.mp4$/i, ".jpg")}" muted loop playsinline preload="metadata"></video>
+                  <div class="reel-top">
+                    <strong>Reels</strong>
+                    <button class="reel-sound" type="button" aria-pressed="false">${soundIcon.off}<span>Tap for sound</span></button>
+                  </div>
+                  <div class="reel-bottom" aria-hidden="true">
+                    ${p.account ? `<div class="reel-account"><img src="images/${esc(p.account.avatar)}" alt="" /><span>${esc(p.account.name)}</span></div>` : "<div></div>"}
+                    ${reelActions}
+                  </div>
+                </div>
+              </div>`).join("")}
+          </div>
+          <p class="reels-hint">Swipe to see more reels →</p>
+        </article>`;
+
     const renderProject = (p, i, label) =>
-      p.layout === "gallery" ? galleryHtml(p, i, label) : p.layout === "results" ? resultsHtml(p, i, label) : cardHtml(p, i, label);
+      p.layout === "gallery" ? galleryHtml(p, i, label)
+        : p.layout === "results" ? resultsHtml(p, i, label)
+        : p.layout === "reels" ? reelsHtml(p, i, label)
+        : cardHtml(p, i, label);
 
     document.getElementById("sections").innerHTML = categories.map((c, ci) => `
       <section class="service-section" id="${c.key}" aria-labelledby="${c.key}-title">
@@ -2057,6 +2262,44 @@
       });
     }, { threshold: 0.4 });
     document.querySelectorAll(".design-item video").forEach((v) => videoObserver.observe(v));
+
+    /* ---------- Reels: autoplay without sound, one sound button per phone ---------- */
+    const reels = [...document.querySelectorAll(".phone")].map((phone) => ({
+      video: phone.querySelector("video"),
+      button: phone.querySelector(".reel-sound")
+    }));
+    const showSound = (r) => {
+      const on = !r.video.muted;
+      r.button.setAttribute("aria-pressed", String(on));
+      r.button.innerHTML = on ? `${soundIcon.on}<span>Sound on</span>` : `${soundIcon.off}<span>Tap for sound</span>`;
+    };
+    // Only one reel plays with sound at a time
+    const toggleSound = (r) => {
+      const turnOn = r.video.muted;
+      reels.forEach((other) => { other.video.muted = true; showSound(other); });
+      r.video.muted = !turnOn;
+      if (turnOn && r.video.paused) r.video.play().catch(() => {});
+      showSound(r);
+    };
+    reels.forEach((r) => {
+      const screen = r.video.closest(".phone-screen");
+      r.button.addEventListener("click", (e) => { e.stopPropagation(); toggleSound(r); });
+      screen.addEventListener("click", () => toggleSound(r));
+      screen.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleSound(r); } });
+    });
+    const reelObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting && (!reduceMotion || !video.muted)) video.play().catch(() => {});
+        else if (!entry.isIntersecting) {
+          video.pause();
+          // Scrolled away: go quiet again
+          const r = reels.find((x) => x.video === video);
+          if (r && !video.muted) { video.muted = true; showSound(r); }
+        }
+      });
+    }, { threshold: 0.5 });
+    reels.forEach((r) => reelObserver.observe(r.video));
 
     /* ---------- Lightbox ---------- */
     const modalImage = document.getElementById("modalImage");
