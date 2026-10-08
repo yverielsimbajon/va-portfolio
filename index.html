@@ -926,6 +926,69 @@
 
     .reels-hint { display: none; }
 
+    /* Mobile only: arrows + "1 / 3" above and below the phones, and a swipe hint */
+    .reels-stage { position: relative; }
+    .reels-row { position: relative; }
+
+    .reels-nav {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .reels-arrow {
+      display: grid;
+      width: 44px;
+      height: 44px;
+      padding: 0;
+      color: #fff;
+      cursor: pointer;
+      place-items: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border: 0;
+      border-radius: 50%;
+      box-shadow: 0 8px 18px rgba(11, 110, 127, 0.25);
+      transition: opacity 0.25s ease, transform 0.25s var(--ease);
+    }
+
+    .reels-arrow svg { width: 20px; height: 20px; }
+    .reels-arrow:active { transform: scale(0.92); }
+    .reels-arrow:disabled { cursor: default; opacity: 0.3; box-shadow: none; }
+
+    .reels-count {
+      min-width: 92px;
+      color: var(--text);
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .reels-count b { color: var(--primary); font-size: 1.15rem; }
+
+    .swipe-hint {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: 5;
+      display: none;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      color: #fff;
+      pointer-events: none;
+      background: rgba(9, 24, 34, 0.78);
+      border-radius: 999px;
+      box-shadow: 0 10px 26px rgba(9, 24, 34, 0.3);
+      font-size: 0.95rem;
+      font-weight: 700;
+      backdrop-filter: blur(6px);
+      transform: translate(-50%, -50%);
+    }
+
+    .swipe-hint svg { width: 20px; height: 20px; }
+
     .results-card {
       background:
         radial-gradient(circle at 100% 0%, rgba(25, 180, 180, 0.12), transparent 40%),
@@ -1429,15 +1492,33 @@
       .reel-top strong { font-size: 0.85rem; }
       .reel-sound { padding: 6px 9px; font-size: 0.68rem; white-space: nowrap; }
       .phone:hover { transform: none; }
+      .reels-row { margin-top: 14px; }
+      .reels-nav { display: flex; }
       .reels-hint {
         display: block;
-        margin: 6px 0 0;
+        margin: 4px 0 0;
         color: var(--muted);
         text-align: center;
         font-size: 0.8rem;
         font-weight: 600;
       }
+
+      /* "Swipe" hint: the phones slide a little to the left, twice */
+      .reels-stage.hinting .phone { animation: reelNudge 1.5s var(--ease) 2; }
+      .reels-stage.hinting .swipe-hint { display: inline-flex; animation: hintFade 3s ease both; }
+      .reels-stage.hinting .swipe-hint svg { animation: hintArrow 0.75s ease-in-out infinite alternate; }
     }
+
+    @keyframes reelNudge {
+      0%, 100% { transform: none; }
+      35%, 55% { transform: translateX(-56px); }
+    }
+    @keyframes hintFade {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+      12%, 85% { opacity: 1; transform: translate(-50%, -50%); }
+      100% { opacity: 0; transform: translate(-50%, -50%); }
+    }
+    @keyframes hintArrow { to { transform: translateX(6px); } }
 
     @media (max-width: 800px) {
       .hero { padding: 86px 0 62px; }
@@ -2046,12 +2127,22 @@
                       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L2 10.5l8 3 3 8L22 3z"/><path d="M10 13.5L22 3"/></svg>
                     </div>`;
 
+    const reelsNav = (count) => `
+          <div class="reels-nav">
+            <button class="reels-arrow reels-prev" type="button" aria-label="Previous reel" disabled>${icon.prev}</button>
+            <span class="reels-count" aria-live="polite">Reel <b>1</b> / ${count}</span>
+            <button class="reels-arrow reels-next" type="button" aria-label="Next reel">${icon.next}</button>
+          </div>`;
+
     const reelsHtml = (p, i, label) => `
         <article class="feature-card reveal" data-index="${i}">
           <div class="feature-head">
             <div>${featureHead(p, label)}</div>
             ${toolsHtml(p)}
           </div>
+          ${reelsNav(p.images.length)}
+          <div class="reels-stage">
+          <span class="swipe-hint" aria-hidden="true">Swipe ${icon.next}</span>
           <div class="reels-row">
             ${p.images.map((src, n) => `
               <div class="phone">
@@ -2069,7 +2160,9 @@
                 </div>
               </div>`).join("")}
           </div>
-          <p class="reels-hint">Swipe to see more reels →</p>
+          </div>
+          ${reelsNav(p.images.length)}
+          <p class="reels-hint">Swipe or tap the arrows to see more reels</p>
         </article>`;
 
     const renderProject = (p, i, label) =>
@@ -2300,6 +2393,59 @@
       });
     }, { threshold: 0.5 });
     reels.forEach((r) => reelObserver.observe(r.video));
+
+    /* ---------- Reels on phones: arrows, "Reel 1 / 3" and a one-time swipe hint ---------- */
+    document.querySelectorAll(".reels-stage").forEach((stage) => {
+      const card = stage.closest(".feature-card");
+      const row = stage.querySelector(".reels-row");
+      const phones = [...row.querySelectorAll(".phone")];
+      const counts = card.querySelectorAll(".reels-count b");
+      const prevs = card.querySelectorAll(".reels-prev");
+      const nexts = card.querySelectorAll(".reels-next");
+
+      // The reel closest to the middle of the row is the one being watched
+      const currentIndex = () => {
+        const middle = row.scrollLeft + row.clientWidth / 2;
+        let best = 0;
+        phones.forEach((ph, n) => {
+          const d = Math.abs(ph.offsetLeft + ph.offsetWidth / 2 - middle);
+          if (d < Math.abs(phones[best].offsetLeft + phones[best].offsetWidth / 2 - middle)) best = n;
+        });
+        return best;
+      };
+      const update = () => {
+        const n = currentIndex();
+        counts.forEach((b) => (b.textContent = n + 1));
+        prevs.forEach((b) => (b.disabled = n === 0));
+        nexts.forEach((b) => (b.disabled = n === phones.length - 1));
+      };
+      const goTo = (n) => {
+        const ph = phones[Math.max(0, Math.min(phones.length - 1, n))];
+        row.scrollTo({ left: ph.offsetLeft - (row.clientWidth - ph.offsetWidth) / 2, behavior: reduceMotion ? "auto" : "smooth" });
+      };
+      prevs.forEach((b) => b.addEventListener("click", () => { stopHint(); goTo(currentIndex() - 1); }));
+      nexts.forEach((b) => b.addEventListener("click", () => { stopHint(); goTo(currentIndex() + 1); }));
+      let frame = null;
+      row.addEventListener("scroll", () => {
+        if (frame) return;
+        frame = requestAnimationFrame(() => { frame = null; update(); });
+      }, { passive: true });
+
+      // Show the swipe hint once, the first time the reels come on screen (phones only)
+      let hintTimer = null;
+      const stopHint = () => { clearTimeout(hintTimer); stage.classList.remove("hinting"); };
+      row.addEventListener("touchstart", stopHint, { passive: true });
+      const hintObserver = new IntersectionObserver((entries) => {
+        if (!entries[0].isIntersecting) return;
+        hintObserver.disconnect();
+        if (reduceMotion || !window.matchMedia("(max-width: 600px)").matches) return;
+        setTimeout(() => {
+          stage.classList.add("hinting");
+          hintTimer = setTimeout(stopHint, 3200);
+        }, 600);
+      }, { threshold: 0.6 });
+      hintObserver.observe(row);
+    });
 
     /* ---------- Lightbox ---------- */
     const modalImage = document.getElementById("modalImage");
