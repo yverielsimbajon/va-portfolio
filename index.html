@@ -173,22 +173,19 @@
     }
     .hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
     .hero-video video { cursor: pointer; }
-    /* Top-right corner, so it never covers the captions at the bottom */
+    /* Icon only, top-right corner, so it never covers the captions at the bottom */
     .sound-btn {
       position: absolute;
       top: 12px;
       right: 12px;
       z-index: 2;
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 6px 15px 6px 6px;
+      display: grid;
+      place-items: center;
+      padding: 5px;
       border: 0;
-      border-radius: 999px;
-      background: rgba(4, 34, 43, 0.88);
+      border-radius: 50%;
+      background: rgba(4, 34, 43, 0.6);
       color: #fff;
-      font-size: 0.82rem;
-      font-weight: 600;
       cursor: pointer;
       -webkit-backdrop-filter: blur(6px);
       backdrop-filter: blur(6px);
@@ -1624,7 +1621,7 @@
       .hero h1 { font-size: clamp(2.8rem, 15vw, 4.3rem); }
       .hero-stat { gap: 16px; }
       .stat { padding-right: 16px; }
-      .sound-btn { top: 8px; right: 8px; gap: 7px; padding: 4px 12px 4px 4px; font-size: 0.74rem; }
+      .sound-btn { top: 8px; right: 8px; padding: 4px; }
       .sound-btn .ico { width: 26px; height: 26px; }
       .sound-btn svg { width: 15px; height: 15px; }
       .service-panel { padding: 22px 16px; border-radius: 24px; }
@@ -1709,12 +1706,11 @@
       <!-- Intro video: autoplays muted on a loop (browsers only allow sound after a tap) -->
       <div class="hero-video">
         <video id="introVideo" src="images/intro.mp4" poster="images/intro-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Intro video: Maria Simbajon, Virtual Assistant"></video>
-        <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false">
+        <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="Turn sound on" title="Turn sound on">
           <span class="ico" aria-hidden="true">
             <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
             <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
           </span>
-          <span class="label">Tap for sound</span>
         </button>
       </div>
       <div class="hero-stat" aria-label="Portfolio highlights">
@@ -2677,22 +2673,27 @@
     });
 
     /* ---------- Hero intro video ----------
-       Starts muted (browsers block autoplay with sound). "Tap for sound" restarts it from the
+       Starts muted (browsers block autoplay with sound). The sound icon restarts it from the
        beginning with audio; it pauses when scrolled out of view or when the tab is hidden. */
     (() => {
       const video = document.getElementById("introVideo");
       const btn = document.getElementById("soundBtn");
       if (!video || !btn) return;
-      const label = btn.querySelector(".label");
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       let inView = true;
 
-      const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+      // If the browser still refuses to play with sound, fall back to muted so the video keeps playing
+      const play = () => {
+        const p = video.play();
+        if (p && p.catch) p.catch(() => { if (!video.muted) { video.muted = true; setState(); video.play().catch(() => {}); } });
+      };
       const setState = () => {
         const on = !video.muted;
+        const text = on ? "Mute" : "Turn sound on";
         btn.classList.toggle("on", on);
         btn.setAttribute("aria-pressed", String(on));
-        label.textContent = on ? "Mute" : (reduceMotion && video.paused ? "Play with sound" : "Tap for sound");
+        btn.setAttribute("aria-label", text);
+        btn.title = text;
       };
 
       if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
