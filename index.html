@@ -146,6 +146,77 @@
       font-size: 0.78rem;
     }
 
+    /* ---------- Hero layout + intro video ----------
+       Desktop: text on the left, video on the right. Phones/tablets: text, then video, then stats. */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, min(46%, 580px));
+      grid-template-areas: "text video" "stat video";
+      grid-template-rows: auto auto;
+      column-gap: clamp(32px, 4vw, 64px);
+    }
+    .hero-text { grid-area: text; align-self: end; }
+    .hero-grid .hero-stat { grid-area: stat; align-self: start; }
+    .hero-video {
+      grid-area: video;
+      align-self: center;
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: #041F28;
+      border: 1px solid rgba(11, 110, 127, 0.18);
+      box-shadow: var(--shadow-hover);
+    }
+    .hero-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .sound-btn {
+      position: absolute;
+      right: 12px;
+      bottom: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 6px 15px 6px 6px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(4, 34, 43, 0.88);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(4, 34, 43, 0.35);
+      transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+    }
+    .sound-btn:hover { background: var(--primary); transform: translateY(-1px); }
+    .sound-btn:focus-visible { outline: 3px solid var(--secondary); outline-offset: 3px; }
+    .sound-btn .ico {
+      display: grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+    .sound-btn svg { width: 17px; height: 17px; }
+    .sound-btn .ico-on { display: none; }
+    .sound-btn.on .ico-on { display: block; }
+    .sound-btn.on .ico-off { display: none; }
+    .sound-btn:not(.on) .ico { animation: soundPulse 2s ease-out infinite; }
+    @keyframes soundPulse {
+      0% { box-shadow: 0 0 0 0 rgba(25, 180, 180, 0.6); }
+      70%, 100% { box-shadow: 0 0 0 12px rgba(25, 180, 180, 0); }
+    }
+    @media (min-width: 1001px) {
+      .hero h1 { font-size: clamp(2.8rem, 5.4vw, 5.4rem); }
+    }
+    @media (max-width: 1000px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr); grid-template-areas: "text" "video" "stat"; }
+      .hero-video { width: min(100%, 640px); margin-top: 34px; }
+      .hero-grid .hero-stat { margin-top: 34px; }
+    }
+
     /* ---------- Site header (links back to the main Wix website) ---------- */
     .site-header {
       position: sticky;
@@ -1547,6 +1618,9 @@
       .hero h1 { font-size: clamp(2.8rem, 15vw, 4.3rem); }
       .hero-stat { gap: 16px; }
       .stat { padding-right: 16px; }
+      .sound-btn { right: 8px; bottom: 8px; gap: 7px; padding: 4px 12px 4px 4px; font-size: 0.74rem; }
+      .sound-btn .ico { width: 26px; height: 26px; }
+      .sound-btn svg { width: 15px; height: 15px; }
       .service-panel { padding: 22px 16px; border-radius: 24px; }
       .project-content { padding: 22px 20px 24px; }
       .media { aspect-ratio: 4 / 3; }
@@ -1617,13 +1691,26 @@
   </div>
 
   <header class="hero" id="top">
-    <div class="container">
-      <div class="eyebrow">Maria Simbajon · Virtual Assistant</div>
-      <h1>PORTFOLIO<span>Real Projects. Real Business Results.</span></h1>
-      <p class="hero-copy">
-        A curated collection of operational systems, client support, websites, social media and automation work
-        built for real businesses, designed to help teams work with more clarity, consistency, and confidence.
-      </p>
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow">Maria Simbajon · Virtual Assistant</div>
+        <h1>PORTFOLIO<span>Real Projects. Real Business Results.</span></h1>
+        <p class="hero-copy">
+          A curated collection of operational systems, client support, websites, social media and automation work
+          built for real businesses, designed to help teams work with more clarity, consistency, and confidence.
+        </p>
+      </div>
+      <!-- Intro video: autoplays muted on a loop (browsers only allow sound after a tap) -->
+      <div class="hero-video">
+        <video id="introVideo" src="images/intro.mp4" poster="images/intro-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Intro video: Maria Simbajon, Virtual Assistant"></video>
+        <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false">
+          <span class="ico" aria-hidden="true">
+            <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+            <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+          </span>
+          <span class="label">Tap for sound</span>
+        </button>
+      </div>
       <div class="hero-stat" aria-label="Portfolio highlights">
         <div class="stat"><strong id="projectCount">21</strong><span>Featured Projects</span></div>
         <div class="stat"><strong>6</strong><span>Service Areas</span></div>
@@ -2582,6 +2669,52 @@
       if (Math.abs(dx) > 50) step(dx < 0 ? 1 : -1);
       touchX = null;
     });
+
+    /* ---------- Hero intro video ----------
+       Starts muted (browsers block autoplay with sound). "Tap for sound" restarts it from the
+       beginning with audio; it pauses when scrolled out of view or when the tab is hidden. */
+    (() => {
+      const video = document.getElementById("introVideo");
+      const btn = document.getElementById("soundBtn");
+      if (!video || !btn) return;
+      const label = btn.querySelector(".label");
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let inView = true;
+
+      const play = () => { const p = video.play(); if (p && p.catch) p.catch(() => {}); };
+      const setState = () => {
+        const on = !video.muted;
+        btn.classList.toggle("on", on);
+        btn.setAttribute("aria-pressed", String(on));
+        label.textContent = on ? "Mute" : (reduceMotion && video.paused ? "Play with sound" : "Tap for sound");
+      };
+
+      if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
+      setState();
+
+      btn.addEventListener("click", () => {
+        if (video.muted || video.paused) {
+          video.muted = false;
+          if (video.paused || btn.dataset.started !== "1") video.currentTime = 0;
+          btn.dataset.started = "1";
+          play();
+        } else {
+          video.muted = true;
+        }
+        setState();
+      });
+
+      new IntersectionObserver((entries) => {
+        inView = entries[0].isIntersecting;
+        if (!inView) video.pause();
+        else if (!reduceMotion || btn.dataset.started === "1") play();
+      }, { threshold: 0.35 }).observe(video);
+
+      document.addEventListener("visibilitychange", () => {
+        if (document.hidden) video.pause();
+        else if (inView && (!reduceMotion || btn.dataset.started === "1")) play();
+      });
+    })();
   </script>
 </body>
 </html>
