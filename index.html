@@ -1275,6 +1275,10 @@
 
     .modal img.is-fading { opacity: 0; }
 
+    /* Only the picture OR the video shows, never an empty player under a photo */
+    .modal img[hidden],
+    .modal video[hidden] { display: none; }
+
     .modal-caption {
       margin-top: 14px;
       color: rgba(255, 255, 255, 0.88);
