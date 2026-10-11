@@ -31,6 +31,9 @@
       --text: #173042;
       --muted: #5B7482;
       --deep: #052F38;
+      --warn: #DC3B36;
+      --warn-dark: #B3241F;
+      --gold: #FFC23D;
       --line: rgba(11, 110, 127, 0.12);
       --shadow: 0 14px 40px rgba(17, 76, 89, 0.09);
       --shadow-hover: 0 24px 60px rgba(17, 76, 89, 0.16);
@@ -100,10 +103,10 @@
     .section-title h2,
     .split-title h2 {
       margin: 0;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      font-weight: 800;
-      letter-spacing: -0.045em;
-      line-height: 1.08;
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
     }
 
     h2 { text-wrap: balance; }
@@ -160,6 +163,7 @@
     }
 
     .btn svg { width: 22px; height: 22px; flex: 0 0 auto; transition: transform 0.3s var(--ease); }
+    .btn .wa-ico { width: 24px; height: 24px; }
 
     .btn.primary {
       color: #fff;
@@ -448,10 +452,10 @@
 
     .hero h1 {
       margin: 0;
-      font-size: clamp(2.5rem, 4.4vw, 4.1rem);
-      font-weight: 800;
-      letter-spacing: -0.055em;
-      line-height: 1.03;
+      font-size: clamp(2.4rem, 4.2vw, 3.9rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
     }
 
     .hero h1 .handled {
@@ -459,7 +463,7 @@
       display: inline-block;
       color: var(--primary);
       font-style: italic;
-      font-weight: 700;
+      font-weight: 600;
     }
 
     /* Hand-drawn underline under "handled." */
@@ -504,58 +508,56 @@
 
     .hero-stats strong {
       display: block;
+      margin-bottom: 4px;
       color: var(--primary);
-      font-size: 1.6rem;
-      font-weight: 800;
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      font-weight: 700;
       letter-spacing: -0.03em;
+      line-height: 1;
     }
 
-    .hero-stats span { color: var(--muted); font-size: 0.8rem; }
+    .hero-stats span { display: block; color: var(--text); font-size: 0.86rem; font-weight: 500; line-height: 1.35; }
 
-    /* Portrait with floating cards */
+    /* Graduation photo in an arch frame with floating cards (cards stay below the face) */
     .hero-visual {
       position: relative;
-      align-self: end;
+      align-self: center;
       display: flex;
       justify-content: center;
-      min-height: 520px;
+      padding: 8px 0 72px;
     }
 
     .hero-visual::before {
       position: absolute;
+      top: 34px;
       left: 50%;
-      bottom: -12%;
-      width: min(108%, 560px);
-      aspect-ratio: 1;
+      width: min(78%, 420px);
+      aspect-ratio: 4 / 5;
       content: "";
-      border-radius: 50%;
-      background: radial-gradient(circle at 35% 30%, #22c3c3 0%, var(--primary) 55%, var(--primary-dark) 100%);
-      box-shadow: 0 40px 90px rgba(11, 110, 127, 0.3);
-      transform: translateX(-50%);
+      background: var(--secondary);
+      border-radius: 50% 50% 28px 28px / 40% 40% 28px 28px;
+      opacity: 0.22;
+      transform: translateX(-42%);
     }
 
-    .hero-visual::after {
-      position: absolute;
-      left: 50%;
-      bottom: -18%;
-      width: min(124%, 650px);
-      aspect-ratio: 1;
-      content: "";
-      border: 1px dashed rgba(11, 110, 127, 0.28);
-      border-radius: 50%;
-      transform: translateX(-50%);
-      animation: spin 60s linear infinite;
-    }
-
-    @keyframes spin { to { transform: translateX(-50%) rotate(360deg); } }
-
-    .hero-visual img {
+    .photo-frame {
       position: relative;
       z-index: 1;
+      width: min(78%, 420px);
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #0E1A2B;
+      border: 8px solid #fff;
+      border-radius: 50% 50% 28px 28px / 40% 40% 28px 28px;
+      box-shadow: 0 40px 80px rgba(5, 47, 56, 0.28);
+    }
+
+    .photo-frame img {
       display: block;
-      width: auto;
-      height: clamp(440px, 76vh, 620px);
-      filter: drop-shadow(0 30px 40px rgba(5, 47, 56, 0.25));
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
     }
 
     .float-card {
@@ -565,7 +567,7 @@
       align-items: center;
       gap: 12px;
       padding: 12px 16px;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       border: 1px solid rgba(255, 255, 255, 0.9);
@@ -581,45 +583,47 @@
       height: 40px;
       color: #fff;
       place-items: center;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      background: var(--primary);
       border-radius: 12px;
     }
 
     .float-card .ic svg { width: 20px; height: 20px; }
-    .float-card strong { display: block; font-size: 0.9rem; line-height: 1.2; }
+    .float-card strong { display: block; font-size: 0.9rem; font-weight: 600; line-height: 1.2; }
     .float-card small { color: var(--muted); font-size: 0.74rem; }
 
-    .float-card.one { top: 18%; left: -2%; }
-    .float-card.two { top: 46%; right: -4%; animation-delay: -2s; }
-    .float-card.three { bottom: 14%; left: 2%; animation-delay: -4s; }
+    .float-card.one { top: 50%; left: 0; }
+    .float-card.two { top: 66%; right: 0; animation-delay: -2s; }
+    .float-card.three { bottom: 34px; left: 4%; animation-delay: -4s; }
 
     @keyframes bob {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-8px); }
     }
 
     @media (max-width: 1000px) {
       .hero { padding-top: 56px; }
       .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 0; }
-      .hero-text { padding-bottom: 40px; }
-      .hero-visual { min-height: 0; }
-      .hero-visual img { height: min(520px, 110vw); }
+      .hero-text { padding-bottom: 48px; }
+      .photo-frame,
+      .hero-visual::before { width: min(82%, 400px); }
     }
 
     @media (max-width: 540px) {
-      .hero h1 { font-size: clamp(2.2rem, 10.5vw, 2.8rem); }
+      .hero h1 { font-size: clamp(2.1rem, 9.4vw, 2.6rem); }
       .hero .btn-row .btn { width: 100%; }
-      .hero-stats { gap: 18px; }
-      .hero-stats div { padding-right: 18px; }
-      .hero-stats strong { font-size: 1.3rem; }
+      .hero-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+      .hero-stats div { padding-right: 10px; }
+      .hero-stats strong { font-size: 1.8rem; }
+      .hero-stats span { font-size: 0.72rem; }
+      .hero-visual { padding-bottom: 56px; }
       .float-card { padding: 9px 12px; gap: 9px; border-radius: 13px; }
       .float-card .ic { width: 32px; height: 32px; border-radius: 10px; }
       .float-card .ic svg { width: 16px; height: 16px; }
       .float-card strong { font-size: 0.78rem; }
       .float-card small { font-size: 0.66rem; }
-      .float-card.one { left: 0; top: 12%; }
-      .float-card.two { right: 0; }
-      .float-card.three { left: 0; bottom: 10%; }
+      .float-card.one { top: 54%; left: 0; }
+      .float-card.two { top: 70%; right: 0; }
+      .float-card.three { bottom: 22px; left: 0; }
     }
 
     /* ---------- Tools strip ---------- */
@@ -662,7 +666,94 @@
 
     @keyframes marquee { to { transform: translateX(-50%); } }
 
-    /* ---------- Challenges ---------- */
+    /* ---------- Intro video ---------- */
+    .intro-section { padding-bottom: 40px; }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+      align-items: center;
+      gap: clamp(32px, 5vw, 72px);
+    }
+
+    .intro-video {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: #041F28;
+      border: 1px solid rgba(11, 110, 127, 0.18);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .intro-video video { display: block; width: 100%; height: 100%; object-fit: cover; cursor: pointer; }
+
+    /* Icon only, top-right corner, so it never covers the captions */
+    .sound-btn {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      display: grid;
+      padding: 5px;
+      color: #fff;
+      cursor: pointer;
+      place-items: center;
+      background: rgba(4, 34, 43, 0.6);
+      border: 0;
+      border-radius: 50%;
+      -webkit-backdrop-filter: blur(6px);
+      backdrop-filter: blur(6px);
+      box-shadow: 0 8px 24px rgba(4, 34, 43, 0.35);
+      transition: background 0.2s var(--ease), transform 0.2s var(--ease);
+    }
+
+    .sound-btn:hover { background: var(--primary); transform: translateY(-1px); }
+    .sound-btn:focus-visible { outline: 3px solid var(--secondary); outline-offset: 3px; }
+
+    .sound-btn .ico {
+      display: grid;
+      width: 30px;
+      height: 30px;
+      place-items: center;
+      background: var(--secondary);
+      border-radius: 50%;
+    }
+
+    .sound-btn svg { width: 17px; height: 17px; }
+    .sound-btn .ico-on { display: none; }
+    .sound-btn.on .ico-on { display: block; }
+    .sound-btn.on .ico-off { display: none; }
+    .sound-btn:not(.on) .ico { animation: soundPulse 2s ease-out infinite; }
+
+    @keyframes soundPulse {
+      0% { box-shadow: 0 0 0 0 rgba(25, 180, 180, 0.6); }
+      70%, 100% { box-shadow: 0 0 0 12px rgba(25, 180, 180, 0); }
+    }
+
+    .intro-text h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 3.4vw, 2.6rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.18;
+    }
+
+    .intro-text p { margin: 20px 0 28px; color: var(--muted); line-height: 1.8; }
+    .intro-text .hint { display: block; margin-top: 16px; color: var(--muted); font-size: 0.8rem; }
+
+    @media (max-width: 900px) {
+      .intro-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 540px) {
+      .intro-text .btn { width: 100%; }
+    }
+
+    /* ---------- Challenges (problem cards use a red accent) ---------- */
+    .eyebrow.warn { color: var(--warn-dark); }
+    .eyebrow.warn::before { background: var(--warn); }
+
     .challenge-grid {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -672,44 +763,50 @@
     .challenge-card {
       position: relative;
       padding: 30px 26px 32px;
-      background: var(--card);
-      border: 1px solid rgba(11, 110, 127, 0.1);
+      background: linear-gradient(180deg, #FFF4F3 0%, #FFFFFF 55%);
+      border: 1px solid #F3D3D0;
       border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      box-shadow: inset 0 4px 0 var(--warn), var(--shadow);
       transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s ease;
     }
 
-    .challenge-card.visible:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: rgba(25, 180, 180, 0.35); }
+    .challenge-card.visible:hover {
+      border-color: #EAA9A3;
+      box-shadow: inset 0 4px 0 var(--warn), var(--shadow-hover);
+      transform: translateY(-6px);
+    }
 
-    .challenge-card .num {
-      position: absolute;
-      top: 20px;
-      right: 24px;
-      color: rgba(11, 110, 127, 0.12);
-      font-size: 2.6rem;
-      font-weight: 800;
-      letter-spacing: -0.05em;
+    .problem-tag {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .problem-tag .num {
+      color: var(--warn);
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
       line-height: 1;
     }
 
-    .icon-box {
-      display: grid;
-      width: 52px;
-      height: 52px;
-      margin-bottom: 22px;
-      color: var(--primary);
-      place-items: center;
-      background: linear-gradient(135deg, #e6f8f8, #d2f0f0);
-      border-radius: 16px;
+    .problem-tag small {
+      padding: 5px 11px;
+      color: var(--warn-dark);
+      background: #FDE1DE;
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
     }
 
-    .icon-box svg { width: 24px; height: 24px; }
-
-    .challenge-card h3 { margin: 0 0 14px; font-size: 1.12rem; font-weight: 700; letter-spacing: -0.02em; }
+    .challenge-card h3 { margin: 0 0 14px; font-size: 1.14rem; font-weight: 600; letter-spacing: -0.01em; }
 
     .challenge-card .hook {
       margin: 0 0 12px;
-      color: var(--primary);
+      color: var(--warn-dark);
       font-size: 0.9rem;
       font-weight: 600;
       line-height: 1.6;
@@ -717,35 +814,45 @@
 
     .challenge-card p:last-child { margin: 0; color: var(--muted); font-size: 0.88rem; line-height: 1.7; }
 
+    /* Small icon tiles (used in the About cards) */
+    .icon-box {
+      display: grid;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 22px;
+      color: var(--primary);
+      place-items: center;
+      background: #E3F6F6;
+      border-radius: 16px;
+    }
+
+    .icon-box svg { width: 24px; height: 24px; }
+
     /* Bridge band: the answer to the challenges */
     .bridge {
-      position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) auto;
       align-items: center;
       gap: 32px 56px;
       margin-top: 64px;
       padding: clamp(32px, 5vw, 60px);
-      overflow: hidden;
       color: #fff;
-      background:
-        radial-gradient(circle at 92% 0%, rgba(25, 180, 180, 0.55), transparent 42%),
-        linear-gradient(135deg, var(--deep) 0%, var(--primary-dark) 55%, var(--primary) 100%);
+      background: var(--primary-dark);
       border-radius: 32px;
-      box-shadow: 0 30px 80px rgba(5, 47, 56, 0.28);
+      box-shadow: 0 30px 70px rgba(5, 47, 56, 0.22);
     }
 
     .bridge h2 {
       margin: 0;
-      font-size: clamp(1.7rem, 3.2vw, 2.5rem);
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      line-height: 1.12;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.22;
     }
 
     .bridge h2 em { color: #7FE3E3; }
-    .bridge p { margin: 18px 0 0; max-width: 620px; color: rgba(255, 255, 255, 0.8); line-height: 1.8; }
-    .bridge p strong { color: #fff; }
+    .bridge p { margin: 18px 0 0; max-width: 620px; color: rgba(255, 255, 255, 0.82); line-height: 1.8; }
+    .bridge p strong { color: #fff; font-weight: 600; }
     .bridge .btn-row { flex-direction: column; }
 
     @media (max-width: 1100px) {
@@ -769,118 +876,125 @@
       position: relative;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      gap: 28px;
+      align-items: start;
+      gap: 32px;
       max-width: 1040px;
       margin: 0 auto;
     }
 
     .compare-card {
-      padding: clamp(28px, 4vw, 44px);
-      border-radius: 28px;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #E3EAEE;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
     }
 
-    .compare-card .label {
-      display: inline-block;
-      margin-bottom: 22px;
-      padding: 7px 14px;
-      border-radius: 999px;
-      font-size: 0.74rem;
+    .compare-head {
+      padding: 24px 30px 22px;
+      color: #fff;
+    }
+
+    .compare-head .label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.78rem;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      opacity: 0.9;
     }
 
-    .compare-card h3 { margin: 0 0 26px; font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; }
+    .compare-head h3 { margin: 0; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em; }
 
-    .compare-card ul { margin: 0; padding: 0; list-style: none; }
+    .compare-card.them .compare-head { background: var(--warn); }
+    .compare-card.me { border: 2px solid var(--primary); box-shadow: 0 30px 70px rgba(11, 110, 127, 0.22); }
+    .compare-card.me .compare-head { background: var(--primary); }
 
-    .compare-card li {
+    .compare-list { margin: 0; padding: 10px 30px 26px; list-style: none; }
+
+    .compare-list > li {
       display: flex;
       align-items: flex-start;
       gap: 14px;
-      padding: 12px 0;
+      padding: 13px 0;
       font-size: 0.95rem;
       line-height: 1.5;
     }
 
-    .compare-card li + li { border-top: 1px solid var(--line); }
+    .compare-list > li + li { border-top: 1px solid var(--line); }
 
     .mark {
       display: grid;
       flex: 0 0 auto;
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
+      margin-top: 1px;
+      color: #fff;
       place-items: center;
       border-radius: 50%;
-      font-size: 0.8rem;
-      font-weight: 700;
     }
 
-    .compare-card.them {
-      color: var(--muted);
-      background: #F3F6F8;
-      border: 1px solid #E3EAEE;
+    .mark svg { width: 13px; height: 13px; }
+    .them .mark { background: var(--warn); }
+    .me .mark { background: var(--primary); }
+
+    /* The six services, as a tidy two-column bullet list */
+    .service-bullets {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px 18px;
+      margin: 10px 0 2px;
+      padding: 0;
+      list-style: none;
     }
 
-    .compare-card.them .label { color: #8A6B6B; background: #F7E6E6; }
-    .compare-card.them h3 { color: #4A5E6A; }
-    .compare-card.them .mark { color: #C25555; background: #F7E1E1; }
-
-    .compare-card.me {
-      color: #fff;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(25, 180, 180, 0.5), transparent 45%),
-        linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
-      box-shadow: 0 30px 70px rgba(11, 110, 127, 0.32);
-    }
-
-    .compare-card.me .label { color: var(--deep); background: #7FE3E3; }
-    .compare-card.me li + li { border-color: rgba(255, 255, 255, 0.14); }
-    .compare-card.me .mark { color: var(--deep); background: #7FE3E3; }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin: 4px 0 6px 40px;
-    }
-
-    .chips span {
-      padding: 6px 12px;
-      color: #fff;
-      background: rgba(255, 255, 255, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 999px;
-      font-size: 0.76rem;
+    .service-bullets li {
+      position: relative;
+      padding-left: 16px;
+      color: var(--primary-dark);
+      font-size: 0.88rem;
       font-weight: 500;
+    }
+
+    .service-bullets li::before {
+      position: absolute;
+      top: 0.6em;
+      left: 0;
+      width: 7px;
+      height: 7px;
+      content: "";
+      background: var(--secondary);
+      border-radius: 50%;
     }
 
     .vs {
       position: absolute;
-      top: 50%;
+      top: 46px;
       left: 50%;
       z-index: 2;
       display: grid;
-      width: 64px;
-      height: 64px;
+      width: 60px;
+      height: 60px;
       place-items: center;
-      color: var(--primary);
+      color: var(--text);
       background: #fff;
-      border: 6px solid var(--soft);
+      border: 5px solid var(--soft);
       border-radius: 50%;
       box-shadow: var(--shadow);
-      font-size: 1rem;
-      font-weight: 800;
-      transform: translate(-50%, -50%);
+      font-size: 0.95rem;
+      font-weight: 700;
+      transform: translateX(-50%);
     }
 
     @media (max-width: 800px) {
-      .compare { grid-template-columns: 1fr; gap: 44px; }
-      .vs { top: auto; }
-      .compare-card.them { order: 1; }
-      .vs { position: relative; order: 2; top: auto; left: auto; margin: -64px auto -64px; transform: none; }
-      .compare-card.me { order: 3; }
-      .chips { margin-left: 0; }
+      .compare { grid-template-columns: 1fr; gap: 0; }
+      .vs { position: relative; top: auto; left: auto; margin: -14px auto; transform: none; }
+      .compare-head, .compare-list { padding-left: 22px; padding-right: 22px; }
+    }
+
+    @media (max-width: 420px) {
+      .service-bullets { grid-template-columns: 1fr; }
     }
 
     /* ---------- Services ---------- */
@@ -893,7 +1007,7 @@
     .service-card {
       display: flex;
       flex-direction: column;
-      padding: 34px 30px 30px;
+      overflow: hidden;
       background: var(--card);
       border: 1px solid rgba(11, 110, 127, 0.1);
       border-radius: var(--radius);
@@ -903,16 +1017,32 @@
 
     .service-card.visible:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: rgba(25, 180, 180, 0.35); }
 
-    .service-card .icon-box {
-      width: 58px;
-      height: 58px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      box-shadow: 0 10px 24px rgba(25, 180, 180, 0.35);
+    .service-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 16 / 10;
+      padding: 20px 24px;
+      overflow: hidden;
+      background: #DDF3F3;
     }
 
-    .service-card h3 { margin: 0 0 12px; font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; }
-    .service-card > p { margin: 0 0 22px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
+    .service-media img {
+      display: block;
+      max-width: 100%;
+      max-height: 100%;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 14px 34px rgba(17, 76, 89, 0.18), 0 2px 6px rgba(17, 76, 89, 0.08);
+      transition: transform 0.6s var(--ease);
+    }
+
+    .service-card:hover .service-media img { transform: scale(1.04); }
+
+    .service-body { display: flex; flex: 1; flex-direction: column; padding: 26px 26px 28px; }
+
+    .service-card h3 { margin: 0 0 12px; font-size: 1.2rem; font-weight: 600; letter-spacing: -0.01em; }
+    .service-card p { margin: 0 0 20px; color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
 
     .tool-tags {
       display: flex;
@@ -930,11 +1060,34 @@
       font-weight: 500;
     }
 
-    .service-card .text-link {
+    /* Bordered button so it clearly reads as clickable */
+    .service-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       margin-top: auto;
-      padding-top: 20px;
-      border-top: 1px solid var(--line);
+      padding: 13px 18px;
+      color: var(--primary);
+      text-decoration: none;
+      background: #EAF8F8;
+      border: 1.5px solid var(--primary);
+      border-radius: 12px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease, transform 0.25s var(--ease);
     }
+
+    .service-btn svg { width: 20px; height: 20px; flex: 0 0 auto; transition: transform 0.3s var(--ease); }
+
+    .service-btn:hover {
+      color: #fff;
+      background: var(--primary);
+      box-shadow: 0 10px 24px rgba(25, 180, 180, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .service-btn:hover svg { transform: translateX(4px); }
 
     @media (max-width: 1050px) { .service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 640px) { .service-grid { grid-template-columns: 1fr; } }
@@ -954,6 +1107,7 @@
       line-height: 1.2;
     }
 
+    .cta:not(.dark) h2 { font-weight: 600; letter-spacing: -0.02em; }
     .cta h2 span { color: var(--primary); }
 
     .cta p {
@@ -1052,7 +1206,7 @@
     @media (max-width: 1050px) { .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
     @media (max-width: 680px) { .work-grid { grid-template-columns: 1fr; } }
 
-    /* ---------- Testimonials ---------- */
+    /* ---------- Testimonials (styled like real client reviews) ---------- */
     .testimonials { background: #fff; }
 
     .quote-grid {
@@ -1063,59 +1217,72 @@
       margin: 0 auto;
     }
 
-    .quote-card {
-      position: relative;
+    .review {
       display: flex;
       flex-direction: column;
-      padding: clamp(30px, 4vw, 44px);
-      background: linear-gradient(180deg, #F4FCFC 0%, #fff 100%);
-      border: 1px solid rgba(11, 110, 127, 0.1);
-      border-radius: 28px;
+      margin: 0;
+      padding: clamp(26px, 3.5vw, 36px);
+      background: #fff;
+      border: 1px solid rgba(11, 110, 127, 0.14);
+      border-radius: 22px;
       box-shadow: var(--shadow);
     }
 
-    .quote-card .qmark {
-      position: absolute;
-      top: 18px;
-      right: 28px;
-      color: rgba(25, 180, 180, 0.18);
-      font-size: 7rem;
-      font-weight: 800;
-      line-height: 1;
-    }
-
-    .stars { display: flex; gap: 3px; margin-bottom: 20px; color: #F5B301; }
-    .stars svg { width: 18px; height: 18px; }
-
-    .quote-card blockquote {
-      margin: 0 0 30px;
-      font-size: 1.02rem;
-      line-height: 1.85;
-    }
-
-    .person {
+    .review-head {
       display: flex;
       align-items: center;
       gap: 14px;
-      margin-top: auto;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
     }
 
     .avatar {
       display: grid;
       flex: 0 0 auto;
-      width: 50px;
-      height: 50px;
+      width: 52px;
+      height: 52px;
       color: #fff;
       place-items: center;
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      background: var(--primary);
       border-radius: 50%;
-      font-weight: 700;
+      font-weight: 600;
     }
 
-    .person strong { display: block; font-size: 0.98rem; }
-    .person div span { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+    .review-head strong { display: block; font-size: 1.04rem; font-weight: 600; }
+    .review-head .role { color: var(--muted); font-size: 0.82rem; }
+
+    .review-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px 16px;
+      margin: 18px 0 16px;
+    }
+
+    .stars { display: flex; gap: 3px; color: #F5B301; }
+    .stars svg { width: 18px; height: 18px; }
+
+    .loc {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .loc svg { width: 15px; height: 15px; color: var(--primary); }
+
+    .review blockquote { margin: 0; font-size: 1rem; line-height: 1.85; }
+
+    .review mark {
+      padding: 1px 3px;
+      color: inherit;
+      background: rgba(25, 180, 180, 0.2);
+      border-radius: 4px;
+      font-weight: 500;
+    }
 
     @media (max-width: 800px) { .quote-grid { grid-template-columns: 1fr; } }
 
@@ -1185,6 +1352,7 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
       align-items: stretch;
       gap: 22px;
+      padding-top: 16px;
     }
 
     .price-card {
@@ -1203,23 +1371,24 @@
 
     .price-card.featured {
       color: #fff;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(25, 180, 180, 0.5), transparent 45%),
-        linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
-      border-color: transparent;
+      background: var(--primary-dark);
+      border: 3px solid var(--gold);
       box-shadow: 0 30px 70px rgba(11, 110, 127, 0.35);
     }
 
     .badge {
       position: absolute;
-      top: -14px;
+      top: -19px;
       left: 50%;
-      padding: 7px 16px;
-      color: var(--deep);
-      background: #7FE3E3;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 9px 20px;
+      color: #3B2600;
+      background: var(--gold);
       border-radius: 999px;
-      box-shadow: 0 8px 20px rgba(5, 47, 56, 0.2);
-      font-size: 0.7rem;
+      box-shadow: 0 10px 24px rgba(245, 166, 35, 0.45);
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -1227,25 +1396,51 @@
       transform: translateX(-50%);
     }
 
-    .price-card .kind { margin: 0 0 4px; color: var(--primary); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-    .price-card h3 { margin: 0 0 22px; font-size: 1.16rem; font-weight: 700; line-height: 1.35; }
+    .badge svg { width: 15px; height: 15px; }
 
-    .price { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+    .price-card .kind { margin: 0 0 4px; color: var(--primary); font-size: 0.74rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .price-card h3 { margin: 0 0 22px; font-size: 1.16rem; font-weight: 600; line-height: 1.35; }
+
+    .price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px; }
     .price .cur { color: var(--muted); font-size: 0.85rem; font-weight: 600; }
-    .price strong { font-size: 2.7rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; }
+    .price strong { font-size: 2.7rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1; }
+    .price strong.word { font-size: 2rem; }
     .price .per { color: var(--muted); font-size: 0.9rem; }
     .price-note { margin: 8px 0 0; color: var(--muted); font-size: 0.8rem; }
 
+    /* Full-time saving: a bright callout clients can't miss */
     .save {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 5px 10px;
-      color: #0E7A3E;
-      background: #E3F7EA;
-      border-radius: 8px;
-      font-size: 0.74rem;
-      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 16px;
+      padding: 12px 14px;
+      color: #3B2600;
+      background: var(--gold);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(245, 166, 35, 0.35);
+      font-size: 0.9rem;
+      font-weight: 700;
+      line-height: 1.35;
     }
+
+    .save svg { width: 22px; height: 22px; flex: 0 0 auto; }
+
+    .price-more {
+      display: flex;
+      gap: 9px;
+      margin: -8px 0 22px;
+      padding: 12px 14px;
+      color: var(--primary-dark);
+      background: #EAF8F8;
+      border: 1px dashed rgba(11, 110, 127, 0.4);
+      border-radius: 12px;
+      font-size: 0.82rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .price-more svg { width: 18px; height: 18px; flex: 0 0 auto; margin-top: 1px; }
 
     .price-card ul {
       margin: 24px 0 28px;
@@ -1256,31 +1451,35 @@
 
     .price-card li {
       display: flex;
-      gap: 10px;
+      gap: 11px;
       padding: 7px 0;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       line-height: 1.5;
     }
 
+    /* Solid check badges so the ticks are easy to see */
     .price-card li::before {
       flex: 0 0 auto;
-      width: 20px;
-      height: 20px;
-      margin-top: 1px;
+      width: 22px;
+      height: 22px;
       content: "";
-      background: var(--secondary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center / 12px no-repeat;
+      background: var(--primary) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 14px no-repeat;
       border-radius: 50%;
     }
 
-    .price-card .btn { width: 100%; margin-top: auto; padding: 14px 18px; font-size: 0.92rem; }
-    .price-card .btn + .btn { margin-top: 10px; }
+    .price-card.featured li::before {
+      background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2308515E' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center / 14px no-repeat;
+    }
 
-    .price-card.featured .kind { color: #7FE3E3; }
+    .price-actions { display: grid; gap: 10px; margin-top: auto; }
+    .price-card .btn { width: 100%; gap: 8px; padding: 13px 10px; font-size: 0.86rem; white-space: nowrap; }
+    .price-card .btn .wa-ico { width: 20px; height: 20px; }
+
+    .price-card.featured .kind { color: var(--gold); }
     .price-card.featured .cur,
     .price-card.featured .per,
-    .price-card.featured .price-note { color: rgba(255, 255, 255, 0.75); }
+    .price-card.featured .price-note { color: rgba(255, 255, 255, 0.78); }
     .price-card.featured ul { border-color: rgba(255, 255, 255, 0.18); }
-    .price-card.featured li::before { background-color: #7FE3E3; }
 
     .price-help {
       display: flex;
@@ -1289,17 +1488,17 @@
       justify-content: space-between;
       gap: 20px 40px;
       margin-top: 40px;
-      padding: 28px 34px;
+      padding: 32px 36px;
       background: #fff;
       border: 1px dashed rgba(11, 110, 127, 0.3);
       border-radius: 22px;
     }
 
     .price-help > div:first-child { flex: 1 1 380px; }
-    .price-help h3 { margin: 0 0 4px; font-size: 1.12rem; }
-    .price-help p { margin: 0; color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+    .price-help h3 { margin: 0 0 8px; font-size: clamp(1.4rem, 2.4vw, 1.8rem); font-weight: 600; letter-spacing: -0.01em; }
+    .price-help p { margin: 0; color: var(--muted); font-size: 1rem; line-height: 1.6; }
 
-    @media (max-width: 1100px) { .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 34px; } }
+    @media (max-width: 1100px) { .price-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 40px; } }
     @media (max-width: 640px) {
       .price-grid { grid-template-columns: 1fr; }
       .price-help { padding: 24px; }
@@ -1318,6 +1517,19 @@
 
     .gallery { position: relative; }
 
+    .gallery::before {
+      position: absolute;
+      top: -22px;
+      left: -22px;
+      width: 60%;
+      height: 60%;
+      content: "";
+      background: var(--secondary);
+      border-radius: 28px;
+      opacity: 0.18;
+    }
+
+    /* Photos slide sideways on their own and loop */
     .gallery-main {
       position: relative;
       aspect-ratio: 4 / 5;
@@ -1327,58 +1539,22 @@
       box-shadow: 0 30px 70px rgba(5, 47, 56, 0.25);
     }
 
-    .gallery-main img {
+    .gallery-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.9s cubic-bezier(.45, .05, .25, 1);
+    }
+
+    .gallery-track.no-anim { transition: none; }
+
+    .gallery-track img {
       display: block;
+      flex: 0 0 100%;
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: opacity 0.35s ease;
+      object-position: top;
     }
-
-    .gallery::before {
-      position: absolute;
-      top: -22px;
-      left: -22px;
-      width: 60%;
-      height: 60%;
-      content: "";
-      background: linear-gradient(135deg, var(--secondary), var(--primary));
-      border-radius: 28px;
-      opacity: 0.18;
-    }
-
-    .play-btn {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 16px 8px 8px;
-      color: var(--text);
-      cursor: pointer;
-      background: rgba(255, 255, 255, 0.94);
-      border: 0;
-      border-radius: 999px;
-      box-shadow: 0 12px 30px rgba(5, 47, 56, 0.25);
-      font-size: 0.84rem;
-      font-weight: 600;
-      transition: transform 0.25s var(--ease);
-    }
-
-    .play-btn:hover { transform: translateY(-2px); }
-
-    .play-btn span {
-      display: grid;
-      width: 34px;
-      height: 34px;
-      color: #fff;
-      place-items: center;
-      background: var(--primary);
-      border-radius: 50%;
-    }
-
-    .play-btn svg { width: 14px; height: 14px; margin-left: 2px; }
 
     .thumbs {
       display: grid;
@@ -1403,8 +1579,8 @@
     .thumbs button[aria-pressed="true"] { opacity: 1; border-color: var(--secondary); }
     .thumbs img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
 
-    .about-text h2 { margin: 0; font-size: clamp(1.9rem, 3.6vw, 2.9rem); font-weight: 800; letter-spacing: -0.045em; line-height: 1.1; }
-    .about-text .hi { margin: 22px 0 10px; color: var(--primary); font-size: 1.3rem; font-weight: 700; }
+    .about-text h2 { margin: 0; font-size: clamp(1.9rem, 3.4vw, 2.7rem); font-weight: 600; letter-spacing: -0.02em; line-height: 1.18; }
+    .about-text .hi { margin: 22px 0 10px; color: var(--primary); font-size: 1.3rem; font-weight: 600; }
     .about-text > p { margin: 0 0 30px; color: var(--muted); line-height: 1.8; }
 
     .creds {
@@ -1417,9 +1593,9 @@
     .cred {
       display: flex;
       gap: 14px;
-      padding: 20px;
+      padding: 22px 20px;
       background: var(--background);
-      border: 1px solid rgba(11, 110, 127, 0.1);
+      border: 1px solid rgba(11, 110, 127, 0.12);
       border-radius: 18px;
       transition: transform 0.3s var(--ease), box-shadow 0.3s ease;
     }
@@ -1427,13 +1603,13 @@
     .cred:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
     .cred .icon-box { flex: 0 0 auto; width: 46px; height: 46px; margin: 0; border-radius: 14px; }
     .cred .icon-box svg { width: 21px; height: 21px; }
-    .cred small { color: var(--secondary); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
-    .cred strong { display: block; margin: 2px 0 4px; font-size: 0.98rem; line-height: 1.3; }
-    .cred p { margin: 0; color: var(--muted); font-size: 0.8rem; line-height: 1.55; }
+    .cred small { color: var(--secondary); font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+    .cred strong { display: block; margin: 4px 0 6px; color: var(--primary-dark); font-size: 1.18rem; font-weight: 700; letter-spacing: -0.01em; line-height: 1.25; }
+    .cred p { margin: 0; color: var(--muted); font-size: 0.84rem; line-height: 1.55; }
 
     @media (max-width: 900px) {
       .about-grid { grid-template-columns: 1fr; }
-      .gallery { max-width: 480px; margin: 0 auto; width: 100%; }
+      .gallery { width: 100%; max-width: 480px; margin: 0 auto; }
     }
 
     @media (max-width: 560px) {
@@ -1595,58 +1771,6 @@
       .footer-grid { grid-template-columns: 1fr; gap: 32px; }
     }
 
-    /* ---------- Intro video popup ---------- */
-    .video-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      display: grid;
-      padding: 24px;
-      place-items: center;
-      visibility: hidden;
-      background: rgba(4, 20, 26, 0);
-      transition: background 0.3s ease, visibility 0.3s;
-    }
-
-    .video-modal.open { visibility: visible; background: rgba(4, 20, 26, 0.85); }
-
-    .video-box {
-      position: relative;
-      width: min(100%, 960px);
-      opacity: 0;
-      transform: scale(0.96);
-      transition: opacity 0.3s ease, transform 0.3s var(--ease);
-    }
-
-    .video-modal.open .video-box { opacity: 1; transform: none; }
-
-    .video-box video {
-      display: block;
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      background: #000;
-      border-radius: 18px;
-      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-    }
-
-    .video-close {
-      position: absolute;
-      top: -52px;
-      right: 0;
-      display: grid;
-      width: 42px;
-      height: 42px;
-      padding: 0;
-      color: #fff;
-      cursor: pointer;
-      place-items: center;
-      background: rgba(255, 255, 255, 0.12);
-      border: 0;
-      border-radius: 50%;
-    }
-
-    .video-close svg { width: 22px; height: 22px; }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
@@ -1726,7 +1850,7 @@
         </div>
 
         <div class="hero-visual">
-          <img src="images/maria-portrait.webp" alt="Maria Simbajon, all-in-one virtual assistant" width="744" height="1400" fetchpriority="high" />
+          <div class="photo-frame"><img src="images/about-graduation.jpg" alt="Maria Simbajon in her Civil Engineering graduation photo" width="880" height="1100" fetchpriority="high" /></div>
           <div class="float-card one">
             <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.1 4.8 1.3 7L12 17.8 5.8 21.2l1.3-7L2 9.4l7-.9z"/></svg></span>
             <div><strong>Trusted Long-term</strong><small>by Australian businesses</small></div>
@@ -1743,17 +1867,43 @@
       </div>
     </section>
 
-    <!-- Tools I work with (moving strip) -->
-    <div class="tools-strip" aria-label="Tools I work with">
+    <!-- Services (moving strip) -->
+    <div class="tools-strip" aria-label="Services I offer">
       <div class="tools-track" id="toolsTrack"></div>
     </div>
+
+    <!-- Intro video -->
+    <section class="section intro-section" id="intro">
+      <div class="container intro-grid">
+        <div class="intro-video reveal">
+          <!-- Plays muted while on screen (browsers only allow sound after a tap) -->
+          <video id="introVideo" src="images/intro.mp4" poster="images/intro-poster.jpg" muted loop playsinline preload="metadata" aria-label="Intro video: Maria Simbajon, all-in-one virtual assistant"></video>
+          <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="Turn sound on" title="Turn sound on">
+            <span class="ico" aria-hidden="true">
+              <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
+              <svg class="ico-on" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18.5 6.5a8 8 0 0 1 0 11"/></svg>
+            </span>
+          </button>
+        </div>
+        <div class="intro-text reveal">
+          <div class="eyebrow">Meet Maria</div>
+          <h2>Get to know me <em>in under 2 minutes.</em></h2>
+          <p>A quick hello from me, so you know exactly who you'll be working with before we even talk.</p>
+          <a class="btn primary" href="discovery-call.html">
+            Book a Free Discovery Call
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
+          </a>
+          <small class="hint">Tap the speaker icon on the video to turn the sound on.</small>
+        </div>
+      </div>
+    </section>
 
     <!-- Common business challenges -->
     <section class="section" id="challenges">
       <div class="container">
         <div class="split-title reveal">
           <div>
-            <div class="eyebrow">Common Business Challenges</div>
+            <div class="eyebrow warn">Common Business Challenges</div>
             <h2>Running a business is demanding. <em>The real challenge is everything behind the scenes.</em></h2>
           </div>
           <p>Most service-based businesses struggle because they're trying to manage every part of the business themselves. These are some of the most common challenges growing businesses face.</p>
@@ -1761,29 +1911,25 @@
 
         <div class="challenge-grid">
           <article class="challenge-card reveal">
-            <span class="num">01</span>
-            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 10h6M9 14h3"/></svg></div>
+            <div class="problem-tag"><span class="num">01</span><small>Problem</small></div>
             <h3>The Missed Enquiry</h3>
             <p class="hook">Customers sent you a message. You were busy serving another client.</p>
             <p>They found someone who replied first. Competitors got them instead.</p>
           </article>
           <article class="challenge-card reveal">
-            <span class="num">02</span>
-            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg></div>
+            <div class="problem-tag"><span class="num">02</span><small>Problem</small></div>
             <h3>Admin Piling Up</h3>
             <p class="hook">You finished today's admin. Tomorrow, there's another pile waiting.</p>
             <p>Admin tasks keep dividing your attention, pulling your focus away from growing your business.</p>
           </article>
           <article class="challenge-card reveal">
-            <span class="num">03</span>
-            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div class="problem-tag"><span class="num">03</span><small>Problem</small></div>
             <h3>Outdated Website</h3>
             <p class="hook">You planned to update your website. But you got too busy.</p>
             <p>Now it feels outdated. Meanwhile, your competitors continue to improve theirs.</p>
           </article>
           <article class="challenge-card reveal">
-            <span class="num">04</span>
-            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg></div>
+            <div class="problem-tag"><span class="num">04</span><small>Problem</small></div>
             <h3>Staying Active on Social Media</h3>
             <p class="hook">You wanted to post this week. Then another busy day happened.</p>
             <p>Now it's been weeks since your previous post.</p>
@@ -1816,32 +1962,39 @@
 
         <div class="compare">
           <div class="compare-card them reveal">
-            <span class="label">Hiring Separately</span>
-            <h3>Five freelancers, five problems</h3>
-            <ul>
-              <li><span class="mark">✕</span>5 different freelancers for 5 different tasks</li>
-              <li><span class="mark">✕</span>5 different rates to track</li>
-              <li><span class="mark">✕</span>5 separate invoices every month</li>
-              <li><span class="mark">✕</span>5 people to explain your business to</li>
-              <li><span class="mark">✕</span>No one sees the full plan or system</li>
+            <div class="compare-head">
+              <span class="label">Hiring Separately</span>
+              <h3>5 freelancers for 5 tasks</h3>
+            </div>
+            <ul class="compare-list">
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>5 different freelancers for 5 different tasks</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>5 different rates to track</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>5 separate invoices every month</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>5 people to explain your business to</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></span>No one sees the full plan or system</li>
             </ul>
           </div>
           <div class="vs" aria-hidden="true">VS</div>
           <div class="compare-card me reveal">
-            <span class="label">Working With Me</span>
-            <h3>One specialist, everything covered</h3>
-            <ul>
-              <li><span class="mark">✓</span>One specialist for all services</li>
-              <li><span class="mark">✓</span>One consistent point of contact</li>
-              <li><span class="mark">✓</span>One person to pay — you get all services</li>
-            </ul>
-            <div class="chips">
-              <span>Administrative Support</span><span>Website Designs</span><span>Social Media</span>
-              <span>CRM &amp; Automation</span><span>Customer Support</span><span>Business Operations</span>
+            <div class="compare-head">
+              <span class="label">Working With Me</span>
+              <h3>1 specialist for everything</h3>
             </div>
-            <ul>
-              <li><span class="mark">✓</span>One person who already knows your business</li>
-              <li><span class="mark">✓</span>Always sees the full plan and system</li>
+            <ul class="compare-list">
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>One specialist for all services</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>One consistent point of contact</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div>One person to pay — you get all services:
+                <ul class="service-bullets">
+                  <li>Administrative Support</li>
+                  <li>Website Designs</li>
+                  <li>Social Media</li>
+                  <li>CRM &amp; Automation</li>
+                  <li>Customer Support</li>
+                  <li>Business Operations</li>
+                </ul></div>
+              </li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>One person who already knows your business</li>
+              <li><span class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Always sees the full plan and system</li>
             </ul>
           </div>
         </div>
@@ -1870,9 +2023,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
           </a>
           <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener">
-            Message Me on WhatsApp
-            <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
-          </a>
+            Message Me on WhatsApp</a>
         </div>
       </div>
     </section>
@@ -1949,23 +2100,27 @@
         </div>
 
         <div class="quote-grid">
-          <figure class="quote-card reveal">
-            <span class="qmark" aria-hidden="true">”</span>
-            <div class="stars" aria-label="5 out of 5 stars"></div>
-            <blockquote>"Maria has been an absolute pleasure to work with. She's proactive, organised, and always willing to jump into new tasks. It's been such a relief having someone I can rely on, whether it's admin, CRM, websites, or customer support. Highly recommend!"</blockquote>
-            <figcaption class="person">
+          <figure class="review reveal">
+            <figcaption class="review-head">
               <span class="avatar" aria-hidden="true">AM</span>
-              <div><strong>Arorah M.</strong><span>Founder &amp; Owner · Wellness Business in Bundaberg, Australia</span></div>
+              <div><strong>Arorah M.</strong><span class="role">Founder &amp; Owner · Wellness Business</span></div>
             </figcaption>
+            <div class="review-meta">
+              <div class="stars" aria-label="5 out of 5 stars"></div>
+              <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Bundaberg, QLD, Australia</span>
+            </div>
+            <blockquote>"Maria has been an absolute pleasure to work with. She's proactive, organised, and always willing to jump into new tasks. <mark>It's been such a relief having someone I can rely on</mark>, whether it's admin, CRM, websites, or customer support. Highly recommend!"</blockquote>
           </figure>
-          <figure class="quote-card reveal">
-            <span class="qmark" aria-hidden="true">”</span>
-            <div class="stars" aria-label="5 out of 5 stars"></div>
-            <blockquote>"One of the things I appreciate most is that I don't need to explain everything twice. Maria picks things up quickly, communicates well, and genuinely cares about getting the job done properly. Having one person who can support different areas of the business has made a huge difference."</blockquote>
-            <figcaption class="person">
+          <figure class="review reveal">
+            <figcaption class="review-head">
               <span class="avatar" aria-hidden="true">BM</span>
-              <div><strong>Brian M.</strong><span>Founder &amp; Owner · Landscaping Services in Wide Bay Region</span></div>
+              <div><strong>Brian M.</strong><span class="role">Founder &amp; Owner · Landscaping Services</span></div>
             </figcaption>
+            <div class="review-meta">
+              <div class="stars" aria-label="5 out of 5 stars"></div>
+              <span class="loc"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 0 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>Wide Bay Region, QLD, Australia</span>
+            </div>
+            <blockquote>"One of the things I appreciate most is that <mark>I don't need to explain everything twice.</mark> Maria picks things up quickly, communicates well, and genuinely cares about getting the job done properly. Having one person who can support different areas of the business has made a huge difference."</blockquote>
           </figure>
         </div>
       </div>
@@ -2013,8 +2168,7 @@
         </div>
 
         <div class="price-grid">
-          <article class="price-card featured reveal">
-            <span class="badge">Recommended</span>
+          <article class="price-card reveal">
             <p class="kind">Flexible</p>
             <h3>Part-Time Support</h3>
             <div class="price"><span class="cur">AUD</span><strong>$8</strong><span class="per">/ hour</span></div>
@@ -2024,20 +2178,27 @@
               <li>All services included</li>
               <li>Pay only for the hours you need</li>
             </ul>
-            <a class="btn light" href="discovery-call.html">Book a Free Discovery Call</a>
+            <div class="price-actions">
+              <a class="btn primary" href="discovery-call.html">Book a Free Discovery Call</a>
+              <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener">Message Me on WhatsApp</a>
+            </div>
           </article>
-          <article class="price-card reveal">
+          <article class="price-card featured reveal">
+            <span class="badge"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l3 6.5 7 .9-5.1 4.8 1.3 7L12 17.8 5.8 21.2l1.3-7L2 9.4l7-.9z"/></svg>Recommended</span>
             <p class="kind">Full-Time</p>
             <h3>Full-Time Support</h3>
             <div class="price"><span class="cur">AUD</span><strong>$7</strong><span class="per">/ hour</span></div>
             <p class="price-note">Starting rate</p>
-            <span class="save">Save $1/hour with full-time commitment</span>
+            <div class="save"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.6 13.4l-7.2 7.2a2 2 0 0 1-2.8 0L3 13V3h10l7.6 7.6a2 2 0 0 1 0 2.8z"/><circle cx="7.5" cy="7.5" r="1.5" fill="currentColor"/></svg>Save $1/hour with full-time commitment</div>
             <ul>
               <li>40 hrs/week (8 hrs/day)</li>
               <li>All services included</li>
               <li>Consistent, ongoing support</li>
             </ul>
-            <a class="btn primary" href="discovery-call.html">Book a Free Discovery Call</a>
+            <div class="price-actions">
+              <a class="btn light" href="discovery-call.html">Book a Free Discovery Call</a>
+              <a class="btn ghost whatsapp-link" href="#" target="_blank" rel="noopener">Message Me on WhatsApp</a>
+            </div>
           </article>
           <article class="price-card reveal">
             <p class="kind">1 Service</p>
@@ -2051,20 +2212,26 @@
               <li>Monthly analytics &amp; insights</li>
               <li>Detailed content calendar</li>
             </ul>
-            <a class="btn primary" href="discovery-call.html">Book a Free Discovery Call</a>
+            <p class="price-more"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>More pricing details available — find out during your Discovery Call.</span></p>
+            <div class="price-actions">
+              <a class="btn primary" href="discovery-call.html">Book a Free Discovery Call</a>
+              <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener">Message Me on WhatsApp</a>
+            </div>
           </article>
           <article class="price-card reveal">
-            <p class="kind">Custom Project</p>
-            <h3>Custom Quote</h3>
-            <div class="price"><strong style="font-size:2.1rem">Let's talk</strong></div>
+            <p class="kind">Project-Based</p>
+            <h3>Custom Project</h3>
+            <div class="price"><strong class="word">Custom Quote</strong></div>
             <p class="price-note">Scoped to your project</p>
             <ul>
               <li>Websites, CRM builds, automation</li>
               <li>Branding or one-time projects</li>
               <li>Price tailored to scope</li>
             </ul>
-            <a class="btn primary" href="discovery-call.html">Get a Free Quote</a>
-            <a class="btn outline" id="quoteWhatsapp" href="#" target="_blank" rel="noopener">Message Me on WhatsApp</a>
+            <div class="price-actions">
+              <a class="btn primary" href="discovery-call.html">Get a Free Quote</a>
+              <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener" data-msg="Hi Maria, I'd like to ask about a custom project quote.">Message Me on WhatsApp</a>
+            </div>
           </article>
         </div>
 
@@ -2086,17 +2253,18 @@
       <div class="container about-grid">
         <div class="gallery reveal">
           <div class="gallery-main">
-            <img id="galleryMain" src="images/about-portrait.jpg" alt="Maria Simbajon portrait" />
-            <button class="play-btn" id="playIntro" type="button">
-              <span><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></span>
-              Watch my intro
-            </button>
+            <div class="gallery-track" id="galleryTrack">
+              <img src="images/about-portrait.jpg" alt="Maria Simbajon portrait" />
+              <img src="images/about-engineer.jpg" alt="Maria with a hard hat and plan tube" loading="lazy" />
+              <img src="images/about-graduation.jpg" alt="Maria's Civil Engineering graduation photo" loading="lazy" />
+              <img src="images/about-field.jpg" alt="Maria doing a site survey" loading="lazy" />
+            </div>
           </div>
           <div class="thumbs" id="thumbs">
-            <button type="button" aria-pressed="true" data-src="images/about-portrait.jpg" data-alt="Maria Simbajon portrait"><img src="images/about-portrait.jpg" alt="" loading="lazy" /></button>
-            <button type="button" aria-pressed="false" data-src="images/about-engineer.jpg" data-alt="Maria with a hard hat and plan tube"><img src="images/about-engineer.jpg" alt="" loading="lazy" /></button>
-            <button type="button" aria-pressed="false" data-src="images/about-graduation.jpg" data-alt="Maria's Civil Engineering graduation photo"><img src="images/about-graduation.jpg" alt="" loading="lazy" /></button>
-            <button type="button" aria-pressed="false" data-src="images/about-field.jpg" data-alt="Maria doing a site survey"><img src="images/about-field.jpg" alt="" loading="lazy" /></button>
+            <button type="button" aria-pressed="true" aria-label="Show photo 1"><img src="images/about-portrait.jpg" alt="" loading="lazy" /></button>
+            <button type="button" aria-pressed="false" aria-label="Show photo 2"><img src="images/about-engineer.jpg" alt="" loading="lazy" /></button>
+            <button type="button" aria-pressed="false" aria-label="Show photo 3"><img src="images/about-graduation.jpg" alt="" loading="lazy" /></button>
+            <button type="button" aria-pressed="false" aria-label="Show photo 4"><img src="images/about-field.jpg" alt="" loading="lazy" /></button>
           </div>
         </div>
 
@@ -2144,9 +2312,7 @@
           <h2>Have <em>Questions?</em></h2>
           <p>Here's what business owners usually ask before getting started. Still unsure? Just send me a message.</p>
           <a class="btn outline whatsapp-link" href="#" target="_blank" rel="noopener">
-            Ask Me on WhatsApp
-            <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
-          </a>
+            Ask Me on WhatsApp</a>
         </div>
 
         <div class="faq-list">
@@ -2231,7 +2397,7 @@
         <div>
           <h4>Get in Touch</h4>
           <ul>
-            <li><a class="contact-line whatsapp-link" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg>WhatsApp +63 909 492 8860</a></li>
+            <li><a class="contact-line whatsapp-link" href="#" target="_blank" rel="noopener">WhatsApp +63 909 492 8860</a></li>
             <li><a class="contact-line" href="mailto:simbajonmaria89@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>simbajonmaria89@gmail.com</a></li>
             <li><a class="contact-line" href="discovery-call.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>Book a Discovery Call</a></li>
           </ul>
@@ -2263,88 +2429,88 @@
     </div>
   </footer>
 
-  <!-- Intro video popup -->
-  <div class="video-modal" id="videoModal" role="dialog" aria-modal="true" aria-label="Intro video" aria-hidden="true">
-    <div class="video-box">
-      <button class="video-close" type="button" aria-label="Close video">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
-      </button>
-      <video id="introVideo" controls playsinline preload="none" poster="images/intro-poster.jpg" src="images/intro.mp4"></video>
-    </div>
-  </div>
-
   <!-- Elfsight WhatsApp Chat (floating button) -->
   <script src="https://elfsightcdn.com/platform.js" async></script>
   <div class="elfsight-app-4ed2b3b1-71ff-4271-ad11-68c432ed63f1" data-elfsight-app-lazy></div>
 
   <script>
-    /* ---------- Contact links ---------- */
+    /* ---------- Contact links (WhatsApp logo goes in front of every WhatsApp link) ---------- */
     const WHATSAPP = "https://wa.me/639094928860?text=";
-    document.querySelectorAll(".whatsapp-link").forEach((a) => (a.href = WHATSAPP + encodeURIComponent("Hi Maria, I'd like to know more about your services.")));
-    document.getElementById("quoteWhatsapp").href = WHATSAPP + encodeURIComponent("Hi Maria, I'd like to ask about a custom project quote.");
+    const WA_ICON = '<svg class="wa-ico" viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>';
+    document.querySelectorAll(".whatsapp-link").forEach((a) => {
+      a.href = WHATSAPP + encodeURIComponent(a.dataset.msg || "Hi Maria, I'd like to know more about your services.");
+      a.insertAdjacentHTML("afterbegin", WA_ICON);
+    });
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* ---------- Tools strip (list is repeated so the loop is seamless) ---------- */
-    const TOOLS = ["GoHighLevel", "Google Workspace", "Microsoft Office", "Notion", "ClickUp", "Asana", "WordPress", "Wix Studio", "Figma", "Webflow", "Framer", "Canva", "Adobe Photoshop", "Meta Business Suite", "Metricool", "HubSpot", "Zoho CRM", "Salesforce", "Zapier", "n8n", "Zendesk", "Freshdesk", "RingCentral", "Monday.com", "Trello"];
-    document.getElementById("toolsTrack").innerHTML = [...TOOLS, ...TOOLS].map((t, i) => `<span${i >= TOOLS.length ? ' aria-hidden="true"' : ""}>${t}</span>`).join("");
+    /* ---------- Services strip (list is repeated so the loop is seamless) ---------- */
+    const STRIP = ["Administrative Support", "Inbox Management", "Calendar & Scheduling", "Website Design & Development", "Social Media Management", "Graphic Design", "CRM & Automation", "Lead Follow-ups", "Customer Support", "Business Operations", "Data Entry & Reports"];
+    document.getElementById("toolsTrack").innerHTML = [...STRIP, ...STRIP].map((t, i) => `<span${i >= STRIP.length ? ' aria-hidden="true"' : ""}>${t.replace(/&/g, "&amp;")}</span>`).join("");
 
     /*
       ---------- Services ----------
       Each block is one card. "key" links to that section of the portfolio.
     */
     const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>';
-    const ico = (d) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
     const SERVICES = [
       {
         key: "admin",
+        image: "notion-home.jpg",
+        alt: "Notion internal office built for a client",
         title: "Admin & Backend Operations Support",
         text: "I handle day-to-day admin — inbox management, scheduling, data entry, and backend tasks for your business.",
-        tools: ["GoHighLevel", "Microsoft Office", "Notion", "Google Workspace", "ClickUp", "Asana"],
-        icon: ico('<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/>')
+        tools: ["GoHighLevel", "Microsoft Office", "Notion", "Google Workspace", "ClickUp", "Asana"]
       },
       {
         key: "website",
+        image: "web-solar.jpg",
+        alt: "Solar company website design concept",
         title: "Website Design & Development",
         text: "I design conversion-ready websites that build trust, showcase your work, and grow your business online.",
-        tools: ["WordPress", "Wix Studio", "Figma", "GoHighLevel", "Webflow", "Framer"],
-        icon: ico('<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/>')
+        tools: ["WordPress", "Wix Studio", "Figma", "GoHighLevel", "Webflow", "Framer"]
       },
       {
         key: "social",
+        image: "design-breathwork-events.jpg",
+        alt: "Event graphic designed for a client",
         title: "Social Media Management & Graphic Design",
         text: "I create consistent, on-brand content and eye-catching visuals that keep your business professional and visible.",
-        tools: ["Adobe Photoshop", "Metricool", "Notion", "Meta Business", "Canva", "Figma"],
-        icon: ico('<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>')
+        tools: ["Adobe Photoshop", "Metricool", "Notion", "Meta Business", "Canva", "Figma"]
       },
       {
         key: "crm",
+        image: "crm-follow-up.jpg",
+        alt: "Automated follow-up workflow in GoHighLevel",
         title: "CRM & Automation",
         text: "I build smart systems that capture leads, follow up automatically, and keep your customer relationships fully organized.",
-        tools: ["GoHighLevel", "Zoho CRM", "n8n", "Zapier", "HubSpot", "Salesforce"],
-        icon: ico('<path d="M13 2L4 14h7l-1 8 9-12h-7z"/>')
+        tools: ["GoHighLevel", "Zoho CRM", "n8n", "Zapier", "HubSpot", "Salesforce"]
       },
       {
         key: "support",
+        image: "cs-inquiry.jpg",
+        alt: "Client enquiry answered with a booking link",
         title: "Customer Support",
         text: "I provide fast, friendly responses across email, chat, and social media — so every enquiry gets answered.",
-        tools: ["RingCentral", "Zendesk", "Social Media", "Freshdesk", "GoHighLevel", "WhatsApp"],
-        icon: ico('<path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/>')
+        tools: ["RingCentral", "Zendesk", "Social Media", "Freshdesk", "GoHighLevel", "WhatsApp"]
       },
       {
         key: "operations",
+        image: "ghl-orders.jpg",
+        alt: "Payments and orders set up in GoHighLevel",
         title: "Business Operations",
         text: "I put reliable systems and processes in place that keep your growing business running smoothly, efficiently, and on track.",
-        tools: ["ClickUp", "Microsoft Office", "Google Sheets", "Monday.com", "GoHighLevel", "Trello"],
-        icon: ico('<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/>')
+        tools: ["ClickUp", "Microsoft Office", "Google Sheets", "Monday.com", "GoHighLevel", "Trello"]
       }
     ];
     document.getElementById("serviceGrid").innerHTML = SERVICES.map((s) => `
       <article class="service-card reveal">
-        <div class="icon-box">${s.icon}</div>
-        <h3>${s.title.replace(/&/g, "&amp;")}</h3>
-        <p>${s.text}</p>
-        <div class="tool-tags">${s.tools.map((t) => `<span>${t}</span>`).join("")}</div>
-        <a class="text-link" href="portfolio/#${s.key}">View My Work Experience ${ARROW}</a>
+        <div class="service-media"><img src="images/${s.image}" alt="${s.alt}" loading="lazy" /></div>
+        <div class="service-body">
+          <h3>${s.title.replace(/&/g, "&amp;")}</h3>
+          <p>${s.text}</p>
+          <div class="tool-tags">${s.tools.map((t) => `<span>${t}</span>`).join("")}</div>
+          <a class="service-btn" href="portfolio/#${s.key}">View My Work Experience ${ARROW}</a>
+        </div>
       </article>`).join("");
 
     /* ---------- Testimonial stars ---------- */
@@ -2391,38 +2557,51 @@
     drawer.addEventListener("click", (e) => { if (e.target === drawer) setDrawer(false); });
     drawer.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener("click", () => setDrawer(false)));
 
-    /* ---------- About photo gallery ---------- */
-    const galleryMain = document.getElementById("galleryMain");
-    document.querySelectorAll("#thumbs button").forEach((btn) => {
-      btn.addEventListener("click", () => {
-        document.querySelectorAll("#thumbs button").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
-        galleryMain.style.opacity = 0;
-        setTimeout(() => {
-          galleryMain.src = btn.dataset.src;
-          galleryMain.alt = btn.dataset.alt;
-          galleryMain.style.opacity = 1;
-        }, 200);
-      });
-    });
-
-    /* ---------- Intro video popup ---------- */
-    const videoModal = document.getElementById("videoModal");
-    const introVideo = document.getElementById("introVideo");
-    const setVideo = (open) => {
-      videoModal.classList.toggle("open", open);
-      videoModal.setAttribute("aria-hidden", String(!open));
-      document.body.style.overflow = open ? "hidden" : "";
-      if (open) { introVideo.currentTime = 0; introVideo.play().catch(() => {}); videoModal.querySelector(".video-close").focus(); }
-      else { introVideo.pause(); document.getElementById("playIntro").focus(); }
+    /* ---------- About photo gallery: slides sideways on a loop ---------- */
+    const track = document.getElementById("galleryTrack");
+    const thumbs = [...document.querySelectorAll("#thumbs button")];
+    const photoCount = thumbs.length;
+    track.appendChild(track.firstElementChild.cloneNode()); // copy of photo 1 so the loop never rewinds
+    track.lastElementChild.alt = "";
+    let photo = 0;
+    const showPhoto = (i, animate = true) => {
+      photo = i;
+      track.classList.toggle("no-anim", !animate);
+      track.style.transform = `translateX(-${i * 100}%)`;
+      thumbs.forEach((b, n) => b.setAttribute("aria-pressed", String(n === i % photoCount)));
     };
-    document.getElementById("playIntro").addEventListener("click", () => setVideo(true));
-    videoModal.querySelector(".video-close").addEventListener("click", () => setVideo(false));
-    videoModal.addEventListener("click", (e) => { if (e.target === videoModal) setVideo(false); });
+    track.addEventListener("transitionend", () => { if (photo === photoCount) showPhoto(0, false); });
+    thumbs.forEach((b, n) => b.addEventListener("click", () => showPhoto(n)));
+    const gallery = document.querySelector(".gallery");
+    let paused = false;
+    gallery.addEventListener("mouseenter", () => (paused = true));
+    gallery.addEventListener("mouseleave", () => (paused = false));
+    if (!matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setInterval(() => { if (!paused && !document.hidden) showPhoto(photo + 1); }, 3500);
+    }
+
+    /* ---------- Intro video: plays muted while on screen, tap for sound ---------- */
+    const introVideo = document.getElementById("introVideo");
+    const soundBtn = document.getElementById("soundBtn");
+    const setSound = (on) => {
+      introVideo.muted = !on;
+      soundBtn.classList.toggle("on", on);
+      soundBtn.setAttribute("aria-pressed", String(on));
+      const label = on ? "Turn sound off" : "Turn sound on";
+      soundBtn.setAttribute("aria-label", label);
+      soundBtn.title = label;
+      if (on) introVideo.play().catch(() => {});
+    };
+    soundBtn.addEventListener("click", () => setSound(introVideo.muted));
+    introVideo.addEventListener("click", () => setSound(introVideo.muted));
+    new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) introVideo.play().catch(() => {});
+      else introVideo.pause();
+    }, { threshold: 0.35 }).observe(introVideo);
 
     document.addEventListener("keydown", (e) => {
       if (e.key !== "Escape") return;
       if (drawer.classList.contains("open")) setDrawer(false);
-      if (videoModal.classList.contains("open")) setVideo(false);
     });
 
     /* ---------- Smaller WhatsApp widget on phones ----------
