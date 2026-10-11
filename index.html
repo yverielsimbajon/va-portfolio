@@ -745,30 +745,43 @@
       transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s ease;
     }
 
-    /* Flip cards: the red problem turns like a book page to show the teal solution */
-    .flip-card { perspective: 1600px; cursor: pointer; }
+    /* Problem -> solution cards: the teal solution softly swipes in from left to right
+       while the red problem eases out to the right */
+    .flip-card { cursor: pointer; }
     .flip-card:focus-visible { outline: 3px solid var(--secondary); outline-offset: 4px; border-radius: var(--radius); }
 
     .flip-inner {
       display: grid;
       height: 100%;
-      transform-style: preserve-3d;
-      transition: transform 0.9s cubic-bezier(.3, .7, .2, 1);
-      transition-delay: calc(var(--d, 0) * 120ms);
+      border-radius: var(--radius);
+      transition: box-shadow 1.2s ease;
+      transition-delay: calc(var(--d, 0) * 160ms);
     }
-
-    .flip-card.flipped .flip-inner { transform: rotateY(-180deg); }
 
     .face {
       grid-area: 1 / 1;
       display: flex;
       flex-direction: column;
-      -webkit-backface-visibility: hidden;
-      backface-visibility: hidden;
+      transition: clip-path 1.2s cubic-bezier(.22, .61, .36, 1), opacity 1s ease, transform 1.2s cubic-bezier(.22, .61, .36, 1);
+      transition-delay: calc(var(--d, 0) * 160ms);
     }
 
-    .flip-card .back { transform: rotateY(180deg); pointer-events: none; }
-    .flip-card.flipped .back { pointer-events: auto; }
+    .flip-card .back {
+      clip-path: inset(0 100% 0 0 round var(--radius));
+      pointer-events: none;
+    }
+
+    .flip-card.flipped .back {
+      clip-path: inset(0 0 0 0 round var(--radius));
+      pointer-events: auto;
+    }
+
+    .flip-card.flipped .front {
+      opacity: 0;
+      transform: translateX(24px);
+    }
+
+    .flip-card.flipped .flip-inner { box-shadow: 0 24px 60px rgba(11, 110, 127, 0.25); }
 
     .flip-hint {
       display: inline-flex;
@@ -788,7 +801,7 @@
       color: #fff;
       background: var(--primary);
       border-radius: var(--radius);
-      box-shadow: inset 0 4px 0 #7FE3E3, 0 24px 60px rgba(11, 110, 127, 0.3);
+      box-shadow: inset 0 4px 0 #7FE3E3;
     }
 
     .solution-card .problem-tag .num { color: #fff; }
@@ -2020,7 +2033,7 @@
                 <h3>The Missed Enquiry</h3>
                 <p class="hook">Customers sent you a message. You were busy serving another client.</p>
                 <p class="detail">They found someone who replied first. Competitors got them instead.</p>
-                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Scroll or tap to see the fix</span>
+                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Scroll or tap to see the fix</span>
               </div>
               <div class="face back solution-card">
                 <div class="problem-tag"><span class="num">01</span><small>Solution</small></div>
@@ -2038,7 +2051,7 @@
                 <h3>Admin Piling Up</h3>
                 <p class="hook">You finished today's admin. Tomorrow, there's another pile waiting.</p>
                 <p class="detail">Admin tasks keep dividing your attention, pulling your focus away from growing your business.</p>
-                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Scroll or tap to see the fix</span>
+                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Scroll or tap to see the fix</span>
               </div>
               <div class="face back solution-card">
                 <div class="problem-tag"><span class="num">02</span><small>Solution</small></div>
@@ -2056,7 +2069,7 @@
                 <h3>Outdated Website</h3>
                 <p class="hook">You planned to update your website. But you got too busy.</p>
                 <p class="detail">Now it feels outdated. Meanwhile, your competitors continue to improve theirs.</p>
-                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Scroll or tap to see the fix</span>
+                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Scroll or tap to see the fix</span>
               </div>
               <div class="face back solution-card">
                 <div class="problem-tag"><span class="num">03</span><small>Solution</small></div>
@@ -2074,7 +2087,7 @@
                 <h3>Staying Active on Social Media</h3>
                 <p class="hook">You wanted to post this week. Then another busy day happened.</p>
                 <p class="detail">Now it's been weeks since your previous post.</p>
-                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/></svg>Scroll or tap to see the fix</span>
+                <span class="flip-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Scroll or tap to see the fix</span>
               </div>
               <div class="face back solution-card">
                 <div class="problem-tag"><span class="num">04</span><small>Solution</small></div>
@@ -2686,9 +2699,9 @@
     }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
     document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-    /* ---------- Problem cards flip to their solution ----------
-       A card turns over once it scrolls past the middle of the screen and turns back when you scroll up.
-       Tapping a card (or pressing Enter) flips it by hand. */
+    /* ---------- Problem cards swipe to their solution ----------
+       The solution swipes in once a card scrolls past the middle of the screen, and the problem
+       comes back when you scroll up. Tapping a card (or pressing Enter) switches it by hand. */
     const flipCards = [...document.querySelectorAll(".flip-card")];
     const updateFlips = () => {
       flipCards.forEach((card) => {
