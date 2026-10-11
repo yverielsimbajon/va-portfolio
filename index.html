@@ -828,13 +828,65 @@
 
     .icon-box svg { width: 24px; height: 24px; }
 
+    /* "Let's fix that." sits between the problem cards and the teal card */
+    .fix-divider {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin: 72px 0 32px;
+    }
+
+    .fix-row {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      width: 100%;
+    }
+
+    .fix-row::before,
+    .fix-row::after {
+      flex: 1;
+      height: 2px;
+      content: "";
+      background: rgba(11, 110, 127, 0.18);
+      border-radius: 2px;
+    }
+
+    .fix-row h2 {
+      margin: 0;
+      color: var(--primary);
+      font-size: clamp(1.9rem, 3.6vw, 2.8rem);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .fix-arrow {
+      display: grid;
+      width: 46px;
+      height: 46px;
+      color: #fff;
+      place-items: center;
+      background: var(--primary);
+      border-radius: 50%;
+      box-shadow: 0 10px 24px rgba(25, 180, 180, 0.4);
+      animation: nudge 2s ease-in-out infinite;
+    }
+
+    .fix-arrow svg { width: 22px; height: 22px; }
+
+    @keyframes nudge {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(6px); }
+    }
+
     /* Bridge band: the answer to the challenges */
     .bridge {
       display: grid;
       grid-template-columns: minmax(0, 1.3fr) auto;
       align-items: center;
       gap: 32px 56px;
-      margin-top: 64px;
       padding: clamp(32px, 5vw, 60px);
       color: #fff;
       background: var(--primary-dark);
@@ -850,8 +902,15 @@
       line-height: 1.22;
     }
 
-    .bridge h2 em { color: #7FE3E3; }
-    .bridge p { margin: 18px 0 0; max-width: 620px; color: rgba(255, 255, 255, 0.82); line-height: 1.8; }
+    .bridge h2 em {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-color: var(--secondary);
+      text-decoration-thickness: 3px;
+      text-underline-offset: 7px;
+    }
+
+    .bridge p { margin: 20px 0 0; max-width: 620px; color: rgba(255, 255, 255, 0.92); font-size: 1.02rem; line-height: 1.8; }
     .bridge p strong { color: #fff; font-weight: 600; }
     .bridge .btn-row { flex-direction: column; }
 
@@ -867,6 +926,8 @@
     @media (max-width: 600px) {
       .challenge-grid { grid-template-columns: 1fr; }
       .bridge .btn-row .btn { width: 100%; }
+      .fix-divider { margin: 56px 0 24px; }
+      .fix-row { gap: 14px; }
     }
 
     /* ---------- Comparison ---------- */
@@ -1934,6 +1995,11 @@
             <p class="hook">You wanted to post this week. Then another busy day happened.</p>
             <p>Now it's been weeks since your previous post.</p>
           </article>
+        </div>
+
+        <div class="fix-divider reveal">
+          <div class="fix-row"><h2>Let's fix that.</h2></div>
+          <span class="fix-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></svg></span>
         </div>
 
         <div class="bridge reveal">
