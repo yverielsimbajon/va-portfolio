@@ -503,7 +503,7 @@
         <a data-link="home" href="#">Home</a>
         <a data-link="about" href="#">About</a>
         <a data-link="services" href="#">Services</a>
-        <a href="index.html">My Portfolio</a>
+        <a href="portfolio/">My Portfolio</a>
         <a data-link="pricing" href="#">Pricing</a>
       </nav>
       <a class="header-cta" href="#book">
@@ -526,7 +526,7 @@
         <a data-link="home" href="#">Home</a>
         <a data-link="about" href="#">About</a>
         <a data-link="services" href="#">Services</a>
-        <a href="index.html">My Portfolio</a>
+        <a href="portfolio/">My Portfolio</a>
         <a data-link="pricing" href="#">Pricing</a>
       </nav>
       <a class="header-cta" href="#book">
@@ -663,7 +663,7 @@
             Message Me on WhatsApp
             <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="#25D366" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
           </a>
-          <a class="btn primary" href="index.html">
+          <a class="btn primary" href="portfolio/">
             View My Portfolio
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>
           </a>
@@ -684,14 +684,12 @@
   <div class="elfsight-app-4ed2b3b1-71ff-4271-ad11-68c432ed63f1" data-elfsight-app-lazy></div>
 
   <script>
-    /* Links back to Maria's main website (same addresses as the portfolio) */
-    const SITE = "https://yverielsimbajon.wixstudio.com/mariasimbajon-va";
-    const withSection = (section) => { const u = new URL(SITE); u.searchParams.set("section", section); return u.href; };
+    /* Links back to the home page */
     const SITE_LINKS = {
-      home: SITE,
-      about: withSection("about"),
-      services: withSection("services"),
-      pricing: withSection("pricing")
+      home: "./",
+      about: "./#about",
+      services: "./#services",
+      pricing: "./#pricing"
     };
     document.querySelectorAll("[data-link]").forEach((a) => (a.href = SITE_LINKS[a.dataset.link]));
 
