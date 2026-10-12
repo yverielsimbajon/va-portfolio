@@ -1,7 +1,12 @@
 {
   "name": "va-portfolio",
   "compatibility_date": "2026-10-01",
+  // worker.js only handles videos (adds Range support so the intro video can skip/seek);
+  // every other file is served straight from the static assets
+  "main": "worker.js",
   "assets": {
-    "directory": "./"
+    "directory": "./",
+    "binding": "ASSETS",
+    "run_worker_first": ["/images/*.mp4"]
   }
 }
