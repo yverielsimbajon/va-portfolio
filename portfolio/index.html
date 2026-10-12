@@ -172,62 +172,88 @@
     }
     .hero-video video { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 
-    /* Video controls under the video (so they never cover the captions): back 10s, play/pause, forward 10s, seek, time */
+    /* YouTube-style controls: hidden until the video is tapped, fade away after 2 seconds */
     .vc {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0) 32%), rgba(0, 0, 0, 0.18);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .vc.show { opacity: 1; pointer-events: auto; }
+
+    .vc-center {
+      position: absolute;
+      top: 50%;
+      left: 50%;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      color: #fff;
-      background: #041F28;
+      gap: clamp(18px, 5vw, 40px);
+      transform: translate(-50%, -50%);
     }
 
     .vc button {
       display: grid;
-      flex: 0 0 auto;
-      width: 36px;
-      height: 36px;
+      width: 48px;
+      height: 48px;
       padding: 0;
       color: #fff;
       cursor: pointer;
       place-items: center;
-      background: rgba(255, 255, 255, 0.1);
+      background: none;
       border: 0;
       border-radius: 50%;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+      filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.5));
+      transition: background 0.2s ease;
     }
 
-    .vc button:hover { color: #04222B; background: #7FE3E3; transform: translateY(-1px); }
-    .vc button:focus-visible { outline: 2px solid #7FE3E3; outline-offset: 2px; }
-    .vc svg { width: 20px; height: 20px; }
-    .vc .vc-play { width: 42px; height: 42px; color: #04222B; background: var(--secondary); }
+    .vc button:hover { background: rgba(255, 255, 255, 0.12); }
+    .vc button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+    .vc button svg { width: 30px; height: 30px; }
+    .vc .vc-play { width: 64px; height: 64px; }
+    .vc .vc-play svg { width: 42px; height: 42px; }
     .vc .vc-play .i-pause { display: none; }
     .vc .vc-play.playing .i-pause { display: block; }
     .vc .vc-play.playing .i-play { display: none; }
 
+    .vc-bottom {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 14px 10px;
+    }
+
     .vc-seek {
       flex: 1;
       min-width: 60px;
-      height: 6px;
-      margin: 0 4px;
+      height: 4px;
+      margin: 0;
       cursor: pointer;
-      background: linear-gradient(to right, var(--secondary) var(--p, 0%), rgba(255, 255, 255, 0.22) var(--p, 0%));
+      background: linear-gradient(to right, #fff var(--p, 0%), rgba(255, 255, 255, 0.3) var(--p, 0%));
       border-radius: 999px;
       -webkit-appearance: none;
       appearance: none;
     }
 
-    .vc-seek::-webkit-slider-thumb { width: 16px; height: 16px; background: #fff; border: 0; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); -webkit-appearance: none; appearance: none; }
-    .vc-seek::-moz-range-thumb { width: 16px; height: 16px; background: #fff; border: 0; border-radius: 50%; box-shadow: 0 2px 6px rgba(0, 0, 0, 0.35); }
+    .vc-seek::-webkit-slider-thumb { width: 12px; height: 12px; background: #fff; border: 0; border-radius: 50%; -webkit-appearance: none; appearance: none; }
+    .vc-seek::-moz-range-thumb { width: 12px; height: 12px; background: #fff; border: 0; border-radius: 50%; }
     .vc-seek::-moz-range-track { background: transparent; }
 
-    .vc-time { flex: 0 0 auto; color: rgba(255, 255, 255, 0.85); font-size: 0.76rem; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .vc-time { flex: 0 0 auto; color: #fff; font-size: 0.76rem; font-variant-numeric: tabular-nums; white-space: nowrap; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); }
 
     @media (max-width: 420px) {
-      .vc { gap: 7px; padding: 9px 10px; }
-      .vc button { width: 32px; height: 32px; }
-      .vc .vc-play { width: 38px; height: 38px; }
-      .vc svg { width: 18px; height: 18px; }
+      .vc button { width: 42px; height: 42px; }
+      .vc button svg { width: 26px; height: 26px; }
+      .vc .vc-play { width: 54px; height: 54px; }
+      .vc .vc-play svg { width: 36px; height: 36px; }
+      .vc-bottom { padding: 0 10px 8px; }
       .vc-time { font-size: 0.7rem; }
     }
 
@@ -237,7 +263,7 @@
       position: absolute;
       top: 12px;
       right: 12px;
-      z-index: 2;
+      z-index: 3;
       display: grid;
       place-items: center;
       padding: 5px;
@@ -1779,11 +1805,15 @@
           </span>
         </button>
         <div class="vc" data-for="introVideo">
-          <button class="vc-back" type="button" aria-label="Back 10 seconds" title="Back 10 seconds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><text x="12" y="15.5" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none" font-family="Poppins, sans-serif">10</text></svg></button>
-          <button class="vc-play" type="button" aria-label="Play" title="Play / Pause"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1"/><rect x="13.5" y="5" width="4" height="14" rx="1"/></svg></button>
-          <button class="vc-fwd" type="button" aria-label="Forward 10 seconds" title="Forward 10 seconds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/><text x="12" y="15.5" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none" font-family="Poppins, sans-serif">10</text></svg></button>
-          <input class="vc-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Video position" />
-          <span class="vc-time">0:00 / 0:00</span>
+          <div class="vc-center">
+            <button class="vc-back" type="button" aria-label="Back 10 seconds" title="Back 10 seconds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/><text x="12" y="15.5" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none" font-family="Poppins, sans-serif">10</text></svg></button>
+            <button class="vc-play" type="button" aria-label="Play" title="Play / Pause"><svg class="i-play" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg><svg class="i-pause" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6.5" y="5" width="4" height="14" rx="1"/><rect x="13.5" y="5" width="4" height="14" rx="1"/></svg></button>
+            <button class="vc-fwd" type="button" aria-label="Forward 10 seconds" title="Forward 10 seconds"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a9 9 0 1 1-3-6.7L21 8"/><path d="M21 3v5h-5"/><text x="12" y="15.5" font-size="7.5" font-weight="700" text-anchor="middle" fill="currentColor" stroke="none" font-family="Poppins, sans-serif">10</text></svg></button>
+          </div>
+          <div class="vc-bottom">
+            <input class="vc-seek" type="range" min="0" max="100" step="0.1" value="0" aria-label="Video position" />
+            <span class="vc-time">0:00 / 0:00</span>
+          </div>
         </div>
       </div>
       <div class="hero-stat" aria-label="Portfolio highlights">
@@ -2779,8 +2809,6 @@
       if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
       setState();
 
-      // Tapping the video itself works the same as the button
-      video.addEventListener("click", () => btn.click());
 
       btn.addEventListener("click", () => {
         if (video.muted || video.paused) {
@@ -2806,8 +2834,10 @@
       });
     })();
 
-    /* ---------- Intro video controls: back/forward 10s, play/pause, seek ----------
-       A pause by the visitor is remembered, so scrolling back doesn't start the video again. */
+    /* ---------- Intro video controls, YouTube style ----------
+       Tap the video to show back 10s / play-pause / forward 10s and the seek bar; they fade away
+       after 2 seconds without a tap (they stay up while paused). A visitor's pause is remembered,
+       so scrolling back doesn't start the video again. */
     document.querySelectorAll(".vc").forEach((bar) => {
       const video = document.getElementById(bar.dataset.for);
       if (!video) return;
@@ -2816,6 +2846,18 @@
       const time = bar.querySelector(".vc-time");
       const fmt = (t) => { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0"); };
       let dragging = false;
+      let hideTimer;
+
+      const hide = () => {
+        if (video.dataset.userPaused === "1" || dragging) return;
+        bar.classList.remove("show");
+      };
+      const show = () => {
+        bar.classList.add("show");
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(hide, 2000);
+      };
+
       const sync = () => {
         const d = video.duration || 0;
         const p = d ? (video.currentTime / d) * 100 : 0;
@@ -2826,10 +2868,22 @@
         playBtn.setAttribute("aria-label", video.paused ? "Play" : "Pause");
       };
       ["timeupdate", "loadedmetadata", "durationchange", "play", "pause", "seeked"].forEach((ev) => video.addEventListener(ev, sync));
-      video.addEventListener("play", () => delete video.dataset.userPaused);
+      video.addEventListener("play", () => { delete video.dataset.userPaused; if (bar.classList.contains("show")) show(); });
+
+      // Tap the video: show the controls. Tap an empty spot while they're up: hide them.
+      video.addEventListener("click", show);
+      bar.addEventListener("click", (e) => {
+        if (e.target.closest("button, input")) { show(); return; }
+        clearTimeout(hideTimer);
+        if (video.dataset.userPaused !== "1") bar.classList.remove("show");
+      });
+      // Mouse users also get them by moving over the video, like YouTube
+      bar.parentElement.addEventListener("pointermove", (e) => { if (e.pointerType === "mouse") show(); });
+      bar.addEventListener("focusin", show);
+
       playBtn.addEventListener("click", () => {
         if (video.paused) { delete video.dataset.userPaused; video.play().catch(() => {}); }
-        else { video.dataset.userPaused = "1"; video.pause(); }
+        else { video.dataset.userPaused = "1"; video.pause(); bar.classList.add("show"); clearTimeout(hideTimer); }
       });
       const jump = (s) => { video.currentTime = Math.min(Math.max(0, video.currentTime + s), (video.duration || 0) - 0.1); sync(); };
       bar.querySelector(".vc-back").addEventListener("click", () => jump(-10));
@@ -2839,7 +2893,7 @@
         if (video.duration) video.currentTime = (seek.value / 100) * video.duration;
         sync();
       });
-      seek.addEventListener("change", () => { dragging = false; sync(); });
+      seek.addEventListener("change", () => { dragging = false; sync(); show(); });
       sync();
     });
   </script>
