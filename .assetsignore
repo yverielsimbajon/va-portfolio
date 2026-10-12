@@ -1,0 +1,11 @@
+wrangler.jsonc
+.assetsignore
+.gitignore
+.nojekyll
+.git
+.claude
+node_modules
+Website Concept
+Resume
+*.zip
+home-v2.html
