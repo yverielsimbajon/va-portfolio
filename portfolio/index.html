@@ -2314,6 +2314,17 @@
     window.addEventListener("scroll", spy, { passive: true });
     spy();
 
+    /* ---------- Deep links: /portfolio/#website, #social ... jump to that section ---------- */
+    const jumpToHash = () => {
+      let id = "";
+      try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+      const target = id && document.getElementById(id);
+      if (!target || !target.classList.contains("service-section")) return;
+      target.scrollIntoView({ behavior: "instant", block: "start" });
+    };
+    jumpToHash();
+    window.addEventListener("load", () => { jumpToHash(); setTimeout(jumpToHash, 400); }, { once: true });
+
     /* ---------- Lazy reveal (fade up) ---------- */
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
