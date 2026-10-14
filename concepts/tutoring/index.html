@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brightpath Tutoring | Primary, High School &amp; HSC Tutoring in Chatswood and Online</title>
+  <meta name="description" content="Brightpath Tutoring helps Sydney students build confidence and lift results with expert one-on-one and small-group tutoring, in Chatswood and online." />
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy: #13213c;
+      --navy-2: #1d2f52;
+      --cream: #fbf7ef;
+      --paper: #ffffff;
+      --sun: #ffc24b;
+      --sun-soft: #fff1d1;
+      --coral: #f2765c;
+      --mint: #cfe9df;
+      --ink: #1f2a3d;
+      --muted: #5f6b7d;
+      --line: rgba(19, 33, 60, 0.1);
+      --display: "Fraunces", Georgia, serif;
+      --sans: "Plus Jakarta Sans", system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); color: var(--ink); background: var(--cream); line-height: 1.65; font-size: 17px; overflow-x: hidden; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; color: inherit; }
+    .wrap { width: min(1200px, 100% - 48px); margin-inline: auto; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 600; color: var(--navy); line-height: 1.1; letter-spacing: -0.02em; }
+    h2 { font-size: clamp(36px, 4.6vw, 54px); }
+    .hl { position: relative; white-space: nowrap; z-index: 0; }
+    .hl::after { content: ""; position: absolute; left: -4px; right: -4px; bottom: 0.08em; height: 0.36em; background: var(--sun); z-index: -1; border-radius: 4px; transform: rotate(-1deg); }
+    .kicker { display: inline-block; background: var(--sun-soft); color: #9a6b00; font-weight: 700; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; margin-bottom: 18px; }
+    .lead { font-size: 19px; color: var(--muted); max-width: 580px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 28px; border-radius: 14px; font-weight: 700; font-size: 16px; cursor: pointer; border: 2px solid transparent; transition: transform .2s, box-shadow .2s, background .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-sun { background: var(--sun); color: var(--navy); box-shadow: 0 6px 0 #d99a1c; }
+    .btn-sun:hover { box-shadow: 0 8px 0 #d99a1c; }
+    .btn-navy { background: var(--navy); color: #fff; box-shadow: 0 6px 0 #0a1428; }
+    .btn-ghost { border-color: var(--navy); color: var(--navy); background: transparent; }
+    .btn-ghost:hover { background: var(--navy); color: #fff; }
+    section { padding: 110px 0; }
+    .center { text-align: center; }
+    .center .lead { margin-inline: auto; }
+
+    /* Header */
+    header { position: sticky; top: 0; z-index: 50; background: rgba(251, 247, 239, 0.9); backdrop-filter: blur(12px); transition: box-shadow .3s; }
+    header.scrolled { box-shadow: 0 8px 30px rgba(19, 33, 60, 0.08); }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 82px; }
+    .logo { display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 25px; color: var(--navy); }
+    .logo-mark { width: 40px; height: 40px; border-radius: 12px; background: var(--navy); display: grid; place-items: center; }
+    .logo-mark svg { width: 22px; height: 22px; }
+    .nav-links { display: flex; gap: 34px; font-weight: 500; font-size: 15px; }
+    .nav-links a:hover { color: #c48a10; }
+    .nav-right { display: flex; gap: 14px; align-items: center; }
+    .nav-right .btn { padding: 12px 20px; font-size: 15px; box-shadow: 0 4px 0 #d99a1c; }
+    .burger { display: none; background: var(--navy); border: 0; width: 46px; height: 46px; border-radius: 12px; cursor: pointer; position: relative; }
+    .burger span { position: absolute; left: 13px; right: 13px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
+    .burger span:nth-child(1) { top: 16px; } .burger span:nth-child(2) { top: 22px; } .burger span:nth-child(3) { top: 28px; }
+    .burger.open span:nth-child(1) { top: 22px; transform: rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { top: 22px; transform: rotate(-45deg); }
+    .mobile-menu { display: none; }
+
+    /* Hero */
+    .hero { padding: 50px 0 90px; }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; }
+    .hero h1 { font-size: clamp(46px, 6vw, 80px); margin-bottom: 26px; }
+    .hero .lead { margin-bottom: 36px; }
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+    .hero-proof { display: flex; align-items: center; gap: 16px; margin-top: 40px; font-size: 15px; color: var(--muted); }
+    .avatars { display: flex; }
+    .avatars span { width: 42px; height: 42px; border-radius: 50%; border: 3px solid var(--cream); margin-left: -10px; display: grid; place-items: center; font-weight: 700; font-size: 14px; color: var(--navy); }
+    .avatars span:first-child { margin-left: 0; }
+    .stars { color: #e7a417; letter-spacing: 2px; }
+    .hero-visual { position: relative; }
+    .hero-img { border-radius: 32px; overflow: hidden; aspect-ratio: 1 / 1.05; box-shadow: 0 40px 80px -40px rgba(19, 33, 60, 0.5); }
+    .hero-img img { width: 100%; height: 100%; object-fit: cover; }
+    .float { position: absolute; background: #fff; border-radius: 18px; padding: 16px 20px; box-shadow: 0 24px 50px -24px rgba(19, 33, 60, 0.4); display: flex; align-items: center; gap: 14px; font-size: 14px; }
+    .float b { display: block; font-size: 22px; font-family: var(--display); color: var(--navy); line-height: 1.1; }
+    .float .ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 20px; flex: none; }
+    .float.one { left: -36px; bottom: 54px; }
+    .float.two { right: -26px; top: 40px; }
+    .blob { position: absolute; width: 140px; height: 140px; border-radius: 50%; background: var(--sun); right: -40px; bottom: -40px; z-index: -1; }
+
+    /* Logos strip */
+    .strip { background: var(--navy); color: #c6cfdf; padding: 26px 0; }
+    .strip .wrap { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; font-weight: 600; font-size: 15px; }
+    .strip .wrap div { display: flex; align-items: center; gap: 10px; }
+    .strip svg { width: 20px; height: 20px; color: var(--sun); }
+
+    /* Programs */
+    .levels { display: inline-flex; background: #fff; padding: 6px; border-radius: 16px; gap: 4px; margin: 34px 0 44px; box-shadow: 0 2px 0 var(--line); flex-wrap: wrap; justify-content: center; }
+    .level { border: 0; background: transparent; padding: 12px 22px; border-radius: 12px; font-weight: 700; font-size: 15px; cursor: pointer; color: var(--muted); transition: .25s; }
+    .level.active { background: var(--navy); color: #fff; }
+    .panel { display: none; grid-template-columns: 1fr 1.2fr; gap: 40px; align-items: stretch; text-align: left; }
+    .panel.active { display: grid; animation: fade .45s ease; }
+    @keyframes fade { from { opacity: 0; transform: translateY(12px); } }
+    .panel-img { border-radius: 26px; overflow: hidden; min-height: 380px; position: relative; }
+    .panel-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .panel-body { background: #fff; border-radius: 26px; padding: 44px; display: flex; flex-direction: column; }
+    .panel-body h3 { font-size: 34px; margin-bottom: 10px; }
+    .panel-body > p { color: var(--muted); }
+    .subjects { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0 32px; }
+    .subject { display: flex; align-items: center; gap: 12px; padding: 14px 16px; border-radius: 14px; background: var(--cream); font-weight: 600; font-size: 15px; }
+    .subject i { font-style: normal; font-weight: 700; color: var(--navy); width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: 17px; flex: none; }
+    .panel-body .btn { align-self: flex-start; margin-top: auto; }
+
+    /* How it works */
+    .how { background: #fff; }
+    .how-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 60px; counter-reset: s; }
+    .how-card { padding: 34px 28px; border-radius: 24px; background: var(--cream); position: relative; }
+    .how-card::before { counter-increment: s; content: "0" counter(s); font-family: var(--display); font-size: 54px; font-weight: 600; color: var(--sun); line-height: 1; display: block; margin-bottom: 18px; }
+    .how-card h3 { font-size: 23px; margin-bottom: 8px; }
+    .how-card p { color: var(--muted); font-size: 15px; }
+
+    /* Results */
+    .results { background: var(--navy); color: #c6cfdf; border-radius: 40px; margin: 0 24px; position: relative; overflow: hidden; }
+    .results h2 { color: #fff; }
+    .results .kicker { background: rgba(255, 194, 75, 0.15); color: var(--sun); }
+    .results-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .nums { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .num { background: var(--navy-2); border-radius: 22px; padding: 30px; }
+    .num b { font-family: var(--display); font-size: 56px; color: var(--sun); line-height: 1; display: block; margin-bottom: 8px; }
+    .num span { font-size: 15px; }
+    .results .lead { color: #c6cfdf; margin: 20px 0 32px; }
+
+    /* Tutors */
+    .tutors { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 56px; }
+    .tutor { background: #fff; border-radius: 24px; padding: 30px 26px; text-align: left; transition: transform .3s, box-shadow .3s; }
+    .tutor:hover { transform: translateY(-6px); box-shadow: 0 30px 50px -30px rgba(19, 33, 60, 0.35); }
+    .tutor .av { width: 72px; height: 72px; border-radius: 22px; display: grid; place-items: center; font-family: var(--display); font-size: 28px; font-weight: 600; color: var(--navy); margin-bottom: 20px; }
+    .tutor h3 { font-size: 22px; }
+    .tutor .role { color: #c48a10; font-weight: 700; font-size: 14px; margin: 2px 0 12px; }
+    .tutor p { color: var(--muted); font-size: 14.5px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .tags span { font-size: 12px; font-weight: 600; background: var(--cream); padding: 5px 10px; border-radius: 999px; }
+
+    /* Pricing */
+    .pricing { background: #fff; }
+    .toggle { display: inline-flex; align-items: center; gap: 14px; margin: 30px 0 50px; font-weight: 600; }
+    .switch { width: 64px; height: 34px; border-radius: 999px; background: var(--navy); border: 0; position: relative; cursor: pointer; }
+    .switch::after { content: ""; position: absolute; top: 4px; left: 4px; width: 26px; height: 26px; border-radius: 50%; background: var(--sun); transition: transform .3s; }
+    .switch[aria-checked="true"]::after { transform: translateX(30px); }
+    .save { background: var(--mint); color: #1f6b4e; font-size: 12px; padding: 4px 10px; border-radius: 999px; font-weight: 700; }
+    .plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; text-align: left; }
+    .plan { border: 2px solid var(--line); border-radius: 28px; padding: 38px 34px; display: flex; flex-direction: column; background: var(--cream); }
+    .plan.pop { background: var(--navy); color: #c6cfdf; border-color: var(--navy); position: relative; }
+    .plan.pop h3, .plan.pop .price { color: #fff; }
+    .plan .tagline { font-size: 15px; color: var(--muted); margin: 6px 0 22px; }
+    .plan.pop .tagline { color: #9fb0cc; }
+    .plan .ribbon { position: absolute; top: 24px; right: 24px; background: var(--sun); color: var(--navy); font-weight: 700; font-size: 12px; padding: 5px 12px; border-radius: 999px; }
+    .plan h3 { font-size: 28px; }
+    .price { font-family: var(--display); font-size: 54px; color: var(--navy); line-height: 1; font-weight: 600; }
+    .price small { font-family: var(--sans); font-size: 15px; font-weight: 500; color: var(--muted); }
+    .plan.pop .price small { color: #9fb0cc; }
+    .plan .per { font-size: 13px; margin-top: 6px; min-height: 20px; }
+    .plan ul { list-style: none; display: grid; gap: 12px; margin: 26px 0 32px; font-size: 15px; flex: 1; }
+    .plan li { display: flex; gap: 10px; }
+    .plan li::before { content: "✓"; font-weight: 700; color: #1f9d6b; }
+    .plan.pop li::before { color: var(--sun); }
+
+    /* Testimonials */
+    .testi-wrap { max-width: 860px; margin: 50px auto 0; position: relative; }
+    .testi { display: none; background: #fff; border-radius: 30px; padding: 50px 56px; text-align: left; }
+    .testi.active { display: block; animation: fade .5s ease; }
+    .testi blockquote { font-family: var(--display); font-size: clamp(22px, 2.6vw, 30px); color: var(--navy); line-height: 1.35; font-weight: 500; }
+    .testi .who { display: flex; align-items: center; gap: 14px; margin-top: 30px; }
+    .testi .who span { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; font-weight: 700; }
+    .testi .who small { display: block; color: var(--muted); }
+    .testi-nav { display: flex; justify-content: center; align-items: center; gap: 14px; margin-top: 28px; }
+    .arrow { width: 50px; height: 50px; border-radius: 50%; border: 2px solid var(--navy); background: transparent; cursor: pointer; font-size: 18px; transition: .2s; }
+    .arrow:hover { background: var(--navy); color: #fff; }
+    .dots { display: flex; gap: 8px; }
+    .dots button { width: 10px; height: 10px; border-radius: 999px; border: 0; background: #c9cfda; cursor: pointer; transition: .3s; padding: 0; }
+    .dots button.active { width: 30px; background: var(--navy); }
+
+    /* FAQ */
+    .faq { max-width: 860px; margin: 50px auto 0; text-align: left; display: grid; gap: 14px; }
+    details { background: #fff; border-radius: 20px; padding: 0 28px; }
+    summary { list-style: none; cursor: pointer; padding: 24px 0; font-weight: 700; font-size: 18px; color: var(--navy); display: flex; justify-content: space-between; gap: 20px; align-items: center; }
+    summary::-webkit-details-marker { display: none; }
+    summary::after { content: "+"; width: 34px; height: 34px; border-radius: 10px; background: var(--sun-soft); display: grid; place-items: center; font-size: 22px; flex: none; transition: transform .3s; }
+    details[open] summary::after { transform: rotate(45deg); background: var(--sun); }
+    details p { padding-bottom: 24px; color: var(--muted); }
+
+    /* Assessment form */
+    .assess { background: var(--sun); position: relative; overflow: hidden; }
+    .assess-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
+    .assess .lead { color: #4a3a12; }
+    .assess-points { list-style: none; display: grid; gap: 14px; margin-top: 30px; font-weight: 600; }
+    .assess-points li { display: flex; gap: 12px; align-items: center; }
+    .assess-points li::before { content: "✓"; width: 28px; height: 28px; border-radius: 50%; background: var(--navy); color: var(--sun); display: grid; place-items: center; font-size: 14px; flex: none; }
+    .form-card { background: #fff; border-radius: 30px; padding: 44px; box-shadow: 0 40px 80px -40px rgba(19, 33, 60, 0.5); }
+    .progress { display: flex; gap: 8px; margin-bottom: 28px; }
+    .progress span { flex: 1; height: 6px; border-radius: 999px; background: var(--line); transition: background .3s; }
+    .progress span.on { background: var(--navy); }
+    .step-label { font-size: 13px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; }
+    .form-card h3 { font-size: 28px; margin: 6px 0 24px; }
+    .fstep { display: none; }
+    .fstep.active { display: block; animation: fade .4s ease; }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
+    .chip { padding: 11px 18px; border-radius: 12px; border: 2px solid var(--line); background: #fff; cursor: pointer; font-weight: 600; font-size: 15px; transition: .2s; }
+    .chip:hover { border-color: var(--navy); }
+    .chip.sel { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .grp-label { display: block; font-weight: 700; font-size: 14px; margin-bottom: 10px; }
+    .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
+    .field label { font-weight: 700; font-size: 14px; }
+    .field input, .field select, .field textarea { padding: 14px 16px; border-radius: 12px; border: 2px solid var(--line); outline: none; background: #fff; transition: border-color .2s; font-size: 16px; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--navy); }
+    .field.error input { border-color: var(--coral); }
+    .err-msg { color: #c94a30; font-size: 14px; font-weight: 600; min-height: 22px; margin-bottom: 8px; }
+    .form-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; }
+    .done { text-align: center; padding: 20px 0; }
+    .done .big { width: 84px; height: 84px; border-radius: 50%; background: var(--sun); display: grid; place-items: center; margin: 0 auto 22px; font-size: 38px; }
+    .done p { color: var(--muted); margin: 10px 0 26px; }
+
+    footer { background: var(--navy); color: #9fb0cc; padding: 80px 0 32px; font-size: 15px; }
+    .foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; }
+    footer .logo { color: #fff; }
+    footer .logo-mark { background: var(--sun); }
+    footer h4 { color: #fff; font-size: 15px; margin-bottom: 16px; }
+    footer ul { list-style: none; display: grid; gap: 9px; }
+    footer a:hover { color: var(--sun); }
+    .foot-bottom { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 56px; padding-top: 26px; font-size: 13px; }
+    .foot-bottom a { color: var(--sun); }
+    .socials { display: flex; gap: 10px; margin-top: 22px; }
+    .socials a { width: 42px; height: 42px; border-radius: 12px; background: var(--navy-2); display: grid; place-items: center; transition: .2s; }
+    .socials a:hover { background: var(--sun); color: var(--navy); }
+    .socials svg { width: 18px; height: 18px; }
+
+    .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s ease, transform .8s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    @media (max-width: 1060px) {
+      .nav-links, .nav-right .call { display: none; }
+      .burger { display: block; }
+      .mobile-menu { display: block; position: fixed; top: 82px; left: 0; right: 0; background: var(--cream); padding: 10px 24px 28px; box-shadow: 0 20px 30px rgba(19, 33, 60, 0.1); transform: translateY(-130%); transition: transform .35s ease; z-index: 49; }
+      .mobile-menu.open { transform: none; }
+      .mobile-menu a { display: block; padding: 15px 0; border-bottom: 1px solid var(--line); font-weight: 700; font-size: 18px; }
+      .hero-grid, .results-grid, .assess-grid, .panel.active { grid-template-columns: 1fr; }
+      .hero-visual { max-width: 560px; margin: 0 auto; width: 100%; }
+      .how-grid, .tutors { grid-template-columns: 1fr 1fr; }
+      .plans { grid-template-columns: 1fr; max-width: 520px; margin: 0 auto; }
+      .foot-grid { grid-template-columns: 1fr 1fr; }
+      .panel-img { min-height: 280px; }
+    }
+    @media (max-width: 680px) {
+      body { font-size: 16px; }
+      section { padding: 80px 0; }
+      .wrap { width: calc(100% - 32px); }
+      .nav { height: 70px; }
+      .mobile-menu { top: 70px; }
+      .nav-right .btn { display: none; }
+      .logo { font-size: 21px; }
+      .float.one { left: -6px; bottom: 20px; }
+      .float.two { right: -6px; top: 16px; }
+      .how-grid, .tutors, .subjects, .grid2, .nums { grid-template-columns: 1fr; }
+      .panel-body, .form-card { padding: 28px 22px; }
+      .results { margin: 0 10px; border-radius: 28px; }
+      .testi { padding: 34px 26px; }
+      .foot-grid { grid-template-columns: 1fr; }
+      .hero-proof { flex-wrap: wrap; }
+    }
+    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } html { scroll-behavior: auto; } }
+    /* ?shot = static capture for portfolio screenshots */
+    .shot .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+    .shot * { animation-duration: 0s !important; }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <div class="wrap nav">
+      <a href="#top" class="logo" aria-label="Brightpath Tutoring home">
+        <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18c4-1 6-5 9-9s5-5 9-5" stroke="#ffc24b" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="4.5" r="2.2" fill="#ffc24b"/></svg></span>
+        Brightpath
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#programs">Programs</a>
+        <a href="#how">How it works</a>
+        <a href="#tutors">Tutors</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-right">
+        <a href="tel:+61280000000" class="call btn btn-ghost" style="padding:10px 18px;font-size:15px">(02) 8000 0000</a>
+        <a href="#assessment" class="btn btn-sun">Free assessment</a>
+        <button class="burger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#programs">Programs</a>
+    <a href="#how">How it works</a>
+    <a href="#tutors">Tutors</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#assessment">Book a free assessment</a>
+    <a href="tel:+61280000000">Call (02) 8000 0000</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <span class="kicker">Years K to 12 · Chatswood &amp; online</span>
+          <h1>Confidence first. <span class="hl">Better marks</span> follow.</h1>
+          <p class="lead">One-on-one and small-group tutoring with expert, friendly tutors who find the gaps, fix them properly, and help your child actually enjoy learning again.</p>
+          <div class="hero-actions">
+            <a href="#assessment" class="btn btn-sun">Book a free assessment →</a>
+            <a href="#programs" class="btn btn-ghost">See programs</a>
+          </div>
+          <div class="hero-proof">
+            <div class="avatars"><span style="background:#ffd98a">AL</span><span style="background:#cfe9df">JT</span><span style="background:#f9c7bb">MK</span><span style="background:#d5dcf2">+</span></div>
+            <div><span class="stars">★★★★★</span><br /><strong style="color:var(--navy)">4.9 from 380+ families</strong></div>
+          </div>
+        </div>
+        <div class="hero-visual reveal">
+          <div class="hero-img"><img src="https://images.pexels.com/photos/7079148/pexels-photo-7079148.jpeg?auto=compress&cs=tinysrgb&w=1100" alt="Tutor helping a student with his work" /></div>
+          <div class="float one"><span class="ic" style="background:var(--mint);color:#1f6b4e;font-weight:700">↑</span><div><b>+18%</b>average grade lift in one term</div></div>
+          <div class="float two"><span class="ic" style="background:var(--sun-soft);color:#9a6b00;font-weight:700">✓</span><div><b>WWCC</b>checked tutors</div></div>
+          <div class="blob"></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="strip">
+      <div class="wrap">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>NSW curriculum aligned</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Working With Children checked</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Progress reports every 4 weeks</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>No lock-in contracts</div>
+      </div>
+    </div>
+
+    <!-- PROGRAMS -->
+    <section id="programs" class="center">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">Programs</span>
+          <h2>The right support at <span class="hl">every stage</span></h2>
+          <p class="lead" style="margin-top:16px">Pick your child's stage to see what we cover.</p>
+        </div>
+        <div class="levels" role="tablist">
+          <button class="level active" data-level="primary">Primary (K–6)</button>
+          <button class="level" data-level="high">High School (7–10)</button>
+          <button class="level" data-level="hsc">HSC (11–12)</button>
+          <button class="level" data-level="selective">Selective &amp; OC</button>
+        </div>
+
+        <div class="panel active" id="primary">
+          <div class="panel-img"><img loading="lazy" src="https://images.pexels.com/photos/6929208/pexels-photo-6929208.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Primary student learning with a tutor" /></div>
+          <div class="panel-body">
+            <h3>Strong foundations</h3>
+            <p>Patient, playful sessions that build reading, writing and number skills, so every new topic feels doable.</p>
+            <div class="subjects">
+              <div class="subject"><i style="background:var(--sun-soft)">✓</i>Reading &amp; Writing</div>
+              <div class="subject"><i style="background:var(--mint)">✓</i>Maths</div>
+              <div class="subject"><i style="background:#f9dcd4">✓</i>Spelling &amp; Grammar</div>
+              <div class="subject"><i style="background:#dfe5f6">✓</i>NAPLAN prep</div>
+            </div>
+            <button class="btn btn-navy" data-pick="Primary (K–6)">Book a Primary assessment</button>
+          </div>
+        </div>
+        <div class="panel" id="high">
+          <div class="panel-img"><img loading="lazy" src="https://images.pexels.com/photos/6502728/pexels-photo-6502728.jpeg?auto=compress&cs=tinysrgb&w=900" alt="High school student working with a tutor" /></div>
+          <div class="panel-body">
+            <h3>Keep up, then get ahead</h3>
+            <p>Targeted help with the jump to high school content, study habits and assessment tasks.</p>
+            <div class="subjects">
+              <div class="subject"><i style="background:var(--mint)">✓</i>Maths (all levels)</div>
+              <div class="subject"><i style="background:var(--sun-soft)">✓</i>English</div>
+              <div class="subject"><i style="background:#dfe5f6">✓</i>Science</div>
+              <div class="subject"><i style="background:#f9dcd4">✓</i>Study skills</div>
+            </div>
+            <button class="btn btn-navy" data-pick="High School (7–10)">Book a High School assessment</button>
+          </div>
+        </div>
+        <div class="panel" id="hsc">
+          <div class="panel-img"><img loading="lazy" src="https://images.pexels.com/photos/8199555/pexels-photo-8199555.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Senior student studying in a library" /></div>
+          <div class="panel-body">
+            <h3>HSC, with a plan</h3>
+            <p>Exam-focused coaching from tutors who scored in the top bands themselves. Past papers, feedback and a calm strategy.</p>
+            <div class="subjects">
+              <div class="subject"><i style="background:var(--mint)">✓</i>Maths Adv / Ext 1 &amp; 2</div>
+              <div class="subject"><i style="background:var(--sun-soft)">✓</i>English Adv / Std</div>
+              <div class="subject"><i style="background:#dfe5f6">✓</i>Chemistry &amp; Physics</div>
+              <div class="subject"><i style="background:#f9dcd4">✓</i>Biology</div>
+            </div>
+            <button class="btn btn-navy" data-pick="HSC (11–12)">Book an HSC assessment</button>
+          </div>
+        </div>
+        <div class="panel" id="selective">
+          <div class="panel-img"><img loading="lazy" src="https://images.pexels.com/photos/7156103/pexels-photo-7156103.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Small group of students preparing for tests" /></div>
+          <div class="panel-body">
+            <h3>Selective &amp; OC ready</h3>
+            <p>Small-group classes and mock tests that build reasoning skills and exam confidence well before test day.</p>
+            <div class="subjects">
+              <div class="subject"><i style="background:var(--sun-soft)">✓</i>Thinking skills</div>
+              <div class="subject"><i style="background:var(--mint)">✓</i>Mathematical reasoning</div>
+              <div class="subject"><i style="background:#dfe5f6">✓</i>Reading</div>
+              <div class="subject"><i style="background:#f9dcd4">✓</i>Timed mock exams</div>
+            </div>
+            <button class="btn btn-navy" data-pick="Selective &amp; OC">Book a Selective assessment</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="how center">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">How it works</span>
+          <h2>Simple to start. <span class="hl">Easy to see</span> progress.</h2>
+        </div>
+        <div class="how-grid">
+          <div class="how-card reveal"><h3>Free assessment</h3><p>A relaxed 45-minute session to find exactly where your child is at.</p></div>
+          <div class="how-card reveal"><h3>Matched tutor</h3><p>We pair your child with a tutor who suits their subject, level and personality.</p></div>
+          <div class="how-card reveal"><h3>Weekly sessions</h3><p>In our Chatswood centre or online, at a time that fits your family.</p></div>
+          <div class="how-card reveal"><h3>Clear reports</h3><p>Progress updates every four weeks, so you always know how it's going.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section class="results">
+      <div class="wrap results-grid">
+        <div class="reveal">
+          <span class="kicker">Results</span>
+          <h2>Real progress you can measure</h2>
+          <p class="lead">We track every student's growth from the first assessment, and share it with you in plain language.</p>
+          <a href="#assessment" class="btn btn-sun">Start with a free assessment</a>
+        </div>
+        <div class="nums reveal">
+          <div class="num"><b data-count="94" data-suffix="%">0</b><span>of students improve within one term</span></div>
+          <div class="num"><b data-count="380" data-suffix="+">0</b><span>local families supported</span></div>
+          <div class="num"><b data-count="18" data-suffix="%">0</b><span>average grade improvement</span></div>
+          <div class="num"><b data-count="12" data-suffix="">0</b><span>years helping Sydney students</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TUTORS -->
+    <section id="tutors" class="center">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">Our tutors</span>
+          <h2>Experts who are <span class="hl">great with kids</span></h2>
+        </div>
+        <div class="tutors">
+          <div class="tutor reveal"><div class="av" style="background:var(--sun-soft)">SR</div><h3>Sarah Reid</h3><div class="role">Head of English</div><p>Former high school teacher with a gift for making essays feel manageable.</p><div class="tags"><span>English</span><span>HSC</span></div></div>
+          <div class="tutor reveal"><div class="av" style="background:var(--mint)">DN</div><h3>Daniel Nguyen</h3><div class="role">Maths Lead</div><p>Band 6 Extension 2 graduate who loves turning "I'm bad at maths" into "got it".</p><div class="tags"><span>Maths</span><span>Selective</span></div></div>
+          <div class="tutor reveal"><div class="av" style="background:#f9dcd4">PS</div><h3>Priya Shah</h3><div class="role">Science Tutor</div><p>Biomedical science graduate who brings chemistry and biology to life.</p><div class="tags"><span>Science</span><span>Years 7–12</span></div></div>
+          <div class="tutor reveal"><div class="av" style="background:#dfe5f6">ML</div><h3>Maya Lee</h3><div class="role">Primary Specialist</div><p>Primary-trained teacher focused on reading confidence and early numeracy.</p><div class="tags"><span>K–6</span><span>NAPLAN</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing" class="pricing center">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">Pricing</span>
+          <h2>Clear prices. <span class="hl">No lock-ins.</span></h2>
+          <div class="toggle">Pay per session
+            <button class="switch" id="billing" role="switch" aria-checked="false" aria-label="Show term pack pricing"></button>
+            Term pack <span class="save">Save 10%</span>
+          </div>
+        </div>
+        <div class="plans">
+          <div class="plan reveal">
+            <h3>Small Group</h3><p class="tagline">Up to 4 students, same level</p>
+            <div class="price" data-weekly="45" data-term="40.50">$45<small> / session</small></div>
+            <div class="per"></div>
+            <ul><li>60-minute weekly class</li><li>Workbook and homework set</li><li>Progress report every 4 weeks</li></ul>
+            <button class="btn btn-ghost" data-plan="Small Group">Choose Small Group</button>
+          </div>
+          <div class="plan pop reveal">
+            <span class="ribbon">Most popular</span>
+            <h3>One-on-One</h3><p class="tagline">Fully personalised, in centre or online</p>
+            <div class="price" data-weekly="85" data-term="76.50">$85<small> / session</small></div>
+            <div class="per"></div>
+            <ul><li>60-minute private session</li><li>Personal learning plan</li><li>Homework help between sessions</li><li>Fortnightly parent check-in</li></ul>
+            <button class="btn btn-sun" data-plan="One-on-One">Choose One-on-One</button>
+          </div>
+          <div class="plan reveal">
+            <h3>HSC Intensive</h3><p class="tagline">For Years 11 and 12</p>
+            <div class="price" data-weekly="105" data-term="94.50">$105<small> / session</small></div>
+            <div class="per"></div>
+            <ul><li>90-minute private session</li><li>Past paper marking and feedback</li><li>Exam strategy and study timetable</li></ul>
+            <button class="btn btn-ghost" data-plan="HSC Intensive">Choose HSC Intensive</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="center">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">Parent stories</span>
+          <h2>Families <span class="hl">love</span> the difference</h2>
+        </div>
+        <div class="testi-wrap reveal">
+          <div class="testi active"><blockquote>"Within a term, Olivia went from dreading maths to asking for extra problems. Daniel just gets her. Her last report was the best she's ever had."</blockquote><div class="who"><span style="background:var(--sun-soft)">JT</span><div><strong>Jessica T.</strong><small>Parent of a Year 6 student, Willoughby</small></div></div></div>
+          <div class="testi"><blockquote>"The HSC Intensive gave our son a real plan. The past paper feedback was so detailed, and he walked into his exams calm and prepared."</blockquote><div class="who"><span style="background:var(--mint)">RK</span><div><strong>Raj K.</strong><small>Parent of a Year 12 student, Chatswood</small></div></div></div>
+          <div class="testi"><blockquote>"I love the progress reports. I finally know what my daughter is working on and where she's improving, without having to chase anyone."</blockquote><div class="who"><span style="background:#f9dcd4">AL</span><div><strong>Amanda L.</strong><small>Parent of a Year 8 student, Lane Cove</small></div></div></div>
+          <div class="testi-nav">
+            <button class="arrow" id="prev" aria-label="Previous review">←</button>
+            <div class="dots" id="dots"></div>
+            <button class="arrow" id="next" aria-label="Next review">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="center" style="padding-top:0">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="kicker">FAQ</span>
+          <h2>Questions parents ask</h2>
+        </div>
+        <div class="faq reveal">
+          <details><summary>Is the first assessment really free?</summary><p>Yes. It's a 45-minute session with no obligation. You'll get a short written summary of strengths, gaps and our recommendation.</p></details>
+          <details><summary>Do you offer online tutoring?</summary><p>Absolutely. Online sessions use a shared whiteboard and the same tutors and materials as our Chatswood centre.</p></details>
+          <details><summary>What if my child doesn't click with their tutor?</summary><p>Just let us know and we'll rematch them, free of charge. The right fit matters more than anything.</p></details>
+          <details><summary>Can I pause or cancel?</summary><p>There are no lock-in contracts. Pay per session or by the term, and pause any time with a week's notice.</p></details>
+          <details><summary>Are your tutors checked?</summary><p>Every tutor holds a current NSW Working With Children Check and goes through interviews and training before teaching.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ASSESSMENT -->
+    <section id="assessment" class="assess">
+      <div class="wrap assess-grid">
+        <div class="reveal">
+          <span class="kicker" style="background:#fff">Free assessment</span>
+          <h2>Let's find where your child can <span style="font-style:italic">shine</span></h2>
+          <p class="lead" style="margin-top:18px">Two quick steps. We'll call you within one business day to book a time that suits.</p>
+          <ul class="assess-points"><li>45 minutes, no obligation</li><li>Written summary of strengths and gaps</li><li>In centre or online</li></ul>
+        </div>
+        <div class="form-card reveal">
+          <div class="progress"><span class="on"></span><span></span></div>
+          <form id="assessForm" novalidate>
+            <div class="fstep active" data-step="1">
+              <div class="step-label">Step 1 of 2</div>
+              <h3>About the student</h3>
+              <span class="grp-label">Year level</span>
+              <div class="chips" data-group="level">
+                <button type="button" class="chip">Primary (K–6)</button>
+                <button type="button" class="chip">High School (7–10)</button>
+                <button type="button" class="chip">HSC (11–12)</button>
+                <button type="button" class="chip">Selective &amp; OC</button>
+              </div>
+              <span class="grp-label">Subjects (choose any)</span>
+              <div class="chips multi" data-group="subjects">
+                <button type="button" class="chip">Maths</button>
+                <button type="button" class="chip">English</button>
+                <button type="button" class="chip">Science</button>
+                <button type="button" class="chip">Reading</button>
+                <button type="button" class="chip">Exam prep</button>
+              </div>
+              <span class="grp-label">Preferred format</span>
+              <div class="chips" data-group="format">
+                <button type="button" class="chip sel">In centre</button>
+                <button type="button" class="chip">Online</button>
+                <button type="button" class="chip">Either</button>
+              </div>
+              <div class="err-msg" id="err1" role="alert"></div>
+              <div class="form-actions"><span></span><button type="button" class="btn btn-navy" id="toStep2">Next step →</button></div>
+            </div>
+            <div class="fstep" data-step="2">
+              <div class="step-label">Step 2 of 2</div>
+              <h3>Your details</h3>
+              <div class="grid2">
+                <div class="field"><label for="pname">Parent name</label><input id="pname" autocomplete="name" /></div>
+                <div class="field"><label for="sname">Student first name</label><input id="sname" /></div>
+              </div>
+              <div class="grid2">
+                <div class="field"><label for="pphone">Phone</label><input id="pphone" type="tel" autocomplete="tel" /></div>
+                <div class="field"><label for="pemail">Email</label><input id="pemail" type="email" autocomplete="email" /></div>
+              </div>
+              <div class="field"><label for="plan">Interested in</label>
+                <select id="plan"><option>Not sure yet</option><option>Small Group</option><option>One-on-One</option><option>HSC Intensive</option></select></div>
+              <div class="err-msg" id="err2" role="alert"></div>
+              <div class="form-actions"><button type="button" class="btn btn-ghost" id="back">← Back</button><button type="submit" class="btn btn-sun">Book my free assessment</button></div>
+            </div>
+            <div class="fstep" data-step="3">
+              <div class="done">
+                <div class="big">✓</div>
+                <h3>You're all set!</h3>
+                <p id="doneText">Thanks! We'll call you within one business day to lock in a time.</p>
+                <button type="button" class="btn btn-ghost" id="restart">Book for another child</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18c4-1 6-5 9-9s5-5 9-5" stroke="#13213c" stroke-width="2.4" stroke-linecap="round"/><circle cx="20" cy="4.5" r="2.2" fill="#13213c"/></svg></span>Brightpath</a>
+          <p style="margin-top:18px;max-width:320px">Friendly, expert tutoring for Sydney students from Kindergarten to the HSC.</p>
+          <div class="socials">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6.6-.6z"/></svg></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 8.2a3 3 0 00-2.1-2.1C18 5.6 12 5.6 12 5.6s-6 0-7.9.5A3 3 0 002 8.2 31 31 0 001.6 12 31 31 0 002 15.8a3 3 0 002.1 2.1c1.9.5 7.9.5 7.9.5s6 0 7.9-.5a3 3 0 002.1-2.1c.3-1.2.4-2.5.4-3.8s-.1-2.6-.4-3.8zM10 15V9l5.2 3L10 15z"/></svg></a>
+          </div>
+        </div>
+        <div><h4>Programs</h4><ul><li><a href="#programs" data-go="primary">Primary</a></li><li><a href="#programs" data-go="high">High School</a></li><li><a href="#programs" data-go="hsc">HSC</a></li><li><a href="#programs" data-go="selective">Selective &amp; OC</a></li></ul></div>
+        <div><h4>Brightpath</h4><ul><li><a href="#how">How it works</a></li><li><a href="#tutors">Our tutors</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+        <div><h4>Visit us</h4><ul><li><a href="https://www.google.com/maps/search/?api=1&query=Victoria+Avenue+Chatswood+NSW+2067" target="_blank" rel="noopener">Suite 3, 400 Victoria Ave<br />Chatswood NSW 2067</a></li><li><a href="tel:+61280000000">(02) 8000 0000</a></li><li><a href="mailto:hello@brightpathtutoring.com.au">hello@brightpathtutoring.com.au</a></li></ul></div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year">2026</span> Brightpath Tutoring. All rights reserved.</span>
+        <span>Website design concept by <a href="https://themariaoffice.com/portfolio/#website" target="_blank" rel="noopener">Maria Simbajon</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const SHOT = location.search.includes('shot');
+    if (SHOT) document.documentElement.classList.add('shot');
+    const header = document.querySelector('header');
+    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10));
+
+    const burger = document.querySelector('.burger'), menu = document.getElementById('mobileMenu');
+    burger.addEventListener('click', () => { const o = menu.classList.toggle('open'); burger.classList.toggle('open', o); burger.setAttribute('aria-expanded', o); });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); burger.classList.remove('open'); }));
+
+    // Program tabs
+    function showLevel(id) {
+      document.querySelectorAll('.level').forEach(b => b.classList.toggle('active', b.dataset.level === id));
+      document.querySelectorAll('.panel').forEach(p => p.classList.toggle('active', p.id === id));
+    }
+    document.querySelectorAll('.level').forEach(b => b.addEventListener('click', () => showLevel(b.dataset.level)));
+    document.querySelectorAll('[data-go]').forEach(a => a.addEventListener('click', () => showLevel(a.dataset.go)));
+
+    // Pricing toggle
+    const sw = document.getElementById('billing');
+    function renderPrices(term) {
+      document.querySelectorAll('.price').forEach(p => {
+        const v = term ? p.dataset.term : p.dataset.weekly;
+        p.innerHTML = '$' + (+v % 1 ? (+v).toFixed(2) : v) + '<small> / session</small>';
+        p.nextElementSibling.textContent = term ? 'Billed per 10-week term: $' + (v * 10).toFixed(0) : 'Pay as you go, cancel anytime';
+      });
+    }
+    sw.addEventListener('click', () => { const t = sw.getAttribute('aria-checked') !== 'true'; sw.setAttribute('aria-checked', t); renderPrices(t); });
+    renderPrices(false);
+
+    // Testimonial slider
+    const slides = [...document.querySelectorAll('.testi')], dots = document.getElementById('dots');
+    let cur = 0, timer;
+    slides.forEach((_, i) => { const d = document.createElement('button'); d.setAttribute('aria-label', 'Review ' + (i + 1)); d.onclick = () => go(i); dots.appendChild(d); });
+    function go(i) {
+      cur = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => s.classList.toggle('active', k === cur));
+      [...dots.children].forEach((d, k) => d.classList.toggle('active', k === cur));
+      clearInterval(timer); timer = setInterval(() => go(cur + 1), 6000);
+    }
+    document.getElementById('prev').onclick = () => go(cur - 1);
+    document.getElementById('next').onclick = () => go(cur + 1);
+    go(0);
+
+    // Assessment form: chips, steps, validation
+    const form = document.getElementById('assessForm');
+    form.querySelectorAll('.chips').forEach(g => g.addEventListener('click', e => {
+      const c = e.target.closest('.chip'); if (!c) return;
+      if (g.classList.contains('multi')) c.classList.toggle('sel');
+      else { g.querySelectorAll('.chip').forEach(x => x.classList.remove('sel')); c.classList.add('sel'); }
+      document.getElementById('err1').textContent = '';
+    }));
+    const picked = grp => [...form.querySelectorAll(`[data-group="${grp}"] .chip.sel`)].map(c => c.textContent);
+    function setStep(n) {
+      form.querySelectorAll('.fstep').forEach(s => s.classList.toggle('active', +s.dataset.step === n));
+      document.querySelectorAll('.progress span').forEach((s, i) => s.classList.toggle('on', i < n));
+    }
+    function selectLevel(name) {
+      form.querySelectorAll('[data-group="level"] .chip').forEach(c => c.classList.toggle('sel', c.textContent === name));
+    }
+    document.getElementById('toStep2').onclick = () => {
+      if (!picked('level').length) return document.getElementById('err1').textContent = 'Please choose a year level.';
+      if (!picked('subjects').length) return document.getElementById('err1').textContent = 'Please choose at least one subject.';
+      setStep(2); document.getElementById('pname').focus();
+    };
+    document.getElementById('back').onclick = () => setStep(1);
+    document.getElementById('restart').onclick = () => { form.reset(); form.querySelectorAll('.chip.sel').forEach(c => c.classList.remove('sel')); form.querySelector('[data-group="format"] .chip').classList.add('sel'); setStep(1); };
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const v = id => document.getElementById(id).value.trim();
+      const bad = [];
+      if (v('pname').length < 2) bad.push('pname');
+      if (!/^[+\d][\d\s()-]{7,}$/.test(v('pphone'))) bad.push('pphone');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('pemail'))) bad.push('pemail');
+      ['pname', 'pphone', 'pemail'].forEach(id => document.getElementById(id).parentElement.classList.toggle('error', bad.includes(id)));
+      if (bad.length) { document.getElementById('err2').textContent = 'Please check the highlighted fields.'; document.getElementById(bad[0]).focus(); return; }
+      document.getElementById('err2').textContent = '';
+      const who = v('sname') || 'your child';
+      document.getElementById('doneText').textContent = `Thanks ${v('pname').split(' ')[0]}! We'll call you on ${v('pphone')} within one business day to book ${who}'s free ${picked('level')[0]} assessment (${picked('subjects').join(', ')}, ${picked('format')[0].toLowerCase()}).`;
+      setStep(3);
+      document.querySelectorAll('.progress span').forEach(s => s.classList.add('on'));
+    });
+
+    // Buttons that jump to the form with something pre-selected
+    const assess = document.getElementById('assessment');
+    document.querySelectorAll('[data-pick]').forEach(b => b.addEventListener('click', () => { setStep(1); selectLevel(b.dataset.pick.replace('&amp;', '&')); assess.scrollIntoView({ behavior: 'smooth' }); }));
+    document.querySelectorAll('[data-plan]').forEach(b => b.addEventListener('click', () => { document.getElementById('plan').value = b.dataset.plan; setStep(1); assess.scrollIntoView({ behavior: 'smooth' }); }));
+
+    // Reveal + counters
+    function countUp(el) {
+      const end = +el.dataset.count, t0 = performance.now();
+      if (SHOT) { el.textContent = end + el.dataset.suffix; return; }
+      const tick = now => { const p = Math.min((now - t0) / 1400, 1); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + (p === 1 ? el.dataset.suffix : ''); if (p < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    }
+    const io = new IntersectionObserver(es => es.forEach(en => {
+      if (!en.isIntersecting) return;
+      en.target.classList.add('in');
+      en.target.querySelectorAll('[data-count]').forEach(countUp);
+      io.unobserve(en.target);
+    }), { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
