@@ -458,7 +458,8 @@ S.work = () => {
   const blocks = J.workBlocks || ["designs", "reels", "crm", "smm"];
   const out = blocks.map((k, n) => WB[k] ? WB[k](n) : (B.work[k] ? loopBlock(k, "screenshot") : "")).join("");
   return `<section class="block" id="work"><div class="wrap">
-    <div class="eyebrow">Work samples</div>${out}</div></section>`;
+    <div class="eyebrow">Work samples</div>
+    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>${out}</div></section>`;
 };
 const ico = { prev: '<svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>', next: '<svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>' };
 const SND_OFF = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>', SND_ON = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
