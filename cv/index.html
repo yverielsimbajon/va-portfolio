@@ -134,6 +134,10 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 @keyframes mL{to{transform:translateX(-50%)}}
 @keyframes mR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .rtrack.rev{animation-direction:reverse}
+.resp{margin:34px 0 0;display:table;background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);color:var(--gold-ink);border-radius:14px;padding:8px 16px;font-size:13.5px;font-weight:500;line-height:1.4}
+.resp b{display:inline-block;margin-right:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--primary-dark)}
+.resp + .wsub{margin-top:10px}
+.role.pill{display:inline-block;margin-top:6px;background:linear-gradient(120deg,var(--primary),var(--secondary));color:#fff;padding:5px 16px;border-radius:999px;font-size:clamp(15px,1.8vw,19px);font-weight:700;box-shadow:0 8px 20px rgba(11,110,127,.25)}
 .shots-title{margin:34px 0 0;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.01em;text-align:center;color:var(--deep)}
 .shots-title:after{content:"";display:block;width:70px;height:4px;border-radius:4px;margin:10px auto 0;background:linear-gradient(90deg,var(--primary),var(--secondary))}
 .rmarq.crm .rshot img{height:clamp(150px,18vw,210px)}
@@ -420,7 +424,8 @@ document.title = "Maria Simbajon | Resume" + (J.label ? " · " + J.label : "");
 $("#yr").textContent = new Date().getFullYear();
 if (J.label){ $("#apply").hidden = false; $("#applyText").textContent = "Application for: " + J.label; }
 $("#hRole").textContent = J.headline; $("#hSub").textContent = J.sub;
-$("#hSum").innerHTML = hl(esc(J.summary));
+if (J.headlinePill) $("#hRole").classList.add("pill");
+if (J.hideSummary) $("#hSum").hidden = true; else $("#hSum").innerHTML = hl(esc(J.summary));
 $("#photo").src = B.photo2;
 const subject = encodeURIComponent(J.emailSubject || "Hiring a Virtual Assistant");
 const mail = "mailto:" + B.email + "?subject=" + subject;
@@ -437,21 +442,21 @@ const S = {};
 
 S.results = () => {
   const keys = J.stats || ["views", "followers", "leads", "calendars"];
-  const sk = J.resultsShots || "results", shots = B.work[sk].items;
+  const sk = J.resultsShots || "results", shots = sk === "none" ? [] : B.work[sk].items;
   const one = copy => shots.map((it, i) => `<button class="rshot" type="button" data-lb="${sk}" data-i="${i}" aria-label="Zoom screenshot ${i + 1}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : "Facebook insights screenshot " + (i + 1)}" loading="lazy"></button>`).join("");
   return `<section class="block" id="results"><div class="wrap">
     <div class="eyebrow">Results</div><h2 class="title">Numbers from real client work</h2>
-    <p class="lede">Facebook insights from a client page and my CRM work. Tap a screenshot to zoom.</p>
+    <p class="lede">${sk === "none" ? "The numbers behind my daily CRM and admin work." : "Facebook insights from a client page and my CRM work. Tap a screenshot to zoom."}</p>
     <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
-    <h3 class="shots-title">Real Screenshots. Real Results.</h3>
+    ${sk === "none" ? "" : `<h3 class="shots-title">Real Screenshots. Real Results.</h3>
     <div class="rmarq" id="rmarq"><div class="rtrack">${one(false)}${one(true)}</div></div>
-    <p class="hint" style="margin-top:6px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Love & Sound Natural Therapies, last 90 days.")}</p>
+    <p class="hint" style="margin-top:6px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Love & Sound Natural Therapies, last 90 days.")}</p>`}
   </div></section>`;
 };
 
 S.work = () => {
   const blocks = J.workBlocks || ["designs", "reels", "crm", "smm"];
-  const out = blocks.map((k, n) => WB[k] ? WB[k](n) : "").join("");
+  const out = blocks.map((k, n) => WB[k] ? WB[k](n) : (B.work[k] ? loopBlock(k, "screenshot") : "")).join("");
   return `<section class="block" id="work"><div class="wrap">
     <div class="eyebrow">Work samples</div>${out}</div></section>`;
 };
@@ -459,9 +464,10 @@ const ico = { prev: '<svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>', 
 const SND_OFF = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>', SND_ON = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
 function loopBlock(k, what){
   const w = B.work[k], items = w.items;
-  const row = (arr, copy) => arr.map(({ it, i }) => `<button class="rshot" type="button" data-lb="${k}" data-i="${i}" aria-label="Zoom ${what}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : what}" loading="lazy"></button>`).join("");
+  const fill = arr => { const out = []; while (out.length < 8) out.push(...arr); return out; };
+  const row = (arr0, copy) => fill(arr0).map(({ it, i }) => `<button class="rshot" type="button" data-lb="${k}" data-i="${i}" aria-label="Zoom ${what}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : what}" loading="lazy"></button>`).join("");
   const fwd = items.map((it, i) => ({ it, i })), rev = [...fwd].reverse();
-  return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)} Tap a screenshot to zoom.</p>
+  return `${w.resp ? `<div class="resp"><b>You asked for</b> ${esc(w.resp)}</div>` : ""}<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)} Tap a screenshot to zoom.</p>
     <div class="rmarq crm"><div class="rtrack" style="animation-duration:${items.length * 8}s">${row(fwd, false)}${row(fwd, true)}</div></div>
     <div class="rmarq crm" style="margin-top:0"><div class="rtrack rev" style="animation-duration:${items.length * 9}s">${row(rev, false)}${row(rev, true)}</div></div>`;
 }
