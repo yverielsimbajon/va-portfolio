@@ -866,6 +866,8 @@
     /* Four looping rows: 1 and 3 drift right, 2 and 4 drift left */
     .design-marquee {
       display: grid;
+      grid-template-columns: minmax(0, 1fr); /* keep the long rows from stretching the page */
+      min-width: 0;
       gap: 16px;
       margin: 26px calc(clamp(22px, 3vw, 34px) * -1) 0;
       padding: 8px 0;
@@ -1762,9 +1764,15 @@
       /* Compact sticky menu on phones: short labels so it stays small while scrolling */
       :root { --header-h: 60px; }
       .brand img { width: 40px; }
-      .filter-wrap { padding: 10px 0; }
-      .filters { gap: 6px; }
-      .filter-btn { padding: 8px 13px; font-size: 0.8rem; }
+      /* Two lines: All, Admin, Social Media, Websites / Automation, Customer, Operations */
+      .filter-wrap { padding: 8px 0; }
+      .filters { gap: 4px 2px; }
+      .filter-btn { padding: 7px 10px; font-size: 0.78rem; }
+      .filter-btn[data-target="social"] { order: 1; }
+      .filter-btn[data-target="website"] { order: 2; }
+      .filter-btn[data-target="crm"],
+      .filter-btn[data-target="support"],
+      .filter-btn[data-target="operations"] { order: 3; }
       .filter-btn .full { display: none; }
       .filter-btn .short { display: inline; }
     }
@@ -2247,8 +2255,8 @@
       { key: "admin",      label: "Administrative Support", short: "Admin",        title: "Admin That Keeps Business Organized.",      text: "Calendars, bookings, reports and workspaces that keep every day running smoothly." },
       { key: "website",    label: "Website Designs",        short: "Websites",     title: "Websites That Turn Visitors Into Clients.", text: "Real client websites and design concepts built to look great and drive bookings." },
       { key: "social",     label: "Social Media",           short: "Social Media", title: "Content That Builds the Brand.",            text: "Planning, design and analytics for a consistent, engaging social presence." },
-      { key: "crm",        label: "CRM & Automation",       short: "CRM",          title: "Automations That Work While You Sleep.",    text: "Workflows that follow up, confirm and remind, so nothing falls through the cracks." },
-      { key: "support",    label: "Customer Support",       short: "Support",      title: "Support That Clients Remember.",            text: "Friendly, fast and clear communication that turns questions into bookings." },
+      { key: "crm",        label: "CRM & Automation",       short: "Automation",   title: "Automations That Work While You Sleep.",    text: "Workflows that follow up, confirm and remind, so nothing falls through the cracks." },
+      { key: "support",    label: "Customer Support",       short: "Customer",     title: "Support That Clients Remember.",            text: "Friendly, fast and clear communication that turns questions into bookings." },
       { key: "operations", label: "Business Operations",    short: "Operations",   title: "Operations That Support Growth.",           text: "Research, payments and strategy behind a business that's ready to scale." }
     ];
 
