@@ -163,9 +163,10 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .pdots button.on:before{width:18px;background:var(--primary)}
 .pcontent{display:flex;flex:1;flex-direction:column;padding:24px 26px 26px}
 .pcat{align-self:flex-start;margin-bottom:12px;padding:6px 12px;color:var(--primary-dark);background:#e4f6f6;border-radius:999px;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
-.presp{margin:0 0 10px;color:var(--gold-ink);background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);border-radius:12px;padding:7px 12px;font-size:12.5px;font-weight:500;line-height:1.4}
+.presp{margin:0 0 18px;color:var(--gold-ink);background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:500;line-height:1.5}
 .presp b{margin-right:6px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-dark)}
-.pcontent h3{margin:0;font-size:20px;font-weight:700;letter-spacing:-.02em;line-height:1.3}
+.pcontent h3{margin:0 0 14px;font-size:clamp(23px,2.3vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.28;color:var(--deep)}
+.pcontent h3 span{background:linear-gradient(transparent 58%,rgba(25,180,180,.3) 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 4px;margin:0 -4px}
 .pclients{margin:10px 0 0;font-size:13.5px;font-weight:600;line-height:1.5}
 .pclients span{margin-right:8px;color:var(--secondary);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .pintro{margin:8px 0 18px;color:var(--muted);font-size:14.5px;line-height:1.6}
@@ -175,10 +176,10 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .ctag.ch{color:#4A5F6D;background:#EEF2F5}.ctag.so{color:var(--primary-dark);background:#DDF3F3}.ctag.re{color:#fff;background:var(--primary)}
 .crow p{margin:0;padding-top:2px;color:#3F5867;font-size:14px;line-height:1.55}
 .ptools{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:20px;border-top:1px solid var(--line)}
-.pintro + .case + .ptools{margin-top:22px}
+.case + .ptools{margin-top:22px}
 .ptools span{padding:5px 11px;color:var(--muted);background:var(--soft);border-radius:999px;font-size:12px;font-weight:600}
 @media (max-width:900px){.pgrid{grid-template-columns:1fr}}
-@media (max-width:560px){.crow{grid-template-columns:78px 1fr;gap:10px}.pcontent{padding:20px 18px 22px}.pcontent h3{font-size:18px}}
+@media (max-width:560px){.crow{grid-template-columns:78px 1fr;gap:10px}.pcontent{padding:20px 18px 22px}.pcontent h3{font-size:21px}}
 
 /* reels in phone frames (same look as the portfolio) */
 .reels-stage{position:relative}
@@ -501,10 +502,8 @@ function caseCard(k){
       <div class="pdots">${imgs.map((_, i) => `<button type="button" aria-label="Show picture ${i + 1}"${i === 0 ? ' class="on"' : ""}></button>`).join("")}</div>` : ""}</div>
     <div class="pcontent">
       <span class="pcat">${esc(c.category)}</span>
-      ${c.resp ? `<div class="presp"><b>You asked for</b> ${esc(c.resp)}</div>` : ""}
-      <h3>${esc(c.title)}</h3>
-      <p class="pclients"><span>${c.clients.length > 1 ? "Clients" : "Client"}</span>${c.clients.map(esc).join(" · ")}</p>
-      <p class="pintro">${esc(c.intro)}</p>
+      <h3><span>${esc(c.title)}</span></h3>
+      ${c.resp ? `<div class="presp">${esc(c.resp)}</div>` : ""}
       <div class="case"><div class="crow"><span class="ctag ch">Challenge</span><p>${esc(c.challenge)}</p></div><div class="crow"><span class="ctag so">Solution</span><p>${esc(c.solution)}</p></div><div class="crow"><span class="ctag re">Result</span><p>${esc(c.result)}</p></div></div>
       <div class="ptools">${c.tools.map(t => `<span>${esc(t)}</span>`).join("")}</div>
     </div></article>`;
