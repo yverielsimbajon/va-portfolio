@@ -305,7 +305,7 @@ const IMG = "../images/", THUMB = "../images/thumbs/";
 
 // ---- choose the job: ?job=key, or the folder name (/cv/reva-26/), or default
 const qp = new URLSearchParams(location.search);
-const key = (qp.get("job") || (location.pathname.match(/\/resume\/([^\/]+)\/?$/) || [])[1] || "default").toLowerCase();
+const key = (qp.get("job") || (location.pathname.match(/\/cv\/([^\/]+)\/?$/) || [])[1] || "default").toLowerCase();
 const J = Object.assign({}, JOBS.default, JOBS[key] || {});
 const jobKey = JOBS[key] ? key : "default";
 
