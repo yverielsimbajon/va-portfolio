@@ -472,7 +472,7 @@
       position: sticky;
       top: var(--header-h);
       z-index: 30;
-      padding: 14px 0;
+      padding: 9px 0;
       border-bottom: 1px solid rgba(11, 110, 127, 0.08);
       background: rgba(244, 252, 252, 0.92);
       backdrop-filter: blur(16px);
@@ -482,11 +482,11 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 8px 10px;
+      gap: 6px 4px;
     }
 
     .filter-btn {
-      padding: 11px 18px;
+      padding: 9px 16px;
       color: var(--muted);
       text-decoration: none;
       background: transparent;
@@ -512,6 +512,13 @@
     }
 
     .filter-btn .short { display: none; }
+
+    /* Narrower laptops and tablets: short labels keep the menu on one line */
+    @media (min-width: 541px) and (max-width: 1040px) {
+      .filter-btn { padding: 9px 13px; }
+      .filter-btn .full { display: none; }
+      .filter-btn .short { display: inline; }
+    }
 
     a:focus-visible,
     button:focus-visible {
@@ -2253,10 +2260,10 @@
     /* Sections appear on the page in this order */
     const categories = [
       { key: "admin",      label: "Administrative Support", short: "Admin",        title: "Admin That Keeps Business Organized.",      text: "Calendars, bookings, reports and workspaces that keep every day running smoothly." },
-      { key: "website",    label: "Website Designs",        short: "Websites",     title: "Websites That Turn Visitors Into Clients.", text: "Real client websites and design concepts built to look great and drive bookings." },
+      { key: "website",    label: "Website Designs",        menu: "Websites", short: "Websites",     title: "Websites That Turn Visitors Into Clients.", text: "Real client websites and design concepts built to look great and drive bookings." },
       { key: "social",     label: "Social Media",           short: "Social Media", title: "Content That Builds the Brand.",            text: "Planning, design and analytics for a consistent, engaging social presence." },
       { key: "crm",        label: "CRM & Automation",       short: "Automation",   title: "Automations That Work While You Sleep.",    text: "Workflows that follow up, confirm and remind, so nothing falls through the cracks." },
-      { key: "support",    label: "Customer Support",       short: "Customer",     title: "Support That Clients Remember.",            text: "Friendly, fast and clear communication that turns questions into bookings." },
+      { key: "support",    label: "Customer Support",       menu: "Customer", short: "Customer",     title: "Support That Clients Remember.",            text: "Friendly, fast and clear communication that turns questions into bookings." },
       { key: "operations", label: "Business Operations",    short: "Operations",   title: "Operations That Support Growth.",           text: "Research, payments and strategy behind a business that's ready to scale." }
     ];
 
@@ -2274,8 +2281,8 @@
 
     /* ---------- Build menu and sections ---------- */
     document.getElementById("filters").innerHTML =
-      `<a class="filter-btn active" href="#all-services" data-target="all-services"><span class="full">All Services</span><span class="short">All</span></a>` +
-      categories.map((c) => `<a class="filter-btn" href="#${c.key}" data-target="${c.key}"><span class="full">${esc(c.label)}</span><span class="short">${esc(c.short)}</span></a>`).join("");
+      `<a class="filter-btn active" href="#all-services" data-target="all-services"><span class="full">All</span><span class="short">All</span></a>` +
+      categories.map((c) => `<a class="filter-btn" href="#${c.key}" data-target="${c.key}"><span class="full">${esc(c.menu || c.label)}</span><span class="short">${esc(c.short)}</span></a>`).join("");
 
     const cardHtml = (p, i, label) => {
       const many = p.images.length > 1;
