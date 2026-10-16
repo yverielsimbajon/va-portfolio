@@ -103,7 +103,7 @@ window.RESUME_BASE = {
     smm: { label: "Content planning", blurb: "Content calendar, posting schedule and plan I run for clients.",
       items: ["smm-calendar.jpg", "smm-content-plan.jpg", "smm-posting-schedule.jpg", "strategy-doc.jpg"].map(f => ({ src: f })) },
     crm: { label: "CRM & automation", blurb: "GoHighLevel workflows, follow-ups and calendars I built and manage.",
-      items: ["crm-workflow-list.jpg", "crm-ticket-workflow.jpg", "crm-follow-up.jpg", "crm-follow-up-2.jpg", "crm-call-confirmation.jpg", "crm-call-confirmation-2.jpg", "ghl-calendars.jpg", "ghl-booking-widget.jpg", "franchise-database.jpg"].map(f => ({ src: f })) },
+      items: ["crm-workflow-list.jpg", "crm-ticket-workflow.jpg", "crm-follow-up.jpg", "crm-follow-up-2.jpg", "crm-call-confirmation.jpg", "crm-call-confirmation-2.jpg", "ghl-calendars.jpg", "ghl-booking-widget.jpg", "ghl-orders.jpg", "ghl-products.jpg", "ghl-recurring.jpg", "franchise-database.jpg"].map(f => ({ src: f })) },
     admin: { label: "Admin & ops", blurb: "Calendars, reports and the Notion hub I built.",
       items: ["gcal-day.jpg", "gcal-event.jpg", "weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg", "notion-offers.jpg", "notion-menu.jpg"].map(f => ({ src: f })) },
     websites: { label: "Websites", blurb: "Live client sites and concept designs (concepts are labelled).",
