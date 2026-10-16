@@ -134,6 +134,8 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 @keyframes mL{to{transform:translateX(-50%)}}
 @keyframes mR{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .rtrack.rev{animation-direction:reverse}
+.shots-title{margin:34px 0 0;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.01em;text-align:center;color:var(--deep)}
+.shots-title:after{content:"";display:block;width:70px;height:4px;border-radius:4px;margin:10px auto 0;background:linear-gradient(90deg,var(--primary),var(--secondary))}
 .rmarq.crm .rshot img{height:clamp(150px,18vw,210px)}
 
 /* reels in phone frames (same look as the portfolio) */
@@ -441,19 +443,28 @@ S.results = () => {
     <div class="eyebrow">Results</div><h2 class="title">Numbers from real client work</h2>
     <p class="lede">Facebook insights from a client page and my CRM work. Tap a screenshot to zoom.</p>
     <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
+    <h3 class="shots-title">Real Screenshots. Real Results.</h3>
     <div class="rmarq" id="rmarq"><div class="rtrack">${one(false)}${one(true)}</div></div>
     <p class="hint" style="margin-top:6px">Meta Business Suite screenshots: Facebook Page of Love &amp; Sound Natural Therapies, last 90 days.</p>
   </div></section>`;
 };
 
 S.work = () => {
-  const blocks = J.workBlocks || ["designs", "reels", "crm"];
+  const blocks = J.workBlocks || ["designs", "reels", "crm", "smm"];
   const out = blocks.map((k, n) => WB[k] ? WB[k](n) : "").join("");
   return `<section class="block" id="work"><div class="wrap">
     <div class="eyebrow">Work samples</div>${out}</div></section>`;
 };
 const ico = { prev: '<svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>', next: '<svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>' };
 const SND_OFF = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>', SND_ON = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';
+function loopBlock(k, what){
+  const w = B.work[k], items = w.items;
+  const row = (arr, copy) => arr.map(({ it, i }) => `<button class="rshot" type="button" data-lb="${k}" data-i="${i}" aria-label="Zoom ${what}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : what}" loading="lazy"></button>`).join("");
+  const fwd = items.map((it, i) => ({ it, i })), rev = [...fwd].reverse();
+  return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)} Tap a screenshot to zoom.</p>
+    <div class="rmarq crm"><div class="rtrack" style="animation-duration:${items.length * 8}s">${row(fwd, false)}${row(fwd, true)}</div></div>
+    <div class="rmarq crm" style="margin-top:0"><div class="rtrack rev" style="animation-duration:${items.length * 9}s">${row(rev, false)}${row(rev, true)}</div></div>`;
+}
 const WB = {
   designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic designs I create")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
   reels: n => {
@@ -468,13 +479,8 @@ const WB = {
             <div class="ract"><svg viewBox="0 0 24 24"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 6.6a4.5 4.5 0 0 1 8 2.9c0 6.1-8 11-8 11z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><svg viewBox="0 0 24 24"><path d="M22 3 2 10.5l8 3 3 8L22 3z"/><path d="M10 13.5 22 3"/></svg></div></div>
         </div></div>`).join("")}</div></div>${nav}<p class="rhint">Swipe or tap the arrows to see more reels</p>`;
   },
-  crm: n => {
-    const w = B.work.crm, items = w.items;
-    const one = copy => items.map((it, i) => `<button class="rshot" type="button" data-lb="crm" data-i="${i}" aria-label="Zoom CRM screenshot ${i + 1}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : "CRM screenshot " + (i + 1)}" loading="lazy"></button>`).join("");
-    return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)} Tap a screenshot to zoom.</p>
-      <div class="rmarq crm"><div class="rtrack" style="animation-duration:70s">${one(false)}${one(true)}</div></div>
-      <div class="rmarq crm" style="margin-top:0"><div class="rtrack rev" style="animation-duration:80s">${[...items].reverse().map((it, i) => `<button class="rshot" type="button" data-lb="crm" data-i="${items.length - 1 - i}" aria-label="Zoom CRM screenshot"><img src="${IMG + it.src}" alt="" loading="lazy"></button>`).join("")}${[...items].reverse().map((it, i) => `<button class="rshot" type="button" data-lb="crm" data-i="${items.length - 1 - i}" aria-hidden="true" tabindex="-1"><img src="${IMG + it.src}" alt="" loading="lazy"></button>`).join("")}</div></div>`;
-  }
+  crm: n => loopBlock("crm", "CRM screenshot"),
+  smm: n => loopBlock("smm", "Content planning screenshot")
 };
 
 S.experience = () => {
