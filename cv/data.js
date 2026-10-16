@@ -100,7 +100,7 @@ window.RESUME_BASE = {
         { src: "design-social-media-management.png", thumb: "design-social-media-management.jpg" },
         { src: "design-video-3.mp4", thumb: "design-video-3.jpg", kind: "video" }, { src: "design-video-4.mp4", thumb: "design-video-4.jpg", kind: "video" }
       ] },
-    reels: { label: "Reels I edit", blurb: "Before-and-after Reels with captions and music for The Kerbing King. Tap a phone to play.",
+    reels: { label: "Reels I edit for you", blurb: "Before-and-after Reels with captions and music for The Kerbing King. Tap a phone to play.",
       items: [1, 2, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
     smm: { label: "Content planning", blurb: "Content calendar, posting schedule and plan I run for clients.",
       items: ["smm-calendar.jpg", "smm-content-plan.jpg", "smm-posting-schedule.jpg", "strategy-doc.jpg"].map(f => ({ src: f })) },

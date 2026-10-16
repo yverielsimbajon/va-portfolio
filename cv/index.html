@@ -25,14 +25,14 @@ a{color:var(--primary)}
 img,video{max-width:100%;display:block}
 :focus-visible{outline:3px solid var(--secondary);outline-offset:2px}
 .wrap{width:min(calc(100% - 40px),1120px);margin:0 auto}
-mark{background:linear-gradient(transparent 58%,rgba(255,194,61,.55) 58%);color:inherit;padding:0 1px;border-radius:2px}
-.hero mark{background:linear-gradient(transparent 60%,rgba(255,194,61,.38) 60%)}
+mark{background:none;color:var(--primary-dark);font-weight:600;padding:0}
+.hero mark{color:#fff;font-weight:600}
 
 /* nav */
 .nav{position:sticky;top:0;z-index:40;height:var(--nav-h);background:rgba(5,47,56,.94);backdrop-filter:blur(10px);color:#fff;border-bottom:1px solid rgba(255,255,255,.08)}
 .nav .wrap{height:100%;display:flex;align-items:center;gap:18px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:600;white-space:nowrap;text-decoration:none;color:#fff}
-.mark{width:36px;height:36px;border-radius:11px;background:linear-gradient(135deg,var(--primary),var(--secondary));display:grid;place-items:center;font-weight:700;font-size:14px}
+.avatar{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);flex:none}
 .links{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .links::-webkit-scrollbar{display:none}
 .links a{color:rgba(255,255,255,.72);text-decoration:none;font-size:13.5px;font-weight:500;padding:8px 12px;border-radius:999px;white-space:nowrap;transition:.15s}
@@ -43,11 +43,11 @@ mark{background:linear-gradient(transparent 58%,rgba(255,194,61,.55) 58%);color:
 
 /* hero */
 .hero{background:var(--deep);color:#fff;position:relative;overflow:hidden;background-image:radial-gradient(70% 90% at 90% 0%,rgba(25,180,180,.42),transparent 60%),radial-gradient(40% 50% at 0% 100%,rgba(255,194,61,.12),transparent 70%)}
-.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:end;padding-top:54px}
-.hero-copy{padding-bottom:56px}
+.hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;padding:50px 0 60px}
+.hero-copy{padding-bottom:0}
 .apply{display:inline-flex;align-items:center;gap:9px;background:rgba(255,194,61,.14);color:var(--gold);border:1px solid rgba(255,194,61,.4);padding:6px 14px;border-radius:999px;font-size:12.5px;font-weight:600;letter-spacing:.04em}
 .apply i{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px rgba(255,194,61,.25)}
-.hero h1{margin:16px 0 4px;font-size:clamp(34px,5.4vw,60px);line-height:1.05;font-weight:800;letter-spacing:-.02em}
+.hero h1{margin:16px 0 4px;white-space:nowrap;font-size:clamp(30px,4.2vw,50px);line-height:1.05;font-weight:800;letter-spacing:-.02em}
 .role{font-size:clamp(18px,2.3vw,25px);font-weight:600;color:var(--gold)}
 .sub{margin-top:4px;color:rgba(255,255,255,.75);font-weight:500;font-size:15px}
 .tagline{margin:16px 0 0;font-size:16.5px;color:rgba(255,255,255,.9);max-width:46ch}
@@ -63,13 +63,19 @@ mark{background:linear-gradient(transparent 58%,rgba(255,194,61,.55) 58%);color:
 .btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
 .chip{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:5px 13px;font-size:12.5px;font-weight:500}
-.portrait{position:relative;align-self:end;justify-self:center;width:min(100%,380px)}
-.portrait:before{content:"";position:absolute;inset:8% 6% 0;border-radius:50% 50% 0 0;background:linear-gradient(160deg,rgba(25,180,180,.55),rgba(255,194,61,.25));filter:blur(.5px)}
-.portrait img{position:relative;width:100%;max-height:560px;object-fit:contain;object-position:bottom}
-.badge{position:absolute;background:#fff;color:var(--text);border-radius:16px;padding:10px 14px;box-shadow:var(--shadow2);font-size:12px;line-height:1.3}
-.badge b{display:block;font-size:20px;color:var(--primary);line-height:1.1}
-.badge.a{left:-6px;top:30%}
-.badge.b{right:-6px;top:52%}
+.namerow{display:flex;align-items:center;gap:18px;margin-top:18px}
+.namerow img{width:92px;height:92px;border-radius:50%;object-fit:cover;object-position:50% 12%;border:3px solid var(--gold);box-shadow:0 10px 30px rgba(0,0,0,.3);flex:none;background:#0A3C47}
+.namerow h1{margin:0}
+.intro-sum{margin:18px 0 0;font-size:15.5px;line-height:1.75;color:rgba(255,255,255,.84);max-width:60ch}
+.vidcard{align-self:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:16px;box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.vidcard h2{margin:2px 4px 12px;font-size:18px;font-weight:700;display:flex;align-items:center;gap:10px;color:#fff}
+.vidcard h2 i{width:9px;height:9px;border-radius:50%;background:#ff5a5a;box-shadow:0 0 0 4px rgba(255,90,90,.25)}
+.vwrap{position:relative;border-radius:18px;overflow:hidden;background:#000;aspect-ratio:16/9}
+.vwrap video{width:100%;height:100%;object-fit:cover}
+.vbtns{position:absolute;left:12px;bottom:12px;display:flex;gap:8px}
+.vb{border:0;border-radius:999px;background:rgba(5,47,56,.82);color:#fff;font-size:13px;font-weight:600;padding:8px 14px;display:inline-flex;gap:7px;align-items:center;backdrop-filter:blur(6px)}
+.vb:hover{background:var(--primary)}
+.vb svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* sections */
 section.block{padding:64px 0 8px}
@@ -108,6 +114,11 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .stat .l{font-weight:600;margin-top:8px}
 .stat .s{font-size:13px;color:var(--muted)}
 
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.shot{border:1px solid var(--line);background:var(--card);border-radius:18px;padding:0;overflow:hidden;box-shadow:var(--shadow);transition:transform .2s var(--ease),box-shadow .2s}
+.shot:hover{transform:translateY(-4px);box-shadow:var(--shadow2)}
+.shot img{width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top}
+
 /* work */
 .tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
 .tab{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:9px 18px;font-weight:600;font-size:14px;color:var(--muted);transition:.15s}
@@ -145,9 +156,6 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .job li.top:before{background:var(--gold);box-shadow:0 0 0 3px rgba(255,194,61,.3)}
 .job li.hit{background:var(--gold-bg);border-radius:10px;margin-left:-8px;padding:6px 8px 6px 28px}
 .job li.hit:before{left:10px;top:1em}
-.job.dim li:not(.hit){opacity:.35}
-.job li.extra{display:none}
-.job.all li.extra{display:block}
 .more{margin-top:12px;border:0;background:none;color:var(--primary);font-weight:600;font-size:13.5px;padding:2px 0}
 .more:hover{text-decoration:underline}
 details.earlier{margin-top:6px}
@@ -177,6 +185,26 @@ details.earlier>summary::-webkit-details-marker{display:none}
 .two .card{padding:22px}
 .two h3{margin:0 0 10px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .two ul{margin:0;padding-left:18px;font-size:14.5px}
+.edu{display:flex;flex-direction:column;gap:14px}
+.edu img{width:100%;max-height:340px;object-fit:cover;object-position:50% 0;border-radius:16px;background:var(--soft)}
+
+/* about */
+.about{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:center}
+.gal #galMain{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top;border-radius:26px;box-shadow:0 30px 70px rgba(5,47,56,.25)}
+.gthumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.gthumbs button{padding:0;border:2px solid transparent;border-radius:14px;overflow:hidden;background:none;aspect-ratio:1;opacity:.6;transition:.2s}
+.gthumbs button[aria-pressed="true"],.gthumbs button:hover{opacity:1;border-color:var(--secondary)}
+.gthumbs img{width:100%;height:100%;object-fit:cover;object-position:top}
+.hi{margin:14px 0 8px;color:var(--primary);font-size:20px;font-weight:600}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cred{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px}
+.cred small{color:var(--secondary);font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.cred strong{display:block;margin:4px 0;color:var(--primary-dark);font-size:17px;line-height:1.25}
+.cred p{margin:0;color:var(--muted);font-size:13.5px}
+.more-proof{background:var(--bg);padding:46px 0;text-align:center}
+.more-proof h2{margin:0 0 8px;font-size:clamp(22px,3vw,30px);letter-spacing:-.01em}
+.more-proof p{color:var(--muted);margin:0 0 20px}
+.more-proof .cta{justify-content:center}
 
 /* contact */
 .contact{margin-top:64px;background:var(--deep);color:#fff;background-image:radial-gradient(70% 120% at 100% 0%,rgba(25,180,180,.4),transparent 60%);padding:56px 0 46px}
@@ -202,17 +230,19 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 @media (max-width:900px){
   .hero .wrap{grid-template-columns:1fr;padding-top:34px}
   .hero-copy{padding-bottom:10px}
-  .portrait{width:min(78%,320px)}
+  .about{grid-template-columns:1fr;gap:28px}
+  .shots{grid-template-columns:1fr}
   .stats{grid-template-columns:repeat(2,1fr)}
   .two{grid-template-columns:1fr}
   .nav .wrap{gap:10px}
   .navbtn.hide-s{display:none}
   .mbody{padding-left:18px}
-  .badge.a{left:0}.badge.b{right:0}
 }
 @media (max-width:560px){
   .wrap{width:min(calc(100% - 32px),1120px)}
   .brand span.t{display:none}
+  .namerow{gap:14px}.namerow img{width:70px;height:70px}
+  .creds{grid-template-columns:1fr}
   .mhead{grid-template-columns:auto 1fr}
   .mst{grid-column:2;justify-self:start}
   .grid{grid-template-columns:repeat(2,1fr);gap:10px}
@@ -224,7 +254,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 @media print{
-  .nav,.cta,.chips,.portrait,.tabs,.btn,.more,.skillbar,.modal,.toast,.contact .cta,.phone .pb{display:none!important}
+  .nav,.cta,.chips,.vidcard,.tabs,.btn,.more,.skillbar,.modal,.toast,.contact .cta,.phone .pb{display:none!important}
   body{background:#fff}.hero{background:#fff;color:#000}.hero h1,.role,.sub,.tagline{color:#000}
   .job li.extra{display:block!important}section.block{padding-top:24px}.card{box-shadow:none}
 }
@@ -234,7 +264,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 
 <nav class="nav" aria-label="Resume sections">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="mark">MS</span><span class="t">Maria Simbajon</span></a>
+    <a class="brand" href="#top"><img class="avatar" src="../images/avatar-face.jpg" alt="Maria Simbajon" width="40" height="40"><span class="t">Maria Simbajon</span></a>
     <div class="links" id="links"></div>
     <a class="navbtn hide-s" id="navPdf" href="#" download>Download PDF</a>
   </div>
@@ -244,22 +274,25 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
   <div class="wrap">
     <div class="hero-copy">
       <div class="apply" id="apply" hidden><i></i><span id="applyText"></span></div>
-      <h1 id="hName">Maria Simbajon</h1>
-      <div class="role" id="hRole"></div>
-      <div class="sub" id="hSub"></div>
-      <p class="tagline" id="hTag"></p>
+      <div class="namerow"><img id="photo" alt="Maria Simbajon" width="92" height="92">
+        <div><h1 id="hName">Maria Simbajon</h1><div class="role" id="hRole"></div><div class="sub" id="hSub"></div></div></div>
+      <p class="intro-sum" id="hSum"></p>
       <div class="cta">
-        <button class="btn gold" id="btnIntro" type="button"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg>Watch my intro video</button>
-        <a class="btn glass" id="btnMail" href="#"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
+        <a class="btn gold" id="btnMail" href="#"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
         <a class="btn glass" id="btnWa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-4-7.5L21 3l-1.5 4A9 9 0 0 1 21 12Z"/></svg>WhatsApp</a>
         <a class="btn glass" id="btnPdf" href="#" download><svg viewBox="0 0 24 24"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Resume PDF</a>
       </div>
       <div class="chips" id="chips"></div>
     </div>
-    <div class="portrait">
-      <img id="photo" alt="Maria Simbajon" width="380" height="700">
-      <div class="badge a"><b>265K</b>post views, up 50%</div>
-      <div class="badge b"><b>5+ yrs</b>supporting AU, US &amp; EU</div>
+    <div class="vidcard">
+      <h2><i></i>Get to know me</h2>
+      <div class="vwrap">
+        <video id="introVideo" muted loop playsinline autoplay preload="metadata" aria-label="Intro video: Maria Simbajon"></video>
+        <div class="vbtns">
+          <button class="vb" id="vSound" type="button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/></svg><span>Tap for sound</span></button>
+          <button class="vb" id="vFull" type="button" aria-label="Full screen"><svg viewBox="0 0 24 24"><path d="M3 9V3h6M21 9V3h-6M3 15v6h6M21 15v6h-6"/></svg></button>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -281,6 +314,13 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
     <div class="note" id="cNote" hidden></div>
   </div>
 </div>
+<section class="more-proof" id="more">
+  <div class="wrap">
+    <h2>Visit My Personal Website to see more proof of my work</h2>
+    <p>Full portfolio, client results, website designs, CRM builds and more.</p>
+    <div class="cta"><a class="btn solid" href="https://themariaoffice.com/" target="_blank" rel="noopener">Visit themariaoffice.com</a><a class="btn line" href="https://themariaoffice.com/portfolio/" target="_blank" rel="noopener">See my full portfolio</a></div>
+  </div>
+</section>
 <footer>© <span id="yr"></span> Maria Simbajon · Virtual Assistant · <a href="https://themariaoffice.com/" style="color:var(--gold)">themariaoffice.com</a></footer>
 
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Preview">
@@ -325,8 +365,9 @@ const ICON_PLAY = '<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';
 document.title = "Maria Simbajon | Resume" + (J.label ? " · " + J.label : "");
 $("#yr").textContent = new Date().getFullYear();
 if (J.label){ $("#apply").hidden = false; $("#applyText").textContent = "Application for: " + J.label; }
-$("#hRole").textContent = J.headline; $("#hSub").textContent = J.sub; $("#hTag").textContent = J.tagline;
-$("#photo").src = B.photo;
+$("#hRole").textContent = J.headline; $("#hSub").textContent = J.sub;
+$("#hSum").innerHTML = hl(esc(J.summary));
+$("#photo").src = B.photo2;
 const subject = encodeURIComponent(J.emailSubject || "Hiring a Virtual Assistant");
 const mail = "mailto:" + B.email + "?subject=" + subject;
 const wa = "https://wa.me/" + B.wa + "?text=" + encodeURIComponent("Hi Maria, " + (J.label ? "about " + J.label + ": " : "") + "I saw your resume.");
@@ -368,8 +409,10 @@ S.results = () => {
   const keys = J.stats || ["views", "followers", "leads", "calendars"];
   return `<section class="block" id="results"><div class="wrap">
     <div class="eyebrow">Results</div><h2 class="title">Numbers from real client work</h2>
-    <p class="lede">Facebook insights and CRM work, tap "Work samples" below to see the screenshots.</p>
+    <p class="lede">Facebook insights from a client page and my CRM work.</p>
     <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
+    <div class="shots">${B.work.results.items.slice(0, 3).map((it, i) => `<button class="shot" type="button" data-res="${i}" aria-label="Open screenshot ${i + 1}"><img src="${IMG + it.src}" alt="Facebook insights screenshot ${i + 1}" loading="lazy"></button>`).join("")}</div>
+    <p class="hint" style="margin-top:10px">Screenshots from Meta Business Suite: Facebook Page of Love &amp; Sound Natural Therapies, last 90 days. Tap to enlarge.</p>
   </div></section>`;
 };
 
@@ -386,20 +429,18 @@ S.experience = () => {
     <div class="eyebrow">Experience</div><h2 class="title">What I have done</h2>
     <p class="lede">The most relevant work for this role comes first${J.keywords && J.keywords.length ? " and the matching words are highlighted" : ""}. Tap a tool in Skills to see where I used it.</p>
     <div class="exp" id="exp">${main.map(jobHTML).join("")}</div>
-    ${rest.length ? `<details class="earlier"><summary>+ Earlier experience (${rest.length})</summary><div class="exp" style="margin-top:12px">${rest.map(jobHTML).join("")}</div></details>` : ""}
+    ${rest.length ? `<details class="earlier" open><summary>Earlier experience (${rest.length})</summary><div class="exp" style="margin-top:12px">${rest.map(jobHTML).join("")}</div></details>` : ""}
     <div class="two">
-      <div class="card"><h3>Education</h3><b>${esc(B.education.degree)}</b><div class="hint">${esc(B.education.school)} · ${esc(B.education.years)}</div></div>
+      <div class="card edu"><img src="../images/maria-graduation.webp" alt="Maria Simbajon in her graduation cap and gown" loading="lazy"><div><h3>Education</h3><b>${esc(B.education.degree)}</b><div class="hint">${esc(B.education.school)} · ${esc(B.education.years)}</div></div></div>
       <div class="card"><h3>Training</h3><ul>${B.certs.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>
     </div></div></section>`;
 };
 function score(b){ return (b.tags || []).reduce((n, t) => { const i = (J.focus || []).indexOf(t); return n + (i < 0 ? 0 : 10 - i); }, 0); }
 function jobHTML(e){
   const bl = e.bullets.map((b, i) => ({ ...b, i, s: score(b) })).sort((a, b) => b.s - a.s || a.i - b.i);
-  const show = Math.max(3, bl.filter(b => b.s > 0).length > 4 ? 4 : 3);
-  const items = bl.map((b, n) => `<li class="${b.s > 0 && n < 2 ? "top" : ""} ${n >= show ? "extra" : ""}" data-tools="${esc((b.tools || []).join("|"))}">${hl(bold(b.t))}</li>`).join("");
+  const items = bl.map((b, n) => `<li class="${b.s > 0 && n < 2 ? "top" : ""}" data-tools="${esc((b.tools || []).join("|"))}">${hl(bold(b.t))}</li>`).join("");
   return `<article class="job card" data-id="${e.id}"><div class="jhead"><h3>${esc(e.company)}</h3><span class="d">${esc(e.dates)}</span></div>
-    <div class="jrole">${esc(e.role)} · ${esc(e.where)}</div><ul>${items}</ul>
-    ${bl.length > show ? `<button class="more" type="button">Show all ${bl.length} points</button>` : ""}</article>`;
+    <div class="jrole">${esc(e.role)} · ${esc(e.where)}</div><ul>${items}</ul></article>`;
 }
 
 S.skills = () => {
@@ -410,20 +451,27 @@ S.skills = () => {
     <div class="sgroups">${B.skills.map(g => `<div class="sg card"><h3>${esc(g.group)}</h3><div class="tools">${g.items.map(t => `<button class="tool ${starred.has(t.toLowerCase()) ? "star" : ""}" type="button" aria-pressed="false" data-tool="${esc(t)}">${esc(t)}</button>`).join("")}</div></div>`).join("")}</div></div></section>`;
 };
 
-S.why = () => `<section class="block" id="why"><div class="wrap">
-  <div class="eyebrow">Why me</div><h2 class="title">What you get with me</h2>
-  <div class="why">
-    <div class="card"><h3>One person, many skills</h3><p>Social media, design, CRM, websites and admin from one VA, so nothing falls between freelancers.</p></div>
-    <div class="card"><h3>Direct, no agency</h3><p>You talk to me and I do the work myself. Clear updates and weekly progress reports.</p></div>
-    <div class="card"><h3>Reliable setup</h3><p>${B.setup.map(esc).join(". ")}.</p></div>
-    <div class="card"><h3>In it for the long term</h3><p>I stay on as ongoing support and keep your systems tidy as you grow.</p></div>
+const ABOUT_PICS = ["about-portrait.jpg", "about-engineer.jpg", "about-graduation.jpg", "about-field.jpg"];
+S.why = () => `<section class="block" id="why"><div class="wrap about">
+  <div class="gal"><img id="galMain" src="${IMG + ABOUT_PICS[0]}" alt="Maria Simbajon">
+    <div class="gthumbs">${ABOUT_PICS.map((p, i) => `<button type="button" data-gal="${i}" aria-pressed="${i === 0}" aria-label="Show photo ${i + 1}"><img src="${IMG + p}" alt="" loading="lazy"></button>`).join("")}</div></div>
+  <div>
+    <div class="eyebrow">About Me</div><h2 class="title">Why Businesses Choose to Work With Me</h2>
+    <p class="hi">Hi, I'm Maria! 😊</p>
+    <p class="lede">I'm a Civil Engineering graduate turned all-in-one virtual assistant. I bring a structured, problem-solving mindset and clear communication to every business I support, so you get one person who understands the whole picture.</p>
+    <div class="creds">
+      <div class="cred"><small>Experience</small><strong>5+ Years Experience</strong><p>Supporting businesses across Australia.</p></div>
+      <div class="cred"><small>Education</small><strong>Civil Engineering Graduate</strong><p>Strong analytical, structured, problem-solving mindset.</p></div>
+      <div class="cred"><small>Marketing</small><strong>20+ Brands and Clients</strong><p>Helped 20+ brands across different industries.</p></div>
+      <div class="cred"><small>Communication</small><strong>Award-Winning Public Speaker</strong><p>Regional journalism and English broadcasting awardee.</p></div>
+    </div>
   </div></div></section>`;
 
 const order = (J.order || []).filter(k => S[k]);
-$("#main").innerHTML = (S.summary()) + order.map(k => S[k]()).join("");
+$("#main").innerHTML = order.map(k => S[k]()).join("");
 
 // nav links from the sections that exist
-const NAME = { match: "Job match", results: "Results", work: "Work samples", experience: "Experience", skills: "Skills", why: "Why me", contact: "Contact" };
+const NAME = { match: "Job match", results: "Results", work: "Work samples", experience: "Experience", skills: "Skills", why: "About me", contact: "Contact" };
 $("#links").innerHTML = [...order, "contact"].filter((k, i, a) => a.indexOf(k) === i && NAME[k]).map(k => `<a href="#${k}" data-s="${k}">${NAME[k]}</a>`).join("");
 const secs = [...order, "contact"].map(k => document.getElementById(k)).filter(Boolean);
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$("#links a").forEach(a => a.classList.toggle("on", a.dataset.s === e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
@@ -502,10 +550,18 @@ function openAt(i){
   $("#mp").hidden = $("#mn").hidden = list.length < 2; $("#modal").classList.add("on"); document.body.style.overflow = "hidden";
 }
 function closeM(){ $("#modal").classList.remove("on"); $("#mstage").innerHTML = ""; document.body.style.overflow = ""; }
-$("#btnIntro").onclick = () => { single = true; render({ src: B.intro.video, kind: "video", poster: B.intro.poster }, "Maria Simbajon: intro video"); $("#mp").hidden = $("#mn").hidden = true; $("#modal").classList.add("on"); document.body.style.overflow = "hidden"; };
+const iv = $("#introVideo"); iv.poster = B.intro.poster; iv.src = B.intro.video;
+const ICON_MUTE = '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/>', ICON_SOUND = '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>';
+function setSound(on){ iv.muted = !on; $("#vSound").setAttribute("aria-pressed", on); $("#vSound span").textContent = on ? "Sound on" : "Tap for sound"; $("#vSound svg").innerHTML = on ? ICON_SOUND : ICON_MUTE; if (on) iv.play().catch(() => {}); }
+$("#vSound").onclick = () => setSound(iv.muted);
+$("#vFull").onclick = () => { setSound(true); const f = iv.requestFullscreen || iv.webkitEnterFullscreen; if (f) f.call(iv); };
+new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) iv.play().catch(() => {}); else iv.pause(); }), { threshold: .3 }).observe(iv);
 $("#mx").onclick = closeM; $("#modal").onclick = e => { if (e.target.id === "modal") closeM(); };
 $("#mp").onclick = () => openAt(idx - 1); $("#mn").onclick = () => openAt(idx + 1);
 document.addEventListener("keydown", e => { if (!$("#modal").classList.contains("on")) return; if (e.key === "Escape") closeM(); if (!single && e.key === "ArrowLeft") openAt(idx - 1); if (!single && e.key === "ArrowRight") openAt(idx + 1); });
+
+document.addEventListener("click", e => { const b = e.target.closest("[data-res]"); if (b){ list = B.work.results.items; openAt(+b.dataset.res); } });
+document.addEventListener("click", e => { const b = e.target.closest("[data-gal]"); if (!b) return; $("#galMain").src = IMG + ABOUT_PICS[+b.dataset.gal]; $$("[data-gal]").forEach(x => x.setAttribute("aria-pressed", x === b)); });
 
 // ---- skill highlighter
 let active = "";
@@ -513,8 +569,7 @@ function applyTool(t){
   active = t === active ? "" : t;
   $$(".tool").forEach(b => b.setAttribute("aria-pressed", active && b.dataset.tool === active));
   let n = 0;
-  $$(".job li").forEach(li => { const hit = active && li.dataset.tools.split("|").includes(active); li.classList.toggle("hit", !!hit); if (hit){ n++; li.classList.remove("extra"); } });
-  $$(".job").forEach(j => j.classList.toggle("dim", !!active));
+  $$(".job li").forEach(li => { const hit = active && li.dataset.tools.split("|").includes(active); li.classList.toggle("hit", !!hit); if (hit) n++; });
   if (active){ $$(".job li.hit").forEach(li => { const d = li.closest("details"); if (d) d.open = true; }); }
   $("#skillClear").hidden = !active;
   $("#skillHint").textContent = active ? (n ? `${active}: used in ${n} place${n === 1 ? "" : "s"} below in Experience.` : `${active}: I list it as a tool I know. See Experience for related work.`) : "Tap a tool to highlight where I used it.";
