@@ -60,7 +60,7 @@ window.RESUME_JOBS = {
     summary: "Organised, reliable Virtual Assistant with hands-on GoHighLevel experience managing the CRM, enquiries and sales pipeline for business owners in Australia, the United States and Europe. Every day I manage contacts, opportunities, pipelines, tasks, tags and workflows: 61 booking calendars, 7 workflow folders of automations, follow-up sequences and appointment booking. I keep customer records accurate, follow documented processes, flag problems, and send a short daily update. Strong written English, excellent attention to detail, and a reliable setup with backup power and internet.",
     keywords: ["GoHighLevel", "CRM", "contacts", "opportunities", "pipelines", "pipeline", "tasks", "tags", "workflows", "workflow", "automations", "follow-up", "enquiries", "appointment booking", "daily update", "attention to detail", "written English", "documented processes", "reliable"],
     focus: ["crm", "leads", "admin", "support", "english", "ops"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
+    order: ["results", "work", "education", "why", "contact"],
     workCards: ["ghlRecords", "ghlPipeline", "ghlConvos", "ghlBooking", "ghlWorkflows", "ghlUpdates", "ghlLeads"],
     resultsShots: "none",
     resultsNote: "GoHighLevel screenshots: calendars, workflows, follow-ups and orders I manage.",

@@ -631,6 +631,13 @@ function jobHTML(e){
     <div class="jrole">${esc(e.role)} · ${esc(e.where)}</div><ul>${items}</ul></article>`;
 }
 
+S.education = () => `<section class="block" id="education"><div class="wrap">
+    <div class="eyebrow">Education</div><h2 class="title">Education &amp; training</h2>
+    <div class="two">
+      <div class="card edu"><img src="../images/maria-graduation.webp" alt="Maria Simbajon in her graduation cap and gown" loading="lazy"><div><h3>Education</h3><b>${esc(B.education.degree)}</b><div class="hint">${esc(B.education.school)} · ${esc(B.education.years)}</div></div></div>
+      <div class="card"><h3>Training</h3><ul>${B.certs.map(c => `<li>${esc(c)}</li>`).join("")}</ul></div>
+    </div></div></section>`;
+
 S.skills = () => {
   const starred = new Set((J.keywords || []).map(k => k.toLowerCase()));
   return `<section class="block" id="skills"><div class="wrap">
@@ -659,7 +666,7 @@ const order = (J.order || []).filter(k => S[k]);
 $("#main").innerHTML = order.map(k => S[k]()).join("");
 
 // nav links from the sections that exist
-const NAME = { results: "Results", work: "Work samples", experience: "Experience", skills: "Skills", why: "About me", contact: "Contact" };
+const NAME = { results: "Results", work: "Work samples", education: "Education", experience: "Experience", skills: "Skills", why: "About me", contact: "Contact" };
 $("#links").innerHTML = [...order, "contact"].filter((k, i, a) => a.indexOf(k) === i && NAME[k]).map(k => `<a href="#${k}" data-s="${k}">${NAME[k]}</a>`).join("");
 const secs = [...order, "contact"].map(k => document.getElementById(k)).filter(Boolean);
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) $$("#links a").forEach(a => a.classList.toggle("on", a.dataset.s === e.target.id)); }), { rootMargin: "-40% 0px -55% 0px" });
