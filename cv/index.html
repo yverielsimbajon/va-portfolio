@@ -181,6 +181,43 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 @media (max-width:900px){.pgrid{grid-template-columns:1fr}}
 @media (max-width:560px){.crow{grid-template-columns:78px 1fr;gap:10px}.pcontent{padding:20px 18px 22px}.pcontent h3{font-size:21px}}
 
+
+/* website cards (like the portfolio) */
+.wgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:6px}
+.wcard{display:flex;flex-direction:column;overflow:hidden;background:var(--card);border:1px solid rgba(11,110,127,.1);border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.wcard:hover{border-color:rgba(25,180,180,.35);box-shadow:var(--shadow2);transform:translateY(-5px)}
+.wmedia{position:relative;aspect-ratio:16/10;overflow:hidden;background:radial-gradient(circle at 20% 15%,rgba(255,255,255,.85),transparent 45%),linear-gradient(135deg,#e3f5f5 0%,#cdeced 100%);display:flex;align-items:center;justify-content:center;padding:20px 24px 32px}
+.wmedia .wimg{max-width:100%;max-height:100%;border-radius:10px;background:#fff;box-shadow:0 14px 34px rgba(17,76,89,.18),0 2px 6px rgba(17,76,89,.08);cursor:zoom-in;transition:transform .5s var(--ease)}
+.wcard:hover .wimg{transform:scale(1.03)}
+.wbtn{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid rgba(11,110,127,.12);background:rgba(255,255,255,.95);color:var(--primary);display:grid;place-items:center;padding:0;box-shadow:0 6px 16px rgba(9,24,34,.14);z-index:2}
+.wbtn:hover{background:var(--primary);color:#fff}
+.wbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.wprev{left:10px}.wnext{right:10px}
+.wdots{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);display:flex;gap:4px;z-index:2}
+.wdots button{width:18px;height:18px;padding:0;border:0;background:none;display:grid;place-items:center}
+.wdots button:before{content:"";width:7px;height:7px;border-radius:999px;background:rgba(11,110,127,.28);transition:width .4s var(--ease),background .4s}
+.wdots button.on:before{width:18px;background:var(--primary)}
+.wbody{display:flex;flex:1;flex-direction:column;padding:22px 24px 24px}
+.wchip{align-self:flex-start;margin-bottom:10px;padding:5px 12px;color:var(--primary-dark);background:#e4f6f6;border-radius:999px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.wbody h3{margin:0 0 8px;font-size:1.2rem;color:var(--deep);line-height:1.25}
+.wbody p{margin:0 0 16px;color:var(--muted);font-size:.92rem}
+.wlink{align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 20px;color:#fff;background:var(--primary);border:0;border-radius:999px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px rgba(11,110,127,.25);transition:background .25s,transform .25s var(--ease)}
+.wlink:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.site-modal{position:fixed;z-index:110;inset:0;display:grid;padding:6vh 5vw;visibility:hidden;place-items:center;background:rgba(9,24,34,0);opacity:0;transition:opacity .35s,background .35s,visibility .35s}
+.site-modal.open{visibility:visible;background:rgba(9,24,34,.55);backdrop-filter:blur(2px);opacity:1}
+.site-window{display:flex;flex-direction:column;width:min(100%,1200px);height:100%;overflow:hidden;background:#fff;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.4);transform:translateY(14px) scale(.98);transition:transform .4s var(--ease)}
+.site-modal.open .site-window{transform:none}
+.site-bar{display:flex;align-items:center;gap:14px;padding:12px 14px 12px 20px;background:#f2fafa;border-bottom:1px solid var(--line)}
+.site-dots{display:flex;gap:6px}.site-dots i{width:11px;height:11px;background:#cfe3e5;border-radius:50%}
+.site-title{flex:1;min-width:0;overflow:hidden;font-size:.9rem;font-weight:600;text-overflow:ellipsis;white-space:nowrap}
+.site-newtab{color:var(--primary);text-decoration:none;font-size:.8rem;font-weight:600;white-space:nowrap}
+.site-close{display:inline-flex;flex:0 0 auto;align-items:center;gap:8px;padding:10px 18px 10px 14px;color:#fff;background:var(--primary);border:0;border-radius:999px;box-shadow:0 6px 16px rgba(11,110,127,.3);font-size:.9rem;font-weight:700;line-height:1}
+.site-close span{font-size:1.3rem;line-height:.8}
+.site-frame-wrap{position:relative;flex:1;background:#f7fbfb}
+.site-loading{position:absolute;inset:0;display:grid;color:var(--muted);place-items:center;font-size:.9rem}
+.site-frame-wrap iframe{position:absolute;inset:0;width:100%;height:100%;background:transparent;border:0}
+@media (max-width:760px){.wgrid{grid-template-columns:1fr}.site-modal{padding:7vh 14px}.site-window{border-radius:16px}.site-dots,.site-newtab{display:none}}
+
 /* reels in phone frames (same look as the portfolio) */
 .reels-stage{position:relative}
 .reels-row{display:flex;justify-content:center;gap:clamp(18px,4vw,52px);margin-top:20px;padding:6px 0 10px}
@@ -430,6 +467,14 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
     <div class="mcap" id="mcap"></div>
   </div>
 </div>
+<div class="site-modal" id="siteModal" role="dialog" aria-modal="true" aria-labelledby="siteTitle">
+  <div class="site-window">
+    <div class="site-bar"><span class="site-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="site-title" id="siteTitle"></span>
+      <a class="site-newtab" id="siteNewTab" href="#" target="_blank" rel="noopener">Open in new tab &#8599;</a>
+      <button class="site-close" type="button" aria-label="Close website preview"><span aria-hidden="true">&times;</span> Close</button></div>
+    <div class="site-frame-wrap"><div class="site-loading">Loading website…</div><iframe id="sitePopFrame" title="Website preview" src="about:blank"></iframe></div>
+  </div>
+</div>
 <div class="toast" id="toast" role="status"></div>
 
 <script src="data.js"></script>
@@ -531,6 +576,15 @@ function loopBlock(k, what){
     <div class="rmarq crm"><div class="rtrack" style="animation-duration:${items.length * 8}s">${row(fwd, false)}${row(fwd, true)}</div></div>
     <div class="rmarq crm" style="margin-top:0"><div class="rtrack rev" style="animation-duration:${items.length * 9}s">${row(rev, false)}${row(rev, true)}</div></div>`;
 }
+function webCards(){
+  const P = B.webProjects, chev = ico;
+  return `<div class="wgrid">${P.map((p, i) => `<article class="wcard" data-w="${i}" data-n="0">
+    <div class="wmedia"><img class="wimg" src="${IMG + p.images[0]}" alt="${esc(p.title)}" loading="lazy" decoding="async">
+      <button class="wbtn wprev" type="button" aria-label="Previous picture">${chev.prev}</button><button class="wbtn wnext" type="button" aria-label="Next picture">${chev.next}</button>
+      <div class="wdots">${p.images.map((_, n) => `<button type="button" data-d="${n}" aria-label="Show picture ${n + 1}"${n === 0 ? ' class="on"' : ""}></button>`).join("")}</div></div>
+    <div class="wbody"><span class="wchip">${esc(p.group)}</span><h3>${esc(p.title)}</h3><p>${esc(p.desc)}</p>
+      <button class="wlink" type="button" data-site="${i}">${esc(p.btn)} <span aria-hidden="true">&#8594;</span></button></div></article>`).join("")}</div>`;
+}
 const WB = {
   designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic designs I create")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
   reels: n => {
@@ -547,7 +601,8 @@ const WB = {
   },
   crm: n => loopBlock("crm", "CRM screenshot"),
   smm: n => loopBlock("smm", "Content planning screenshot"),
-  admin: n => loopBlock("admin", "Admin screenshot")
+  admin: n => loopBlock("admin", "Admin screenshot"),
+  websites: n => B.webProjects ? `<h2 class="title wsub">Website designs I create</h2><p class="blurb">Real client websites and design concepts. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
 };
 
 S.experience = () => {
@@ -751,6 +806,26 @@ $$(".pcard").forEach(card => {
   tr.addEventListener("keydown", e => { if (e.key === "Enter") open(); });
   let sx = null; tr.addEventListener("touchstart", e => { sx = e.touches[0].clientX; }, { passive: true });
   tr.addEventListener("touchend", e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1)); sx = null; });
+});
+
+// ---- website cards: slider, zoom and the "View" pop-up
+function setWSlide(card, n){
+  const P = B.webProjects[+card.dataset.w], c = P.images.length; n = (n + c) % c; card.dataset.n = n;
+  $(".wimg", card).src = IMG + P.images[n]; $$(".wdots button", card).forEach((b, k) => b.classList.toggle("on", k === n));
+}
+const siteModal = $("#siteModal"), popFrame = $("#sitePopFrame");
+function openSite(url, title){ $("#siteTitle").textContent = title; $("#siteNewTab").href = url; popFrame.src = url; siteModal.classList.add("open"); document.body.style.overflow = "hidden"; $(".site-close").focus(); }
+function closeSite(){ siteModal.classList.remove("open"); document.body.style.overflow = ""; setTimeout(() => popFrame.src = "about:blank", 350); }
+$(".site-close").onclick = closeSite; siteModal.addEventListener("click", e => { if (e.target === siteModal) closeSite(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && siteModal.classList.contains("open")) closeSite(); });
+document.addEventListener("click", e => {
+  const card = e.target.closest(".wcard"); if (!card) return;
+  const P = B.webProjects[+card.dataset.w], n = +card.dataset.n;
+  if (e.target.closest(".wprev")) return setWSlide(card, n - 1);
+  if (e.target.closest(".wnext")) return setWSlide(card, n + 1);
+  const dot = e.target.closest("[data-d]"); if (dot) return setWSlide(card, +dot.dataset.d);
+  if (e.target.closest("[data-site]")) return openSite(P.url, P.title);
+  if (e.target.closest(".wimg")){ list = P.images.map(src => ({ src })); openAt(n); }
 });
 
 // ---- skill highlighter
