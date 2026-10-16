@@ -60,7 +60,7 @@ window.RESUME_JOBS = {
     keywords: ["GoHighLevel", "CRM", "contacts", "opportunities", "pipelines", "pipeline", "tasks", "tags", "workflows", "workflow", "automations", "follow-up", "enquiries", "appointment booking", "daily update", "attention to detail", "written English", "documented processes", "reliable"],
     focus: ["crm", "leads", "admin", "support", "english", "ops"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
-    workBlocks: ["ghlRecords", "ghlConvos", "ghlBooking", "ghlWorkflows", "ghlUpdates"],
+    workCards: ["ghlRecords", "ghlConvos", "ghlBooking", "ghlWorkflows", "ghlUpdates", "ghlLeads"],
     resultsShots: "none",
     resultsNote: "GoHighLevel screenshots: calendars, workflows, follow-ups and orders I manage.",
     stats: ["calendars", "events", "leads", "years"],
@@ -77,7 +77,7 @@ window.RESUME_JOBS = {
     keywords: ["Mailchimp", "Canva", "Instagram", "LinkedIn", "newsletter", "captions", "short videos", "landing pages", "landing page", "email sequences", "automated sequence", "sign-up", "tags", "Google Workspace", "Drive", "Calendar", "end-of-day update", "brief", "confidential", "wellness", "attention to detail"],
     focus: ["social", "design", "web", "crm", "admin", "english"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
-    workBlocks: ["designs", "reels", "smm", "crm"],
+    workBlocks: ["designs", "websites", "reels", "smm", "crm"],
     workTitle: "Canva designs I create for wellness brands, real estate and more",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Flourish on Thursdays: Virtual Assistant application"
