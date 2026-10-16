@@ -47,7 +47,6 @@ window.RESUME_JOBS = {
     ],
     workTitle: "Effective graphic designs I create",
     portfolioLabel: "View my REVA Portfolio",
-    emailSubject: "REVA 26",
-    ctaNote: "Please include REVA 26 in the subject. Resume, portfolio and samples are all on this page."
+    emailSubject: "REVA 26"
   }
 };
