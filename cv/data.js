@@ -58,8 +58,6 @@ window.RESUME_BASE = {
         { t: "Managed tasks, deadlines and submissions for multiple clients with Trello and shared spreadsheets.", tags: ["admin", "ops"], tools: ["Trello", "Google Sheets"] },
         { t: "Prepared documents, reports and research in Google Workspace and Microsoft Office; handled client emails.", tags: ["admin", "english"], tools: ["Google Workspace", "Microsoft Office"] }
       ] },
-    { id: "nc", company: "Native Camp", role: "Online English Teacher", where: "Remote", dates: "Jan – May 2025",
-      bullets: [ { t: "Taught English online to learners of all levels: strong spoken and written English.", tags: ["english"], tools: [] } ] },
     { id: "as", company: "ASSCAT", role: "Project Engineer Intern, Data Reporting & Documentation", where: "Philippines", dates: "Jul – Sep 2024",
       bullets: [ { t: "Prepared budget summaries and project reports; built **Excel databases** to track milestones, costs and documents.", tags: ["admin", "ops"], tools: ["Excel"] } ] }
   ],

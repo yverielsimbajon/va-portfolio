@@ -15,6 +15,8 @@ window.RESUME_JOBS = {
     order: ["results", "work", "experience", "skills", "why", "contact"],
     workTabs: ["results", "designs", "reels", "crm", "admin", "websites"],
     match: [],
+    workTitle: "See it, not just read it",
+    portfolioLabel: "View my Portfolio",
     emailSubject: "Hiring a Virtual Assistant"
   },
 
@@ -43,6 +45,8 @@ window.RESUME_JOBS = {
       { req: "Reliable internet + backup power/internet", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" },
       { req: "A long-term working relationship, not a short-term gig", proof: "That is what I want too. I have supported the same clients for months and I stay on as ongoing support.", status: "yes" }
     ],
+    workTitle: "Effective graphic designs I create",
+    portfolioLabel: "View my REVA Portfolio",
     emailSubject: "REVA 26",
     ctaNote: "Please include REVA 26 in the subject. Resume, portfolio and samples are all on this page."
   }
