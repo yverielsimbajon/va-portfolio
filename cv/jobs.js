@@ -1,4 +1,4 @@
-/* One entry per job application. Open the page with  /cv/?job=<key>  (or /cv/<key>/ for a short link).
+/* One entry per job application. Open the page with  /cv/?job=<key>  (or /cv/<folder>/ for a short link).
    What changes per job: label, headline, summary, highlighted keywords, section order, which work tabs show first,
    which experience bullets come first (focus tags), the "job match" table and the email subject.
    Keep every claim true. If she has not done something, say "ready to learn", never "experienced". */
@@ -65,5 +65,19 @@ window.RESUME_JOBS = {
     workTitle: "GoHighLevel work I do",
     portfolioLabel: "View my GHL Portfolio",
     emailSubject: "GoHighLevel Virtual Assistant"
+  },
+  "flourish-dr-lolu": {
+    label: "Virtual Assistant, Flourish with Dr Lolu (UK)",
+    headline: "Virtual Assistant for Coaches & Wellness Brands",
+    sub: "Newsletters · Canva · Social Media · Website Support",
+    tagline: "",
+    summary: "Organised, detail-minded Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including a wellness and holistic therapy business. I schedule and design content for Instagram, Facebook and LinkedIn in Canva, add captions to short videos and edit Reels, build website pages and landing pages, and run email follow-up sequences with sign-up, tags and automations. I read every brief in full and follow it exactly, check my work before I send it, send a clear end-of-day update, keep everything confidential, and never publish anything without sign-off.",
+    keywords: ["Mailchimp", "Canva", "Instagram", "LinkedIn", "newsletter", "captions", "short videos", "landing pages", "landing page", "email sequences", "automated sequence", "sign-up", "tags", "Google Workspace", "Drive", "Calendar", "end-of-day update", "brief", "confidential", "wellness", "attention to detail"],
+    focus: ["social", "design", "web", "crm", "admin", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    workBlocks: ["designs", "reels", "smm", "crm"],
+    workTitle: "Canva designs I create for wellness brands",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Flourish on Thursdays: Virtual Assistant application"
   }
 };

@@ -63,7 +63,7 @@ window.RESUME_BASE = {
   ],
 
   skills: [
-    { group: "CRM & Automation", items: ["GoHighLevel", "HubSpot", "Zoho CRM", "Salesforce", "Zapier", "n8n"] },
+    { group: "CRM & Automation", items: ["GoHighLevel", "HubSpot", "Zoho CRM", "Salesforce", "Zapier", "n8n", "Mailchimp"] },
     { group: "Social Media & Design", items: ["Canva", "Adobe Photoshop", "Figma", "Meta Business Suite", "Metricool", "Facebook", "Instagram", "LinkedIn"] },
     { group: "Admin & Operations", items: ["Google Workspace", "Microsoft Office", "Notion", "ClickUp", "Asana", "Trello", "Monday.com", "Google Sheets"] },
     { group: "Websites", items: ["WordPress", "Wix Studio", "Webflow", "Framer"] },
