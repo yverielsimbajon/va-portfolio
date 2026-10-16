@@ -874,8 +874,9 @@
       mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
     }
 
-    .marquee-row { display: flex; width: max-content; animation: marqueeLeft var(--speed, 60s) linear infinite; }
+    .marquee-row { display: flex; width: max-content; animation: marqueeLeft var(--speed, 60s) linear infinite; will-change: transform; }
     .marquee-row.to-right { animation-name: marqueeRight; }
+    .design-marquee.offscreen .marquee-row,
     .design-marquee:hover .marquee-row,
     .design-marquee:focus-within .marquee-row { animation-play-state: paused; }
 
@@ -2317,9 +2318,8 @@
       images.forEach((src, n) => rows[n % MARQUEE_ROWS].push({ src, n }));
       const item = ({ src, n }, copy) => `
               <button class="design-item" type="button" data-n="${n}" aria-label="View ${isVideo(src) ? "video" : "design"} ${n + 1}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}>
-                ${isVideo(src)
-                  ? `<video src="../images/${src}#t=0.5" muted loop playsinline preload="metadata"></video><span class="video-badge" aria-hidden="true">▶ Video</span>`
-                  : `<img src="../images/${src}" alt="" decoding="async" />`}
+                <img src="../images/thumbs/${src.replace(/\.\w+$/, ".jpg")}" alt="" decoding="async" width="420" height="525" />
+                ${isVideo(src) ? `<span class="video-badge" aria-hidden="true">▶ Video</span>` : ""}
                 <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
               </button>`;
       return rows.map((row, r) => {
@@ -2616,6 +2616,12 @@
       });
     }, { threshold: 0.4 });
     document.querySelectorAll(".design-item video").forEach((v) => videoObserver.observe(v));
+
+    // Only animate the design rows while they're on screen
+    const marqueeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => entry.target.classList.toggle("offscreen", !entry.isIntersecting));
+    });
+    document.querySelectorAll(".design-marquee").forEach((m) => marqueeObserver.observe(m));
 
     /* ---------- Reels: autoplay without sound, one sound button per phone ---------- */
     const reels = [...document.querySelectorAll(".phone")].map((phone) => ({
