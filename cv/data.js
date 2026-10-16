@@ -85,8 +85,10 @@ window.RESUME_BASE = {
   work: {
     results: { label: "Results", blurb: "Facebook Page, last 90 days (Love & Sound Natural Therapies).",
       items: ["results-views.jpg", "results-followers.jpg", "results-interactions.jpg", "smm-analytics.jpg"].map(f => ({ src: f })) },
-    designs: { label: "Canva designs", blurb: "Posters, promos, vouchers, event graphics and short videos I designed for clients.",
+    designs: { label: "Canva designs", blurb: "Real estate sample designs, plus posters, promos, vouchers, event graphics and short videos I designed for clients.",
       items: [
+        { src: "design-re-just-listed.jpg", thumb: "design-re-just-listed.jpg" }, { src: "design-re-open-home.jpg", thumb: "design-re-open-home.jpg" },
+        { src: "design-re-just-sold.jpg", thumb: "design-re-just-sold.jpg" },
         { src: "design-coupon-20.webp", thumb: "design-coupon-20.jpg" }, { src: "design-taxi-light.webp", thumb: "design-taxi-light.jpg" },
         { src: "design-video-1.mp4", thumb: "design-video-1.jpg", kind: "video" }, { src: "design-stress-relief.jpg", thumb: "design-stress-relief.jpg" },
         { src: "design-valentine-pink.webp", thumb: "design-valentine-pink.jpg" }, { src: "design-9d-breathwork.jpg", thumb: "design-9d-breathwork.jpg" },
