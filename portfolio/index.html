@@ -886,8 +886,7 @@
     .marquee-row { display: flex; width: max-content; animation: marqueeLeft var(--speed, 60s) linear infinite; will-change: transform; }
     .marquee-row.to-right { animation-name: marqueeRight; }
     .design-marquee.offscreen .marquee-row,
-    .design-marquee:hover .marquee-row,
-    .design-marquee:focus-within .marquee-row { animation-play-state: paused; }
+    .design-marquee:has(:focus-visible) .marquee-row { animation-play-state: paused; }
 
     .marquee-row .design-item { flex: 0 0 auto; width: clamp(150px, 17vw, 210px); margin-right: 16px; }
 
