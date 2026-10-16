@@ -78,7 +78,7 @@ window.RESUME_JOBS = {
     focus: ["social", "design", "web", "crm", "admin", "english"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
     workBlocks: ["designs", "reels", "smm", "crm"],
-    workTitle: "Canva designs I create for wellness brands",
+    workTitle: "Canva designs I create for wellness brands, real estate and more",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Flourish on Thursdays: Virtual Assistant application"
   }
