@@ -137,6 +137,9 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .resp{margin:34px 0 0;display:table;background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);color:var(--gold-ink);border-radius:14px;padding:8px 16px;font-size:13.5px;font-weight:500;line-height:1.4}
 .resp b{display:inline-block;margin-right:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--primary-dark)}
 .resp + .wsub{margin-top:10px}
+.rolerow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:6px}
+.rolerow .role.pill{margin-top:0}
+.yrs{display:inline-block;background:var(--gold);color:var(--deep);padding:5px 16px;border-radius:999px;font-size:clamp(15px,1.8vw,19px);font-weight:800;box-shadow:0 8px 20px rgba(255,194,61,.35)}
 .role.pill{display:inline-block;margin-top:6px;background:linear-gradient(120deg,var(--primary),var(--secondary));color:#fff;padding:5px 16px;border-radius:999px;font-size:clamp(15px,1.8vw,19px);font-weight:700;box-shadow:0 8px 20px rgba(11,110,127,.25)}
 .shots-title{margin:34px 0 0;font-size:clamp(20px,2.6vw,28px);letter-spacing:-.01em;text-align:center;color:var(--deep)}
 .shots-title:after{content:"";display:block;width:70px;height:4px;border-radius:4px;margin:10px auto 0;background:linear-gradient(90deg,var(--primary),var(--secondary))}
@@ -166,7 +169,7 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .presp{margin:0 0 18px;color:var(--gold-ink);background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);border-radius:12px;padding:10px 14px;font-size:14px;font-weight:500;line-height:1.5}
 .presp b{margin-right:6px;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--primary-dark)}
 .pcontent h3{margin:0 0 14px;font-size:clamp(23px,2.3vw,28px);font-weight:800;letter-spacing:-.025em;line-height:1.28;color:var(--deep)}
-.pcontent h3 span{background:linear-gradient(transparent 58%,rgba(25,180,180,.3) 58%);-webkit-box-decoration-break:clone;box-decoration-break:clone;padding:0 4px;margin:0 -4px}
+.pcontent h3 span{text-decoration:underline;text-decoration-color:var(--secondary);text-decoration-thickness:4px;text-underline-offset:6px;text-decoration-skip-ink:none}
 .pclients{margin:10px 0 0;font-size:13.5px;font-weight:600;line-height:1.5}
 .pclients span{margin-right:8px;color:var(--secondary);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .pintro{margin:8px 0 18px;color:var(--muted);font-size:14.5px;line-height:1.6}
@@ -509,6 +512,7 @@ $("#yr").textContent = new Date().getFullYear();
 if (J.label){ $("#apply").hidden = false; $("#applyText").textContent = "Application for: " + J.label; }
 $("#hRole").textContent = J.headline; $("#hSub").textContent = J.sub;
 if (J.headlinePill) $("#hRole").classList.add("pill");
+if (J.headlineBadge){ const row = document.createElement("div"); row.className = "rolerow"; $("#hRole").before(row); row.appendChild($("#hRole")); const b = document.createElement("span"); b.className = "yrs"; b.textContent = J.headlineBadge; row.appendChild(b); }
 if (J.hideSummary) $("#hSum").hidden = true; else $("#hSum").innerHTML = hl(esc(J.summary));
 $("#photo").src = B.photo2;
 const subject = encodeURIComponent(J.emailSubject || "Hiring a Virtual Assistant");
