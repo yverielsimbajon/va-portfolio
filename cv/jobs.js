@@ -48,5 +48,22 @@ window.RESUME_JOBS = {
     workTitle: "Effective graphic designs I create",
     portfolioLabel: "View my REVA Portfolio",
     emailSubject: "REVA 26"
+  },
+  "jbe-ghl": {
+    label: "GoHighLevel VA (Justin Bucknell Electrical, UK)",
+    headline: "GoHighLevel Virtual Assistant",
+    sub: "CRM · Pipelines · Workflows · Lead Admin",
+    tagline: "",
+    summary: "Organised, reliable Virtual Assistant with hands-on GoHighLevel experience managing the CRM, enquiries and sales pipeline for business owners in Australia, the United States and Europe. Every day I manage contacts, opportunities, pipelines, tasks, tags and workflows: 61 booking calendars, 7 workflow folders of automations, follow-up sequences and appointment booking. I keep customer records accurate, follow documented processes, flag problems, and send a short daily update. Strong written English, excellent attention to detail, and a reliable setup with backup power and internet.",
+    keywords: ["GoHighLevel", "CRM", "contacts", "opportunities", "pipelines", "pipeline", "tasks", "tags", "workflows", "workflow", "automations", "follow-up", "enquiries", "appointment booking", "daily update", "attention to detail", "written English", "documented processes", "reliable"],
+    focus: ["crm", "leads", "admin", "support", "english", "ops"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    workBlocks: ["crm", "admin"],
+    resultsShots: "crm",
+    resultsNote: "GoHighLevel screenshots: calendars, workflows, follow-ups and orders I manage.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "GoHighLevel work I do",
+    portfolioLabel: "View my GHL Portfolio",
+    emailSubject: "GoHighLevel Virtual Assistant"
   }
 };

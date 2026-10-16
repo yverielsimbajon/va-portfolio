@@ -437,15 +437,15 @@ const S = {};
 
 S.results = () => {
   const keys = J.stats || ["views", "followers", "leads", "calendars"];
-  const shots = B.work.results.items;
-  const one = copy => shots.map((it, i) => `<button class="rshot" type="button" data-lb="results" data-i="${i}" aria-label="Zoom screenshot ${i + 1}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : "Facebook insights screenshot " + (i + 1)}" loading="lazy"></button>`).join("");
+  const sk = J.resultsShots || "results", shots = B.work[sk].items;
+  const one = copy => shots.map((it, i) => `<button class="rshot" type="button" data-lb="${sk}" data-i="${i}" aria-label="Zoom screenshot ${i + 1}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}><img src="${IMG + it.src}" alt="${copy ? "" : "Facebook insights screenshot " + (i + 1)}" loading="lazy"></button>`).join("");
   return `<section class="block" id="results"><div class="wrap">
     <div class="eyebrow">Results</div><h2 class="title">Numbers from real client work</h2>
     <p class="lede">Facebook insights from a client page and my CRM work. Tap a screenshot to zoom.</p>
     <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
     <h3 class="shots-title">Real Screenshots. Real Results.</h3>
     <div class="rmarq" id="rmarq"><div class="rtrack">${one(false)}${one(true)}</div></div>
-    <p class="hint" style="margin-top:6px">Meta Business Suite screenshots: Facebook Page of Love &amp; Sound Natural Therapies, last 90 days.</p>
+    <p class="hint" style="margin-top:6px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Love & Sound Natural Therapies, last 90 days.")}</p>
   </div></section>`;
 };
 
@@ -480,7 +480,8 @@ const WB = {
         </div></div>`).join("")}</div></div>${nav}<p class="rhint">Swipe or tap the arrows to see more reels</p>`;
   },
   crm: n => loopBlock("crm", "CRM screenshot"),
-  smm: n => loopBlock("smm", "Content planning screenshot")
+  smm: n => loopBlock("smm", "Content planning screenshot"),
+  admin: n => loopBlock("admin", "Admin screenshot")
 };
 
 S.experience = () => {
