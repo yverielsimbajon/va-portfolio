@@ -863,11 +863,31 @@
     .feature-head > div { max-width: 640px; }
     .feature-head .tools { justify-content: flex-end; }
 
-    .design-grid {
+    /* Four looping rows: 1 and 3 drift right, 2 and 4 drift left */
+    .design-marquee {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 16px;
-      margin-top: 26px;
+      margin: 26px calc(clamp(22px, 3vw, 34px) * -1) 0;
+      padding: 8px 0;
+      overflow: hidden;
+      -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+      mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+    }
+
+    .marquee-row { display: flex; width: max-content; animation: marqueeLeft var(--speed, 60s) linear infinite; }
+    .marquee-row.to-right { animation-name: marqueeRight; }
+    .design-marquee:hover .marquee-row,
+    .design-marquee:focus-within .marquee-row { animation-play-state: paused; }
+
+    .marquee-row .design-item { flex: 0 0 auto; width: clamp(150px, 17vw, 210px); margin-right: 16px; }
+
+    @keyframes marqueeLeft { to { transform: translateX(-50%); } }
+    @keyframes marqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .design-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+      .marquee-row { animation: none; }
+      .marquee-row [aria-hidden="true"] { display: none; }
     }
 
     .design-item {
@@ -2102,7 +2122,9 @@
           "design-stress-relief.jpg", "design-valentine-pink.webp", "design-9d-breathwork.jpg",
           "design-taxi-dark.webp", "design-video-2.mp4", "design-coupon-5.webp",
           "design-valentine-call.jpg", "design-breathwork-events.jpg", "design-9dmt-trip.jpg",
-          "design-promo.jpg", "design-education.jpg"
+          "design-promo.jpg", "design-education.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-social-media-management.png",
+          "design-video-3.mp4", "design-video-4.mp4"
         ]
       },
       {
@@ -2287,7 +2309,27 @@
     };
 
     const isVideo = (src) => /\.mp4$/i.test(src);
-    const SHOWN_DESIGNS = 6; // 3 columns × 2 rows before "View all"
+    const MARQUEE_ROWS = 4;
+
+    // Deal the designs into rows, then repeat each row twice so the loop never shows a gap
+    const marqueeRows = (images) => {
+      const rows = Array.from({ length: MARQUEE_ROWS }, () => []);
+      images.forEach((src, n) => rows[n % MARQUEE_ROWS].push({ src, n }));
+      const item = ({ src, n }, copy) => `
+              <button class="design-item" type="button" data-n="${n}" aria-label="View ${isVideo(src) ? "video" : "design"} ${n + 1}"${copy ? ' aria-hidden="true" tabindex="-1"' : ""}>
+                ${isVideo(src)
+                  ? `<video src="../images/${src}#t=0.5" muted loop playsinline preload="metadata"></video><span class="video-badge" aria-hidden="true">▶ Video</span>`
+                  : `<img src="../images/${src}" alt="" decoding="async" />`}
+                <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
+              </button>`;
+      return rows.map((row, r) => {
+        const half = [];
+        while (half.length < 9) half.push(...row);   // enough items to fill a wide screen
+        return `<div class="marquee-row${r % 2 === 0 ? " to-right" : ""}" style="--speed:${60 + r * 8}s">
+              ${half.map((d) => item(d, false)).join("")}${half.map((d) => item(d, true)).join("")}
+            </div>`;
+      }).join("");
+    };
 
     // Shared header for the wide feature cards
     const featureHead = (p, label) => `
@@ -2303,16 +2345,9 @@
             <div>${featureHead(p, label)}</div>
             ${toolsHtml(p)}
           </div>
-          <div class="design-grid">
-            ${p.images.map((src, n) => `
-              <button class="design-item${n >= SHOWN_DESIGNS ? " extra" : ""}" type="button" data-n="${n}" aria-label="View ${isVideo(src) ? "video" : "design"} ${n + 1}">
-                ${isVideo(src)
-                  ? `<video src="../images/${src}#t=0.5" muted loop playsinline preload="metadata"></video><span class="video-badge" aria-hidden="true">▶ Video</span>`
-                  : `<img src="../images/${src}" alt="" loading="lazy" decoding="async" />`}
-                <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
-              </button>`).join("")}
+          <div class="design-marquee">
+            ${marqueeRows(p.images)}
           </div>
-          ${p.images.length > SHOWN_DESIGNS ? `<button class="show-more" type="button" aria-expanded="false">View all ${p.images.length} designs</button>` : ""}
         </article>`;
 
     const resultsHtml = (p, i, label) => `
@@ -2571,16 +2606,6 @@
       card.querySelectorAll("[data-n]").forEach((btn) =>
         btn.addEventListener("click", () => openModal(project, Number(btn.dataset.n))));
 
-      const more = card.querySelector(".show-more");
-      if (more) {
-        more.addEventListener("click", () => {
-          const grid = card.querySelector(".design-grid");
-          const open = grid.classList.toggle("expanded");
-          more.setAttribute("aria-expanded", String(open));
-          more.textContent = open ? "Show fewer designs" : `View all ${project.images.length} designs`;
-          if (!open) card.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
-        });
-      }
     });
 
     // Design videos play silently while they're on screen
