@@ -64,7 +64,7 @@ window.RESUME_BASE = {
 
   skills: [
     { group: "CRM & Automation", items: ["GoHighLevel", "HubSpot", "Zoho CRM", "Salesforce", "Zapier", "n8n", "Mailchimp"] },
-    { group: "Social Media & Design", items: ["Canva", "Adobe Photoshop", "Figma", "Meta Business Suite", "Metricool", "Facebook", "Instagram", "LinkedIn"] },
+    { group: "Social Media & Design", items: ["Canva", "CapCut", "Adobe Photoshop", "Figma", "Meta Business Suite", "Metricool", "Facebook", "Instagram", "LinkedIn"] },
     { group: "Admin & Operations", items: ["Google Workspace", "Microsoft Office", "Notion", "ClickUp", "Asana", "Trello", "Monday.com", "Google Sheets"] },
     { group: "Websites", items: ["WordPress", "Wix Studio", "Webflow", "Framer"] },
     { group: "Customer Support", items: ["Zendesk", "Freshdesk", "RingCentral", "WhatsApp", "Zoho Desk"] }
@@ -127,8 +127,8 @@ window.RESUME_BASE = {
       challenge: "Wellness and service brands need graphics that look polished and on brand, not generic or cluttered.", solution: "I turned simple services, offers and photos into branded graphics: service spotlights, vouchers, coupons, event announcements and a seasonal Valentine campaign.", result: "I gave my clients a clean, consistent look that makes people stop and book.",
       tools: ["Canva", "Adobe Photoshop"], images: ["design-promo.jpg", "design-valentine-pink.webp", "design-voucher-20.png", "design-coupon-20.webp", "design-stress-relief.jpg", "design-9d-breathwork.jpg", "design-breathwork-events.jpg", "design-book-now-pay-later.png"] },
     plushReels: { category: "Short-Form Video", resp: "I create short-form video content and Reels, and edit photos and videos from the team.", title: "Short-form video & Reels with captions and music", clients: ["The Kerbing King"],
-      challenge: "Raw before-and-after footage does not stop the scroll on its own.", solution: "I edited it into short Reels with captions and music, and made short promo videos in Canva.", result: "I turned plain footage into branded Reels ready to schedule.",
-      tools: ["Reels", "Canva", "Meta Business Suite"], images: ["reel-1.jpg", "reel-2.jpg", "reel-3.jpg"] },
+      challenge: "Raw before-and-after footage does not stop the scroll on its own.", solution: "I edited it into short Reels with captions and music in CapCut, and made short promo videos in Canva.", result: "I turned plain footage into branded Reels ready to schedule.",
+      tools: ["CapCut", "Reels", "Canva", "Meta Business Suite"], images: ["reel-1.jpg", "reel-2.jpg", "reel-3.jpg"] },
     plushTemplates: { category: "Branded Templates", resp: "I develop reusable branded templates for consistent marketing materials.", title: "Reusable branded templates for consistent marketing materials in Canva", clients: ["Sample set"],
       challenge: "Every post looked different, so the brand was hard to recognize.", solution: "I built a matching template set with the same fonts, colors and layout, so new posts take minutes and look the same every time.", result: "I made branded content faster to produce and visually consistent across locations.",
       tools: ["Canva"], images: ["design-re-just-listed.jpg", "design-re-open-home.jpg", "design-re-just-sold.jpg"] },
