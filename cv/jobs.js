@@ -89,6 +89,26 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "CDC RESEARCH"
   },
+  "plush-rose": {
+    label: "Social Media & Brand Content Coordinator (Plush Rose a Blowout Bar Salon)",
+    headline: "Social Media & Brand Content Coordinator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Instagram · Facebook · Canva · Meta Business Suite · Reels · Branded Content",
+    tagline: "",
+    summary: "Creative, organized Social Media & Brand Content Coordinator with 5+ years of experience in social media management, graphic design and digital marketing for U.S., Australian and European businesses, including beauty, wellness and other service-based businesses. I manage Instagram and Facebook business accounts, build the monthly social media content calendar, write natural captions, and design clean, professional, branded graphics in Canva. I create Reels and short-form video content, develop reusable branded templates, support email and text marketing and Google Business Profile updates, track performance in Meta Business Suite, and send a brief weekly update. I grew a client's post views 50% to 265K and followers 147% in 90 days. Excellent written English, and I work independently.",
+    keywords: ["Social Media & Brand Content Coordinator", "social media management", "social media", "graphic design", "digital marketing", "Instagram", "Facebook", "business accounts", "content calendar", "monthly social media content calendar", "captions", "Reels", "stories", "short-form video", "short-form video content", "branded graphics", "branded content", "branded templates", "reusable branded templates", "promotional graphics", "service spotlights", "Canva", "Meta Business Suite", "branding", "visual consistency", "marketing strategy", "email and text marketing", "Google Business Profile", "online booking", "digital library", "engagement", "weekly update", "weekly updates", "beauty", "salon", "wellness", "service-based businesses", "U.S.-based businesses", "written English", "independently", "organized", "dependable", "creative"],
+    focus: ["social", "design", "web", "admin", "english", "support"],
+    order: ["results", "work", "education", "why", "contact"],
+    workCards: ["plushCalendar", "plushGraphics", "plushReels", "plushTemplates", "plushTrack", "plushEmail", "plushLibrary"],
+    workIntro: "Real work matched to what you asked for: content calendar, branded graphics, Reels, templates, performance tracking, email and text marketing, and weekly updates. Tap a picture to enlarge it.",
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Love & Sound Natural Therapies, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Branded content I create",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Social Media & Brand Content Coordinator"
+  },
   "flourish-dr-lolu": {
     label: "Virtual Assistant, Flourish with Dr Lolu (UK)",
     headline: "Virtual Assistant for Coaches & Wellness Brands",
