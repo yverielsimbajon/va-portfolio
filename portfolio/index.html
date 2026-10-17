@@ -1935,17 +1935,64 @@
     <button class="modal-nav modal-next" type="button" aria-label="Next image">&#8250;</button>
   </div>
 
-  <!-- WhatsApp floating button -->
+  <!-- WhatsApp floating chat -->
   <style>
-    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 80; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22); transition: transform .25s ease, box-shadow .25s ease; }
+    .wa-widget { position: fixed; right: 20px; bottom: 20px; z-index: 80; font-family: inherit; }
+    .wa-float { position: relative; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22); transition: transform .25s ease, box-shadow .25s ease; margin-left: auto; cursor: pointer; border: 0; padding: 0; }
     .wa-float::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #25D366; opacity: .5; animation: waPulse 2.4s ease-out infinite; z-index: -1; }
+    .wa-widget.open .wa-float::before { animation: none; opacity: 0; }
     .wa-float:hover { transform: scale(1.08); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28); }
-    .wa-float svg { width: 34px; height: 34px; fill: #fff; }
+    .wa-float svg { width: 34px; height: 34px; fill: #fff; position: absolute; transition: opacity .2s, transform .3s; }
+    .wa-float .wa-x { fill: none; stroke: #fff; stroke-width: 2.6; stroke-linecap: round; width: 26px; height: 26px; opacity: 0; transform: rotate(-90deg); }
+    .wa-widget.open .wa-float .wa-ico2 { opacity: 0; transform: rotate(90deg); }
+    .wa-widget.open .wa-float .wa-x { opacity: 1; transform: none; }
+    .wa-box { position: absolute; right: 0; bottom: 76px; width: 340px; max-width: calc(100vw - 28px); background: #fff; border-radius: 18px; overflow: hidden; box-shadow: 0 18px 50px rgba(0, 0, 0, 0.28); transform-origin: bottom right; transform: scale(.85) translateY(14px); opacity: 0; pointer-events: none; transition: transform .3s cubic-bezier(.2, .8, .2, 1), opacity .25s; }
+    .wa-widget.open .wa-box { transform: none; opacity: 1; pointer-events: auto; }
+    .wa-head { background: #128C7E; color: #fff; display: flex; align-items: center; gap: 12px; padding: 14px 16px; }
+    .wa-av { position: relative; width: 46px; height: 46px; flex: none; }
+    .wa-av img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; object-position: center 20%; border: 2px solid rgba(255, 255, 255, 0.85); }
+    .wa-av i { position: absolute; right: 0; bottom: 0; width: 12px; height: 12px; background: #4ade80; border: 2px solid #128C7E; border-radius: 50%; }
+    .wa-head b { display: block; font-size: 16px; line-height: 1.25; font-weight: 700; }
+    .wa-head span { font-size: 13px; opacity: .85; }
+    .wa-close { margin-left: auto; width: 32px; height: 32px; border-radius: 50%; border: 0; background: transparent; color: #fff; font-size: 22px; line-height: 1; cursor: pointer; }
+    .wa-close:hover { background: rgba(255, 255, 255, 0.15); }
+    .wa-body { background: #ece5dd; padding: 22px 16px; min-height: 120px; }
+    .wa-msg { position: relative; display: inline-block; max-width: 85%; background: #fff; color: #1c1c1c; font-size: 15px; line-height: 1.45; padding: 10px 14px 20px; border-radius: 0 14px 14px 14px; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12); animation: waIn .4s ease both; }
+    .wa-msg small { position: absolute; right: 10px; bottom: 4px; font-size: 11px; color: #8a8a8a; }
+    .wa-msg strong { display: block; font-size: 13px; color: #128C7E; margin-bottom: 2px; }
+    .wa-foot { padding: 14px 16px 16px; background: #fff; }
+    .wa-cta { display: flex; align-items: center; justify-content: center; gap: 10px; background: #25D366; color: #fff; font-weight: 700; font-size: 15px; padding: 13px 18px; border-radius: 999px; text-decoration: none; transition: background .2s, transform .2s; }
+    .wa-cta:hover { background: #1ebe5b; transform: translateY(-1px); }
+    .wa-cta svg { width: 22px; height: 22px; fill: #fff; }
     @keyframes waPulse { from { transform: scale(1); opacity: .5; } to { transform: scale(1.55); opacity: 0; } }
-    @media (max-width: 540px) { .wa-float { width: 52px; height: 52px; right: 14px; bottom: 14px; } .wa-float svg { width: 29px; height: 29px; } }
-    @media (prefers-reduced-motion: reduce) { .wa-float::before { animation: none; opacity: 0; } }
+    @keyframes waIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+    @media (max-width: 540px) { .wa-widget { right: 14px; bottom: 14px; } .wa-float { width: 52px; height: 52px; } .wa-float svg { width: 29px; height: 29px; } .wa-float .wa-x { width: 22px; height: 22px; } .wa-box { bottom: 66px; } }
+    @media (prefers-reduced-motion: reduce) { .wa-float::before { animation: none; opacity: 0; } .wa-box, .wa-msg { transition: none; animation: none; } }
   </style>
-  <a class="wa-float" href="https://wa.me/639094928860?text=Hi%20Maria%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with Maria on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
+  <div class="wa-widget" id="waWidget">
+    <div class="wa-box" id="waBox" role="dialog" aria-label="Chat with Maria Simbajon" aria-hidden="true">
+      <div class="wa-head">
+        <div class="wa-av"><img src="../images/avatar-face.jpg" alt="Maria Simbajon" width="46" height="46" /><i></i></div>
+        <div><b>Maria Simbajon</b><span>Online</span></div>
+        <button class="wa-close" type="button" aria-label="Close chat">×</button>
+      </div>
+      <div class="wa-body"><div class="wa-msg"><strong>Maria Simbajon</strong>Hi, I'm Maria 👋 What can I help you with?<small>now</small></div></div>
+      <div class="wa-foot"><a class="wa-cta" href="https://wa.me/639094928860?text=Hi%20Maria%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>Chat on WhatsApp</a></div>
+    </div>
+    <button class="wa-float" type="button" aria-label="Chat with Maria on WhatsApp" aria-expanded="false" aria-controls="waBox">
+      <svg class="wa-ico2" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+      <svg class="wa-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+  </div>
+  <script>
+    (function () {
+      var w = document.getElementById("waWidget"), b = w.querySelector(".wa-float"), box = document.getElementById("waBox");
+      function set(o) { w.classList.toggle("open", o); b.setAttribute("aria-expanded", o); box.setAttribute("aria-hidden", !o); }
+      b.addEventListener("click", function () { set(!w.classList.contains("open")); });
+      w.querySelector(".wa-close").addEventListener("click", function () { set(false); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
+    })();
+  </script>
 
   <!-- Website preview popup: visitors see a site without leaving the portfolio -->
   <div class="site-modal" id="siteModal" role="dialog" aria-modal="true" aria-labelledby="siteTitle">
