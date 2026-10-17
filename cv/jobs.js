@@ -69,6 +69,26 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my GHL Portfolio",
     emailSubject: "GoHighLevel Virtual Assistant"
   },
+  "cdc-research": {
+    label: "Grants Research & Administrative Coordinator (Chicago Defender Charities)",
+    headline: "Grants Research & Administrative Coordinator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Asana · Online Research · Google Drive, Docs, Sheets · Microsoft Office · Deadlines",
+    tagline: "",
+    summary: "Dependable, organized virtual coordinator with 5+ years of experience supporting business owners in Australia, the United States and Europe. I do online research and verify details, prepare short summaries, create and maintain tasks, deadlines and reminders in Asana, and track opportunities from initial research through to the final outcome. I organize documents and records in Google Drive, Docs and Sheets, follow up consistently with team members, and keep leadership informed with a brief weekly update. Clear written English, strong attention to detail, reliable internet, and I work independently. Grant research is new for me, and I am ready to learn your funding priorities.",
+    keywords: ["Grants Research", "Administrative Coordinator", "virtual coordinator", "Asana", "online research", "research", "verify", "short summaries", "summaries", "tasks", "deadlines", "reminders", "assigned staff", "track opportunities", "opportunities", "Google Drive", "Docs", "Sheets", "Google Docs", "Google Sheets", "Microsoft Office", "spreadsheets", "organized", "organize", "electronic files", "follow up", "follow-up", "follow-ups", "leadership", "weekly update", "upcoming and overdue tasks", "attention to detail", "written English", "independently", "reliable internet", "dependable"],
+    focus: ["admin", "ops", "leads", "english", "support"],
+    order: ["results", "work", "education", "why", "contact"],
+    workCards: ["cdcResearch", "cdcTracker", "cdcDrive", "cdcFollow", "cdcUpdates"],
+    workIntro: "Real work matched to what you asked for: research, trackers and deadlines, organized files, follow-ups and weekly updates. Tap a picture to enlarge it.",
+    resultsShots: "none",
+    resultsNote: "Research, tracking and organized records I handle every day.",
+    stats: ["years", "leads", "events", "calendars"],
+    workTitle: "Research & coordination work I do",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "CDC RESEARCH"
+  },
   "flourish-dr-lolu": {
     label: "Virtual Assistant, Flourish with Dr Lolu (UK)",
     headline: "Virtual Assistant for Coaches & Wellness Brands",

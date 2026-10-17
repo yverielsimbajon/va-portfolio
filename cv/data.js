@@ -104,7 +104,22 @@ window.RESUME_BASE = {
       tools: ["Google Docs", "Notion", "Gmail"], images: ["weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg"] },
     ghlLeads: { category: "Business Operations", resp: "I keep contact records and lead data consistent and tidy, with accurate details.", title: "Organised records & lead data on GoHighLevel and Google Sheets", clients: ["EO Staff"],
       challenge: "The sales team needed accurate, organised prospect data.", solution: "I researched prospects and built a lead database of 1,400+ rows, keeping records in GoHighLevel and Zoho CRM.", result: "I gave the team reliable data that supports outreach and follow-up.",
-      tools: ["GoHighLevel", "Zoho CRM", "Google Sheets"], images: ["franchise-database.jpg"] }
+      tools: ["GoHighLevel", "Zoho CRM", "Google Sheets"], images: ["franchise-database.jpg"] },
+    cdcResearch: { category: "Online Research", resp: "I research online, verify the details and prepare short summaries of fit.", title: "Online research & short summaries on Google Sheets", clients: ["EO Staff"],
+      challenge: "My client's team needed reliable information about many companies, and it was scattered and unchecked.", solution: "I researched each company online and wrote a short summary of what it does and how well it fit. One daily report covered 32 companies assessed and 53 contacts added, all in one organized spreadsheet.", result: "I built a 1,400+ row database the team could search, filter and follow up from.",
+      tools: ["Google Sheets", "Apollo.io", "Seamless.AI", "LinkedIn"], images: ["franchise-database.jpg", "weekly-report.jpg"] },
+    cdcTracker: { category: "Project Coordination", resp: "I create and maintain tasks, deadlines and reminders, and track each item from start to done.", title: "Tasks, deadlines & trackers on Asana, Notion and Trello", clients: ["Love & Sound Therapies", "The Kerbing King"],
+      challenge: "My clients had plans, posts and tasks in many places, with no clear view of what was due next.", solution: "I set up task lists and trackers with deadlines, owners and reminders, and kept each item moving from start to done.", result: "I gave my clients one clear place to see priorities, deadlines and what is still outstanding.",
+      tools: ["Asana", "Notion", "Trello", "Google Sheets"], images: ["smm-posting-schedule.jpg", "smm-calendar.jpg", "notion-planning.jpg"] },
+    cdcDrive: { category: "Organized Records", resp: "I organize documents, records and spreadsheets so every file is easy to find.", title: "Organized files & records on Google Drive, Docs and Sheets", clients: ["Love & Sound Therapies"],
+      challenge: "My client's business data was spread across many sheets and documents.", solution: "I organized the records, including 67 products and every customer order, with clear names and one place for each document.", result: "I made accurate records faster to find and cut the manual searching.",
+      tools: ["Google Drive", "Google Docs", "Google Sheets", "Microsoft Office"], images: ["ghl-orders.jpg", "ghl-products.jpg"] },
+    cdcFollow: { category: "Follow-Up", resp: "I follow up consistently until the missing information arrives, and track upcoming deadlines.", title: "Follow-ups, reminders & upcoming deadlines on Google Calendar", clients: ["EO Staff", "Love & Sound Therapies"],
+      challenge: "Replies and tasks slipped when nobody followed up on them.", solution: "I sent follow-ups and reminders, coordinated 200+ calendar events, and kept a clear view of what was upcoming.", result: "I reduced missed appointments and kept my clients on track.",
+      tools: ["Google Calendar", "Google Workspace", "Gmail"], images: ["gcal-day.jpg", "gcal-event.jpg", "cs-reminder.jpg", "crm-follow-up.jpg"] },
+    cdcUpdates: { category: "Reporting", resp: "I send a brief weekly update on priorities and outstanding items, so leadership is always informed.", title: "Weekly updates & documented processes on Google Docs and Notion", clients: ["EO Staff", "Love & Sound Therapies", "The Kerbing King"],
+      challenge: "Owners had to keep asking for updates on completed work.", solution: "I sent a structured update on tasks completed, next priorities and open items, and documented my processes in a Notion hub.", result: "I gave owners more transparency and one place where every process is written down.",
+      tools: ["Google Docs", "Notion", "Gmail"], images: ["weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg"] }
   },
 
   work: {
