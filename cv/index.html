@@ -2,6 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<base href="/cv/">
+<script>
+// Analytics: show each resume as its own page (/cv/reva-26/) so Cloudflare Web Analytics counts them separately.
+// Runs before the analytics beacon. The <base> above keeps data.js, images and files loading from /cv/.
+(function(){var m=location.search.match(/[?&]job=([^&#]+)/);if(m&&history.replaceState){try{history.replaceState(null,"","/cv/"+m[1].toLowerCase()+"/"+location.hash)}catch(e){}}})();
+// In-page links (#work, #top) would otherwise resolve against <base>, so scroll to them directly.
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute("href").slice(1);if(!id)return;var t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"})}});
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Maria Simbajon | Resume</title>
