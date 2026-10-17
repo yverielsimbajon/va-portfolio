@@ -682,9 +682,17 @@
     </div>
   </footer>
 
-  <!-- Elfsight WhatsApp Chat (floating button) -->
-  <script src="https://elfsightcdn.com/platform.js" async></script>
-  <div class="elfsight-app-4ed2b3b1-71ff-4271-ad11-68c432ed63f1" data-elfsight-app-lazy></div>
+  <!-- WhatsApp floating button -->
+  <style>
+    .wa-float { position: fixed; right: 20px; bottom: 20px; z-index: 80; width: 60px; height: 60px; border-radius: 50%; background: #25D366; display: grid; place-items: center; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22); transition: transform .25s ease, box-shadow .25s ease; }
+    .wa-float::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: #25D366; opacity: .5; animation: waPulse 2.4s ease-out infinite; z-index: -1; }
+    .wa-float:hover { transform: scale(1.08); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28); }
+    .wa-float svg { width: 34px; height: 34px; fill: #fff; }
+    @keyframes waPulse { from { transform: scale(1); opacity: .5; } to { transform: scale(1.55); opacity: 0; } }
+    @media (max-width: 540px) { .wa-float { width: 52px; height: 52px; right: 14px; bottom: 14px; } .wa-float svg { width: 29px; height: 29px; } }
+    @media (prefers-reduced-motion: reduce) { .wa-float::before { animation: none; opacity: 0; } }
+  </style>
+  <a class="wa-float" href="https://wa.me/639094928860?text=Hi%20Maria%2C%20I%27d%20like%20to%20know%20more%20about%20your%20services." target="_blank" rel="noopener" aria-label="Chat with Maria on WhatsApp"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.2-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4c-1.2-1.8-1.9-3.9-1.9-6 0-6 4.9-10.7 11-10.7s11 4.8 11 10.7-4.9 10.9-10.9 10.9zm6-8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1c-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2s0-.5.1-.6l.5-.6c.2-.2.2-.3.3-.6.1-.2 0-.4 0-.6l-1-2.3c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.2 1.4 3.4c.2.2 2.4 3.6 5.8 5 .8.4 1.4.6 1.9.7.8.3 1.5.2 2.1.1.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg></a>
 
   <script>
     /* Links back to the home page */
