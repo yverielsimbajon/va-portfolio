@@ -538,7 +538,7 @@ S.results = () => {
     <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
     ${sk === "none" ? "" : `<h3 class="shots-title">Real Screenshots. Real Results.</h3>
     <div class="rmarq" id="rmarq"><div class="rtrack">${one(false)}${one(true)}</div></div>
-    <p class="hint" style="margin-top:6px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Love & Sound Natural Therapies, last 90 days.")}</p>`}
+    <p class="hint" style="margin-top:6px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.")}</p>`}
   </div></section>`;
 };
 
@@ -607,7 +607,7 @@ const WB = {
         <div class="phone"><div class="pscreen" role="button" tabindex="0" aria-label="Reel ${i + 1}: turn sound on or off"><span class="pisland"></span>
           <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
           <div class="rtop"><strong>Reels</strong><button class="rsound" type="button" aria-pressed="false">${SND_OFF}<span>Tap for sound</span></button></div>
-          <div class="rbot" aria-hidden="true"><div class="racc"><img src="${IMG}logo-kerbing-king-icon.jpg" alt=""><span>The Kerbing King</span></div>
+          <div class="rbot" aria-hidden="true"><div class="racc"><img src="${IMG}logo-kerbing-king-icon.jpg" alt=""><span>Landscaping Services in Australia</span></div>
             <div class="ract"><svg viewBox="0 0 24 24"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 6.6a4.5 4.5 0 0 1 8 2.9c0 6.1-8 11-8 11z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><svg viewBox="0 0 24 24"><path d="M22 3 2 10.5l8 3 3 8L22 3z"/><path d="M10 13.5 22 3"/></svg></div></div>
         </div></div>`).join("")}</div></div>${nav}<p class="rhint">Swipe or tap the arrows to see more reels</p>`;
   },

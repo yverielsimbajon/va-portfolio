@@ -104,7 +104,7 @@ window.RESUME_JOBS = {
     workCards: ["plushStrategy", "plushBranding", "plushCalendar", "plushTrack", "plushEmail", "plushLibrary"],
     workIntro: "Real work matched to what you asked for: social media strategy, consistent branding, content calendar, performance tracking, email and text marketing, and weekly updates. Tap a picture to enlarge it.",
     resultsShots: "results",
-    resultsNote: "Meta Business Suite screenshots: Facebook Page of Love & Sound Natural Therapies, last 90 days.",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
     workTitle: "Branded content I create",
     portfolioLabel: "View my Portfolio",
