@@ -187,11 +187,20 @@ window.RESUME_BASE = {
       ] },
     reels: { label: "Reels I edit for you", blurb: "Before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
       items: [1, 2, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
-    feeds: { label: "Instagram feed planning", blurb: "Sample feed plans I designed: nine posts that work together as one aesthetic grid, shown as a flat plan and on a phone in the Instagram app.",
+    feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, shown as a flat plan and inside the Instagram app. Sample feeds, tap to enlarge.",
       items: [
-        { src: "ig-feed-clinic.webp", name: "Aesthetic Clinic", note: "Calm, clean and premium: sage, cream and gold." },
-        { src: "ig-feed-travel.webp", name: "Travel Content Creator", note: "Warm and save-worthy: ocean blue, sand and terracotta." },
-        { src: "ig-feed-makeup.webp", name: "Makeup Brand", note: "Soft, feminine and shoppable: blush, berry and cream." }
+        { src: "ig-feed-makeup.webp", title: "Makeup Brand Feed Planning", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
+        { src: "ig-feed-coffee.webp", title: "Coffee Shop Feed Planning", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
+        { src: "ig-feed-travel.webp", title: "Traveler Feed Planning", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8" },
+        { src: "ig-feed-clinic.webp", title: "Aesthetic Clinic Feed Planning", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
+      ] },
+    brands: { label: "Brand identity design", blurb: "Logos, colour palettes, typography, stationery and mood boards on one board, so a brand looks consistent on every platform. Tap to enlarge.",
+      items: [
+        { src: "brand-board-makeup.webp", title: "Makeup Brand Branding Moodboard", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
+        { src: "brand-board-coffee.webp", title: "Coffee Shop Branding Moodboard", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
+        { src: "brand-board-travel.webp", title: "Traveler Branding Moodboard", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
+        { src: "brand-board-clinic.webp", title: "Aesthetic Clinic Branding Moodboard", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
+        { src: "brand-board-landscaping.webp", title: "Landscaping Services Logo Suite", note: "Real client logos, in every format", accent: "#1d4a35", tint: "#eef3ee", chips: ["Primary logo", "Icon", "Wordmark"] }
       ] },
     smm: { label: "Content planning", blurb: "Content calendar, posting schedule and plan I run for clients.",
       items: ["smm-calendar.jpg", "smm-content-plan.jpg", "smm-posting-schedule.jpg", "strategy-doc.jpg"].map(f => ({ src: f })) },
