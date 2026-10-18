@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<title>Social media SEO boards (Notion style)</title>
+<!-- Source for images/seo-keywords.webp and images/seo-hashtags.webp. Open with ?p=keywords | hashtags. Screenshot at 1600x1000.
+     Generic wellness-brand content, no client names, no made-up metrics. -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:1000px;overflow:hidden}
+body{font-family:Inter,system-ui,sans-serif;color:#37352f;background:#fff;font-size:16px}
+.top{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 22px;font-size:14px;color:#6b6a66;border-bottom:1px solid #efeeec}
+.top .bc{display:flex;gap:10px;align-items:center}.top .bc b{color:#37352f;font-weight:500}
+.top .rr{display:flex;gap:18px;align-items:center}.top .sh{border:1px solid #dcdad5;border-radius:6px;padding:4px 12px;color:#37352f}
+.wrap{display:grid;grid-template-columns:268px 1fr;height:calc(1000px - 44px)}
+.side{background:#f7f6f3;border-right:1px solid #efeeec;padding:20px 12px;font-size:14.5px}
+.side .ws{font-weight:600;padding:6px 10px;margin-bottom:10px;display:flex;gap:10px;align-items:center}.side .ws i{width:22px;height:22px;border-radius:5px;background:#2f7d6d;color:#fff;font-style:normal;display:grid;place-items:center;font-size:12px;font-weight:700}
+.side .it{padding:7px 10px;border-radius:6px;display:flex;gap:10px;align-items:center;color:#5f5e5b}.side .it.on{background:#ebeae6;color:#37352f;font-weight:500}.side .sec{font-size:12px;color:#9b9a97;padding:14px 10px 6px;font-weight:500}
+.cover{height:150px;background:linear-gradient(120deg,#d9ece5,#e9f1e0 55%,#f4ecd9);position:relative}
+.main{overflow:hidden}
+.page{padding:0 90px;position:relative}
+.ico{position:absolute;top:-34px;left:90px;font-size:70px;line-height:1;width:76px;height:76px;border-radius:12px;background:#fff;display:grid;place-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08)}
+.ico svg{width:44px;height:44px;fill:none;stroke:#2f7d6d;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+h1{font-size:44px;font-weight:700;letter-spacing:-.02em;padding-top:60px;margin-bottom:14px}
+.call{display:flex;gap:14px;background:#f3f1ec;border-radius:8px;padding:16px 18px;font-size:15.5px;line-height:1.5;margin-bottom:22px}
+.call b{font-weight:600}
+.dbh{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:600;margin-bottom:10px}
+.tabs{display:flex;gap:6px;font-size:14px;color:#6b6a66;margin-bottom:8px;border-bottom:1px solid #efeeec;padding-bottom:6px}.tabs span{padding:4px 10px;border-radius:5px}.tabs .on{background:#efeeec;color:#37352f}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;font-weight:500;color:#9b9a97;font-size:13px;padding:8px 10px;border-bottom:1px solid #efeeec;white-space:nowrap}
+td{padding:10px;border-bottom:1px solid #efeeec;vertical-align:middle}
+td.k{font-weight:500}
+.tag{display:inline-block;padding:2px 9px;border-radius:4px;font-size:13px;margin-right:5px;white-space:nowrap}
+.g{background:#dbeddb;color:#1c3829}.b{background:#d3e5ef;color:#183347}.y{background:#fdecc8;color:#402c1b}.p{background:#e8deee;color:#412454}.o{background:#fadec9;color:#49291e}.r{background:#ffe2dd;color:#5d1715}.n{background:#e3e2e0;color:#32302c}
+.cols{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:6px}
+.card{border:1px solid #e7e5e0;border-radius:10px;padding:18px 18px 16px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.card h3{font-size:16px;font-weight:600;display:flex;gap:8px;align-items:center;margin-bottom:4px}.card p{font-size:13px;color:#8a8984;margin-bottom:12px}
+.code{background:#f7f6f3;border-radius:6px;padding:12px 12px;font-size:13.5px;line-height:1.85;color:#37352f}
+.code span{color:#2f6f8a}
+.rules{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.rule{display:flex;gap:12px;align-items:flex-start;font-size:14.5px;line-height:1.45}.rule i{width:26px;height:26px;border-radius:50%;background:#dbeddb;color:#1c3829;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:13px;flex:none}
+.cb{display:flex;gap:10px;align-items:center;font-size:15px;margin-bottom:9px}.cb u{width:18px;height:18px;border-radius:4px;background:#2f7d6d;display:grid;place-items:center;text-decoration:none;color:#fff;font-size:12px;flex:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:18px}
+h2{font-size:20px;font-weight:600;margin:20px 0 10px}
+</style></head>
+<body>
+<div class="top"><div class="bc"><span>Wellness Brand</span><span>/</span><b id="crumb"></b></div><div class="rr"><span>Edited just now</span><span class="sh">Share</span></div></div>
+<div class="wrap">
+  <div class="side"><div class="ws"><i>W</i>Content Studio</div>
+    <div class="it">Home</div><div class="it">Brand Identity</div><div class="it">Social Media Calendar</div>
+    <div class="sec">Strategy</div>
+    <div class="it" id="n1">Keyword Research</div><div class="it" id="n2">Hashtag Sets</div><div class="it">Content Pillars</div><div class="it">Posting Schedule</div>
+    <div class="sec">Reports</div><div class="it">Monthly Analytics</div><div class="it">Best Performing Posts</div>
+  </div>
+  <div class="main"><div class="cover"></div><div class="page" id="page"></div></div>
+</div>
+<script>
+const p = new URLSearchParams(location.search).get("p") || "keywords", $ = id => document.getElementById(id);
+const ICON = '<svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2"/></svg>';
+const HASH = '<svg viewBox="0 0 24 24"><path d="M5 9h15M4 15h15M10 4 8 20M16 4l-2 16"/></svg>';
+if (p === "keywords") {
+  $("crumb").textContent = "Keyword Research"; $("n1").classList.add("on");
+  const rows = [
+    ["sound healing", "Wellness", ["Learn", "b"], ["Bio", "p"], ["Caption", "y"], ["High", "g"]],
+    ["breathwork for stress relief", "Breathwork", ["Learn", "b"], ["Caption", "y"], ["Reel text", "o"], ["High", "g"]],
+    ["nervous system reset", "Stress relief", ["Learn", "b"], ["Reel text", "o"], ["Hashtag", "n"], ["High", "g"]],
+    ["wellness near me", "Local", ["Local", "r"], ["Bio", "p"], ["Name field", "p"], ["High", "g"]],
+    ["guided meditation for beginners", "Meditation", ["Learn", "b"], ["Caption", "y"], ["Alt text", "n"], ["Medium", "y"]],
+    ["holistic wellness australia", "Local", ["Local", "r"], ["Bio", "p"], ["Hashtag", "n"], ["Medium", "y"]],
+    ["self care routine ideas", "Self-care", ["Learn", "b"], ["Caption", "y"], ["Reel text", "o"], ["Medium", "y"]],
+    ["wellness retreat weekend", "Events", ["Book", "g"], ["Caption", "y"], ["Alt text", "n"], ["Medium", "y"]],
+    ["book a sound bath", "Events", ["Book", "g"], ["Caption", "y"], ["Bio", "p"], ["High", "g"]]
+  ];
+  $("page").innerHTML = `<div class="ico">${ICON}</div><h1>Keyword Research</h1>
+  <div class="call"><span>💡</span><div><b>How we use this page.</b> These are the words and phrases our audience actually types and searches on Instagram and Facebook. Each keyword has a topic, an intent and the exact place it belongs, so every post, bio and caption is easy to find.</div></div>
+  <div class="dbh">Keyword bank</div><div class="tabs"><span class="on">Table</span><span>By topic</span><span>By priority</span></div>
+  <table><thead><tr><th>Keyword</th><th>Topic</th><th>Intent</th><th>Use in</th><th></th><th>Priority</th></tr></thead><tbody>
+  ${rows.map(r => `<tr><td class="k">${r[0]}</td><td><span class="tag n">${r[1]}</span></td><td><span class="tag ${r[2][1]}">${r[2][0]}</span></td><td><span class="tag ${r[3][1]}">${r[3][0]}</span></td><td><span class="tag ${r[4][1]}">${r[4][0]}</span></td><td><span class="tag ${r[5][1]}">${r[5][0]}</span></td></tr>`).join("")}
+  </tbody></table>`;
+} else {
+  $("crumb").textContent = "Hashtag Sets"; $("n2").classList.add("on");
+  $("page").innerHTML = `<div class="ico">${HASH}</div><h1>Hashtag Sets</h1>
+  <div class="call"><span>💡</span><div><b>Plan first, then post.</b> Hashtags are grouped by purpose and rotated, so each post reaches new people without repeating the same block of tags. Copy a mix of 8 to 10 into the caption.</div></div>
+  <div class="cols">
+    <div class="card"><h3><span class="tag b">Niche</span></h3><p>Topic the post is about</p><div class="code"><span>#soundhealing</span> <span>#breathwork</span> <span>#nervoussystemregulation</span> <span>#soundbath</span> <span>#guidedmeditation</span></div></div>
+    <div class="card"><h3><span class="tag g">Community</span></h3><p>People who follow wellness</p><div class="code"><span>#holisticwellness</span> <span>#mindfulnessmatters</span> <span>#selfcarejourney</span> <span>#stressrelief</span> <span>#wellnesscommunity</span></div></div>
+    <div class="card"><h3><span class="tag r">Local</span></h3><p>Where clients can find us</p><div class="code"><span>#australiawellness</span> <span>#wellnessaustralia</span> <span>#holisticaustralia</span> <span>#aussiewellness</span> <span>#wellnessevents</span></div></div>
+    <div class="card"><h3><span class="tag p">Branded</span></h3><p>Always on every post</p><div class="code"><span>#brandname</span> <span>#brandnamecommunity</span> <span>#brandnamewellness</span></div></div>
+  </div>
+  <div class="two"><div><h2>Posting rules</h2>
+    <div class="cb"><u>✓</u>8 to 10 hashtags per post, mixed from at least three sets</div>
+    <div class="cb"><u>✓</u>Blend large, medium and small tags so posts are not buried</div>
+    <div class="cb"><u>✓</u>Rotate sets every week to avoid repeating the same block</div>
+    <div class="cb"><u>✓</u>Put the main keyword in the first line of the caption</div>
+    <div class="cb"><u>✓</u>Add descriptive alt text with one keyword on every photo</div></div>
+  <div><h2>Set mix by post type</h2>
+  <table><thead><tr><th>Post type</th><th>Niche</th><th>Community</th><th>Local</th><th>Branded</th></tr></thead><tbody>
+    <tr><td class="k">Educational post</td><td>4</td><td>3</td><td>1</td><td>1</td></tr>
+    <tr><td class="k">Event promo</td><td>2</td><td>2</td><td>4</td><td>1</td></tr>
+    <tr><td class="k">Reel</td><td>3</td><td>4</td><td>1</td><td>1</td></tr>
+    <tr><td class="k">Client story</td><td>2</td><td>4</td><td>2</td><td>1</td></tr>
+  </tbody></table></div></div>`;
+}
+</script></body></html>
