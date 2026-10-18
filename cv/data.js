@@ -187,20 +187,22 @@ window.RESUME_BASE = {
       ] },
     reels: { label: "Reels I edit for you", blurb: "Before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
       items: [1, 2, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
-    feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, shown as a flat plan and inside the Instagram app. Sample feeds, tap to enlarge.",
+    feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust, and people follow pages that look put together. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, then preview each feed as a flat plan and inside the Instagram app, ready to schedule. Sample feeds, tap to enlarge.",
       items: [
-        { src: "ig-feed-makeup.webp", title: "Makeup Brand Feed Planning", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
-        { src: "ig-feed-coffee.webp", title: "Coffee Shop Feed Planning", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
-        { src: "ig-feed-travel.webp", title: "Traveler Feed Planning", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8" },
-        { src: "ig-feed-clinic.webp", title: "Aesthetic Clinic Feed Planning", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
+        { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
+        { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
+        { src: "ig-feed-travel.webp", phone: "ig-feed-travel-phone.webp", grid: "ig-feed-travel-grid.webp", title: "Traveler Based in Bali, Indonesia", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8" },
+        { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
       ] },
-    brands: { label: "Brand identity design", blurb: "Logos, colour palettes, typography, stationery and mood boards on one board, so a brand looks consistent on every platform. Tap to enlarge.",
+    brands: { label: "Brand identity design", cols: 2, blurb: "Logos, colour palettes, typography, stationery and mood boards pulled together on one sheet, so a brand looks consistent and professional on every platform. Mock-up brands, tap to enlarge.",
       items: [
-        { src: "brand-board-makeup.webp", title: "Makeup Brand Branding Moodboard", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
-        { src: "brand-board-coffee.webp", title: "Coffee Shop Branding Moodboard", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
-        { src: "brand-board-travel.webp", title: "Traveler Branding Moodboard", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
-        { src: "brand-board-clinic.webp", title: "Aesthetic Clinic Branding Moodboard", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"] },
-        { src: "brand-board-landscaping.webp", title: "Landscaping Services Logo Suite", note: "Real client logos, in every format", accent: "#1d4a35", tint: "#eef3ee", chips: ["Primary logo", "Icon", "Wordmark"] }
+        { src: "brand-board-plumbing.webp", title: "Plumbing Business Brand Identity", note: "Reliable, fast and trusted", accent: "#12304f", tint: "#edf4fa", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true },
+        { src: "brand-board-water.webp", title: "Water Refilling Station Brand Identity", note: "Pure, fresh and trusted", accent: "#0b5563", tint: "#eaf6f7", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true }
+      ] },
+    seo: { label: "Social media SEO, keywords and hashtags", blurb: "Finding the words people actually search for, then placing them in bios, captions, alt text and hashtag sets, so posts are easier to discover on Instagram and Facebook. Tap to enlarge.",
+      items: [
+        { src: "seo-keywords.webp", title: "Keyword Research", note: "Keywords, intent and exactly where to use them", accent: "#2f7d6d", tint: "#eef5f1", chips: ["Keyword bank", "Search intent", "Priority"], scroll: true },
+        { src: "seo-hashtags.webp", title: "Hashtag Sets", note: "Grouped by purpose and rotated every week", accent: "#2f7d6d", tint: "#eef5f1", chips: ["Niche", "Community", "Local", "Branded"], scroll: true }
       ] },
     smm: { label: "Content planning", blurb: "Content calendar, posting schedule and plan I run for clients.",
       items: ["smm-calendar.jpg", "smm-content-plan.jpg", "smm-posting-schedule.jpg", "strategy-doc.jpg"].map(f => ({ src: f })) },
