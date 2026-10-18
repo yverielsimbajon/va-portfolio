@@ -2,8 +2,8 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <title>Branding moodboards (portrait)</title>
 <!-- Source for the portrait brand identity moodboards (images/brand-board-*.webp), one bond-paper sheet each.
-     Open with ?f=plumbing | cafe. Screenshot at 1000x1294. Photos are Pexels stock photos. Brands are made-up mock-ups. -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Archivo:wght@500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+     Open with ?f=plumbing | water. Screenshot at 1000x1294. Photos are Pexels stock photos. Brands are made-up mock-ups. -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Archivo:wght@500;600;700;800&family=Outfit:wght@500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1000px;height:1294px;overflow:hidden}
@@ -20,7 +20,7 @@ body{background:#fff;color:var(--ink);font-family:var(--bf),sans-serif;position:
 .logos{display:grid;grid-template-columns:repeat(3,1fr) 1.45fr;gap:12px;align-items:stretch}
 .lg{height:104px;display:flex;align-items:center;justify-content:center;gap:10px;font-family:var(--hf);font-weight:var(--hw);font-size:22px;letter-spacing:var(--ls);border-radius:4px}
 .lg svg{width:30px;height:30px}
-.lg.o{border:2px solid var(--c1);color:var(--c1);background:#fff}
+.lg.o{white-space:nowrap;font-size:19px;border:2px solid var(--c1);color:var(--c1);background:#fff}
 .two{display:grid;grid-template-columns:1.05fr 1fr;gap:34px}
 .donut-row{display:flex;gap:22px;align-items:center}
 .donut{width:150px;height:150px;border-radius:50%;flex:none;position:relative;background:conic-gradient(var(--c1) 0 44%,var(--c2) 44% 74%,var(--c3) 74% 100%)}
@@ -53,6 +53,13 @@ body{background:#fff;color:var(--ink);font-family:var(--bf),sans-serif;position:
 .cup .cb{position:absolute;left:0;right:0;top:20px;bottom:0;background:var(--c4);clip-path:polygon(0 0,100% 0,88% 100%,12% 100%);box-shadow:0 10px 22px rgba(0,0,0,.14)}
 .cup .sl{position:absolute;left:0;right:0;top:66px;height:68px;background:var(--c1);clip-path:polygon(2.5% 0,97.5% 0,92% 100%,8% 100%);display:grid;place-items:center;color:var(--onc1);font-family:var(--hf);font-weight:var(--hw);font-size:15px;letter-spacing:var(--ls)}
 .cup .sl svg{width:20px;height:20px;fill:var(--c3);margin-bottom:2px}
+.jug{position:relative;width:112px;height:190px;display:flex;flex-direction:column;align-items:center}
+.jug .cap{width:42px;height:14px;background:var(--c3);border-radius:4px 4px 2px 2px}
+.jug .neck{width:30px;height:16px;background:linear-gradient(90deg,#bfe9f0,#e9fafc,#bfe9f0)}
+.jug .jb{width:112px;flex:1;border-radius:26px 26px 18px 18px;background:linear-gradient(90deg,#8fdbe8,#c9f1f6 45%,#8fdbe8);box-shadow:0 10px 22px rgba(11,85,99,.2);display:grid;place-items:center;position:relative}
+.jug .jb::after{content:"";position:absolute;left:12px;top:14px;width:10px;height:70%;border-radius:6px;background:rgba(255,255,255,.55)}
+.jug .lb{width:100%;background:var(--c1);color:var(--onc1);text-align:center;padding:9px 4px;font-family:var(--hf);font-weight:var(--hw);font-size:15px;letter-spacing:var(--ls);display:flex;flex-direction:column;align-items:center;gap:2px}
+.jug .lb svg{width:18px;height:18px;fill:var(--c3)}.jug .lb small{font-size:8px;letter-spacing:.2em;text-transform:uppercase;opacity:.85;font-family:var(--bf);font-weight:500}
 .mood{display:grid;grid-template-columns:1.2fr 1fr 1fr;grid-template-rows:118px 118px;gap:8px}
 .mood img{width:100%;height:100%;object-fit:cover;display:block;filter:var(--ph)}
 .mood .tall{grid-row:span 2}
@@ -82,9 +89,9 @@ const B = {
   plumbing: { name: "Bluewave", full: "Bluewave Plumbing", tag: "Plumbing & Gas · Fast, reliable repairs", hf: "Archivo", bf: "Inter", hw: 800, ls: "-.01em", mark: DROP,
     c: ["#12304f", "#1f8fc4", "#f28c28", "#dbeef8", "#f4f8fb"], names: ["Deep Navy", "Aqua", "Copper Orange"], ink: "#12304f", onc1: "#fff", line: "rgba(18,48,79,.16)", ph: "saturate(.95)",
     photos: [6419128, 30560253, 8486978, 7045908, 28169591, 3500006], words: ["Reliable", "Fast", "Trusted"], contact: "1300 000 000 · bluewaveplumbing.com.au", cds: ["Licensed plumber", "24/7 emergency"], pic: "van" },
-  cafe: { name: "Fernwood", full: "Fernwood Coffee Co.", tag: "Specialty coffee · Slow mornings", hf: "Space Grotesk", bf: "DM Sans", hw: 700, ls: "-.02em", mark: LEAF,
-    c: ["#2f4a3a", "#c46a3b", "#d9c7a8", "#efe6d6", "#1d2a22"], names: ["Fern", "Terracotta", "Sand"], ink: "#1d2a22", onc1: "#f3ecdc", line: "rgba(47,74,58,.2)", ph: "saturate(.95) sepia(.06)",
-    photos: [33653475, 6747870, 13240965, 11340975, 12900864, 30403209], words: ["Slow", "Earthy", "Welcoming"], contact: "hello@fernwood.coffee · Fitzroy, VIC", cds: ["Head roaster", "Order ahead"], pic: "cup" }
+  water: { name: "PureFlow", full: "PureFlow Water Station", tag: "Water refilling station · Clean, fresh, delivered", hf: "Outfit", bf: "DM Sans", hw: 700, ls: "-.01em", mark: DROP,
+    c: ["#0b5563", "#19b5c9", "#a7d63b", "#e3f6f4", "#f5fbfb"], names: ["Deep Teal", "Fresh Cyan", "Lime"], ink: "#0b3b45", onc1: "#fff", line: "rgba(11,85,99,.18)", ph: "saturate(1)",
+    photos: [371717, 3500006, 31699476, 5274793, 31206817], words: ["Pure", "Fresh", "Trusted"], contact: "1300 000 000 · pureflowwater.com.au", cds: ["Station manager", "Free delivery"], pic: "jug" }
 };
 const key = new URLSearchParams(location.search).get("f") || "plumbing", D = B[key], s = document.documentElement.style, $ = id => document.getElementById(id);
 [["--c1", D.c[0]], ["--c2", D.c[1]], ["--c3", D.c[2]], ["--c4", D.c[3]], ["--ink", D.ink], ["--onc1", D.onc1], ["--line", D.line], ["--hf", `"${D.hf}"`], ["--bf", `"${D.bf}"`], ["--hw", D.hw], ["--ls", D.ls], ["--ph", D.ph]].forEach(([k, v]) => s.setProperty(k, v));
@@ -97,8 +104,8 @@ $("strips").innerHTML = D.c.map(c => `<div style="background:${c};box-shadow:ins
 const letter = `<div class="paperl"><div class="top">${D.mark}<span>${D.full}</span></div><div class="ln" style="width:70%"></div><div class="ln"></div><div class="ln"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:55%;margin-top:14px"></div><div class="ln" style="width:75%"></div><div class="band"></div></div>`;
 const cards = `<div class="cards"><div class="bc" style="background:var(--c1);color:var(--onc1)"><b>${D.name}</b><small>${D.cds[0]}<br>${D.contact.split(" · ")[0]}</small></div><div class="bc" style="background:var(--c3);color:var(--ink)"><b>${D.name}</b><small>${D.cds[1]}<br>${D.contact.split(" · ")[1] || ""}</small></div></div>`;
 const van = `<div class="van"><div class="body"><div class="nm">${D.mark}${D.name}</div><div class="ph">${D.contact}</div></div><div class="wh" style="left:34px"></div><div class="wh" style="right:40px"></div></div>`;
-const cup = `<div class="cup"><div class="lid"></div><div class="cb"></div><div class="sl">${D.mark}${D.name}</div></div>`;
-$("sta").innerHTML = letter + cards + `<div class="pic">${D.pic === "van" ? van : cup}</div>`;
+const jug = `<div class="jug"><div class="cap"></div><div class="neck"></div><div class="jb"><div class="lb">${D.mark}<span>${D.name}</span><small>Refill station</small></div></div></div>`;
+$("sta").innerHTML = letter + cards + `<div class="pic">${D.pic === "van" ? van : jug}</div>`;
 $("mood").innerHTML = `<img class="tall" src="${px(D.photos[0], 900)}">` + D.photos.slice(1, 5).map(p => `<img src="${px(p)}">`).join("");
 $("words").innerHTML = D.words.map(w => `<span>${w}</span>`).join("");
 </script></body></html>
