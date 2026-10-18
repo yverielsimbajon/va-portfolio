@@ -1423,6 +1423,10 @@
       .feed-title h4 { font-size: 1.08rem; }
     }
 
+    .feeds-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; }
+    .feeds-2 .feed-chips { display: none; }
+    @media (max-width: 760px) { .feeds-2 { grid-template-columns: minmax(0, 1fr); } }
+
     .feed-split { display: none; }
     .feed-swipe { display: none; }
 
@@ -2339,23 +2343,21 @@
       },
       {
         category: "social",
-        layout: "feeds",     // same stacked-card layout as the Instagram feeds
+        layout: "feeds",     // portrait boards, two side by side on desktop
+        cols: 2,
         title: "Brand Identity Design",
-        clients: ["Sample brands: Aesthetic Clinic, Makeup Brand, Traveler, Coffee Shop", "Landscaping Services in Australia"],
-        description: "Logos, colour palettes, typography, stationery and mood boards pulled together on one board, so a brand looks consistent and professional on every platform.",
+        clients: ["Mock-up brands: Plumbing Business, Coffee Shop"],
+        description: "Logos, colour palettes, typography, stationery and mood boards pulled together on one sheet, so a brand looks consistent and professional on every platform.",
         tools: ["Canva", "Adobe Express"],
         items: [
-          { img: "brand-board-clinic.webp", scroll: true, title: "Aesthetic Clinic Branding Moodboard", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], alt: "brand identity moodboard" },
-          { img: "brand-board-makeup.webp", scroll: true, title: "Makeup Brand Branding Moodboard", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], alt: "brand identity moodboard" },
-          { img: "brand-board-travel.webp", scroll: true, title: "Traveler Branding Moodboard", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], alt: "brand identity moodboard" },
-          { img: "brand-board-coffee.webp", scroll: true, title: "Coffee Shop Branding Moodboard", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], alt: "brand identity moodboard" },
-          { img: "brand-board-landscaping.webp", title: "Landscaping Services Logo Suite", note: "Real client logos, in every format", accent: "#1d4a35", tint: "#eef3ee", chips: ["Primary logo", "Icon", "Wordmark"], alt: "logo suite" }
+          { img: "brand-board-plumbing.webp", title: "Plumbing Business Brand Identity", note: "Reliable, fast and trusted", accent: "#12304f", tint: "#edf4fa", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], alt: "brand identity moodboard", board: true },
+          { img: "brand-board-cafe.webp", title: "Coffee Shop Brand Identity", note: "Slow, earthy and welcoming", accent: "#2f4a3a", tint: "#f3efe6", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], alt: "brand identity moodboard", board: true }
         ],
-        images: ["brand-board-clinic.webp", "brand-board-makeup.webp", "brand-board-travel.webp", "brand-board-coffee.webp", "brand-board-landscaping.webp"]
+        images: ["brand-board-plumbing.webp", "brand-board-cafe.webp"]
       },
       {
         category: "social",
-        title: "Social Media Management",
+        title: "Social Media Content Strategy via Notion",
         clients: ["Wellness Brand in Australia", "Landscaping Services in Australia"],
         intro: "Planning, scheduling and tracking Facebook & Instagram content.",
         challenge: "Staying consistent across multiple campaigns needed a clear process.",
@@ -2638,7 +2640,7 @@
             <div>${featureHead(p, label)}</div>
             ${toolsHtml(p)}
           </div>
-          <div class="feeds">
+          <div class="feeds${p.cols === 2 ? " feeds-2" : ""}">
             ${p.items.map((it, n) => `
             <div class="feed-card" style="--accent:${it.accent};--tint:${it.tint}">
               <div class="feed-top">
@@ -2646,7 +2648,7 @@
                 <div class="feed-chips">${(it.chips || ["9-post grid", "5-colour palette", "Phone preview"]).map((c) => `<span>${esc(c)}</span>`).join("")}</div>
               </div>
               <button class="feed-media${it.phone ? " has-split" : ""}${it.scroll ? " has-scroll" : ""}" type="button" data-n="${n}" aria-label="View ${esc(it.title)}">
-                <img src="../images/${it.img}" alt="${esc(it.title)}: ${esc(it.alt || "nine-post Instagram grid and phone preview")}" loading="lazy" decoding="async" width="1600" height="1000" />
+                <img src="../images/${it.img}" alt="${esc(it.title)}: ${esc(it.alt || "nine-post Instagram grid and phone preview")}" loading="lazy" decoding="async" width="${it.board ? 1000 : 1600}" height="${it.board ? 1294 : 1000}" />
                 <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
               </button>
               ${it.phone ? `<div class="feed-split">
