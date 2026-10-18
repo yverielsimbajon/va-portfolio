@@ -401,6 +401,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 .feed-media img{display:block;width:100%;height:auto}.feed-media:hover{transform:translateY(-3px);box-shadow:0 22px 46px rgba(17,76,89,.2)}
 @media(max-width:600px){.feed-chips{display:none}.feed-title h4{font-size:1.05rem}}
 #work .wrap h2.wsub{margin-top:84px}#work .wrap h2.wsub.first,#work .wrap h3.shots-title + h2.wsub{margin-top:30px}
+.feed-by{margin:16px 0 0;color:var(--accent);font-size:.98rem;font-weight:600;letter-spacing:.01em;text-align:center}
 </style>
 </head>
 <body>
@@ -631,7 +632,7 @@ function stacked(k){
         <div class="feed-chips">${(it.chips || ["9-post grid", "5-colour palette", "Phone preview"]).map(c => `<span>${esc(c)}</span>`).join("")}</div></div>
       <button class="feed-media${it.phone ? " has-split" : ""}${it.scroll ? " has-scroll" : ""}" type="button" data-lb="${k}" data-i="${n}" aria-label="View ${esc(it.title)}"><img src="${IMG + it.src}" alt="${esc(it.title)}" loading="lazy" decoding="async"></button>
       ${it.phone ? `<div class="feed-split"><img class="fs-phone" src="${IMG + it.phone}" alt="${esc(it.title)}: Instagram profile on a phone" loading="lazy" decoding="async"><img class="fs-grid" src="${IMG + it.grid}" alt="${esc(it.title)}: nine-post Instagram grid" loading="lazy" decoding="async"></div>` : ""}
-      ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}</div>`).join("")}</div>`;
+      ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}${it.phone ? `<p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>` : ""}</div>`).join("")}</div>`;
 }
 const WB = {
   designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic designs I create")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
