@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<title>Branding moodboards</title>
+<!-- Source for the branding moodboard images (images/brand-board-*.webp). Open with ?f=clinic | makeup | travel | coffee.
+     Photos are Pexels stock photos. Brands are made-up samples. Screenshot at 1600x1000. -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Jost:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:1000px;overflow:hidden}
+body{background:var(--bg);color:var(--ink);font-family:var(--bf),sans-serif;position:relative}
+.stage{position:absolute;inset:0;background:radial-gradient(circle at 10% 6%,rgba(255,255,255,.75),transparent 45%),radial-gradient(circle at 94% 96%,var(--bg2),transparent 55%)}
+.sheet{position:absolute;background:#fff;box-shadow:0 30px 60px rgba(20,25,30,.16),0 8px 18px rgba(20,25,30,.08);overflow:hidden}
+.sl{left:70px;top:84px;width:470px;height:832px;padding:28px 36px}
+.sr{left:1060px;top:84px;width:470px;height:832px;padding:28px 36px}
+.sc{left:530px;top:36px;width:540px;height:928px;z-index:3;border-radius:2px}
+.lbl{font-family:var(--hf);font-size:13px;letter-spacing:.28em;text-transform:uppercase;text-align:center;font-weight:600;color:var(--ink);margin:0 0 12px}
+.sec{margin-bottom:24px}
+/* center */
+.hero{height:196px;background:var(--c1);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;position:relative;color:var(--onc1)}
+.hero .wm{font-family:var(--hf);font-size:56px;font-weight:var(--hw);letter-spacing:var(--ls);line-height:1}
+.hero small{font-family:var(--bf);font-size:13px;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.hero svg{position:absolute;top:20px;right:22px;width:92px;height:20px;stroke:var(--c3);fill:none;stroke-width:3}
+.hero svg.b{top:auto;bottom:18px;left:22px;right:auto}
+.cbody{padding:30px 34px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-bottom:26px}
+.three div{height:100px;display:grid;place-items:center;font-family:var(--hf);font-weight:var(--hw);font-size:30px;letter-spacing:var(--ls)}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:30px;align-items:center}
+.logo-big{display:flex;align-items:center;gap:12px;justify-content:center;height:84px;white-space:nowrap}
+.mono{width:56px;height:56px;border-radius:50%;background:var(--c1);color:var(--onc1);display:grid;place-items:center;font-family:var(--hf);font-weight:700;font-size:var(--mf,22px)}
+.logo-big b{font-family:var(--hf);font-weight:var(--hw);font-size:var(--lf,32px);letter-spacing:var(--ls);color:var(--c1);line-height:1}
+.logo-out b{-webkit-text-stroke:1.6px var(--c1);color:transparent}
+.logo-out .mono{background:transparent;border:2px solid var(--c1);color:var(--c1)}
+.donut-row{display:flex;gap:26px;align-items:center;margin-bottom:24px}
+.donut{width:176px;height:176px;border-radius:50%;background:conic-gradient(var(--c1) 0 42%,var(--c2) 42% 72%,var(--c3) 72% 100%);position:relative;flex:none}
+.donut::after{content:"";position:absolute;inset:46px;border-radius:50%;background:#fff}
+.leg{font-size:13px;line-height:1.5}
+.leg .it{display:flex;align-items:center;gap:10px;margin-bottom:14px}.leg i{width:16px;height:16px;border-radius:50%;flex:none}.leg b{font-weight:600;display:block}.leg span{opacity:.6;font-size:12px}
+.strips{display:grid;gap:6px}
+.strips div{height:34px;border-radius:2px}
+/* left + right */
+.type{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+.aa{font-family:var(--hf);font-weight:var(--hw);font-size:72px;line-height:.9;letter-spacing:var(--ls)}
+.fn{font-size:12.5px;line-height:1.45}.fn b{display:block;font-size:15px;font-family:var(--hf);margin-bottom:3px;font-weight:600}
+.alpha{font-family:var(--hf);font-size:12px;letter-spacing:.06em;line-height:1.6;margin-top:10px;word-break:break-all;opacity:.85}
+.alpha.body{font-family:var(--bf);letter-spacing:.04em}
+.stat{display:grid;grid-template-columns:1.25fr 1fr;gap:12px;align-items:center}
+.paper{height:150px;background:#fff;border:1px solid #e7e7e7;box-shadow:0 8px 18px rgba(0,0,0,.08);padding:16px;position:relative}
+.paper .ln{height:5px;background:#ececec;margin-bottom:7px;border-radius:3px}.paper .top{display:flex;align-items:center;gap:7px;margin-bottom:16px;font-family:var(--hf);font-size:12px;font-weight:700;color:var(--c1)}
+.paper .top i{width:18px;height:18px;border-radius:50%;background:var(--c1);display:block}
+.paper .band{position:absolute;left:0;bottom:0;right:0;height:14px;background:var(--c2)}
+.badge{width:66px;height:66px;border-radius:50%;background:var(--c1);color:var(--onc1);display:grid;place-items:center;font-family:var(--hf);font-weight:700;font-size:26px;box-shadow:0 8px 18px rgba(0,0,0,.14)}
+.cards{display:grid;gap:10px}.card{height:40px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-family:var(--hf);font-weight:var(--hw);font-size:15px;letter-spacing:var(--ls);box-shadow:0 6px 14px rgba(0,0,0,.12)}
+.mood{display:grid;grid-template-columns:1.1fr 1fr;grid-template-rows:130px 106px;gap:8px}
+.mood img{width:100%;height:100%;object-fit:cover;display:block;filter:var(--ph)}
+.mood .tall{grid-row:span 2}
+.mood2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.mood2 img{width:100%;height:200px;object-fit:cover;display:block;filter:var(--ph)}
+.words{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:16px}.words span{font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:7px 13px;border:1px solid var(--c1);border-radius:99px;color:var(--c1);font-weight:500}
+.pat{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.pat div{aspect-ratio:1.25;border-radius:6px;display:grid;place-items:center;font-family:var(--hf);font-weight:700;font-size:19px}
+.tags{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}.tag{padding:11px 20px;border-radius:99px;font-family:var(--hf);font-weight:var(--hw);font-size:16px;letter-spacing:var(--ls);box-shadow:0 6px 14px rgba(0,0,0,.1)}
+.social{display:flex;gap:16px;align-items:center;justify-content:center}.social .av{width:66px;height:66px;border-radius:50%;background:var(--c1);color:var(--onc1);display:grid;place-items:center;font-family:var(--hf);font-weight:700;font-size:25px;box-shadow:0 0 0 3px #fff,0 0 0 5px var(--c3)}
+.social .cv{width:58px;height:78px;border-radius:12px;display:grid;place-items:center;font-family:var(--hf);font-weight:700;font-size:13px;text-align:center;line-height:1.25;padding:6px}
+.foot{position:absolute;left:0;right:0;bottom:22px;text-align:center;font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.5}
+</style></head>
+<body>
+<div class="stage"></div>
+
+<div class="sheet sl">
+  <div class="sec"><div class="lbl">Typography</div>
+    <div class="type"><div class="aa" id="aa">Aa</div><div class="fn"><b id="hfn"></b>Headings<div class="alpha" id="alpha1">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div></div></div>
+    <div class="type" style="margin-top:10px"><div class="fn"><b id="bfn" style="font-family:var(--bf)"></b>Body text<div class="alpha body">ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 0123456789</div></div><div id="sample" style="font-size:13px;line-height:1.55;opacity:.8"></div></div></div>
+  <div class="sec"><div class="lbl">Stationery</div>
+    <div class="stat"><div class="paper"><div class="top"><i></i><span id="pn"></span></div><div class="ln" style="width:70%"></div><div class="ln"></div><div class="ln"></div><div class="ln" style="width:85%"></div><div class="ln" style="width:55%;margin-top:14px"></div><div class="ln" style="width:75%"></div><div class="band"></div></div>
+      <div style="display:grid;gap:14px;justify-items:center"><div class="badge" id="badge"></div><div class="cards" style="width:100%"><div class="card" style="background:var(--c1);color:var(--onc1)" id="cd1"></div><div class="card" style="background:var(--c3);color:var(--ink)" id="cd2"></div></div></div></div></div>
+  <div class="sec"><div class="lbl">Mood board</div><div class="mood" id="mood"></div></div>
+</div>
+
+<div class="sheet sc">
+  <div class="hero"><svg viewBox="0 0 92 20"><path d="M2 14 14 4l12 10 12-10 12 10 12-10 12 10"/></svg><div class="wm" id="wm"></div><small id="tag"></small><svg class="b" viewBox="0 0 92 20"><path d="M2 14 14 4l12 10 12-10 12 10 12-10 12 10"/></svg></div>
+  <div class="cbody">
+    <div class="lbl">Brand logo</div>
+    <div class="three" id="three"></div>
+    <div class="row2"><div class="logo-big"><div class="mono" id="m1"></div><b id="l1"></b></div><div class="logo-big logo-out"><div class="mono" id="m2"></div><b id="l2"></b></div></div>
+    <div class="lbl">Brand color</div>
+    <div class="donut-row"><div class="donut"></div><div class="leg" id="leg"></div></div>
+    <div class="strips" id="strips"></div>
+  </div>
+</div>
+
+<div class="sheet sr">
+  <div class="sec"><div class="lbl">Brand pattern</div><div class="pat" id="pat"></div></div>
+  <div class="sec"><div class="lbl">Labels &amp; tags</div><div class="tags" id="tags"></div></div>
+  <div class="sec"><div class="lbl">Social media</div><div class="social" id="social"></div></div>
+  <div class="sec" style="margin-bottom:0"><div class="lbl">Look &amp; feel</div><div class="mood2" id="mood2"></div><div class="words" id="words"></div></div>
+</div>
+
+<script>
+const px = (id, w = 700) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}&h=${w}&fit=crop`;
+const B = {
+  clinic: { name: "Lumière", tag: "Aesthetics · Medical spa", hf: "Jost", bf: "Inter", hw: 500, ls: ".12em", mono: "L",
+    c: ["#3f5b4e", "#7d9a85", "#c9a97a", "#e8d5c8", "#f4efe7"], names: ["Forest", "Sage", "Champagne"], bg: "#eef1ea", bg2: "#d9e3d6", ink: "#23372d", onc1: "#fff",
+    ph: "saturate(.88)", sample: "Calm, clean and quietly premium. Skin treatments planned around you.", photos: [4586711, 16008945, 5938217, 3985354, 7446659], words: ["Calm", "Clean", "Premium"], cds: ["Dr. A. Reyes", "Book a consult"] },
+  makeup: { name: "Bloom & Blush", tag: "Cosmetics · Cruelty-free", hf: "Playfair Display", bf: "DM Sans", hw: 600, ls: "0", mono: "B&B",
+    c: ["#8e2c48", "#d98a9b", "#f3d6d8", "#fbf3ee", "#c9a07a"], names: ["Berry", "Rose", "Blush"], bg: "#fbefee", bg2: "#f2cfd5", ink: "#4a1c2b", onc1: "#fff",
+    ph: "saturate(1.02)", sample: "Soft, feminine and shoppable. Made for every shade, every day.", photos: [7256145, 4620875, 9859962, 7290642, 1625037], words: ["Soft", "Feminine", "Bold"], cds: ["Bloom & Blush", "Shop the drop"] },
+  travel: { name: "The Lost Passport", short: "Lost Passport", tag: "Travel creator · 38 countries", hf: "DM Sans", bf: "Inter", hw: 700, ls: "-.02em", mono: "LP",
+    c: ["#1f5f7a", "#5d96ab", "#e8d9bf", "#c8643c", "#1b2a33"], names: ["Ocean", "Lagoon", "Terracotta"], bg: "#f6efe3", bg2: "#cfe3ea", ink: "#1b2a33", onc1: "#fff",
+    ph: "saturate(.95)", sample: "Warm, curious and save-worthy. Budget trips and hidden gems.", photos: [10611225, 10740491, 188014, 18118029, 1850526], words: ["Wanderlust", "Warm", "Honest"], cds: ["The Lost Passport", "Follow along"] },
+  coffee: { name: "Ember & Oak", tag: "Coffee shop & roastery", hf: "Bricolage Grotesque", bf: "DM Sans", hw: 700, ls: "-.02em", mono: "E&O",
+    c: ["#3b2a20", "#a8703d", "#d9bfa3", "#f3e9dc", "#5f6f52"], names: ["Espresso", "Caramel", "Latte"], bg: "#f4ece2", bg2: "#e3cfb6", ink: "#3b2a20", onc1: "#f3e9dc",
+    ph: "saturate(.95) sepia(.08)", sample: "Warm, cosy and café-fresh. Specialty coffee roasted weekly.", photos: [4913342, 30403209, 15801049, 31890551, 8987828], words: ["Cosy", "Fresh", "Local"], cds: ["Ember & Oak", "Order ahead"] }
+};
+const key = new URLSearchParams(location.search).get("f") || "clinic", D = B[key], s = document.documentElement.style, $ = id => document.getElementById(id);
+[["--bg", D.bg], ["--bg2", D.bg2], ["--ink", D.ink], ["--c1", D.c[0]], ["--c2", D.c[1]], ["--c3", D.c[2]], ["--onc1", D.onc1], ["--hf", `"${D.hf}"`], ["--bf", `"${D.bf}"`], ["--hw", D.hw], ["--ls", D.ls], ["--ph", D.ph]].forEach(([k, v]) => s.setProperty(k, v));
+$("aa").textContent = "Aa"; $("hfn").textContent = D.hf; $("bfn").textContent = D.bf; $("sample").textContent = D.sample;
+$("pn").textContent = D.name; $("badge").textContent = D.mono; $("cd1").textContent = D.cds[0]; $("cd2").textContent = D.cds[1];
+$("wm").textContent = D.name; $("tag").textContent = D.tag;
+$("three").innerHTML = [[D.c[0], D.onc1], [D.c[3], D.c[0]], [D.c[1], "#fff"]].map(([b, f]) => `<div style="background:${b};color:${f}">${D.name.length > 9 ? D.mono : D.name}</div>`).join("");
+$("m1").textContent = D.mono; $("m2").textContent = D.mono; $("l1").textContent = D.short || D.name; $("l2").textContent = $("l1").textContent;
+if (D.name.length > 9) s.setProperty("--lf", "25px"); if (D.short) s.setProperty("--lf", "24px"); if (D.mono.length > 1) s.setProperty("--mf", D.mono.length > 2 ? "16px" : "19px");
+$("leg").innerHTML = D.names.map((n, i) => `<div class="it"><i style="background:${D.c[i]}"></i><div><b>${n}</b><span>${D.c[i].toUpperCase()}</span></div></div>`).join("");
+$("strips").innerHTML = [D.c[0], D.c[1], D.c[2], D.c[3], D.c[4]].map(c => `<div style="background:${c}"></div>`).join("");
+$("mood").innerHTML = `<img class="tall" src="${px(D.photos[0], 900)}"><img src="${px(D.photos[1])}"><img src="${px(D.photos[2])}">`;
+$("mood2").innerHTML = `<img src="${px(D.photos[3])}"><img src="${px(D.photos[4])}">`;
+$("words").innerHTML = D.words.map(w => `<span>${w}</span>`).join("");
+$("pat").innerHTML = Array.from({ length: 8 }, (_, i) => { const b = [D.c[0], D.c[3], D.c[1], D.c[2]][(i + (i >> 2)) % 4]; const f = (b === D.c[3] || b === D.c[2]) ? D.c[0] : "#fff"; return `<div style="background:${b};color:${f}">${D.mono}</div>`; }).join("");
+$("tags").innerHTML = [[D.c[0], D.onc1], [D.c[2], D.c[0]], [D.c[1], "#fff"], [D.c[3], D.c[0]]].map(([b, f]) => `<div class="tag" style="background:${b};color:${f}">${D.name.length > 14 ? D.mono : D.name}</div>`).join("");
+$("social").innerHTML = `<div class="av">${D.mono}</div><div class="cv" style="background:${D.c[1]};color:#fff">Our story</div><div class="cv" style="background:${D.c[2]};color:${D.c[0]}">New in</div><div class="cv" style="background:${D.c[0]};color:${D.onc1}">Offers</div>`;
+</script></body></html>
