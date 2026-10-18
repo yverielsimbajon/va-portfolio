@@ -136,7 +136,7 @@ window.RESUME_JOBS = {
     focus: ["social", "design", "english", "admin", "web", "support"],
     order: ["results", "work", "education", "why", "contact"],
     workBlocks: ["feeds", "designs", "reels"],
-    workCards: ["cupFeeds", "cupSchedule", "cupReels", "cupGraphics", "cupCaptions", "cupBrand", "cupResults"],
+    workCards: ["cupSchedule", "cupReels", "cupGraphics", "cupCaptions", "cupBrand", "cupResults"],
     workIntro: "Real work matched to what you asked for: scheduling, Reels, graphics, captions, content planning, a consistent brand aesthetic and on-time delivery. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
