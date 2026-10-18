@@ -1427,6 +1427,8 @@
     .feeds-2 .feed-chips { display: none; }
     @media (max-width: 760px) { .feeds-2 { grid-template-columns: minmax(0, 1fr); } }
 
+    .feed-by { margin: 16px 0 0; color: var(--accent); font-size: 0.98rem; font-weight: 600; letter-spacing: 0.01em; text-align: center; }
+
     .feed-split { display: none; }
     .feed-swipe { display: none; }
 
@@ -2651,6 +2653,7 @@
                 <img class="fs-grid" src="../images/${it.grid}" alt="${esc(it.title)}: nine-post Instagram grid" loading="lazy" decoding="async" width="1000" height="1083" />
               </div>` : ""}
               ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}
+              ${it.phone ? `<p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>` : ""}
             </div>`).join("")}
           </div>
         </article>`;

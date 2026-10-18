@@ -177,7 +177,7 @@ const tile = t => t.p
 const html = D.tiles.map(tile).join("");
 document.getElementById("flat").innerHTML = `<div class="grid">${html}</div>`;
 document.getElementById("pg").innerHTML = html;
-document.getElementById("label").innerHTML = `<div class="sw">${D.swatches.map(c => `<i style="background:${c}"></i>`).join("")}</div><div><b>Designed by Yours Truly, Maria Simbajon</b></div>`;
+document.getElementById("label").innerHTML = `<div class="sw">${D.swatches.map(c => `<i style="background:${c}"></i>`).join("")}</div>`;
 document.getElementById("uname").textContent = D.user; document.getElementById("mono").innerHTML = D.mono; document.getElementById("mono").classList.add("bl");
 ["s1", "s2", "s3"].forEach((id, i) => document.getElementById(id).textContent = D.stats[i]);
 document.getElementById("bio").innerHTML = D.bio;
