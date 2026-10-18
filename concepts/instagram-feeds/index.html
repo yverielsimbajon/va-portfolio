@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<title>Instagram feed planning mockups</title>
+<!-- Source for the three Instagram feed mockups (images/ig-feed-*.jpg). Open with ?f=clinic | travel | makeup.
+     Photos are Pexels stock photos. Brands and handles are made-up samples. Screenshot at 1600x1000. -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1600px;height:1000px;overflow:hidden}
+body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);position:relative}
+.stage{position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(255,255,255,.7),transparent 45%),radial-gradient(circle at 92% 95%,var(--bg2),transparent 55%)}
+.flat{position:absolute;left:96px;top:84px;width:780px}
+.flat .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.flat .t{border-radius:6px;box-shadow:0 10px 26px rgba(20,30,40,.14)}
+.label{position:absolute;left:96px;top:884px;display:flex;align-items:center;gap:22px}
+.sw{display:flex;gap:12px}.sw i{width:44px;height:44px;border-radius:50%;display:block;box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+.label b{font-size:22px;font-weight:700;letter-spacing:.2px}.label span{font-size:17px;opacity:.7;display:block;margin-top:2px;font-weight:500}
+/* tiles */
+.t{position:relative;aspect-ratio:1;overflow:hidden;container-type:inline-size;background:#ddd}
+.t.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--ph)}
+.t.photo::after{content:"";position:absolute;inset:0;background:var(--tint);mix-blend-mode:soft-light;opacity:.55}
+.t .cap{position:absolute;left:7cqw;right:7cqw;bottom:7cqw;z-index:2;color:#fff;font-weight:700;font-size:8cqw;line-height:1.12;text-shadow:0 1px 14px rgba(0,0,0,.45)}
+.t .cap small{display:block;font-size:4.6cqw;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:2cqw;opacity:.95}
+.t.photo.shade::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(to top,rgba(0,0,0,.5),transparent 55%)}
+.t .ic{position:absolute;top:5cqw;right:5cqw;z-index:3;width:8cqw;height:8cqw;fill:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.4))}
+.t.text{background:#ddd}.t.text>.in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:10cqw 9cqw;gap:5cqw}.t.text.c>.in{align-items:center;text-align:center}
+.t.text .k{font-size:4.4cqw;font-weight:600;letter-spacing:.16em;text-transform:uppercase;opacity:.85}
+.t.text .h{font-size:11.5cqw;font-weight:700;line-height:1.08;letter-spacing:-.01em}
+.t.text .p{font-size:5cqw;font-weight:500;line-height:1.35;opacity:.9}
+.t.text .b{align-self:flex-start;font-size:4.6cqw;font-weight:700;padding:2.4cqw 5.5cqw;border-radius:99px}
+.t.text .brand{position:absolute;left:9cqw;top:8cqw;font-size:3.8cqw;font-weight:700;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+.t.text.c .b{align-self:center}
+.t.text .ring{position:absolute;right:-12cqw;bottom:-12cqw;width:46cqw;height:46cqw;border-radius:50%;border:1.2cqw solid currentColor;opacity:.18}
+/* phone */
+.phone{position:absolute;left:1030px;top:12px;width:414px;height:882px;padding:12px;border-radius:60px;transform:scale(1.1);transform-origin:top left;background:linear-gradient(145deg,#3b4048,#15181c 45%,#0a0c0f);box-shadow:inset 0 0 0 2px rgba(255,255,255,.14),0 40px 70px rgba(10,20,30,.32),0 12px 24px rgba(10,20,30,.2)}
+.scr{position:relative;width:100%;height:100%;border-radius:49px;overflow:hidden;background:#fff;color:#111;font-family:Inter,system-ui,sans-serif;display:flex;flex-direction:column}
+.island{position:absolute;left:50%;top:10px;width:100px;height:29px;margin-left:-50px;border-radius:20px;background:#000;z-index:5}
+.status{height:44px;flex:none;display:flex;justify-content:space-between;align-items:center;padding:4px 34px 0 38px;font-weight:600;font-size:15px}
+.status svg{height:11px;fill:#111}
+.hdr{height:34px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 16px}
+.hdr .u{font-weight:700;font-size:18px;display:flex;align-items:center;gap:5px}.hdr .u svg{width:13px;height:13px}
+.hdr .r{display:flex;gap:22px}.hdr .r svg{width:23px;height:23px;stroke:#111;fill:none;stroke-width:1.8}
+.prof{flex:none;padding:4px 16px 0}
+.top{display:flex;align-items:center;gap:20px}
+.av{width:78px;height:78px;border-radius:50%;padding:3px;background:var(--ring);flex:none}
+.av div{width:100%;height:100%;border-radius:50%;border:3px solid #fff;background:var(--av);display:grid;place-items:center;color:#fff;font:700 24px "DM Sans";letter-spacing:.02em}
+.stats{display:flex;flex:1;justify-content:space-around;text-align:center}.stats b{display:block;font-size:17px;font-weight:700}.stats span{font-size:12px}
+.bio{margin-top:8px;font-size:12.5px;line-height:1.32}.bio b{font-weight:700;display:block}.bio .cat{color:#737373}.bio .lk{color:#00376b;font-weight:600}
+.btns{display:flex;gap:6px;margin-top:9px}.btns div{flex:1;height:30px;border-radius:8px;background:#efefef;display:grid;place-items:center;font-weight:600;font-size:12.5px}
+.btns div.f{background:#0095f6;color:#fff}.btns div.s{flex:none;width:32px}
+.hl{flex:none;display:flex;gap:10px;padding:8px 16px 6px}
+.hl div{width:56px;text-align:center;font-size:10.5px}.hl i{width:52px;height:52px;border-radius:50%;border:1.5px solid #dbdbdb;padding:3px;display:block;margin:0 auto 4px}.hl i s{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--hlbg);font-size:20px;text-decoration:none}
+.tabs{flex:none;display:flex;height:34px;border-top:1px solid #efefef}.tabs div{flex:1;display:grid;place-items:center;border-bottom:1.5px solid transparent}.tabs div.on{border-color:#111}.tabs svg{width:23px;height:23px;stroke:#8e8e8e;fill:none;stroke-width:1.8}.tabs .on svg{stroke:#111}
+.pg{flex:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5px;margin-top:1.5px}
+.nav{margin-top:auto;height:46px;flex:none;border-top:1px solid #efefef;display:flex;justify-content:space-around;align-items:center;padding-bottom:6px}
+.nav svg{width:25px;height:25px;stroke:#111;fill:none;stroke-width:1.9}.nav .me{width:28px;height:28px;border-radius:50%;background:var(--av);border:1.5px solid #111}
+.home{position:absolute;bottom:8px;left:50%;width:150px;height:5px;margin-left:-75px;border-radius:3px;background:#111;z-index:4}
+</style></head>
+<body>
+<div class="stage"></div>
+<div class="flat" id="flat"></div>
+<div class="label" id="label"></div>
+<div class="phone"><div class="scr"><div class="island"></div>
+  <div class="status"><span>9:41</span><svg viewBox="0 0 80 14"><rect x="0" y="9" width="3" height="5" rx="1"/><rect x="5" y="6" width="3" height="8" rx="1"/><rect x="10" y="3" width="3" height="11" rx="1"/><rect x="15" y="0" width="3" height="14" rx="1"/><path d="M30 4a14 14 0 0 1 18 0l-2 2.3a11 11 0 0 0-14 0zM34 8a8 8 0 0 1 10 0l-2 2.3a5 5 0 0 0-6 0zM38.5 12l1.5-1.8 1.5 1.8-1.5 1.5z"/><rect x="56" y="1" width="22" height="12" rx="3.5" fill="none" stroke="#111" stroke-width="1.2"/><rect x="58" y="3" width="16" height="8" rx="2"/></svg></div>
+  <div class="hdr"><div class="u"><span id="uname"></span><svg viewBox="0 0 12 12" fill="none" stroke="#111" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></div>
+    <div class="r"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div></div>
+  <div class="prof"><div class="top"><div class="av"><div id="mono"></div></div>
+      <div class="stats"><div><b id="s1"></b><span>posts</span></div><div><b id="s2"></b><span>followers</span></div><div><b id="s3"></b><span>following</span></div></div></div>
+    <div class="bio" id="bio"></div>
+    <div class="btns"><div class="f">Follow</div><div>Message</div><div>Contact</div><div class="s"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#111" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></div></div></div>
+  <div class="hl" id="hl"></div>
+  <div class="tabs"><div class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/><path d="m10 13 5 3-5 3z" fill="#8e8e8e"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c1-4 4-5 6-5s5 1 6 5"/></svg></div></div>
+  <div class="pg" id="pg"></div>
+  <div class="nav"><svg viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10h-6v-6H9v6H3z"/></svg><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/></svg><div class="me"></div></div>
+  <div class="home"></div></div></div>
+<script>
+const px = (id, w = 900) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}&h=${w}&fit=crop`;
+const REEL = '<svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg>';
+const MULTI = '<svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg>';
+const F = {
+  clinic: {
+    bg: "#eef1ea", bg2: "#d9e3d6", ink: "#23372d",
+    ph: "saturate(.88) contrast(1.02) brightness(1.02)", tint: "#9bb59f",
+    swatches: ["#3f5b4e", "#7d9a85", "#c9a97a", "#e8d5c8", "#f4efe7"],
+    title: "Aesthetic Clinic", sub: "Instagram feed planning · calm, clean, premium",
+    user: "lumiere.aesthetics", mono: "LA", ring: "linear-gradient(45deg,#c9a97a,#3f5b4e)", av: "#3f5b4e", hlbg: "#e8efe9",
+    stats: ["142", "12.4K", "318"],
+    bio: '<b>Lumière Aesthetics</b><span class="cat">Medical spa</span><br>Skin treatments · Injectables · Laser<br>Beverly Hills, CA · Book your free consult<br><span class="lk">lumiereaesthetics.co/book</span>',
+    hl: [["✨", "Services"], ["💉", "Botox"], ["⭐", "Reviews"], ["🏷️", "Offers"], ["📅", "Book"]],
+    tiles: [
+      { p: 4586711, cap: "Treatment of the month", k: "Featured", shade: 1, ic: REEL },
+      { t: 1, bg: "#f4efe7", fg: "#3f5b4e", brand: "Lumière", k: "Free consult", h: "Your glow-up starts with a conversation.", ring: 1 },
+      { p: 3985354, shade: 1, ic: MULTI },
+      { t: 1, bg: "#3f5b4e", fg: "#fff", brand: "Lumière", k: "Myth busting", h: "3 myths about Botox, answered.", p2: "Swipe to learn more", ring: 1 },
+      { p: 16008945, cap: "Skin prep, step by step", k: "Skincare", shade: 1 },
+      { p: 5938217, cap: "Self-care Sunday", k: "Lifestyle", shade: 1, ic: REEL },
+      { p: 7446659, shade: 1 },
+      { t: 1, c: 1, bg: "#e8d5c8", fg: "#3f3027", brand: "Lumière", h: "Book your free skin analysis", b: "Book now", bb: "#3f5b4e", bf: "#fff" },
+      { p: 3865548, cap: "Before & after", k: "Real results", shade: 1, ic: MULTI }
+    ]
+  },
+  travel: {
+    bg: "#f6efe3", bg2: "#cfe3ea", ink: "#1b2a33",
+    ph: "saturate(.95) contrast(1.03)", tint: "#e0b48a",
+    swatches: ["#1f5f7a", "#5d96ab", "#e8d9bf", "#c8643c", "#1b2a33"],
+    title: "Travel Content Creator", sub: "Instagram feed planning · warm, wanderlust, save-worthy",
+    user: "thelostpassport.co", mono: "LP", ring: "linear-gradient(45deg,#c8643c,#e6b25a)", av: "#1f5f7a", hlbg: "#f3e6d2",
+    stats: ["389", "48.2K", "512"],
+    bio: '<b>The Lost Passport</b><span class="cat">Travel creator</span><br>38 countries · Budget trips & hidden gems<br>Currently: Bali → Tokyo ✈️<br><span class="lk">linktr.ee/thelostpassport</span>',
+    hl: [["🌴", "Bali"], ["🗼", "Japan"], ["🏝️", "Greece"], ["🧳", "Packing"], ["💸", "Budget"]],
+    tiles: [
+      { p: 10611225, cap: "Santorini, Greece", k: "Where to next", shade: 1, ic: REEL },
+      { t: 1, bg: "#e8d9bf", fg: "#1b2a33", brand: "The Lost Passport", k: "Trip guide", h: "5 days in Santorini for under $900.", ring: 1 },
+      { p: 1850526, shade: 1, ic: MULTI },
+      { t: 1, bg: "#1f5f7a", fg: "#fff", brand: "The Lost Passport", k: "Save this", h: "The carry-on only packing list.", p2: "Swipe for the full list", ring: 1 },
+      { p: 10740491, cap: "Bali, Indonesia", k: "Scooter days", shade: 1, ic: REEL },
+      { p: 188014, shade: 1 },
+      { p: 18118029, cap: "Hidden trails", k: "Hike with me", shade: 1, ic: MULTI },
+      { t: 1, c: 1, bg: "#c8643c", fg: "#fff", brand: "The Lost Passport", h: "Save this for your next trip", b: "Tap to save", bb: "#fff", bf: "#c8643c" },
+      { p: 5792915, shade: 1 }
+    ]
+  },
+  makeup: {
+    bg: "#fbefee", bg2: "#f2cfd5", ink: "#4a1c2b",
+    ph: "saturate(1.02) contrast(1.02) brightness(1.03)", tint: "#f0a9b8",
+    swatches: ["#8e2c48", "#d98a9b", "#f3d6d8", "#fbf3ee", "#c9a07a"],
+    title: "Makeup Brand", sub: "Instagram feed planning · soft, feminine, shoppable",
+    user: "bloomandblush.beauty", mono: "B&B", ring: "linear-gradient(45deg,#d98a9b,#8e2c48)", av: "#8e2c48", hlbg: "#fbe3e6",
+    stats: ["267", "31.7K", "204"],
+    bio: '<b>Bloom &amp; Blush</b><span class="cat">Makeup &amp; cosmetics</span><br>Cruelty-free · Made for every shade 💗<br>New: The Rosé Collection is here<br><span class="lk">bloomandblush.com/shop</span>',
+    hl: [["🛍️", "Shop"], ["💄", "Tutorials"], ["⭐", "Reviews"], ["🎨", "Swatches"], ["🎁", "Offers"]],
+    tiles: [
+      { t: 1, bg: "#8e2c48", fg: "#fff", brand: "Bloom & Blush", k: "New launch", h: "The Rosé Collection.", p2: "Shop the drop", ring: 1 },
+      { p: 7256145, shade: 0, ic: MULTI },
+      { p: 4620875, cap: "Blush, four ways", k: "Palette", shade: 1, ic: REEL },
+      { p: 7290642, shade: 1, ic: REEL },
+      { t: 1, bg: "#fbf3ee", fg: "#8e2c48", brand: "Bloom & Blush", k: "Quick tutorial", h: "3 steps to a 5-minute glam.", ring: 1 },
+      { p: 9859962, cap: "Peach neutrals", k: "Eyes", shade: 1 },
+      { p: 4889720, shade: 1, ic: MULTI },
+      { t: 1, c: 1, bg: "#f3d6d8", fg: "#8e2c48", brand: "Bloom & Blush", h: "Your shade is waiting", b: "Shop now", bb: "#8e2c48", bf: "#fff" },
+      { p: 1625037, cap: "Red lip classics", k: "Bestsellers", shade: 1 }
+    ]
+  }
+};
+const key = new URLSearchParams(location.search).get("f") || "clinic", D = F[key];
+const root = document.documentElement.style;
+root.setProperty("--bg", D.bg); root.setProperty("--bg2", D.bg2); root.setProperty("--ink", D.ink); root.setProperty("--ph", D.ph); root.setProperty("--tint", D.tint);
+root.setProperty("--ring", D.ring); root.setProperty("--av", D.av); root.setProperty("--hlbg", D.hlbg);
+document.body.style.color = D.ink;
+const tile = t => t.p
+  ? `<div class="t photo${t.shade ? " shade" : ""}"><img src="${px(t.p)}" alt="" crossorigin="anonymous">${t.ic || ""}${t.cap ? `<div class="cap"><small>${t.k}</small>${t.cap}</div>` : ""}</div>`
+  : `<div class="t text${t.c ? " c" : ""}" style="background:${t.bg};color:${t.fg}"><span class="brand">${t.brand}</span>${t.ring ? '<span class="ring"></span>' : ""}<div class="in">${t.k ? `<span class="k">${t.k}</span>` : ""}<span class="h">${t.h}</span>${t.p2 ? `<span class="p">${t.p2}</span>` : ""}${t.b ? `<span class="b" style="background:${t.bb};color:${t.bf}">${t.b}</span>` : ""}</div></div>`;
+const html = D.tiles.map(tile).join("");
+document.getElementById("flat").innerHTML = `<div class="grid">${html}</div>`;
+document.getElementById("pg").innerHTML = html;
+document.getElementById("label").innerHTML = `<div class="sw">${D.swatches.map(c => `<i style="background:${c}"></i>`).join("")}</div><div><b>${D.title}</b><span>${D.sub}</span></div>`;
+document.getElementById("uname").textContent = D.user; document.getElementById("mono").innerHTML = D.mono;
+["s1", "s2", "s3"].forEach((id, i) => document.getElementById(id).textContent = D.stats[i]);
+document.getElementById("bio").innerHTML = D.bio;
+document.getElementById("hl").innerHTML = D.hl.map(h => `<div><i><s>${h[0]}</s></i>${h[1]}</div>`).join("");
+</script></body></html>

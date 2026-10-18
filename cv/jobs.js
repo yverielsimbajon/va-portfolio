@@ -123,5 +123,26 @@ window.RESUME_JOBS = {
     workTitle: "Canva designs I create for wellness brands, real estate and more",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Flourish on Thursdays: Virtual Assistant application"
+  },
+  "cupcake-smm": {
+    label: "Social Media Manager (Cupcake Brand, California)",
+    headline: "Social Media Manager",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Later · Instagram Reels · Canva · Photoshop · CapCut · Social Media Ads",
+    tagline: "",
+    summary: "Creative, reliable, detail-oriented Social Media Manager with 5+ years of experience in social media management, graphic design and digital marketing for U.S., Australian and European businesses, including beauty, wellness and lifestyle brands. I manage and schedule social media content (Meta Business Suite and Metricool today, and Later is a short step), edit high-quality Instagram Reels and short-form videos in CapCut, and create engaging graphics and promotional posts in Canva and Photoshop. I write captions with strong English grammar, spelling and brand-appropriate messaging, use keywords and hashtags, plan content with a consistent brand aesthetic, and deliver on time. I grew a client's post views 50% to 265K and followers 147% in 90 days. Strong eye for clean, modern, feminine, lifestyle-focused branding, proactive with fresh ideas, and I can communicate during California business hours.",
+    keywords: ["Social Media Manager", "Later", "Instagram Reels", "Reels", "short-form videos", "short-form video", "graphics", "promotional posts", "social media ads", "paid social media ad creatives", "captions", "English grammar", "spelling", "brand-appropriate messaging", "social media SEO", "keywords", "hashtags", "content planning", "creative ideas", "consistent brand aesthetic", "brand aesthetic", "Meta Ads", "campaign management", "Canva", "Photoshop", "CapCut", "Adobe Premiere Pro", "DaVinci Resolve", "scheduling platforms", "Instagram", "content strategy", "social media trends", "feminine", "lifestyle", "beauty", "food", "clean, modern", "visually appealing", "detail-oriented", "organized", "punctual", "dependable", "proactive", "fresh ideas", "California business hours", "on time", "quality standards", "written and spoken"],
+    focus: ["social", "design", "english", "admin", "web", "support"],
+    order: ["results", "work", "education", "why", "contact"],
+    workBlocks: ["feeds", "designs", "reels"],
+    workCards: ["cupFeeds", "cupSchedule", "cupReels", "cupGraphics", "cupCaptions", "cupBrand", "cupResults"],
+    workIntro: "Real work matched to what you asked for: scheduling, Reels, graphics, captions, content planning, a consistent brand aesthetic and on-time delivery. Tap a picture to enlarge it.",
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphics and promotional posts I create",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Social Media Manager (Cupcake Brand)"
   }
 };
