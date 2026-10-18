@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <title>Instagram feed planning mockups</title>
+<!-- Each feed has its own font (D.font): clinic = Jost, makeup = Playfair Display, travel = DM Sans, coffee = Bricolage Grotesque. -->
 <!-- Source for the three Instagram feed mockups (images/ig-feed-*.jpg). Open with ?f=clinic | travel | makeup.
      Photos are Pexels stock photos. Brands and handles are made-up samples. Screenshot at 1600x1000. -->
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Jost:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&family=Bricolage+Grotesque:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1600px;height:1000px;overflow:hidden}
-body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);position:relative}
+body{font-family:var(--f),"DM Sans",sans-serif;background:var(--bg);color:var(--ink);position:relative}
 .stage{position:absolute;inset:0;background:radial-gradient(circle at 12% 8%,rgba(255,255,255,.7),transparent 45%),radial-gradient(circle at 92% 95%,var(--bg2),transparent 55%)}
 .flat{position:absolute;left:96px;top:84px;width:780px}
 .flat .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
@@ -43,7 +44,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);posi
 .prof{flex:none;padding:4px 16px 0}
 .top{display:flex;align-items:center;gap:20px}
 .av{width:78px;height:78px;border-radius:50%;padding:3px;background:var(--ring);flex:none}
-.av div{width:100%;height:100%;border-radius:50%;border:3px solid #fff;background:var(--av);display:grid;place-items:center;color:#fff;font:700 24px "DM Sans";letter-spacing:.02em}
+.av div{width:100%;height:100%;border-radius:50%;border:3px solid #fff;background:var(--av);display:grid;place-items:center;color:#fff;font:700 24px var(--f),"DM Sans";letter-spacing:.02em}
 .stats{display:flex;flex:1;justify-content:space-around;text-align:center}.stats b{display:block;font-size:17px;font-weight:700}.stats span{font-size:12px}
 .bio{margin-top:8px;font-size:12.5px;line-height:1.32}.bio b{font-weight:700;display:block}.bio .cat{color:#737373}.bio .lk{color:#00376b;font-weight:600}
 .btns{display:flex;gap:6px;margin-top:9px}.btns div{flex:1;height:30px;border-radius:8px;background:#efefef;display:grid;place-items:center;font-weight:600;font-size:12.5px}
@@ -54,6 +55,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);posi
 .pg{flex:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5px;margin-top:1.5px}
 .nav{margin-top:auto;height:46px;flex:none;border-top:1px solid #efefef;display:flex;justify-content:space-around;align-items:center;padding-bottom:6px}
 .nav svg{width:25px;height:25px;stroke:#111;fill:none;stroke-width:1.9}.nav .me{width:28px;height:28px;border-radius:50%;background:var(--av);border:1.5px solid #111}
+.bl{filter:blur(10px)}
 .home{position:absolute;bottom:8px;left:50%;width:150px;height:5px;margin-left:-75px;border-radius:3px;background:#111;z-index:4}
 </style></head>
 <body>
@@ -62,7 +64,7 @@ body{font-family:"DM Sans",sans-serif;background:var(--bg);color:var(--ink);posi
 <div class="label" id="label"></div>
 <div class="phone"><div class="scr"><div class="island"></div>
   <div class="status"><span>9:41</span><svg viewBox="0 0 80 14"><rect x="0" y="9" width="3" height="5" rx="1"/><rect x="5" y="6" width="3" height="8" rx="1"/><rect x="10" y="3" width="3" height="11" rx="1"/><rect x="15" y="0" width="3" height="14" rx="1"/><path d="M30 4a14 14 0 0 1 18 0l-2 2.3a11 11 0 0 0-14 0zM34 8a8 8 0 0 1 10 0l-2 2.3a5 5 0 0 0-6 0zM38.5 12l1.5-1.8 1.5 1.8-1.5 1.5z"/><rect x="56" y="1" width="22" height="12" rx="3.5" fill="none" stroke="#111" stroke-width="1.2"/><rect x="58" y="3" width="16" height="8" rx="2"/></svg></div>
-  <div class="hdr"><div class="u"><span id="uname"></span><svg viewBox="0 0 12 12" fill="none" stroke="#111" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></div>
+  <div class="hdr"><div class="u"><span id="uname" class="bl"></span><svg viewBox="0 0 12 12" fill="none" stroke="#111" stroke-width="1.6"><path d="m2 4 4 4 4-4"/></svg></div>
     <div class="r"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M12 8v8M8 12h8"/></svg><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></div></div>
   <div class="prof"><div class="top"><div class="av"><div id="mono"></div></div>
       <div class="stats"><div><b id="s1"></b><span>posts</span></div><div><b id="s2"></b><span>followers</span></div><div><b id="s3"></b><span>following</span></div></div></div>
@@ -82,7 +84,7 @@ const F = {
     bg: "#eef1ea", bg2: "#d9e3d6", ink: "#23372d",
     ph: "saturate(.88) contrast(1.02) brightness(1.02)", tint: "#9bb59f",
     swatches: ["#3f5b4e", "#7d9a85", "#c9a97a", "#e8d5c8", "#f4efe7"],
-    title: "Aesthetic Clinic", sub: "Instagram feed planning · calm, clean, premium",
+    font: "Jost", title: "Aesthetic Clinic in Beverly Hills, CA", sub: "Instagram feed planning · calm, clean, premium",
     user: "lumiere.aesthetics", mono: "LA", ring: "linear-gradient(45deg,#c9a97a,#3f5b4e)", av: "#3f5b4e", hlbg: "#e8efe9",
     stats: ["142", "12.4K", "318"],
     bio: '<b>Lumière Aesthetics</b><span class="cat">Medical spa</span><br>Skin treatments · Injectables · Laser<br>Beverly Hills, CA · Book your free consult<br><span class="lk">lumiereaesthetics.co/book</span>',
@@ -103,7 +105,7 @@ const F = {
     bg: "#f6efe3", bg2: "#cfe3ea", ink: "#1b2a33",
     ph: "saturate(.95) contrast(1.03)", tint: "#e0b48a",
     swatches: ["#1f5f7a", "#5d96ab", "#e8d9bf", "#c8643c", "#1b2a33"],
-    title: "Travel Content Creator", sub: "Instagram feed planning · warm, wanderlust, save-worthy",
+    font: "DM Sans", title: "Travel Content Creator in Bali, Indonesia", sub: "Instagram feed planning · warm, wanderlust, save-worthy",
     user: "thelostpassport.co", mono: "LP", ring: "linear-gradient(45deg,#c8643c,#e6b25a)", av: "#1f5f7a", hlbg: "#f3e6d2",
     stats: ["389", "48.2K", "512"],
     bio: '<b>The Lost Passport</b><span class="cat">Travel creator</span><br>38 countries · Budget trips & hidden gems<br>Currently: Bali → Tokyo ✈️<br><span class="lk">linktr.ee/thelostpassport</span>',
@@ -120,11 +122,32 @@ const F = {
       { p: 5792915, shade: 1 }
     ]
   },
+  coffee: {
+    bg: "#f4ece2", bg2: "#e3cfb6", ink: "#3b2a20",
+    ph: "saturate(.95) contrast(1.03) sepia(.08)", tint: "#c9a07a",
+    swatches: ["#3b2a20", "#a8703d", "#d9bfa3", "#f3e9dc", "#5f6f52"],
+    font: "Bricolage Grotesque", title: "Coffee Shop in Melbourne, Australia", sub: "Instagram feed planning · warm, cosy, café-fresh",
+    user: "emberandoak.coffee", mono: "E&O", ring: "linear-gradient(45deg,#a8703d,#3b2a20)", av: "#3b2a20", hlbg: "#f3e6d4",
+    stats: ["312", "9,860", "421"],
+    bio: '<b>Ember &amp; Oak Coffee</b><span class="cat">Coffee shop &amp; roastery</span><br>Specialty coffee · Fresh pastries · Roasted weekly<br>Fitzroy, Melbourne · Open daily 7am to 3pm<br><span class="lk">emberandoak.com.au</span>',
+    hl: [["☕", "Menu"], ["🥐", "Bakes"], ["⭐", "Reviews"], ["🫘", "Beans"], ["📍", "Visit"]],
+    tiles: [
+      { p: 4913342, cap: "Our signature flat white", k: "House favourite", shade: 1, ic: REEL },
+      { t: 1, bg: "#f3e9dc", fg: "#3b2a20", brand: "Ember & Oak", k: "Now brewing", h: "Single-origin Ethiopia, now on bar.", ring: 1 },
+      { p: 8987828, shade: 1, ic: MULTI },
+      { t: 1, bg: "#3b2a20", fg: "#f3e9dc", brand: "Ember & Oak", k: "Barista tip", h: "3 ways to brew better coffee at home.", p2: "Swipe for the guide", ring: 1 },
+      { p: 30403209, cap: "Fresh from the oven", k: "Pastries", shade: 1 },
+      { p: 15801049, cap: "Your neighbourhood spot", k: "Visit us", shade: 1, ic: REEL },
+      { p: 18142624, shade: 1 },
+      { t: 1, c: 1, bg: "#d9bfa3", fg: "#3b2a20", brand: "Ember & Oak", h: "Your morning ritual awaits", b: "Order ahead", bb: "#3b2a20", bf: "#f3e9dc" },
+      { p: 31890551, cap: "Roasted weekly", k: "Fresh beans", shade: 1, ic: MULTI }
+    ]
+  },
   makeup: {
     bg: "#fbefee", bg2: "#f2cfd5", ink: "#4a1c2b",
     ph: "saturate(1.02) contrast(1.02) brightness(1.03)", tint: "#f0a9b8",
     swatches: ["#8e2c48", "#d98a9b", "#f3d6d8", "#fbf3ee", "#c9a07a"],
-    title: "Makeup Brand", sub: "Instagram feed planning · soft, feminine, shoppable",
+    font: "Playfair Display", title: "Makeup Brand in Los Angeles, CA", sub: "Instagram feed planning · soft, feminine, shoppable",
     user: "bloomandblush.beauty", mono: "B&B", ring: "linear-gradient(45deg,#d98a9b,#8e2c48)", av: "#8e2c48", hlbg: "#fbe3e6",
     stats: ["267", "31.7K", "204"],
     bio: '<b>Bloom &amp; Blush</b><span class="cat">Makeup &amp; cosmetics</span><br>Cruelty-free · Made for every shade 💗<br>New: The Rosé Collection is here<br><span class="lk">bloomandblush.com/shop</span>',
@@ -145,7 +168,7 @@ const F = {
 const key = new URLSearchParams(location.search).get("f") || "clinic", D = F[key];
 const root = document.documentElement.style;
 root.setProperty("--bg", D.bg); root.setProperty("--bg2", D.bg2); root.setProperty("--ink", D.ink); root.setProperty("--ph", D.ph); root.setProperty("--tint", D.tint);
-root.setProperty("--ring", D.ring); root.setProperty("--av", D.av); root.setProperty("--hlbg", D.hlbg);
+root.setProperty("--f", `"${D.font}"`); root.setProperty("--ring", D.ring); root.setProperty("--av", D.av); root.setProperty("--hlbg", D.hlbg);
 document.body.style.color = D.ink;
 const tile = t => t.p
   ? `<div class="t photo${t.shade ? " shade" : ""}"><img src="${px(t.p)}" alt="" crossorigin="anonymous">${t.ic || ""}${t.cap ? `<div class="cap"><small>${t.k}</small>${t.cap}</div>` : ""}</div>`
@@ -157,5 +180,7 @@ document.getElementById("label").innerHTML = `<div class="sw">${D.swatches.map(c
 document.getElementById("uname").textContent = D.user; document.getElementById("mono").innerHTML = D.mono;
 ["s1", "s2", "s3"].forEach((id, i) => document.getElementById(id).textContent = D.stats[i]);
 document.getElementById("bio").innerHTML = D.bio;
+document.querySelectorAll("#bio > b, #bio .lk").forEach(e => e.classList.add("bl"));
+if (D.bio.indexOf("<b>") > 0) document.querySelector("#bio > b").style.display = "block";
 document.getElementById("hl").innerHTML = D.hl.map(h => `<div><i><s>${h[0]}</s></i>${h[1]}</div>`).join("");
 </script></body></html>
