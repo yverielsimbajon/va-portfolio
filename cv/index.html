@@ -57,6 +57,11 @@ mark{background:none;color:var(--primary-dark);font-weight:600;padding:0}
 .hero h1{margin:0;font-size:clamp(22px,2.6vw,30px);line-height:1.1;font-weight:800;letter-spacing:-.02em;color:var(--deep);white-space:nowrap}
 .role{font-size:clamp(14px,1.5vw,17px);font-weight:600;color:var(--primary)}
 .sub{color:var(--muted);font-weight:500;font-size:12.5px}
+.crownrow{display:flex;align-items:center;gap:22px;margin-top:16px;flex-wrap:wrap}
+.crownrow img{width:clamp(170px,24vw,250px);aspect-ratio:1/1.08;border-radius:26px;object-fit:cover;object-position:50% 12%;border:4px solid #fff;box-shadow:0 14px 34px rgba(17,76,89,.28);flex:none;background:var(--soft)}
+.crownrow .ct{flex:1;min-width:220px;font-size:clamp(20px,2.6vw,30px);line-height:1.2;font-weight:800;color:var(--deep);letter-spacing:-.01em}
+.crownrow .ct b{display:inline;background:linear-gradient(transparent 62%,rgba(255,194,61,.7) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.crownrow .ct i{font-style:normal;margin-right:6px}
 .intro-sum{margin:10px 0 0;font-size:13px;line-height:1.6;color:var(--text);max-width:92ch}
 .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
 .cta.center{justify-content:center}
@@ -419,6 +424,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
     <div class="apply" id="apply" hidden><i></i><span id="applyText"></span></div>
     <div class="namerow"><img id="photo" alt="Maria Simbajon" width="76" height="76">
       <div><h1 id="hName">Maria Simbajon</h1><div class="role" id="hRole"></div><div class="sub" id="hSub"></div></div></div>
+    <div class="crownrow" id="crownRow" hidden><img id="crownImg" alt="Maria Simbajon, Miss Philippines Earth Mindanao-Water 2022" width="250" height="270"><div class="ct" id="crownText"></div></div>
     <p class="intro-sum" id="hSum"></p>
     <div class="cta">
       <a class="btn solid" id="btnMail" href="#"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email me</a>
@@ -542,6 +548,7 @@ if (J.headlinePill) $("#hRole").classList.add("pill");
 if (J.headlineBadge){ const row = document.createElement("div"); row.className = "rolerow"; $("#hRole").before(row); row.appendChild($("#hRole")); const b = document.createElement("span"); b.className = "yrs"; b.textContent = J.headlineBadge; row.appendChild(b); }
 if (J.hideSummary) $("#hSum").hidden = true; else $("#hSum").innerHTML = hl(esc(J.summary));
 $("#photo").src = J.photo ? IMG + J.photo : B.photo2;
+if (J.crown){ $("#photo").style.display = "none"; $("#crownRow").hidden = false; $("#crownImg").src = IMG + J.crown.photo; $("#crownText").innerHTML = "<b><i>&#128081;</i>" + esc(J.crown.text) + "</b>"; }
 const subject = encodeURIComponent(J.emailSubject || "Hiring a Virtual Assistant");
 const mail = "mailto:" + B.email + "?subject=" + subject;
 const wa = "https://wa.me/" + B.wa + "?text=" + encodeURIComponent("Hi Maria, " + (J.label ? "about " + J.label + ": " : "") + "I saw your resume.");
