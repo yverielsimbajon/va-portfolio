@@ -155,11 +155,11 @@ window.RESUME_JOBS = {
     keywords: ["Reels", "short-form video", "CapCut", "Canva", "carousels", "hooks", "captions", "Claude", "ChatGPT", "human", "viral research", "spreadsheet", "Instagram", "TikTok", "Facebook", "Meta Business Suite", "Metricool", "schedule", "scheduling", "approval", "weekly report", "reliable", "honest", "feedback", "excellent written English", "backup plan"],
     focus: ["social", "design", "english", "admin", "support", "leads"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
-    workBlocks: ["reels", "designs", "smm", "feeds"],
+    workBlocks: ["socialDesigns", "reels", "socialFeeds", "socialBrand", "socialStrategy"],
     workIntro: "Real work matched to what you asked for: Reels in CapCut, Canva designs, content planning, a consistent feed and tracked results. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
-    stats: ["views", "followers", "years", "events"],
+    stats: ["views", "reached", "followers", "interactions"],
     workTitle: "Reels and Canva designs I create",
     portfolioLabel: "View my Portfolio",
     emailSubject: "CARE - Social Media Assistant (AI-Savvy)"

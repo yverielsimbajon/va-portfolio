@@ -239,3 +239,18 @@ window.RESUME_BASE.webProjects = [
   { group: "Website Design Concept", title: "Tutoring Centre", desc: "A tutoring website concept that shows programs by year level, clear pricing and a two-step free assessment booking.", btn: "View Design Concept", url: "https://themariaoffice.com/concepts/tutoring/", images: ["web-tutoring.jpg", "web-tutoring-2.jpg", "web-tutoring-3.jpg", "web-tutoring-4.jpg", "web-tutoring-5.jpg"] },
   { group: "Website Design Concept", title: "Cleaning Services", desc: "A cleaning services website concept with an instant quote calculator, room-by-room checklist and online booking.", btn: "View Design Concept", url: "https://themariaoffice.com/concepts/cleaning/", images: ["web-cleaning.jpg", "web-cleaning-2.jpg", "web-cleaning-3.jpg", "web-cleaning-4.jpg", "web-cleaning-5.jpg"] }
 ];
+
+/* Social media portfolio, same order and content as /portfolio/#social (used by the family-care-plan resume). */
+(function(){
+  const W = window.RESUME_BASE.work;
+  W.socialDesigns = { label: "Graphic Design", blurb: "Social media posts, event posters, promos, videos and educational graphics designed to grab attention and build brand recognition.",
+    items: W.designs.items.slice(3) };
+  W.socialFeeds = { label: W.feeds.label, blurb: W.feeds.blurb, items: W.feeds.items.filter(it => !/Bali/.test(it.title)) };
+  W.socialBrand = { label: "Brand Identity Design", blurb: "Logos, promotional materials and visual identity elements for a consistent, professional brand across digital platforms (Landscaping Services in Australia).",
+    items: ["logo-kerbing-king-wordmark.jpg", "logo-kerbing-king.png", "logo-kerbing-king-alt.jpg", "logo-kerbing-king-icon.jpg"].map(f => ({ src: f })) };
+  W.socialStrategy = { label: "Social Media Content Strategy via Notion", blurb: "Planning, scheduling and tracking Facebook & Instagram content for a wellness brand and a landscaping business.",
+    items: ["smm-content-plan.jpg", "smm-calendar.jpg", "smm-posting-schedule.jpg", "smm-analytics.jpg"].map(f => ({ src: f })) };
+  const S = window.RESUME_BASE.stats;
+  S.reached = { value: 44, suffix: "K", label: "People reached", note: "unique viewers" };
+  S.interactions = { value: 49, prefix: "+", suffix: "%", label: "Interactions", note: "1.1K in the last 28 days" };
+})();

@@ -635,6 +635,8 @@ function stacked(k){
       ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}${it.phone ? `<p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>` : ""}</div>`).join("")}</div>`;
 }
 const WB = {
+  socialDesigns: n => `<h2 class="title wsub">${esc(B.work.socialDesigns.label)}</h2><p class="blurb">${esc(B.work.socialDesigns.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("socialDesigns")}`,
+  socialFeeds: n => stacked("socialFeeds"),
   designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic designs I create")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
   reels: n => {
     const w = B.work.reels, c = w.items.length;
