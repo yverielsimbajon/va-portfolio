@@ -183,5 +183,28 @@ window.RESUME_JOBS = {
     workTitle: "Social media work I do",
     portfolioLabel: "View my Portfolio",
     emailSubject: "ENGAGEMENT PRO"
+  },
+  "photogenic-au": {
+    label: "Lead Generation & Sponsorship Outreach VA (Miss Photogenic Australia 2027)",
+    headline: "Lead Generation & Sponsorship Outreach VA",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Lead Research · Recruitment Outreach · Sponsorship · Follow-Up · Weekly Reports",
+    tagline: "",
+    photo: "pageant-crown.webp",
+    aboutPics: ["pageant-crown.webp", "pageant-gown.webp", "pageant-sash-closeup.webp", "about-portrait.jpg"],
+    summary: "Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, with hands-on lead generation and outreach: I built a 1,400+ contact lead database, supported LinkedIn outreach and discovery calls, followed up with people who had not replied, and kept accurate lead records with a weekly progress update. I am also Miss Philippines Earth Mindanao-Water 2022 and have judged pageants, so I understand modelling and pageants from the inside. Excellent written and spoken English, and I work independently towards targets.",
+    keywords: ["lead generation", "recruitment", "sponsorship", "outreach", "prospective contestants", "contestants", "modelling", "fashion", "beauty", "events", "photography", "community organisations", "follow up", "follow-up", "follow-ups", "sponsors", "leads", "records of leads", "communications", "weekly updates", "weekly update", "written and spoken English", "social media outreach", "email communication", "independently", "measurable targets", "research", "relationship-building"],
+    focus: ["leads", "social", "english", "admin", "support", "crm"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    workBlocks: ["pageant", "pageantJudge"],
+    workCards: ["pgLeads", "pgFollow", "pgReports"],
+    workIntro: "Real work matched to what you asked for: lead research, outreach and follow-up, and accurate records with a weekly update. Tap a picture to enlarge it.",
+    resultsShots: "none",
+    resultsNote: "Lead research, outreach and reporting I handle every day.",
+    stats: ["leads", "years", "events", "calendars"],
+    workTitle: "Pageant and modelling background",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Miss Photogenic Australia 2027 - Lead Generation & Sponsorship VA"
   }
 };

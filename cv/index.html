@@ -541,7 +541,7 @@ $("#hRole").textContent = J.headline; $("#hSub").textContent = J.sub;
 if (J.headlinePill) $("#hRole").classList.add("pill");
 if (J.headlineBadge){ const row = document.createElement("div"); row.className = "rolerow"; $("#hRole").before(row); row.appendChild($("#hRole")); const b = document.createElement("span"); b.className = "yrs"; b.textContent = J.headlineBadge; row.appendChild(b); }
 if (J.hideSummary) $("#hSum").hidden = true; else $("#hSum").innerHTML = hl(esc(J.summary));
-$("#photo").src = B.photo2;
+$("#photo").src = J.photo ? IMG + J.photo : B.photo2;
 const subject = encodeURIComponent(J.emailSubject || "Hiring a Virtual Assistant");
 const mail = "mailto:" + B.email + "?subject=" + subject;
 const wa = "https://wa.me/" + B.wa + "?text=" + encodeURIComponent("Hi Maria, " + (J.label ? "about " + J.label + ": " : "") + "I saw your resume.");
@@ -698,7 +698,7 @@ S.skills = () => {
     <div class="sgroups">${B.skills.map(g => `<div class="sg card"><h3>${esc(g.group)}</h3><div class="tools">${g.items.map(t => `<button class="tool ${starred.has(t.toLowerCase()) ? "star" : ""}" type="button" aria-pressed="false" data-tool="${esc(t)}">${esc(t)}</button>`).join("")}</div></div>`).join("")}</div></div></section>`;
 };
 
-const ABOUT_PICS = ["about-portrait.jpg", "about-engineer.jpg", "about-graduation.jpg", "about-field.jpg"];
+const ABOUT_PICS = J.aboutPics || ["about-portrait.jpg", "about-engineer.jpg", "about-graduation.jpg", "about-field.jpg"];
 S.why = () => `<section class="block" id="why"><div class="wrap about">
   <div class="gal"><img id="galMain" src="${IMG + ABOUT_PICS[0]}" alt="Maria Simbajon">
     <div class="gthumbs">${ABOUT_PICS.map((p, i) => `<button type="button" data-gal="${i}" aria-pressed="${i === 0}" aria-label="Show photo ${i + 1}"><img src="${IMG + p}" alt="" loading="lazy"></button>`).join("")}</div></div>
