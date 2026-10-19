@@ -143,5 +143,25 @@ window.RESUME_JOBS = {
     workTitle: "Graphic design: graphics and promotional posts I create",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Social Media Manager (Cupcake Brand)"
+  },
+  "family-care-plan": {
+    label: "Social Media Assistant, Family Care Plan",
+    headline: "Social Media Assistant (AI-Savvy)",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Reels in CapCut · Canva Carousels · Hooks & Captions · Scheduling · Viral Research",
+    tagline: "",
+    summary: "Reliable, detail-minded Social Media Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe. I edit Reels and short-form video in CapCut, design branded graphics and carousels in Canva, write hooks and captions that sound human, and schedule across Instagram and Facebook with Meta Business Suite. I grew a client's post views 50% to 265K and followers 147% in 90 days, and I log research and results in spreadsheets every day. I follow rules and approval steps exactly, send honest updates, and tell you early if a deadline is at risk. Based in the Philippines, with stable fiber internet and backup power.",
+    keywords: ["Reels", "short-form video", "CapCut", "Canva", "carousels", "hooks", "captions", "Claude", "ChatGPT", "human", "viral research", "spreadsheet", "Instagram", "TikTok", "Facebook", "Meta Business Suite", "Metricool", "schedule", "scheduling", "approval", "weekly report", "reliable", "honest", "feedback", "excellent written English", "backup plan"],
+    focus: ["social", "design", "english", "admin", "support", "leads"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    workBlocks: ["reels", "designs", "smm", "feeds"],
+    workIntro: "Real work matched to what you asked for: Reels in CapCut, Canva designs, content planning, a consistent feed and tracked results. Tap a picture to enlarge it.",
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Reels and Canva designs I create",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "CARE - Social Media Assistant (AI-Savvy)"
   }
 };
