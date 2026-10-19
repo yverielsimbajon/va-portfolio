@@ -163,5 +163,25 @@ window.RESUME_JOBS = {
     workTitle: "Reels and Canva designs I create",
     portfolioLabel: "View my Portfolio",
     emailSubject: "CARE - Social Media Assistant (AI-Savvy)"
+  },
+  "hids-engagement": {
+    label: "Facebook Ad Engagement Moderator, Hids Group",
+    headline: "Social Media Engagement & Comment Moderator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Facebook & Instagram Comments · Community Management · Friendly Replies · Spam Control",
+    tagline: "",
+    summary: "Responsive, reliable Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe. I reply to comments and messages on Facebook and Instagram in a friendly, professional tone, keep inboxes and pages clean, and flag important issues to the team. I grew a client's post views 50% to 265K and followers 147% in 90 days. Excellent written English, stable fiber internet with backup power, and I work independently.",
+    keywords: ["comments", "comment management", "community management", "Facebook", "Instagram", "ads", "reply", "questions", "friendly", "professional", "spam", "flag", "complaints", "templates", "written English", "responsive", "reliable", "independently", "stable internet"],
+    focus: ["social", "support", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    workBlocks: ["socialDesigns", "socialFeeds", "socialStrategy"],
+    workIntro: "Real work matched to what you asked for: Facebook and Instagram content, replying to comments and messages, and tracked results. Tap a picture to enlarge it.",
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Social media work I do",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "ENGAGEMENT PRO"
   }
 };
