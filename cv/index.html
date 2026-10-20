@@ -171,6 +171,7 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .ptrack{display:flex;height:100%;cursor:zoom-in;transition:transform .7s cubic-bezier(.45,.05,.25,1)}
 .pslide{display:flex;flex:0 0 100%;align-items:center;justify-content:center;padding:22px 26px 34px}
 .pslide img{display:block;max-width:100%;max-height:100%;background:#fff;border-radius:10px;box-shadow:0 14px 34px rgba(17,76,89,.18),0 2px 6px rgba(17,76,89,.08);transition:transform .6s var(--ease)}
+.pcard.tall .pmedia{aspect-ratio:4/5}.pcard.tall .pslide{padding:0}.pcard.tall .pslide img{width:100%;height:100%;object-fit:cover;border-radius:0;box-shadow:none}
 .pcard:hover .pslide img{transform:scale(1.03)}
 .pbtn{position:absolute;z-index:2;display:grid;width:40px;height:40px;padding:0;color:var(--primary);place-items:center;background:rgba(255,255,255,.95);border:1px solid rgba(11,110,127,.12);border-radius:50%;box-shadow:0 6px 16px rgba(9,24,34,.14);transition:background .25s,color .25s,transform .25s var(--ease)}
 .pbtn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -583,7 +584,7 @@ S.results = () => {
 
 function caseCard(k){
   const c = B.cases[k], imgs = c.images, many = imgs.length > 1;
-  return `<article class="pcard" data-case="${k}">
+  return `<article class="pcard${c.tall ? " tall" : ""}" data-case="${k}">
     <div class="pmedia"><div class="ptrack" role="button" tabindex="0" aria-label="Open ${esc(c.title)} pictures">${imgs.map((f, i) => `<div class="pslide"><img src="${IMG + f}" alt="${i === 0 ? esc(c.title) : ""}" loading="lazy" decoding="async"></div>`).join("")}</div>
       <button class="pbtn pzoom" type="button" aria-label="View larger"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m20 20-4.2-4.2M11 8v6M8 11h6"/></svg></button>
       ${many ? `<button class="pbtn pprev" type="button" aria-label="Previous picture"><svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg></button><button class="pbtn pnext" type="button" aria-label="Next picture"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
