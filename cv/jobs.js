@@ -215,7 +215,7 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Bookings · Client Enquiries · Follow-Ups · CRM · Reception Support",
     tagline: "",
-    summary: "Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including 3 years of marketing and client support for beauty and aesthetic brands (Blanche Butuan Aesthetic Clinic, Amazing Beauty Skincare, Vitacel Products) and a wellness brand in Australia today. I manage bookings and appointments, answer client enquiries by email, Messenger and the CRM, handle reschedules, confirmations and reminders, and keep client and booking records accurate in GoHighLevel. Excellent written and spoken English, reliable internet, and I want a stable long-term role.",
+    summary: "Virtual Assistant with 5+ years of experience, including 3 years supporting beauty and aesthetic brands. I manage bookings, client enquiries and follow-ups, and keep every record accurate in GoHighLevel. Excellent English, and I want a stable long-term role.",
     keywords: ["beauty", "wellness", "aesthetic", "salon", "spa", "bookings", "appointments", "booking", "client bookings", "customer enquiries", "enquiries", "rescheduling", "cancellations", "appointment confirmations", "follow up", "follow-up", "follow-ups", "client records", "booking records", "CRM", "booking systems", "customer service", "reception", "promotions", "administration", "Microsoft", "Google", "written and spoken English", "attention to detail", "long-term", "Zenoti"],
     focus: ["support", "admin", "crm", "english", "leads", "social"],
     order: ["beauty", "results", "work", "experience", "skills", "why", "contact"],
