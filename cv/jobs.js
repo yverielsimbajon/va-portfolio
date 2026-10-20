@@ -257,7 +257,7 @@ window.RESUME_JOBS = {
     focus: ["leads", "crm", "english", "admin", "support", "social"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
     workBlocks: [],
-    workCards: ["engPlanning", "engSurvey", "pgLeads", "engPageant", "pgFollow", "pgReports"],
+    workCards: ["engPlanning", "engSurvey", "bdmLeads", "engPageant", "pgFollow", "pgReports"],
     workIntro: "Real work matched to what you asked for: engineering project experience, prospect research, outreach and follow-up, booking meetings, and accurate records with a weekly report. Tap a picture to enlarge it.",
     resultsShots: "none",
     resultsNote: "Prospect research, follow-up and reporting I handle every day.",
