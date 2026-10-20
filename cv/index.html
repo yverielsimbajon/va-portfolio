@@ -827,7 +827,7 @@ document.addEventListener("click", e => {
 
 // ---- intro video: plays on its own with sound if the browser allows it, YouTube-style controls, nothing covers the captions
 const iv = $("#introVideo"), vc = $("#vc"), seek = $("#seek"), ptime = $("#ptime");
-iv.poster = B.intro.poster; iv.src = B.intro.video;
+const INTRO = J.intro || B.intro; iv.poster = INTRO.poster; iv.src = INTRO.video;
 const ICON_MUTE = '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="m23 9-6 6M17 9l6 6"/>', ICON_SOUND = '<path d="M11 5 6 9H2v6h4l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/>';
 const fmt = t => { t = Math.max(0, Math.floor(t || 0)); return Math.floor(t / 60) + ":" + String(t % 60).padStart(2, "0"); };
 let userPaused = false, userMuted = false, dragging = false, hideT, started = false;
