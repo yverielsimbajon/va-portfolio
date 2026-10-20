@@ -208,6 +208,37 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Miss Photogenic Australia 2027 - Lead Generation & Sponsorship VA"
   },
+  "beauty-va": {
+    label: "Virtual Assistant, Beauty Industry (Philippines, full-time)",
+    headline: "Beauty & Wellness Virtual Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Bookings · Client Enquiries · Follow-Ups · CRM · Reception Support",
+    tagline: "",
+    summary: "Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including 3 years of marketing and client support for beauty and aesthetic brands (Blanche Butuan Aesthetic Clinic, Amazing Beauty Skincare, Vitacel Products) and a wellness brand in Australia today. I manage bookings and appointments, answer client enquiries by email, Messenger and the CRM, handle reschedules, confirmations and reminders, and keep client and booking records accurate in GoHighLevel. Excellent written and spoken English, reliable internet, and I want a stable long-term role.",
+    keywords: ["beauty", "wellness", "aesthetic", "salon", "spa", "bookings", "appointments", "booking", "client bookings", "customer enquiries", "enquiries", "rescheduling", "cancellations", "appointment confirmations", "follow up", "follow-up", "follow-ups", "client records", "booking records", "CRM", "booking systems", "customer service", "reception", "promotions", "administration", "Microsoft", "Google", "written and spoken English", "attention to detail", "long-term", "Zenoti"],
+    focus: ["support", "admin", "crm", "english", "leads", "social"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    workTabs: ["crm", "admin", "designs", "results", "websites", "reels"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Previous experience in the beauty, salon, spa or wellness industry", proof: "3 years (Jul 2022 – Sep 2025) as Marketing Representative for Blanche Butuan Aesthetic Clinic, Amazing Beauty Skincare and Vitacel Products, plus a wellness brand in Australia today. I have not worked inside a salon or spa as a therapist or receptionist.", status: "yes" },
+      { req: "Manage and update client bookings and appointments", proof: "I manage bookings across 61 GoHighLevel calendars and 200+ calendar events, with accurate notes on each one.", status: "yes", tab: "admin", cta: "See the booking work" },
+      { req: "Respond to enquiries by email and online channels (and phone)", proof: "I answer client enquiries by email, Messenger and the CRM every day, with booking links and reminders. Phone support is not something I have done much of yet, and I am happy to practise it.", status: "yes", tab: "crm", cta: "See real enquiries" },
+      { req: "Rescheduling, cancellations, confirmations and follow-ups", proof: "I send follow-ups, confirmations and reminders by email and SMS in GoHighLevel and track who has confirmed, which reduces missed appointments.", status: "yes", tab: "crm", cta: "See my follow-up workflows" },
+      { req: "Accurate client and booking records across booking and CRM systems", proof: "GoHighLevel daily, plus Zoho CRM and HubSpot, with a 1,400+ contact database and a daily update to the owner.", status: "yes", tab: "crm", cta: "See my CRM records" },
+      { req: "Experience with a salon booking system (Zenoti, Fresha, Timely, Kitomba, Mindbody)", proof: "I have used GoHighLevel's booking calendars, not Zenoti or the others. Booking logic is the same, and I would learn Zenoti properly from day one.", status: "learn", tab: "admin", cta: "See my booking calendars" },
+      { req: "Assist with promotions and service information", proof: "I design promos, vouchers and posts in Canva and ran social media for beauty and wellness brands: post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Excellent written and spoken English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Confidence with email, online systems, Microsoft and Google apps", proof: "Google Workspace, Microsoft Office, Notion, Trello and Asana, with daily and weekly reports.", status: "yes" },
+      { req: "Reliable internet and a suitable home working environment", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" },
+      { req: "A stable, long-term role", proof: "That is what I want too. I have supported the same clients for months and stay on as ongoing support.", status: "yes" }
+    ],
+    workTitle: "Booking, CRM and client support work",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Virtual Assistant, Beauty Industry application"
+  },
   "bdm-anz": {
     label: "Business Development (Engineering & Construction, Australia and New Zealand)",
     headline: "Business Development & Lead Generation",
