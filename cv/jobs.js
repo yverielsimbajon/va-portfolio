@@ -247,7 +247,7 @@ window.RESUME_JOBS = {
     headline: "Business Development & Lead Generation",
     headlinePill: true,
     headlineBadge: "5+ Years",
-    crown: { photo: "eng-hardhat.webp", icon: "&#9937;", text: "Civil Engineering graduate and project intern at a planning office" },
+    crown: { photo: "eng-hero-hardhat.webp", photo2: "eng-hero-grad.webp", icon: "&#9937;", text: "Civil Engineering graduate and project intern at a planning office" },
     aboutPics: ["eng-hardhat.webp", "eng-survey.webp", "eng-ojt-cert.webp", "eng-office.webp"],
     sub: "Engineering & Construction · Prospect Research · LinkedIn & Email Outreach · CRM · Follow-Up",
     tagline: "",
