@@ -218,23 +218,26 @@ window.RESUME_JOBS = {
     summary: "Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including 3 years of marketing and client support for beauty and aesthetic brands (Blanche Butuan Aesthetic Clinic, Amazing Beauty Skincare, Vitacel Products) and a wellness brand in Australia today. I manage bookings and appointments, answer client enquiries by email, Messenger and the CRM, handle reschedules, confirmations and reminders, and keep client and booking records accurate in GoHighLevel. Excellent written and spoken English, reliable internet, and I want a stable long-term role.",
     keywords: ["beauty", "wellness", "aesthetic", "salon", "spa", "bookings", "appointments", "booking", "client bookings", "customer enquiries", "enquiries", "rescheduling", "cancellations", "appointment confirmations", "follow up", "follow-up", "follow-ups", "client records", "booking records", "CRM", "booking systems", "customer service", "reception", "promotions", "administration", "Microsoft", "Google", "written and spoken English", "attention to detail", "long-term", "Zenoti"],
     focus: ["support", "admin", "crm", "english", "leads", "social"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
-    workTabs: ["crm", "admin", "designs", "results", "websites", "reels"],
-    matchTitle: "Your list, my proof",
-    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
-    match: [
-      { req: "Previous experience in the beauty, salon, spa or wellness industry", proof: "3 years (Jul 2022 – Sep 2025) as Marketing Representative for Blanche Butuan Aesthetic Clinic, Amazing Beauty Skincare and Vitacel Products, plus a wellness brand in Australia today. I have not worked inside a salon or spa as a therapist or receptionist.", status: "yes" },
-      { req: "Manage and update client bookings and appointments", proof: "I manage bookings across 61 GoHighLevel calendars and 200+ calendar events, with accurate notes on each one.", status: "yes", tab: "admin", cta: "See the booking work" },
-      { req: "Respond to enquiries by email and online channels (and phone)", proof: "I answer client enquiries by email, Messenger and the CRM every day, with booking links and reminders. Phone support is not something I have done much of yet, and I am happy to practise it.", status: "yes", tab: "crm", cta: "See real enquiries" },
-      { req: "Rescheduling, cancellations, confirmations and follow-ups", proof: "I send follow-ups, confirmations and reminders by email and SMS in GoHighLevel and track who has confirmed, which reduces missed appointments.", status: "yes", tab: "crm", cta: "See my follow-up workflows" },
-      { req: "Accurate client and booking records across booking and CRM systems", proof: "GoHighLevel daily, plus Zoho CRM and HubSpot, with a 1,400+ contact database and a daily update to the owner.", status: "yes", tab: "crm", cta: "See my CRM records" },
-      { req: "Experience with a salon booking system (Zenoti, Fresha, Timely, Kitomba, Mindbody)", proof: "I have used GoHighLevel's booking calendars, not Zenoti or the others. Booking logic is the same, and I would learn Zenoti properly from day one.", status: "learn", tab: "admin", cta: "See my booking calendars" },
-      { req: "Assist with promotions and service information", proof: "I design promos, vouchers and posts in Canva and ran social media for beauty and wellness brands: post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "designs", cta: "See my designs" },
-      { req: "Excellent written and spoken English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
-      { req: "Confidence with email, online systems, Microsoft and Google apps", proof: "Google Workspace, Microsoft Office, Notion, Trello and Asana, with daily and weekly reports.", status: "yes" },
-      { req: "Reliable internet and a suitable home working environment", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" },
-      { req: "A stable, long-term role", proof: "That is what I want too. I have supported the same clients for months and stay on as ongoing support.", status: "yes" }
-    ],
+    order: ["beauty", "results", "work", "experience", "skills", "why", "contact"],
+    expOrder: ["mk", "ls", "eo", "kk", "fl", "as"],
+    beauty: {
+      eyebrow: "Beauty industry experience",
+      title: "What you asked me to include",
+      lede: "Straight answers to your five application points, including what I have not done yet.",
+      cards: [
+        { k: "1 · Beauty experience", h: "3 years in beauty and aesthetics, plus a wellness brand today", items: ["Jul 2022 – Sep 2025: Marketing Representative for Blanche Butuan Aesthetic Clinic, Amazing Beauty Skincare and Vitacel Products (Philippines)", "Handled client enquiries, bookings and follow-ups, and represented the brands at events and promotions", "Jan 2026 – now: VA for a wellness brand in Australia, managing its bookings, CRM and client enquiries"], note: "My experience is on the marketing and client-support side, not as a salon receptionist or therapist." },
+        { k: "2 · Booking systems", h: "GoHighLevel bookings, ready to learn Zenoti", items: ["GoHighLevel: 61 booking calendars, 200+ calendar events, confirmations and reminders by email and SMS", "Google Calendar, Zoho CRM and HubSpot for client and booking records", "Not used yet: Zenoti, Fresha, Timely, Kitomba or Mindbody. I would learn Zenoti properly from day one."] },
+        { k: "3 · Types of beauty businesses", h: "Clinic, skincare and wellness", items: ["Aesthetic clinic (Blanche Butuan Aesthetic Clinic)", "Skincare and beauty products (Amazing Beauty Skincare, Vitacel Products)", "Wellness brand in Australia (sessions, events and bookings)"] },
+        { k: "4 · Day-to-day I can run", h: "Bookings, enquiries and records", items: ["Book, reschedule and cancel appointments and send confirmations", "Reply to enquiries by email, Messenger and online chat", "Keep client and booking records accurate, with a daily update to the owner"], note: "Phone support is not something I have done much of yet, and I am happy to practise it." },
+        { k: "5 · Why me", h: "Reliable, detail-minded and here for the long term", p: "I have supported the same clients for months, I write clear, friendly English, I check every booking twice, and I have a stable setup: 65 Mbps fiber, backup Wi-Fi, laptop and power. I want a stable role where I can grow with the business." }
+      ]
+    },
+    workBlocks: [],
+    workCards: ["ghlConvos", "ghlBooking", "pgFollow", "ghlPipeline", "plushEmail"],
+    workIntro: "Real booking, enquiry and follow-up work for a wellness brand, matched to what you asked for. Tap a picture to enlarge it.",
+    resultsShots: "none",
+    resultsNote: "Bookings, follow-ups and reporting I handle every day.",
+    stats: ["calendars", "events", "years", "views"],
     workTitle: "Booking, CRM and client support work",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Virtual Assistant, Beauty Industry application"
