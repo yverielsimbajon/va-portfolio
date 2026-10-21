@@ -338,5 +338,37 @@ window.RESUME_JOBS = {
     workTitle: "Graphic design I create for you (not AI)",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Virtual Assistant application - Alanah Mae Beauty Academy & Creative"
+  },
+  "admin-smm-sample": {
+    label: "Administrative & Social Media Assistant (sample)",
+    headline: "Administrative & Social Media Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Inbox & Calendar · Trackers · Canva · Reels · Meta Business Suite · Weekly Reports",
+    tagline: "",
+    summary: "Organised, reliable Administrative and Social Media Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe. I manage inboxes, calendars and trackers, plan and schedule content on Facebook and Instagram, design graphics in Canva, edit Reels in CapCut, and send a clear weekly update. I grew a client's post views 50% to 265K and followers 147% in 90 days. Excellent written English, and I work independently.",
+    keywords: ["Administrative", "Social Media Assistant", "inbox", "calendar", "scheduling", "trackers", "spreadsheets", "Google Workspace", "Canva", "CapCut", "Reels", "Facebook", "Instagram", "Meta Business Suite", "content calendar", "captions", "weekly update", "weekly report", "attention to detail", "written English", "independently", "reliable"],
+    focus: ["admin", "social", "design", "english", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Sample layout: replace each row with the exact lines from the job post. Tap a row for the proof.",
+    match: [
+      { req: "Manage email inbox and calendar", proof: "Calendar, inbox and scheduling for owners and a CEO, 200+ calendar events, plus weekly progress reports.", status: "yes", tab: "admin", cta: "See admin work" },
+      { req: "Keep trackers, spreadsheets and files organised", proof: "Trackers, deadlines and Google Drive records kept accurate for every client.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Plan and schedule posts on Facebook and Instagram", proof: "I plan, design and schedule posts every week with Meta Business Suite. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Design graphics in Canva", proof: "Posters, promos, carousels and event graphics in Canva for several brands.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Edit short videos and Reels", proof: "I edit Reels and short-form video in CapCut.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Paid ads (if listed)", proof: "Running paid ads for you is new for me, and I would learn your setup properly from day one.", status: "learn" },
+      { req: "Strong written English and attention to detail", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" }
+    ],
+    workBlocks: ["designs", "reels", "feeds"],
+    workCards: ["cdcTracker", "plushCalendar", "ghlUpdates"],
+    workIntro: "Real work matched to what you asked for: admin and trackers, Canva and Reels, content calendars and weekly updates. Tap a picture to enlarge it.",
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Admin and social media work I do",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Administrative & Social Media Assistant application"
   }
 };
