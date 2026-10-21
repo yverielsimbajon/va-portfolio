@@ -246,10 +246,10 @@ window.RESUME_JOBS = {
     label: "General Virtual Assistant (Recruitment Garage, Brisbane AU)",
     headline: "Your All-In-One Virtual Assistant",
     headlinePill: true,
-    headlineBadge: "RG",
+    headlineBadge: "5+ Years",
     sub: "Admin & Operations \u00b7 Marketing & Content \u00b7 Community Portal \u00b7 Research & Projects",
     tagline: "",
-    summary: "General Virtual Assistant with 5+ years supporting business owners in Australia, the US and Europe: admin, marketing content and research, with a daily update.",
+    summary: "General Virtual Assistant with 5+ years supporting business owners in Australia, the US and Europe: admin, task trackers and deadlines, marketing content, CRM follow-ups and online research, with a daily update. RG — I've read the full job post.",
     keywords: ["General Virtual Assistant", "organised", "dependable", "resourceful", "administration", "business operations", "routine emails", "client communications", "templates", "calendars", "deadlines", "task lists", "project trackers", "spreadsheets", "databases", "contact lists", "follow up", "follow-up", "follow-ups", "outstanding tasks", "Google Drive", "files", "folders", "documents", "invoices", "forms", "records", "recurring processes", "standard operating procedures", "SOPs", "LinkedIn", "LinkedIn outreach", "introductory messages", "recruitment agency founders", "marketing", "content", "social media", "email marketing", "blogs", "content calendars", "marketing trackers", "publishing schedules", "podcast", "video content", "editing tasks", "gathering assets", "organising files", "uploading", "publishing", "website pages", "landing pages", "links", "digital resources", "portal", "membership", "online courses", "course materials", "member access", "invitations", "registrations", "member questions", "enquiries", "routine queries", "live sessions", "workshops", "community events", "troubleshooting", "escalating", "online research", "findings", "projects", "marketing campaigns", "website updates", "monitor project progress", "testing new tools", "learning platforms", "improve existing processes", "reduce repetitive manual work", "highly organised", "reliable", "accountable", "proactive", "detail-oriented", "clear communicator", "adaptable", "tech-comfortable", "discreet", "confidential", "independent", "Google Workspace", "Gmail", "Google Docs", "Google Sheets", "CRM", "email marketing platforms", "project management software", "Canva", "Trello", "GHL", "GoHighLevel", "Riverside", "Descript", "Vimeo", "Brisbane", "eight-hour", "B2", "English proficiency", "RG"],
     focus: ["admin", "ops", "leads", "english", "support", "social", "web", "crm", "design"],
     order: ["results", "work", "beauty", "experience", "skills", "why", "contact"],
@@ -268,9 +268,12 @@ window.RESUME_JOBS = {
         { k: "6 \u00b7 Rate", h: "Yes \u2014 I accept $13 AUD per hour", p: "Full-time, on a Brisbane schedule, looking for a long-term role where I can take ownership and grow with the team." }
       ]
     },
-    workBlocks: ["admin", "crm", "websites", "smm"],
-    workCards: ["ghlLeads", "cdcTracker", "pgFollow", "pgReports"],
-    workIntro: "Real work matched to what you asked for: admin and automations, then websites I've built, then social media content, then lead data and operations. Tap a picture to enlarge it.",
+    workSections: [
+      { type: "intro", text: "Real work matched to what you asked for, proof first: admin and automations, then websites I've built, then social media and research. Tap a card or picture to see more." },
+      { type: "cards", keys: ["cdcTracker", "ghlWorkflows", "cdcFollow", "ghlBooking", "cdcUpdates"] },
+      { type: "block", key: "websites" },
+      { type: "cards", keys: ["plushCalendar", "cupCaptions", "ghlLeads", "pgReports"] }
+    ],
     resultsShots: "none",
     resultsNote: "Admin, automations, websites and content I handle every day.",
     stats: ["years", "events", "calendars", "leads"],
@@ -301,5 +304,39 @@ window.RESUME_JOBS = {
     workTitle: "Lead generation and CRM work I do",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Business Development Manager (ANZ) application"
+  },
+  "amb-va": {
+    label: "Virtual Assistant (Alanah Mae Beauty Academy & Alanah Mae Creative)",
+    headline: "Creative Virtual Assistant for Beauty Education",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    crown: { photo: "pageant-hero.webp", text: "I was crowned as Miss Philippines Earth Mindanao-Water 2022" },
+    sub: "Canva · CapCut · Instagram & Email · Notion · Student Admin · Thinkific",
+    tagline: "",
+    summary: "Creative, organised Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including graphic design and a beauty-and-pageant background. I design social media graphics and carousels and edit Reels in Canva and CapCut, respond to emails and Instagram enquiries, run email campaigns, and keep training packs, feedback forms and course resources organised, with a Notion content calendar and general admin (invoices, files) handled daily.",
+    keywords: ["Virtual Assistant", "Alanah Mae Beauty Academy", "Alanah Mae Creative", "Canva", "CapCut", "InShot", "Instagram Reels", "Reels", "carousel posts", "social media graphics", "Customer Communication", "emails", "Instagram enquiries", "outreach", "Email Marketing", "email campaigns", "Student Administration", "training packs", "feedback forms", "course resources", "follow-up emails", "Course Management", "Thinkific", "training manuals", "online course content", "Content Planning", "Notion", "content calendars", "General Administration", "invoices", "organising files", "beauty", "graphic design", "pageant", "National Pageant in Australia", "recruitment", "hourly rate", "weekly availability", "reliable", "creative", "long-term", "attention to detail", "written English"],
+    focus: ["design", "social", "admin", "english", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Content Creation: Reels, carousel posts and social media graphics in Canva, CapCut or InShot", proof: "I design posters, carousels and social graphics in Canva and edit Reels in CapCut for several brands.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Customer Communication: emails and Instagram enquiries, follow-ups, outreach", proof: "I reply to enquiries by email and Instagram, follow up with leads and run outreach and lead-generation, including for a National Pageant in Australia.", status: "yes", tab: "crm", cta: "See the lead work" },
+      { req: "Email Marketing: creating and scheduling email campaigns", proof: "I write and schedule email and text marketing campaigns for a wellness brand.", status: "yes" },
+      { req: "Student Administration: training packs, follow-up emails, feedback forms, course resources", proof: "I organise records, send follow-ups and keep files and resources tracked and up to date for every client.", status: "yes" },
+      { req: "Course Management: Thinkific", proof: "New for me — I would learn Thinkific properly from day one, the way I picked up GoHighLevel.", status: "learn" },
+      { req: "Content Planning: content calendars in Notion", proof: "I built a Notion hub for content calendars, planning and SOPs, used daily for a wellness brand.", status: "yes", tab: "crm", cta: "See my content planning" },
+      { req: "General Administration: invoices, files, day-to-day tasks", proof: "Invoices, organised Google Drive files and daily admin for business owners.", status: "yes" },
+      { req: "An interest in beauty and social media is a bonus", proof: "I am a crowned pageant titleholder and former pageant judge, plus a graphic designer, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant background" }
+    ],
+    workBlocks: ["designs", "reels", "pageant", "pageantJudge"],
+    workCards: ["plushEmail", "cdcTracker", "engPageant"],
+    workIntro: "Real work matched to what you asked for: Canva and CapCut content, email and Instagram communication, Notion content planning, and my beauty-pageant and graphic design background. Tap a picture to enlarge it.",
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic design, Reels and pageant background",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Virtual Assistant application - Alanah Mae Beauty Academy & Creative"
   }
 };
