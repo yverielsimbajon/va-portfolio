@@ -597,10 +597,10 @@ S.results = () => {
   return `<section class="block" id="results"><div class="wrap">
     <div class="eyebrow">Results</div><h2 class="title">Numbers from real client work</h2>
     <p class="lede">${sk === "none" ? "The numbers behind my daily CRM and admin work." : "Facebook insights from a client page and my CRM work. Tap a screenshot to zoom."}</p>
-    <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
-    ${sk === "none" ? "" : `<h3 class="shots-title">Real Screenshots. Real Results.</h3>
+    ${sk === "none" ? "" : `<h3 class="shots-title" style="margin-top:6px">Real Screenshots. Real Results.</h3>
     <div class="rmarq" id="rmarq"><div class="rtrack">${one(false)}${one(true)}</div></div>
-    <p class="hint" style="margin-top:6px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.")}</p>`}
+    <p class="hint" style="margin:6px 0 26px">${esc(J.resultsNote || "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.")}</p>`}
+    <div class="stats">${keys.map(k => { const s = B.stats[k]; return `<div class="stat card"><div class="n" data-to="${s.value}" data-pre="${esc(s.prefix || "")}" data-suf="${esc(s.suffix || "")}">0</div><div class="l">${esc(s.label)}</div><div class="s">${esc(s.note)}</div></div>`; }).join("")}</div>
   </div></section>`;
 };
 
