@@ -346,7 +346,8 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Inbox & Calendar · Trackers · Canva · Reels · Meta Business Suite · Weekly Reports",
     tagline: "",
-    summary: "Organised, reliable Administrative and Social Media Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe. I manage inboxes, calendars and trackers, plan and schedule content on Facebook and Instagram, design graphics in Canva, edit Reels in CapCut, and send a clear weekly update. I grew a client's post views 50% to 265K and followers 147% in 90 days. Excellent written English, and I work independently.",
+    codeWord: "JOB",
+    summary: "Organised, reliable Administrative and Social Media Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe. I manage inboxes, calendars and trackers, design and schedule content in Canva and CapCut, and send a clear weekly update. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
     keywords: ["Administrative", "Social Media Assistant", "inbox", "calendar", "scheduling", "trackers", "spreadsheets", "Google Workspace", "Canva", "CapCut", "Reels", "Facebook", "Instagram", "Meta Business Suite", "content calendar", "captions", "weekly update", "weekly report", "attention to detail", "written English", "independently", "reliable"],
     focus: ["admin", "social", "design", "english", "support"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
@@ -361,13 +362,22 @@ window.RESUME_JOBS = {
       { req: "Paid ads (if listed)", proof: "Running paid ads for you is new for me, and I would learn your setup properly from day one.", status: "learn" },
       { req: "Strong written English and attention to detail", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" }
     ],
-    workBlocks: ["designs", "reels", "feeds"],
-    workCards: ["cdcTracker", "plushCalendar", "ghlUpdates"],
-    workIntro: "Real work matched to what you asked for: admin and trackers, Canva and Reels, content calendars and weekly updates. Tap a picture to enlarge it.",
+    workSections: [
+      { type: "cards", part: "admin", keys: ["cdcTracker", "plushCalendar", "ghlUpdates"] },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" }
+    ],
+    workHeads: {
+      admin:   { label: "Administrative Support", title: "Admin That Keeps Business Organized.", text: "Trackers, calendars, content calendars and weekly updates that keep every day running smoothly." },
+      designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Facebook and Instagram." },
+      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
+      feeds:   { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
+    },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
-    workTitle: "Admin and social media work I do",
+    workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Administrative & Social Media Assistant application"
   }
