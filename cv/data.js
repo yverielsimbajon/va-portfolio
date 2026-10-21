@@ -185,7 +185,10 @@ window.RESUME_BASE = {
       tools: ["Google Docs", "Google Sheets", "Notion", "Gmail"], images: ["weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg"] },
     plushLibrary: { category: "Organization & Reporting", resp: "I maintain an organized digital library of photos, videos and graphics, and send brief weekly updates.", title: "Organized digital library & weekly updates on Google Drive and Notion", clients: ["Wellness Brand in Australia", "Landscaping Services in Australia"],
       challenge: "Photos, graphics and plans were scattered, and owners kept asking for updates.", solution: "I organized files in one library, documented the content plan in a Notion hub, and sent a brief weekly update on completed work, upcoming content and recommendations.", result: "I gave owners one place to find everything and no need to chase updates.",
-      tools: ["Google Drive", "Notion", "Google Docs"], images: ["weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg"] }
+      tools: ["Google Drive", "Notion", "Google Docs"], images: ["weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg"] },
+    ambAdmin: { category: "General Administration", resp: "I track payment records, organise files and handle day-to-day business tasks for my clients.", title: "Payment records, organised files & day-to-day admin on GoHighLevel and Google Drive", clients: ["Wellness Brand in Australia"],
+      challenge: "Payment records, product files and daily tasks were spread across different places, so nothing was easy to find.", solution: "I track every order and payment in GoHighLevel, organise files and records in Google Drive, and handle daily admin tasks like updates and reminders.", result: "I keep business records accurate and organised, so nothing gets lost or missed.",
+      tools: ["GoHighLevel", "Google Drive", "Google Docs", "Google Sheets"], images: ["ghl-orders.jpg", "ghl-products.jpg"] }
   },
 
   work: {

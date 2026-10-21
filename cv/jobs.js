@@ -310,10 +310,11 @@ window.RESUME_JOBS = {
     headline: "Creative Virtual Assistant for Beauty Education",
     headlinePill: true,
     headlineBadge: "5+ Years",
+    crown: { photo: "pageant-portal-blurred.webp", shot: true, icon: "&#128203;", alt: "Maria Simbajon's Staff Portal for a National Pageant in Australia, pageant name blurred", text: "I am a recruiter and coordinator in a National Pageant within Australia" },
     sub: "Canva · CapCut · Instagram & Email · Notion · Student Admin · Thinkific",
     tagline: "",
-    summary: "Creative, organised Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including graphic design work and recruitment for a National Pageant in Australia, where I respond daily to contestants and applicants. I design social media graphics and carousels and edit Reels in Canva and CapCut, respond to emails and Instagram enquiries, run email campaigns, and keep training packs, feedback forms and course resources organised, with a Notion content calendar and general admin (invoices, files) handled daily.",
-    keywords: ["Virtual Assistant", "Alanah Mae Beauty Academy", "Alanah Mae Creative", "Canva", "CapCut", "InShot", "Instagram Reels", "Reels", "carousel posts", "social media graphics", "Customer Communication", "emails", "Instagram enquiries", "outreach", "Email Marketing", "email campaigns", "Student Administration", "training packs", "feedback forms", "course resources", "follow-up emails", "Course Management", "Thinkific", "training manuals", "online course content", "Content Planning", "Notion", "content calendars", "General Administration", "invoices", "organising files", "beauty", "graphic design", "graphic designer", "pageant", "National Pageant in Australia", "recruiter", "recruitment", "contestants", "applicants", "hourly rate", "weekly availability", "reliable", "creative", "long-term", "attention to detail", "written English"],
+    summary: "Creative, organised Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including graphic design work and recruitment and coordination for a National Pageant in Australia, where I respond daily to contestants and applicants. I design social media graphics and carousels and edit Reels in Canva and CapCut, respond to emails and Instagram enquiries, run email campaigns, and keep training packs, feedback forms and course resources organised, with a Notion content calendar and general admin (invoices, files) handled daily.",
+    keywords: ["Virtual Assistant", "Alanah Mae Beauty Academy", "Alanah Mae Creative", "Canva", "CapCut", "InShot", "Instagram Reels", "Reels", "carousel posts", "social media graphics", "Customer Communication", "emails", "Instagram enquiries", "outreach", "Email Marketing", "email campaigns", "Student Administration", "training packs", "feedback forms", "course resources", "follow-up emails", "Course Management", "Thinkific", "training manuals", "online course content", "Content Planning", "Notion", "content calendars", "General Administration", "invoices", "organising files", "beauty", "graphic design", "graphic designer", "pageant", "National Pageant in Australia", "recruiter", "coordinator", "recruitment", "contestants", "applicants", "hourly rate", "weekly availability", "reliable", "creative", "long-term", "attention to detail", "written English"],
     focus: ["design", "social", "admin", "english", "support"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
     matchTitle: "Your list, my proof",
@@ -326,15 +327,15 @@ window.RESUME_JOBS = {
       { req: "Course Management: Thinkific", proof: "New for me — I would learn Thinkific properly from day one, the way I picked up GoHighLevel.", status: "learn" },
       { req: "Content Planning: content calendars in Notion", proof: "I built a Notion hub for content calendars, planning and SOPs, used daily for a wellness brand.", status: "yes", tab: "crm", cta: "See my content planning" },
       { req: "General Administration: invoices, files, day-to-day tasks", proof: "Invoices, organised Google Drive files and daily admin for business owners.", status: "yes" },
-      { req: "An interest in beauty and social media is a bonus", proof: "More than an interest: I am a recruiter for a National Pageant in Australia, responding to contestants and applicants every day, and graphic design is part of my daily work too, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant recruitment work" }
+      { req: "An interest in beauty and social media is a bonus", proof: "More than an interest: I am a recruiter and coordinator for a National Pageant in Australia, responding to contestants and applicants every day, and graphic design is part of my daily work too, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant recruiter portal" }
     ],
     workBlocks: ["designs", "reels", "feeds"],
-    workCards: ["plushEmail", "cdcTracker", "engPageant"],
-    workIntro: "Real work matched to what you asked for: Canva and CapCut content, email and Instagram communication, Notion content planning, and my work as a National Pageant in Australia recruiter. Tap a picture to enlarge it.",
+    workCards: ["plushEmail", "cdcTracker", "ambAdmin"],
+    workIntro: "Real work matched to what you asked for: Canva and CapCut content, email and Instagram communication, Notion content planning, and day-to-day admin. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
-    workTitle: "Graphic design, Reels and pageant recruitment I do",
+    workTitle: "Graphic design I create for you (not AI)",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Virtual Assistant application - Alanah Mae Beauty Academy & Creative"
   }

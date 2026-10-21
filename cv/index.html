@@ -60,6 +60,8 @@ mark{background:none;color:var(--primary-dark);font-weight:600;padding:0}
 .crownrow[hidden]{display:none}
 .crownrow{display:flex;align-items:center;gap:22px;margin-top:16px;flex-wrap:wrap}
 .crownrow img{width:clamp(170px,24vw,250px);aspect-ratio:1/1.08;border-radius:26px;object-fit:cover;object-position:50% 12%;border:4px solid #fff;box-shadow:0 14px 34px rgba(17,76,89,.28);flex:none;background:var(--soft)}
+.crownrow img.shot{width:clamp(220px,34vw,380px);aspect-ratio:4/3;object-fit:contain;object-position:center;background:#fff;padding:10px}
+#crownImg2[hidden]{display:none}
 .crownrow .ct{flex:1;min-width:220px;font-size:clamp(20px,2.6vw,30px);line-height:1.2;font-weight:800;color:var(--deep);letter-spacing:-.01em}
 .crownrow .ct b{display:inline;background:linear-gradient(transparent 62%,rgba(255,194,61,.7) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .crownrow .ct i{font-style:normal;margin-right:6px}
@@ -554,7 +556,7 @@ if (J.headlinePill) $("#hRole").classList.add("pill");
 if (J.headlineBadge){ const row = document.createElement("div"); row.className = "rolerow"; $("#hRole").before(row); row.appendChild($("#hRole")); const b = document.createElement("span"); b.className = "yrs"; b.textContent = J.headlineBadge; row.appendChild(b); }
 if (J.hideSummary) $("#hSum").hidden = true; else $("#hSum").innerHTML = hl(esc(J.summary));
 $("#photo").src = J.photo ? IMG + J.photo : B.photo2;
-if (J.crown){ $("#photo").style.display = "none"; $("#crownRow").hidden = false; $("#crownImg").src = IMG + J.crown.photo; if (J.crown.photo2){ $("#crownImg2").src = IMG + J.crown.photo2; $("#crownImg2").hidden = false; } $("#crownText").innerHTML = "<b><i>" + (J.crown.icon || "&#128081;") + "</i>" + esc(J.crown.text) + "</b>"; }
+if (J.crown){ $("#photo").style.display = "none"; $("#crownRow").hidden = false; $("#crownImg").src = IMG + J.crown.photo; $("#crownImg").classList.toggle("shot", !!J.crown.shot); if (J.crown.alt) $("#crownImg").alt = J.crown.alt; if (J.crown.photo2){ $("#crownImg2").src = IMG + J.crown.photo2; $("#crownImg2").hidden = false; } $("#crownText").innerHTML = "<b><i>" + (J.crown.icon || "&#128081;") + "</i>" + esc(J.crown.text) + "</b>"; }
 const subject = encodeURIComponent(J.emailSubject || "Hiring a Virtual Assistant");
 const mail = "mailto:" + B.email + "?subject=" + subject;
 const wa = "https://wa.me/" + B.wa + "?text=" + encodeURIComponent("Hi Maria, " + (J.label ? "about " + J.label + ": " : "") + "I saw your resume.");
