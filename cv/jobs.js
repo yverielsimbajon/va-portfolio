@@ -252,7 +252,7 @@ window.RESUME_JOBS = {
     summary: "Organised, dependable and resourceful General Virtual Assistant with 5+ years of experience supporting business owners and remote teams in Australia, the United States and Europe. I keep on top of daily tasks, communications, deadlines and follow-ups, so nothing slips through the cracks: task lists, project trackers, spreadsheets and contact lists, calendars and deadlines, organised Google Drive files, and documented SOPs for recurring processes. I support marketing and content too: LinkedIn and email outreach with follow-ups, content calendars, Canva graphics, publishing to platforms, and website and landing page updates. I do online research and present clear findings, I am comfortable learning new systems and following processes, and I send a short daily update.",
     keywords: ["General Virtual Assistant", "organised", "dependable", "resourceful", "administration", "business operations", "routine emails", "client communications", "templates", "calendars", "deadlines", "task lists", "project trackers", "spreadsheets", "databases", "contact lists", "follow up", "follow-up", "follow-ups", "outstanding tasks", "Google Drive", "files", "folders", "documents", "invoices", "forms", "records", "recurring processes", "standard operating procedures", "SOPs", "LinkedIn", "LinkedIn outreach", "introductory messages", "recruitment agency founders", "marketing", "content", "social media", "email marketing", "blogs", "content calendars", "marketing trackers", "publishing schedules", "podcast", "video content", "editing tasks", "gathering assets", "organising files", "uploading", "publishing", "website pages", "landing pages", "links", "digital resources", "portal", "membership", "online courses", "course materials", "member access", "invitations", "registrations", "member questions", "enquiries", "routine queries", "live sessions", "workshops", "community events", "troubleshooting", "escalating", "online research", "findings", "projects", "marketing campaigns", "website updates", "monitor project progress", "testing new tools", "learning platforms", "improve existing processes", "reduce repetitive manual work", "highly organised", "reliable", "accountable", "proactive", "detail-oriented", "clear communicator", "adaptable", "tech-comfortable", "discreet", "confidential", "independent", "Google Workspace", "Gmail", "Google Docs", "Google Sheets", "CRM", "email marketing platforms", "project management software", "Canva", "Trello", "GHL", "GoHighLevel", "Riverside", "Descript", "Vimeo", "Brisbane", "eight-hour", "B2", "English proficiency", "RG"],
     focus: ["admin", "ops", "leads", "english", "support", "social", "web", "crm", "design"],
-    order: ["beauty", "results", "work", "experience", "skills", "why", "contact"],
+    order: ["results", "work", "beauty", "experience", "skills", "why", "contact"],
     expOrder: ["ls", "eo", "mk", "kk", "fl", "as"],
     beauty: {
       nav: "Your checklist",
@@ -268,13 +268,13 @@ window.RESUME_JOBS = {
         { k: "6 \u00b7 Rate", h: "Yes \u2014 I accept $13 AUD per hour", p: "I confirm the rate of $13 AUD per hour, full-time, on a Brisbane schedule. I am looking for a long-term role where I can take ownership of recurring work, catch up daily with the team, and contribute ideas, not just tick tasks off a list." }
       ]
     },
-    workBlocks: ["designs", "websites"],
-    workCards: ["cdcTracker", "cdcFollow", "cdcDrive", "cdcResearch", "cdcUpdates", "ghlConvos", "ghlWorkflows", "plushCalendar", "plushLibrary"],
-    workIntro: "Real work matched to what you asked for: task lists and project trackers, follow-ups and deadlines, organised Google Drive files, online research, SOPs and weekly updates, member and client enquiries, automations, content calendars and an organised asset library. Tap a picture to enlarge it.",
+    workBlocks: ["admin", "websites", "smm"],
+    workCards: ["ghlWorkflows", "ghlLeads", "cdcTracker", "pgFollow", "pgReports"],
+    workIntro: "Real work matched to what you asked for, proof first: admin and calendars, then websites I've built, then social media content, then the automations, lead data and operations I run day to day. Tap a picture to enlarge it.",
     resultsShots: "none",
-    resultsNote: "Trackers, follow-ups, organised records and reporting I handle every day.",
+    resultsNote: "Admin, websites, content and automations I handle every day.",
     stats: ["years", "events", "calendars", "leads"],
-    workTitle: "Canva designs and content I create",
+    workTitle: "Real work I've already done",
     portfolioLabel: "View my Portfolio",
     emailSubject: "RG - General Virtual Assistant application"
   },
