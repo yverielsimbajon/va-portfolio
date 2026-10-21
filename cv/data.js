@@ -215,7 +215,6 @@ window.RESUME_BASE = {
       items: [
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
         { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
-        { src: "ig-feed-travel.webp", phone: "ig-feed-travel-phone.webp", grid: "ig-feed-travel-grid.webp", title: "Traveler Based in Bali, Indonesia", note: "Warm, wanderlust and save-worthy", accent: "#1f5f80", tint: "#edf4f8" },
         { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
       ] },
     brands: { label: "Brand identity design", cols: 2, blurb: "Logos, colour palettes, typography, stationery and mood boards pulled together on one sheet, so a brand looks consistent and professional on every platform. Mock-up brands, tap to enlarge.",
