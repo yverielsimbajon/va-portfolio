@@ -310,10 +310,9 @@ window.RESUME_JOBS = {
     headline: "Creative Virtual Assistant for Beauty Education",
     headlinePill: true,
     headlineBadge: "5+ Years",
-    crown: { photo: "pageant-hero.webp", text: "I was crowned as Miss Philippines Earth Mindanao-Water 2022" },
     sub: "Canva · CapCut · Instagram & Email · Notion · Student Admin · Thinkific",
     tagline: "",
-    summary: "Creative, organised Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including graphic design and a beauty-and-pageant background. I design social media graphics and carousels and edit Reels in Canva and CapCut, respond to emails and Instagram enquiries, run email campaigns, and keep training packs, feedback forms and course resources organised, with a Notion content calendar and general admin (invoices, files) handled daily.",
+    summary: "Creative, organised Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, including graphic design work and a background in beauty and modelling. I design social media graphics and carousels and edit Reels in Canva and CapCut, respond to emails and Instagram enquiries, run email campaigns, and keep training packs, feedback forms and course resources organised, with a Notion content calendar and general admin (invoices, files) handled daily.",
     keywords: ["Virtual Assistant", "Alanah Mae Beauty Academy", "Alanah Mae Creative", "Canva", "CapCut", "InShot", "Instagram Reels", "Reels", "carousel posts", "social media graphics", "Customer Communication", "emails", "Instagram enquiries", "outreach", "Email Marketing", "email campaigns", "Student Administration", "training packs", "feedback forms", "course resources", "follow-up emails", "Course Management", "Thinkific", "training manuals", "online course content", "Content Planning", "Notion", "content calendars", "General Administration", "invoices", "organising files", "beauty", "graphic design", "pageant", "National Pageant in Australia", "recruitment", "hourly rate", "weekly availability", "reliable", "creative", "long-term", "attention to detail", "written English"],
     focus: ["design", "social", "admin", "english", "support"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
@@ -327,15 +326,15 @@ window.RESUME_JOBS = {
       { req: "Course Management: Thinkific", proof: "New for me — I would learn Thinkific properly from day one, the way I picked up GoHighLevel.", status: "learn" },
       { req: "Content Planning: content calendars in Notion", proof: "I built a Notion hub for content calendars, planning and SOPs, used daily for a wellness brand.", status: "yes", tab: "crm", cta: "See my content planning" },
       { req: "General Administration: invoices, files, day-to-day tasks", proof: "Invoices, organised Google Drive files and daily admin for business owners.", status: "yes" },
-      { req: "An interest in beauty and social media is a bonus", proof: "I am a crowned pageant titleholder and former pageant judge, plus a graphic designer, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant background" }
+      { req: "An interest in beauty and social media is a bonus", proof: "A small bonus: I have a pageant and modelling background, and graphic design is part of my daily work, so beauty content feels natural.", status: "yes", tab: "designs", cta: "See my designs" }
     ],
-    workBlocks: ["designs", "reels", "pageant", "pageantJudge"],
-    workCards: ["plushEmail", "cdcTracker", "engPageant"],
-    workIntro: "Real work matched to what you asked for: Canva and CapCut content, email and Instagram communication, Notion content planning, and my beauty-pageant and graphic design background. Tap a picture to enlarge it.",
+    workBlocks: ["designs", "reels", "feeds"],
+    workCards: ["plushEmail", "cdcTracker"],
+    workIntro: "Real work matched to what you asked for: Canva and CapCut content, email and Instagram communication, and Notion content planning. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
-    workTitle: "Graphic design, Reels and pageant background",
+    workTitle: "Graphic design and Reels I create",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Virtual Assistant application - Alanah Mae Beauty Academy & Creative"
   }
