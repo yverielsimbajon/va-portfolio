@@ -380,5 +380,94 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Administrative & Social Media Assistant application"
+  },
+  "miraco-creative": {
+    label: "Creative Strategist (Miraco Nutripharm, health & wellness)",
+    headline: "Creative Strategist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Creative Strategy · Social Media · Canva & CapCut · Short-Form Video · Copywriting · Performance Reporting",
+    tagline: "",
+    summary: "Creative Strategist with 5+ years of experience in creative strategy, content creation and social media for wellness and service brands in Australia, the United States and Europe. I plan content calendars, design graphics and edit short vertical videos myself, write the captions and CTAs, and report what works. I grew a wellness brand's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Creative Strategist", "health", "wellness", "supplement", "creative strategy", "content creation", "social media", "brand marketing", "Meta", "Facebook", "Instagram", "LinkedIn", "TikTok", "YouTube", "Generative AI", "Canva", "CapCut", "Photoshop", "Figma", "Premiere Pro", "short-form video", "vertical video", "Reels", "content calendars", "static graphics", "banner ads", "ad variations", "copywriting", "captions", "CTA", "hooks", "A/B testing", "CTR", "CVR", "ROAS", "CPA", "performance reports", "competitor research", "asset management", "Shopify", "compliance", "brand voice"],
+    focus: ["social", "design", "admin", "english", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "3–5 years in creative strategy, content creation, social media or brand marketing, ideally health or wellness", proof: "5+ years of social media and content work, including a wellness brand in Australia that I run today.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Platform strategy: Meta carousels, vertical video for Reels and TikTok, static banners", proof: "I plan and design carousels, promos and event graphics in Canva and edit vertical Reels in CapCut for Facebook and Instagram. TikTok uses the same format.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Hypotheses and A/B testing of hooks, CTAs, visuals and copy length", proof: "I compare what each post does in Meta Business Suite and repeat what works, which is how views went up 50% to 265K. Formal test matrices tied to CTR and CVR would be new, and I would learn your setup properly from day one.", status: "learn", tab: "results", cta: "See the results" },
+      { req: "Video editing: fast cuts, text overlays, music, UGC-style and product demos", proof: "I edit short Reels with captions, music and clean cuts in CapCut.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Static and image editing: product photos, ad variations, banners", proof: "Promos, vouchers, coupons and event graphics in Canva and Photoshop for several brands.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Copywriting: ad copy, headlines, captions with clear CTAs", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write captions and offers for every post.", status: "yes" },
+      { req: "Content calendars for educational, promotional and corporate posts", proof: "Content calendars and nine-post feed plans, previewed before anything goes live.", status: "yes", tab: "feeds", cta: "See the feed plans" },
+      { req: "Performance data: ROAS, CPA, CTR, CVR and storefronts (Shopify, Shopee, Lazada)", proof: "I read Meta Business Suite reports and send a weekly update. Paid-ad metrics and Shopee or Lazada storefronts are new for me, and I would learn them from day one.", status: "learn" },
+      { req: "Adobe Illustrator and Premiere Pro", proof: "I use Photoshop, Canva, Figma and CapCut daily. Illustrator and Premiere Pro are new, and I am ready to learn them.", status: "learn" },
+      { req: "Compliance: factual, regulation-aware health content", proof: "I keep claims factual and check them before publishing. I would follow each market's rules and your team's review before anything goes live.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "strategy", keys: ["plushStrategy", "plushCalendar"] },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "cards", part: "copy", keys: ["cupCaptions", "ghlUpdates"] }
+    ],
+    workHeads: {
+      strategy: { label: "Creative Strategy", title: "Strategy That Turns Ideas Into Posts.", text: "Content plans and calendars built around one goal per post and each platform's format." },
+      designs:  { label: "Static Creative", title: "Graphics That Stop the Scroll.", text: "Canva and Photoshop posts, carousels, promos and banner-style graphics, with simple variations to test." },
+      reels:    { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Fast vertical edits in CapCut with text overlays, music and clean cuts." },
+      feeds:    { label: "Brand Consistency", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      copy:     { label: "Copy & Reporting", title: "Words and Weekly Numbers That Work.", text: "Captions with clear CTAs, plus a simple weekly update on what performed." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Creative Strategist application"
+  },
+  "design-va-interior": {
+    label: "Virtual Assistant (Abstract Art, Interior Design & Real Estate Development)",
+    headline: "Creative Virtual Assistant for Design",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Social Media Management · Project Coordination · Email Campaigns · Excel · Specification Sheets · Google Drive & Notion",
+    tagline: "",
+    codeWord: "Design",
+    summary: "Civil Engineering graduate and creative, highly organized Virtual Assistant with 5+ years of experience, based in the Philippines. I manage social media, coordinate projects and files, run email campaigns and keep data and trackers accurate in Excel, Google Drive and Notion. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Virtual Assistant", "Philippines", "abstract art", "interior design", "real estate development", "dynamic", "creative", "Social Media Management", "Basic Excel", "Project Coordination", "Email Campaigns", "SketchUp", "AutoCAD", "Enscape", "Layout", "concept boards", "specification sheets", "itemized list", "data entry", "Instagram", "posting content", "engaging with followers", "organizing project files", "Google Drive", "Notion", "community building", "liking", "following", "commenting", "brand presence", "behind the scenes", "proactive in communication", "learning new systems", "detail-oriented", "highly organized", "independently"],
+    focus: ["admin", "social", "design", "english", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Social Media Management: posting content on Instagram and other platforms", proof: "I plan, design and schedule posts every week with Meta Business Suite. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Community building: liking, following, commenting and keeping a consistent brand presence", proof: "I engage with followers and keep each brand's look and voice consistent, with feeds planned around one palette and a fixed layout.", status: "yes", tab: "feeds", cta: "See my feed plans" },
+      { req: "Email Campaigns", proof: "I write and schedule email and text marketing campaigns for a wellness brand.", status: "yes" },
+      { req: "Project Coordination, organizing project files, updates in Google Drive and Notion", proof: "Trackers, deadlines and organized Google Drive files for every client, plus a Notion hub for planning and SOPs, with a weekly progress report.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Basic Excel, data entry and itemized lists of products", proof: "I keep spreadsheets, trackers and contact databases accurate every day, including a 1,400+ contact lead database. Product specification sheets would be new content for me, built the same careful way.", status: "yes", tab: "admin", cta: "See my spreadsheets" },
+      { req: "SketchUp, AutoCAD, Layout and Enscape (concept boards to realistic drawings)", proof: "I am a Civil Engineering graduate, so I read plans and measurements comfortably, but I have not used SketchUp, Enscape or Layout professionally and I will not claim it. I would learn your setup properly from day one, the way I picked up GoHighLevel.", status: "learn" },
+      { req: "Graphic design for content", proof: "Posters, promos, carousels and event graphics in Canva for several brands.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Comfortable learning new systems and proactive in communication", proof: "I send a clear daily or weekly update and learn new tools fast. Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "cards", part: "admin", keys: ["cdcTracker", "plushCalendar", "ghlUpdates"] },
+      { type: "block", key: "reels" }
+    ],
+    workHeads: {
+      feeds:   { label: "Social Media Management", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      designs: { label: "Creative Content", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Instagram and other platforms." },
+      admin:   { label: "Project Coordination", title: "Admin That Keeps Projects Organized.", text: "Trackers, calendars, files and weekly updates that keep every project running smoothly." },
+      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Design - Virtual Assistant application"
   }
 };
