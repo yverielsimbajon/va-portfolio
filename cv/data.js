@@ -8,7 +8,7 @@ window.RESUME_BASE = {
   site: "https://themariaoffice.com/",
   portfolio: "https://themariaoffice.com/portfolio/",
   book: "https://themariaoffice.com/discovery-call.html",
-  intro: { video: "../images/intro.mp4", poster: "../images/intro-poster.jpg" },
+  intro: { video: "../images/intro-resume.mp4", poster: "../images/intro-poster.jpg" },
   photo: "../images/maria-portrait.webp",
   photo2: "../images/about-portrait.jpg",
   defaultPdf: "files/Maria-Simbajon-Resume.pdf",
