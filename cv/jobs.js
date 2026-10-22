@@ -411,14 +411,16 @@ window.RESUME_JOBS = {
       { type: "cards", part: "strategy", keys: ["plushStrategy", "kkPillars", "kkCompetitors", "plushCalendar"] },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
+      { type: "cards", part: "brand", keys: ["kkBrand", "plushBranding"] },
       { type: "block", key: "feeds" },
       { type: "cards", part: "copy", keys: ["cupCaptions", "ghlUpdates"] }
     ],
     workHeads: {
+      brand:    { label: "Brand Consistency", title: "One Voice on Every Post.", text: "Brand positioning, tone and a consistent look, so content feels like the same brand everywhere." },
       strategy: { label: "Creative Strategy", title: "Strategy That Turns Ideas Into Posts.", text: "Content plans and calendars built around one goal per post and each platform's format." },
       designs:  { label: "Static Creative", title: "Graphics That Stop the Scroll.", text: "Canva and Photoshop posts, carousels, promos and banner-style graphics, with simple variations to test." },
       reels:    { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Fast vertical edits in CapCut with text overlays, music and clean cuts." },
-      feeds:    { label: "Brand Consistency", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       copy:     { label: "Copy & Reporting", title: "Words and Weekly Numbers That Work.", text: "Captions with clear CTAs, plus a simple weekly update on what performed." }
     },
     resultsShots: "results",
