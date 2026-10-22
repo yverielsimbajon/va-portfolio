@@ -524,5 +524,46 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "OF ENGAGEMENT"
+  },
+  "tpp-builder-outreach": {
+    label: "Outreach & Admin Assistant (Time Planning and Programming, Sydney)",
+    headline: "Builder Outreach & Admin Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Gmail Outreach · Calendar Booking · Google Drive · Google Sheets Tracker · Follow-Ups · Construction Background",
+    tagline: "",
+    codeWord: "TPP Builder Outreach",
+    highlight: { icon: "&#127891;", text: "Civil Engineering Graduate" },
+    summary: "Reliable, detail-focused assistant with 5+ years supporting business owners in Australia, the United States and Europe, and a Civil Engineering graduate who worked as a project intern in a planning office. I send outreach emails, reply from templates, book calls in the calendar, log documents in Google Drive and keep Google Sheets trackers accurate. I already work Australian hours, so Sydney 8-9am is no problem.",
+    keywords: ["Civil Engineering graduate", "planning office", "construction", "builders", "tender documents", "outreach emails", "company inbox", "templates", "book calls", "calendar", "Director", "Google Drive", "Google Sheets", "tracker", "status", "follow-up dates", "follow-ups", "notes", "Gmail", "written English", "reliable", "detail-focused", "Sydney", "8-9am", "weekday", "senior Australian construction professionals", "professional-services admin", "long-term"],
+    focus: ["admin", "leads", "english", "support", "crm"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Send pre-approved outreach emails to builders from the company inbox", proof: "I research prospects and send outreach emails and follow-ups for business owners, always sticking to the approved wording.", status: "yes", tab: "outreach", cta: "See my outreach work" },
+      { req: "Reply to builder responses using templates, and book calls in the Director's calendar", proof: "I reply to enquiries from templates and book calls and appointments on calendars for owners and a CEO, with accurate notes on every event.", status: "yes", tab: "admin", cta: "See calendar booking" },
+      { req: "Request tender documents and log them in Google Drive", proof: "I keep documents and records organized in Google Drive and chase missing information until it arrives. Tender documents would be new content, handled the same careful way.", status: "yes", tab: "admin", cta: "See my Drive records" },
+      { req: "Keep the Google Sheets tracker up to date (status, follow-up dates, notes)", proof: "Trackers, follow-up dates and notes kept accurate in Google Sheets every day, including a 1,400+ contact lead database.", status: "yes", tab: "outreach", cta: "See my trackers" },
+      { req: "Excellent written English for senior Australian construction professionals", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I already write to Australian business owners every day.", status: "yes" },
+      { req: "Available 8-9am Sydney time every weekday", proof: "Yes. I already work Australian hours for other clients, with reliable fiber internet, backup Wi-Fi, laptop and power.", status: "yes" },
+      { req: "Construction or professional-services admin experience is a bonus", proof: "I am a Civil Engineering graduate and was a project intern in a planning office, supporting reports, records and trackers.", status: "yes", tab: "construction", cta: "See my planning office work" }
+    ],
+    workSections: [
+      { type: "cards", part: "construction", keys: ["engPlanning"] },
+      { type: "cards", part: "outreach", keys: ["bdmLeads", "pgFollow", "pgReports"] },
+      { type: "cards", part: "admin", keys: ["ghlBooking", "cdcDrive", "cdcFollow", "ghlUpdates"] }
+    ],
+    workHeads: {
+      construction: { label: "Construction Background", title: "I Understand Your Industry.", text: "A Civil Engineering graduate who worked in a planning office, so builders and programmes are not new to me." },
+      outreach:     { label: "Outreach & Follow-Up", title: "Outreach That Gets Replies.", text: "Researched contacts, polite emails and consistent follow-ups, recorded accurately in a tracker." },
+      admin:        { label: "Admin & Records", title: "Admin That Keeps Everything Organized.", text: "Calendar booking, Google Drive records and daily updates, so nothing slips." }
+    },
+    resultsShots: "none",
+    resultsNote: "Calendars, follow-ups and records I handle every day.",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Admin and outreach work I do",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "TPP Builder Outreach"
   }
 };
