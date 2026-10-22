@@ -602,7 +602,8 @@ document.title = "Maria Simbajon | Resume" + (J.label ? " · " + J.label : "");
 $("#yr").textContent = new Date().getFullYear();
 if (J.label){ $("#apply").hidden = false; $("#applyText").textContent = "Application for: " + J.label; }
 $("#hRole").textContent = J.headline; $("#hSub").textContent = J.sub;
-$("#heroPhoto").src = IMG + "maria-graduation.webp";
+$("#heroPhoto").src = IMG + (J.heroPhotoMain || "maria-graduation.webp");
+if (J.heroPhotoMain) $("#heroPhoto").alt = "Maria Simbajon in a hard hat holding a blueprint tube, Civil Engineering graduate";
 if (J.highlight){ $("#hHl").hidden = false; $("#hHl").innerHTML = "<b><i>" + (J.highlight.icon || "&#127891;") + "</i>" + esc(J.highlight.text) + "</b>"; }
 if (J.heroPhoto2){ $("#heroPhoto2").src = IMG + J.heroPhoto2; const hv = $(".hero-visual"); hv.classList.add("duo");
   const lvl = () => { hv.style.paddingTop = "0"; if (innerWidth > 900) hv.style.paddingTop = Math.max(0, $("#hName").getBoundingClientRect().top - hv.getBoundingClientRect().top) + "px"; };
