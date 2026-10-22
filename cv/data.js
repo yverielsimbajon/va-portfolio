@@ -128,7 +128,7 @@ window.RESUME_BASE = {
       tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram", "Later (ready to learn)"], images: ["smm-calendar.jpg", "smm-posting-schedule.jpg", "smm-content-plan.jpg", "strategy-doc.jpg"] },
     cupReels: { category: "Instagram Reels & Short-Form Video", resp: "I edit Instagram Reels and short-form videos with captions and music.", title: "Instagram Reels and short-form videos in CapCut", clients: ["Landscaping Services in Australia"],
       challenge: "Raw before-and-after footage does not stop the scroll on its own.", solution: "I edit it into short Reels with captions, music and clean cuts in CapCut, and make short promo videos in Canva. Adobe Premiere Pro and DaVinci Resolve are new to me, and I would learn them.", result: "Plain footage turned into branded Reels, ready to schedule.",
-      tools: ["CapCut", "Instagram Reels", "Canva", "Adobe Premiere Pro (ready to learn)", "DaVinci Resolve (ready to learn)"], images: ["reel-1.jpg", "reel-2.jpg", "reel-3.jpg"] },
+      tools: ["CapCut", "Instagram Reels", "Canva", "Adobe Premiere Pro (ready to learn)", "DaVinci Resolve (ready to learn)"], images: ["reel-2.jpg", "reel-1.jpg", "reel-3.jpg"] },
     cupGraphics: { category: "Graphics, Promotional Posts & Ads", resp: "I create engaging graphics and promotional posts, with a clean, modern, visually appealing look.", title: "Graphics, promotional posts and ad creatives in Canva and Photoshop", clients: ["Wellness Brand in Australia", "Landscaping Services in Australia"],
       challenge: "Service and product brands need graphics that look polished and on brand, not generic or cluttered.", solution: "I turn offers, products and photos into branded promotional posts, vouchers, coupons and seasonal campaigns. The same designs work as paid social media ad creatives. Running Meta Ads is new for me, and I would learn your setup properly from day one.", result: "A clean, consistent look that makes people stop and book.",
       tools: ["Canva", "Adobe Photoshop", "Meta Ads (ready to learn)"], images: ["design-promo.jpg", "design-valentine-pink.webp", "design-voucher-20.png", "design-coupon-20.webp", "design-stress-relief.jpg", "design-book-now-pay-later.png"] },
@@ -155,7 +155,7 @@ window.RESUME_BASE = {
       tools: ["Canva", "Adobe Photoshop"], images: ["design-promo.jpg", "design-valentine-pink.webp", "design-voucher-20.png", "design-coupon-20.webp", "design-stress-relief.jpg", "design-9d-breathwork.jpg", "design-breathwork-events.jpg", "design-book-now-pay-later.png"] },
     plushReels: { category: "Short-Form Video", resp: "I create short-form video content and Reels, and edit photos and videos from the team.", title: "Short-form video & Reels with captions and music", clients: ["Landscaping Services in Australia"],
       challenge: "Raw before-and-after footage does not stop the scroll on its own.", solution: "I edited it into short Reels with captions and music in CapCut, and made short promo videos in Canva.", result: "I turned plain footage into branded Reels ready to schedule.",
-      tools: ["CapCut", "Reels", "Canva", "Meta Business Suite"], images: ["reel-1.jpg", "reel-2.jpg", "reel-3.jpg"] },
+      tools: ["CapCut", "Reels", "Canva", "Meta Business Suite"], images: ["reel-2.jpg", "reel-1.jpg", "reel-3.jpg"] },
     plushTrack: { category: "Performance Reporting", resp: "I track social media performance, engagement and marketing results.", title: "Social media performance, engagement & results on Meta Business Suite", clients: ["Wellness Brand in Australia"],
       challenge: "My client could not tell which posts were actually working.", solution: "I tracked views, followers and interactions in Meta Business Suite and used the numbers to decide what to post next.", result: "Post views grew 50% to 265K and followers 147% in 90 days.",
       tools: ["Meta Business Suite", "Facebook"], images: ["results-views.jpg", "results-followers.jpg", "results-interactions.jpg", "smm-analytics.jpg"] },
@@ -210,7 +210,7 @@ window.RESUME_BASE = {
         { src: "design-video-3.mp4", thumb: "design-video-3.jpg", kind: "video" }, { src: "design-video-4.mp4", thumb: "design-video-4.jpg", kind: "video" }
       ] },
     reels: { label: "Reels I edit for you", blurb: "Before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
-      items: [1, 2, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
+      items: [2, 1, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
     feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust, and people follow pages that look put together. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, then preview each feed as a flat plan and inside the Instagram app, ready to schedule. Sample feeds, tap to enlarge.",
       items: [
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
