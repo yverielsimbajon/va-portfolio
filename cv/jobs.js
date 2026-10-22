@@ -401,13 +401,14 @@ window.RESUME_JOBS = {
       { req: "Video editing: fast cuts, text overlays, music, UGC-style and product demos", proof: "I edit short Reels with captions, music and clean cuts in CapCut.", status: "yes", tab: "reels", cta: "See my Reels" },
       { req: "Static and image editing: product photos, ad variations, banners", proof: "Promos, vouchers, coupons and event graphics in Canva and Photoshop for several brands.", status: "yes", tab: "designs", cta: "See my Canva designs" },
       { req: "Copywriting: ad copy, headlines, captions with clear CTAs", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write captions and offers for every post.", status: "yes" },
+      { req: "Competitive analysis: keep up with competitors, trends, formats and hooks", proof: "I researched every local competitor's website and social media for a landscaping business and found the gap none of them covered, then built Awareness, Trust and Sales content pillars around it.", status: "yes" },
       { req: "Content calendars for educational, promotional and corporate posts", proof: "Content calendars and nine-post feed plans, previewed before anything goes live.", status: "yes", tab: "feeds", cta: "See the feed plans" },
       { req: "Performance data: ROAS, CPA, CTR, CVR and storefronts (Shopify, Shopee, Lazada)", proof: "I read Meta Business Suite reports and send a weekly update. Paid-ad metrics and Shopee or Lazada storefronts are new for me, and I would learn them from day one.", status: "learn" },
       { req: "Adobe Illustrator and Premiere Pro", proof: "I use Photoshop, Canva, Figma and CapCut daily. Illustrator and Premiere Pro are new, and I am ready to learn them.", status: "learn" },
       { req: "Compliance: factual, regulation-aware health content", proof: "I keep claims factual and check them before publishing. I would follow each market's rules and your team's review before anything goes live.", status: "yes" }
     ],
     workSections: [
-      { type: "cards", part: "strategy", keys: ["plushStrategy", "plushCalendar"] },
+      { type: "cards", part: "strategy", keys: ["plushStrategy", "kkPillars", "kkCompetitors", "plushCalendar"] },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
