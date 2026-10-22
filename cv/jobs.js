@@ -479,5 +479,50 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Design - Virtual Assistant application"
+  },
+  "of-instagram": {
+    label: "Instagram Social Media Manager (Optimum Formula, affiliate & ambassador program)",
+    headline: "Instagram Social Media Manager",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Instagram Engagement · Thoughtful Comments · Affiliate Outreach · Follow-Ups · Google Sheets Tracker · Daily Updates",
+    tagline: "",
+    codeWord: "OF ENGAGEMENT",
+    summary: "Reliable Instagram Social Media Manager with 5+ years of experience supporting business owners in Australia, the United States and Europe. I write natural replies and comments, send personalized outreach and follow-ups, keep a simple tracker in Google Sheets, and follow a written SOP with a short daily update. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Instagram Social Media Manager", "Instagram", "engagement", "communities", "influencer outreach", "outreach", "affiliates", "ambassadors", "comments", "thoughtful comments", "replies", "DMs", "direct messages", "introductory messages", "personalized", "follow-up", "follow-ups", "follow-through", "written SOP", "SOP", "brand guidelines", "Google Sheets", "tracker", "prospect tracker", "daily update", "attention to detail", "written English", "conversational", "independently", "feedback", "reliable", "fitness", "wellness", "U.S. business hours"],
+    focus: ["social", "leads", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Hands-on experience managing Instagram engagement and communities for a business", proof: "I manage Instagram and Facebook accounts for a wellness brand in Australia: planning, scheduling, engaging with followers and replying to comments and messages. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Thoughtful, natural comments that relate to the post, with humor when it fits", proof: "I write captions and replies in each brand's voice, with strong grammar and a friendly tone. Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes", tab: "smm", cta: "See my captions" },
+      { req: "Find and contact potential partners with personalized introductions", proof: "I research prospects, send personalized outreach and keep every lead in a tracker, including a 1,400+ contact lead database and recruitment outreach for a National Pageant in Australia.", status: "yes", tab: "crm", cta: "See the lead work" },
+      { req: "Influencer or affiliate program outreach", proof: "Running outreach for an affiliate or ambassador program is new for me. The research, personal message and follow-up steps are the same ones I do for leads today, and I would learn your qualification guidelines properly from day one.", status: "learn" },
+      { req: "Follow a written engagement SOP and brand guidelines, and apply feedback", proof: "I work from written SOPs and brand guidelines for my clients, document processes in Notion and Google Workspace, and apply feedback quickly.", status: "yes", tab: "admin", cta: "See my documented processes" },
+      { req: "Check comments and DMs at the start and end of the day, pass sensitive issues to the team", proof: "I check enquiries, replies and conversations daily, answer routine questions from approved information and flag anything sensitive or outside my role.", status: "yes", tab: "crm", cta: "See my enquiry follow-ups" },
+      { req: "Research-use-only communication rules: no medical advice, dosing, or unsupported claims", proof: "I keep claims factual and only share approved information. Research-use-only compliance is a new niche for me, and I would follow your guidelines word for word.", status: "learn" },
+      { req: "Activity and prospect tracker in Google Sheets, plus a short daily update", proof: "Trackers and Google Sheets records for every client, with a short daily update and a weekly report.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Manual, personalized engagement only: no bots, bulk comments or mass messaging", proof: "Agreed. Every comment and message I write is manual and written for the person it goes to.", status: "yes" },
+      { req: "Reliable computer, internet and U.S. overlap", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop and a backup power generator. I already work Australian and U.S. hours for other clients.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "engage", keys: ["plushCalendar", "cupCaptions", "ghlConvos"] },
+      { type: "cards", part: "outreach", keys: ["pgLeads", "pgFollow"] },
+      { type: "block", key: "feeds" },
+      { type: "cards", part: "track", keys: ["plushTrack", "ghlUpdates", "pgReports"] }
+    ],
+    workHeads: {
+      engage:   { label: "Instagram Engagement", title: "Comments That Sound Like a Real Person.", text: "Accounts I run day to day: content calendars, captions in the brand's voice, and replies to comments and messages." },
+      outreach: { label: "Prospects & Outreach", title: "Personal Intros, Not Mass Messages.", text: "Lead research, personalized messages and polite follow-ups, with every conversation kept organized." },
+      feeds:    { label: "Instagram Content", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      track:    { label: "Tracking & Reporting", title: "A Tracker That Shows What Happened.", text: "Activity records, engagement results and a short daily update on what is next." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "OF ENGAGEMENT"
   }
 };
