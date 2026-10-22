@@ -469,48 +469,5 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Design - Virtual Assistant application"
-  },
-  "design-va-interior": {
-    label: "Virtual Assistant (Abstract Art, Interior Design & Real Estate Development)",
-    headline: "Creative Virtual Assistant for Design",
-    headlinePill: true,
-    headlineBadge: "5+ Years",
-    sub: "Social Media Management · Project Coordination · Email Campaigns · Excel · Specification Sheets · Google Drive & Notion",
-    tagline: "",
-    codeWord: "Design",
-    summary: "Civil Engineering graduate and creative, highly organized Virtual Assistant with 5+ years of experience, based in the Philippines. I manage social media, coordinate projects and files, run email campaigns and keep data and trackers accurate in Excel, Google Drive and Notion. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
-    keywords: ["Virtual Assistant", "Philippines", "abstract art", "interior design", "real estate development", "dynamic", "creative", "Social Media Management", "Basic Excel", "Project Coordination", "Email Campaigns", "SketchUp", "AutoCAD", "Enscape", "Layout", "concept boards", "specification sheets", "itemized list", "data entry", "Instagram", "posting content", "engaging with followers", "organizing project files", "Google Drive", "Notion", "community building", "liking", "following", "commenting", "brand presence", "behind the scenes", "proactive in communication", "learning new systems", "detail-oriented", "highly organized", "independently"],
-    focus: ["admin", "social", "design", "english", "support"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
-    matchTitle: "Your list, my proof",
-    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
-    match: [
-      { req: "Social Media Management: posting content on Instagram and other platforms", proof: "I plan, design and schedule posts every week with Meta Business Suite. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
-      { req: "Community building: liking, following, commenting and keeping a consistent brand presence", proof: "I engage with followers and keep each brand's look and voice consistent, with feeds planned around one palette and a fixed layout.", status: "yes", tab: "feeds", cta: "See my feed plans" },
-      { req: "Email Campaigns", proof: "I write and schedule email and text marketing campaigns for a wellness brand.", status: "yes" },
-      { req: "Project Coordination, organizing project files, updates in Google Drive and Notion", proof: "Trackers, deadlines and organized Google Drive files for every client, plus a Notion hub for planning and SOPs, with a weekly progress report.", status: "yes", tab: "admin", cta: "See my trackers" },
-      { req: "Basic Excel, data entry and itemized lists of products", proof: "I keep spreadsheets, trackers and contact databases accurate every day, including a 1,400+ contact lead database. Product specification sheets would be new content for me, built the same careful way.", status: "yes", tab: "admin", cta: "See my spreadsheets" },
-      { req: "SketchUp, AutoCAD, Layout and Enscape (concept boards to realistic drawings)", proof: "I am a Civil Engineering graduate, so I read plans and measurements comfortably, but I have not used SketchUp, Enscape or Layout professionally and I will not claim it. I would learn your setup properly from day one, the way I picked up GoHighLevel.", status: "learn" },
-      { req: "Graphic design for content", proof: "Posters, promos, carousels and event graphics in Canva for several brands.", status: "yes", tab: "designs", cta: "See my Canva designs" },
-      { req: "Comfortable learning new systems and proactive in communication", proof: "I send a clear daily or weekly update and learn new tools fast. Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" }
-    ],
-    workSections: [
-      { type: "block", key: "feeds" },
-      { type: "block", key: "designs" },
-      { type: "cards", part: "admin", keys: ["cdcTracker", "plushCalendar", "ghlUpdates"] },
-      { type: "block", key: "reels" }
-    ],
-    workHeads: {
-      feeds:   { label: "Social Media Management", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
-      designs: { label: "Creative Content", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Instagram and other platforms." },
-      admin:   { label: "Project Coordination", title: "Admin That Keeps Projects Organized.", text: "Trackers, calendars, files and weekly updates that keep every project running smoothly." },
-      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." }
-    },
-    resultsShots: "results",
-    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
-    stats: ["views", "followers", "years", "events"],
-    workTitle: "Graphic Designs I Create for You",
-    portfolioLabel: "View my Portfolio",
-    emailSubject: "Design - Virtual Assistant application"
   }
 };
