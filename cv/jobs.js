@@ -384,6 +384,7 @@ window.RESUME_JOBS = {
   "miraco-creative": {
     label: "Creative Strategist (Miraco Nutripharm, health & wellness)",
     headline: "Creative Strategist",
+    intro: { video: "../images/intro-bdm.mp4", poster: "../images/intro-bdm-poster.jpg" },
     headlinePill: true,
     headlineBadge: "5+ Years",
     sub: "Creative Strategy · Social Media · Canva & CapCut · Short-Form Video · Copywriting · Performance Reporting",
