@@ -439,6 +439,8 @@ window.RESUME_JOBS = {
     sub: "SketchUp · AutoCAD · Social Media Management · Project Coordination · Email Campaigns · Excel · Google Drive & Notion",
     tagline: "",
     codeWord: "Design",
+    photo: "maria-civil-outfit.webp",
+    heroPhoto2: "maria-civil-outfit.webp",
     summary: "Civil Engineering graduate and creative, highly organized Virtual Assistant with 5+ years of experience, based in the Philippines. I build 3D models in SketchUp and drawings in AutoCAD, and I manage social media, project files, email campaigns and data in Excel, Google Drive and Notion. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
     keywords: ["Virtual Assistant", "Philippines", "abstract art", "interior design", "real estate development", "dynamic", "creative", "Social Media Management", "Basic Excel", "Project Coordination", "Email Campaigns", "SketchUp", "AutoCAD", "Enscape", "Layout", "concept boards", "specification sheets", "itemized list", "data entry", "Instagram", "posting content", "engaging with followers", "organizing project files", "Google Drive", "Notion", "community building", "liking", "following", "commenting", "brand presence", "behind the scenes", "proactive in communication", "learning new systems", "detail-oriented", "highly organized", "independently"],
     focus: ["admin", "social", "design", "english", "support"],
