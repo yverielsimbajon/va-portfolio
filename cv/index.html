@@ -255,6 +255,13 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .wbody p{margin:0 0 16px;color:var(--muted);font-size:.92rem}
 .wlink{align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 20px;color:#fff;background:var(--primary);border:0;border-radius:999px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px rgba(11,110,127,.25);transition:background .25s,transform .25s var(--ease)}
 .wlink:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.rd-sub{margin:34px 0 14px;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em}
+.rd-shots{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.rd-shot{display:block;text-decoration:none;color:inherit}
+.rd-shot .rd-browser img{display:block;width:100%;height:auto}
+.rd-pimg{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.rd-cap{display:block;margin-top:8px;font-size:13.5px;font-weight:600;color:var(--muted)}
+@media (max-width:760px){.rd-shots{grid-template-columns:1fr}}
 .rd-grid{display:grid;grid-template-columns:minmax(0,1fr) 407px;gap:34px;align-items:start}
 .rd-tag{display:inline-block;margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
 .rd-hint{display:inline-flex;align-items:center;gap:8px;margin:0 0 22px;padding:9px 16px;background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);color:var(--gold-ink);border-radius:999px;font-weight:600;font-size:14px}
@@ -689,6 +696,11 @@ const cardsPart = (key, keys, html) => part(key, html, keys.length + " Featured 
 S.redesign = () => { const R = J.redesign;
   return `<section class="block" id="redesign"><div class="wrap">
     <div class="eyebrow">Website redesign</div><h2 class="title">${esc(R.title)}</h2>
+    <h3 class="rd-sub">Computer view</h3>
+    <div class="rd-shots">${R.desk.map(it => `<a class="rd-shot" href="${IMG + it.src}" target="_blank" rel="noopener"><div class="rd-browser"><div class="rd-bar"><i></i><i></i><i></i><span>${esc(R.domain)}</span></div><img src="${IMG + it.src}" alt="${esc(it.cap)}" loading="lazy"></div><span class="rd-cap">${esc(it.cap)}</span></a>`).join("")}</div>
+    <h3 class="rd-sub">Phone view</h3>
+    <div class="rd-shots">${R.phone.map(it => `<a class="rd-shot" href="${IMG + it.src}" target="_blank" rel="noopener"><img class="rd-pimg" src="${IMG + it.src}" alt="${esc(it.cap)}" loading="lazy"><span class="rd-cap">${esc(it.cap)}</span></a>`).join("")}</div>
+    <h3 class="rd-sub">Try it live</h3>
     <p class="rd-hint"><span aria-hidden="true">&#8595;</span> ${esc(R.hint)}</p>
     <div class="rd-grid">
       <div class="rd-col rd-deskcol"><span class="rd-tag">Computer view</span>

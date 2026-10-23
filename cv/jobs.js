@@ -730,7 +730,9 @@ window.RESUME_JOBS = {
     },
     resultsShots: "none",
     stats: ["years", "brands"],
-    redesign: { title: "Your Website, Redesigned.", hint: "Scroll to see the website redesign I created for you", domain: "dmwrightsolutions.com (redesign concept)", url: "../concepts/dmwright/" },
+    redesign: { title: "Your Website, Redesigned.", hint: "Scroll to see the website redesign I created for you", domain: "dmwrightsolutions.com (redesign concept)", url: "../concepts/dmwright/",
+      desk: [{ src: "web-dmwright-desk-home.jpg", cap: "Home" }, { src: "web-dmwright-desk-services.jpg", cap: "Services" }, { src: "web-dmwright-desk-projects.jpg", cap: "Projects" }, { src: "web-dmwright-desk-testimonials.jpg", cap: "Testimonials" }],
+      phone: [{ src: "web-dmwright-index-phone.jpg", cap: "Home" }, { src: "web-dmwright-services-phone.jpg", cap: "Services" }, { src: "web-dmwright-projects-phone.jpg", cap: "Projects" }, { src: "web-dmwright-testimonials-phone.jpg", cap: "Testimonials" }] },
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "DMWRIGHT WEBSITE REDESIGN"
