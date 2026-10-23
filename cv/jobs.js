@@ -729,7 +729,8 @@ window.RESUME_JOBS = {
       designs:  { label: "Brand & Graphics", title: "Graphics That Match Your Brand.", text: "Logos, promos and social graphics in one consistent look." }
     },
     resultsShots: "none",
-    stats: ["years"],
+    stats: ["years", "brands"],
+    webFirst: "DMWRIGHT",
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "DMWRIGHT WEBSITE REDESIGN"

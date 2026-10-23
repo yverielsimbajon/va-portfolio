@@ -584,6 +584,7 @@ const IMG = "../images/", THUMB = "../images/thumbs/";
 const qp = new URLSearchParams(location.search);
 const key = (qp.get("job") || (location.pathname.match(/\/cv\/([^\/]+)\/?$/) || [])[1] || "default").toLowerCase();
 const J = Object.assign({}, JOBS.default, JOBS[key] || {});
+if (J.webFirst && B.webProjects){ B.webProjects = B.webProjects.slice().sort((p, q) => (q.title.includes(J.webFirst) ? 1 : 0) - (p.title.includes(J.webFirst) ? 1 : 0)); }
 
 // ---- helpers
 function bold(t){ return esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
