@@ -42,7 +42,7 @@ window.RESUME_BASE = {
       ] },
     { id: "eo", company: "EO Staff", role: "Assistant to the CEO, Sales & Marketing Operations", where: "Remote (United States)", dates: "Nov – Dec 2025",
       bullets: [
-        { t: "**Generated leads:** researched prospects and built a **1,400+ contact lead database** with Apollo.io, Seamless.AI and Google Sheets; supported LinkedIn outreach and discovery calls.", tags: ["leads"], tools: ["Apollo.io", "Seamless.AI", "Google Sheets", "LinkedIn"] },
+        { t: "**Generated leads:** researched prospects and built a **1,400+ contact lead database** with Apollo.io, Seamless.AI and Google Sheets; supported LinkedIn outreach and discovery calls, and **personally called leads and clients** by phone.", tags: ["leads"], tools: ["Apollo.io", "Seamless.AI", "Google Sheets", "LinkedIn"] },
         { t: "**Managed the CRM** (GoHighLevel, Zoho CRM): kept client and lead records accurate and supported **automated email follow-up workflows**.", tags: ["crm", "leads"], tools: ["GoHighLevel", "Zoho CRM"] },
         { t: "Scheduled and published content on **Facebook, Instagram, LinkedIn** and Google Business Profile; replied to comments and messages.", tags: ["social"], tools: ["Facebook", "Instagram", "LinkedIn"] },
         { t: "Managed the CEO's calendar, inbox and appointments; daily end-of-day updates, weekly KPI reports and SOPs.", tags: ["admin", "ops"], tools: ["Google Workspace"] }
