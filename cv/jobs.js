@@ -610,5 +610,50 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Dayton Creative Lead – CapCut"
+  },
+  "instinctive-shortform": {
+    label: "Short-Form Video Creator (Instinctive Branding, U.S. marketing agency)",
+    headline: "Short-Form Video Creator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Reels · TikTok · YouTube Shorts · CapCut & Canva · Hooks & Captions · Analytics",
+    tagline: "",
+    codeWord: "Look No Further! I'm your Person!!",
+    summary: "Short-Form Video Creator with 5+ years of experience in social media and content for business owners in Australia, the United States and Europe. I turn raw footage into Reels with a hook in the first seconds, captions, music and clean cuts in CapCut and Canva, then check the numbers in Meta Business Suite to see what to repeat. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Short-Form Video Creator", "Reels", "TikTok", "YouTube Shorts", "Facebook", "Instagram", "hooks", "storytelling", "captions", "transitions", "music", "B-roll", "CapCut", "Canva", "Premiere Pro", "raw footage", "repurpose", "trends", "brand guidelines", "content calendar", "analytics", "watch time", "engagement", "retention", "AI tools", "deadlines", "feedback", "English"],
+    focus: ["social", "design", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Create and edit short-form videos for Instagram Reels, TikTok, YouTube Shorts and Facebook", proof: "I edit vertical Reels with captions, music and clean cuts in CapCut for Facebook and Instagram. TikTok and Shorts use the same format.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Turn raw footage into compelling short videos", proof: "Plain before-and-after footage from a landscaping business edited into branded Reels ready to schedule.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Hooks that capture viewers in the first 1-3 seconds", proof: "I open with the strongest moment of the footage, then add on-screen text and captions so it works with the sound off.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Captions, transitions, music, sound effects and B-roll", proof: "Captions, music and cuts on every Reel in CapCut, plus short promo videos in Canva.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Advanced CapCut, Premiere Pro, Canva or similar", proof: "CapCut and Canva are my daily tools. Premiere Pro is new for me, and I am ready to learn it.", status: "learn", tab: "designs", cta: "See my Canva designs" },
+      { req: "Research trends and adapt them to different brands", proof: "I researched competitors' websites and social media for a landscaping business and built content pillars around the gap, and I keep each brand's look and voice consistent.", status: "yes", tab: "feeds", cta: "See the feed plans" },
+      { req: "Review analytics and recommend ways to improve engagement and retention", proof: "I track views, followers and interactions in Meta Business Suite, send a weekly update and repeat what works. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Follow brand guidelines, content calendars and trackers, meet deadlines", proof: "Content calendars, trackers and a weekly report for every client, with nothing posted before it is previewed.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Viral Reels with high organic reach", proof: "I do not have a single viral Reel to show, and I will not invent one. What I can show is steady, measured growth on a real client account, with the Meta Business Suite screenshots.", status: "learn", tab: "results", cta: "See the real numbers" },
+      { req: "Comfortable using AI tools for research, ideation, scripting and editing", proof: "I use AI tools to research ideas, draft hooks and captions and speed up planning, then edit and check everything myself.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "feeds" },
+      { type: "cards", part: "copy", keys: ["cupCaptions", "plushCalendar"] }
+    ],
+    workHeads: {
+      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Raw footage edited in CapCut with a hook, captions, music and clean cuts." },
+      designs: { label: "Visual Storytelling", title: "Graphics That Stop the Scroll.", text: "Canva posts, covers and carousels that match the video and the brand." },
+      feeds:   { label: "Brand Consistency", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      copy:    { label: "Hooks, Captions & Calendar", title: "Words and a Plan That Work.", text: "Captions with clear CTAs and a content calendar that keeps every video on schedule." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Look No Further! I'm your Person!!"
   }
 };
