@@ -565,5 +565,50 @@ window.RESUME_JOBS = {
     workTitle: "Admin and outreach work I do",
     portfolioLabel: "View my Portfolio",
     emailSubject: "TPP Builder Outreach"
+  },
+  "rosko-creative": {
+    label: "Creative Virtual Assistant (The Rosko Group & Downsizing Roadmap, Dayton)",
+    headline: "Creative Virtual Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Canva Graphics · Short-Form Video · Carousels & Pins · Real Estate Content · Captions · Meta Business Suite",
+    tagline: "",
+    codeWord: "Dayton Creative Lead – CapCut",
+    summary: "Creative Virtual Assistant with 5+ years of experience turning raw footage and source material into polished Canva graphics, carousels and short-form video for business owners in Australia, the United States and Europe. I edit Reels in CapCut, write captions from the information provided, schedule in Meta Business Suite and keep the content calendar organised. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Creative Virtual Assistant", "real estate", "podcast", "education", "short-form video", "Reels", "TikTok", "YouTube Shorts", "Facebook", "Instagram", "Pinterest", "carousels", "Just Listed", "Open House", "Just Sold", "Canva", "CapCut", "captions", "hooks", "proofreading", "Meta Business Suite", "content calendar", "repurpose", "brand kit", "written English", "attention to detail", "deadlines", "Eastern Time", "40 hours", "reliable"],
+    focus: ["design", "social", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Strong portfolio showing Canva design and short-form video editing", proof: "Posters, promos, carousels and event graphics in Canva, plus Reels edited in CapCut, for several brands. Real estate sample designs are in the portfolio too.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Short-form videos for Reels, TikTok and YouTube Shorts", proof: "I edit vertical Reels with captions, music and clean cuts in CapCut, the same format TikTok and Shorts use.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Advanced Canva and CapCut Pro, Premiere Pro or DaVinci Resolve", proof: "Canva and CapCut are my daily tools. Premiere Pro and DaVinci Resolve are new for me, and I would learn them if you need them.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Instagram and Facebook carousels, Pinterest pins, newsletter graphics", proof: "Carousels, promos and branded feed graphics in Canva every week. Pinterest pins and newsletter layouts use the same skills, and I would follow your brand kit and templates.", status: "yes", tab: "designs", cta: "See my carousels" },
+      { req: "Real estate graphics: Just Listed, Open House, Just Sold, price changes", proof: "I designed real estate sample graphics in Canva, built from listing details only, never invented facts.", status: "yes", tab: "designs", cta: "See the real estate designs" },
+      { req: "Captions, hooks and titles from the source material, never inventing facts", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write from the information provided and check every claim before it goes live.", status: "yes", tab: "smm", cta: "See my captions" },
+      { req: "Schedule in Meta Business Suite, Pinterest and YouTube, keep files and calendars organised", proof: "I schedule weekly with Meta Business Suite and keep content calendars and Drive files organised. Scheduling in Pinterest and YouTube would be new, and I would learn them from day one.", status: "yes", tab: "admin", cta: "See my content calendar" },
+      { req: "Manage recurring content and deadlines without reminders, ask questions when unclear", proof: "I send a clear weekly update and ask early when something is unclear. Post views went up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Reliable internet, capable computer, backup plan, Eastern Time overlap", proof: "65 Mbps fiber with backup mobile Wi-Fi, a backup laptop and a backup power generator. I already work US hours for other clients.", status: "yes" },
+      { req: "Transition to 40 hours per week after the 60-day trial", proof: "Yes, I am available to move to 40 hours per week after the trial.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "cards", part: "copy", keys: ["cupCaptions", "plushCalendar"] },
+      { type: "block", key: "feeds" }
+    ],
+    workHeads: {
+      designs: { label: "Graphic Design", title: "Graphics That Look On Brand.", text: "Canva posts, carousels and listing-style graphics with clean typography, spacing and alignment." },
+      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Raw footage edited in CapCut with clean captions, music and smooth cuts." },
+      copy:    { label: "Copywriting & Scheduling", title: "Captions That Sound Like You.", text: "Hooks and captions written from your source material, then scheduled and organised in a content calendar." },
+      feeds:   { label: "Content Management", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Dayton Creative Lead – CapCut"
   }
 };
