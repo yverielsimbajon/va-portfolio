@@ -655,5 +655,45 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Look No Further! I'm your Person!!"
+  },
+  "proline-va": {
+    label: "Virtual Assistant (ProLine Cleaning Solutions, Portland, ME)",
+    headline: "Virtual Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Cold Outreach · LinkedIn & Facebook · Email & Inbox · Calendar Invites · Daily Targets · Office Management",
+    tagline: "",
+    summary: "Experienced Virtual Assistant with 5+ years supporting business owners in Australia, the United States and Europe, with strong English and a goal-oriented, independent way of working. I research prospects, send outreach and follow-ups on LinkedIn, Facebook and email, manage the inbox and calendar, and report against daily targets. I already work US hours for other clients, so Monday to Friday EST is no problem.",
+    keywords: ["Virtual Assistant", "Office Manager", "cold-call outreach", "daily target clients", "phone calls", "LinkedIn", "Facebook", "emails", "schedules", "calendar invitations", "daily tasks", "deadlines", "attention to detail", "strong English", "work independently", "organizational skills", "stable internet", "laptop", "EST", "30 hours", "growth", "learning"],
+    focus: ["leads", "admin", "english", "support", "crm"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Prior experience as a Virtual Assistant / Office Manager", proof: "5+ years supporting business owners and a CEO in Australia, the US and Europe: inbox, calendar, CRM, reports and daily admin.", status: "yes", tab: "admin", cta: "See my admin work" },
+      { req: "Cold-call outreach: contact the daily target clients by LinkedIn and Facebook", proof: "I research prospects, send outreach and follow-ups on LinkedIn, Facebook and email, and keep a 1,400+ contact lead database with a daily count of contacts added.", status: "yes", tab: "outreach", cta: "See my outreach" },
+      { req: "Cold-call outreach by phone", proof: "Phone cold calling is new for me, so I will not oversell it. I already support discovery calls and speak with customers daily, and I am ready to learn your call script from day one.", status: "learn", tab: "outreach", cta: "See my outreach" },
+      { req: "Manage and respond to emails", proof: "I answer enquiries by email, Messenger and the CRM every day, with booking links, follow-ups and reminders.", status: "yes", tab: "admin", cta: "See my enquiry replies" },
+      { req: "Coordinate schedules and send calendar invitations", proof: "61 GoHighLevel calendars and 200+ Google Calendar events coordinated, with accurate notes on every event.", status: "yes", tab: "admin", cta: "See calendar booking" },
+      { req: "Stay organized and meet daily tasks, deadlines and targets", proof: "Task lists with deadlines in Asana, Notion and Trello, plus a short daily update and a weekly report for every client.", status: "yes", tab: "organized", cta: "See my trackers" },
+      { req: "Attention to detail, strong English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I check every record before it goes in.", status: "yes" },
+      { req: "Stable internet and a reliable laptop or PC, Monday to Friday EST", proof: "65 Mbps fiber with backup mobile Wi-Fi, a main and a backup laptop and a backup power generator. I already work US hours for other clients.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "outreach", keys: ["bdmLeads", "pgFollow", "engPageant"] },
+      { type: "cards", part: "admin", keys: ["ghlConvos", "ghlBooking", "cdcFollow"] },
+      { type: "cards", part: "organized", keys: ["cdcTracker", "ghlUpdates", "cdcDrive"] }
+    ],
+    workHeads: {
+      outreach:  { label: "Outreach", title: "Outreach That Gets Replies.", text: "Researched target clients, polite messages on LinkedIn, Facebook and email, and follow-ups until they answer." },
+      admin:     { label: "Email & Calendar", title: "An Inbox and Calendar Under Control.", text: "Enquiries answered, invitations sent and every booking noted, so nothing slips." },
+      organized: { label: "Organized Daily Work", title: "Targets Met. Deadlines Kept.", text: "Trackers, reminders and a daily update, so you always know where things stand." }
+    },
+    resultsShots: "none",
+    resultsNote: "Leads, calendars and follow-ups I handle every day.",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Virtual Assistant"
   }
 };
