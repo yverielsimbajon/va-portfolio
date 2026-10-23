@@ -707,7 +707,7 @@ window.RESUME_JOBS = {
     summary: "Website designer and developer with 5+ years of experience building websites for service businesses in Australia, the United States and Europe, including a live landscaping website that brings in quote enquiries. I design clean, mobile-responsive sites with project galleries, working forms and on-page SEO, and I send a clear weekly update with a working preview. For this application I already built a redesign concept of your homepage, services, testimonials and projects pages.",
     keywords: ["website designer", "WordPress", "Elementor", "page builders", "responsive design", "service-business websites", "mobile", "navigation", "project galleries", "consultation form", "basic SEO", "image optimization", "staging", "weekly progress updates", "four-week schedule", "14 days post-launch bug fixes"],
     focus: ["web", "design", "english", "support"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
+    order: ["results", "redesign", "work", "experience", "skills", "why", "contact"],
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
     match: [
@@ -730,7 +730,7 @@ window.RESUME_JOBS = {
     },
     resultsShots: "none",
     stats: ["years", "brands"],
-    webFirst: "DMWRIGHT",
+    redesign: { title: "Your Website, Redesigned.", hint: "Scroll to see the website redesign I created for you", domain: "dmwrightsolutions.com (redesign concept)", url: "../concepts/dmwright/" },
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "DMWRIGHT WEBSITE REDESIGN"
