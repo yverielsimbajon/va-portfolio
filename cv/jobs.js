@@ -695,5 +695,43 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Virtual Assistant"
+  },
+  "dmwright-redesign": {
+    label: "Website Designer / Developer (DMWRIGHT SOLUTIONS, LLC, Georgia)",
+    headline: "Website Designer / Developer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "WordPress · Page Builders · Responsive Design · Galleries · Basic SEO · Consultation Form",
+    tagline: "",
+    codeWord: "DMWRIGHT WEBSITE REDESIGN",
+    summary: "Website designer and developer with 5+ years of experience building websites for service businesses in Australia, the United States and Europe, including a live landscaping website that brings in quote enquiries. I design clean, mobile-responsive sites with project galleries, working forms and on-page SEO, and I send a clear weekly update with a working preview. For this application I already built a redesign concept of your homepage, services, testimonials and projects pages.",
+    keywords: ["website designer", "WordPress", "Elementor", "page builders", "responsive design", "service-business websites", "mobile", "navigation", "project galleries", "consultation form", "basic SEO", "image optimization", "staging", "weekly progress updates", "four-week schedule", "14 days post-launch bug fixes"],
+    focus: ["web", "design", "english", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "A website concept for the redesign (homepage, services, testimonials, projects)", proof: "Done before applying: a four-page concept in your blue, gray and white branding, with residential and commercial shown equally, using your own project photos.", status: "yes", tab: "websites", cta: "See my other concepts" },
+      { req: "Three live websites I personally designed or developed", proof: "Live client sites I built: a landscaping business (thekerbingking.com.au) and a wellness brand (loveandsoundtherapies.com). I can share a third on request.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "WordPress experience", proof: "WordPress is part of my website toolkit, together with Wix Studio, Webflow and Framer.", status: "yes" },
+      { req: "Elementor or comparable page builders", proof: "I build with page builders every day. Elementor itself is newer for me, and I would work in it on staging first.", status: "learn" },
+      { req: "Professional service-business websites, mobile-responsive", proof: "My live sites are service businesses built to generate quote enquiries, with working navigation, forms and galleries on mobile.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Project galleries, consultation form, basic SEO, optimized images", proof: "My concepts include filterable project galleries and working request forms. I compress images and set titles, descriptions and alt text.", status: "yes", tab: "websites", cta: "See my concepts" },
+      { req: "Staging site, homepage approval first, weekly previews, written approval before any paid tool", proof: "That is how I work: staging only, homepage approved first, a preview link every week, and nothing paid without your written yes.", status: "yes" },
+      { req: "Four weeks, $500 fixed, 14 days free bug fixes, you keep ownership", proof: "I confirm I can deliver the scope in four weeks within the $500 budget, with 14 days of free fixes. You keep full ownership and admin control of the site, hosting and domain.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "block", key: "designs" }
+    ],
+    workHeads: {
+      websites: { label: "Website Design", title: "Websites That Win Enquiries.", text: "Live client sites and redesign concepts for service businesses, mobile-ready and built around a clear consultation request." },
+      designs:  { label: "Brand & Graphics", title: "Graphics That Match Your Brand.", text: "Logos, promos and social graphics in one consistent look." }
+    },
+    resultsShots: "none",
+    stats: ["years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "DMWRIGHT WEBSITE REDESIGN"
   }
 };
