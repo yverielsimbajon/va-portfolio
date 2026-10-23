@@ -736,5 +736,47 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "DMWRIGHT WEBSITE REDESIGN"
+  },
+  "bkg-lead-funnels": {
+    label: "Lead Funnel & Landing Page Specialist (BKG, Netherlands)",
+    headline: "Lead Funnel & Landing Page Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Landing Pages · Lead Funnels · Forms · CRM Follow-Up · Showroom Appointments · Reporting",
+    tagline: "",
+    codeWord: "VARIANT",
+    summary: "Website and lead-generation specialist with 5+ years of experience building websites and landing pages that bring in enquiries for service businesses in Australia, the United States and Europe. I build the page, connect the form to the CRM with GoHighLevel automations, follow up every lead and send a clear weekly report. WordPress is part of my toolkit, and Elementor Pro and Gravity Forms are the tools I would learn on staging first.",
+    keywords: ["lead funnels", "landing pages", "WordPress", "Elementor", "Gravity Forms", "forms", "thank-you page", "showroom appointment", "CRM", "follow-up", "UTM", "GA4", "Google Tag Manager", "A/B tests", "mobile", "hypothesis", "monthly report", "Dutch colleagues", "careful work on live pages"],
+    focus: ["web", "leads", "crm", "english", "design"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Build lead funnels and landing pages (one goal per page, clear offer, form no longer than it needs to be)", proof: "I designed a live landscaping website built to generate quote enquiries, and a dedicated program landing page for a wellness brand in Wix Studio. I have no conversion numbers I can prove, so I will not quote any.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "WordPress with Elementor Pro, mobile-first", proof: "WordPress is part of my website toolkit and I build with page builders every day (Wix Studio, Webflow, Framer). Elementor Pro itself is new for me, and I would build on staging first.", status: "learn" },
+      { req: "A form builder such as Gravity Forms (multi-step, conditional logic, hidden fields, webhooks)", proof: "I have built working request forms on my concepts and live sites. Gravity Forms is new for me and I would learn it properly from day one.", status: "learn", tab: "websites", cta: "See my concepts" },
+      { req: "Every lead reaches the CRM with its source, and the follow-up is triggered", proof: "I run GoHighLevel automations: confirmation emails and SMS, follow-up sequences in 7 workflow folders, and I check every new enquiry. Bitrix24 is new, but the logic is the same.", status: "yes", tab: "crm", cta: "See my CRM work" },
+      { req: "GA4 events, Google Tag Manager, UTM parameters", proof: "I track results in Meta Business Suite and weekly reports. GA4 and Google Tag Manager are new for me, and I would set them up and test each conversion myself.", status: "learn" },
+      { req: "Careful work on live pages: test on mobile and desktop, submit every form yourself", proof: "That is how I work: staging first, test every form route myself, and check that the enquiry arrives before anything goes live.", status: "yes" },
+      { req: "Improve on data: one hypothesis at a time, report monthly, say so when there is too little data", proof: "I send a clear weekly update for every client. I would change one thing at a time, write down the conclusion, and say honestly when a page has too little traffic to decide.", status: "yes" },
+      { req: "Dutch copy checked by a Dutch colleague before anything goes live", proof: "Agreed. I own the structure and the build, and nothing goes live until a Dutch colleague has checked the text.", status: "yes" },
+      { req: "Clear written English, part-time 12 hours a week", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I already work US hours for other clients, so afternoon and evening hours are normal for me.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "block", key: "crm" },
+      { type: "block", key: "designs" }
+    ],
+    workHeads: {
+      websites: { label: "Landing Pages & Websites", title: "Pages That Turn Visitors Into Leads.", text: "Live client sites and concepts built around one clear request, mobile-ready and simple to fill in." },
+      crm:      { label: "Forms to CRM Follow-Up", title: "Every Lead Followed Up.", text: "Enquiries recorded, confirmations sent and reminders running in GoHighLevel, so no lead gets lost." },
+      designs:  { label: "Visuals", title: "Graphics That Match the Offer.", text: "Promos and social graphics that match the page the visitor lands on." }
+    },
+    resultsShots: "none",
+    resultsNote: "Leads, calendars and follow-ups I handle every day.",
+    stats: ["leads", "calendars", "years", "brands"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "VARIANT"
   }
 };
