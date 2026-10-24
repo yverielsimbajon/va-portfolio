@@ -778,5 +778,49 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "VARIANT"
+  },
+  "igc-vayva": {
+    label: "Freelance Website Developer & Notion Workspace Designer (In Good Company / By Vayva, Brisbane)",
+    headline: "Freelance Website Developer & Notion Workspace Designer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Event Ticketing Websites · Wix Studio · Notion Business Hub · Newsletter Signup · Basic SEO · Easy Handover",
+    tagline: "",
+    codeWord: "IN GOOD COMPANY",
+    summary: "Freelance website developer and Notion workspace designer with 5+ years of experience building clean, mobile-friendly websites and organised Notion hubs for businesses in Australia, the United States and Europe. I have built live websites that bring in enquiries, ticket-purchase and booking confirmation automations, and a Notion business hub that keeps planning, SOPs and orders in one place. I hand everything over with a recorded walkthrough so you can edit it yourself.",
+    keywords: ["website developer", "Notion workspace", "event ticketing", "ticket purchase", "booking confirmation emails", "newsletter signup", "contact form", "partnership enquiry form", "basic SEO", "mobile-friendly", "easy to edit", "business hub", "content calendar", "approvals", "recorded walkthrough", "fixed quote", "revisions"],
+    focus: ["web", "design", "admin", "crm", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Proven experience in website development", proof: "Live client sites I designed and built: a landscaping business (thekerbingking.com.au) and a wellness brand (loveandsoundtherapies.com), plus website concepts for other industries.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Events and ticketing: customers buy tickets on the website, with automated booking confirmation emails", proof: "For a wellness brand I built the ticket-purchase automations: confirmation emails and SMS, reminders and follow-ups, and I manage an events pipeline of 84 attendees (Booked, Attended, No Show, Cancelled). Building the ticket page itself in Wix Events is new for me, and I would test it with a real purchase before launch.", status: "yes", tab: "crm", cta: "See my ticket workflows" },
+      { req: "Elegant, editorial, feminine branding (burgundy, cream, soft pink)", proof: "I design brand sheets and clean feeds in one consistent look, including soft, feminine brands. I would build your colours, type and styling into every page.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Contact form, partnership enquiry form, newsletter signup", proof: "I have built working request forms on my live sites and concepts, and I run email and SMS follow-ups in GoHighLevel and Mailchimp.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Mobile-friendly, fast, basic SEO, connected to your existing domain", proof: "Every site I build is checked on phone and desktop, with compressed images, page titles, descriptions and alt text. Connecting an existing domain is a normal step for me.", status: "yes" },
+      { req: "Notion Business HQ that branches into your 8 areas, keeping your existing information", proof: "I built a Notion business hub for planning, SOPs and marketing strategy, organised records for 67 products and every customer order, and built the content calendar and approval flow for a wellness brand and a landscaping business. I migrate and keep your existing databases first, then tidy them.", status: "yes", tab: "admin", cta: "See my Notion work" },
+      { req: "Content calendar, approvals and editor workflows", proof: "I plan and schedule content with a calendar, send weekly updates, and write the instructions a team follows, so everyone knows what is due and what is approved.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Simple, easy to maintain, no overcomplicated automations", proof: "That is how I work: clear pages, a consistent icon and colour style, and only the databases you need.", status: "yes" },
+      { req: "Handover: full ownership, all logins, recorded tutorial, revisions", proof: "You own everything from day one. I record a short walkthrough for the website and one for Notion, and revisions are included in the quote.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "block", key: "crm" },
+      { type: "block", key: "admin" },
+      { type: "block", key: "designs" }
+    ],
+    workHeads: {
+      websites: { label: "Website Development", title: "Websites With a Welcome.", text: "Live client sites and concepts that are elegant, mobile-ready and simple to edit yourself." },
+      crm:      { label: "Tickets & Confirmations", title: "Tickets That Confirm Themselves.", text: "Ticket-purchase, confirmation, reminder and follow-up automations I built and manage, so every guest is looked after." },
+      admin:    { label: "Notion Workspace", title: "One Hub for Your Whole Business.", text: "Notion hubs, calendars and reports I built so planning, records and processes live in one clean place." },
+      designs:  { label: "Brand & Graphics", title: "Graphics in One Elegant Look.", text: "Event graphics, promos and social posts that match your brand." }
+    },
+    resultsShots: "none",
+    resultsNote: "Bookings, calendars and follow-ups I handle every day.",
+    stats: ["calendars", "events", "years", "brands"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "IN GOOD COMPANY"
   }
 };
