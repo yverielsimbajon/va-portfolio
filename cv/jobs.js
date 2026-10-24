@@ -860,8 +860,8 @@ window.RESUME_JOBS = {
     workOverrides: {
       foodPosters: {
         label: "Food Posters I Design for You",
-        blurb: "Canva food posters for a made-up sample brand: chicken, ramen, pizza, ice cream and cheesecake.",
-        items: [5, 7, 2, 9, 10].map(n => ({ src: "design-food-" + n + ".jpg", thumb: "design-food-" + n + ".jpg" }))
+        blurb: "Canva food posters for a made-up sample brand: burgers, noodles, chicken, pizza, boba, ice cream, cupcakes, donuts, cake and baked sweet potato.",
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ src: "food-poster-" + n + ".jpg", thumb: "food-poster-" + n + ".jpg" }))
       },
       feedsMine: {
         label: "Instagram feed concept: sweet potato dessert shop",
@@ -869,10 +869,11 @@ window.RESUME_JOBS = {
         items: [{ src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop (sample concept)", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" }]
       },
       reels: {
-        blurb: "An aesthetic cupcake Reel, plus before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
+        blurb: "Two food Reels (cupcakes and a restaurant edit), plus before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
         items: [
           { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
-          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }, { src: "reel-3.mp4", poster: "reel-3.jpg", kind: "video" }
+          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       }
     },

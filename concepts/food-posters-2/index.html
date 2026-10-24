@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<title>Food poster samples 2</title>
+<!-- Source for images/food-poster-1..10.jpg. Open with ?p=1..10, screenshot at 1080x1350. Brand is made up. Cut-out food photos are Pexels stock photos with the background removed. -->
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bangers&family=Bowlby+One&family=Pacifico&family=Fredoka:wght@500;600;700&family=Righteous&family=Archivo+Black&family=Baloo+2:wght@600;800&family=Lobster&family=Poppins:wght@500;600;700;800&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{position:relative;font-family:Poppins,sans-serif;color:#fff}
+.a{position:absolute}
+.img{position:absolute;filter:drop-shadow(0 40px 40px rgba(0,0,0,.35))}
+.circ{position:absolute;border-radius:50%}
+.badge{position:absolute;border-radius:50%;display:grid;place-items:center;text-align:center;font-weight:800;line-height:1}
+.pill{position:absolute;padding:20px 44px;border-radius:99px;font-weight:700;font-size:34px}
+.logo{position:absolute;left:60px;top:54px;display:flex;align-items:center;gap:12px;font-weight:800;font-size:30px}
+.logo i{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-size:28px;font-weight:800}
+.dots{position:absolute;background-image:radial-gradient(currentColor 3px,transparent 3.5px);background-size:26px 26px;opacity:.5}
+</style></head>
+<body><div id="app"></div>
+<script>
+const C = "cut/";
+const L = (fg, bg) => `<div class="logo" style="color:${fg}"><i style="background:${fg};color:${bg}">C</i>Crave &amp; Co.</div>`;
+const P = [
+/* 1 burger: black to orange, Anton + Pacifico */
+() => `<div class="a" style="inset:0;background:radial-gradient(circle at 50% 62%,#ff8a1f 0,#e24a0b 40%,#1b0b05 78%)"></div>${L("#ffc83d","#1b0b05")}
+ <div class="a" style="left:0;right:0;top:100px;text-align:center;font-family:Pacifico;font-size:92px;color:#ffc83d;transform:rotate(-4deg)">Delicious</div>
+ <div class="a" style="left:0;right:0;top:250px;text-align:center;font-family:Anton;font-size:250px;line-height:.9;color:#fff;letter-spacing:2px">BURGER</div>
+ <img class="img" src="${C}burger.png" style="left:-40px;top:520px;width:1160px">
+ <div class="badge" style="right:60px;top:520px;width:230px;height:230px;background:#ffc83d;color:#1b0b05;font-family:Anton;font-size:60px;font-weight:400;transform:rotate(10deg);box-shadow:0 14px 30px rgba(0,0,0,.4)"><span>50%<br><small style="font-size:44px">OFF</small></span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#ffc83d;color:#1b0b05;font-family:Anton;font-weight:400;font-size:42px;letter-spacing:1px">ORDER NOW</div><div class="a" style="right:60px;bottom:78px;font-size:30px;font-weight:700">Free fries with every burger</div>`,
+/* 2 noodles: yellow to orange, Lobster + Bowlby */
+() => `<div class="a" style="inset:0;background:linear-gradient(160deg,#ffe14a,#ffa31a 60%,#ff6b1a)"></div>${L("#7a1d00","#ffe14a")}
+ <div class="circ" style="left:140px;top:420px;width:800px;height:800px;background:#fff"></div><div class="circ" style="left:100px;top:380px;width:880px;height:880px;border:14px solid #7a1d00;opacity:.18"></div>
+ <img class="img" src="${C}noodle.png" style="left:230px;top:510px;width:620px">
+ <div class="a" style="left:60px;right:60px;top:130px;text-align:center;font-family:Lobster;font-size:130px;line-height:1;color:#7a1d00">Delicious</div>
+ <div class="a" style="left:60px;right:60px;top:250px;text-align:center;font-family:'Bowlby One';font-size:150px;line-height:1;color:#fff;text-shadow:0 8px 0 #c2410c">NOODLES</div>
+ <div class="badge" style="left:50px;top:560px;width:200px;height:200px;background:#7a1d00;color:#ffe14a;font-size:36px;transform:rotate(-10deg)"><span>Limited<br>time offer</span></div>
+ <div class="pill" style="right:60px;bottom:60px;background:#7a1d00;color:#fff">Order now</div>`,
+/* 3 chicken: orange to yellow, Bangers */
+() => `<div class="a" style="inset:0;background:linear-gradient(180deg,#ff5a1f,#ff9d1f 55%,#ffd23f)"></div>${L("#fff","#ff5a1f")}
+ <div class="a" style="left:0;right:0;top:120px;text-align:center;font-family:Bangers;font-size:230px;line-height:.88;color:#fff;letter-spacing:4px;text-shadow:8px 8px 0 #b2310a;transform:rotate(-3deg)">CRISPY<br>CHICKEN</div>
+ <div class="circ" style="left:130px;top:590px;width:820px;height:820px;background:rgba(255,255,255,.28)"></div>
+ <img class="img" src="${C}chicken.png" style="left:130px;top:650px;width:820px">
+ <div class="badge" style="right:50px;top:560px;width:220px;height:220px;background:#6a1b9a;color:#ffe14a;font-family:Bangers;font-size:40px;font-weight:400;transform:rotate(12deg);box-shadow:0 14px 30px rgba(0,0,0,.3)"><span>6 pcs<br><b style="font-size:76px;font-weight:400">₱399</b></span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#fff;color:#c2410c;font-family:Bangers;font-weight:400;font-size:48px;letter-spacing:2px">ORDER NOW</div>`,
+/* 4 pizza: purple to pink, Bowlby One */
+() => `<div class="a" style="inset:0;background:linear-gradient(155deg,#5b1fa6,#c2188f 60%,#ff6a88)"></div>${L("#ffe14a","#5b1fa6")}
+ <div class="a" style="left:0;right:0;top:120px;text-align:center;font-family:'Bowlby One';font-size:210px;line-height:.9;color:#ffe14a;text-shadow:0 10px 0 rgba(0,0,0,.25)">PIZZA<br><span style="color:#fff">PARTY</span></div>
+ <img class="img" src="${C}pizza.png" style="left:110px;top:560px;width:860px;transform:rotate(-8deg)">
+ <div class="badge" style="right:44px;top:520px;width:250px;height:250px;background:#ffe14a;color:#5b1fa6;font-family:'Bowlby One';font-size:34px;font-weight:400;transform:rotate(10deg);box-shadow:0 14px 30px rgba(0,0,0,.35)"><span>2 large<br><b style="font-size:70px;font-weight:400">₱599</b></span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#fff;color:#5b1fa6;font-family:'Bowlby One';font-weight:400">ORDER NOW</div><div class="a" style="right:60px;bottom:80px;font-size:28px;font-weight:600">Dine in · Takeout · Delivery</div>`,
+/* 5 boba: lavender to pink, Fredoka */
+() => `<div class="a" style="inset:0;background:linear-gradient(170deg,#d9c6ff,#ffc2e6 60%,#fff0a8)"></div>${L("#5b2d9e","#fff")}
+ <div class="circ" style="left:190px;top:520px;width:700px;height:700px;background:linear-gradient(160deg,#fff,#f3dcff)"></div>
+ <img class="img" src="${C}boba.png" style="left:200px;top:560px;width:680px">
+ <div class="a" style="left:0;right:0;top:130px;text-align:center;font-family:Fredoka;font-weight:700;font-size:170px;line-height:.95;color:#5b2d9e">Boba<br><span style="color:#e0457b">Time!</span></div>
+ <div class="badge" style="right:60px;top:500px;width:210px;height:210px;background:#e0457b;color:#fff;font-family:Fredoka;font-size:40px;transform:rotate(12deg)"><span>Buy 1<br>Get 1</span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#5b2d9e;color:#fff;font-family:Fredoka">Grab yours</div><div class="a" style="right:60px;bottom:80px;font-size:28px;font-weight:600;color:#5b2d9e">Matcha · Taro · Brown sugar</div>`,
+/* 6 ice cream cone: pink to peach, Pacifico */
+() => `<div class="a" style="inset:0;background:linear-gradient(180deg,#ff8fb8,#ffb08a 60%,#ffe08a)"></div>${L("#fff","#ff6f9c")}
+ <div class="circ" style="left:-120px;top:700px;width:560px;height:560px;background:rgba(255,255,255,.25)"></div><div class="circ" style="right:-140px;top:300px;width:520px;height:520px;background:rgba(255,255,255,.22)"></div>
+ <img class="img" src="${C}cone.png" style="left:330px;top:300px;width:560px;transform:rotate(8deg)">
+ <div class="a" style="left:60px;top:160px;font-family:Pacifico;font-size:130px;line-height:1.05;color:#fff;text-shadow:0 8px 0 rgba(180,40,90,.35)">Scoop<br>of<br>Happiness</div>
+ <div class="badge" style="left:90px;top:870px;width:240px;height:240px;background:#fff;color:#e0457b;font-family:Pacifico;font-size:44px;font-weight:400;transform:rotate(-8deg);box-shadow:0 14px 30px rgba(0,0,0,.2)"><span>Only<br><b style="font-size:76px;font-weight:400">₱59</b></span></div>
+ <div class="pill" style="right:60px;bottom:60px;background:#fff;color:#e0457b;font-family:Pacifico;font-weight:400;font-size:38px">Try a cone</div>`,
+/* 7 cupcake: soft pink to yellow, Dancing Script + Baloo */
+() => `<div class="a" style="inset:0;background:linear-gradient(160deg,#ffd6e8,#ffe9c9 60%,#fff3a8)"></div>${L("#c2185b","#fff")}
+ <div class="dots" style="left:50px;top:560px;width:300px;height:300px;color:#ff7aa8"></div><div class="dots" style="right:50px;top:200px;width:260px;height:260px;color:#ffb300"></div>
+ <div class="a" style="left:0;right:0;top:120px;text-align:center;font-family:'Dancing Script';font-weight:700;font-size:140px;color:#c2185b">Freshly Baked</div>
+ <div class="a" style="left:0;right:0;top:270px;text-align:center;font-family:'Baloo 2';font-weight:800;font-size:200px;line-height:.9;color:#7a1346;text-shadow:0 8px 0 #fff">CUPCAKES</div>
+ <img class="img" src="${C}cupcake.png" style="left:60px;top:560px;width:960px">
+ <div class="badge" style="right:60px;top:480px;width:210px;height:210px;background:#c2185b;color:#fff;font-family:'Baloo 2';font-size:36px;transform:rotate(10deg)"><span>Buy 5<br>get 1<br>FREE</span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#c2185b;color:#fff;font-family:'Baloo 2';font-weight:800">Order a box</div>`,
+/* 8 donut: purple to orange sunset, Righteous */
+() => `<div class="a" style="inset:0;background:linear-gradient(180deg,#3a1a8a,#a1288f 45%,#ff7a3d 85%,#ffc23d)"></div>${L("#ffc23d","#3a1a8a")}
+ <div class="a" style="left:0;right:0;top:120px;text-align:center;font-family:Righteous;font-size:260px;line-height:.9;color:#fff;letter-spacing:2px">DONUT</div>
+ <div class="a" style="left:0;right:0;top:360px;text-align:center;font-family:Righteous;font-size:120px;line-height:1;color:#ffc23d;letter-spacing:14px">DAY</div>
+ <img class="img" src="${C}donut.png" style="left:20px;top:600px;width:1040px;transform:rotate(-6deg)">
+ <div class="badge" style="right:70px;top:480px;width:220px;height:220px;background:#ffc23d;color:#3a1a8a;font-family:Righteous;font-size:34px;font-weight:400;transform:rotate(10deg)"><span>Box of 6<br><b style="font-size:66px;font-weight:400">₱249</b></span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#fff;color:#3a1a8a;font-family:Righteous;font-weight:400">Grab a box</div>`,
+/* 9 strawberry cake: pink to red, Archivo Black giant word */
+() => `<div class="a" style="inset:0;background:linear-gradient(180deg,#ff8fb1,#ff4f7b 70%,#e11d48)"></div>${L("#fff","#e11d48")}
+ <div class="a" style="left:0;right:0;top:170px;text-align:center;font-family:'Archivo Black';font-size:330px;line-height:1;color:#fff;letter-spacing:-6px">CAKE</div>
+ <div class="a" style="left:0;right:0;top:110px;text-align:center;font-family:Pacifico;font-size:90px;color:#ffe14a;z-index:2;transform:rotate(-5deg)">Strawberry</div>
+ <img class="img" src="${C}strawcake.png" style="left:90px;top:480px;width:900px">
+ <div class="badge" style="right:50px;top:450px;width:220px;height:220px;background:#ffe14a;color:#b4123a;font-family:'Archivo Black';font-weight:400;font-size:34px;transform:rotate(12deg)"><span>New!<br><b style="font-size:62px;font-weight:400">₱99</b></span></div>
+ <div class="pill" style="left:60px;bottom:60px;background:#fff;color:#e11d48;font-family:'Archivo Black';font-weight:400">Order a slice</div><div class="a" style="right:60px;bottom:80px;font-size:28px;font-weight:600">Whole cakes on pre-order</div>`,
+/* 10 sweet potato: purple gradient, round photo */
+() => `<div class="a" style="inset:0;background:linear-gradient(160deg,#4a1d96,#8b3fc4 55%,#f2994a)"></div>${L("#ffd166","#4a1d96")}
+ <div class="circ" style="left:170px;top:520px;width:740px;height:740px;background:#ffd166"></div>
+ <div class="circ" style="left:195px;top:545px;width:690px;height:690px;background:url(${C}sweetpotato.jpg) center/cover;box-shadow:0 30px 60px rgba(0,0,0,.4)"></div>
+ <div class="a" style="left:0;right:0;top:100px;text-align:center;font-family:Pacifico;font-size:110px;color:#ffd166;transform:rotate(-3deg)">Warm &amp; Sweet</div>
+ <div class="a" style="left:0;right:0;top:285px;text-align:center;font-family:Poppins;font-weight:800;font-size:104px;line-height:1;color:#fff;letter-spacing:-2px">BAKED<br>SWEET POTATO</div>
+ <div class="badge" style="right:40px;top:500px;width:220px;height:220px;background:#f2994a;color:#fff;font-size:34px;transform:rotate(12deg);box-shadow:0 14px 30px rgba(0,0,0,.3)"><span>Only<br><b style="font-size:70px">₱79</b></span></div>
+ <div class="pill" style="left:60px;bottom:50px;background:#ffd166;color:#4a1d96">Try it today</div>`
+];
+const n = (+new URLSearchParams(location.search).get("p") || 1) - 1;
+document.getElementById("app").innerHTML = P[n]();
+</script></body></html>
