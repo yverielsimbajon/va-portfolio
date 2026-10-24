@@ -829,5 +829,43 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "IN GOOD COMPANY"
+  },
+  "sweet-potato-smm": {
+    label: "Social Media Manager (Sweet Potato Mania)",
+    headline: "Social Media Manager",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Engaging Content · Food & Dessert Posts · Canva · Reels · Grow Your Audience",
+    tagline: "",
+    summary: "Creative, passionate Social Media Manager with 5+ years of experience in social media management, graphic design and digital marketing for beauty, wellness and lifestyle brands. I create engaging content and posts, design Canva graphics and edit Reels that make products look good, and plan content to grow your audience and attract customers. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Social Media Manager", "creative", "passionate", "engaging content", "posts", "showcase", "desserts", "grow", "online presence", "audience", "attract customers", "portfolio", "sample works", "Canva", "Reels", "Facebook", "Instagram"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Create engaging content and posts", proof: "I plan, design and schedule posts every week for Facebook and Instagram in Canva and Meta Business Suite, with captions written for each one.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Showcase delicious Japanese-style sweet potato desserts", proof: "I make products look good with clean graphics, short Reels and a consistent feed. Food is a new niche for me, and I would study your menu and photos from day one.", status: "learn", tab: "reels", cta: "See my Reels" },
+      { req: "Help us grow our audience and attract customers", proof: "I grew a client's post views 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Send your portfolio or sample works", proof: "My portfolio and sample works are all on this page, and the full portfolio is one tap away.", status: "yes", tab: "designs", cta: "See sample works" }
+    ],
+    workSections: [
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushBranding"] }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Posts That Make People Hungry.", text: "Canva posts, promos and graphics that show off your products and fit one clean brand look." },
+      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
+      feeds:   { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      plan:    { label: "Grow Your Audience", title: "Consistent Posting That Brings Customers.", text: "A content calendar and one consistent brand look, so your page keeps growing." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Social Media Manager (Sweet Potato Mania)"
   }
 };
