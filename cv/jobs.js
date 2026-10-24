@@ -784,10 +784,10 @@ window.RESUME_JOBS = {
     headline: "Freelance Website Developer & Notion Workspace Designer",
     headlinePill: true,
     headlineBadge: "5+ Years",
-    sub: "Event Ticketing Websites · Wix Studio · Notion Business Hub · Newsletter Signup · Basic SEO · Easy Handover",
+    sub: "Event Ticketing Websites · Wix Studio · Notion Business Hub · Social Media · Newsletter Signup · Basic SEO",
     tagline: "",
     codeWord: "IN GOOD COMPANY",
-    summary: "Freelance website developer and Notion workspace designer with 5+ years of experience building clean, mobile-friendly websites and organised Notion hubs for businesses in Australia, the United States and Europe. I have built live websites that bring in enquiries, ticket-purchase and booking confirmation automations, and a Notion business hub that keeps planning, SOPs and orders in one place. I hand everything over with a recorded walkthrough so you can edit it yourself.",
+    summary: "Freelance website developer and Notion workspace designer with 5+ years of experience building clean, mobile-friendly websites and organised Notion hubs for businesses in Australia, the United States and Europe. I have built live websites that bring in enquiries, ticket-purchase and booking confirmation automations, and a Notion business hub that keeps planning, SOPs and orders in one place. I also run social media (post views up 50% to 265K and followers up 147% in 90 days), so your launch, website and content can all come from one person. I hand everything over with a recorded walkthrough so you can edit it yourself.",
     keywords: ["website developer", "Notion workspace", "event ticketing", "ticket purchase", "booking confirmation emails", "newsletter signup", "contact form", "partnership enquiry form", "basic SEO", "mobile-friendly", "easy to edit", "business hub", "content calendar", "approvals", "recorded walkthrough", "fixed quote", "revisions"],
     focus: ["web", "design", "admin", "crm", "english"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
@@ -801,24 +801,31 @@ window.RESUME_JOBS = {
       { req: "Mobile-friendly, fast, basic SEO, connected to your existing domain", proof: "Every site I build is checked on phone and desktop, with compressed images, page titles, descriptions and alt text. Connecting an existing domain is a normal step for me.", status: "yes" },
       { req: "Notion Business HQ that branches into your 8 areas, keeping your existing information", proof: "I built a Notion business hub for planning, SOPs and marketing strategy, organised records for 67 products and every customer order, and built the content calendar and approval flow for a wellness brand and a landscaping business. I migrate and keep your existing databases first, then tidy them.", status: "yes", tab: "admin", cta: "See my Notion work" },
       { req: "Content calendar, approvals and editor workflows", proof: "I plan and schedule content with a calendar, send weekly updates, and write the instructions a team follows, so everyone knows what is due and what is approved.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Future growth: events, retreats, podcast, lifestyle products and the social media to promote them", proof: "I also manage Facebook and Instagram: content calendars, captions, Canva graphics and Reels, with post views up 50% to 265K and followers up 147% in 90 days. One person can build your website and promote the launch.", status: "yes", tab: "results", cta: "See the results" },
       { req: "Simple, easy to maintain, no overcomplicated automations", proof: "That is how I work: clear pages, a consistent icon and colour style, and only the databases you need.", status: "yes" },
       { req: "Handover: full ownership, all logins, recorded tutorial, revisions", proof: "You own everything from day one. I record a short walkthrough for the website and one for Notion, and revisions are included in the quote.", status: "yes" }
     ],
     workSections: [
       { type: "block", key: "websites" },
-      { type: "block", key: "crm" },
-      { type: "block", key: "admin" },
-      { type: "block", key: "designs" }
+      { type: "cards", part: "tickets", keys: ["ghlWorkflows", "ghlPipeline", "plushEmail"] },
+      { type: "cards", part: "notion", keys: ["notionHq", "notionPlan", "cdcTracker", "plushStrategy"] },
+      { type: "cards", part: "social", keys: ["plushCalendar", "cupResults"] },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" }
     ],
     workHeads: {
       websites: { label: "Website Development", title: "Websites With a Welcome.", text: "Live client sites and concepts that are elegant, mobile-ready and simple to edit yourself." },
-      crm:      { label: "Tickets & Confirmations", title: "Tickets That Confirm Themselves.", text: "Ticket-purchase, confirmation, reminder and follow-up automations I built and manage, so every guest is looked after." },
-      admin:    { label: "Notion Workspace", title: "One Hub for Your Whole Business.", text: "Notion hubs, calendars and reports I built so planning, records and processes live in one clean place." },
-      designs:  { label: "Brand & Graphics", title: "Graphics in One Elegant Look.", text: "Event graphics, promos and social posts that match your brand." }
+      tickets:  { label: "Tickets & Confirmations", title: "Tickets That Confirm Themselves.", text: "Ticket-purchase, confirmation, reminder and follow-up automations I built and manage, so every guest is looked after." },
+      notion:   { label: "Notion Workspace", title: "One Hub for Your Whole Business.", text: "Notion hubs, planning databases and trackers built simple, so you can keep them tidy yourself." },
+      social:   { label: "Social Media Management", title: "Posts That Grow Your Brand.", text: "Content calendars and weekly posting that took a client to 265K views and +147% followers in 90 days." },
+      designs:  { label: "Brand & Graphics", title: "Graphics in One Elegant Look.", text: "Event graphics, promos and social posts that match your brand." },
+      reels:    { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, ready for Instagram and Facebook." },
+      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, ready for your launch and events." }
     },
-    resultsShots: "none",
-    resultsNote: "Bookings, calendars and follow-ups I handle every day.",
-    stats: ["calendars", "events", "years", "brands"],
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "brands"],
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "IN GOOD COMPANY"
