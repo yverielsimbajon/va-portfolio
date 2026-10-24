@@ -4,9 +4,11 @@
   // worker.js only handles videos (adds Range support so the intro video can skip/seek);
   // every other file is served straight from the static assets
   "main": "worker.js",
+  // Visitor log (see worker.js). Secrets NTFY_TOPIC and STATS_KEY are set with `wrangler secret put`.
+  "kv_namespaces": [{ "binding": "EVENTS", "id": "7c870cca1a1f4e6b957b70594fae2976" }],
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
-    "run_worker_first": ["/images/*.mp4"]
+    "run_worker_first": ["/images/*.mp4", "/api/*"]
   }
 }

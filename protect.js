@@ -23,6 +23,30 @@
   function mount() { if (document.body && !cover.parentNode) document.body.appendChild(cover); }
   if (document.body) mount(); else document.addEventListener("DOMContentLoaded", mount);
 
+  /* visitor log: tells Maria who opened a page (country only, no IP stored) and who tried to print/save/copy.
+     Opening any page with ?me=1 once marks this browser as hers, so her own visits are not logged. */
+  var mine = false;
+  try {
+    if (/[?&]me=1/.test(location.search)) localStorage.setItem("__me", "1");
+    mine = localStorage.getItem("__me") === "1";
+  } catch (e) {}
+  var local = /^(localhost|127\.|192\.168\.|\[::1\])/.test(location.hostname);
+  var logged = {};
+  function pagePath() {
+    var m = /[?&]job=([\w-]+)/.exec(location.search);
+    return location.pathname === "/cv/" && m ? "/cv/" + m[1] + "/" : location.pathname;
+  }
+  function log(type) {
+    if (mine || local || logged[type]) return;
+    logged[type] = 1;
+    try {
+      var body = JSON.stringify({ t: type, p: pagePath() });
+      if (navigator.sendBeacon) navigator.sendBeacon("/api/e", new Blob([body], { type: "application/json" }));
+      else fetch("/api/e", { method: "POST", body: body, keepalive: true, headers: { "content-type": "application/json" } });
+    } catch (e) {}
+  }
+  log("visit");
+
   var timer = null;
   function hide(ms) {
     mount();
@@ -42,6 +66,7 @@
     document.addEventListener(ev, function (e) {
       if (ev !== "contextmenu" && editable(e.target)) return;
       e.preventDefault();
+      log(ev === "contextmenu" ? "rclick" : ev === "dragstart" ? "drag" : "copy");
     }, true);
   });
   document.addEventListener("selectstart", function (e) { if (!editable(e.target)) e.preventDefault(); }, true);
@@ -56,15 +81,18 @@
     if (!block) return;
     e.preventDefault();
     e.stopPropagation();
+    log(k === "printscreen" || (e.metaKey && e.shiftKey && !e.ctrlKey && /[345]/.test(k)) ? "printscreen"
+      : mod && k === "p" ? "print" : mod && k === "s" && !e.shiftKey ? "save"
+      : k === "f12" || (mod && e.shiftKey) || (mod && k === "u") ? "devtools" : "copy");
     if (k === "printscreen" || (e.metaKey && e.shiftKey)) { wipeClipboard(); hide(2500); }
   }, true);
   document.addEventListener("keyup", function (e) {
     var k = (e.key || "").toLowerCase();
-    if (k === "printscreen") { wipeClipboard(); hide(2500); }
+    if (k === "printscreen") { log("printscreen"); wipeClipboard(); hide(2500); }
     if (k === "meta" || k === "os") wipeClipboard();
   }, true);
 
-  window.addEventListener("beforeprint", function () { hide(); });
+  window.addEventListener("beforeprint", function () { log("print"); hide(); });
   window.addEventListener("afterprint", function () { show(); });
 
   /* videos: no download, no picture-in-picture, no casting */
