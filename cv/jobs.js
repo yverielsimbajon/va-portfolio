@@ -837,7 +837,7 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Engaging Content · Food & Dessert Posts · Canva · Reels · Grow Your Audience",
     tagline: "",
-    summary: "Creative, passionate Social Media Manager with 5+ years of experience in social media management and graphic design. I create engaging content, design Canva posts and edit Reels that grow an audience: one client's post views grew 50% to 265K and followers 147% in 90 days.",
+    summary: "Creative, passionate Social Media Manager with 5+ years of experience in social media management and graphic design. One client's post views grew 50% to 265K and followers 147% in 90 days.",
     keywords: ["Social Media Manager", "creative", "passionate", "engaging content", "posts", "showcase", "desserts", "grow", "online presence", "audience", "attract customers", "portfolio", "sample works", "Canva", "Reels", "Facebook", "Instagram"],
     focus: ["social", "design", "english", "admin", "web"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
