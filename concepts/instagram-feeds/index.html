@@ -57,6 +57,7 @@ body{font-family:var(--f),"DM Sans",sans-serif;background:var(--bg);color:var(--
 .nav{margin-top:auto;height:46px;flex:none;border-top:1px solid #efefef;display:flex;justify-content:space-around;align-items:center;padding-bottom:6px}
 .nav svg{width:25px;height:25px;stroke:#111;fill:none;stroke-width:1.9}.nav .me{width:28px;height:28px;border-radius:50%;background:var(--av);border:1.5px solid #111}
 .bl{filter:blur(10px)}
+.nb .t.text .brand{filter:none}
 .home{position:absolute;bottom:8px;left:50%;width:150px;height:5px;margin-left:-75px;border-radius:3px;background:#111;z-index:4}
 </style><script src="/protect.js"></script>
 </head>
@@ -145,6 +146,27 @@ const F = {
       { p: 31890551, cap: "Roasted weekly", k: "Fresh beans", shade: 1, ic: MULTI }
     ]
   },
+  sweet: {
+    bg: "#fbf1e4", bg2: "#e9c9a6", ink: "#3d2347",
+    ph: "saturate(1.05) contrast(1.03) brightness(1.02)", tint: "#d99a5b", noblur: 1,
+    swatches: ["#5b2d6e", "#c9763a", "#f4c27a", "#fbf1e4", "#8b4a5e"],
+    font: "DM Sans", title: "Sweet Potato Mania, sample feed plan", sub: "Instagram feed planning · warm, cosy, made to make you hungry",
+    user: "sweetpotatomania", mono: "SPM", ring: "linear-gradient(45deg,#c9763a,#5b2d6e)", av: "#5b2d6e", hlbg: "#f6e3cc",
+    stats: ["9", "-", "-"],
+    bio: '<b>Sweet Potato Mania</b><span class="cat">Dessert shop</span><br>Japanese-style sweet potato desserts 🍠<br>Warm, creamy, made fresh<br><span class="lk">Sample plan, not live</span>',
+    hl: [[34205118, "Tarts"], [37488678, "Roasted"], [10652321, "Purple"], [35254700, "Sweets"], [5507575, "Wedges"]],
+    tiles: [
+      { p: 34205118, cap: "Purple sweet potato tarts", k: "Fresh today", shade: 1, ic: REEL },
+      { t: 1, bg: "#f4c27a", fg: "#3d2347", brand: "Sweet Potato Mania", k: "Did you know", h: "Why Japanese sweet potatoes taste like candy.", ring: 1 },
+      { p: 3233282, shade: 1, ic: MULTI },
+      { t: 1, bg: "#5b2d6e", fg: "#fbf1e4", brand: "Sweet Potato Mania", k: "Menu", h: "Our 3 bestsellers, ranked.", p2: "Swipe to see them", ring: 1 },
+      { p: 38134272, cap: "Roasted, creamy, golden", k: "Dessert plate", shade: 1 },
+      { p: 31254629, cap: "Warm from the oven", k: "Cosy sweets", shade: 1, ic: REEL },
+      { p: 5199274, shade: 1 },
+      { t: 1, c: 1, bg: "#c9763a", fg: "#fff", brand: "Sweet Potato Mania", h: "Your sweet potato fix is waiting", b: "Order now", bb: "#fff", bf: "#c9763a" },
+      { p: 38613633, cap: "Caramelized and nutty", k: "Sweet treat", shade: 1, ic: MULTI }
+    ]
+  },
   makeup: {
     bg: "#fbefee", bg2: "#f2cfd5", ink: "#4a1c2b",
     ph: "saturate(1.02) contrast(1.02) brightness(1.03)", tint: "#f0a9b8",
@@ -171,7 +193,7 @@ const key = new URLSearchParams(location.search).get("f") || "clinic", D = F[key
 const root = document.documentElement.style;
 root.setProperty("--bg", D.bg); root.setProperty("--bg2", D.bg2); root.setProperty("--ink", D.ink); root.setProperty("--ph", D.ph); root.setProperty("--tint", D.tint);
 root.setProperty("--f", `"${D.font}"`); root.setProperty("--sig", D.swatches[0]); root.setProperty("--ring", D.ring); root.setProperty("--av", D.av); root.setProperty("--hlbg", D.hlbg);
-document.body.style.color = D.ink;
+document.body.style.color = D.ink; if (D.noblur) document.body.classList.add("nb");
 const tile = t => t.p
   ? `<div class="t photo${t.shade ? " shade" : ""}"><img src="${px(t.p)}" alt="" crossorigin="anonymous">${t.ic || ""}${t.cap ? `<div class="cap"><small>${t.k}</small>${t.cap}</div>` : ""}</div>`
   : `<div class="t text${t.c ? " c" : ""}" style="background:${t.bg};color:${t.fg}"><span class="brand">${t.brand}</span>${t.ring ? '<span class="ring"></span>' : ""}<div class="in">${t.k ? `<span class="k">${t.k}</span>` : ""}<span class="h">${t.h}</span>${t.p2 ? `<span class="p">${t.p2}</span>` : ""}${t.b ? `<span class="b" style="background:${t.bb};color:${t.bf}">${t.b}</span>` : ""}</div></div>`;
@@ -179,10 +201,10 @@ const html = D.tiles.map(tile).join("");
 document.getElementById("flat").innerHTML = `<div class="grid">${html}</div>`;
 document.getElementById("pg").innerHTML = html;
 document.getElementById("label").innerHTML = `<div class="sw">${D.swatches.map(c => `<i style="background:${c}"></i>`).join("")}</div>`;
-document.getElementById("uname").textContent = D.user; document.getElementById("mono").innerHTML = D.mono; document.getElementById("mono").classList.add("bl");
+document.getElementById("uname").textContent = D.user; document.getElementById("mono").innerHTML = D.mono; if (!D.noblur) { document.getElementById("mono").classList.add("bl"); } else { document.getElementById("uname").classList.remove("bl"); }
 ["s1", "s2", "s3"].forEach((id, i) => document.getElementById(id).textContent = D.stats[i]);
 document.getElementById("bio").innerHTML = D.bio;
-document.querySelectorAll("#bio > b, #bio .lk").forEach(e => e.classList.add("bl"));
+if (!D.noblur) document.querySelectorAll("#bio > b, #bio .lk").forEach(e => e.classList.add("bl"));
 if (D.bio.indexOf("<b>") > 0) document.querySelector("#bio > b").style.display = "block";
 document.getElementById("hl").innerHTML = D.hl.map(h => `<div><i><s><img src="${px(h[0], 200)}" alt="" crossorigin="anonymous"></s></i>${h[1]}</div>`).join("");
 </script></body></html>
