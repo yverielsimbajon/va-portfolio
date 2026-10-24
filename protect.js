@@ -70,6 +70,17 @@
     if (document.visibilityState === "hidden") hide(); else show();
   });
 
+  /* Snipping Tool / other capture apps take focus from the browser, so go dark whenever
+     the page loses focus (focus moving into one of our own iframes does not count) */
+  window.addEventListener("blur", function () {
+    setTimeout(function () {
+      var a = document.activeElement;
+      if (a && a.tagName === "IFRAME") return;
+      if (!document.hasFocus()) hide();
+    }, 0);
+  });
+  window.addEventListener("focus", show);
+
   /* videos: no download, no picture-in-picture, no casting */
   function lock(v) {
     v.setAttribute("controlsList", "nodownload noremoteplayback noplaybackrate");
