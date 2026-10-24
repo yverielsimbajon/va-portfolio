@@ -850,6 +850,7 @@ window.RESUME_JOBS = {
       { req: "Send your portfolio or sample works", proof: "My portfolio and sample works are all on this page, and the full portfolio is one tap away.", status: "yes", tab: "designs", cta: "See sample works" }
     ],
     workSections: [
+      { type: "block", key: "foodPosters" },
       { type: "block", key: "designs" },
       { type: "block", key: "feedsMine" },
       { type: "block", key: "feeds" },
@@ -857,8 +858,10 @@ window.RESUME_JOBS = {
       { type: "cards", part: "plan", keys: ["cupSchedule", "plushBranding"] }
     ],
     workOverrides: {
-      designs: {
-        prepend: [5, 7, 2, 9, 10].map(n => ({ src: "design-food-" + n + ".jpg", thumb: "design-food-" + n + ".jpg" }))
+      foodPosters: {
+        label: "Food Posters I Design for You",
+        blurb: "Canva food posters for a made-up sample brand: chicken, ramen, pizza, ice cream and cheesecake.",
+        items: [5, 7, 2, 9, 10].map(n => ({ src: "design-food-" + n + ".jpg", thumb: "design-food-" + n + ".jpg" }))
       },
       feedsMine: {
         label: "Instagram feed concept: sweet potato dessert shop",
@@ -874,7 +877,8 @@ window.RESUME_JOBS = {
       }
     },
     workHeads: {
-      designs: { label: "Social Media Design", title: "Posters That Make People Hungry.", text: "Canva food posters from pizza to cheesecake, plus promos and graphics, made to stop the scroll." },
+      foodPosters: { label: "Food Poster Design", title: "Posters That Make People Hungry.", text: "Food posters made to stop the scroll and sell the dish." },
+      designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos, vouchers and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
       feedsMine: { label: "Made for You", title: "My IG Feed Concept for You.", text: "A nine-post sweet potato dessert plan around one palette, previewed before anything goes live." },
       feeds:   { label: "More Feed Plans", title: "Feeds That Look Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },

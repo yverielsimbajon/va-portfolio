@@ -784,6 +784,7 @@ function stacked(k){
 }
 const WB = {
   feedsMine: n => stacked("feedsMine"),
+  foodPosters: n => `<h2 class="title wsub">${esc(B.work.foodPosters.label)}</h2><p class="blurb">${esc(B.work.foodPosters.blurb)} Tap any poster to enlarge it.</p>${marqueeHTML("foodPosters")}`,
   socialDesigns: n => `<h2 class="title wsub">${esc(B.work.socialDesigns.label)}</h2><p class="blurb">${esc(B.work.socialDesigns.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("socialDesigns")}`,
   socialFeeds: n => stacked("socialFeeds"),
   designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic Designs I Create for You")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
