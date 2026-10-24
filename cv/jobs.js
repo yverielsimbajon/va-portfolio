@@ -891,5 +891,66 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Social Media Manager (Sweet Potato Mania)"
+  },
+  "parfumcentral-designer": {
+    label: "Creative Designer & Social Growth Specialist (ParfumCentral, Dubai)",
+    headline: "Creative Designer & Social Growth Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Premium Visuals · Ad Creatives · Instagram & Facebook · Reels · Creative Testing · Social Growth",
+    tagline: "",
+    codeWord: "Scarlet Sands",
+    summary: "Creative designer and social growth specialist with 5+ years of experience in graphic design and social media for brands in Australia, the United States and Europe. I design polished static posts, carousels, stories and Reels in Canva, Photoshop and CapCut, and plan feeds that look premium and put together. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    keywords: ["designer", "premium visuals", "branding", "ad creative", "Instagram", "Facebook", "static ads", "carousels", "stories", "short-form video", "creative variations", "Meta Ads", "Photoshop", "Figma", "Canva", "AI tools", "engagement", "reach", "follower growth", "portfolio"],
+    focus: ["design", "social", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "A strong portfolio, good taste and attention to detail", proof: "My portfolio is on this page: posters, promos, vouchers, brand boards and 9-post feeds, all in one consistent look per brand. Fragrance would be a new niche for me, and I would study your bottles, notes and tone from day one.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Design high-quality creatives for Instagram and Facebook: static ads, carousels, stories, banners", proof: "I design posts, promos, event graphics, stories and short videos in Canva and Photoshop for several brands, sized for Instagram and Facebook.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Visual concepts that fit a premium luxury brand", proof: "I plan calm, clean and premium feeds, like a sample aesthetic clinic in Beverly Hills and a makeup brand in Los Angeles, each with one palette, one type style and a fixed layout.", status: "yes", tab: "feeds", cta: "See my premium feeds" },
+      { req: "Visual hierarchy, typography, composition and branding", proof: "I build brand boards with logos, colour palettes, typography and stationery on one sheet, so every post follows the same rules.", status: "yes", tab: "brands", cta: "See my brand boards" },
+      { req: "Photoshop, Illustrator, Figma, Canva or similar", proof: "Canva, Adobe Photoshop and Figma every week. Illustrator is new for me, and I would learn it.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Short-form video content and basic-to-strong video editing", proof: "I edit Reels with captions, music and clean cuts in CapCut, and make short promo videos in Canva. Premiere Pro and DaVinci Resolve are new for me.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Different ad angles, hooks and creative variations for testing", proof: "I make several versions of one offer, with a different hook, headline or layout for each, and I track which one the audience likes best in Meta Business Suite.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Meta Ads Manager, campaign optimization, CTR, CPA, CPC and ROAS", proof: "I read reach, engagement and follower results in Meta Business Suite every week. Running paid campaigns in Ads Manager is new for me, and I would learn your account properly from day one.", status: "learn", tab: "results", cta: "See my reporting" },
+      { req: "Growing social media pages and accounts", proof: "I grew a client's post views 50% to 265K and followers 147% in 90 days with a content calendar, consistent posting and branded designs.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "AI tools for creative testing, concepts and more ad variations", proof: "I use AI tools to speed up concepts, captions and website builds, and I check every result by eye before it goes out. Dedicated AI image and video generators are new for me, and I would learn the ones you prefer.", status: "learn" },
+      { req: "Proactive: suggest ideas instead of waiting for instructions", proof: "I plan a month of content ahead, send a weekly update, and bring ideas with each one: what to post, what to test, what to change.", status: "yes", tab: "smm", cta: "See my content planning" }
+    ],
+    workSections: [
+      { type: "block", key: "foodPosters" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "brands" },
+      { type: "block", key: "reels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "cupResults"] }
+    ],
+    workOverrides: {
+      foodPosters: {
+        label: "Product Posters I Design for You",
+        blurb: "Product posters I designed in Canva for made-up sample brands: clean cut-outs, gradient backgrounds and bold type that fit one brand look.",
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ src: "fp3-" + n + ".jpg", thumb: "fp3-" + n + ".jpg" }))
+      },
+      reels: {
+        blurb: "Before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
+        items: [2, 1, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" }))
+      }
+    },
+    workHeads: {
+      foodPosters: { label: "Product Poster Design", title: "Posters That Make a Product Stand Out.", text: "Cut-out product posters on clean gradients, made to stop the scroll." },
+      designs: { label: "Ad & Social Creatives", title: "Creatives That Stop the Scroll.", text: "Static posts, promos and stories for Instagram and Facebook, with variations ready to test." },
+      feeds:   { label: "Premium Feed Concepts", title: "A Feed That Looks Premium.", text: "Calm, clean nine-post plans around one palette, previewed before anything goes live." },
+      brands:  { label: "Branding", title: "One Brand Look on Every Post.", text: "Logos, colours and type on one sheet, so every creative looks like the same brand." },
+      reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
+      plan:    { label: "Social Growth", title: "Consistent Posting That Grows Your Page.", text: "A content calendar and weekly results in Meta Business Suite, so we see what works and do more of it." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "brands"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Scarlet Sands"
   }
 };
