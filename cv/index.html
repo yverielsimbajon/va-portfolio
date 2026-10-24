@@ -606,7 +606,11 @@ const qp = new URLSearchParams(location.search);
 const key = (qp.get("job") || (location.pathname.match(/\/cv\/([^\/]+)\/?$/) || [])[1] || "default").toLowerCase();
 const J = Object.assign({}, JOBS.default, JOBS[key] || {});
 // per-job replacement of a work block (items, blurb...): J.workOverrides = { designs: { blurb, items } }
-if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => { B.work[k] = Object.assign({}, B.work[k], J.workOverrides[k]); });
+if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => {
+  const ov = Object.assign({}, J.workOverrides[k]);
+  if (ov.prepend){ ov.items = ov.prepend.concat(ov.items || (B.work[k] && B.work[k].items) || []); delete ov.prepend; }
+  B.work[k] = Object.assign({}, B.work[k], ov);
+});
 
 // ---- helpers
 function bold(t){ return esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
@@ -779,6 +783,7 @@ function stacked(k){
       ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}${it.phone ? `<p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>` : ""}</div>`).join("")}</div>`;
 }
 const WB = {
+  feedsMine: n => stacked("feedsMine"),
   socialDesigns: n => `<h2 class="title wsub">${esc(B.work.socialDesigns.label)}</h2><p class="blurb">${esc(B.work.socialDesigns.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("socialDesigns")}`,
   socialFeeds: n => stacked("socialFeeds"),
   designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic Designs I Create for You")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
@@ -790,7 +795,7 @@ const WB = {
         <div class="phone"><div class="pscreen" role="button" tabindex="0" aria-label="Reel ${i + 1}: turn sound on or off"><span class="pisland"></span>
           <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
           <div class="rtop"><strong>Reels</strong><button class="rsound" type="button" aria-pressed="false">${SND_OFF}<span>Tap for sound</span></button></div>
-          <div class="rbot" aria-hidden="true"><div class="racc"><img src="${IMG}logo-kerbing-king-icon.jpg" alt=""><span>Landscaping Services in Australia</span></div>
+          <div class="rbot" aria-hidden="true"><div class="racc"><img src="${IMG}${it.logo || "logo-kerbing-king-icon.jpg"}" alt=""><span>${esc(it.acct || "Landscaping Services in Australia")}</span></div>
             <div class="ract"><svg viewBox="0 0 24 24"><path d="M12 20.5s-8-4.9-8-11A4.5 4.5 0 0 1 12 6.6a4.5 4.5 0 0 1 8 2.9c0 6.1-8 11-8 11z"/></svg><svg viewBox="0 0 24 24"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"/></svg><svg viewBox="0 0 24 24"><path d="M22 3 2 10.5l8 3 3 8L22 3z"/><path d="M10 13.5 22 3"/></svg></div></div>
         </div></div>`).join("")}</div></div>${nav}<p class="rhint">Swipe or tap the arrows to see more reels</p>`;
   },

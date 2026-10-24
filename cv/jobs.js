@@ -851,25 +851,33 @@ window.RESUME_JOBS = {
     ],
     workSections: [
       { type: "block", key: "designs" },
+      { type: "block", key: "feedsMine" },
       { type: "block", key: "feeds" },
       { type: "block", key: "reels" },
       { type: "cards", part: "plan", keys: ["cupSchedule", "plushBranding"] }
     ],
     workOverrides: {
       designs: {
-        blurb: "Food posters I designed in Canva for a made-up sample brand: cupcakes, pizza, burgers, desserts, chicken, donuts, ramen and tacos.",
-        items: [1, 2, 3, 4, 5, 6, 7, 8].map(n => ({ src: "design-food-" + n + ".jpg", thumb: "design-food-" + n + ".jpg" }))
+        prepend: [5, 7, 2, 9, 10].map(n => ({ src: "design-food-" + n + ".jpg", thumb: "design-food-" + n + ".jpg" }))
       },
-      feeds: {
-        label: "Instagram feed plan for a dessert shop",
+      feedsMine: {
+        label: "Instagram feed concept: sweet potato dessert shop",
         blurb: "A sample 9-post feed for a sweet potato dessert shop, with a made-up brand: one colour palette, photos mixed with text posts, previewed as a flat plan and inside the Instagram app. Tap to enlarge.",
         items: [{ src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop (sample concept)", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" }]
+      },
+      reels: {
+        blurb: "An aesthetic cupcake Reel, plus before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
+        items: [
+          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }, { src: "reel-3.mp4", poster: "reel-3.jpg", kind: "video" }
+        ]
       }
     },
     workHeads: {
-      designs: { label: "Food Poster Design", title: "Posters That Make People Hungry.", text: "Eight Canva food posters, from cupcakes to ramen, each made to stop the scroll and sell the dish." },
+      designs: { label: "Social Media Design", title: "Posters That Make People Hungry.", text: "Canva food posters from pizza to cheesecake, plus promos and graphics, made to stop the scroll." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
-      feeds:   { label: "Content Planning", title: "A Dessert Feed That Looks Put Together.", text: "A nine-post sweet potato dessert plan around one palette, previewed before anything goes live." },
+      feedsMine: { label: "Made for You", title: "My IG Feed Concept for You.", text: "A nine-post sweet potato dessert plan around one palette, previewed before anything goes live." },
+      feeds:   { label: "More Feed Plans", title: "Feeds That Look Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       plan:    { label: "Grow Your Audience", title: "Consistent Posting That Brings Customers.", text: "A content calendar and one consistent brand look, so your page keeps growing." }
     },
     resultsShots: "results",

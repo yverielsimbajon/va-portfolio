@@ -25,6 +25,14 @@ h1,.big{font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-weight:800;l
 .C .photo{left:0;right:0;top:0;height:760px}
 .C .panel{position:absolute;left:0;right:0;top:700px;bottom:0;background:var(--bg);border-radius:60px 60px 0 0;padding:70px 64px}
 .C h1{font-size:122px;margin-bottom:22px}.C .tag{margin-bottom:34px}.C .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+/* D: photo, headline on top */
+.D .photo{inset:0}.D .shade{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(20,8,4,.8),rgba(20,8,4,.05) 45%,rgba(20,8,4,.6))}
+.D .txt{position:absolute;left:64px;right:64px;top:170px;z-index:3}.D h1{font-size:170px;margin-bottom:22px}.D .bot{position:absolute;left:64px;right:64px;bottom:120px;z-index:3;display:flex;justify-content:space-between;align-items:flex-end}.D .logo{color:#fff}
+.D .price{font-size:150px;color:var(--ac)}.D .price small{display:block;font-family:"DM Sans";font-size:30px;font-weight:700;color:#fff;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+/* E: arch frame */
+.E .photo{left:180px;top:140px;width:720px;height:620px;border-radius:360px 360px 40px 40px;box-shadow:0 30px 60px rgba(120,20,60,.25)}
+.E .txt{position:absolute;left:64px;right:64px;bottom:140px;text-align:center}.E h1{font-size:120px;margin-bottom:16px}.E .tag{margin-bottom:28px}
+.E .badge{top:600px;right:70px}
 .badge{position:absolute;right:56px;top:560px;width:230px;height:230px;border-radius:50%;background:var(--ac);color:var(--acf);display:grid;place-items:center;text-align:center;font-weight:800;font-size:30px;line-height:1.1;transform:rotate(10deg);z-index:6;box-shadow:0 12px 30px rgba(0,0,0,.3)}
 .badge b{display:block;font-family:"Bricolage Grotesque";font-size:76px}
 </style><script src="/protect.js"></script></head>
@@ -39,7 +47,9 @@ const P = [
  { L: "A", id: 8998353, bg: "#2a0f06", fg: "#fff", ac: "#ff6a1a", acf: "#fff", h: "Crispy<br>Fried Chicken", t: "Golden, crunchy and juicy inside.", c: "6 pcs bucket, ₱399", f: ["Chicken", "Order for pickup or delivery"] },
  { L: "C", id: 34491951, bg: "#d9f2ee", fg: "#0b3b3a", ac: "#f0508a", acf: "#fff", h: "Donut<br>Box of 6", t: "Glazed, chocolate and sprinkles.<br>Perfect with coffee.", c: "Grab a box", f: ["Donuts", "Fresh from the oven"], badge: ["Save", "20%"] },
  { L: "A", id: 30856693, bg: "#101820", fg: "#fff", ac: "#e63946", acf: "#fff", h: "Hot<br>Ramen Bowl", t: "Rich broth, soft egg and fresh noodles.", c: "Now serving", f: ["Ramen", "Warm up with us"] },
- { L: "B", id: 5837196, bg: "#e3f1c8", fg: "#1f3a10", ac: "#e8590c", acf: "#fff", h: "Taco<br>Tuesday", t: "3 tacos for ₱199.<br>Fresh toppings, big flavour.", c: "Every Tuesday", f: ["Tacos", "Dine in only"] }
+ { L: "B", id: 5837196, bg: "#e3f1c8", fg: "#1f3a10", ac: "#e8590c", acf: "#fff", h: "Taco<br>Tuesday", t: "3 tacos for ₱199.<br>Fresh toppings, big flavour.", c: "Every Tuesday", f: ["Tacos", "Dine in only"] },
+ { L: "D", id: 17653878, bg: "#2a120a", fg: "#fff", ac: "#ffb347", acf: "#2a120a", h: "Treat<br>Yourself", t: "Ice cream, strawberries and whipped cream in every scoop.", price: ["Only", "₱129"], f: ["Desserts", "Open daily until 9pm"] },
+ { L: "E", id: 30793999, bg: "#ffe3ea", fg: "#6b1b36", ac: "#e0457b", acf: "#fff", h: "Strawberry<br>Cheesecake", t: "Creamy, fruity and made fresh every day.", c: "Order a slice", badge: ["New", "₱99"], f: ["Cakes", "Whole cakes on pre-order"] }
 ];
 const p = P[(+new URLSearchParams(location.search).get("p") || 1) - 1];
 const r = document.documentElement.style;
@@ -47,7 +57,11 @@ r.setProperty("--bg", p.bg); r.setProperty("--fg", p.fg); r.setProperty("--ac", 
 const logo = '<div class="logo"><i>C</i>Crave &amp; Co.</div>';
 const foot = `<div class="foot"><span>${p.f[0]}</span><span>${p.f[1]}</span></div>`;
 document.body.className = p.L;
-document.getElementById("app").innerHTML = p.L === "A"
+document.getElementById("app").innerHTML = p.L === "D"
+ ? `<div class="photo" style="background-image:url(${px(p.id)})"></div><div class="shade"></div>${logo}<div class="txt"><h1>${p.h}</h1><div class="tag">${p.t}</div></div><div class="bot"><div class="price"><small>${p.price[0]}</small>${p.price[1]}</div><span class="cta">Order now</span></div>`
+ : p.L === "E"
+ ? `${logo}<div class="photo" style="background-image:url(${px(p.id, 720, 620)})"></div><div class="badge"><span>${p.badge[0]}<b>${p.badge[1]}</b></span></div><div class="txt"><h1>${p.h}</h1><div class="tag">${p.t}</div><span class="cta">${p.c}</span></div>${foot}`
+ : p.L === "A"
  ? `<div class="photo" style="background-image:url(${px(p.id)})"></div><div class="shade"></div>${logo}<div class="txt"><span class="cta">${p.c}</span><h1>${p.h}</h1><div class="tag">${p.t}</div></div>${foot}`
  : p.L === "B"
  ? `${logo}<div class="photo" style="background-image:url(${px(p.id, 700, 700)})"></div><div class="txt"><h1>${p.h}</h1><div class="tag">${p.t}</div><span class="cta">${p.c}</span></div>${foot}`
