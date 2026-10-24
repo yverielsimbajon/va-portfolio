@@ -605,6 +605,8 @@ const IMG = "../images/", THUMB = "../images/thumbs/";
 const qp = new URLSearchParams(location.search);
 const key = (qp.get("job") || (location.pathname.match(/\/cv\/([^\/]+)\/?$/) || [])[1] || "default").toLowerCase();
 const J = Object.assign({}, JOBS.default, JOBS[key] || {});
+// per-job replacement of a work block (items, blurb...): J.workOverrides = { designs: { blurb, items } }
+if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => { B.work[k] = Object.assign({}, B.work[k], J.workOverrides[k]); });
 
 // ---- helpers
 function bold(t){ return esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }

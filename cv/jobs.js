@@ -837,7 +837,7 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Engaging Content · Food & Dessert Posts · Canva · Reels · Grow Your Audience",
     tagline: "",
-    summary: "Creative, passionate Social Media Manager with 5+ years of experience in social media management, graphic design and digital marketing for beauty, wellness and lifestyle brands. I create engaging content and posts, design Canva graphics and edit Reels that make products look good, and plan content to grow your audience and attract customers. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    summary: "Creative, passionate Social Media Manager with 5+ years of experience in social media management and graphic design. I create engaging content, design Canva posts and edit Reels that grow an audience: one client's post views grew 50% to 265K and followers 147% in 90 days.",
     keywords: ["Social Media Manager", "creative", "passionate", "engaging content", "posts", "showcase", "desserts", "grow", "online presence", "audience", "attract customers", "portfolio", "sample works", "Canva", "Reels", "Facebook", "Instagram"],
     focus: ["social", "design", "english", "admin", "web"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
@@ -851,14 +851,25 @@ window.RESUME_JOBS = {
     ],
     workSections: [
       { type: "block", key: "designs" },
-      { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
+      { type: "block", key: "reels" },
       { type: "cards", part: "plan", keys: ["cupSchedule", "plushBranding"] }
     ],
+    workOverrides: {
+      designs: {
+        blurb: "Food posters I designed in Canva for a made-up sample brand: cupcakes, pizza, burgers, desserts, chicken, donuts, ramen and tacos.",
+        items: [1, 2, 3, 4, 5, 6, 7, 8].map(n => ({ src: "design-food-" + n + ".jpg", thumb: "design-food-" + n + ".jpg" }))
+      },
+      feeds: {
+        label: "Instagram feed plan for a dessert shop",
+        blurb: "A sample 9-post feed for a sweet potato dessert shop, with a made-up brand: one colour palette, photos mixed with text posts, previewed as a flat plan and inside the Instagram app. Tap to enlarge.",
+        items: [{ src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop (sample concept)", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" }]
+      }
+    },
     workHeads: {
-      designs: { label: "Social Media Design", title: "Posts That Make People Hungry.", text: "Canva posts, promos and graphics that show off your products and fit one clean brand look." },
+      designs: { label: "Food Poster Design", title: "Posters That Make People Hungry.", text: "Eight Canva food posters, from cupcakes to ramen, each made to stop the scroll and sell the dish." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
-      feeds:   { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:   { label: "Content Planning", title: "A Dessert Feed That Looks Put Together.", text: "A nine-post sweet potato dessert plan around one palette, previewed before anything goes live." },
       plan:    { label: "Grow Your Audience", title: "Consistent Posting That Brings Customers.", text: "A content calendar and one consistent brand look, so your page keeps growing." }
     },
     resultsShots: "results",

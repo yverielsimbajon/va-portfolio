@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+<title>Food poster samples</title>
+<!-- Source for images/design-food-1..8.jpg. Open with ?p=1..8, screenshot at 1080x1350. Brand "Crave & Co." is made up. Photos are Pexels stock photos. -->
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&family=Bricolage+Grotesque:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1350px;overflow:hidden}
+body{font-family:"DM Sans",sans-serif;position:relative;color:var(--fg);background:var(--bg)}
+h1,.big{font-family:"Bricolage Grotesque","DM Sans",sans-serif;font-weight:800;line-height:.95;letter-spacing:-.02em}
+.logo{position:absolute;left:64px;top:56px;display:flex;align-items:center;gap:14px;z-index:5;font-weight:800;font-size:34px;letter-spacing:-.01em}
+.logo i{width:58px;height:58px;border-radius:50%;background:var(--ac);color:var(--acf);display:grid;place-items:center;font-style:normal;font-family:"Bricolage Grotesque";font-size:34px;font-weight:800}
+.photo{position:absolute;background-size:cover;background-position:center}
+.cta{display:inline-block;padding:22px 46px;border-radius:99px;background:var(--ac);color:var(--acf);font-weight:800;font-size:34px}
+.tag{font-size:34px;font-weight:500;opacity:.92;line-height:1.3}
+.price{font-family:"Bricolage Grotesque";font-weight:800;font-size:120px;line-height:1}
+.foot{position:absolute;left:64px;right:64px;bottom:56px;display:flex;justify-content:space-between;align-items:center;font-size:26px;font-weight:600;opacity:.85;z-index:5}
+/* A: full photo */
+.A .photo{inset:0}.A .shade{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.05) 62%,rgba(0,0,0,.35))}
+.A .txt{position:absolute;left:64px;right:64px;bottom:150px;z-index:3}.A h1{font-size:150px;margin:18px 0 22px}.A .logo{color:#fff}
+/* B: color block + round photo */
+.B .photo{left:240px;top:160px;width:600px;height:600px;border-radius:50%;border:14px solid var(--ac)}
+.B .txt{position:absolute;left:64px;right:64px;bottom:150px;text-align:center}.B h1{font-size:104px;margin-bottom:16px}.B .tag{margin-bottom:26px;font-size:32px}
+/* C: split */
+.C .photo{left:0;right:0;top:0;height:760px}
+.C .panel{position:absolute;left:0;right:0;top:700px;bottom:0;background:var(--bg);border-radius:60px 60px 0 0;padding:70px 64px}
+.C h1{font-size:122px;margin-bottom:22px}.C .tag{margin-bottom:34px}.C .logo{color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.6)}
+.badge{position:absolute;right:56px;top:560px;width:230px;height:230px;border-radius:50%;background:var(--ac);color:var(--acf);display:grid;place-items:center;text-align:center;font-weight:800;font-size:30px;line-height:1.1;transform:rotate(10deg);z-index:6;box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.badge b{display:block;font-family:"Bricolage Grotesque";font-size:76px}
+</style><script src="/protect.js"></script></head>
+<body><div id="app"></div>
+<script>
+const px = (id, w = 1080, h = 1350) => `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=${w}&h=${h}&fit=crop`;
+const P = [
+ { L: "B", id: 11128671, bg: "#fbd9e2", fg: "#5a1830", ac: "#d6336c", acf: "#fff", h: "Sweet Little<br>Cupcakes", t: "Baked fresh every morning.<br>Buy 5, get 1 free!", c: "Order now", f: ["Cupcakes", "Open daily 9am to 8pm"] },
+ { L: "A", id: 6068717, bg: "#1a1a1a", fg: "#fff", ac: "#ffb400", acf: "#1a1a1a", h: "Pizza<br>Night", t: "Hot, cheesy and made to share.", c: "2 large pizzas, ₱599", f: ["Pizza", "Dine in · Takeout · Delivery"] },
+ { L: "C", id: 4253700, bg: "#ffd23f", fg: "#2b1308", ac: "#c8281e", acf: "#fff", h: "Double<br>Cheese Burger", t: "Two juicy patties, melted cheese,<br>one big bite.", c: "Order now", f: ["Burgers", "Free fries with every meal"], badge: ["Only", "₱149"] },
+ { L: "B", id: 38134272, bg: "#efe1f5", fg: "#3d1a52", ac: "#6f3b8c", acf: "#fff", h: "Sweet Potato<br>Dessert", t: "Warm, creamy and golden.<br>Your new favourite treat.", c: "Try it today", f: ["Desserts", "Made fresh daily"] },
+ { L: "A", id: 8998353, bg: "#2a0f06", fg: "#fff", ac: "#ff6a1a", acf: "#fff", h: "Crispy<br>Fried Chicken", t: "Golden, crunchy and juicy inside.", c: "6 pcs bucket, ₱399", f: ["Chicken", "Order for pickup or delivery"] },
+ { L: "C", id: 34491951, bg: "#d9f2ee", fg: "#0b3b3a", ac: "#f0508a", acf: "#fff", h: "Donut<br>Box of 6", t: "Glazed, chocolate and sprinkles.<br>Perfect with coffee.", c: "Grab a box", f: ["Donuts", "Fresh from the oven"], badge: ["Save", "20%"] },
+ { L: "A", id: 30856693, bg: "#101820", fg: "#fff", ac: "#e63946", acf: "#fff", h: "Hot<br>Ramen Bowl", t: "Rich broth, soft egg and fresh noodles.", c: "Now serving", f: ["Ramen", "Warm up with us"] },
+ { L: "B", id: 5837196, bg: "#e3f1c8", fg: "#1f3a10", ac: "#e8590c", acf: "#fff", h: "Taco<br>Tuesday", t: "3 tacos for ₱199.<br>Fresh toppings, big flavour.", c: "Every Tuesday", f: ["Tacos", "Dine in only"] }
+];
+const p = P[(+new URLSearchParams(location.search).get("p") || 1) - 1];
+const r = document.documentElement.style;
+r.setProperty("--bg", p.bg); r.setProperty("--fg", p.fg); r.setProperty("--ac", p.ac); r.setProperty("--acf", p.acf);
+const logo = '<div class="logo"><i>C</i>Crave &amp; Co.</div>';
+const foot = `<div class="foot"><span>${p.f[0]}</span><span>${p.f[1]}</span></div>`;
+document.body.className = p.L;
+document.getElementById("app").innerHTML = p.L === "A"
+ ? `<div class="photo" style="background-image:url(${px(p.id)})"></div><div class="shade"></div>${logo}<div class="txt"><span class="cta">${p.c}</span><h1>${p.h}</h1><div class="tag">${p.t}</div></div>${foot}`
+ : p.L === "B"
+ ? `${logo}<div class="photo" style="background-image:url(${px(p.id, 700, 700)})"></div><div class="txt"><h1>${p.h}</h1><div class="tag">${p.t}</div><span class="cta">${p.c}</span></div>${foot}`
+ : `<div class="photo" style="background-image:url(${px(p.id, 1080, 760)})"></div>${logo}${p.badge ? `<div class="badge"><span>${p.badge[0]}<b>${p.badge[1]}</b></span></div>` : ""}<div class="panel"><h1>${p.h}</h1><div class="tag">${p.t}</div><span class="cta">${p.c}</span></div>${foot}`;
+</script></body></html>
