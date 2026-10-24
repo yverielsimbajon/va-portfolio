@@ -952,5 +952,41 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Scarlet Sands"
+  },
+  "casperflow-va": {
+    label: "Virtual Assistant (CasperFlow, marketing for contractors)",
+    headline: "Experienced Virtual Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Admin Support · Time Management · Problem Solving · Fluent English · CRM & Follow-Ups",
+    tagline: "",
+    summary: "Experienced Virtual Assistant with 5+ years of experience supporting business owners in Australia, the United States and Europe, with fluent written and spoken English. I handle admin, inboxes, calendars and follow-ups, keep every deadline on track, and send a clear daily update. When something breaks in a workflow or a booking, I find it, fix it and flag it.",
+    keywords: ["experienced VA", "virtual assistant", "fluent English", "admin", "administrative", "time management", "problem solving", "contractors", "home service", "lead generation", "automation", "follow-up", "follow-ups", "CRM", "reviews", "daily update"],
+    focus: ["admin", "crm", "english", "leads", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "An experienced VA", proof: "5+ years supporting business owners and a CEO in Australia, the United States and Europe, including a wellness brand I run today.", status: "yes", tab: "experience", cta: "See my experience" },
+      { req: "Fluent English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write clear, friendly emails and updates every day.", status: "yes" },
+      { req: "Good with admin", proof: "Inbox, calendar, trackers and records for owners and a CEO, 200+ calendar events, 61 booking calendars and a 1,400+ contact lead database.", status: "yes", tab: "work", cta: "See my admin work" },
+      { req: "Time management", proof: "I keep deadlines in trackers and calendars, send a daily and weekly update, and have supported the same clients for months without missed handovers.", status: "yes", tab: "work", cta: "See my trackers" },
+      { req: "Problem solving", proof: "I check that workflows and automations run correctly and flag problems early, from broken booking links to follow-ups that did not fire.", status: "yes", tab: "work", cta: "See the workflow checks" },
+      { req: "Marketing automation for contractors (GoHighLevel-style systems)", proof: "I build and manage GoHighLevel workflows, follow-ups and booking calendars. Contractor and trades niches would be new for me, and I would learn them properly from day one.", status: "learn" }
+    ],
+    workSections: [
+      { type: "cards", part: "admin", keys: ["cdcTracker", "ambAdmin", "plushEmail", "ghlUpdates"] },
+      { type: "cards", part: "crm", keys: ["ghlConvos", "ghlBooking", "ghlWorkflows"] }
+    ],
+    workHeads: {
+      admin: { label: "Administrative Support", title: "Admin That Keeps Business Organized.", text: "Trackers, calendars, inboxes and daily updates, so nothing slips and every deadline is met." },
+      crm:   { label: "Problem Solving", title: "Follow-Ups That Never Get Dropped.", text: "Enquiries, bookings and automations I check every day, with problems flagged and fixed early." }
+    },
+    resultsShots: "none",
+    resultsNote: "Admin, follow-ups and reporting I handle every day.",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Experienced Virtual Assistant application"
   }
 };
