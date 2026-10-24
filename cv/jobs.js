@@ -860,8 +860,8 @@ window.RESUME_JOBS = {
     workOverrides: {
       foodPosters: {
         label: "Food Posters I Design for You",
-        blurb: "Canva food posters for a made-up sample brand: burger, noodles, cupcakes, cake and baked sweet potato.",
-        items: [1, 2, 7, 9, 10].map(n => ({ src: "food-poster-" + n + ".jpg", thumb: "food-poster-" + n + ".jpg" }))
+        blurb: "Food posters I designed in Canva for made-up sample brands: steak, noodles, sandwiches, burgers and cakes.",
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ src: "fp3-" + n + ".jpg", thumb: "fp3-" + n + ".jpg" }))
       },
       feedsMine: {
         label: "Instagram feed concept: sweet potato dessert shop",
