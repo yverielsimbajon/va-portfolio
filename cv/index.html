@@ -605,8 +605,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261026m"></script>
-<script src="jobs.js?v=20261026m"></script>
+<script src="data.js?v=20261026o"></script>
+<script src="jobs.js?v=20261026o"></script>
 <script>
 (function(){
 const B = window.RESUME_BASE, JOBS = window.RESUME_JOBS;
@@ -706,7 +706,7 @@ function part(key, html, count){
   const H = J.workHeads && J.workHeads[key];
   if (!H || !html) return html;
   const c = H.count || count;
-  return `<div class="wpart"><header class="whead"><div><span class="wnum" aria-hidden="true">${String(++partN).padStart(2, "0")}</span><div class="eyebrow">${esc(H.label)}</div><h2>${esc(H.title)}</h2></div>
+  return `<div class="wpart"><header class="whead"><div><span class="wnum" aria-hidden="true">${String(++partN).padStart(2, "0")}</span><div class="eyebrow">${esc(H.label)}</div><h2>${esc(H.title).replace(/(\S+) (\(not AI\))/,"<span style=\"white-space:nowrap\">$1&nbsp;$2</span>")}</h2></div>
     <div class="wside"><p>${esc(H.text)}</p></div></header>${html}</div>`;
 }
 const blockPart = (k, n) => {
