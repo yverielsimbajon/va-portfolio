@@ -92,7 +92,10 @@ mark{background:none;color:var(--primary-dark);font-weight:600;padding:0}
 #crownImg2[hidden]{display:none}
 .herocar[hidden]{display:none}
 .herocar{margin:18px 0 6px;display:grid;gap:16px}
-.hc-row .hc-t{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--primary-dark);margin-bottom:8px}
+.hc-row .hc-t{text-align:center;margin:10px 0 16px}
+.hc-t .hc-n{display:inline-flex;align-items:center;gap:12px;font-size:clamp(13px,1.3vw,16px);font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--primary)}
+.hc-t .hc-n:before,.hc-t .hc-n:after{content:"";width:34px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--primary),var(--secondary))}
+.hc-t .hc-name{margin-top:8px;font-size:clamp(24px,3.2vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--deep)}
 .hc-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
 .hc-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;box-shadow:0 10px 24px rgba(17,76,89,.2);background:#fff}
 @media(max-width:700px){.hc-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
@@ -599,8 +602,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261026b"></script>
-<script src="jobs.js?v=20261026b"></script>
+<script src="data.js?v=20261026c"></script>
+<script src="jobs.js?v=20261026c"></script>
 <script>
 (function(){
 const B = window.RESUME_BASE, JOBS = window.RESUME_JOBS;
@@ -643,7 +646,7 @@ if (J.heroPhoto2){ $("#heroPhoto2").src = IMG + J.heroPhoto2; const hv = $(".her
   const lvl = () => { hv.style.paddingTop = "0"; if (innerWidth > 900) hv.style.paddingTop = Math.max(0, $("#hName").getBoundingClientRect().top - hv.getBoundingClientRect().top) + "px"; };
   addEventListener("resize", lvl); addEventListener("load", lvl); setTimeout(lvl, 400); }
 if (J.crown) $("#top").classList.add("has-crown");
-if (J.heroCarousels){ const hc = $("#heroCar"); hc.hidden = false; hc.innerHTML = J.heroCarousels.map(c => `<div class="hc-row"><div class="hc-t">${esc(c.title)}</div><div class="hc-strip">${c.images.map((f, i) => `<img src="${IMG + f}" alt="${esc(c.title)}, slide ${i + 1}" loading="lazy">`).join("")}</div></div>`).join(""); }
+if (J.heroCarousels){ const hc = $("#heroCar"); hc.hidden = false; hc.innerHTML = J.heroCarousels.map(c => `<div class="hc-row"><div class="hc-t">${c.title.includes(" · ") ? `<span class="hc-n">${esc(c.title.split(" · ")[0])}</span><div class="hc-name">${esc(c.title.split(" · ").slice(1).join(" · "))}</div>` : esc(c.title)}</div><div class="hc-strip">${c.images.map((f, i) => `<img src="${IMG + f}" alt="${esc(c.title)}, slide ${i + 1}" loading="lazy">`).join("")}</div></div>`).join(""); }
 if (J.codeWord){ const cw = document.createElement("div"); cw.className = "codeword"; cw.textContent = J.codeWord; $("#hSub").after(cw); }
 if (J.headlinePill) $("#hRole").classList.add("pill");
 if (J.headlineBadge){ const row = document.createElement("div"); row.className = "rolerow"; $("#hRole").before(row); row.appendChild($("#hRole")); const b = document.createElement("span"); b.className = "yrs"; b.textContent = J.headlineBadge; row.appendChild(b); }
