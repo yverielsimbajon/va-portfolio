@@ -332,6 +332,7 @@ window.RESUME_JOBS = {
     feedCredit: "Maria Simbajon, your creative social media manager and virtual assistant",
     workSections: [
       { type: "cards", part: "ambWork", keys: ["ambCarousel1", "ambCarousel2", "ambCarousel3"] },
+      { type: "block", key: "ambReel" },
       { type: "block", key: "ambFeed" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
@@ -339,9 +340,10 @@ window.RESUME_JOBS = {
     ],
     workHeads: {
       ambWork: { label: "Social Media — Alanah Mae Beauty", title: "Maria Simbajon, your creative social media manager and virtual assistant", text: "3 carousel concepts designed for your brand specifically: matched to your own fonts, colours and real photos, not a generic template." },
+      ambReel: { label: "Short-Form Video", title: "The Reel for Your Editing Task", text: "A hook-driven Reel edited in your own brand system: matched fonts, maroon branding and your real photos." },
       ambFeed: { label: "Content Planning", title: "A 9-Post Feed Concept for Your Real Page", text: "Your real bio, stats and highlights, styled exactly like your own Instagram, down to the fonts and colours." },
       designs: { label: "Social Media Design", title: "Graphic Design I Create for You (not AI)", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
-      reels: { label: "Short-Form Video", title: "Reels I Edit for You", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
+      reels: { label: "More Reels I Edit", title: "Reels for Other Clients", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
       support: { label: "Admin & Communication", title: "Email, Content Planning & Day-to-Day Admin", text: "Real work matched to what you asked for: email and Instagram communication, Notion content planning, and day-to-day admin." }
     },
     resultsShots: "results",
