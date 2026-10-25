@@ -337,6 +337,7 @@ window.RESUME_JOBS = {
     workSections: [
       { type: "block", key: "ambReel" },
       { type: "block", key: "ambFeed" },
+      { type: "block", key: "ambFeedMore" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "cards", part: "support", keys: ["plushEmail", "cdcTracker", "ambAdmin"] }

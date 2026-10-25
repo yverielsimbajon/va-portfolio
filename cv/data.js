@@ -247,6 +247,12 @@ window.RESUME_BASE = {
         { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
         { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
       ] },
+    ambFeedMore: { label: "More Instagram feed concepts I create and plan", blurb: "Sample 9-post feeds for other brands: one colour palette, photos mixed with text posts and a fixed layout, previewed as a flat plan and inside the Instagram app. Tap to enlarge.",
+      items: [
+        { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
+        { src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop (sample concept)", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" },
+        { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
+      ] },
     ambFeed: { label: "Instagram feed concept for Alanah Mae Beauty (real client)", blurb: "A 9-post feed plan built for her real page: her real bio, follower count and story highlights, matched to her site's Marcellus/PT Serif fonts and maroon #970C10 branding. A checkerboard of her real photos with branded quote and course cards. Tap to enlarge.",
       items: [
         { src: "amb-feed-comp.jpg", phone: "amb-feed-phone.png", grid: "amb-feed-grid.jpg", title: "Alanah Mae Beauty", note: "Matched to her own site and Instagram, not a generic template", accent: "#970C10", tint: "#FDF1EC" }
