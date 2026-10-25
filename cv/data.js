@@ -239,8 +239,8 @@ window.RESUME_BASE = {
       ] },
     reels: { label: "Reels I edit for you", blurb: "Before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
       items: [2, 1, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
-    ambReel: { label: "Reel I edit for Alanah Mae Beauty (real client)", blurb: "A hook-driven Reel in her own brand system: matched fonts, maroon branding and her real photos. Tap the phone to play.",
-      items: [{ src: "amb-reel.mp4", poster: "amb-reel.jpg", kind: "video", acct: "Alanah Mae Beauty", logo: "amb-logo-icon.jpg" }] },
+    ambReel: { label: "Reel I edit for Alanah Mae Beauty", blurb: "A LIFTED masterclass Reel cut from her own footage: hook, soft zoom, smooth transitions, animated captions and music. Tap the phone to play.",
+      items: [{ src: "amb-reel2.mp4", poster: "amb-reel2.jpg", kind: "video", acct: "Alanah Mae Beauty", logo: "amb-logo-icon.jpg" }] },
     feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust, and people follow pages that look put together. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, then preview each feed as a flat plan and inside the Instagram app, ready to schedule. Sample feeds, tap to enlarge.",
       items: [
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
@@ -249,7 +249,7 @@ window.RESUME_BASE = {
       ] },
     ambFeed: { label: "Instagram feed concept for Alanah Mae Beauty (real client)", blurb: "A 9-post feed plan built for her real page: her real bio, follower count and story highlights, matched to her site's Marcellus/PT Serif fonts and maroon #970C10 branding. A checkerboard of her real photos with branded quote and course cards. Tap to enlarge.",
       items: [
-        { src: "amb-feed-grid.jpg", phone: "amb-feed-phone.jpg", grid: "amb-feed-grid.jpg", title: "Alanah Mae Beauty", note: "Matched to her own site and Instagram, not a generic template", accent: "#970C10", tint: "#FDF1EC" }
+        { src: "amb-feed-comp.jpg", phone: "amb-feed-phone.png", grid: "amb-feed-grid.jpg", title: "Alanah Mae Beauty", note: "Matched to her own site and Instagram, not a generic template", accent: "#970C10", tint: "#FDF1EC" }
       ] },
     brands: { label: "Brand identity design", cols: 2, blurb: "Logos, colour palettes, typography, stationery and mood boards pulled together on one sheet, so a brand looks consistent and professional on every platform. Mock-up brands, tap to enlarge.",
       items: [

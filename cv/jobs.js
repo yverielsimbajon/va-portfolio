@@ -316,7 +316,7 @@ window.RESUME_JOBS = {
     summary: "Creative, organised Virtual Assistant with 5+ years of experience in graphic design, Canva and CapCut content, email and Instagram support, Notion planning and daily admin, plus email coordination for a National Pageant in Australia.",
     keywords: ["Virtual Assistant", "Alanah Mae Beauty Academy", "Alanah Mae Creative", "Canva", "CapCut", "InShot", "Instagram Reels", "Reels", "carousel posts", "social media graphics", "Customer Communication", "emails", "Instagram enquiries", "outreach", "Email Marketing", "email campaigns", "Student Administration", "training packs", "feedback forms", "course resources", "follow-up emails", "Course Management", "Thinkific", "training manuals", "online course content", "Content Planning", "Notion", "content calendars", "General Administration", "invoices", "organising files", "beauty", "graphic design", "graphic designer", "pageant", "National Pageant in Australia", "recruiter", "coordinator", "recruitment", "contestants", "applicants", "hourly rate", "weekly availability", "reliable", "creative", "long-term", "attention to detail", "written English"],
     focus: ["design", "social", "admin", "english", "support"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
+    order: ["work", "results", "experience", "skills", "why", "contact"],
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
@@ -335,7 +335,6 @@ window.RESUME_JOBS = {
       { title: "Carousel 2 · Conservative Business Style", sub: "Brown palette · “3 Things Every Beauty Business Needs”", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] }
     ],
     workSections: [
-      { type: "cards", part: "ambWork", keys: ["ambCarousel2", "ambCarousel1"] },
       { type: "block", key: "ambReel" },
       { type: "block", key: "ambFeed" },
       { type: "block", key: "designs" },
@@ -343,9 +342,6 @@ window.RESUME_JOBS = {
       { type: "cards", part: "support", keys: ["plushEmail", "cdcTracker", "ambAdmin"] }
     ],
     workHeads: {
-      ambWork: { label: "Social Media — Alanah Mae Beauty", title: "Maria Simbajon, your creative social media manager and virtual assistant", text: "2 carousel concepts designed for your brand specifically: matched to your own fonts, colours and real photos, not a generic template." },
-      ambReel: { label: "Short-Form Video", title: "The Reel for Your Editing Task", text: "A hook-driven Reel edited in your own brand system: matched fonts, maroon branding and your real photos." },
-      ambFeed: { label: "Content Planning", title: "A 9-Post Feed Concept for Your Real Page", text: "Your real bio, stats and highlights, styled exactly like your own Instagram, down to the fonts and colours." },
       designs: { label: "Social Media Design", title: "Graphic Design I Create for You (not AI)", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
       reels: { label: "More Reels I Edit", title: "Reels for Other Clients", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
       support: { label: "Admin & Communication", title: "Email, Content Planning & Day-to-Day Admin", text: "Real work matched to what you asked for: email and Instagram communication, Notion content planning, and day-to-day admin." }
