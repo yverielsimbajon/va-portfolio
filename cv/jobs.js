@@ -316,8 +316,8 @@ window.RESUME_JOBS = {
     summary: "Creative, organised Virtual Assistant with 5+ years of experience in graphic design, Canva and CapCut content, email and Instagram support, Notion planning and daily admin, plus email coordination for a National Pageant in Australia.",
     keywords: ["Virtual Assistant", "Alanah Mae Beauty Academy", "Alanah Mae Creative", "Canva", "CapCut", "InShot", "Instagram Reels", "Reels", "carousel posts", "social media graphics", "Customer Communication", "emails", "Instagram enquiries", "outreach", "Email Marketing", "email campaigns", "Student Administration", "training packs", "feedback forms", "course resources", "follow-up emails", "Course Management", "Thinkific", "training manuals", "online course content", "Content Planning", "Notion", "content calendars", "General Administration", "invoices", "organising files", "beauty", "graphic design", "graphic designer", "pageant", "National Pageant in Australia", "recruiter", "coordinator", "recruitment", "contestants", "applicants", "hourly rate", "weekly availability", "reliable", "creative", "long-term", "attention to detail", "written English"],
     focus: ["design", "social", "admin", "english", "support"],
-    order: ["work", "results", "work2", "experience", "skills", "why", "contact"],
-    workSplit: 1,
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    heroReel: "ambReel",
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
@@ -336,7 +336,6 @@ window.RESUME_JOBS = {
       { title: "Carousel 2 · Conservative Business Style", sub: "Brown palette · “3 Things Every Beauty Business Needs”", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] }
     ],
     workSections: [
-      { type: "block", key: "ambReel" },
       { type: "block", key: "ambFeedMore" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
