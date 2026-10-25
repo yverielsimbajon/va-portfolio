@@ -210,7 +210,16 @@ window.RESUME_BASE = {
       tools: ["Google Drive", "Notion", "Google Docs"], images: ["weekly-report.jpg", "notion-home.jpg", "notion-planning.jpg"] },
     ambAdmin: { category: "General Administration", resp: "I track payment records, organise files and handle day-to-day business tasks for my clients.", title: "Payment records, organised files & day-to-day admin on GoHighLevel and Google Drive", clients: ["Wellness Brand in Australia"],
       challenge: "Payment records, product files and daily tasks were spread across different places, so nothing was easy to find.", solution: "I track every order and payment in GoHighLevel, organise files and records in Google Drive, and handle daily admin tasks like updates and reminders.", result: "I keep business records accurate and organised, so nothing gets lost or missed.",
-      tools: ["GoHighLevel", "Google Drive", "Google Docs", "Google Sheets"], images: ["ghl-orders.jpg", "ghl-products.jpg"] }
+      tools: ["GoHighLevel", "Google Drive", "Google Docs", "Google Sheets"], images: ["ghl-orders.jpg", "ghl-products.jpg"] },
+    ambCarousel1: { category: "Carousel Design", resp: "I design Instagram carousels matched to a brand's own fonts, colours and voice.", title: "“3 Things Every Beauty Business Needs” carousel for Alanah Mae Beauty", clients: ["Alanah Mae Beauty Academy (real client concept)"],
+      challenge: "A generic template carousel does not look like it belongs to the brand, and does not earn a save or a share.", solution: "I matched her site's exact fonts (Marcellus + PT Serif) and maroon #970C10 branding, and used her own real photos to design a 5-slide hook carousel on building a beauty business.", result: "A carousel that looks like it was made in-house, not outsourced.",
+      tools: ["Canva", "Brand Matching", "Typography"], images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] },
+    ambCarousel2: { category: "Carousel Design", resp: "I design educational, myth-busting carousels that fit a brand's real content style.", title: "“3 Lash & Brow Myths” carousel for Alanah Mae Beauty", clients: ["Alanah Mae Beauty Academy (real client concept)"],
+      challenge: "Education content can feel flat without a strong hook and a consistent, on-brand look.", solution: "I designed a myth vs. truth carousel in the same brand system, matching the mythbusting style she already posts.", result: "A second on-brand carousel option, ready to post or adapt.",
+      tools: ["Canva", "Brand Matching", "Content Planning"], images: ["amb-c2-1.jpg", "amb-c2-2.jpg", "amb-c2-3.jpg", "amb-c2-4.jpg", "amb-c2-5.jpg"] },
+    ambCarousel3: { category: "Carousel Design", resp: "I design student-facing carousels that sell the real value of a course, not just the logo.", title: "“What You Actually Get” carousel for Alanah Mae Academy", clients: ["Alanah Mae Beauty Academy (real client concept)"],
+      challenge: "Course promos that only show the course name do not explain why someone should enrol.", solution: "I designed a third carousel option around the real value of her Academy: skill, business know-how and mentorship.", result: "A third on-brand option, so she can choose the strongest hook or post all three.",
+      tools: ["Canva", "Brand Matching", "Copywriting"], images: ["amb-c3-1.jpg", "amb-c3-2.jpg", "amb-c3-3.jpg", "amb-c3-4.jpg", "amb-c3-5.jpg"] }
   },
 
   work: {
@@ -238,6 +247,10 @@ window.RESUME_BASE = {
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
         { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
         { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
+      ] },
+    ambFeed: { label: "Instagram feed concept for Alanah Mae Beauty (real client)", blurb: "A 9-post feed plan built for her real page: her real bio, follower count and story highlights, matched to her site's Marcellus/PT Serif fonts and maroon #970C10 branding. A checkerboard of her real photos with branded quote and course cards. Tap to enlarge.",
+      items: [
+        { src: "amb-feed-grid.jpg", phone: "amb-feed-phone.jpg", grid: "amb-feed-grid.jpg", title: "Alanah Mae Beauty", note: "Matched to her own site and Instagram, not a generic template", accent: "#970C10", tint: "#FDF1EC" }
       ] },
     brands: { label: "Brand identity design", cols: 2, blurb: "Logos, colour palettes, typography, stationery and mood boards pulled together on one sheet, so a brand looks consistent and professional on every platform. Mock-up brands, tap to enlarge.",
       items: [

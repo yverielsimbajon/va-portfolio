@@ -780,7 +780,7 @@ function stacked(k){
         <div class="feed-chips">${(it.chips || ["9-post grid", "5-colour palette", "Phone preview"]).map(c => `<span>${esc(c)}</span>`).join("")}</div></div>
       <button class="feed-media${it.phone ? " has-split" : ""}${it.scroll ? " has-scroll" : ""}" type="button" data-lb="${k}" data-i="${n}" aria-label="View ${esc(it.title)}"><img src="${IMG + it.src}" alt="${esc(it.title)}" loading="lazy" decoding="async"></button>
       ${it.phone ? `<div class="feed-split"><img class="fs-phone" src="${IMG + it.phone}" alt="${esc(it.title)}: Instagram profile on a phone" loading="lazy" decoding="async"><img class="fs-grid" src="${IMG + it.grid}" alt="${esc(it.title)}: nine-post Instagram grid" loading="lazy" decoding="async"></div>` : ""}
-      ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}${it.phone ? `<p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>` : ""}</div>`).join("")}</div>`;
+      ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}${it.phone ? `<p class="feed-by">${esc(J.feedCredit || "Designed by Yours Truly, Maria Simbajon")}</p>` : ""}</div>`).join("")}</div>`;
 }
 const WB = {
   feedsMine: n => stacked("feedsMine"),
@@ -801,6 +801,7 @@ const WB = {
         </div></div>`).join("")}</div></div>${nav}<p class="rhint">Swipe or tap the arrows to see more reels</p>`;
   },
   feeds: n => stacked("feeds"),
+  ambFeed: n => stacked("ambFeed"),
   brands: n => stacked("brands"),
   seo: n => stacked("seo"),
   cupSchedule: n => `<h2 class="title wsub">Social media content strategy and scheduling</h2><div class="pgrid one">${caseCard("cupSchedule")}</div>`,

@@ -329,13 +329,24 @@ window.RESUME_JOBS = {
       { req: "General Administration: invoices, files, day-to-day tasks", proof: "Invoices, organised Google Drive files and daily admin for business owners.", status: "yes" },
       { req: "An interest in beauty and social media is a bonus", proof: "More than an interest: I am a recruiter and coordinator for a National Pageant in Australia, responding to contestants and applicants every day, and graphic design is part of my daily work too, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant recruiter portal" }
     ],
-    workBlocks: ["designs", "reels", "feeds"],
-    workCards: ["plushEmail", "cdcTracker", "ambAdmin"],
-    workIntro: "Real work matched to what you asked for: Canva and CapCut content, email and Instagram communication, Notion content planning, and day-to-day admin. Tap a picture to enlarge it.",
+    feedCredit: "Maria Simbajon, your creative social media manager and virtual assistant",
+    workSections: [
+      { type: "cards", part: "ambWork", keys: ["ambCarousel1", "ambCarousel2", "ambCarousel3"] },
+      { type: "block", key: "ambFeed" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "cards", part: "support", keys: ["plushEmail", "cdcTracker", "ambAdmin"] }
+    ],
+    workHeads: {
+      ambWork: { label: "Social Media — Alanah Mae Beauty", title: "Maria Simbajon, your creative social media manager and virtual assistant", text: "3 carousel concepts designed for your brand specifically: matched to your own fonts, colours and real photos, not a generic template." },
+      ambFeed: { label: "Content Planning", title: "A 9-Post Feed Concept for Your Real Page", text: "Your real bio, stats and highlights, styled exactly like your own Instagram, down to the fonts and colours." },
+      designs: { label: "Social Media Design", title: "Graphic Design I Create for You (not AI)", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
+      reels: { label: "Short-Form Video", title: "Reels I Edit for You", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
+      support: { label: "Admin & Communication", title: "Email, Content Planning & Day-to-Day Admin", text: "Real work matched to what you asked for: email and Instagram communication, Notion content planning, and day-to-day admin." }
+    },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
-    workTitle: "Graphic design I create for you (not AI)",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Virtual Assistant application - Alanah Mae Beauty Academy & Creative"
   },
