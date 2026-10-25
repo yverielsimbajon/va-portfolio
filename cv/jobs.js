@@ -330,13 +330,13 @@ window.RESUME_JOBS = {
       { req: "An interest in beauty and social media is a bonus", proof: "More than an interest: I am a recruiter and coordinator for a National Pageant in Australia, responding to contestants and applicants every day, and graphic design is part of my daily work too, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant recruiter portal" }
     ],
     feedCredit: "Maria Simbajon, your creative social media manager and virtual assistant",
+    heroFeed: "ambFeed",
     heroCarousels: [
       { title: "Carousel 1 · Gen-Z Style", sub: "Photo-led, trendy · “Brow Era”", images: ["amb-gz-1.jpg", "amb-gz-2.jpg", "amb-gz-3.jpg", "amb-gz-4.jpg", "amb-gz-5.jpg"] },
       { title: "Carousel 2 · Conservative Business Style", sub: "Brown palette · “3 Things Every Beauty Business Needs”", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] }
     ],
     workSections: [
       { type: "block", key: "ambReel" },
-      { type: "block", key: "ambFeed" },
       { type: "block", key: "ambFeedMore" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
