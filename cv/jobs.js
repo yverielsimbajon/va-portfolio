@@ -331,11 +331,11 @@ window.RESUME_JOBS = {
     ],
     feedCredit: "Maria Simbajon, your creative social media manager and virtual assistant",
     heroCarousels: [
-      { title: "Carousel 1 · 3 Things Every Beauty Business Needs", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] },
-      { title: "Carousel 2 · Brow Era (Gen-Z style)", images: ["amb-gz-1.jpg", "amb-gz-2.jpg", "amb-gz-3.jpg", "amb-gz-4.jpg", "amb-gz-5.jpg"] }
+      { title: "Carousel 1 · Brow Era (Gen-Z style)", images: ["amb-gz-1.jpg", "amb-gz-2.jpg", "amb-gz-3.jpg", "amb-gz-4.jpg", "amb-gz-5.jpg"] },
+      { title: "Carousel 2 · 3 Things Every Beauty Business Needs", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] }
     ],
     workSections: [
-      { type: "cards", part: "ambWork", keys: ["ambCarousel1", "ambCarousel2"] },
+      { type: "cards", part: "ambWork", keys: ["ambCarousel2", "ambCarousel1"] },
       { type: "block", key: "ambReel" },
       { type: "block", key: "ambFeed" },
       { type: "block", key: "designs" },
