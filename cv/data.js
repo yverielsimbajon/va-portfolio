@@ -253,7 +253,7 @@ window.RESUME_BASE = {
         { src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop (sample concept)", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" },
         { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
       ] },
-    ambFeed: { label: "Instagram feed concept for Alanah Mae Beauty (real client)", blurb: "A 9-post feed plan built for her real page: her real bio, follower count and story highlights, matched to her site's Marcellus/PT Serif fonts and maroon #970C10 branding. A checkerboard of her real photos with branded quote and course cards. Tap to enlarge.",
+    ambFeed: { label: "IG feed concept for Alanah", blurb: "A 9-post feed plan built for her real page: her real bio, follower count and story highlights, matched to her site's Marcellus/PT Serif fonts and maroon #970C10 branding. A checkerboard of her real photos with branded quote and course cards. Tap to enlarge.",
       items: [
         { src: "amb-feed-comp.jpg", phone: "amb-feed-phone.png", grid: "amb-feed-grid.jpg", title: "Alanah Mae Beauty", note: "Matched to her own site and Instagram, not a generic template", accent: "#970C10", tint: "#FDF1EC" }
       ] },

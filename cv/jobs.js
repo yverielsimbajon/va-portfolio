@@ -329,7 +329,6 @@ window.RESUME_JOBS = {
       { req: "General Administration: invoices, files, day-to-day tasks", proof: "Invoices, organised Google Drive files and daily admin for business owners.", status: "yes" },
       { req: "An interest in beauty and social media is a bonus", proof: "More than an interest: I am a recruiter and coordinator for a National Pageant in Australia, responding to contestants and applicants every day, and graphic design is part of my daily work too, so beauty and creative content are both close to home.", status: "yes", tab: "designs", cta: "See my pageant recruiter portal" }
     ],
-    feedCredit: "Maria Simbajon, your creative social media manager and virtual assistant",
     heroFeed: "ambFeed",
     heroCarousels: [
       { title: "Carousel 1 · Gen-Z Style", sub: "Photo-led, trendy · “Brow Era”", images: ["amb-gz-1.jpg", "amb-gz-2.jpg", "amb-gz-3.jpg", "amb-gz-4.jpg", "amb-gz-5.jpg"] },
