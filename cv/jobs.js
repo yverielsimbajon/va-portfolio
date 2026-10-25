@@ -879,7 +879,7 @@ window.RESUME_JOBS = {
       feedsMine: {
         label: "Instagram feed concept: sweet potato dessert shop",
         blurb: "A sample 9-post feed for a sweet potato dessert shop, with a made-up brand: one colour palette, photos mixed with text posts, previewed as a flat plan and inside the Instagram app. Tap to enlarge.",
-        items: [{ src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop (sample concept)", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" }]
+        items: [{ src: "ig-feed-sweet.webp", phone: "ig-feed-sweet-phone.webp", grid: "ig-feed-sweet-grid.webp", title: "Sweet Potato Dessert Shop", note: "Warm, cosy and made to make you hungry", accent: "#5b2d6e", tint: "#f6efe9" }]
       },
       reels: {
         blurb: "Two food Reels (cupcakes and a restaurant edit), plus before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
