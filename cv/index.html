@@ -605,8 +605,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261026j"></script>
-<script src="jobs.js?v=20261026j"></script>
+<script src="data.js?v=20261026k"></script>
+<script src="jobs.js?v=20261026k"></script>
 <script>
 (function(){
 const B = window.RESUME_BASE, JOBS = window.RESUME_JOBS;
@@ -733,10 +733,18 @@ S.redesign = () => { const R = J.redesign;
     <a class="btn line rd-open" href="${esc(R.url)}" target="_blank" rel="noopener">Open the full concept in a new tab &#8599;</a>
   </div></section>`; };
 
+S.work2 = () => { if (!J.workSplit) return "";
+  const out = J.workSections.slice(J.workSplit).map(s => {
+    if (s.type === "cards") return cardsPart(s.part, s.keys, `<div class="pgrid">${s.keys.map(caseCard).join("")}</div>`);
+    if (s.type === "block") return blockPart(s.key);
+    return "";
+  }).join("");
+  return `<section class="block" id="work2"><div class="wrap">${out}</div></section>`;
+};
 S.work = () => {
   partN = 0;
   if (J.workSections) {
-    const out = J.workSections.map(s => {
+    const out = (J.workSplit ? J.workSections.slice(0, J.workSplit) : J.workSections).map(s => {
       if (s.type === "cards") return cardsPart(s.part, s.keys, `<div class="pgrid">${s.keys.map(caseCard).join("")}</div>`);
       if (s.type === "block") return blockPart(s.key);
       if (s.type === "intro") return `<p class="lede" style="text-align:center;margin:34px auto 26px">${esc(s.text)}</p>`;
