@@ -1049,7 +1049,7 @@
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
 
     .phone-island {
@@ -2213,6 +2213,14 @@
       {
         category: "website",
         group: "Website Design Concepts",
+        title: "Cleaning Services",
+        description: "A cleaning services website concept with an instant quote calculator, room-by-room checklist and online booking.",
+        link: { label: "View Design Concept", url: "https://themariaoffice.com/concepts/cleaning/" },
+        images: ["web-cleaning.jpg", "web-cleaning-2.jpg", "web-cleaning-3.jpg", "web-cleaning-4.jpg", "web-cleaning-5.jpg"]
+      },
+      {
+        category: "website",
+        group: "Website Design Concepts",
         title: "Solar Energy",
         description: "A modern solar website concept that educates homeowners and encourages consultation enquiries.",
         link: { label: "View Design Concept", url: "https://solar-panel.yveriel-simbajon.workers.dev/" },
@@ -2249,14 +2257,6 @@
         description: "A tutoring website concept that shows programs by year level, clear pricing and a two-step free assessment booking.",
         link: { label: "View Design Concept", url: "https://themariaoffice.com/concepts/tutoring/" },
         images: ["web-tutoring.jpg", "web-tutoring-2.jpg", "web-tutoring-3.jpg", "web-tutoring-4.jpg", "web-tutoring-5.jpg"]
-      },
-      {
-        category: "website",
-        group: "Website Design Concepts",
-        title: "Cleaning Services",
-        description: "A cleaning services website concept with an instant quote calculator, room-by-room checklist and online booking.",
-        link: { label: "View Design Concept", url: "https://themariaoffice.com/concepts/cleaning/" },
-        images: ["web-cleaning.jpg", "web-cleaning-2.jpg", "web-cleaning-3.jpg", "web-cleaning-4.jpg", "web-cleaning-5.jpg"]
       },
       {
         category: "website",
@@ -2327,7 +2327,8 @@
         description: "Short, scroll-stopping Reels with before-and-after transformations, bold captions and music, edited to showcase the work and bring in local enquiries.",
         account: { name: "Landscaping Services in Australia", avatar: "logo-kerbing-king-icon.jpg" },
         tools: ["Canva", "Meta Business Suite", "Facebook", "Instagram"],
-        images: ["reel-1.mp4", "reel-2.mp4", "reel-3.mp4"]
+        accounts: { 1: { name: "Pageant Promo in Australia" } },   // reel-4 has no avatar
+        images: ["reel-2.mp4", "reel-4.mp4", "reel-1.mp4", "reel-3.mp4"]
       },
       {
         category: "social",
@@ -2620,7 +2621,7 @@
                     <button class="reel-sound" type="button" aria-pressed="false">${soundIcon.off}<span>Tap for sound</span></button>
                   </div>
                   <div class="reel-bottom" aria-hidden="true">
-                    ${p.account ? `<div class="reel-account"><img src="../images/${esc(p.account.avatar)}" alt="" /><span>${esc(p.account.name)}</span></div>` : "<div></div>"}
+                    ${(() => { const acc = (p.accounts && p.accounts[n]) || p.account; return acc ? `<div class="reel-account">${acc.avatar ? `<img src="../images/${esc(acc.avatar)}" alt="" />` : ""}<span>${esc(acc.name)}</span></div>` : "<div></div>"; })()}
                     ${reelActions}
                   </div>
                 </div>
