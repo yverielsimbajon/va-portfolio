@@ -239,8 +239,11 @@ window.RESUME_BASE = {
       ] },
     reels: { label: "Reels I edit for you", blurb: "Before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
       items: [2, 1, 3].map(n => ({ src: "reel-" + n + ".mp4", poster: "reel-" + n + ".jpg", kind: "video" })) },
-    ambReel: { label: "Reel I edit for Alanah Mae Beauty", blurb: "A LIFTED masterclass Reel cut from her own footage: hook, soft zoom, smooth transitions, animated captions and music. Tap the phone to play.",
-      items: [{ src: "amb-reel2.mp4", poster: "amb-reel2.jpg", kind: "video", acct: "Alanah Mae Beauty", logo: "amb-logo-icon.jpg" }] },
+    ambReel: { label: "Reel I edit for Alanah Mae Beauty", blurb: "Cut from her own raw footage: hook, soft zoom, animated captions and music. Tap the phone to play, swipe to see the earlier edit too.",
+      items: [
+        { src: "amb-trial-reelb.mp4", poster: "amb-trial-reelb.jpg", kind: "video", acct: "Reel edit for you", logo: "amb-logo-icon.jpg" },
+        { src: "amb-reel2.mp4", poster: "amb-reel2.jpg", kind: "video", acct: "Alanah Mae Beauty", logo: "amb-logo-icon.jpg" }
+      ] },
     feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust, and people follow pages that look put together. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, then preview each feed as a flat plan and inside the Instagram app, ready to schedule. Sample feeds, tap to enlarge.",
       items: [
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },

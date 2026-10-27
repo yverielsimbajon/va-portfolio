@@ -332,8 +332,8 @@ window.RESUME_JOBS = {
     ],
     heroFeed: "ambFeed",
     heroCarousels: [
-      { title: "Carousel 1 · Gen-Z Style", sub: "Photo-led, trendy · “Brow Era”", images: ["amb-gz-1.jpg", "amb-gz-2.jpg", "amb-gz-3.jpg", "amb-gz-4.jpg", "amb-gz-5.jpg"] },
-      { title: "Carousel 2 · Conservative Business Style", sub: "Brown palette · “3 Things Every Beauty Business Needs”", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] }
+      { title: "Carousel 1 · Alanah Color Palette Style", sub: "Her brand colours & fonts · 8 slides", images: ["amb-trial-v1-1.jpg", "amb-trial-v1-2.jpg", "amb-trial-v1-3.jpg", "amb-trial-v1-4.jpg", "amb-trial-v1-5.jpg", "amb-trial-v1-6.jpg", "amb-trial-v1-7.jpg", "amb-trial-v1-8.jpg"] },
+      { title: "Carousel 2 · Gen-Z Style", sub: "Polaroid, stickers & stars · 8 slides", images: ["amb-trial-gz-1.jpg", "amb-trial-gz-2.jpg", "amb-trial-gz-3.jpg", "amb-trial-gz-4.jpg", "amb-trial-gz-5.jpg", "amb-trial-gz-6.jpg", "amb-trial-gz-7.jpg", "amb-trial-gz-8.jpg"] }
     ],
     workSections: [
       { type: "block", key: "ambFeedMore" },

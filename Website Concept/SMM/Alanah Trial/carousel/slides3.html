@@ -1,0 +1,187 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+:root{--brown:#4b2a2e;--red:#970d10;--pink:#fff9f7}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1350px;overflow:hidden;background:var(--pink);font-family:Inter,"Helvetica Neue",Arial,sans-serif;color:var(--brown)}
+.slide{position:relative;width:1080px;height:1350px;overflow:hidden}
+.bgphoto{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.grad-b{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,8,8,0) 30%,rgba(20,5,5,.86) 100%)}
+.grad-full{position:absolute;inset:0;background:linear-gradient(170deg,rgba(29,10,11,.32) 0%,rgba(29,10,11,.62) 100%)}
+.logo{position:absolute;left:52px;top:46px;width:120px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.5))}
+.pg{position:absolute;right:52px;top:52px;display:flex;align-items:baseline;gap:4px;font:800 24px Inter;letter-spacing:.02em;color:#fff;opacity:.92}
+.pg b{font-size:30px}
+.pg span{opacity:.6}
+.pg.dk{color:var(--brown)}
+/* star accents */
+.star{position:absolute;font-size:40px;line-height:1}
+.star.pink{color:#ffb6c9}
+.star.gold{color:#f4c64f}
+.star.blue{color:#a9cdee}
+.star.red{color:var(--red)}
+/* speech bubble label */
+.bubble{position:absolute;background:#fff;color:var(--brown);border-radius:24px 24px 24px 4px;padding:18px 32px;font:800 28px Inter;box-shadow:0 14px 30px rgba(0,0,0,.28);display:inline-flex;align-items:center;gap:10px}
+/* headline */
+.head{font:900 68px/1.08 Inter;letter-spacing:-.01em;text-transform:lowercase}
+.head i{font:italic 800 70px/1 "Playfair Display",serif;color:var(--red)}
+.head.wh{color:#fff}
+.head.wh i{color:#f4c9b0}
+.head.yellow{color:#f4d35e}
+/* sticky note card */
+.note{position:absolute;background:#fff;border-radius:6px;padding:40px 44px;box-shadow:0 26px 54px rgba(0,0,0,.3)}
+.note .tag{font:900 44px Inter;text-transform:uppercase;letter-spacing:-.01em;color:var(--brown)}
+.note .sub{font:700 24px Inter;text-transform:uppercase;letter-spacing:.14em;color:#a98a7f;margin-top:4px}
+.note .row{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-top:26px;font:800 32px Inter;color:var(--brown)}
+.note .row small{font:500 26px Inter;color:#8a6a62;font-weight:600}
+.note .check{display:flex;align-items:center;gap:18px;margin-top:22px}
+.note .check .box{width:36px;height:36px;border-radius:7px;border:3px solid var(--red);background:var(--red);color:#fff;display:flex;align-items:center;justify-content:center;font:900 22px Inter;flex:none}
+.note .check .t b{font:800 32px Inter;color:var(--brown);display:block}
+.note .check .t small{font:500 24px Inter;color:#8a6a62}
+/* polaroid */
+.polaroid{position:absolute;background:#fff;padding:14px 14px 50px;border-radius:4px;box-shadow:0 24px 50px rgba(0,0,0,.32)}
+.polaroid img{display:block;object-fit:cover;border-radius:2px}
+.cta-red{display:inline-flex;align-items:center;gap:16px;background:var(--red);color:#fff;border-radius:999px;padding:24px 48px;font:800 34px Inter;box-shadow:0 20px 40px rgba(151,13,16,.4)}
+.foot{position:absolute;left:0;right:0;bottom:48px;text-align:center;font:800 22px Inter;letter-spacing:.2em;color:#fff;opacity:.9}
+</style></head><body><div id="r"></div>
+<script>
+const q = new URLSearchParams(location.search), n = q.get("n"), r = document.getElementById("r");
+const P = f => "in/" + f;
+const stars = (list) => list.map(s => `<div class="star ${s.c}" style="left:${s.l};top:${s.t};${s.r?`transform:rotate(${s.r}deg)`:""}">&#9733;</div>`).join("");
+
+const SLIDES = {
+
+// 1 — HOOK, full photo, big headline, speech bubble
+s1: () => `<div class="slide">
+  <img class="bgphoto" src="${P("bz1.png")}" style="object-position:50% 32%">
+  <div class="grad-b"></div>
+  <img class="logo" src="${P("logo_cut.png")}">
+  <div class="pg"><b>01</b><span>/08</span></div>
+  ${stars([{c:"gold",l:"780px",t:"330px",r:-8},{c:"pink",l:"90px",t:"440px"},{c:"blue",l:"860px",t:"760px"}])}
+  <div style="position:absolute;left:70px;right:70px;top:150px">
+    <div class="head wh">pov: you're still<br>waiting for <i>january</i><br>to learn brows</div>
+  </div>
+  <div class="bubble" style="left:70px;bottom:120px;transform:rotate(-2deg)">swipe before you wait another year &rarr;</div>
+</div>`,
+
+// 2 — everyone else waits, pink bg, headline + note
+s2: () => `<div class="slide" style="background:var(--pink)">
+  <img class="logo" src="${P("logo_cut.png")}" style="filter:none">
+  <div class="pg dk"><b>02</b><span>/08</span></div>
+  ${stars([{c:"red",l:"880px",t:"150px",r:10},{c:"gold",l:"90px",t:"260px"}])}
+  <div style="position:absolute;left:70px;right:70px;top:300px">
+    <div class="head">while everyone<br>else waits for a<br><i>2027</i> fresh start&hellip;</div>
+  </div>
+  <div class="note" style="left:70px;right:70px;bottom:160px;transform:rotate(-1deg)">
+    <div class="tag" style="font-size:36px;line-height:1.3">you could already be trained, practising &amp; taking <i style="font-family:'Playfair Display',serif;color:var(--red)">first clients.</i></div>
+  </div>
+  <div class="bubble" style="right:70px;bottom:92px;transform:rotate(2deg);background:var(--red);color:#fff">why wait? &#10024;</div>
+</div>`,
+
+// 3 — busiest season checklist (sticky note, matches "BEFORE EVERY BROW SERVICE" reference)
+s3: () => `<div class="slide">
+  <img class="bgphoto" src="${P("bz3.png")}" style="object-position:50% 30%">
+  <div class="grad-full"></div>
+  <img class="logo" src="${P("logo_cut.png")}">
+  <div class="pg"><b>03</b><span>/08</span></div>
+  <div class="note" style="left:70px;right:140px;top:420px;transform:rotate(-1.4deg)">
+    <div class="tag">busiest season<br>is coming</div>
+    <div class="sub">the non-negotiables to be ready for</div>
+    ${["Spring Racing","Christmas parties","Summer holidays","Wedding season","New Year's events"].map(t=>`
+    <div class="check"><div class="box">&#10003;</div><div class="t"><b>${t}</b></div></div>`).join("")}
+  </div>
+  <div class="polaroid" style="right:60px;top:200px;width:210px;transform:rotate(7deg)">
+    <img src="${P("bz4.png")}" style="width:182px;height:230px;object-position:50% 30%">
+  </div>
+  <div class="star gold" style="right:70px;top:420px">&#9733;</div>
+  <div class="bubble" style="left:70px;bottom:70px;transform:rotate(-2deg)">more reasons to book &rarr;</div>
+</div>`,
+
+// 4 — imagine starting now, full photo centered headline
+s4: () => `<div class="slide">
+  <img class="bgphoto" src="${P("bz5.png")}" style="object-position:50% 40%">
+  <div class="grad-full"></div>
+  <img class="logo" src="${P("logo_cut.png")}">
+  <div class="pg"><b>04</b><span>/08</span></div>
+  ${stars([{c:"gold",l:"110px",t:"300px"},{c:"pink",l:"860px",t:"900px",r:12},{c:"blue",l:"80px",t:"980px"}])}
+  <div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);text-align:center;padding:0 60px">
+    <div class="head wh yellow" style="font-size:88px">imagine<br><i>starting now</i></div>
+  </div>
+  <div class="bubble" style="left:50%;bottom:130px;transform:translateX(-50%) rotate(-1deg)">could look like this &#128064;</div>
+</div>`,
+
+// 5 — what if this was the start, pink bg + polaroid + checklist
+s5: () => `<div class="slide" style="background:var(--pink)">
+  <img class="logo" src="${P("logo_cut.png")}" style="filter:none">
+  <div class="pg dk"><b>05</b><span>/08</span></div>
+  <div class="star red" style="right:90px;top:120px;transform:rotate(8deg)">&#9733;</div>
+  <div style="position:absolute;left:70px;top:210px;width:600px">
+    <div class="head" style="font-size:58px">what if <i>this</i><br>was the start of<br>your own beauty<br>business?</div>
+  </div>
+  <div class="polaroid" style="right:60px;top:300px;width:260px;transform:rotate(5deg)">
+    <img src="${P("hero.png")}" style="width:232px;height:300px;object-position:10% 50%;transform:scale(1.25)">
+  </div>
+  <div class="star gold" style="left:40px;bottom:380px">&#9733;</div>
+  <div class="note" style="left:70px;right:70px;bottom:150px;transform:rotate(1deg)">
+    ${[["Your first","paying client"],["Your first","fully booked day"],["Your first taste of","working for yourself"]].map(([a,b])=>`
+    <div class="check" style="margin-top:18px"><div class="box">&#10003;</div><div class="t"><small style="display:block;color:#a98a7f;font-weight:700;text-transform:uppercase;font-size:20px">${a}</small><b>${b}</b></div></div>`).join("")}
+  </div>
+</div>`,
+
+// 6 — six months from now, two polaroids then/now
+s6: () => `<div class="slide" style="background:var(--pink)">
+  <img class="logo" src="${P("logo_cut.png")}" style="filter:none">
+  <div class="pg dk"><b>06</b><span>/08</span></div>
+  <div style="position:absolute;left:0;right:0;top:100px;text-align:center">
+    <div class="head" style="font-size:52px">six months<br>from <i>now&hellip;</i></div>
+  </div>
+  <div class="polaroid" style="left:60px;top:400px;width:450px;transform:rotate(-4deg)">
+    <img src="${P("before.png")}" style="width:422px;height:470px;object-position:45% 38%;transform:scale(1.14)">
+    <div style="position:absolute;bottom:10px;left:0;right:0;text-align:center;font:italic 800 32px 'Playfair Display',serif;color:var(--brown)">then</div>
+  </div>
+  <div class="polaroid" style="right:60px;top:430px;width:450px;transform:rotate(4deg)">
+    <img src="${P("now.png")}" style="width:422px;height:470px;object-position:48% 40%;transform:scale(1.14)">
+    <div style="position:absolute;bottom:10px;left:0;right:0;text-align:center;font:italic 800 32px 'Playfair Display',serif;color:var(--red)">now</div>
+  </div>
+  <div class="star gold" style="left:470px;top:380px;transform:rotate(10deg)">&#9733;</div>
+  <div class="bubble" style="left:50%;bottom:150px;transform:translateX(-50%) rotate(-1deg)">the difference? taking that first step &#10024;</div>
+</div>`,
+
+// 7 — not just the treatment, checklist over photo
+s7: () => `<div class="slide">
+  <img class="bgphoto" src="${P("sculpted.jpg")}" style="object-position:42% 18%">
+  <div class="grad-full"></div>
+  <img class="logo" src="${P("logo_cut.png")}">
+  <div class="pg"><b>07</b><span>/08</span></div>
+  <div class="note" style="left:70px;right:70px;top:430px;transform:rotate(-1deg)">
+    <div class="tag" style="font-size:38px;line-height:1.25">we don't just teach the treatment</div>
+    <div class="sub">we teach you how to build the business</div>
+    ${["Expert technique","Luxury client experience","Business growth"].map(t=>`
+    <div class="check"><div class="box">&#9733;</div><div class="t"><b>${t}</b></div></div>`).join("")}
+  </div>
+  <div class="star gold" style="right:90px;top:280px;transform:rotate(-10deg)">&#9733;</div>
+  <div class="bubble" style="left:70px;bottom:70px;transform:rotate(-2deg)">this is only the beginning &rarr;</div>
+</div>`,
+
+// 8 — CTA, matches "learn it from the founder / browse courses" reference
+s8: () => `<div class="slide" style="background:var(--brown)">
+  <img class="bgphoto" src="${P("meetalanah.jpg")}" style="object-position:50% 20%;opacity:.5;filter:blur(1px)">
+  <div class="grad-full"></div>
+  ${stars([{c:"gold",l:"840px",t:"130px"},{c:"pink",l:"70px",t:"900px",r:12}])}
+  <div class="polaroid" style="left:66px;top:150px;width:220px;transform:rotate(-6deg)">
+    <img src="${P("hero.png")}" style="width:192px;height:240px;object-position:10% 40%;transform:scale(1.25)">
+  </div>
+  <div class="polaroid" style="left:300px;top:260px;width:230px;transform:rotate(5deg)">
+    <img src="${P("now.png")}" style="width:202px;height:250px;object-position:48% 38%;transform:scale(1.2)">
+  </div>
+  <div style="position:absolute;left:70px;right:70px;top:620px">
+    <div class="head wh" style="font-size:60px">learn it from<br>the founder</div>
+    <div style="font:italic 700 46px 'Playfair Display',serif;color:#f4d35e;margin-top:10px">brows, lashes &amp; business</div>
+  </div>
+  <div style="position:absolute;left:70px;bottom:180px">
+    <div class="cta-red">DM "academy" &rarr;</div>
+  </div>
+  <div class="foot">ALANAHMAEBEAUTY.COM.AU</div>
+</div>`
+};
+r.innerHTML = SLIDES[n]();
+</script></body></html>
