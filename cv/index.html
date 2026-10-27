@@ -93,7 +93,7 @@ mark{background:none;color:var(--primary-dark);font-weight:600;padding:0}
 .herocar[hidden]{display:none}
 .herocar>.wsub{text-align:center;margin-top:34px}
 .herocar>.blurb{text-align:center;margin-left:auto;margin-right:auto}
-.herocar{margin:18px 0 6px;display:grid;gap:16px;width:100%;min-width:0}
+.herocar{margin:18px 0 6px;display:grid;grid-template-columns:minmax(0,1fr);gap:16px;width:100%;min-width:0}
 .hc-row{min-width:0}
 .hc-row .hc-t{text-align:center;margin:10px 0 16px}
 .hc-t .hc-n{display:inline-flex;align-items:center;gap:12px;font-size:clamp(13px,1.3vw,16px);font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--primary)}
@@ -838,7 +838,7 @@ const WB = {
   foodPosters: n => `<h2 class="title wsub">${esc(B.work.foodPosters.label)}</h2><p class="blurb">${esc(B.work.foodPosters.blurb)} Tap any poster to enlarge it.</p>${marqueeHTML("foodPosters")}`,
   socialDesigns: n => `<h2 class="title wsub">${esc(B.work.socialDesigns.label)}</h2><p class="blurb">${esc(B.work.socialDesigns.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("socialDesigns")}`,
   socialFeeds: n => stacked("socialFeeds"),
-  designs: n => `<h2 class="title wsub">${esc(J.workTitle || "Graphic Designs I Create for You")}</h2><p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
+  designs: n => `${J.workTitle === null ? "" : `<h2 class="title wsub">${esc(J.workTitle || "Graphic Designs I Create for You")}</h2>`}<p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
   reels: n => reelsBlock("reels"),
   ambReel: n => reelsBlock("ambReel"),
   feeds: n => stacked("feeds"),

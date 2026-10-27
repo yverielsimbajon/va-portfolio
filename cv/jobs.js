@@ -339,15 +339,16 @@ window.RESUME_JOBS = {
       { title: "Carousel 3 · Conservative Business Style", sub: "Brown palette · “3 Things Every Beauty Business Needs”", images: ["amb-c1-1.jpg", "amb-c1-2.jpg", "amb-c1-3.jpg", "amb-c1-4.jpg", "amb-c1-5.jpg"] },
       { title: "Carousel 4 · Gen-Z Style", sub: "Photo-led, trendy · “Brow Era”", images: ["amb-gz-1.jpg", "amb-gz-2.jpg", "amb-gz-3.jpg", "amb-gz-4.jpg", "amb-gz-5.jpg"] }
     ],
+    workTitle: null,
     workSections: [
-      { type: "block", key: "ambFeedMore" },
       { type: "block", key: "ambCarouselsOld" },
+      { type: "block", key: "ambFeedMore" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "cards", part: "support", keys: ["plushEmail", "cdcTracker", "ambAdmin"] }
     ],
     workHeads: {
-      designs: { label: "Social Media Design", title: "Graphic Design I Create for You (not AI)", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
+      designs: { label: "Social Media Design", title: "Graphic Design I Create for You", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
       reels: { label: "More Reels I Edit", title: "Reels for Other Clients", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
       support: { label: "Admin & Communication", title: "Email, Content Planning & Day-to-Day Admin", text: "Real work matched to what you asked for: email and Instagram communication, Notion content planning, and day-to-day admin." }
     },
