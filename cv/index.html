@@ -100,7 +100,8 @@ mark{background:none;color:var(--primary-dark);font-weight:600;padding:0}
 .hc-t .hc-sub{margin-top:8px;font-size:clamp(14px,1.4vw,18px);font-weight:500;color:var(--muted)}
 .hc-t .hc-name{margin-top:8px;font-size:clamp(24px,3.2vw,40px);font-weight:800;letter-spacing:-.02em;line-height:1.1;color:var(--deep)}
 .hc-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
-.hc-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;box-shadow:0 10px 24px rgba(17,76,89,.2);background:#fff}
+.hc-strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;box-shadow:0 10px 24px rgba(17,76,89,.2);background:#fff;cursor:zoom-in;transition:transform .25s var(--ease,ease)}
+.hc-strip img:hover{transform:translateY(-3px) scale(1.02)}
 @media(max-width:700px){.hc-strip{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}}
 .crownrow .ct{flex:1;min-width:220px;font-size:clamp(20px,2.6vw,30px);line-height:1.2;font-weight:800;color:var(--deep);letter-spacing:-.01em}
 .crownrow .ct b{display:inline;background:linear-gradient(transparent 62%,rgba(255,194,61,.7) 62%);-webkit-box-decoration-break:clone;box-decoration-break:clone}
@@ -305,8 +306,8 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 /* reels in phone frames (same look as the portfolio) */
 .reels-stage{position:relative}
 .scrollcue{position:absolute;top:50%;z-index:4;display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 18px;border-radius:22px;background:#FFD84D;color:#5a0a0d;font:800 15px/1.15 "DM Sans",system-ui,sans-serif;text-align:center;box-shadow:0 12px 28px rgba(90,10,13,.18);pointer-events:none;transform:translateY(-50%) rotate(-5deg)}
-.scrollcue.r{right:calc(50% + 330px);right:auto;left:calc(50% + 190px);transform:translateY(-50%) rotate(5deg)}
-.scrollcue:not(.r){right:calc(50% + 190px)}
+.scrollcue.r{right:calc(50% + 330px);right:auto;left:calc(50% + 300px);transform:translateY(-50%) rotate(5deg)}
+.scrollcue:not(.r){right:calc(50% + 300px)}
 .scrollcue svg{width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;animation:cueBob 1.2s ease-in-out infinite}
 .scrollcue small{font-size:20px;line-height:1}
 @keyframes cueBob{0%,100%{transform:translateY(-3px)}50%{transform:translateY(5px)}}
@@ -658,7 +659,7 @@ if (J.heroPhoto2){ $("#heroPhoto2").src = IMG + J.heroPhoto2; const hv = $(".her
   const lvl = () => { hv.style.paddingTop = "0"; if (innerWidth > 900) hv.style.paddingTop = Math.max(0, $("#hName").getBoundingClientRect().top - hv.getBoundingClientRect().top) + "px"; };
   addEventListener("resize", lvl); addEventListener("load", lvl); setTimeout(lvl, 400); }
 if (J.crown) $("#top").classList.add("has-crown");
-if (J.heroCarousels){ const hc = $("#heroCar"); hc.hidden = false; hc.innerHTML = J.heroCarousels.map(c => `<div class="hc-row"><div class="hc-t">${c.title.includes(" · ") ? `<span class="hc-n">${esc(c.title.split(" · ")[0])}</span><div class="hc-name">${esc(c.title.split(" · ").slice(1).join(" · "))}</div>${c.sub ? `<div class="hc-sub">${esc(c.sub)}</div>` : ""}` : esc(c.title)}</div><div class="hc-strip">${c.images.map((f, i) => `<img src="${IMG + f}" alt="${esc(c.title)}, slide ${i + 1}" loading="lazy">`).join("")}</div></div>`).join(""); }
+if (J.heroCarousels){ const hc = $("#heroCar"); hc.hidden = false; hc.innerHTML = hcRows(J.heroCarousels); }
 if (J.codeWord){ const cw = document.createElement("div"); cw.className = "codeword"; cw.textContent = J.codeWord; $("#hSub").after(cw); }
 if (J.headlinePill) $("#hRole").classList.add("pill");
 if (J.headlineBadge){ const row = document.createElement("div"); row.className = "rolerow"; $("#hRole").before(row); row.appendChild($("#hRole")); const b = document.createElement("span"); b.className = "yrs"; b.textContent = J.headlineBadge; row.appendChild(b); }
@@ -825,7 +826,11 @@ function stacked(k){
       ${it.phone ? `<div class="feed-split"><img class="fs-phone" src="${IMG + it.phone}" alt="${esc(it.title)}: Instagram profile on a phone" loading="lazy" decoding="async"><img class="fs-grid" src="${IMG + it.grid}" alt="${esc(it.title)}: nine-post Instagram grid" loading="lazy" decoding="async"></div>` : ""}
       ${it.scroll ? `<p class="feed-swipe">Swipe sideways to see the full board</p>` : ""}${it.phone ? `<p class="feed-by">${esc(J.feedCredit || "Designed by Yours Truly, Maria Simbajon")}</p>` : ""}</div>`).join("")}</div>`;
 }
+function hcRows(list){
+  return (list || []).map(c => `<div class="hc-row"><div class="hc-t">${c.title.includes(" · ") ? `<span class="hc-n">${esc(c.title.split(" · ")[0])}</span><div class="hc-name">${esc(c.title.split(" · ").slice(1).join(" · "))}</div>${c.sub ? `<div class="hc-sub">${esc(c.sub)}</div>` : ""}` : esc(c.title)}</div><div class="hc-strip">${c.images.map((f, i) => `<img src="${IMG + f}" data-file="${f}" alt="${esc(c.title)}, slide ${i + 1}" loading="lazy">`).join("")}</div></div>`).join("");
+}
 const WB = {
+  ambCarouselsOld: n => hcRows(J.moreCarousels),
   feedsMine: n => stacked("feedsMine"),
   foodPosters: n => `<h2 class="title wsub">${esc(B.work.foodPosters.label)}</h2><p class="blurb">${esc(B.work.foodPosters.blurb)} Tap any poster to enlarge it.</p>${marqueeHTML("foodPosters")}`,
   socialDesigns: n => `<h2 class="title wsub">${esc(B.work.socialDesigns.label)}</h2><p class="blurb">${esc(B.work.socialDesigns.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("socialDesigns")}`,
@@ -1011,6 +1016,7 @@ document.addEventListener("keydown", e => { if (!$("#modal").classList.contains(
 
 document.addEventListener("click", e => {
   const r = e.target.closest("[data-lb]"); if (r){ list = B.work[r.dataset.lb].items; openAt(+r.dataset.i); return; }
+  const hcImg = e.target.closest(".hc-strip img"); if (hcImg){ const imgs = [...hcImg.closest(".hc-strip").querySelectorAll("img")]; list = imgs.map(x => ({ src: x.dataset.file })); openAt(imgs.indexOf(hcImg)); return; }
   const b = e.target.closest("[data-gal]"); if (b){ $("#galMain").src = IMG + ABOUT_PICS[+b.dataset.gal]; $$("[data-gal]").forEach(x => x.setAttribute("aria-pressed", x === b)); }
 });
 
