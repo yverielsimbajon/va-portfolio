@@ -337,11 +337,13 @@ window.RESUME_JOBS = {
     ],
     workSections: [
       { type: "block", key: "ambFeedMore" },
+      { type: "cards", part: "ambCarousels", keys: ["ambCarousel1", "ambCarousel2"] },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "cards", part: "support", keys: ["plushEmail", "cdcTracker", "ambAdmin"] }
     ],
     workHeads: {
+      ambCarousels: { label: "More Carousel Concepts", title: "Earlier Carousel Styles I Designed For You", text: "Two more style options I put together for Alanah Mae Beauty using her own real photos, brand colours and fonts." },
       designs: { label: "Social Media Design", title: "Graphic Design I Create for You (not AI)", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
       reels: { label: "More Reels I Edit", title: "Reels for Other Clients", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
       support: { label: "Admin & Communication", title: "Email, Content Planning & Day-to-Day Admin", text: "Real work matched to what you asked for: email and Instagram communication, Notion content planning, and day-to-day admin." }
