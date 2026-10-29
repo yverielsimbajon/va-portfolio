@@ -8,77 +8,115 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0d2540;--blue:#1d6fb8;--blue2:#155a9a;--gray:#5d6a77;--steel:#e9edf2;--light:#f5f7fa;--ink:#16222f;--line:rgba(13,37,64,.12);--sans:"DM Sans",system-ui,sans-serif;--green:#1f8a4c;--amber:#b7791f;--red:#c0392b}
+:root{--navy:#0d2540;--blue:#1d6fb8;--blue2:#155a9a;--gray:#5d6a77;--steel:#e9edf2;--light:#f5f7fa;--ink:#16222f;--line:rgba(13,37,64,.1);--sans:"DM Sans",system-ui,sans-serif;--green:#1f8a4c;--amber:#b7791f}
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--sans);color:var(--ink);background:var(--light);font-size:15.5px;line-height:1.5}
+body{font-family:var(--sans);color:var(--ink);font-size:15px;line-height:1.5;min-height:100vh;background:linear-gradient(135deg,#dfe7f7 0%,#e8edfa 35%,#f3f5fb 68%,#d9e5fa 100%) fixed}
 button,input,select,textarea{font:inherit;color:inherit}
 h1,h2,h3{color:var(--navy);letter-spacing:-.02em;line-height:1.15}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:6px;font-weight:700;font-size:14.5px;border:2px solid transparent;cursor:pointer;background:var(--blue);color:#fff;transition:.2s}
+svg.i{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:700;font-size:14px;border:1px solid transparent;cursor:pointer;background:var(--navy);color:#fff;transition:.2s;text-decoration:none}
 .btn:hover{background:var(--blue2)}
-.btn.line{background:#fff;border-color:var(--navy);color:var(--navy)}.btn.line:hover{background:var(--navy);color:#fff}
-.btn.sm{padding:7px 12px;font-size:13px}
-input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:#fff}
+.btn.line{background:rgba(255,255,255,.9);border-color:var(--line);color:var(--navy)}.btn.line:hover{background:var(--navy);color:#fff}
+.btn.sm{padding:8px 14px;font-size:13px}
+input,select,textarea{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:12px;background:#fff}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0}
 label{display:block;font-size:13px;font-weight:700;color:var(--gray);margin:14px 0 6px}
 /* login */
 #login{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#0d2540,#155a9a)}
-.lcard{background:#fff;border-radius:12px;padding:36px;width:min(420px,100%);box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.lcard{background:#fff;border-radius:22px;padding:36px;width:min(420px,100%);box-shadow:0 30px 70px rgba(0,0,0,.3)}
 .lcard img{height:60px;margin-bottom:18px}
 .lcard h1{font-size:26px;margin-bottom:6px}.lcard p{color:var(--gray);margin-bottom:6px}
 .lcard .btn{width:100%;margin-top:20px;padding:14px}
 .lcard small{display:block;margin-top:14px;color:var(--gray);text-align:center}
-/* app */
-#app{display:none;min-height:100vh}
-aside{position:fixed;inset:0 auto 0 0;width:236px;background:var(--navy);color:#cfd9e6;padding:20px 14px;display:flex;flex-direction:column;z-index:30}
-aside .logo{background:#fff;border-radius:8px;padding:8px;margin-bottom:22px}
-aside .logo img{height:46px;margin:auto;display:block}
-aside nav{display:grid;gap:4px}
-aside nav button{display:flex;align-items:center;gap:10px;background:none;border:0;color:inherit;padding:11px 12px;border-radius:7px;cursor:pointer;text-align:left;font-weight:600}
-aside nav button:hover{background:rgba(255,255,255,.08)}
-aside nav button.on{background:var(--blue);color:#fff}
-aside .me{margin-top:auto;font-size:13px;padding:12px;border-top:1px solid rgba(255,255,255,.12)}
-aside .me b{display:block;color:#fff}
-aside .me a{color:#8cc3f2;cursor:pointer}
-main{margin-left:236px;padding:28px 32px 60px}
-.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
-.top h1{font-size:28px}
-.demo{background:#fff4d6;border:1px solid #e8cf85;color:#7a5b00;font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:99px}
-.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
-.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
-.stat span{font-size:13.5px;color:var(--gray)}
-.stat b{display:block;font-size:34px;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin-top:4px}
-.stat em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--green)}
-.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:22px}
-.panel h2{font-size:19px;margin-bottom:14px}
-.two{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
-.bars{display:flex;align-items:flex-end;gap:12px;height:170px;padding-top:10px}
-.bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:12px;color:var(--gray)}
-.bars i{display:block;width:100%;background:linear-gradient(0deg,var(--blue),#6fb0ea);border-radius:5px 5px 0 0;min-height:4px}
+/* shell */
+#app{display:none;padding:22px}
+.shell{max-width:1560px;margin:0 auto;display:grid;grid-template-columns:262px minmax(0,1fr);background:rgba(255,255,255,.6);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.85);border-radius:30px;box-shadow:0 30px 80px rgba(40,70,140,.16);min-height:calc(100vh - 44px);overflow:hidden}
+aside.sb{padding:26px 18px;border-right:1px solid var(--line);background:rgba(255,255,255,.6);display:flex;flex-direction:column;z-index:30}
+.sb .logo{padding:0 8px 22px}.sb .logo img{height:54px}
+.sb nav{display:grid;gap:4px}
+.sb nav button{display:flex;align-items:center;gap:12px;background:none;border:0;color:#44546a;padding:12px 16px;border-radius:999px;cursor:pointer;text-align:left;font-weight:500;font-size:15px;transition:.2s}
+.sb nav button:hover{background:#eaf0fb}
+.sb nav button.on{background:var(--navy);color:#fff;box-shadow:0 10px 24px rgba(13,37,64,.28)}
+.sb h6{font-size:11.5px;letter-spacing:.12em;color:#8896a6;margin:24px 16px 8px;text-transform:uppercase}
+.sb .sep{height:1px;background:var(--line);margin:14px 6px}
+.sb .me{margin-top:auto;font-size:13px;color:var(--gray);padding:14px 16px}
+.sb .me a{color:var(--blue);cursor:pointer;font-weight:700}
+.mn{padding:22px 32px 50px;min-width:0}
+.tb{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:26px}
+.srch{position:relative;flex:1;max-width:340px}
+.srch input{padding-left:42px;border-radius:999px;background:rgba(255,255,255,.85)}
+.srch .i{position:absolute;left:15px;top:50%;transform:translateY(-50%);color:#8896a6}
+.tr{display:flex;align-items:center;gap:12px}
+.bell{width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.85);border:1px solid var(--line);display:grid;place-items:center;position:relative;cursor:pointer}
+.bell::after{content:"";position:absolute;top:9px;right:10px;width:8px;height:8px;border-radius:50%;background:#e5484d}
+.usr{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.85);border:1px solid var(--line);padding:5px 14px 5px 5px;border-radius:999px}
+.usr b{display:block;font-size:13.5px;line-height:1.2}.usr small{color:var(--gray);font-size:12px}
+.av{width:38px;height:38px;border-radius:50%;background:#dfe6f8;color:var(--navy);display:grid;place-items:center;font-weight:700;font-size:13px;flex:none}
+.usr .av{width:34px;height:34px;background:var(--navy);color:#fff}
+.ph{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.ph h1{font-size:30px}.ph p{color:var(--gray);margin-top:2px}
+.ph .btns{display:flex;gap:10px;flex-wrap:wrap}
+.demo{background:#fff4d6;border:1px solid #e8cf85;color:#7a5b00;font-size:12px;font-weight:700;padding:6px 12px;border-radius:999px;align-self:center}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:24px}
+.stat{background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(228,237,253,.75));border:1px solid rgba(255,255,255,.95);border-radius:22px;padding:22px;cursor:pointer;transition:.22s;box-shadow:0 6px 20px rgba(40,70,140,.06)}
+.stat:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(40,70,140,.16)}
+.stat .h{display:flex;align-items:center;gap:12px;font-weight:700;color:var(--navy);font-size:16px}
+.stat .ic{width:40px;height:40px;border-radius:50%;background:#dfe9fb;color:var(--blue);display:grid;place-items:center}
+.stat .n{display:flex;align-items:center;gap:10px;margin-top:16px;font-size:34px;font-weight:700;color:var(--navy);letter-spacing:-.03em;line-height:1}
+.chip{font-size:12px;font-weight:700;padding:4px 9px;border-radius:99px;background:#e1f4e8;color:var(--green);letter-spacing:0}
+.chip.z{background:#eceff3;color:var(--gray)}
+.stat .more{margin-top:12px;font-size:12.5px;color:var(--blue);font-weight:700}
+.panel{background:rgba(255,255,255,.82);border:1px solid rgba(255,255,255,.95);border-radius:22px;padding:20px 22px;margin-bottom:24px;box-shadow:0 6px 20px rgba(40,70,140,.05)}
+.ptop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.ptop h2{font-size:20px}
+.ptop a{color:var(--blue);font-weight:700;cursor:pointer;font-size:14px}
 .tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:14.5px}
-th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
-td{padding:13px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
-tbody tr{cursor:pointer}tbody tr:hover{background:var(--light)}
-.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700}
-.s-New{background:#e6f0fa;color:var(--blue2)}.s-Contacted{background:#fff4d6;color:var(--amber)}.s-Quoted{background:#ece6fa;color:#5b3fa0}.s-Won{background:#e1f4e8;color:var(--green)}.s-Lost{background:#f7e3e0;color:var(--red)}
-.bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}.bar input{max-width:300px}.bar select{max-width:190px}
-.drawer{position:fixed;inset:0 0 0 auto;width:min(440px,100%);background:#fff;box-shadow:-20px 0 60px rgba(0,0,0,.2);padding:26px;transform:translateX(105%);transition:.28s;z-index:50;overflow:auto}
+thead th{background:#eef1f9;text-align:left;font-size:12.5px;font-weight:700;color:var(--gray);padding:13px 14px;white-space:nowrap}
+thead th:first-child{border-radius:12px 0 0 12px}thead th:last-child{border-radius:0 12px 12px 0}
+td{padding:14px;border-bottom:1px solid var(--line);white-space:nowrap;vertical-align:middle}
+tbody tr{cursor:pointer;transition:.15s}tbody tr:hover{background:#f3f6fd}
+.who{display:flex;align-items:center;gap:12px}.who small{display:block;color:var(--gray);font-size:12.5px}
+.act{display:flex;gap:8px}
+.ib{width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:#fff;display:inline-grid;place-items:center;color:var(--blue);cursor:pointer;transition:.2s;text-decoration:none}
+.ib:hover{background:var(--blue);color:#fff;border-color:var(--blue)}
+.pill{display:inline-block;padding:4px 12px;border-radius:99px;font-size:12.5px;font-weight:700}
+.s-New{background:#e3effb;color:var(--blue2)}.s-Contacted{background:#fff1cf;color:var(--amber)}.s-Quoted{background:#ece6fa;color:#5b3fa0}.s-Scheduled{background:#dcf2f6;color:#0e7490}.s-Completed{background:#e1f4e8;color:var(--green)}.s-NotProceeding{background:#eceff3;color:var(--gray)}
+.d-New{background:var(--blue)}.d-Contacted{background:#e0a31a}.d-Quoted{background:#7c5cc4}.d-Scheduled{background:#1796ae}.d-Completed{background:var(--green)}.d-NotProceeding{background:#9aa6b4}
+.pr{display:grid;grid-template-columns:170px 1fr 40px;align-items:center;gap:14px;padding:12px 10px;border-radius:14px;cursor:pointer;transition:.15s}
+.pr:hover{background:#f1f5fd}
+.pr .l{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--navy)}.pr .l i{width:10px;height:10px;border-radius:50%}
+.pr .t{height:8px;background:#e8edf6;border-radius:99px;overflow:hidden}.pr .t b{display:block;height:100%;border-radius:99px}
+.pr .c{text-align:right;font-weight:700;color:var(--navy)}
+.tabs{display:inline-flex;gap:4px;background:rgba(232,237,248,.9);padding:5px;border-radius:999px;margin-bottom:18px}
+.tabs button{border:0;background:none;padding:9px 18px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;color:var(--navy)}
+.tabs button.on{background:var(--navy);color:#fff}
+.bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px;justify-content:space-between}
+.bar .srch{max-width:380px}.bar select{max-width:210px;border-radius:999px}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(450px,100%);background:#fff;box-shadow:-20px 0 60px rgba(0,0,0,.2);padding:28px;transform:translateX(105%);transition:.28s;z-index:50;overflow:auto;border-radius:24px 0 0 24px}
 .drawer.open{transform:none}
 .veil{position:fixed;inset:0;background:rgba(8,26,46,.45);opacity:0;pointer-events:none;transition:.28s;z-index:40}.veil.open{opacity:1;pointer-events:auto}
-.drawer .x{float:right;background:none;border:0;font-size:26px;cursor:pointer;color:var(--gray)}
-.kv{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:14px 0;font-size:14.5px}.kv span{color:var(--gray)}
-.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:8px;max-width:340px;box-shadow:0 14px 40px rgba(0,0,0,.3);transform:translateY(140%);transition:.3s;z-index:60;font-size:14px}
+.drawer .x{float:right;background:none;border:0;font-size:28px;cursor:pointer;color:var(--gray)}
+.kv{display:grid;grid-template-columns:100px 1fr;gap:8px 12px;margin:16px 0;font-size:14.5px}.kv span{color:var(--gray)}
+.dact{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:14px;max-width:340px;box-shadow:0 14px 40px rgba(0,0,0,.3);transform:translateY(140%);transition:.3s;z-index:60;font-size:14px}
 .toast.show{transform:none}
 .sw{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
 .sw input{width:20px;height:20px}
 .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(8,26,46,.5);z-index:70;padding:20px}.modal.open{display:grid}
-.modal .box{background:#fff;border-radius:12px;padding:28px;width:min(440px,100%)}
+.modal .box{background:#fff;border-radius:22px;padding:28px;width:min(440px,100%)}
 .burger{display:none}
-@media(max-width:900px){
- aside{transform:translateX(-105%);transition:.28s}aside.open{transform:none}
- main{margin-left:0;padding:20px 16px 60px}
- .burger{display:inline-flex}
- .cards{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}
+@media(max-width:960px){
+ #app{padding:0}
+ .shell{grid-template-columns:1fr;border-radius:0;min-height:100vh;border:0}
+ aside.sb{position:fixed;inset:0 auto 0 0;width:270px;transform:translateX(-105%);transition:.28s;background:#fff;box-shadow:20px 0 60px rgba(0,0,0,.2)}
+ aside.sb.open{transform:none}
+ .mn{padding:16px 16px 50px}
+ .burger{display:inline-grid}
+ .cards{grid-template-columns:1fr 1fr;gap:12px}
+ .usr small,.usr b{display:none}.usr{padding:5px}
+ .pr{grid-template-columns:130px 1fr 32px}
+ .ph h1{font-size:25px}
 }
 </style>
 </head>
@@ -97,69 +135,75 @@ tbody tr{cursor:pointer}tbody tr:hover{background:var(--light)}
 </section>
 
 <div id="app">
-  <aside id="side">
+ <div class="shell">
+  <aside class="sb" id="side">
     <div class="logo"><img src="../img/logo.png" alt="DMWRIGHT"></div>
     <nav id="nav">
-      <button data-p="dash" class="on">▦ Dashboard</button>
-      <button data-p="leads">☰ Leads</button>
-      <button data-p="team">☺ Team</button>
-      <button data-p="set">⚙ Settings</button>
+      <button data-p="dash" class="on"><svg class="i" data-ic="grid"></svg>Dashboard</button>
+      <button data-p="leads"><svg class="i" data-ic="users"></svg>Leads</button>
     </nav>
-    <div class="me"><b>DeAngelo M. Wright</b>Admin<br><a id="out">Sign out</a></div>
+    <h6>Administration</h6>
+    <nav id="nav2">
+      <button data-p="team"><svg class="i" data-ic="team"></svg>Team &amp; roles</button>
+      <button data-p="set"><svg class="i" data-ic="sliders"></svg>Settings</button>
+    </nav>
+    <div class="me"><b style="color:var(--navy)">DeAngelo M. Wright</b><br>Admin · <a id="out">Sign out</a></div>
   </aside>
 
-  <main>
-    <div class="top">
-      <div style="display:flex;align-items:center;gap:12px"><button class="btn line sm burger" id="bg">☰</button><h1 id="title">Dashboard</h1></div>
-      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="demo">Demo with sample data</span><button class="btn sm" id="sim">+ Simulate a website quote request</button></div>
+  <main class="mn">
+    <div class="tb">
+      <div style="display:flex;align-items:center;gap:12px;flex:1">
+        <button class="btn line sm burger" id="bg" style="width:42px;height:42px;padding:0"><svg class="i" data-ic="menu"></svg></button>
+        <div class="srch"><svg class="i" data-ic="search"></svg><input id="gs" placeholder="Search leads"></div>
+      </div>
+      <div class="tr"><div class="bell" title="Notifications"><svg class="i" data-ic="bell"></svg></div>
+        <div class="usr"><span class="av">DW</span><div><b>DeAngelo M. Wright</b><small>DMWRIGHT SOLUTIONS</small></div></div></div>
     </div>
 
     <section id="p-dash">
-      <div class="cards">
-        <div class="stat"><span>New leads this week</span><b id="c1">0</b><em>▲ 3 vs last week</em></div>
-        <div class="stat"><span>Quotes sent</span><b id="c2">0</b><em>▲ 1 vs last week</em></div>
-        <div class="stat"><span>Jobs won</span><b id="c3">0</b><em>This month</em></div>
-        <div class="stat"><span>Win rate</span><b id="c4">0%</b><em>Won / closed</em></div>
-      </div>
-      <div class="two">
-        <div class="panel"><h2>Leads per week</h2>
-          <div class="bars" id="bars"></div></div>
-        <div class="panel"><h2>Pipeline</h2><div id="pipe"></div></div>
-      </div>
-      <div class="panel"><h2>Recent leads</h2><div class="tw"><table><thead><tr><th>Name</th><th>Project</th><th>City</th><th>Status</th><th>Received</th></tr></thead><tbody id="recent"></tbody></table></div></div>
+      <div class="ph"><div><h1>Dashboard</h1><p>Here is what is happening with your leads.</p></div>
+        <div class="btns"><span class="demo">Demo with sample data</span><button class="btn" id="sim"><svg class="i" data-ic="plus"></svg>Simulate a website quote request</button></div></div>
+      <div class="cards" id="cards"></div>
+      <div class="panel"><div class="ptop"><h2>Recent leads</h2><a data-go="">View all leads →</a></div>
+        <div class="tw"><table><thead><tr><th>Lead</th><th>Project</th><th>City</th><th>Status</th><th>Received</th><th>Action</th></tr></thead><tbody id="recent"></tbody></table></div></div>
+      <div class="panel"><div class="ptop"><h2>Pipeline</h2><span class="chip" id="rate">Completion rate</span></div><div id="pipe"></div></div>
     </section>
 
     <section id="p-leads" hidden>
+      <div class="ph"><div><h1>Leads</h1><p>Every quote request from your website, in one place.</p></div>
+        <div class="btns"><button class="btn line" id="exp"><svg class="i" data-ic="download"></svg>Export</button><button class="btn" id="sim2"><svg class="i" data-ic="plus"></svg>Simulate a quote request</button></div></div>
+      <div class="tabs" id="tabs"><button data-t="all" class="on">All leads</button><button data-t="active">Active</button><button data-t="closed">Closed</button></div>
       <div class="panel">
-        <div class="bar"><input id="q" placeholder="Search name, phone, city"><select id="f"><option value="">All statuses</option><option>New</option><option>Contacted</option><option>Quoted</option><option>Won</option><option>Lost</option></select></div>
-        <div class="tw"><table><thead><tr><th>Name</th><th>Phone</th><th>Project</th><th>City</th><th>Status</th><th>Received</th></tr></thead><tbody id="rows"></tbody></table></div>
+        <div class="bar"><div class="srch"><svg class="i" data-ic="search"></svg><input id="q" placeholder="Search name, phone, email or city"></div>
+          <select id="f"><option value="">All statuses</option></select></div>
+        <div class="tw"><table><thead><tr><th>Lead</th><th>Phone</th><th>Email</th><th>City</th><th>Received</th><th>Status</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table></div>
       </div>
     </section>
 
     <section id="p-team" hidden>
-      <div class="panel">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h2 style="margin:0">Team members</h2><button class="btn sm" id="inv">+ Invite user</button></div>
-        <div class="tw"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr></thead><tbody id="team"></tbody></table></div>
-        <p style="color:var(--gray);margin-top:14px;font-size:14px">Admins can invite users, change roles and edit settings. Staff can view and update leads only.</p>
-      </div>
+      <div class="ph"><div><h1>Team &amp; roles</h1><p>Admins manage users and settings. Staff manage leads.</p></div>
+        <div class="btns"><button class="btn" id="inv"><svg class="i" data-ic="plus"></svg>Invite user</button></div></div>
+      <div class="panel"><div class="tw"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr></thead><tbody id="team"></tbody></table></div></div>
     </section>
 
     <section id="p-set" hidden>
-      <div class="panel" style="max-width:640px">
+      <div class="ph"><div><h1>Settings</h1><p>Company details and notifications.</p></div></div>
+      <div class="panel" style="max-width:680px">
         <h2>Company</h2>
         <label>Company name</label><input value="DMWRIGHT SOLUTIONS, LLC">
         <label>Notification email</label><input value="info@dmwrightsolutions.com">
         <label>Phone</label><input value="678 310 6150">
         <h2 style="margin-top:26px">Notifications for new quote requests</h2>
         <div class="sw"><span>Email to the owner</span><input type="checkbox" checked></div>
-        <div class="sw"><span>Push notification on phone</span><input type="checkbox" checked></div>
         <div class="sw"><span>Auto-reply email to the visitor</span><input type="checkbox" checked></div>
         <div class="sw"><span>SMS (optional, extra cost)</span><input type="checkbox"></div>
         <div class="sw"><span>WhatsApp (optional, extra cost)</span><input type="checkbox"></div>
         <button class="btn" style="margin-top:20px" id="save">Save settings</button>
       </div>
+      <div class="panel" style="max-width:680px"><h2>Pipeline stages</h2><p style="color:var(--gray);margin:6px 0 14px">The steps every lead moves through. Names can be changed.</p><div id="stages"></div></div>
     </section>
   </main>
+ </div>
 </div>
 
 <div class="veil" id="veil"></div>
@@ -172,67 +216,114 @@ tbody tr{cursor:pointer}tbody tr:hover{background:var(--light)}
 
 <script>
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
-const day=86400000,base=Date.now(),now=base;
-const ST=["New","Contacted","Quoted","Won","Lost"];
+const P={grid:'<rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/>',
+users:'<circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M16 5.2a3.2 3.2 0 0 1 0 6"/><path d="M18 14.4c1.9.8 3 2.6 3 5.6"/>',
+team:'<circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/>',
+sliders:'<path d="M4 6h10M18 6h2M4 12h4M12 12h8M4 18h12M20 18h0"/><circle cx="16" cy="6" r="2"/><circle cx="10" cy="12" r="2"/><circle cx="18" cy="18" r="2"/>',
+mail:'<rect x="3" y="5" width="18" height="14" rx="2.4"/><path d="m3.5 7.5 8.5 6 8.5-6"/>',
+phone:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+search:'<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>',
+bell:'<path d="M6 16v-5a6 6 0 0 1 12 0v5l2 2H4z"/><path d="M10 21h4"/>',
+download:'<path d="M12 4v11m0 0-4-4m4 4 4-4M5 20h14"/>',
+plus:'<path d="M12 5v14M5 12h14"/>',
+menu:'<path d="M4 7h16M4 12h16M4 17h16"/>',
+spark:'<path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/>',
+doc:'<path d="M7 3h7l5 5v13H7z"/><path d="M14 3v5h5M10 13h6M10 17h6"/>',
+check:'<circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/>'};
+const ic=n=>'<svg class="i" viewBox="0 0 24 24">'+P[n]+'</svg>';
+$$("[data-ic]").forEach(e=>{e.setAttribute("viewBox","0 0 24 24");e.innerHTML=P[e.dataset.ic]});
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const day=86400000;
+const ST=["New","Contacted","Quoted","Scheduled","Completed","Not Proceeding"];
+const slug=s=>s.replace(/\s/g,"");
+const ACTIVE=["New","Contacted","Quoted","Scheduled"],CLOSED=["Completed","Not Proceeding"];
+const now0=Date.now();
+const mk=n=>n.toLowerCase().replace(/[^a-z ]/g,"").replace(" ",".")+"@example.com";
 let leads=[
 ["Marcus Hill","404-555-0142","Kitchen remodeling","Sandy Springs","New",0,"Wants a full kitchen remodel, budget around the mid range."],
 ["Priya Nair","470-555-0177","Church renovation","Marietta","Contacted",1,"Fellowship hall, 3,000 sq ft. Site visit planned."],
 ["Tanya Brooks","678-555-0116","Bathroom remodeling","Roswell","Quoted",2,"Primary bath, walk-in shower. Quote sent."],
 ["Greg Santos","770-555-0189","Deck","Dunwoody","New",2,"Wants a 400 sq ft deck with stairs."],
-["Alicia Moore","404-555-0165","Salon build-out","Decatur","Contacted",4,"New salon, 8 stations. Needs timeline."],
-["Daniel Kim","678-555-0121","Flooring","Alpharetta","Won",6,"Whole first floor. Contract signed."],
+["Alicia Moore","404-555-0165","Salon build-out","Decatur","Scheduled",4,"New salon, 8 stations. Site walkthrough booked."],
+["Daniel Kim","678-555-0121","Flooring","Alpharetta","Completed",6,"Whole first floor. Job finished."],
 ["Rosa Ortega","470-555-0133","Apartment renovation","Atlanta","Quoted",7,"12 units, phased work."],
-["Chris Parker","404-555-0154","Painting","Sandy Springs","Lost",9,"Went with a lower bid."],
+["Chris Parker","404-555-0154","Painting","Sandy Springs","Not Proceeding",9,"Chose a different timeline. May reach out later."],
 ["Nina Patel","678-555-0198","Mixed-use renovation","Atlanta","Contacted",10,"Ground floor retail plus 2 apartments."],
-["Omar Reed","770-555-0107","Siding","Marietta","Won",12,"Fiber cement siding, full exterior."],
+["Omar Reed","770-555-0107","Siding","Marietta","Completed",12,"Fiber cement siding, full exterior."],
 ["Hannah Cole","404-555-0171","Kitchen remodeling","Roswell","New",13,"Open the wall between kitchen and dining room."],
 ["Victor Lane","678-555-0183","New construction","Alpharetta","Quoted",15,"Commercial salon shell, plans attached."]
-].map((r,i)=>({id:i+1,name:r[0],phone:r[1],project:r[2],city:r[3],status:r[4],at:now-r[5]*day,note:r[6]}));
+].map((r,i)=>({id:i+1,name:r[0],phone:r[1],email:mk(r[0]),project:r[2],city:r[3],status:r[4],at:now0-r[5]*day,note:r[6]}));
 let team=[["DeAngelo M. Wright","owner@dmwrightsolutions.com","Admin","Active"],["Maria Simbajon","maria@example.com","Admin","Active"],["Front Desk","office@dmwrightsolutions.com","Staff","Active"]];
+let view={tab:"all",status:"",q:""};
 const fmt=t=>{const d=Math.floor((Date.now()-t)/day);return d<=0?"Today":d===1?"Yesterday":d+" days ago"};
-const pill=s=>`<span class="pill s-${s}">${s}</span>`;
-function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),3800)}
+const pill=s=>`<span class="pill s-${slug(s)}">${s}</span>`;
+const ini=n=>n.split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase();
+const mail=l=>"mailto:"+l.email+"?subject="+encodeURIComponent("Your quote request with DMWRIGHT SOLUTIONS")+"&body="+encodeURIComponent("Hi "+l.name.split(" ")[0]+",\n\nThank you for contacting DMWRIGHT SOLUTIONS about your "+l.project.toLowerCase()+" project. I would like to learn more and schedule a time to talk.\n\nBest regards,\nDeAngelo M. Wright\nDMWRIGHT SOLUTIONS, LLC\n678 310 6150");
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),4000)}
+const actions=l=>`<div class="act"><a class="ib" href="${mail(l)}" title="Send an email">${ic("mail")}</a><a class="ib" href="tel:${esc(l.phone)}" title="Call">${ic("phone")}</a></div>`;
+const who=l=>`<div class="who"><span class="av">${esc(ini(l.name))}</span><div><b>${esc(l.name)}</b><small>${esc(l.project)}</small></div></div>`;
 function dash(){
-  const wk=leads.filter(l=>Date.now()-l.at<7*day).length;
-  $("#c1").textContent=wk;$("#c2").textContent=leads.filter(l=>l.status==="Quoted").length;
-  const won=leads.filter(l=>l.status==="Won").length,lost=leads.filter(l=>l.status==="Lost").length;
-  $("#c3").textContent=won;$("#c4").textContent=(won+lost?Math.round(won/(won+lost)*100):0)+"%";
-  const w=[0,0,0,0];leads.forEach(l=>{const k=Math.max(0,Math.min(3,Math.floor((Date.now()-l.at)/(7*day))));w[3-k]++});
-  const mx=Math.max(...w,1);$("#bars").innerHTML=w.map((v,i)=>`<div><span>${v}</span><i style="height:${v/mx*120}px"></i>Wk ${i+1}</div>`).join("");
-  $("#pipe").innerHTML=ST.map(s=>{const n=leads.filter(l=>l.status===s).length;return `<div class="sw"><span>${pill(s)}</span><b>${n}</b></div>`}).join("");
-  $("#recent").innerHTML=[...leads].sort((a,b)=>b.at-a.at).slice(0,5).map(l=>`<tr data-id="${l.id}"><td><b>${l.name}</b></td><td>${l.project}</td><td>${l.city}</td><td>${pill(l.status)}</td><td>${fmt(l.at)}</td></tr>`).join("");
+  const wk=l=>Date.now()-l.at<7*day,by=s=>leads.filter(l=>l.status===s);
+  const cd=[
+    ["spark","New leads",by("New").length,by("New").filter(wk).length,"New"],
+    ["doc","Quotes sent",by("Quoted").length,by("Quoted").filter(wk).length,"Quoted"],
+    ["check","Completed jobs",by("Completed").length,by("Completed").filter(wk).length,"Completed"],
+    ["users","Total leads",leads.length,leads.filter(wk).length,""]];
+  $("#cards").innerHTML=cd.map(c=>`<div class="stat" data-go="${c[4]}"><div class="h"><span class="ic">${ic(c[0])}</span>${c[1]}</div><div class="n">${c[2]}<span class="chip ${c[3]?"":"z"}">${c[3]?"+"+c[3]+" this week":"none this week"}</span></div><div class="more">View leads →</div></div>`).join("");
+  $("#recent").innerHTML=[...leads].sort((a,b)=>b.at-a.at).slice(0,5).map(l=>`<tr data-id="${l.id}"><td>${who(l)}</td><td>${esc(l.project)}</td><td>${esc(l.city)}</td><td>${pill(l.status)}</td><td>${fmt(l.at)}</td><td>${actions(l)}</td></tr>`).join("");
+  const mx=Math.max(...ST.map(s=>by(s).length),1);
+  $("#pipe").innerHTML=ST.map(s=>`<div class="pr" data-go="${s}"><div class="l"><i class="d-${slug(s)}"></i>${s}</div><div class="t"><b class="d-${slug(s)}" style="width:${by(s).length/mx*100}%"></b></div><div class="c">${by(s).length}</div></div>`).join("");
+  const done=by("Completed").length,closed=done+by("Not Proceeding").length;
+  $("#rate").textContent="Completion rate "+(closed?Math.round(done/closed*100):0)+"%";
 }
 function rows(){
-  const q=$("#q").value.toLowerCase(),f=$("#f").value;
-  $("#rows").innerHTML=[...leads].sort((a,b)=>b.at-a.at).filter(l=>(!f||l.status===f)&&(!q||(l.name+l.phone+l.city+l.project).toLowerCase().includes(q))).map(l=>`<tr data-id="${l.id}"><td><b>${l.name}</b></td><td>${l.phone}</td><td>${l.project}</td><td>${l.city}</td><td>${pill(l.status)}</td><td>${fmt(l.at)}</td></tr>`).join("")||`<tr><td colspan="6">No leads match.</td></tr>`;
+  const q=view.q.toLowerCase();
+  $("#rows").innerHTML=[...leads].sort((a,b)=>b.at-a.at).filter(l=>{
+    if(view.tab==="active"&&!ACTIVE.includes(l.status))return false;
+    if(view.tab==="closed"&&!CLOSED.includes(l.status))return false;
+    if(view.status&&l.status!==view.status)return false;
+    return !q||(l.name+l.phone+l.email+l.city+l.project).toLowerCase().includes(q)}).map(l=>`<tr data-id="${l.id}"><td>${who(l)}</td><td>${esc(l.phone)}</td><td>${esc(l.email)}</td><td>${esc(l.city)}</td><td>${fmt(l.at)}</td><td>${pill(l.status)}</td><td>${actions(l)}</td></tr>`).join("")||`<tr><td colspan="7">No leads match.</td></tr>`;
 }
-function teamRows(){$("#team").innerHTML=team.map(t=>`<tr><td><b>${t[0]}</b></td><td>${t[1]}</td><td>${t[2]}</td><td>${t[3]}</td></tr>`).join("")}
+function teamRows(){$("#team").innerHTML=team.map(t=>`<tr><td><div class="who"><span class="av">${esc(ini(t[0]))}</span><b>${esc(t[0])}</b></div></td><td>${esc(t[1])}</td><td>${t[2]}</td><td>${t[3]}</td></tr>`).join("");
+  $("#stages").innerHTML=ST.map(s=>`<div class="sw"><span>${pill(s)}</span><span style="color:var(--gray);font-size:13px">${ACTIVE.includes(s)?"Active":"Closed"}</span></div>`).join("")}
 function open(id){
   const l=leads.find(x=>x.id==id);
-  $("#dr").innerHTML=`<button class="x" id="dx">×</button><h2>${l.name}</h2><p style="color:var(--gray)">${l.project} · ${l.city}</p>
-  <div class="kv"><span>Phone</span><b>${l.phone}</b><span>Received</span><b>${fmt(l.at)}</b><span>Status</span><b>${pill(l.status)}</b></div>
+  $("#dr").innerHTML=`<button class="x" id="dx">×</button><div class="who" style="margin-bottom:6px"><span class="av" style="width:48px;height:48px">${esc(ini(l.name))}</span><div><h2>${esc(l.name)}</h2><p style="color:var(--gray)">${esc(l.project)} · ${esc(l.city)}</p></div></div>
+  <div class="kv"><span>Phone</span><b>${esc(l.phone)}</b><span>Email</span><b>${esc(l.email)}</b><span>Received</span><b>${fmt(l.at)}</b><span>Status</span><b>${pill(l.status)}</b></div>
+  <div class="dact"><a class="btn" href="${mail(l)}">${ic("mail")}Send an email</a><a class="btn line" href="tel:${esc(l.phone)}">${ic("phone")}Call</a></div>
   <label>Change status</label><select id="ds">${ST.map(s=>`<option ${s===l.status?"selected":""}>${s}</option>`).join("")}</select>
-  <label>Notes</label><textarea id="dn" rows="5">${l.note}</textarea>
-  <div style="display:flex;gap:10px;margin-top:18px"><button class="btn" id="dsave">Save</button><a class="btn line" href="tel:${l.phone}">Call</a></div>`;
+  <label>Notes</label><textarea id="dn" rows="5">${esc(l.note)}</textarea>
+  <div class="dact"><button class="btn" id="dsave">Save changes</button></div>`;
   $("#dr").classList.add("open");$("#veil").classList.add("open");
   $("#dx").onclick=close;$("#dsave").onclick=()=>{l.status=$("#ds").value;l.note=$("#dn").value;close();render();toast("Lead updated")};
 }
 function close(){$("#dr").classList.remove("open");$("#veil").classList.remove("open")}
 function render(){dash();rows();teamRows()}
-const T={dash:"Dashboard",leads:"Leads",team:"Team",set:"Settings"};
-function page(p){$$("main section").forEach(s=>s.hidden=s.id!=="p-"+p);$$("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.p===p));$("#title").textContent=T[p];$("#side").classList.remove("open")}
+const PG=["dash","leads","team","set"];
+function page(p){PG.forEach(x=>$("#p-"+x).hidden=x!==p);$$("#nav button,#nav2 button").forEach(b=>b.classList.toggle("on",b.dataset.p===p));$("#side").classList.remove("open");scrollTo(0,0)}
+function goLeads(status){view.status=status||"";view.tab="all";$("#f").value=view.status;$$("#tabs button").forEach(b=>b.classList.toggle("on",b.dataset.t==="all"));rows();page("leads")}
+$("#f").innerHTML+=ST.map(s=>`<option>${s}</option>`).join("");
 $("#go").onclick=()=>{$("#login").style.display="none";$("#app").style.display="block";render()};
 $("#out").onclick=()=>{$("#app").style.display="none";$("#login").style.display="grid"};
-$("#nav").onclick=e=>{const b=e.target.closest("button");if(b)page(b.dataset.p)};
-document.addEventListener("click",e=>{const r=e.target.closest("tbody tr[data-id]");if(r)open(r.dataset.id)});
+$("#side").addEventListener("click",e=>{const b=e.target.closest("button[data-p]");if(b){if(b.dataset.p==="leads")goLeads("");else page(b.dataset.p)}});
+document.addEventListener("click",e=>{
+  if(e.target.closest(".act"))return;
+  const g=e.target.closest("[data-go]");if(g){goLeads(g.dataset.go);return}
+  const r=e.target.closest("tbody tr[data-id]");if(r)open(r.dataset.id)});
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(!b)return;view.tab=b.dataset.t;$$("#tabs button").forEach(x=>x.classList.toggle("on",x===b));rows()};
 $("#veil").onclick=close;$("#bg").onclick=()=>$("#side").classList.toggle("open");
-$("#q").oninput=rows;$("#f").onchange=rows;
+$("#q").oninput=e=>{view.q=e.target.value;$("#gs").value=view.q;rows()};
+$("#f").onchange=e=>{view.status=e.target.value;rows()};
+$("#gs").oninput=e=>{view.q=e.target.value;$("#q").value=view.q;if($("#p-leads").hidden){view.status="";view.tab="all";$("#f").value="";page("leads")}rows()};
 $("#inv").onclick=()=>$("#md").classList.add("open");$("#icancel").onclick=()=>$("#md").classList.remove("open");
 $("#isend").onclick=()=>{const e=$("#ie").value.trim();if(!e)return;team.push([e.split("@")[0],e,$("#ir").value,"Invited"]);$("#md").classList.remove("open");$("#ie").value="";teamRows();toast("Invitation email sent to "+e)};
 $("#save").onclick=()=>toast("Settings saved");
+$("#exp").onclick=()=>{const c=[["Name","Phone","Email","City","Project","Status","Received"],...leads.map(l=>[l.name,l.phone,l.email,l.city,l.project,l.status,new Date(l.at).toLocaleDateString()])].map(r=>r.map(v=>'"'+String(v).replace(/"/g,'""')+'"').join(",")).join("\n");
+  const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([c],{type:"text/csv"}));a.download="dmwright-leads-demo.csv";a.click();toast("Exported leads as CSV")};
 const SIM=[["Jordan Ellis","404-555-0192","Bathroom remodeling","Sandy Springs","Looking to redo a guest bathroom."],["Mia Turner","678-555-0144","Decking","Roswell","Replace an old deck, about 300 sq ft."],["Samuel Grant","770-555-0125","Commercial build-out","Marietta","New office space, 2,000 sq ft."]];
 let si=0;
-$("#sim").onclick=()=>{const s=SIM[si++%SIM.length];leads.unshift({id:leads.length+1+si*100,name:s[0],phone:s[1],project:s[2],city:s[3],status:"New",at:Date.now(),note:s[4]});render();toast("New quote request from "+s[0]+". Email sent to info@dmwrightsolutions.com and push notification delivered.")};
+const sim=()=>{const s=SIM[si++%SIM.length];leads.unshift({id:1000+si,name:s[0],phone:s[1],email:mk(s[0]),project:s[2],city:s[3],status:"New",at:Date.now(),note:s[4]});render();toast("New quote request from "+s[0]+". Email sent to info@dmwrightsolutions.com.")};
+$("#sim").onclick=sim;$("#sim2").onclick=sim;
 </script>
 </body>
 </html>
