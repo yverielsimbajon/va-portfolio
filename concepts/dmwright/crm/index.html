@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>DMWRIGHT CRM Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0d2540;--blue:#1d6fb8;--blue2:#155a9a;--gray:#5d6a77;--steel:#e9edf2;--light:#f5f7fa;--ink:#16222f;--line:rgba(13,37,64,.12);--sans:"DM Sans",system-ui,sans-serif;--green:#1f8a4c;--amber:#b7791f;--red:#c0392b}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--sans);color:var(--ink);background:var(--light);font-size:15.5px;line-height:1.5}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3{color:var(--navy);letter-spacing:-.02em;line-height:1.15}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:6px;font-weight:700;font-size:14.5px;border:2px solid transparent;cursor:pointer;background:var(--blue);color:#fff;transition:.2s}
+.btn:hover{background:var(--blue2)}
+.btn.line{background:#fff;border-color:var(--navy);color:var(--navy)}.btn.line:hover{background:var(--navy);color:#fff}
+.btn.sm{padding:7px 12px;font-size:13px}
+input,select,textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:6px;background:#fff}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:0}
+label{display:block;font-size:13px;font-weight:700;color:var(--gray);margin:14px 0 6px}
+/* login */
+#login{min-height:100vh;display:grid;place-items:center;padding:20px;background:linear-gradient(135deg,#0d2540,#155a9a)}
+.lcard{background:#fff;border-radius:12px;padding:36px;width:min(420px,100%);box-shadow:0 30px 70px rgba(0,0,0,.3)}
+.lcard img{height:60px;margin-bottom:18px}
+.lcard h1{font-size:26px;margin-bottom:6px}.lcard p{color:var(--gray);margin-bottom:6px}
+.lcard .btn{width:100%;margin-top:20px;padding:14px}
+.lcard small{display:block;margin-top:14px;color:var(--gray);text-align:center}
+/* app */
+#app{display:none;min-height:100vh}
+aside{position:fixed;inset:0 auto 0 0;width:236px;background:var(--navy);color:#cfd9e6;padding:20px 14px;display:flex;flex-direction:column;z-index:30}
+aside .logo{background:#fff;border-radius:8px;padding:8px;margin-bottom:22px}
+aside .logo img{height:46px;margin:auto;display:block}
+aside nav{display:grid;gap:4px}
+aside nav button{display:flex;align-items:center;gap:10px;background:none;border:0;color:inherit;padding:11px 12px;border-radius:7px;cursor:pointer;text-align:left;font-weight:600}
+aside nav button:hover{background:rgba(255,255,255,.08)}
+aside nav button.on{background:var(--blue);color:#fff}
+aside .me{margin-top:auto;font-size:13px;padding:12px;border-top:1px solid rgba(255,255,255,.12)}
+aside .me b{display:block;color:#fff}
+aside .me a{color:#8cc3f2;cursor:pointer}
+main{margin-left:236px;padding:28px 32px 60px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:22px}
+.top h1{font-size:28px}
+.demo{background:#fff4d6;border:1px solid #e8cf85;color:#7a5b00;font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:99px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:22px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px}
+.stat span{font-size:13.5px;color:var(--gray)}
+.stat b{display:block;font-size:34px;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin-top:4px}
+.stat em{font-style:normal;font-size:12.5px;font-weight:700;color:var(--green)}
+.panel{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px;margin-bottom:22px}
+.panel h2{font-size:19px;margin-bottom:14px}
+.two{display:grid;grid-template-columns:1.4fr 1fr;gap:22px}
+.bars{display:flex;align-items:flex-end;gap:12px;height:170px;padding-top:10px}
+.bars div{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%;font-size:12px;color:var(--gray)}
+.bars i{display:block;width:100%;background:linear-gradient(0deg,var(--blue),#6fb0ea);border-radius:5px 5px 0 0;min-height:4px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:14.5px}
+th{text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:13px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+tbody tr{cursor:pointer}tbody tr:hover{background:var(--light)}
+.pill{display:inline-block;padding:3px 10px;border-radius:99px;font-size:12px;font-weight:700}
+.s-New{background:#e6f0fa;color:var(--blue2)}.s-Contacted{background:#fff4d6;color:var(--amber)}.s-Quoted{background:#ece6fa;color:#5b3fa0}.s-Won{background:#e1f4e8;color:var(--green)}.s-Lost{background:#f7e3e0;color:var(--red)}
+.bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px}.bar input{max-width:300px}.bar select{max-width:190px}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(440px,100%);background:#fff;box-shadow:-20px 0 60px rgba(0,0,0,.2);padding:26px;transform:translateX(105%);transition:.28s;z-index:50;overflow:auto}
+.drawer.open{transform:none}
+.veil{position:fixed;inset:0;background:rgba(8,26,46,.45);opacity:0;pointer-events:none;transition:.28s;z-index:40}.veil.open{opacity:1;pointer-events:auto}
+.drawer .x{float:right;background:none;border:0;font-size:26px;cursor:pointer;color:var(--gray)}
+.kv{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:14px 0;font-size:14.5px}.kv span{color:var(--gray)}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--navy);color:#fff;padding:14px 18px;border-radius:8px;max-width:340px;box-shadow:0 14px 40px rgba(0,0,0,.3);transform:translateY(140%);transition:.3s;z-index:60;font-size:14px}
+.toast.show{transform:none}
+.sw{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid var(--line)}
+.sw input{width:20px;height:20px}
+.modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(8,26,46,.5);z-index:70;padding:20px}.modal.open{display:grid}
+.modal .box{background:#fff;border-radius:12px;padding:28px;width:min(440px,100%)}
+.burger{display:none}
+@media(max-width:900px){
+ aside{transform:translateX(-105%);transition:.28s}aside.open{transform:none}
+ main{margin-left:0;padding:20px 16px 60px}
+ .burger{display:inline-flex}
+ .cards{grid-template-columns:1fr 1fr}.two{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<section id="login">
+  <div class="lcard">
+    <img src="../img/logo.png" alt="DMWRIGHT Solutions">
+    <h1>Sign in to your CRM</h1>
+    <p>Leads, quotes and team in one place.</p>
+    <label for="em">Email</label><input id="em" value="owner@dmwrightsolutions.com">
+    <label for="pw">Password</label><input id="pw" type="password" value="demo-password">
+    <button class="btn" id="go">Sign in</button>
+    <small>Demo with sample data only. No real login.</small>
+  </div>
+</section>
+
+<div id="app">
+  <aside id="side">
+    <div class="logo"><img src="../img/logo.png" alt="DMWRIGHT"></div>
+    <nav id="nav">
+      <button data-p="dash" class="on">▦ Dashboard</button>
+      <button data-p="leads">☰ Leads</button>
+      <button data-p="team">☺ Team</button>
+      <button data-p="set">⚙ Settings</button>
+    </nav>
+    <div class="me"><b>DeAngelo M. Wright</b>Admin<br><a id="out">Sign out</a></div>
+  </aside>
+
+  <main>
+    <div class="top">
+      <div style="display:flex;align-items:center;gap:12px"><button class="btn line sm burger" id="bg">☰</button><h1 id="title">Dashboard</h1></div>
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap"><span class="demo">Demo with sample data</span><button class="btn sm" id="sim">+ Simulate a website quote request</button></div>
+    </div>
+
+    <section id="p-dash">
+      <div class="cards">
+        <div class="stat"><span>New leads this week</span><b id="c1">0</b><em>▲ 3 vs last week</em></div>
+        <div class="stat"><span>Quotes sent</span><b id="c2">0</b><em>▲ 1 vs last week</em></div>
+        <div class="stat"><span>Jobs won</span><b id="c3">0</b><em>This month</em></div>
+        <div class="stat"><span>Win rate</span><b id="c4">0%</b><em>Won / closed</em></div>
+      </div>
+      <div class="two">
+        <div class="panel"><h2>Leads per week</h2>
+          <div class="bars" id="bars"></div></div>
+        <div class="panel"><h2>Pipeline</h2><div id="pipe"></div></div>
+      </div>
+      <div class="panel"><h2>Recent leads</h2><div class="tw"><table><thead><tr><th>Name</th><th>Project</th><th>City</th><th>Status</th><th>Received</th></tr></thead><tbody id="recent"></tbody></table></div></div>
+    </section>
+
+    <section id="p-leads" hidden>
+      <div class="panel">
+        <div class="bar"><input id="q" placeholder="Search name, phone, city"><select id="f"><option value="">All statuses</option><option>New</option><option>Contacted</option><option>Quoted</option><option>Won</option><option>Lost</option></select></div>
+        <div class="tw"><table><thead><tr><th>Name</th><th>Phone</th><th>Project</th><th>City</th><th>Status</th><th>Received</th></tr></thead><tbody id="rows"></tbody></table></div>
+      </div>
+    </section>
+
+    <section id="p-team" hidden>
+      <div class="panel">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h2 style="margin:0">Team members</h2><button class="btn sm" id="inv">+ Invite user</button></div>
+        <div class="tw"><table><thead><tr><th>Name</th><th>Email</th><th>Role</th><th>Status</th></tr></thead><tbody id="team"></tbody></table></div>
+        <p style="color:var(--gray);margin-top:14px;font-size:14px">Admins can invite users, change roles and edit settings. Staff can view and update leads only.</p>
+      </div>
+    </section>
+
+    <section id="p-set" hidden>
+      <div class="panel" style="max-width:640px">
+        <h2>Company</h2>
+        <label>Company name</label><input value="DMWRIGHT SOLUTIONS, LLC">
+        <label>Notification email</label><input value="info@dmwrightsolutions.com">
+        <label>Phone</label><input value="678 310 6150">
+        <h2 style="margin-top:26px">Notifications for new quote requests</h2>
+        <div class="sw"><span>Email to the owner</span><input type="checkbox" checked></div>
+        <div class="sw"><span>Push notification on phone</span><input type="checkbox" checked></div>
+        <div class="sw"><span>Auto-reply email to the visitor</span><input type="checkbox" checked></div>
+        <div class="sw"><span>SMS (optional, extra cost)</span><input type="checkbox"></div>
+        <div class="sw"><span>WhatsApp (optional, extra cost)</span><input type="checkbox"></div>
+        <button class="btn" style="margin-top:20px" id="save">Save settings</button>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="veil" id="veil"></div>
+<div class="drawer" id="dr"></div>
+<div class="modal" id="md"><div class="box"><h2>Invite a user</h2>
+  <label>Email</label><input id="ie" placeholder="name@company.com">
+  <label>Role</label><select id="ir"><option>Staff</option><option>Admin</option></select>
+  <div style="display:flex;gap:10px;margin-top:20px"><button class="btn" id="isend">Send invite</button><button class="btn line" id="icancel">Cancel</button></div></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const day=86400000,base=Date.now(),now=base;
+const ST=["New","Contacted","Quoted","Won","Lost"];
+let leads=[
+["Marcus Hill","404-555-0142","Kitchen remodeling","Sandy Springs","New",0,"Wants a full kitchen remodel, budget around the mid range."],
+["Priya Nair","470-555-0177","Church renovation","Marietta","Contacted",1,"Fellowship hall, 3,000 sq ft. Site visit planned."],
+["Tanya Brooks","678-555-0116","Bathroom remodeling","Roswell","Quoted",2,"Primary bath, walk-in shower. Quote sent."],
+["Greg Santos","770-555-0189","Deck","Dunwoody","New",2,"Wants a 400 sq ft deck with stairs."],
+["Alicia Moore","404-555-0165","Salon build-out","Decatur","Contacted",4,"New salon, 8 stations. Needs timeline."],
+["Daniel Kim","678-555-0121","Flooring","Alpharetta","Won",6,"Whole first floor. Contract signed."],
+["Rosa Ortega","470-555-0133","Apartment renovation","Atlanta","Quoted",7,"12 units, phased work."],
+["Chris Parker","404-555-0154","Painting","Sandy Springs","Lost",9,"Went with a lower bid."],
+["Nina Patel","678-555-0198","Mixed-use renovation","Atlanta","Contacted",10,"Ground floor retail plus 2 apartments."],
+["Omar Reed","770-555-0107","Siding","Marietta","Won",12,"Fiber cement siding, full exterior."],
+["Hannah Cole","404-555-0171","Kitchen remodeling","Roswell","New",13,"Open the wall between kitchen and dining room."],
+["Victor Lane","678-555-0183","New construction","Alpharetta","Quoted",15,"Commercial salon shell, plans attached."]
+].map((r,i)=>({id:i+1,name:r[0],phone:r[1],project:r[2],city:r[3],status:r[4],at:now-r[5]*day,note:r[6]}));
+let team=[["DeAngelo M. Wright","owner@dmwrightsolutions.com","Admin","Active"],["Maria Simbajon","maria@example.com","Admin","Active"],["Front Desk","office@dmwrightsolutions.com","Staff","Active"]];
+const fmt=t=>{const d=Math.floor((Date.now()-t)/day);return d<=0?"Today":d===1?"Yesterday":d+" days ago"};
+const pill=s=>`<span class="pill s-${s}">${s}</span>`;
+function toast(m){const t=$("#toast");t.textContent=m;t.classList.add("show");clearTimeout(t._t);t._t=setTimeout(()=>t.classList.remove("show"),3800)}
+function dash(){
+  const wk=leads.filter(l=>Date.now()-l.at<7*day).length;
+  $("#c1").textContent=wk;$("#c2").textContent=leads.filter(l=>l.status==="Quoted").length;
+  const won=leads.filter(l=>l.status==="Won").length,lost=leads.filter(l=>l.status==="Lost").length;
+  $("#c3").textContent=won;$("#c4").textContent=(won+lost?Math.round(won/(won+lost)*100):0)+"%";
+  const w=[0,0,0,0];leads.forEach(l=>{const k=Math.max(0,Math.min(3,Math.floor((Date.now()-l.at)/(7*day))));w[3-k]++});
+  const mx=Math.max(...w,1);$("#bars").innerHTML=w.map((v,i)=>`<div><span>${v}</span><i style="height:${v/mx*120}px"></i>Wk ${i+1}</div>`).join("");
+  $("#pipe").innerHTML=ST.map(s=>{const n=leads.filter(l=>l.status===s).length;return `<div class="sw"><span>${pill(s)}</span><b>${n}</b></div>`}).join("");
+  $("#recent").innerHTML=[...leads].sort((a,b)=>b.at-a.at).slice(0,5).map(l=>`<tr data-id="${l.id}"><td><b>${l.name}</b></td><td>${l.project}</td><td>${l.city}</td><td>${pill(l.status)}</td><td>${fmt(l.at)}</td></tr>`).join("");
+}
+function rows(){
+  const q=$("#q").value.toLowerCase(),f=$("#f").value;
+  $("#rows").innerHTML=[...leads].sort((a,b)=>b.at-a.at).filter(l=>(!f||l.status===f)&&(!q||(l.name+l.phone+l.city+l.project).toLowerCase().includes(q))).map(l=>`<tr data-id="${l.id}"><td><b>${l.name}</b></td><td>${l.phone}</td><td>${l.project}</td><td>${l.city}</td><td>${pill(l.status)}</td><td>${fmt(l.at)}</td></tr>`).join("")||`<tr><td colspan="6">No leads match.</td></tr>`;
+}
+function teamRows(){$("#team").innerHTML=team.map(t=>`<tr><td><b>${t[0]}</b></td><td>${t[1]}</td><td>${t[2]}</td><td>${t[3]}</td></tr>`).join("")}
+function open(id){
+  const l=leads.find(x=>x.id==id);
+  $("#dr").innerHTML=`<button class="x" id="dx">×</button><h2>${l.name}</h2><p style="color:var(--gray)">${l.project} · ${l.city}</p>
+  <div class="kv"><span>Phone</span><b>${l.phone}</b><span>Received</span><b>${fmt(l.at)}</b><span>Status</span><b>${pill(l.status)}</b></div>
+  <label>Change status</label><select id="ds">${ST.map(s=>`<option ${s===l.status?"selected":""}>${s}</option>`).join("")}</select>
+  <label>Notes</label><textarea id="dn" rows="5">${l.note}</textarea>
+  <div style="display:flex;gap:10px;margin-top:18px"><button class="btn" id="dsave">Save</button><a class="btn line" href="tel:${l.phone}">Call</a></div>`;
+  $("#dr").classList.add("open");$("#veil").classList.add("open");
+  $("#dx").onclick=close;$("#dsave").onclick=()=>{l.status=$("#ds").value;l.note=$("#dn").value;close();render();toast("Lead updated")};
+}
+function close(){$("#dr").classList.remove("open");$("#veil").classList.remove("open")}
+function render(){dash();rows();teamRows()}
+const T={dash:"Dashboard",leads:"Leads",team:"Team",set:"Settings"};
+function page(p){$$("main section").forEach(s=>s.hidden=s.id!=="p-"+p);$$("#nav button").forEach(b=>b.classList.toggle("on",b.dataset.p===p));$("#title").textContent=T[p];$("#side").classList.remove("open")}
+$("#go").onclick=()=>{$("#login").style.display="none";$("#app").style.display="block";render()};
+$("#out").onclick=()=>{$("#app").style.display="none";$("#login").style.display="grid"};
+$("#nav").onclick=e=>{const b=e.target.closest("button");if(b)page(b.dataset.p)};
+document.addEventListener("click",e=>{const r=e.target.closest("tbody tr[data-id]");if(r)open(r.dataset.id)});
+$("#veil").onclick=close;$("#bg").onclick=()=>$("#side").classList.toggle("open");
+$("#q").oninput=rows;$("#f").onchange=rows;
+$("#inv").onclick=()=>$("#md").classList.add("open");$("#icancel").onclick=()=>$("#md").classList.remove("open");
+$("#isend").onclick=()=>{const e=$("#ie").value.trim();if(!e)return;team.push([e.split("@")[0],e,$("#ir").value,"Invited"]);$("#md").classList.remove("open");$("#ie").value="";teamRows();toast("Invitation email sent to "+e)};
+$("#save").onclick=()=>toast("Settings saved");
+const SIM=[["Jordan Ellis","404-555-0192","Bathroom remodeling","Sandy Springs","Looking to redo a guest bathroom."],["Mia Turner","678-555-0144","Decking","Roswell","Replace an old deck, about 300 sq ft."],["Samuel Grant","770-555-0125","Commercial build-out","Marietta","New office space, 2,000 sq ft."]];
+let si=0;
+$("#sim").onclick=()=>{const s=SIM[si++%SIM.length];leads.unshift({id:leads.length+1+si*100,name:s[0],phone:s[1],project:s[2],city:s[3],status:"New",at:Date.now(),note:s[4]});render();toast("New quote request from "+s[0]+". Email sent to info@dmwrightsolutions.com and push notification delivered.")};
+</script>
+</body>
+</html>
