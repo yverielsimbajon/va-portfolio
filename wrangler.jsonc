@@ -1,5 +1,8 @@
 {
   "name": "va-portfolio",
+  // Pinned so this never deploys into a client's Cloudflare account by mistake
+  // (this is Yveriel.simbajon@gmail.com's account).
+  "account_id": "7a45ee58aa09452ec45bdd95cd9aff35",
   "compatibility_date": "2026-10-01",
   // worker.js only handles videos (adds Range support so the intro video can skip/seek);
   // every other file is served straight from the static assets
