@@ -1253,6 +1253,15 @@ window.RESUME_JOBS = {
       },
       designs: {
         blurb: "Promos, vouchers, labels, posters and short videos I designed for real clients in Photoshop and Canva. Clean type, one palette per brand, and every one revised until the owner was happy."
+      },
+      brands: {
+        label: "Brand identity design",
+        blurb: "A real brand board I built for Landscaping Services in Australia (logo suite, colour palette, typography on one sheet), plus the logo set I designed for it: wordmark, icon and alternate lockups, so every piece of marketing still reads as one brand.",
+        items: [
+          { src: "brand-board-landscaping.webp", title: "Landscaping Services Brand Identity", note: "Reliable, professional and trusted", accent: "#1f4d2c", tint: "#eef5ef", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true },
+          { src: "logo-kerbing-king-wordmark.jpg", title: "Logo Suite: Wordmark" }, { src: "logo-kerbing-king-icon.jpg", title: "Logo Suite: Icon" },
+          { src: "logo-kerbing-king.png", title: "Logo Suite: Primary Lockup" }, { src: "logo-kerbing-king-alt.jpg", title: "Logo Suite: Alternate Lockup" }
+        ]
       }
     },
     workHeads: {
