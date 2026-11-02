@@ -1451,6 +1451,73 @@
     .feed-media:hover img { transform: scale(1.02); }
     .feed-media:hover .design-zoom { opacity: 1; transform: none; }
 
+    /* ---------- Studio card: accordion of services ---------- */
+    .studio-accordion { display: grid; gap: 12px; margin-top: 24px; }
+
+    .studio-item {
+      background: #fff;
+      border: 1px solid rgba(11, 110, 127, 0.16);
+      border-radius: 18px;
+      transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    }
+
+    .studio-item.open { border-color: rgba(11, 110, 127, 0.32); box-shadow: 0 14px 32px rgba(17, 76, 89, 0.1); }
+
+    .studio-toggle {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      width: 100%;
+      padding: 18px 20px;
+      color: var(--primary-dark);
+      font: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-align: left;
+      cursor: pointer;
+      background: transparent;
+      border: 0;
+      border-radius: 18px;
+    }
+
+    .studio-toggle:hover { background: #f4fcfc; }
+    .studio-label { flex: 1; }
+    .studio-count { color: var(--muted); font-size: 0.82rem; font-weight: 500; white-space: nowrap; }
+
+    .studio-toggle svg {
+      flex: none;
+      width: 30px;
+      height: 30px;
+      padding: 7px;
+      color: var(--primary);
+      background: #e3f5f5;
+      border-radius: 50%;
+      transition: transform 0.35s var(--ease), background 0.3s var(--ease), color 0.3s var(--ease);
+    }
+
+    .studio-item.open .studio-toggle svg { color: #fff; background: var(--primary); transform: rotate(180deg); }
+
+    .studio-panel { padding: 0 20px 20px; }
+    .studio-panel:not([hidden]) { animation: fadeUp 0.4s var(--ease) both; }
+    .studio-panel[hidden] { display: none; }
+    .studio-note { margin: 0 0 16px; color: var(--muted); font-size: 0.95rem; }
+
+    .studio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 14px; }
+    .studio-grid.wide { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
+    .studio-grid.wide .design-item { aspect-ratio: 16 / 9; }
+
+    .studio-phones { display: flex; flex-wrap: wrap; gap: 22px; }
+    .studio-phones .phone { flex: 0 1 236px; }
+
+    @media (max-width: 540px) {
+      .studio-toggle { padding: 14px 12px; font-size: 0.95rem; }
+      .studio-panel { padding: 0 10px 12px; }
+      .studio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .studio-grid.wide { grid-template-columns: minmax(0, 1fr); }
+      .studio-phones { gap: 14px; justify-content: center; }
+      .studio-phones .phone { flex: 0 1 230px; }
+    }
 
     /* Phones: fewer layers around the content so pictures can use the screen */
     @media (max-width: 540px) {
@@ -2335,6 +2402,50 @@
       },
       {
         category: "social",
+        layout: "studio",    // full-width card with a dropdown that switches between services
+        title: "Creative Services, Pick One to See the Work",
+        clients: ["Sample work: LUMERA Skincare, food and product brands, YouTube creators"],
+        description: "Three services I create for brands and creators. Open a service below to see the samples.",
+        tools: ["Canva", "Adobe Photoshop", "CapCut", "Figma"],
+        /* New work goes straight into the matching tab's items list */
+        tabs: [
+          {
+            key: "ugc",
+            label: "UGC Video I Edit For You",
+            short: "UGC video",
+            note: "Scroll-stopping product videos with a voiceover, captions and clean product shots, edited the way UGC creators do, ready to post or run as an ad.",
+            kind: "phones",
+            items: [
+              { src: "ugc-lumera-skincare.mp4", name: "LUMERA Skincare" }
+            ]
+          },
+          {
+            key: "product",
+            label: "Product Design",
+            short: "Product design",
+            note: "Product promo designs with clean cut-out shots, bold type and price badges, sized for menus, listings, ads and social.",
+            kind: "grid",
+            items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => ({ src: `fp3-${n}.jpg`, name: `Product design ${n}` }))
+          },
+          {
+            key: "thumbnail",
+            label: "YouTube Thumbnail",
+            short: "YouTube thumbnail",
+            note: "Click-worthy 1280 × 720 thumbnails: one big idea, a bold headline and a bright accent, still readable at phone size.",
+            kind: "wide",
+            items: [
+              { src: "yt-makeup.webp", name: "Viral 5 Min Makeup" },
+              { src: "yt-morning-routine.webp", name: "5 AM Morning Routine" },
+              { src: "yt-outfit-haul.webp", name: "$20 Outfit Haul" },
+              { src: "yt-greece.webp", name: "7 Days in Greece" },
+              { src: "yt-paris.webp", name: "Paris on a Budget" },
+              { src: "yt-europe-train.webp", name: "Europe by Train" }
+            ]
+          }
+        ]
+      },
+      {
+        category: "social",
         layout: "feeds",     // full-width card with one sub-card per planned Instagram feed
         title: "Instagram Content Feed I Create and Plan For You",
         clients: ["Sample feeds: Makeup Brand, Coffee Shop, Aesthetic Clinic"],
@@ -2451,6 +2562,11 @@
         images: ["ghl-products.jpg", "ghl-orders.jpg"]
       }
     ];
+
+    /* Studio cards keep their pictures inside the tabs, so the lightbox gets one flat list */
+    projects.forEach((p) => {
+      if (p.layout === "studio") p.images = p.tabs.flatMap((t) => t.items.map((it) => it.src));
+    });
 
     /* Sections appear on the page in this order */
     const categories = [
@@ -2662,8 +2778,69 @@
           </div>
         </article>`;
 
+    const chevron = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+    const sampleCount = (n) => `${n} ${n === 1 ? "sample" : "samples"}`;
+
+    const studioHtml = (p, i, label) => {
+      // Every picture across the tabs gets its place in the card's flat list, so the lightbox opens the right one
+      let n = -1;
+      const offsets = p.tabs.map((t) => t.items.map(() => ++n));
+
+      const panel = (t, ti) => {
+        if (t.kind === "phones") {
+          return `<div class="studio-phones">
+              ${t.items.map((it) => `
+              <div class="phone">
+                <div class="phone-screen" role="button" tabindex="0" aria-label="${esc(it.name)}: turn sound on or off">
+                  <span class="phone-island" aria-hidden="true"></span>
+                  <video src="../images/${it.src}" poster="../images/${it.src.replace(/\.mp4$/i, ".jpg")}" muted loop playsinline preload="none"></video>
+                  <div class="reel-top">
+                    <strong>Reels</strong>
+                    <button class="reel-sound" type="button" aria-pressed="false">${soundIcon.off}<span>Tap for sound</span></button>
+                  </div>
+                  <div class="reel-bottom" aria-hidden="true">
+                    <div class="reel-account"><span>${esc(it.name)}</span></div>
+                    ${reelActions}
+                  </div>
+                </div>
+              </div>`).join("")}
+            </div>`;
+        }
+        return `<div class="studio-grid${t.kind === "wide" ? " wide" : ""}">
+              ${t.items.map((it, k) => `
+              <button class="design-item" type="button" data-n="${offsets[ti][k]}" aria-label="View ${esc(it.name)}">
+                <img src="../images/${it.src}" alt="${esc(it.name)}" loading="lazy" decoding="async" />
+                <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
+              </button>`).join("")}
+            </div>`;
+      };
+
+      return `
+        <article class="feature-card studio-card reveal" data-index="${i}">
+          <div class="feature-head">
+            <div>${featureHead(p, label)}</div>
+            ${toolsHtml(p)}
+          </div>
+          <div class="studio-accordion">
+            ${p.tabs.map((t, ti) => `
+            <div class="studio-item${ti === 0 ? " open" : ""}">
+              <button class="studio-toggle" type="button" id="studio-${t.key}-btn" aria-expanded="${ti === 0}" aria-controls="studio-${t.key}">
+                <span class="studio-label">${esc(t.label)}</span>
+                <span class="studio-count">${sampleCount(t.items.length)}</span>
+                ${chevron}
+              </button>
+              <div class="studio-panel" id="studio-${t.key}" role="region" aria-labelledby="studio-${t.key}-btn"${ti === 0 ? "" : " hidden"}>
+                <p class="studio-note">${esc(t.note)}</p>
+                ${panel(t, ti)}
+              </div>
+            </div>`).join("")}
+          </div>
+        </article>`;
+    };
+
     const renderProject = (p, i, label) =>
-      p.layout === "gallery" ? galleryHtml(p, i, label)
+      p.layout === "studio" ? studioHtml(p, i, label)
+        : p.layout === "gallery" ? galleryHtml(p, i, label)
         : p.layout === "results" ? resultsHtml(p, i, label)
         : p.layout === "reels" ? reelsHtml(p, i, label)
         : p.layout === "feeds" ? feedsHtml(p, i, label)
@@ -2844,6 +3021,20 @@
       card.querySelectorAll("[data-n]").forEach((btn) =>
         btn.addEventListener("click", () => openModal(project, Number(btn.dataset.n))));
 
+    });
+
+    /* ---------- Studio card: accordion, each service opens and closes on its own ---------- */
+    document.querySelectorAll(".studio-item").forEach((item) => {
+      const toggle = item.querySelector(".studio-toggle");
+      const panel = item.querySelector(".studio-panel");
+      toggle.addEventListener("click", () => {
+        const open = !item.classList.contains("open");
+        item.classList.toggle("open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        panel.hidden = !open;
+        // A closed panel shouldn't keep playing
+        if (!open) panel.querySelectorAll("video").forEach((v) => v.pause());
+      });
     });
 
     // Design videos play silently while they're on screen
