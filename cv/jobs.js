@@ -1269,5 +1269,50 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Packaging & Product Designer application"
+  },
+  "premiumpages-wdd": {
+    label: "Web Designer / Developer (PremiumPages.io, Dubai)",
+    headline: "Web Designer / Developer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Landing Pages · HTML & CSS · WordPress & Webflow · Technical SEO · Claude Code · Mobile QA",
+    tagline: "",
+    codeWord: "WDD – Maria Simbajon – 2",
+    summary: "Web designer and developer with 5+ years building websites and landing pages for service businesses in Australia, the United States and Europe, where I designed AND built the pages myself. I hand-code HTML, CSS and JavaScript with Claude Code as my daily coding partner, build in Wix Studio, Webflow and WordPress, and QA every page on desktop and mobile before I call it done. I follow written briefs exactly, step by step, and report back with URLs and screenshots.",
+    keywords: ["landing pages", "funnels", "HTML/CSS", "HTML", "CSS", "Tailwind", "WordPress", "Elementor", "Webflow", "custom PHP", "Hostinger", "technical SEO", "AEO", "AI-search", "Rank Math", "sitemaps", "noindex", "schema", "robots", "llms.txt", "Core Web Vitals", "alt text", "canonical", "LCP", "Claude Code", "Cursor", "Copilot", "typography", "spacing", "hierarchy", "premium, not templated", "QA", "desktop and mobile", "written briefs", "numbered steps", "do not touch", "written reports", "clear written reports", "Dubai time", "exclusive"],
+    focus: ["web", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "3+ years building websites, with real landing pages you designed AND built yourself", proof: "5+ years. Live client sites I designed and built end to end: thekerbingking.com.au (landscaping, plus the whole brand) and the Reclamation program landing page for loveandsoundtherapies.com. My own site, themariaoffice.com, is hand-coded by me.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Build landing pages and funnels in HTML/CSS/Tailwind from written briefs", proof: "I write HTML, CSS and JavaScript by hand for my own site, my client concept pages and a live US client site. Tailwind specifically is new for me, and I would pick it up the way I picked up GoHighLevel: properly, on a test build first.", status: "yes", tab: "websites", cta: "See my pages" },
+      { req: "Strong visual sense: typography, spacing, hierarchy, premium not templated", proof: "I design every page before I build it: full-photo heroes, one type family, generous spacing and a clear order on the page. No Figma file is handed to me; the look is mine.", status: "yes", tab: "websites", cta: "See the designs" },
+      { req: "WordPress/Elementor and Webflow maintenance: content changes, fixes, page builds", proof: "WordPress and Webflow are part of my toolkit and I build in page builders every day (Wix Studio, Webflow, Framer). Elementor itself is newer for me, and I would work on staging first before touching a live client site.", status: "yes", tab: "websites", cta: "See my builds" },
+      { req: "Basic PHP reading ability, custom PHP sites on Hostinger", proof: "Honest answer: I read code more than I write PHP. I can follow a PHP template and find where content lives, but PHP is the part of your stack I am ready to learn, not claim.", status: "learn" },
+      { req: "You already use an AI coding tool (Claude Code, Cursor, Copilot) daily", proof: "Claude Code is how I work every day: my portfolio, my client dashboards, a per-job resume system and a live client site were all built with it. This is the part of your job post I am most at home in.", status: "yes", tab: "websites", cta: "See what I built with it" },
+      { req: "Technical SEO and AI-search (AEO): sitemaps, noindex rules, schema, robots/llms.txt, Core Web Vitals, alt text", proof: "I set up on-page SEO and AI search optimisation (ChatGPT, Perplexity, Gemini) for a live landscaping site, and I handle titles, meta descriptions, alt text, compressed images, robots rules and noindex headers on my own sites. Rank Math, schema markup and Core Web Vitals work I have not done hands-on yet, and I would learn them on your sites properly.", status: "yes", tab: "ops", cta: "See my SEO work" },
+      { req: "QA your own work on desktop and mobile before you report it done. Every time.", proof: "That is already my habit: I check every page at phone and desktop width, click every link, submit every form myself, and only then send the link. I would rather find it than have you find it.", status: "yes" },
+      { req: "Written briefs with numbered steps, executed exactly. Bold \"do not touch\" is absolute.", proof: "I follow written instructions step by step and report back with URLs and screenshots per step. If something outside the brief looks wrong, I finish the brief first, then flag it separately and wait for your go-ahead.", status: "yes" },
+      { req: "Questions come with what you tried and your proposed answer", proof: "That is how I report now: what I did, what I saw, what I think the fix is, and the one decision I need from you. Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief, so the writing is clear.", status: "yes" },
+      { req: "09:00–18:00 Dubai time, Monday to Friday, exclusive", proof: "Dubai hours are 13:00–22:00 my time, which I can work consistently. I already work overlapping Australian and US hours for clients, so a fixed daily schedule is normal for me.", status: "yes" },
+      { req: "Paid 48-hour test task, then a video interview", proof: "Happy to do the test task. Give me the brief with the numbered steps and I will send back the URLs, the screenshots and a short written report.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "cards", part: "ops", keys: ["seoAi", "ghlUpdates"] },
+      { type: "block", key: "designs" }
+    ],
+    workHeads: {
+      websites: { label: "Landing Pages & Websites", title: "Pages That Look Expensive.", text: "Live client sites and concept pages I designed and built myself, in Wix Studio and in hand-written HTML, CSS and JavaScript." },
+      ops:      { label: "Technical SEO & Reporting", title: "Found on Google and on AI Search.", text: "On-page SEO and AI search optimisation on a live client site, plus the written reports I send after every job." },
+      designs:  { label: "Visual Design", title: "Graphics That Match the Page.", text: "Typography, spacing and hierarchy applied to brand graphics, promos and social posts." }
+    },
+    resultsShots: "none",
+    resultsNote: "Websites, brands and client work behind the pages I build.",
+    stats: ["brands", "years", "leads", "calendars"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "WDD – Maria Simbajon – 2"
   }
 };
