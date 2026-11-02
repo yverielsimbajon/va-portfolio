@@ -675,6 +675,46 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Look No Further! I'm your Person!!"
   },
+
+  "flown-beauty-editor": {
+    label: "Short-Form Video Editor, DTC Beauty Ads (Flown Beauty)",
+    headline: "Short-Form Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Short-Form Video Ads · Meta & AppLovin · Hooks & Retention · Captions & Sound Design · CapCut & Premiere Pro",
+    tagline: "",
+    summary: "Short-Form Video Editor with 5+ years of experience editing short-form, direct-response video ads and social content for business owners in Australia, the United States and Europe. I turn briefs and raw footage into ads cut for a strong hook and retention from the first second, with captions, sound design and light motion graphics, then re-edit winners into fresh variations based on performance. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Short-Form Video Editor", "DTC", "e-commerce", "direct-response", "video ads", "Meta", "AppLovin", "UGC", "mashups", "motion", "AI animation", "high volume", "variations", "hooks", "retention", "captions", "sound design", "motion graphics", "performance", "iteration", "briefs", "turnarounds", "Premiere Pro", "After Effects", "CapCut", "DaVinci Resolve", "Runway", "Kling", "Higgsfield", "Sora"],
+    focus: ["social", "design", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "2+ years editing short-form / direct-response video ads", proof: "5+ years editing short-form video for business owners: hooks in the first seconds, clean cuts and captions so it works with the sound off, the direct-response style.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "A reel or portfolio (DTC or e-commerce a plus)", proof: "A portfolio of edited Reels and short ads is ready to send. DTC beauty is a new niche for me, and I bring the same hook-first, fast-turnaround editing.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Strong skills in Premiere Pro / After Effects / CapCut / DaVinci Resolve", proof: "CapCut is my daily editing tool for captions, music and clean cuts. Premiere Pro, After Effects and DaVinci Resolve are new to me, and I am ready to learn them quickly.", status: "learn", tab: "reels", cta: "See my Reels" },
+      { req: "Captions, sound design, and basic motion graphics", proof: "Captions and music on every edit in CapCut. Deeper sound design and motion graphics in After Effects are new for me, and I would learn them on real briefs.", status: "learn", tab: "reels", cta: "See my Reels" },
+      { req: "A fast, reliable, high-volume editor who edits for performance", proof: "I track views, followers and engagement in Meta Business Suite and repeat what works. Post views up 50% to 265K and followers up 147% in 90 days for one client.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Stable internet and reliable availability", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" },
+      { req: "AI video tools (Runway, Kling, Higgsfield, Sora)", proof: "I use AI tools to research ideas and speed up planning. These specific AI video generators are new to me, and I am ready to learn them.", status: "learn" },
+      { req: "Deeper motion graphics / After Effects ability", proof: "Honest answer: After Effects is new to me. I am a fast learner with CapCut and Canva already, and I would put in the time to learn it properly.", status: "learn" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "designs" }
+    ],
+    workHeads: {
+      reels:   { label: "Short-Form Video Ads", title: "Edits Built to Stop the Scroll.", text: "Briefs and raw footage cut into fast, high-retention ads with a hook, captions and sound." },
+      designs: { label: "Visual Storytelling", title: "Graphics That Match the Brand.", text: "Canva graphics and covers that stay on-brand across every ad variation." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Video Editor - Maria Simbajon"
+  },
+
   "proline-va": {
     label: "Virtual Assistant (ProLine Cleaning Solutions, Portland, ME)",
     headline: "Virtual Assistant",
@@ -1007,5 +1047,47 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Experienced Virtual Assistant application"
+  },
+  "funnelish-builder": {
+    label: "Funnelish Funnel Builder (dropshipping health & beauty brands)",
+    headline: "Funnelish Funnel Builder",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Funnelish · DTC Funnels · Health & Beauty · Mobile-Friendly · Localized Markets · Discord",
+    tagline: "",
+    codeWord: "FUNNELISH",
+    summary: "Funnel and website builder with 5+ years of experience building mobile-friendly pages that bring in enquiries for brands in Australia, the United States and Europe, including health, wellness and beauty. Give me the product, the funnel structure and the copy, and I build it clean, check it on phone and desktop, test every button and form myself, and send a clear update when it is done. Funnelish itself is new for me, and I pick up page builders fast.",
+    keywords: ["Funnelish", "funnel builder", "funnels", "dropshipping", "DTC", "health and beauty", "product launches", "funnel template", "copy and creative assets", "mobile-friendly", "attention to detail", "localized funnels", "The Netherlands", "Germany", "Nordic countries", "Israel", "international markets", "Discord", "per funnel", "part-time"],
+    focus: ["web", "design", "english", "support", "social"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Experience using Funnelish", proof: "Funnelish itself is new for me, and I would not pretend otherwise. I build pages every day in Wix Studio, Webflow and Framer, so a template-based builder is a short step, and I would learn it properly on your first funnel.", status: "learn", tab: "websites", cta: "See my websites" },
+      { req: "Experience with dropshipping or DTC funnels", proof: "I build pages and forms for brands that sell direct to customers, and I run the follow-up behind them in GoHighLevel: confirmations, reminders and order records. I have no dropshipping funnel conversion numbers I can prove, so I will not quote any.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Comfortable with health and beauty products", proof: "I work with a wellness brand in Australia and a beauty brand today, from product pages and orders to posts, graphics and Reels.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Build funnels quickly and reliably from a given product, structure and copy", proof: "That is how I already work: I follow the brief and the template exactly, use the copy and creative as given, and check my work before I send it.", status: "yes" },
+      { req: "Everything looks good, works smoothly and is mobile-friendly", proof: "Every page I build is checked on phone and desktop, and I click every button, form and link myself before I say it is done.", status: "yes", tab: "websites", cta: "See my phone views" },
+      { req: "Good attention to detail", proof: "A former Editor-in-Chief and online English teacher. I keep 7 workflow folders of automations and 61 calendars accurate, and flag problems early.", status: "yes", tab: "crm", cta: "See my CRM work" },
+      { req: "Localized funnels for the Netherlands, Germany, Nordics and Israel", proof: "I work with clients in Australia, the United States and Europe. I do not speak these languages, as you said is fine, and I would paste in the localized copy exactly as given.", status: "yes" },
+      { req: "Discord for updates and coordination", proof: "Yes. I send a clear daily update to every client and I am comfortable on Discord, Slack and similar tools.", status: "yes" },
+      { req: "Part-time, paid per funnel completed", proof: "That works well for me. I build efficiently and I am happy to be paid on output.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "crm" }
+    ],
+    workHeads: {
+      websites: { label: "Pages & Funnels", title: "Pages That Look Good and Work Smoothly.", text: "Live client sites and concepts built mobile-first, with working forms and clear buttons." },
+      designs:  { label: "Product Creative", title: "Graphics That Match the Product.", text: "Promos, product posts and brand sheets in one consistent look." },
+      crm:      { label: "Follow-Up Behind the Page", title: "Orders and Enquiries Followed Up.", text: "Confirmations, reminders and records running in GoHighLevel, so nothing gets lost after the click." }
+    },
+    resultsShots: "none",
+    resultsNote: "Leads, calendars and follow-ups I handle every day.",
+    stats: ["years", "brands", "calendars", "leads"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "FUNNELISH"
   }
 };
