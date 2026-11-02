@@ -1125,5 +1125,43 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "FUNNELISH"
+  },
+  "sealix-dm": {
+    label: "Digital Marketing Specialist (SEALIX & Viccon Coatings, Australia)",
+    headline: "Digital Marketing Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Meta Business Suite · Canva & CapCut · Landing Pages · GoHighLevel · Google Analytics Certified",
+    tagline: "",
+    summary: "Digital Marketing Specialist with 5+ years of experience supporting business owners in Australia, the United States and Europe, Google Analytics and Digital Marketing (Google) certified. I manage and schedule social content, design graphics and short-form video in Canva and CapCut, build and update websites and landing pages, and keep every lead and follow-up accurate in GoHighLevel. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Digital Marketing Specialist", "Google Ads", "Meta Ads", "campaigns", "conversions", "landing pages", "Odoo", "GoHighLevel", "GHL", "SEO", "keyword research", "on-page optimisation", "organic visibility", "ecommerce", "lead generation", "Reels", "CapCut", "Higgsfield", "AI tools", "graphics", "marketing copy", "social media posts", "daily results", "weekly progress updates", "independently", "proactive", "quick learner", "individual applicant"],
+    focus: ["social", "design", "web", "crm", "leads", "admin", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Google Ads & Meta Ads: manage campaigns, optimise performance, create ads and monitor conversions", proof: "I am Google Analytics and Digital Marketing (Google) certified, and I read Meta Business Suite performance data daily to see what is working. Running and optimising paid Google and Meta ad campaigns myself is new for me, and I would learn your account setup properly from day one.", status: "learn", tab: "results", cta: "See my reporting" },
+      { req: "Websites & Landing Pages: build and improve pages using Odoo and GoHighLevel (GHL)", proof: "I build and update websites (Wix Studio, HTML, CSS, JavaScript) and manage pages and automations in GoHighLevel daily. Odoo is new for me specifically, and I would learn its page builder properly from day one.", status: "learn", tab: "websites", cta: "See my websites" },
+      { req: "SEO: keyword research, on-page optimisation and improving organic visibility", proof: "I am Google Analytics and Digital Marketing (Google) certified and I track what content performs in Meta Business Suite. Hands-on SEO keyword research and on-page optimisation would be new for me, and I would learn it properly.", status: "learn" },
+      { req: "Video Editing: short-form Reels and advertising videos using CapCut, Higgsfield and AI tools", proof: "I edit Reels and short-form video in CapCut, with captions, music and clean cuts. Higgsfield is new for me, and I would pick it up the way I picked up GoHighLevel.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Content Creation: design graphics, write marketing copy and schedule social media posts", proof: "I design posters, promos and event graphics in Canva, write captions and copy, and schedule posts across Facebook and Instagram with Meta Business Suite.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Reporting: monitor daily results, manage assigned tasks and provide weekly progress updates", proof: "I send a clear weekly update to every client and track performance in Meta Business Suite, the same way I would report on your campaigns.", status: "yes" },
+      { req: "Individual applicant, proactive, technically confident, quick learner, works independently", proof: "I am one individual, not an agency. I have supported the same clients for months without missed handovers, and I would rather say a tool is new to me than guess and get it wrong.", status: "yes", tab: "experience", cta: "See my experience" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "cards", part: "ops", keys: ["ghlWorkflows", "plushCalendar", "ghlUpdates"] }
+    ],
+    workHeads: {
+      ops: { label: "Reporting & Admin", title: "Results Tracked, Updates Sent.", text: "Weekly progress updates and performance tracking in Meta Business Suite, plus GoHighLevel automations kept running." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "brands"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Digital Marketing Specialist application - SEALIX & Viccon Coatings"
   }
 };
