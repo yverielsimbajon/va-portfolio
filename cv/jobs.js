@@ -1152,7 +1152,7 @@ window.RESUME_JOBS = {
       { type: "block", key: "websites" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
-      { type: "cards", part: "ops", keys: ["ghlWorkflows", "plushCalendar", "ghlUpdates"] }
+      { type: "cards", part: "ops", keys: ["seoAi", "ghlWorkflows", "plushCalendar", "ghlUpdates"] }
     ],
     workHeads: {
       ops: { label: "Reporting & Admin", title: "Results Tracked, Updates Sent.", text: "Weekly progress updates and performance tracking in Meta Business Suite, plus GoHighLevel automations kept running." }
@@ -1203,5 +1203,71 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Client Relations & Digital Operations Specialist application"
+  },
+  "beauty-packaging": {
+    label: "Packaging & Product Designer (Beauty Brand, US & EU)",
+    headline: "Packaging & Product Designer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Packaging & Labels · Product Mockups · Photoshop & Figma · Beauty & Cosmetics · Amazon & Shopify Listings",
+    tagline: "",
+    summary: "Graphic designer with 5+ years of experience creating product visuals, mockups and brand identity for beauty, wellness and lifestyle brands in the United States, Europe and Australia. I design cut-out product shots, promo graphics and listing-style product images in Adobe Photoshop, Canva and Figma, and I build brand boards with logos, colour palettes and typography so every SKU looks like the same brand. I have designed for 10+ brands and I iterate quickly on feedback; dielines and print-ready prep are new to me, and my Civil Engineering background in AutoCAD technical drawings makes them a short step.",
+    keywords: ["packaging", "packaging design", "product design", "boxes", "labels", "pouches", "jars", "bottles", "SKUs", "product mockups", "renders", "revisions", "iterating quickly", "US and EU", "labeling requirements", "marketing assets", "product images", "Amazon", "Shopify", "listings", "print-ready", "dielines", "bleed", "CMYK", "Adobe Illustrator", "Photoshop", "Figma", "beauty", "cosmetics", "skincare", "supplement", "clean, premium, trustworthy", "portfolio", "reliable communication", "steady weekly hours", "long-term part-time"],
+    focus: ["design", "web", "english", "social"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Proven experience in product and/or packaging design (portfolio required)", proof: "My portfolio is this page: product shots on clean gradients, promo graphics, brand boards and full brand looks for 10+ brands. Packaging artwork for boxes, pouches and jars is new for me, and the product-presentation and brand side is what I do every week.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Design and refine packaging (boxes, labels, pouches, jars/bottles) for existing and upcoming SKUs", proof: "I design label-style layouts, promo panels and product graphics, and I keep one type and colour system across a whole range so a new SKU still looks like the family. Real dieline artwork is new for me, and I would start on your existing templates with your supply chain team.", status: "learn", tab: "brands", cta: "See my brand systems" },
+      { req: "Create product mockups and renders for new launches", proof: "I create product mockups and cut-out product presentations in Photoshop and Canva, and I have built a full 3D model in SketchUp Pro for my Civil Engineering thesis, so 3D renders are familiar ground.", status: "yes", tab: "designs", cta: "See my product visuals" },
+      { req: "Improve existing product designs based on team and customer feedback", proof: "Most of my work is revisions: clients send notes, I turn them around the same or next day, and I keep every version so we can compare.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Adapt designs for different markets (US and EU labeling requirements)", proof: "I adapt one design into different sizes, languages and layouts for different audiences. US and EU cosmetics labeling rules are new to me, and I would learn your compliance checklist and follow it exactly.", status: "learn" },
+      { req: "Design supporting marketing assets (product images for Amazon/Shopify listings)", proof: "I design clean, premium product images, promos and banners sized for web and social, and I build and manage live client websites, so listing images and product pages are the same work.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Collaborate with the supply chain team so designs are print/manufacture-ready", proof: "I am used to working to someone else's technical spec: I drew my thesis plates in AutoCAD, elevations, framing and details to exact dimensions. Prepress checks are new, and I would follow your printer's spec sheet line by line.", status: "learn", tab: "designs", cta: "See my technical drawings" },
+      { req: "Strong skills in Adobe Illustrator and/or Photoshop (Figma is a plus)", proof: "Adobe Photoshop, Canva and Figma every week. Illustrator is new for me, and I am learning it now so I can work in vector dielines properly.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Understanding of print-ready file prep (dielines, bleed, CMYK)", proof: "I know bleed, safe margins and export settings from print work, and CMYK and dielines are the part I am still learning. Honest answer: I would not guess on a print file, I would check it against your printer's template.", status: "learn" },
+      { req: "Good eye for beauty/cosmetics aesthetics: clean, premium, trustworthy", proof: "Calm, clean and premium is my default: a makeup brand in Los Angeles, an aesthetic clinic in Beverly Hills and a real beauty client, each on one palette and one type style.", status: "yes", tab: "feeds", cta: "See my premium concepts" },
+      { req: "Comfortable receiving revisions and iterating quickly", proof: "I send drafts early, ask for notes, and turn revisions around fast. Clients get a check copy first and the final only after they are happy.", status: "yes" },
+      { req: "Reliable communication and steady weekly hours", proof: "I send a short daily or weekly update, I reply the same day, and I have worked the same steady hours for the same clients for months. 65 Mbps fiber with backup internet, a backup laptop and a backup generator.", status: "yes", tab: "admin", cta: "See my updates" },
+      { req: "Bonus: experience designing for beauty, skincare or supplement brands", proof: "Yes: I design for a beauty brand and a wellness brand today, plus makeup and aesthetic clinic concepts.", status: "yes", tab: "designs", cta: "See the beauty work" },
+      { req: "Bonus: familiarity with FDA/EU labeling basics for cosmetics or supplements", proof: "New for me. I would read your current approved labels first and build a checklist I can self-check against before anything goes to you.", status: "learn" },
+      { req: "Bonus: experience designing for Amazon listings", proof: "I have designed product images and web banners, but not a full Amazon listing set. The image specs and A+ layouts are new for me and quick to learn.", status: "learn", tab: "designs", cta: "See my product graphics" }
+    ],
+    workSections: [
+      { type: "block", key: "productShots" },
+      { type: "block", key: "brands" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "websites" },
+      { type: "cards", part: "technical", keys: ["thesisAutocad", "thesisSketchup"] }
+    ],
+    workOverrides: {
+      productShots: {
+        label: "Product Visuals I Design for You",
+        blurb: "Product presentations I designed in Photoshop and Canva for sample brands: clean cut-outs, gradient backgrounds and bold type, the same look that works on a pack panel, a listing image and an ad.",
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ src: "fp3-" + n + ".jpg", thumb: "fp3-" + n + ".jpg" }))
+      },
+      websites: {
+        blurb: "Live client websites and website concepts I designed and built: product pages, layout, type and photography, the same eye a Shopify listing needs."
+      },
+      designs: {
+        blurb: "Promos, vouchers, labels, posters and short videos I designed for real clients in Photoshop and Canva. Clean type, one palette per brand, and every one revised until the owner was happy."
+      }
+    },
+    workHeads: {
+      productShots: { label: "Product Presentation", title: "Product Visuals That Look Premium.", text: "Cut-out product shots on clean backgrounds, ready for a listing, an ad or a pack panel." },
+      brands:       { label: "Brand Systems", title: "One Brand Look on Every SKU.", text: "Logos, colours and typography on one sheet, so a new product still looks like the family." },
+      designs:      { label: "Graphic Design", title: "Clean, Premium, Trustworthy.", text: "Promos, labels and marketing graphics designed in Photoshop and Canva, revised quickly." },
+      feeds:        { label: "Beauty & Cosmetics Aesthetics", title: "A Look That Fits a Beauty Brand.", text: "Makeup, skincare and clinic concepts built on one palette and one type style." },
+      websites:     { label: "Product Pages & Listings", title: "Product Pages People Trust.", text: "Live sites and concepts where the product, the photo and the type do the selling." },
+      technical:    { label: "Technical Drawing", title: "Built to an Exact Spec.", text: "AutoCAD plates and a SketchUp 3D model from my Civil Engineering degree, where millimetres matter." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days. Proof the designs I make get seen.",
+    stats: ["brands", "years", "views", "followers"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Packaging & Product Designer application"
   }
 };
