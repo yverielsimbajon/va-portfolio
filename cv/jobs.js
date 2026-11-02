@@ -1163,5 +1163,45 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Digital Marketing Specialist application - SEALIX & Viccon Coatings"
+  },
+  "photo-studio-sg": {
+    label: "Client Relations & Digital Operations Specialist (Photography & Videography Studio, Singapore)",
+    headline: "Client Relations & Digital Operations Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "WhatsApp & Email Support · Quotations & Invoices · Payment Follow-Ups · Scheduling Coordination · Zoho Books",
+    tagline: "",
+    summary: "Client Relations & Digital Operations Specialist with 5+ years of experience in client-facing sales administration, booking coordination and operations management via email, WhatsApp and social media for business owners in Australia, the United States and Europe. I prepare quotations and invoices, follow up to chase payments, coordinate schedules between clients and service providers, and answer every enquiry thoroughly across email, WhatsApp and social media. I grew a client's post views 50% to 265K and followers 147% in 90 days, and I am currently completing a cloud bookkeeping course to strengthen my invoicing and expense-keying skills.",
+    keywords: ["Client Relations", "Digital Operations Specialist", "WhatsApp", "email", "social media inquiries", "quotations", "invoices", "accurate quotations and invoices", "chase payments", "follow up", "follow-up", "digital application forms", "100% accuracy", "coordinate schedules", "service providers", "cloud accounting software", "Zoho Books", "Zoho", "processing quotations", "keying expenses", "consultative communication", "high EQ", "creative project briefs", "close bookings", "photography", "videography", "Singapore", "Google Workspace", "Meta Suite", "Dropbox", "fully remote", "critical thinking", "independently"],
+    focus: ["admin", "crm", "leads", "support", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about what is new for me.",
+    match: [
+      { req: "Manage all incoming email, WhatsApp & social media inquiries", proof: "I check and reply to every new enquiry across email, WhatsApp and Messenger, so no client is left waiting.", status: "yes", tab: "crm", cta: "See my enquiry work" },
+      { req: "Prepare and issue accurate quotations and invoices", proof: "I prepare invoices and keep booking and payment records accurate for every client.", status: "yes", tab: "admin", cta: "See my admin work" },
+      { req: "Proactively follow up with customers to secure and chase payments", proof: "I follow up on open quotes and unpaid invoices by email and message, so nothing goes cold.", status: "yes", tab: "crm", cta: "See my follow-up work" },
+      { req: "Process digital application forms with 100% accuracy", proof: "I keep contact and booking records consistent and accurate across every system I use, with a weekly check for errors.", status: "yes" },
+      { req: "Coordinate schedules between clients and service providers", proof: "I manage 61 booking calendars and 200+ calendar events, confirming and rescheduling between clients and the team.", status: "yes", tab: "admin", cta: "See my booking work" },
+      { req: "Be familiar with Zoho Books: quotations, invoices, payments, expenses", proof: "I keep records in Zoho CRM and GoHighLevel, and I am currently completing a 2-week Xero bookkeeping course on invoicing, expenses and reconciliation to move quickly into Zoho Books.", status: "learn", tab: "crm", cta: "See my CRM work" },
+      { req: "Consultative communication: read client intent, recommend packages, close bookings", proof: "I read every brief closely, recommend the right option, and follow up until the booking is confirmed, the same instinct I use qualifying leads.", status: "yes", tab: "experience", cta: "See my experience" },
+      { req: "4+ years in client-facing sales admin, booking coordination or operations", proof: "5+ years supporting business owners and a CEO in Australia, the United States and Europe, managing bookings, enquiries and client communication daily.", status: "yes", tab: "experience", cta: "See my experience" },
+      { req: "Google Workspace, WhatsApp, Meta Suite and Dropbox", proof: "I use Google Workspace, WhatsApp, Meta Business Suite and Google Drive daily; Dropbox is a short step from the file systems I already use.", status: "yes" },
+      { req: "Prior experience in photography/videography studios or creative service businesses (advantage)", proof: "New for me in this exact industry, but I support creative and service-based brands today, and I would learn your packages and pricing from day one.", status: "learn" }
+    ],
+    workSections: [
+      { type: "cards", part: "crm", keys: ["ghlConvos", "pgFollow", "ghlBooking"] },
+      { type: "cards", part: "admin", keys: ["cdcTracker", "ghlUpdates"] }
+    ],
+    workHeads: {
+      crm:   { label: "Client Communication & Follow-Up", title: "Enquiries Answered, Payments Followed Up.", text: "Email, WhatsApp and CRM conversations I manage daily, with fast replies and consistent payment follow-up." },
+      admin: { label: "Scheduling & Records", title: "Bookings Coordinated, Records Kept Accurate.", text: "Calendars, trackers and daily updates that keep every client and service provider on the same page." }
+    },
+    resultsShots: "none",
+    resultsNote: "Bookings, enquiries, follow-ups and records I handle every day.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Client Relations & Digital Operations Specialist application"
   }
 };
