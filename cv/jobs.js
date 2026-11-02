@@ -1133,7 +1133,7 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Meta Business Suite · Canva & CapCut · Landing Pages · GoHighLevel · Google Analytics Certified",
     tagline: "",
-    summary: "Digital Marketing Specialist with 5+ years of experience supporting business owners in Australia, the United States and Europe, Google Analytics and Digital Marketing (Google) certified. I manage and schedule social content, design graphics and short-form video in Canva and CapCut, build and update websites and landing pages, and keep every lead and follow-up accurate in GoHighLevel. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    summary: "Digital Marketing Specialist with 5+ years of experience supporting business owners in Australia, the United States and Europe, Google Analytics and Digital Marketing (Google) certified. I manage and schedule social content, design graphics and short-form video in Canva and CapCut, and build and update websites and landing pages. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
     keywords: ["Digital Marketing Specialist", "Google Ads", "Meta Ads", "campaigns", "conversions", "landing pages", "Odoo", "GoHighLevel", "GHL", "SEO", "keyword research", "on-page optimisation", "organic visibility", "ecommerce", "lead generation", "Reels", "CapCut", "Higgsfield", "AI tools", "graphics", "marketing copy", "social media posts", "daily results", "weekly progress updates", "independently", "proactive", "quick learner", "individual applicant"],
     focus: ["social", "design", "web", "crm", "leads", "admin", "english"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
