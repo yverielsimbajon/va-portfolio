@@ -1507,7 +1507,7 @@
     .studio-grid.wide { grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
     .studio-grid.wide .design-item { aspect-ratio: 16 / 9; }
 
-    .studio-phones { display: flex; flex-wrap: wrap; gap: 22px; }
+    .reels-row.studio-phones { justify-content: flex-start; gap: 22px; margin-top: 0; }
     .studio-phones .phone { flex: 0 1 236px; }
 
     @media (max-width: 540px) {
@@ -1515,8 +1515,6 @@
       .studio-panel { padding: 0 10px 12px; }
       .studio-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
       .studio-grid.wide { grid-template-columns: minmax(0, 1fr); }
-      .studio-phones { gap: 14px; justify-content: center; }
-      .studio-phones .phone { flex: 0 1 230px; }
     }
 
     /* Phones: fewer layers around the content so pictures can use the screen */
@@ -1875,7 +1873,9 @@
         scrollbar-width: none;
       }
       .reels-row::-webkit-scrollbar { display: none; }
-      .phone { flex: 0 0 78%; scroll-snap-align: center; }
+      .phone, .studio-phones .phone { flex: 0 0 78%; scroll-snap-align: center; }
+      /* UGC phones sit inside the accordion panel, which has its own small padding */
+      .reels-row.studio-phones { gap: 16px; margin: 14px -10px 0; padding: 6px 10px 14px; }
       .reel-top { padding-right: 10px; padding-left: 12px; }
       .reel-top strong { font-size: 0.85rem; }
       .reel-sound { padding: 6px 9px; font-size: 0.68rem; white-space: nowrap; }
@@ -2437,7 +2437,7 @@
         category: "social",
         layout: "studio",    // full-width card with a dropdown that switches between services
         title: "UGC Videos I Edit For Your Brand",
-        clients: ["Sample work: LUMERA Skincare, food and product brands, YouTube creators"],
+        clients: ["Sample work: LUMERA Skincare, VELOUR Perfume, ROSELLE Wellness, food and product brands, YouTube creators"],
         description: "Three services I create for brands and creators. Open a service below to see the samples.",
         tools: ["Canva", "Adobe Photoshop", "CapCut", "Figma"],
         /* New work goes straight into the matching tab's items list */
@@ -2449,7 +2449,9 @@
             note: "Scroll-stopping product videos with a voiceover, captions and clean product shots, edited the way UGC creators do, ready to post or run as an ad.",
             kind: "phones",
             items: [
-              { src: "ugc-lumera-skincare.mp4", name: "LUMERA Skincare" }
+              { src: "ugc-lumera-skincare.mp4", name: "LUMERA Skincare" },
+              { src: "ugc-velour-perfume.mp4", name: "VELOUR Perfume" },
+              { src: "ugc-roselle-wellness.mp4", name: "ROSELLE Wellness" }
             ]
           },
           {
@@ -2788,7 +2790,11 @@
 
       const panel = (t, ti) => {
         if (t.kind === "phones") {
-          return `<div class="studio-phones">
+          // Same swipe row as the Reels card: arrows + "Reel 1 / 3" on phones
+          return `${reelsNav(t.items.length)}
+            <div class="reels-stage">
+            <span class="swipe-hint" aria-hidden="true">Swipe ${icon.next}</span>
+            <div class="reels-row studio-phones">
               ${t.items.map((it) => `
               <div class="phone">
                 <div class="phone-screen" role="button" tabindex="0" aria-label="${esc(it.name)}: turn sound on or off">
@@ -2804,7 +2810,9 @@
                   </div>
                 </div>
               </div>`).join("")}
-            </div>`;
+            </div>
+            </div>
+            <p class="reels-hint">Swipe or tap the arrows to see more videos</p>`;
         }
         return `<div class="studio-grid${t.kind === "wide" ? " wide" : ""}">
               ${t.items.map((it, k) => `
