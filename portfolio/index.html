@@ -1341,7 +1341,10 @@
     .case-study + .tools { margin-top: 22px; }
 
     .tool {
-      padding: 5px 11px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 5px 12px 5px 9px;
       color: var(--muted);
       background: #fff;
       border: 1px solid var(--line);
@@ -1349,6 +1352,10 @@
       font-size: 0.72rem;
       font-weight: 600;
     }
+
+
+    .ti { flex: none; width: 15px; height: 15px; background: var(--c); -webkit-mask: var(--m) center / contain no-repeat; mask: var(--m) center / contain no-repeat; }
+    .ti-b { -webkit-mask: none; mask: none; display: grid; place-items: center; border-radius: 4px; color: #fff; font-size: 0.5rem; font-weight: 800; letter-spacing: 0; line-height: 1; }
 
     /* ---------- Instagram feed planning cards ---------- */
     .feeds { display: grid; grid-template-columns: minmax(0, 1fr); gap: 26px; margin-top: 30px; }
@@ -2226,6 +2233,17 @@
         tools: ["GoHighLevel", "Google Calendar", "Gmail"],
         images: ["ghl-calendars.jpg", "ghl-booking-widget.jpg", "ghl-recurring.jpg"]
       },
+      {
+        category: "admin",
+        title: "Email Marketing",
+        clients: ["The Maria Office (concept)"],
+        intro: "A four-email welcome series that turns new subscribers into booked calls.",
+        challenge: "Small-business owners need a warm, consistent way to follow up with new subscribers.",
+        solution: "Designed a branded welcome journey: a warm hello, the services, real work, and a free call invitation.",
+        result: "A premium, ready-to-build email system that guides subscribers from hello to booking.",
+        tools: ["GoHighLevel", "Canva", "Gmail"],
+        images: ["email-campaign-board.jpg", "email-campaign-1.jpg", "email-campaign-2.jpg", "email-campaign-3.jpg", "email-campaign-4.jpg"]
+      },
 
       /* ---------- WEBSITE DESIGNS ---------- */
       {
@@ -2498,6 +2516,24 @@
     const SLIDE_SECONDS = 4.5;
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+    const TOOL_ICONS = {
+      "Canva": ["canva", "#00C4CC"], "Gmail": ["gmail", "#EA4335"], "Notion": ["notion", "#111111"],
+      "Google Sheets": ["googlesheets", "#1E8E3E"], "Google Calendar": ["googlecalendar", "#4285F4"],
+      "Google Drive": ["googledrive", "#1FA463"], "Google Docs": ["googledocs", "#4285F4"],
+      "Google Meet": ["googlemeet", "#00897B"], "Zoom": ["zoom", "#0B5CFF"], "Instagram": ["instagram", "#E4405F"],
+      "Facebook": ["facebook", "#0866FF"], "Messenger": ["messenger", "#0099FF"], "Meta Business Suite": ["meta", "#0467DF"],
+      "Wix Studio": ["wix", "#111111"], "JavaScript": ["javascript", "#E5C100"], "HTML": ["html5", "#E34F26"],
+      "CSS": ["css3", "#1572B6"], "Adobe Express": ["adobe", "#EB1000"],
+      "GoHighLevel": [null, "#2F80ED", "G"], "Excel": [null, "#1D6F42", "X"], "CapCut": [null, "#111111", "C"],
+      "Apollo.io": [null, "#E8B800", "A"], "Seamless.AI": [null, "#16A34A", "S"]
+    };
+    const toolChip = (t) => {
+      const m = TOOL_ICONS[t];
+      const icon = !m ? "" : m[0]
+        ? `<i class="ti" style="--c:${m[1]};--m:url(../images/tools/${m[0]}.svg)" aria-hidden="true"></i>`
+        : `<i class="ti ti-b" style="--c:${m[1]}" aria-hidden="true">${m[2]}</i>`;
+      return `<span class="tool">${icon}${esc(t)}</span>`;
+    };
     const pad = (n) => String(n).padStart(2, "0");
     const plural = (n) => `${n} Featured Project${n === 1 ? "" : "s"}`;
     const countFor = (key) => projects.filter((p) => p.category === key).length;
@@ -2547,7 +2583,7 @@
               <div class="case-row"><span class="case-tag result">Result</span><p>${esc(p.result)}</p></div>
             </div>`}
             ${p.link ? `<a class="live-link" href="${esc(p.link.url)}" target="_blank" rel="noopener">${esc(p.link.label)} <span aria-hidden="true">&#8594;</span></a>` : ""}
-            ${p.tools ? `<div class="tools">${p.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</div>` : ""}
+            ${p.tools ? `<div class="tools">${p.tools.map(toolChip).join("")}</div>` : ""}
           </div>
         </article>`;
     };
@@ -2580,7 +2616,7 @@
             <h3>${esc(p.title)}</h3>
             ${p.clients ? `<p class="clients"><span>${p.clients.length > 1 ? "Clients" : "Client"}</span>${p.clients.map(esc).join(" · ")}</p>` : ""}
             <p class="description">${esc(p.description)}</p>`;
-    const toolsHtml = (p) => p.tools ? `<div class="tools">${p.tools.map((t) => `<span class="tool">${esc(t)}</span>`).join("")}</div>` : "";
+    const toolsHtml = (p) => p.tools ? `<div class="tools">${p.tools.map(toolChip).join("")}</div>` : "";
 
     const galleryHtml = (p, i, label) => `
         <article class="feature-card reveal" data-index="${i}">
