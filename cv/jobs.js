@@ -1323,5 +1323,56 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "WDD – Maria Simbajon – 2"
+  },
+  "homefield-email": {
+    label: "Email Operations & Administrative Assistant (Homefield Email, email outreach for insurance agencies)",
+    headline: "Email Operations & Administrative Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Inbox Setup · Domains & DNS · SPF, DKIM & DMARC · Instantly Warm-Up · Trackers · Admin Support",
+    tagline: "",
+    summary: "Organised, dependable assistant with 5+ years of experience keeping email, records and daily administrative work running for business owners and remote teams in Australia, the United States and Europe. I buy and manage domains, set DNS records in Cloudflare, run email and follow-up campaigns, keep accurate trackers of accounts, statuses and renewal dates, and send a short daily update so nothing waits on a reminder. Creating inboxes across many domains with SPF, DKIM and DMARC and connecting them to Instantly is the newest part for me, and I follow a checklist exactly and learn a process once.",
+    keywords: ["Email Operations", "Administrative Assistant", "email inboxes", "inbox setup", "multiple domains", "domain management", "domain purchases", "naming guidelines", "sender names", "signatures", "forwarding", "email authentication", "SPF", "DKIM", "DMARC", "Instantly", "warm-up", "warm-up settings", "deliverability", "inbox health", "tracker", "renewal dates", "client onboarding", "onboarding checklists", "scheduling", "follow-ups", "spreadsheets", "client records", "Google Sheets", "Google Docs", "attention to detail", "checklist", "competing priorities", "passwords", "account access", "confidential client information", "documented processes", "status updates", "email marketing agency", "multiple client accounts"],
+    focus: ["admin", "ops", "english", "support", "crm"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof, and I have been honest about the parts that are new for me.",
+    match: [
+      { req: "Prepare domain and email address lists for client approval, following naming guidelines", proof: "This is the kind of list work I do every week: I prepare lists in Google Sheets, follow the naming and format rules exactly, and send them for approval before anything is bought or created.", status: "yes", tab: "work", cta: "See my trackers" },
+      { req: "Coordinate approved domain purchases and create inboxes through designated providers", proof: "I buy and manage domains myself and connect them to live client sites, including Cloudflare and GitHub Pages hosting. Creating business inboxes in bulk through a provider is new for me, and it is the same kind of checklist work I already follow.", status: "learn", tab: "websites", cta: "See the live sites" },
+      { req: "Configure sender names, signatures, forwarding and other account settings", proof: "I set up and maintain sender details, signatures and email settings in Google Workspace and GoHighLevel for client accounts, and I keep them consistent across every account.", status: "yes", tab: "work", cta: "See the email work" },
+      { req: "Set up or verify SPF, DKIM and DMARC following established procedures", proof: "I work with DNS records today: A, CNAME and TXT records in Cloudflare for client domains, custom domains and SSL verification. SPF, DKIM and DMARC are new for me, and they are TXT records set from a written procedure, which I would follow exactly and then verify.", status: "learn", tab: "websites", cta: "See my domain work" },
+      { req: "Connect inboxes to Instantly and manage warm-up settings", proof: "Instantly is new for me and I will not pretend otherwise. I run email and SMS campaigns, sequences and follow-ups in GoHighLevel every day, so connecting accounts and following a warm-up process is familiar work in a new tool.", status: "learn", tab: "work", cta: "See the campaign work" },
+      { req: "Test new inboxes, troubleshoot connection issues and flag problems early", proof: "I check that workflows, booking links and automations actually run, test everything myself before I call it done, and flag what I cannot fix with the details needed to fix it.", status: "yes", tab: "work", cta: "See the checks I run" },
+      { req: "Maintain an accurate tracker of domains, inboxes, client assignments, setup status and renewal dates", proof: "Trackers are my strongest habit: tasks, deadlines and statuses in Asana, Notion, Trello and Google Sheets, a 1,400+ contact database kept clean, and 61 booking calendars accurate.", status: "yes", tab: "work", cta: "See my trackers" },
+      { req: "Monitor inbox health and coordinate maintenance or replacements when needed", proof: "I monitor accounts, enquiries and conversations daily so nothing sits unanswered. Inbox health scores and replacing worn-out inboxes would be new, and I would learn your thresholds and act on them.", status: "learn", tab: "work", cta: "See the daily monitoring" },
+      { req: "Keep client onboarding checklists updated and follow up on missing information or approvals", proof: "I keep onboarding checklists moving and follow up until the missing detail or approval arrives, by email, message and CRM.", status: "yes", tab: "work", cta: "See my follow-ups" },
+      { req: "Schedule meetings and track outstanding tasks and deadlines", proof: "200+ calendar events and onboarding sessions coordinated, 61 calendars managed, and a CEO's calendar and inbox handled daily.", status: "yes", tab: "work", cta: "See the admin work" },
+      { req: "Update spreadsheets, client records and internal systems accurately", proof: "I keep contacts, orders, payment records and lead data accurate in GoHighLevel, Google Sheets and Google Drive, with no duplicates and no guessed details.", status: "yes", tab: "work", cta: "See the records" },
+      { req: "Organize documents and prepare routine reports and status updates", proof: "An organised Google Drive and Notion hub for every client, plus a short daily update and a weekly report on progress, outstanding items and problems.", status: "yes", tab: "work", cta: "See my reports" },
+      { req: "Communicate with clients, vendors and team members clearly and professionally", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write clear, friendly emails and updates every day for owners and a CEO.", status: "yes" },
+      { req: "Document recurring tasks and suggest improvements that reduce errors", proof: "I write the SOPs for the work I do, in Notion and Google Docs, so the process survives without me. I also built the trackers and dashboards I work from, because the manual version was slower and easier to get wrong.", status: "yes", tab: "work", cta: "See the documented processes" },
+      { req: "Confident in Google Sheets, Google Docs and other online business tools", proof: "Google Workspace daily for 5+ years, plus Notion, Asana, Trello, ClickUp, Monday.com, GoHighLevel and Cloudflare.", status: "yes" },
+      { req: "Excellent attention to detail on repetitive setup tasks and account information", proof: "7 workflow folders of automations, 61 calendars and 200+ events kept accurate. Repetitive setup work is where I am strongest, because I work from a checklist and check my own work twice.", status: "yes" },
+      { req: "Follow a checklist, manage competing priorities and work without repeated reminders", proof: "My clients do not have to chase me. I keep my own task list and deadlines, start the day with the priorities and end it with an update on what is done and what is next.", status: "yes" },
+      { req: "Good judgment with passwords, account access and confidential client information", proof: "I already hold logins for client CRMs, hosting, domains and social accounts. I keep credentials in a password manager, never share or reuse them, and ask before touching anything outside the task.", status: "yes" },
+      { req: "Experience supporting an email marketing agency or multiple client accounts", proof: "I support several clients at once across Australia, the United States and Europe, each with their own accounts, trackers and deadlines. An email marketing agency would be a new industry, not new work.", status: "yes", tab: "experience", cta: "See my experience" }
+    ],
+    workSections: [
+      { type: "cards", part: "email", keys: ["plushEmail", "ghlConvos", "cdcFollow"] },
+      { type: "cards", part: "records", keys: ["cdcTracker", "cdcDrive", "ghlLeads", "cdcUpdates"] },
+      { type: "block", key: "websites" }
+    ],
+    workHeads: {
+      email:    { label: "Email & Outreach", title: "Emails That Get Answered.", text: "Email and text campaigns, enquiry follow-ups and reminders I set up, send and check every day." },
+      records:  { label: "Trackers & Records", title: "Account Records That Stay Accurate.", text: "Accounts, statuses, deadlines and renewal dates kept in trackers and organised files, with a short update every day." },
+      websites: { label: "Domains & Hosting", title: "Domains I Buy, Point and Keep Live.", text: "Live client sites I connect myself: domains purchased, DNS records set in Cloudflare, SSL verified and every page tested." }
+    },
+    resultsShots: "none",
+    resultsNote: "Admin, email follow-ups and records I handle every day.",
+    stats: ["years", "calendars", "events", "leads"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Email Operations & Administrative Assistant application"
   }
 };
