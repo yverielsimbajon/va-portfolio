@@ -1374,5 +1374,52 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Email Operations & Administrative Assistant application"
+  },
+  "vanuatu-smm": {
+    label: "Social Media & Advertising Specialist (Vanuatu team, remote)",
+    headline: "Social Media & Advertising Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Facebook & Instagram · Digital Marketing · Analytics & Reporting · Photoshop · Reels · Website Design",
+    tagline: "",
+    summary: "Social Media & Advertising Specialist with 5+ years of experience managing Facebook and Instagram for business owners in Australia, the US and Europe. I design in Photoshop, edit Reels and track results in Meta Business Suite. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Social Media", "Advertising", "online presence", "paid campaigns", "Facebook", "Instagram", "TikTok", "LinkedIn", "digital marketing", "promotions", "analytics", "reporting", "engagement", "followers", "reach", "leads", "campaign performance", "Photoshop", "promotional videos", "reels", "customer inquiries", "comments", "website design", "digital trends", "Vanuatu time", "remote", "independently", "portfolio of past campaigns"],
+    focus: ["social", "design", "web", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Manage Facebook, Instagram, TikTok, LinkedIn and other platforms", proof: "I manage Facebook and Instagram accounts every week: a monthly content calendar, scheduled posts and captions for a wellness brand and a landscaping business in Australia. I edit the same vertical Reels that run on TikTok.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Understanding of online advertising, promotions and digital marketing strategies", proof: "I design the promo graphics and ad creatives campaigns run on (offers, vouchers, seasonal campaigns), run email and text marketing, and plan content pillars and competitor research for local brands.", status: "yes", tab: "designs", cta: "See my promo designs" },
+      { req: "Monitor engagement, followers, reach, leads and campaign performance", proof: "I track performance in Meta Business Suite and send a clear weekly update. Post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Photoshop and editing short promotional videos and reels", proof: "Adobe Photoshop and Canva for graphics, CapCut for Reels with captions and music, both in my portfolio below.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Respond professionally to customer inquiries and comments", proof: "I check every new enquiry, reply on email, Messenger and the CRM and follow up until it is closed, so no customer is left waiting.", status: "yes", tab: "crm", cta: "See my enquiry work" },
+      { req: "Digital savvy and up to date with digital trends", proof: "I work in Claude Code, GoHighLevel and Meta Business Suite daily, and I built my own website, dashboards and trackers.", status: "yes", tab: "websites", cta: "See what I built" },
+      { req: "Proficient in maintaining and developing website design", proof: "I designed and built live client websites and concept sites, and hand-code my own site, themariaoffice.com.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Excellent written and spoken communication", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Bachelor's degree in any major", proof: "Bachelor of Science in Civil Engineering, ASSCAT (2021 to 2024).", status: "yes" },
+      { req: "Works independently and as part of a team", proof: "I run my own task list and send a daily update, and I work inside client teams and with other creatives on shared trackers.", status: "yes", tab: "admin", cta: "See my updates" },
+      { req: "Available during overlapping hours with Vanuatu time", proof: "Vanuatu is only 3 hours ahead of me, and I already work Australian business hours for clients, so the overlap is every working day.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "smm", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "websites" },
+      { type: "cards", part: "crm", keys: ["ghlConvos", "pgFollow"] }
+    ],
+    workHeads: {
+      smm:      { label: "Social Media Management & Analytics", title: "Pages That Grow and Reports That Prove It.", text: "Content calendars, scheduled posts and performance tracking for Facebook and Instagram." },
+      designs:  { label: "Photoshop & Promo Design", title: "Promos That Make People Stop and Book.", text: "Photoshop and Canva promos, vouchers and ad-ready graphics for campaigns." },
+      reels:    { label: "Short Promotional Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram, Facebook and TikTok." },
+      websites: { label: "Website Design", title: "Websites That Back Up the Campaign.", text: "Live client sites and concepts I designed and built myself." },
+      crm:      { label: "Customer Inquiries & Comments", title: "Every Enquiry Answered Professionally.", text: "Replies and follow-ups across email, Messenger and CRM." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "brands"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Social Media & Advertising Specialist application"
   }
 };
