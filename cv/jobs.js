@@ -1585,12 +1585,22 @@ window.RESUME_JOBS = {
       { req: "Work directly with you and bring creative flair to every video", proof: "I work directly with business owners, send a short update on every task and keep each brand's look and voice the same, with a fresh idea on every video.", status: "yes", tab: "admin", cta: "See my updates" }
     ],
     workSections: [
+      { type: "block", key: "featReels" },
       { type: "block", key: "reels" },
       { type: "block", key: "foodPosters" },
       { type: "block", key: "designs" },
       { type: "cards", part: "turnaround", keys: ["cupResults", "cdcTracker"] }
     ],
     workOverrides: {
+      featReels: {
+        label: "Food Reels I Edit for You",
+        blurb: "Two restaurant food Reels with music, sound effects and a warm colour grade, made for sample brands. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", name: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", name: "Stack'd Burgers (sample)" }
+        ]
+      },
       foodPosters: {
         label: "Food Posters I Design for You",
         blurb: "Food posters I designed in Canva for made-up sample brands: steak, noodles, sandwiches, burgers and cakes.",
@@ -1598,9 +1608,8 @@ window.RESUME_JOBS = {
       },
       reels: {
         label: "Reels I edit for you",
-        blurb: "A restaurant food Reel with a funk beat and sound design, a fresh smoothie product video, two more food Reels (a restaurant edit and cupcakes), plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
+        blurb: "A fresh smoothie product video, two more food Reels (a restaurant edit and cupcakes), plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
           { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
           { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
           { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
@@ -1609,12 +1618,12 @@ window.RESUME_JOBS = {
       }
     },
     workHeads: {
-      reels:       { label: "Food & Lifestyle Reels", title: "Food Reels That Make People Hungry.", text: "Vertical footage cut with a hook, quick pacing, captions, music and sound effects." },
+      featReels:   { label: "Food & Lifestyle Reels", title: "Food Reels That Make People Hungry.", text: "Vertical footage cut with a hook, quick pacing, music and sound effects." },
+      reels:       { label: "More Short-Form Video", title: "Reels That Keep People Watching.", text: "Product, food and before-and-after Reels with captions and music." },
       foodPosters: { label: "Food Visuals", title: "Posters That Make the Dish Pop.", text: "Food graphics that match the Reels and stop the scroll." },
       designs:     { label: "Graphics & Covers", title: "Graphics That Match Every Video.", text: "Canva covers, posts and short animated videos, on-brand across your feed." },
       turnaround:  { label: "Quick Turnaround", title: "On Time, Every Week.", text: "Trackers and weekly results that keep every video on schedule." }
     },
-    reelAutoSound: true,
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
