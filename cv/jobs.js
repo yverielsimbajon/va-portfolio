@@ -1560,6 +1560,66 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Video Editor - Maria Simbajon"
   },
+  "food-lifestyle-editor": {
+    label: "Food & Lifestyle Video Editor (Instagram & TikTok)",
+    headline: "Food & Lifestyle Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Food Reels · TikTok & Instagram · Hooks & Captions · Music & Sound Effects · Colour Grading · CapCut",
+    tagline: "",
+    summary: "Short-Form Video Editor with 5+ years of experience editing Instagram and TikTok content for business owners in Australia, the United States and Europe. I turn vertical footage into polished, ready-to-publish Reels with hooks, captions, music and sound effects. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    keywords: ["video editor", "food", "lifestyle", "Instagram", "TikTok", "Reels", "vertical footage", "short-form", "quick turnaround", "pacing", "shot selection", "sound design", "restaurant reviews", "food discoveries", "recipes", "hooks", "storytelling", "gfx", "sfx", "music", "audience retention", "CapCut", "Premiere Pro", "captions", "colour grading", "ready-to-publish", "independent", "creative initiative"],
+    focus: ["social", "design", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Fast, efficient editing with quick turnaround times", proof: "Every task has a deadline in Asana, Notion or Trello, a short update when it is done and a weekly report. 65 Mbps fiber with a backup mobile Wi-Fi, backup laptop and power generator, so deadlines hold.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Strong understanding of food content: pacing, shot selection and sound design", proof: "I made food Reels for sample brands (cupcakes and a restaurant edit): the tastiest shot first, quick cuts on the beat, a soft whoosh or chime on key moments, and food posters in Canva to match.", status: "yes", tab: "reels", cta: "See my food Reels" },
+      { req: "Experience editing engaging TikToks and Instagram Reels", proof: "5+ years of vertical Reels in CapCut with captions and music. TikTok uses the same 9:16 format, so every edit is ready for both.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Turn raw vertical footage into polished, ready-to-publish social assets", proof: "Plain before-and-after footage from a landscaping business edited into branded Reels, exported and ready to schedule.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Strong instincts for hooks, storytelling, gfx, sfx, music and audience retention", proof: "I open with the strongest moment, add on-screen text so it works with the sound off, and make the graphics in Canva. I track views and followers in Meta Business Suite: post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Proficiency in Premiere Pro or CapCut", proof: "CapCut is my editing tool every day, with Canva for graphics and short videos.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Captions, music, sound effects and basic colour grading", proof: "Captions timed word by word to the voice, music and light sound effects on every edit, and a warm colour grade (brightness, contrast, saturation) so food looks fresh and consistent.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Work independently and take creative initiative", proof: "I made these food Reels, posters and a nine-post feed concept without a brief, and I plan content for clients on my own and preview it before anything goes out.", status: "yes", tab: "feeds", cta: "See the feed plans" },
+      { req: "Work directly with you and bring creative flair to every video", proof: "I work directly with business owners, send a short update on every task and keep each brand's look and voice the same, with a fresh idea on every video.", status: "yes", tab: "admin", cta: "See my updates" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "foodPosters" },
+      { type: "block", key: "designs" },
+      { type: "cards", part: "turnaround", keys: ["cupResults", "cdcTracker"] }
+    ],
+    workOverrides: {
+      foodPosters: {
+        label: "Food Posters I Design for You",
+        blurb: "Food posters I designed in Canva for made-up sample brands: steak, noodles, sandwiches, burgers and cakes.",
+        items: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ src: "fp3-" + n + ".jpg", thumb: "fp3-" + n + ".jpg" }))
+      },
+      reels: {
+        label: "Reels I edit for you",
+        blurb: "Two food Reels (cupcakes and a restaurant edit), a fresh smoothie product video, plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
+        items: [
+          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
+          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      }
+    },
+    workHeads: {
+      reels:       { label: "Food & Lifestyle Reels", title: "Food Reels That Make People Hungry.", text: "Vertical footage cut with a hook, quick pacing, captions, music and sound effects." },
+      foodPosters: { label: "Food Visuals", title: "Posters That Make the Dish Pop.", text: "Food graphics that match the Reels and stop the scroll." },
+      designs:     { label: "Graphics & Covers", title: "Graphics That Match Every Video.", text: "Canva covers, posts and short animated videos, on-brand across your feed." },
+      turnaround:  { label: "Quick Turnaround", title: "On Time, Every Week.", text: "Trackers and weekly results that keep every video on schedule." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Video Editor - Maria Simbajon"
+  },
   "unseen-support": {
     label: "Customer Support Assistant (UNSEEN Studios, streetwear online store)",
     headline: "Customer Support Assistant",
