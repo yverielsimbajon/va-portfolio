@@ -935,6 +935,8 @@ S.why = () => `<section class="block" id="why"><div class="wrap about">
 
 const order = (J.order || []).filter(k => S[k]);
 $("#main").innerHTML = order.map(k => S[k]()).join("");
+// per job: move the "Get to Know Me" intro video below a section, e.g. J.introAfter = "results"
+if (J.introAfter){ const a = document.getElementById(J.introAfter), iv0 = document.getElementById("intro"); if (a && iv0) a.after(iv0); }
 if (J.heroCarousels){ const hc = $("#heroCar"); if (J.heroReel){ hc.insertAdjacentHTML("beforeend", reelsBlock(J.heroReel)); const st = hc.querySelector(".reels-stage"); if (st) st.insertAdjacentHTML("afterbegin", `<div class="scrollcue" aria-hidden="true"><small>✨</small>scroll down<br>for more<svg viewBox="0 0 24 24"><path d="M12 4v15M5 13l7 7 7-7"/></svg></div><div class="scrollcue r" aria-hidden="true"><small>✨</small>scroll down<br>for more<svg viewBox="0 0 24 24"><path d="M12 4v15M5 13l7 7 7-7"/></svg></div>`); } if (J.heroFeed) hc.insertAdjacentHTML("beforeend", stacked(J.heroFeed)); }
 
 // nav links from the sections that exist

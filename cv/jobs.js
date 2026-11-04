@@ -1570,7 +1570,9 @@ window.RESUME_JOBS = {
     summary: "Short-Form Video Editor with 5+ years of experience editing Instagram and TikTok content for business owners in Australia, the United States and Europe. I turn vertical footage into polished, ready-to-publish Reels with hooks, captions, music and sound effects. One client's post views grew 50% to 265K and followers 147% in 90 days.",
     keywords: ["video editor", "food", "lifestyle", "Instagram", "TikTok", "Reels", "vertical footage", "short-form", "quick turnaround", "pacing", "shot selection", "sound design", "restaurant reviews", "food discoveries", "recipes", "hooks", "storytelling", "gfx", "sfx", "music", "audience retention", "CapCut", "Premiere Pro", "captions", "colour grading", "ready-to-publish", "independent", "creative initiative"],
     focus: ["social", "design", "english", "admin", "support"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
+    order: ["work", "results", "work2", "experience", "skills", "why", "contact"],
+    workSplit: 2,
+    introAfter: "results",
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
