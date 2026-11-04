@@ -1722,5 +1722,47 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Wunderbuild Virtual Assistant"
+  },
+  "ea-home-services": {
+    label: "Executive Assistant (fast-growing home services company, Australia)",
+    headline: "Executive Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Payments & Records · CRM · Bookings · Insurance Follow-Ups · Instagram Videos · Sydney Hours",
+    tagline: "",
+    summary: "Executive Assistant with 5+ years of experience running the back end for business owners in Australia, the United States and Europe. I keep records, bookings, follow-ups and payments accurate, and post Instagram videos on schedule. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["executive assistant", "back end", "payments", "payroll", "online banking", "CRM", "customer records", "bookings", "invoices", "tradespeople", "repairs", "insurance claims", "Instagram", "videos", "organised", "accurate", "proactive", "Sydney business hours"],
+    focus: ["admin", "crm", "ops", "english", "social"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "CRM: keep customer records, bookings and invoices clean and up to date", proof: "I keep 67 products and every customer order, booking and payment accurate in GoHighLevel, plus a 1,400+ contact database and 61 booking calendars.", status: "yes", tab: "crm", cta: "See my CRM work" },
+      { req: "Payments: pay suppliers and staff through online banking, with an approval process", proof: "I track every order and payment against the original record and double-check each figure before it goes anywhere. I follow your approval steps exactly.", status: "yes", tab: "records", cta: "See orders and payments" },
+      { req: "Book and manage tradespeople for repairs", proof: "I coordinated 200+ calendar events and bookings for an Australian landscaping company, with confirmations, reminders and a daily update.", status: "yes", tab: "records", cta: "See my bookings" },
+      { req: "Lodge insurance claims and follow them through to closed", proof: "I follow up by email and message until the missing information arrives, record every reply and track each deadline from start to done.", status: "yes", tab: "followup", cta: "See my follow-ups" },
+      { req: "Post videos to Instagram on a regular schedule", proof: "I edit Reels in CapCut and schedule posts every week. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "social", cta: "See my Reels" },
+      { req: "Extremely organised, nothing slips through the cracks", proof: "Trackers in Asana, Notion and Trello, a daily update and a weekly report for every client.", status: "yes", tab: "followup", cta: "See my trackers" },
+      { req: "Excellent written and spoken English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Monday to Friday, Sydney business hours, reliable internet", proof: "Yes. I already work Australian hours for other clients, with 65 Mbps fiber, a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "records", keys: ["ghlRecords", "ambAdmin", "ghlBooking"] },
+      { type: "cards", part: "crm", keys: ["ghlConvos", "ghlWorkflows"] },
+      { type: "cards", part: "followup", keys: ["pgFollow", "cdcTracker", "ghlUpdates"] },
+      { type: "block", key: "reels" }
+    ],
+    workHeads: {
+      records:  { label: "Payments, Bookings & Records", title: "Every Figure Checked Twice.", text: "Orders, payments, bookings and records kept accurate, so nothing slips through the cracks." },
+      crm:      { label: "CRM", title: "Customer Records That Stay Clean.", text: "Enquiries, bookings and automations I check every day, with problems flagged and fixed early." },
+      followup: { label: "Follow-Through", title: "Followed Up Until It Is Closed.", text: "Trackers, reminders and daily updates that carry every task from start to done." },
+      reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Executive Assistant application"
   }
 };
