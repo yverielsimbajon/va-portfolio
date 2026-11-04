@@ -339,7 +339,7 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .fsound{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;color:#fff;cursor:pointer;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.35);border-radius:999px;backdrop-filter:blur(6px)}
 .fsound svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .fsound[aria-pressed="true"]{background:var(--primary);border-color:transparent}
-@media(max-width:560px){.freels{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.freel{border-radius:12px}.fsound{top:8px;right:8px;width:32px;height:32px}.fsound svg{width:16px;height:16px}}
+@media(max-width:560px){.freels{grid-template-columns:minmax(0,380px);gap:22px}.freel{border-radius:14px}}
 .rbot{bottom:0;display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding:40px 12px 18px 14px;background:linear-gradient(transparent,rgba(0,0,0,.6))}
 .racc{display:flex;align-items:center;gap:8px;min-width:0;font-size:.78rem;font-weight:600}
 .racc img{width:28px;height:28px;flex:none;object-fit:cover;background:#fff;border:1.5px solid #fff;border-radius:50%}
@@ -1051,7 +1051,8 @@ $$(".freels").forEach(box => {
     const p = r.v.play(); if (p) p.catch(() => { r.v.muted = true; show(r); r.v.play().catch(() => {}); if (auto) arm(); });
     show(r);
   };
-  const tryAuto = () => { if (auto && vis.has(fs[0].v) && fs.every(o => o.v.muted)) soundOn(fs[0]); };
+  // sound goes to the first reel on screen; on phones (one per row) it moves to the next reel as you scroll
+  const tryAuto = () => { const t = fs.find(o => vis.has(o.v)); if (auto && t && fs.every(o => o.v.muted)) soundOn(t); };
   const toggle = r => { auto = false; if (r.v.muted) soundOn(r); else { r.v.muted = true; show(r); } };
   fs.forEach(r => {
     r.b.addEventListener("click", e => { e.stopPropagation(); toggle(r); });
