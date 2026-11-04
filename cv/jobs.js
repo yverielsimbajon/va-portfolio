@@ -1573,6 +1573,7 @@ window.RESUME_JOBS = {
     order: ["work", "results", "work2", "experience", "skills", "why", "contact"],
     workSplit: 2,
     introAfter: "results",
+    workHeadHide: true,
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [

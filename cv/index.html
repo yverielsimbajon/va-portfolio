@@ -772,8 +772,8 @@ S.work = () => {
       return "";
     }).join("");
     return `<section class="block" id="work"><div class="wrap">
-    <div class="eyebrow">Work samples</div>
-    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>${out}</div></section>`;
+    ${J.workHeadHide ? "" : `<div class="eyebrow">Work samples</div>
+    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>`}${out}</div></section>`;
   }
   if (J.workCards && J.workBlocks) {
     const out = J.workBlocks.map((k, n) => blockPart(k, n)).join("");
