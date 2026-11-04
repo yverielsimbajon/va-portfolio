@@ -1616,7 +1616,7 @@ window.RESUME_JOBS = {
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
       { req: "Hands-on experience with Wunderbuild", proof: "I have worked in Wunderbuild's Schedule timeline: categories, tasks, dates, durations, assignees and progress percentages, kept current as the work moved.", status: "yes", tab: "build", cta: "See my Wunderbuild work" },
-      { req: "Prepare and manage construction estimates", proof: "As a Civil Engineering graduate and project intern I prepared budget summaries and built Excel databases tracking milestones, costs and documents.", status: "yes", tab: "build", cta: "See my cost tracking" },
+      { req: "Prepare and manage construction estimates", proof: "I have worked with Wunderbuild assemblies (timber framing and structural steel line items). As a Civil Engineering graduate and project intern I also prepared budget summaries and built Excel databases tracking milestones, costs and documents.", status: "yes", tab: "build", cta: "See my Wunderbuild and cost work" },
       { req: "Review construction plans, specifications and material requirements", proof: "I drew a full set of plates in AutoCAD (elevations, roof framing, footing and column details) and built the 3D model in SketchUp, so I read drawings and specifications comfortably.", status: "yes", tab: "plans", cta: "See my drawings" },
       { req: "Request, follow up on and compare supplier and subcontractor quotations", proof: "I research companies online, check the details, write a short summary of fit and keep them side by side in a spreadsheet. I follow up by email and message until the missing information arrives.", status: "yes", tab: "quotes", cta: "See my follow-ups" },
       { req: "Update project costs, quantities and supplier details", proof: "I keep records for 67 products and every customer order accurate, and update contact and supplier-style details line by line against the original.", status: "yes", tab: "records", cta: "See the records I keep" },
@@ -1635,7 +1635,7 @@ window.RESUME_JOBS = {
       { type: "cards", part: "coordinate", keys: ["ghlUpdates", "cdcTracker"] }
     ],
     workHeads: {
-      build:      { label: "Wunderbuild & Estimating", title: "Schedules and Costs Kept Current.", text: "Hands-on Wunderbuild work, plus Excel cost databases and budget summaries from my project internship." },
+      build:      { label: "Wunderbuild & Estimating", title: "Schedules and Costs Kept Current.", text: "Hands-on Wunderbuild schedules and assemblies, plus Excel cost databases and budget summaries from my project internship." },
       plans:      { label: "Plans & Specifications", title: "I Read Drawings Like an Engineer.", text: "Plates drawn in AutoCAD and site measurements taken as a Civil Engineering graduate." },
       quotes:     { label: "Supplier & Subcontractor Quotes", title: "Quotes Chased Until They Arrive.", text: "Polite follow-ups by email and message, with every reply recorded and compared." },
       records:    { label: "Costs, Invoices & Purchase Orders", title: "Every Figure Checked Twice.", text: "Orders, payments and product records kept accurate, so nothing is missed on a claim or invoice." },
