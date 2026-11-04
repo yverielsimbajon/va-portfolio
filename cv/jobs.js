@@ -1751,13 +1751,19 @@ window.RESUME_JOBS = {
       { type: "cards", part: "records", keys: ["ghlRecords", "ambAdmin", "ghlBooking"] },
       { type: "cards", part: "crm", keys: ["ghlConvos", "ghlWorkflows"] },
       { type: "cards", part: "followup", keys: ["pgFollow", "cdcTracker", "ghlUpdates"] },
-      { type: "block", key: "reels" }
+      { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" }
     ],
     workHeads: {
       records:  { label: "Payments, Bookings & Records", title: "Every Figure Checked Twice.", text: "Orders, payments, bookings and records kept accurate, so nothing slips through the cracks." },
       crm:      { label: "CRM", title: "Customer Records That Stay Clean.", text: "Enquiries, bookings and automations I check every day, with problems flagged and fixed early." },
       followup: { label: "Follow-Through", title: "Followed Up Until It Is Closed.", text: "Trackers, reminders and daily updates that carry every task from start to done." },
-      reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." }
+      social:   { label: "Social Media", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
+      designs:  { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos, event graphics and short videos, ready to schedule." },
+      reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." },
+      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
     },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
