@@ -888,7 +888,8 @@
     .design-marquee.offscreen .marquee-row,
     .design-marquee:has(:focus-visible) .marquee-row { animation-play-state: paused; }
 
-    .marquee-row .design-item { flex: 0 0 auto; width: clamp(150px, 17vw, 210px); margin-right: 16px; }
+    /* Same poster size as the web resume */
+    .marquee-row .design-item { flex: 0 0 auto; width: clamp(104px, 11vw, 138px); margin-right: 12px; border-radius: 14px; }
 
     @keyframes marqueeLeft { to { transform: translateX(-50%); } }
     @keyframes marqueeRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
@@ -1005,6 +1006,13 @@
       gap: clamp(18px, 4vw, 52px);
       margin-top: 32px;
       padding: 6px 0 10px;
+    }
+
+    /* Facebook Reels card: 3 columns × 2 rows on desktop */
+    .reels-row:not(.ugc-row) {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 252px));
+      row-gap: 40px;
     }
 
     .phone {
@@ -1843,7 +1851,8 @@
       .reels-row::-webkit-scrollbar { display: none; }
       .phone { flex: 0 0 78%; scroll-snap-align: center; }
       /* UGC: each feed card is one swipe stop, the phone fills most of it */
-      .reels-row.ugc-row { display: flex; }
+      .reels-row.ugc-row,
+      .reels-row:not(.ugc-row) { display: flex; }
       .ugc-row .feed-card { flex: 0 0 88%; scroll-snap-align: center; }
       .ugc-row .phone { flex: none; width: 82%; scroll-snap-align: none; }
       .ugc-row .feed-chips { display: none; }
@@ -2368,8 +2377,8 @@
         description: "Short, scroll-stopping Reels with before-and-after transformations, bold captions and music, edited to showcase the work and bring in local enquiries.",
         account: { name: "Landscaping Services in Australia", avatar: "logo-kerbing-king-icon.jpg" },
         tools: ["Canva", "Meta Business Suite", "Facebook", "Instagram"],
-        accounts: { 0: { name: "Restaurant Promo Concept" }, 2: { name: "Pageant Promo in Australia" } },   // these have no avatar
-        images: ["reel-ember-salt.mp4", "reel-2.mp4", "reel-4.mp4", "reel-1.mp4", "reel-3.mp4"]
+        accounts: { 0: { name: "Ember & Salt (sample)" }, 1: { name: "Stack'd Burgers (sample)" }, 2: { name: "Restaurant Promo Concept" }, 3: { name: "Pageant Promo in Australia" } },   // these have no avatar
+        images: ["reel-ember-funk.mp4", "reel-stackd-burger.mp4", "reel-ember-salt.mp4", "reel-4.mp4", "reel-2.mp4", "reel-1.mp4"]
       },
       {
         category: "social",
