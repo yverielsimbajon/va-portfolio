@@ -1472,5 +1472,50 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Operations & Administration Coordinator application"
+  },
+  "patient-coordinator": {
+    label: "Patient Coordinator (Canada clinic)",
+    headline: "Patient Coordinator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Patient Enquiries · Appointment Scheduling · Follow-Ups · Intake & Booking · Records · Clinic Software",
+    tagline: "",
+    summary: "Professional, organized Patient Coordinator with 5+ years of experience supporting wellness and service businesses in Australia, the United States and Europe. I answer enquiries, follow up by email and message, and manage appointment bookings and records accurately. I run 61 booking calendars in GoHighLevel.",
+    keywords: ["Patient Coordinator", "patient", "inbound", "outbound", "emails", "inquiries", "follow up", "prospective", "existing", "schedule", "confirm", "appointments", "intake", "booking", "clinicians", "clinic staff", "patient information", "records", "privacy", "verbal and written communication", "organization", "attention to detail", "friendly", "multiple tasks", "priorities", "computer skills", "clinic software", "healthcare", "customer service", "reliable", "proactive", "patient experience"],
+    focus: ["admin", "crm", "support", "english", "leads"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Respond to inbound patient calls, emails and inquiries", proof: "I reply to enquiries on email, Messenger and WhatsApp every day in a warm, clear tone, and check every new enquiry so no one is left waiting.", status: "yes", tab: "crm", cta: "See the enquiries I handle" },
+      { req: "Follow up with prospective and existing patients", proof: "I follow up with people who have not replied or confirmed, by email and message, with reminders and a note of every outcome.", status: "yes", tab: "crm", cta: "See my follow-ups" },
+      { req: "Schedule, confirm and manage patient appointments", proof: "I manage 61 booking calendars in GoHighLevel, with confirmations, reminders and accurate notes on every appointment.", status: "yes", tab: "crm", cta: "See the booking calendars" },
+      { req: "Assist patients with intake and booking processes", proof: "I set up booking links and forms, and automations that send confirmations and reminders. I check each one runs correctly.", status: "yes", tab: "crm", cta: "See the booking setup" },
+      { req: "Coordinate scheduling with clinicians and clinic staff", proof: "I ran a CEO's calendar and appointments, with 200+ calendar events coordinated, and I send the team a short daily update so nothing is missed.", status: "yes", tab: "admin", cta: "See my calendar and updates" },
+      { req: "Maintain accurate patient information and records", proof: "I keep contacts, bookings and orders accurate and current in GoHighLevel, Zoho CRM and HubSpot, including a 1,400+ contact database.", status: "yes", tab: "crm", cta: "See the records I keep" },
+      { req: "Knowledge of Canadian privacy laws and regulations", proof: "I treat every client and customer record as confidential, share it only with the team member who needs it, and follow your clinic's privacy procedure exactly.", status: "yes" },
+      { req: "Strong verbal and written communication skills", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Excellent organization and ability to manage multiple tasks and priorities", proof: "I keep trackers, deadlines and Google Drive records for several clients at once, and I mark each item from start to done.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Strong computer skills and clinic software", proof: "GoHighLevel, Zoho CRM, HubSpot, Google Workspace, Notion, Asana and Trello are tools I use every day.", status: "yes" },
+      { req: "Experience in healthcare administration, reception, patient coordination or customer service", proof: "I handle bookings, enquiries and customer support for a wellness brand in Australia, which is the same patient-facing work in a friendly, professional tone.", status: "yes", tab: "crm", cta: "See the customer support work" }
+    ],
+    workSections: [
+      { type: "cards", part: "inbox", keys: ["ghlConvos", "pgFollow"] },
+      { type: "cards", part: "schedule", keys: ["ghlBooking", "cdcFollow", "ghlWorkflows"] },
+      { type: "cards", part: "records", keys: ["ghlRecords", "ghlLeads", "cdcDrive"] },
+      { type: "cards", part: "organized", keys: ["cdcTracker", "ghlUpdates"] }
+    ],
+    workHeads: {
+      inbox:     { label: "Patient Communication", title: "Every Enquiry Answered With Care.", text: "Calls, emails and messages answered warmly and followed up, so no patient is left waiting." },
+      schedule:  { label: "Appointment Scheduling", title: "Appointments Booked, Confirmed and Kept.", text: "Booking calendars, confirmations and reminders that keep clinicians and patients on the same page." },
+      records:   { label: "Patient Records", title: "Records That Are Accurate and Tidy.", text: "Contacts and bookings kept complete, current and easy to find." },
+      organized: { label: "Organization", title: "Many Tasks, One Calm Day.", text: "Trackers and a short daily update that keep priorities clear." }
+    },
+    resultsShots: "none",
+    resultsNote: "Bookings, calendars and records I manage every day.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Patient Coordinator application"
   }
 };
