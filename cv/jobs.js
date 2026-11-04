@@ -1765,6 +1765,13 @@ window.RESUME_JOBS = {
       reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." },
       feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
     },
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"],
+        images: ["smm-content-plan.jpg"]
+      }
+    },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["leads", "calendars", "events", "years"],

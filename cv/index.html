@@ -646,6 +646,9 @@ if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => {
   B.work[k] = Object.assign({}, B.work[k], ov);
 });
 
+// per-job change of a work card: J.caseOverrides = { cupSchedule: { images: [...] } }
+if (J.caseOverrides) Object.keys(J.caseOverrides).forEach(k => { B.cases[k] = Object.assign({}, B.cases[k], J.caseOverrides[k]); });
+
 // ---- helpers
 function bold(t){ return esc(t).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>"); }
 const kws = (J.keywords || []).slice().sort((a,b) => b.length - a.length);
