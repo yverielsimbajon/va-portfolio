@@ -1742,7 +1742,7 @@ window.RESUME_JOBS = {
       { req: "Payments: pay suppliers and staff through online banking, with an approval process", proof: "I track every order and payment against the original record and double-check each figure before it goes anywhere. I follow your approval steps exactly.", status: "yes", tab: "records", cta: "See orders and payments" },
       { req: "Book and manage tradespeople for repairs", proof: "I coordinated 200+ calendar events and bookings for an Australian landscaping company, with confirmations, reminders and a daily update.", status: "yes", tab: "records", cta: "See my bookings" },
       { req: "Lodge insurance claims and follow them through to closed", proof: "I follow up by email and message until the missing information arrives, record every reply and track each deadline from start to done.", status: "yes", tab: "followup", cta: "See my follow-ups" },
-      { req: "Post videos to Instagram on a regular schedule", proof: "I edit Reels in CapCut and schedule posts every week. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "social", cta: "See my Reels" },
+      { req: "Post videos to Instagram on a regular schedule", proof: "I edit Reels in CapCut and schedule posts every week. Post views up 50% to 265K and followers up 147% in 90 days.", status: "yes", tab: "reels", cta: "See my Reels" },
       { req: "Extremely organised, nothing slips through the cracks", proof: "Trackers in Asana, Notion and Trello, a daily update and a weekly report for every client.", status: "yes", tab: "followup", cta: "See my trackers" },
       { req: "Excellent written and spoken English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
       { req: "Monday to Friday, Sydney business hours, reliable internet", proof: "Yes. I already work Australian hours for other clients, with 65 Mbps fiber, a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
@@ -1751,30 +1751,62 @@ window.RESUME_JOBS = {
       { type: "cards", part: "records", keys: ["ghlRecords", "ambAdmin", "ghlBooking"] },
       { type: "cards", part: "crm", keys: ["ghlConvos", "ghlWorkflows"] },
       { type: "cards", part: "followup", keys: ["pgFollow", "cdcTracker", "ghlUpdates"] },
-      { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
+      /* Social media part follows the portfolio's Social Media order:
+         designs, reels, feeds, brand identity, content calendar, UGC videos */
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
-      { type: "block", key: "feeds" }
+      { type: "block", key: "feeds" },
+      { type: "block", key: "brands" },
+      { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
+      { type: "block", key: "featReels" }
     ],
     workHeads: {
       records:  { label: "Payments, Bookings & Records", title: "Every Figure Checked Twice.", text: "Orders, payments, bookings and records kept accurate, so nothing slips through the cracks." },
       crm:      { label: "CRM", title: "Customer Records That Stay Clean.", text: "Enquiries, bookings and automations I check every day, with problems flagged and fixed early." },
       followup: { label: "Follow-Through", title: "Followed Up Until It Is Closed.", text: "Trackers, reminders and daily updates that carry every task from start to done." },
-      social:   { label: "Social Media", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
       designs:  { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos, event graphics and short videos, ready to schedule." },
       reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." },
-      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
+      feeds:    { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      brands:   { label: "Brand Identity", title: "A Brand That Looks the Same Everywhere.", text: "Logos, colours and fonts on one sheet, so every post and page stays on brand." },
+      social:   { label: "Content Strategy", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
+      featReels: { label: "UGC Videos", title: "Product Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." }
     },
     workOverrides: {
-      reels: {
-        blurb: "Product UGC videos, food Reels and before-and-after Reels with captions and music, made for sample brands and Landscaping Services in Australia. Tap a phone to play.",
+      designs: {
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", kind: "video", acct: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", kind: "video", acct: "VELOUR Perfume (sample)" },
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
           { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
-          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
-          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
-          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }, { src: "reel-3.mp4", poster: "reel-3.jpg", kind: "video" }
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
         ]
       }
     },
