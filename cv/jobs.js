@@ -1599,5 +1599,53 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Customer Support Assistant - Maria Simbajon"
+  },
+  "hgbuilt-wunderbuild": {
+    label: "Construction Estimation VA (HG Built, Brisbane)",
+    headline: "Construction Estimation Virtual Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    highlight: { icon: "&#127891;", text: "Civil Engineering Graduate" },
+    sub: "Wunderbuild · Construction Estimates · Supplier & Subcontractor Quotes · Cost Tracking · Excel · Brisbane Hours",
+    tagline: "",
+    summary: "Construction Estimation Virtual Assistant with 5+ years supporting businesses in Australia, the United States and Europe, hands-on Wunderbuild experience and a Civil Engineering degree. I keep costs, quantities and supplier details accurate, follow up every quotation and report to the team. I already work Australian hours.",
+    keywords: ["Wunderbuild", "construction estimation", "construction administration", "estimates", "plans", "specifications", "material requirements", "supplier", "subcontractor", "quotations", "costs", "quantities", "cost breakdowns", "progress claims", "invoices", "purchase orders", "Australian residential construction", "Excel", "attention to detail", "Brisbane", "independently", "deadlines"],
+    focus: ["admin", "ops", "leads", "english", "crm"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Hands-on experience with Wunderbuild", proof: "I have worked in Wunderbuild's Schedule timeline: categories, tasks, dates, durations, assignees and progress percentages, kept current as the work moved.", status: "yes", tab: "build", cta: "See my Wunderbuild work" },
+      { req: "Prepare and manage construction estimates", proof: "As a Civil Engineering graduate and project intern I prepared budget summaries and built Excel databases tracking milestones, costs and documents.", status: "yes", tab: "build", cta: "See my cost tracking" },
+      { req: "Review construction plans, specifications and material requirements", proof: "I drew a full set of plates in AutoCAD (elevations, roof framing, footing and column details) and built the 3D model in SketchUp, so I read drawings and specifications comfortably.", status: "yes", tab: "plans", cta: "See my drawings" },
+      { req: "Request, follow up on and compare supplier and subcontractor quotations", proof: "I research companies online, check the details, write a short summary of fit and keep them side by side in a spreadsheet. I follow up by email and message until the missing information arrives.", status: "yes", tab: "quotes", cta: "See my follow-ups" },
+      { req: "Update project costs, quantities and supplier details", proof: "I keep records for 67 products and every customer order accurate, and update contact and supplier-style details line by line against the original.", status: "yes", tab: "records", cta: "See the records I keep" },
+      { req: "Cost breakdowns, progress claims, invoices and purchase orders", proof: "I track every order and payment in GoHighLevel, check each one against the original, and prepare invoices for my own clients. I also built Excel cost databases as a project intern.", status: "yes", tab: "records", cta: "See orders and payments" },
+      { req: "Coordinate with suppliers, subcontractors and the internal team", proof: "I coordinated 200+ calendar events and send the team a short daily update on progress, outstanding tasks and issues.", status: "yes", tab: "coordinate", cta: "See my updates" },
+      { req: "Familiarity with Australian residential construction", proof: "I support Australian businesses every week, including a landscaping and kerbing company, and I understand building and civil terms as a Civil Engineering graduate.", status: "yes", tab: "plans", cta: "See my site work" },
+      { req: "Good knowledge of Excel and strong attention to detail", proof: "Excel databases for budgets and costs, plus a Data Analysis: Visualizations in Excel course (The Open University). I double-check every figure before I send it.", status: "yes", tab: "build", cta: "See my Excel work" },
+      { req: "Good English, organisation, independence and deadlines", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I track deadlines in Asana, Notion and Trello and report weekly.", status: "yes", tab: "coordinate", cta: "See my trackers" },
+      { req: "Working hours agreed in Brisbane time", proof: "Yes. I already work Australian hours for other clients, with 65 Mbps fiber, a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "build", keys: ["wunderbuild", "engPlanning"] },
+      { type: "cards", part: "plans", keys: ["thesisAutocad", "engSurvey"] },
+      { type: "cards", part: "quotes", keys: ["pgFollow", "cdcFollow"] },
+      { type: "cards", part: "records", keys: ["ambAdmin", "ghlRecords"] },
+      { type: "cards", part: "coordinate", keys: ["ghlUpdates", "cdcTracker"] }
+    ],
+    workHeads: {
+      build:      { label: "Wunderbuild & Estimating", title: "Schedules and Costs Kept Current.", text: "Hands-on Wunderbuild work, plus Excel cost databases and budget summaries from my project internship." },
+      plans:      { label: "Plans & Specifications", title: "I Read Drawings Like an Engineer.", text: "Plates drawn in AutoCAD and site measurements taken as a Civil Engineering graduate." },
+      quotes:     { label: "Supplier & Subcontractor Quotes", title: "Quotes Chased Until They Arrive.", text: "Polite follow-ups by email and message, with every reply recorded and compared." },
+      records:    { label: "Costs, Invoices & Purchase Orders", title: "Every Figure Checked Twice.", text: "Orders, payments and product records kept accurate, so nothing is missed on a claim or invoice." },
+      coordinate: { label: "Team Coordination", title: "Everyone Knows What Is Next.", text: "Daily updates and trackers that keep suppliers, subcontractors and the team on the same page." }
+    },
+    resultsShots: "none",
+    resultsNote: "Schedules, records and trackers I manage every day.",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Wunderbuild Virtual Assistant"
   }
 };
