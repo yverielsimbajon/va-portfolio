@@ -1598,8 +1598,9 @@ window.RESUME_JOBS = {
       },
       reels: {
         label: "Reels I edit for you",
-        blurb: "A fresh smoothie product video, two food Reels (a restaurant edit and cupcakes), plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
+        blurb: "A restaurant food Reel with a funk beat and sound design, a fresh smoothie product video, two more food Reels (a restaurant edit and cupcakes), plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
         items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
           { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
           { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
           { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
