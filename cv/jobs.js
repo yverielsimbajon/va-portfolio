@@ -1421,5 +1421,56 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Social Media & Advertising Specialist application"
+  },
+  "dynamic-energy-ops": {
+    label: "Operations & Administration Coordinator (Dynamic Energy Solutions, Western Australia)",
+    headline: "Operations & Administration Coordinator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Job Records · Compliance Paperwork · Inventory · Cost Tracking · Email · Workflows",
+    tagline: "",
+    summary: "Organised, proactive Operations & Administration Coordinator with 5+ years supporting business owners in Australia, the United States and Europe. I keep job records accurate in GoHighLevel, track costs in spreadsheets, follow up on missing information and manage inboxes. As a Civil Engineering graduate, I also drew a 10 kW hybrid solar system layout.",
+    keywords: ["Operations", "Administration", "Coordinator", "job management software", "job records", "accurate", "up to date", "missing information", "follow up", "follow-ups", "paperwork", "documents", "submissions", "outstanding", "inventory", "consumable", "consumables", "stock", "labour and material costs", "cost tracking", "forecasting", "receipts", "reconciliation", "supporting records", "email", "urgent", "workflows", "forms", "data transfers", "CRM", "spreadsheets", "online portals", "business software", "solar", "electrical", "attention to detail", "written", "confidential", "proactive", "ownership", "reliable internet"],
+    focus: ["admin", "ops", "crm", "leads", "english", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Transfer job information from contractor portals and emails into our job management software", proof: "I enter orders, bookings, contacts and payments into GoHighLevel every day and double-check each record against the original email or message.", status: "yes", tab: "admin", cta: "See the records I keep" },
+      { req: "Keep job records complete, accurate and up to date", proof: "Records for 67 products and every customer order are organised and current, with a short daily update on what changed.", status: "yes", tab: "admin", cta: "See the records" },
+      { req: "Identify missing information and follow up with the relevant team members", proof: "I follow up by email and message until the missing details arrive, and track upcoming deadlines in Google Calendar.", status: "yes", tab: "admin", cta: "See my follow-ups" },
+      { req: "Check completed installation records for the required paperwork, track outstanding documents through to completion", proof: "I keep a tracker for every document and deadline, mark each item from start to done, and chase what is still outstanding. I work from a written checklist and verify before I submit.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Maintain product and consumable records, allocate items to the correct jobs", proof: "I organised the records for 67 products and tied every customer order to its items in one Notion hub and GoHighLevel.", status: "yes", tab: "admin", cta: "See product and order records" },
+      { req: "Track labour and material costs, update forecasting reports", proof: "As a project intern I prepared budget summaries and built Excel databases tracking milestones, costs and documents. Today I send weekly KPI and progress reports.", status: "yes", tab: "admin", cta: "See cost tracking" },
+      { req: "Organise and filter incoming emails, flag urgent matters", proof: "I ran a CEO's inbox, calendar and appointments: sorted new mail, flagged urgent items and sent an end-of-day update. Over 200 calendar events coordinated.", status: "yes", tab: "admin", cta: "See my inbox and calendar work" },
+      { req: "Assist with migration, help transfer and check data for accuracy and completeness", proof: "I set up and keep GoHighLevel, Zoho CRM and HubSpot records clean. In a data transfer I match the old and new records line by line and fix gaps before sign-off.", status: "yes", tab: "crm", cta: "See my CRM work" },
+      { req: "Support system setup, including forms and workflows suited to the business", proof: "I built 7 workflow folders in GoHighLevel (confirmations, reminders, follow-ups) plus 61 booking calendars, and a Notion hub with documented processes.", status: "yes", tab: "crm", cta: "See my workflows" },
+      { req: "Confidence with spreadsheets, online portals and business software", proof: "Google Sheets, Excel, GoHighLevel, Zoho CRM, HubSpot, Asana, Trello and Notion are my daily tools.", status: "yes" },
+      { req: "Working with electrical, solar or installation businesses", proof: "I am a Civil Engineering graduate. I drew the plates of a 10 kW hybrid solar system in AutoCAD, so I can read installation terms and talk with engineers and installers.", status: "yes", tab: "admin", cta: "See the solar layout" },
+      { req: "Excellent written and verbal English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Reliable internet, a suitable computer and a quiet workspace", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop, a backup power generator, headset and webcam.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "jobs", keys: ["ghlRecords", "cdcFollow"] },
+      { type: "cards", part: "docs", keys: ["cdcTracker", "cdcDrive"] },
+      { type: "cards", part: "stock", keys: ["ambAdmin", "notionHq"] },
+      { type: "cards", part: "costs", keys: ["engPlanning", "cdcUpdates"] },
+      { type: "cards", part: "systems", keys: ["ghlWorkflows", "ghlBooking"] },
+      { type: "cards", part: "solar", keys: ["thesisAutocad"] }
+    ],
+    workHeads: {
+      jobs:    { label: "Job Administration", title: "Job Records That Are Complete and Current.", text: "Orders, bookings and contacts entered accurately, with every missing detail chased until it arrives." },
+      docs:    { label: "Compliance Administration", title: "Paperwork Tracked Through to Done.", text: "Trackers and organised folders so every required document is found, checked and submitted." },
+      stock:   { label: "Inventory and Consumables", title: "Products and Orders Always Accounted For.", text: "Product records, order records and one central hub, so every item is allocated to the right job." },
+      costs:   { label: "Accounting Support", title: "Costs and Reports Kept in Order.", text: "Cost tracking databases, budget summaries and weekly reports in spreadsheets." },
+      systems: { label: "Systems and Workflow Improvement", title: "Workflows That Save the Team Time.", text: "Forms, automations and calendars set up in the CRM and checked so they run correctly." },
+      solar:   { label: "Solar Know-How", title: "I Speak Your Industry's Language.", text: "A 10 kW hybrid solar system layout I drew as a Civil Engineering graduate." }
+    },
+    resultsShots: "none",
+    resultsNote: "Records, calendars and trackers I manage every day.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Operations & Administration Coordinator application"
   }
 };
