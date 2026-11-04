@@ -1598,11 +1598,11 @@ window.RESUME_JOBS = {
       },
       reels: {
         label: "Reels I edit for you",
-        blurb: "Two food Reels (cupcakes and a restaurant edit), a fresh smoothie product video, plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
+        blurb: "A fresh smoothie product video, two food Reels (a restaurant edit and cupcakes), plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
         items: [
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
           { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
           { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       }
