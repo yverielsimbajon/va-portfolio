@@ -1616,11 +1616,11 @@ window.RESUME_JOBS = {
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
       { req: "Hands-on experience with Wunderbuild", proof: "I have worked in Wunderbuild's Schedule timeline: categories, tasks, dates, durations, assignees and progress percentages, kept current as the work moved.", status: "yes", tab: "build", cta: "See my Wunderbuild work" },
-      { req: "Prepare and manage construction estimates", proof: "I have worked in Wunderbuild's Estimations (specifications by category, with what is and is not allowed for) and its assemblies (timber framing and structural steel line items). As a Civil Engineering graduate and project intern I also prepared budget summaries and built Excel databases tracking milestones, costs and documents.", status: "yes", tab: "build", cta: "See my Wunderbuild and cost work" },
+      { req: "Prepare and manage construction estimates", proof: "I have worked in Wunderbuild's Estimations (specifications by category, with what is and is not allowed for) and its assemblies (timber framing and structural steel line items). As a Civil Engineering graduate and Project Engineering Intern I also prepared budget summaries and built Excel databases tracking milestones, costs and documents.", status: "yes", tab: "build", cta: "See my Wunderbuild and cost work" },
       { req: "Review construction plans, specifications and material requirements", proof: "I drew a full set of plates in AutoCAD (elevations, roof framing, footing and column details) and built the 3D model in SketchUp, so I read drawings and specifications comfortably.", status: "yes", tab: "plans", cta: "See my drawings" },
       { req: "Request, follow up on and compare supplier and subcontractor quotations", proof: "I research companies online, check the details, write a short summary of fit and keep them side by side in a spreadsheet. I follow up by email and message until the missing information arrives.", status: "yes", tab: "quotes", cta: "See my follow-ups" },
       { req: "Update project costs, quantities and supplier details", proof: "I keep records for 67 products and every customer order accurate, and update contact and supplier-style details line by line against the original.", status: "yes", tab: "records", cta: "See the records I keep" },
-      { req: "Cost breakdowns, progress claims, invoices and purchase orders", proof: "I track every order and payment in GoHighLevel, check each one against the original, and prepare invoices for my own clients. I also built Excel cost databases as a project intern.", status: "yes", tab: "records", cta: "See orders and payments" },
+      { req: "Cost breakdowns, progress claims, invoices and purchase orders", proof: "I track every order and payment in GoHighLevel, check each one against the original, and prepare invoices for my own clients. I also built Excel cost databases as a Project Engineering Intern.", status: "yes", tab: "records", cta: "See orders and payments" },
       { req: "Coordinate with suppliers, subcontractors and the internal team", proof: "I coordinated 200+ calendar events and send the team a short daily update on progress, outstanding tasks and issues.", status: "yes", tab: "coordinate", cta: "See my updates" },
       { req: "Familiarity with Australian residential construction", proof: "I support Australian businesses every week, including a landscaping and kerbing company, and I understand building and civil terms as a Civil Engineering graduate.", status: "yes", tab: "plans", cta: "See my site work" },
       { req: "Good knowledge of Excel and strong attention to detail", proof: "Excel databases for budgets and costs, plus a Data Analysis: Visualizations in Excel course (The Open University). I double-check every figure before I send it.", status: "yes", tab: "build", cta: "See my Excel work" },
@@ -1628,14 +1628,14 @@ window.RESUME_JOBS = {
       { req: "Working hours agreed in Brisbane time", proof: "Yes. I already work Australian hours for other clients, with 65 Mbps fiber, a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
     ],
     workSections: [
-      { type: "cards", part: "build", keys: ["wunderbuild", "engPlanning"] },
+      { type: "cards", part: "build", keys: ["wunderbuild", "engInternship"] },
       { type: "cards", part: "plans", keys: ["thesisAutocad", "engSurvey"] },
       { type: "cards", part: "quotes", keys: ["pgFollow", "cdcFollow"] },
       { type: "cards", part: "records", keys: ["ambAdmin", "ghlRecords"] },
       { type: "cards", part: "coordinate", keys: ["ghlUpdates", "cdcTracker"] }
     ],
     workHeads: {
-      build:      { label: "Wunderbuild & Estimating", title: "Schedules and Costs Kept Current.", text: "Hands-on Wunderbuild schedules, specifications and assemblies, plus Excel cost databases and budget summaries from my project internship." },
+      build:      { label: "Wunderbuild & Estimating", title: "Schedules and Costs Kept Current.", text: "Hands-on Wunderbuild schedules, specifications and assemblies, plus Excel cost databases and budget summaries from my Project Engineering internship." },
       plans:      { label: "Plans & Specifications", title: "I Read Drawings Like an Engineer.", text: "Plates drawn in AutoCAD and site measurements taken as a Civil Engineering graduate." },
       quotes:     { label: "Supplier & Subcontractor Quotes", title: "Quotes Chased Until They Arrive.", text: "Polite follow-ups by email and message, with every reply recorded and compared." },
       records:    { label: "Costs, Invoices & Purchase Orders", title: "Every Figure Checked Twice.", text: "Orders, payments and product records kept accurate, so nothing is missed on a claim or invoice." },
