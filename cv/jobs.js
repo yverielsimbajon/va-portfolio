@@ -1517,5 +1517,47 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Patient Coordinator application"
+  },
+  "brine-fitness-editor": {
+    label: "Video Editor (Brine Fitness)",
+    headline: "Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Short-Form Video · Captions & Text Overlays · B-roll & Graphics · Zooms & Sound Effects · Colour Correction · Reels, TikTok & Shorts",
+    tagline: "",
+    summary: "Video Editor with 5+ years of experience editing short-form social media content for business owners in Australia, the United States and Europe. I turn raw footage into clean, well-paced videos with accurate captions, zooms, sound effects and B-roll. I grew a client's post views 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Video Editor", "short-form", "60-120 seconds", "Instagram", "Facebook", "TikTok", "YouTube Shorts", "clean cuts", "pacing", "transitions", "captions", "text overlays", "B-roll", "images", "graphics", "animations", "colour correction", "lighting", "contrast", "zooms", "sound effects", "branding", "scripts", "raw footage", "turnaround", "educational", "talking-head", "instructions", "communication", "reliable", "long-term"],
+    focus: ["social", "design", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Experience editing short-form videos (60-120 seconds)", proof: "5+ years of vertical Reels and short videos for Instagram and Facebook, cut from raw footage with captions and music in CapCut. TikTok and YouTube Shorts use the same format.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Clean cuts, good pacing and engaging transitions", proof: "Every edit has the dead space removed, a clear order and a clean transition, so the message stays easy to follow and nothing distracts from it.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Accurate, well-timed captions and text overlays", proof: "Captions timed word by word to the voice and checked against the script, so the words are right and it works with the sound off. Plain text overlays for key points.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Relevant B-roll, images, graphics and animations", proof: "I add matching B-roll and images, and make the graphics and short animated promos in Canva, kept simple and on-brand.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Colour correction, lighting and contrast adjustments", proof: "I adjust colour, brightness and contrast on every clip so the footage looks clean and consistent from start to end.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Zooms, sound effects and visual elements to keep people watching", proof: "A hook in the first seconds, slow punch-in zooms on key words, light sound effects and music, used lightly so the message stays clear.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Follow instructions and keep consistent branding", proof: "I follow the script and direction exactly, keep each brand's fonts, colours and look the same on every video, and nothing goes out before it is previewed.", status: "yes", tab: "feeds", cta: "See the brand consistency" },
+      { req: "Good communication and reliable turnaround times", proof: "A short update on every task, deadlines tracked in Asana, Notion and Trello, and a weekly report for every client.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Educational content that is accurate and clear", proof: "I edit to the script word for word, check every caption against it, and keep effects simple so accuracy and clarity come first.", status: "yes" },
+      { req: "Editing software", proof: "CapCut for editing and Canva for graphics and short videos, every day.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "designs" },
+      { type: "cards", part: "organized", keys: ["cdcTracker", "cupResults"] }
+    ],
+    workHeads: {
+      reels:     { label: "Short-Form Video", title: "Clean Edits That Keep People Watching.", text: "Raw footage cut into short videos with a hook, accurate captions, zooms and music." },
+      designs:   { label: "Graphics & Animations", title: "Visuals That Support the Message.", text: "Simple Canva graphics, covers and short animated videos that match the brand." },
+      organized: { label: "Reliable Turnaround", title: "On Time, Every Week.", text: "Trackers and weekly results that keep every video on schedule." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Video Editor - Maria Simbajon"
   }
 };
