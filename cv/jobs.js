@@ -1591,6 +1591,7 @@ window.RESUME_JOBS = {
       { type: "block", key: "designs" },
       { type: "cards", part: "turnaround", keys: ["cupResults", "cdcTracker"] }
     ],
+    reelsWrap: true,
     workOverrides: {
       featReels: {
         label: "Food Reels I Edit for You",
