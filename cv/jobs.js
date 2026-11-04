@@ -1613,6 +1613,7 @@ window.RESUME_JOBS = {
       designs:     { label: "Graphics & Covers", title: "Graphics That Match Every Video.", text: "Canva covers, posts and short animated videos, on-brand across your feed." },
       turnaround:  { label: "Quick Turnaround", title: "On Time, Every Week.", text: "Trackers and weekly results that keep every video on schedule." }
     },
+    reelAutoSound: true,
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
     stats: ["views", "followers", "years", "events"],
