@@ -1765,6 +1765,19 @@ window.RESUME_JOBS = {
       reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." },
       feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
     },
+    workOverrides: {
+      reels: {
+        blurb: "Product UGC videos, food Reels and before-and-after Reels with captions and music, made for sample brands and Landscaping Services in Australia. Tap a phone to play.",
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", kind: "video", acct: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", kind: "video", acct: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
+          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }, { src: "reel-3.mp4", poster: "reel-3.jpg", kind: "video" }
+        ]
+      }
+    },
     caseOverrides: {
       cupSchedule: {
         solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool.",
