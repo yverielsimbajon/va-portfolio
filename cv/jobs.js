@@ -1765,5 +1765,62 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Executive Assistant application"
+  },
+  "email-designer-ecom": {
+    label: "Email Designer (email marketing agency, ecommerce brands worldwide)",
+    headline: "Email Designer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Campaign & Flow Emails · Ecommerce · Template Systems · Photoshop & Canva · Fast Turnaround · British & American English",
+    tagline: "",
+    summary: "Email Designer with 5+ years of experience designing for ecommerce brands in Australia, the United States and Europe. I turn your copy into on-brand emails that guide the eye to one clear action, using repeatable templates. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    keywords: ["email designer", "campaign", "flow", "ecommerce", "high-converting", "template system", "quick turnarounds", "copy", "hierarchy", "above the fold", "brand voice", "Figma", "Photoshop", "British English", "American English", "self-starter", "deadlines", "fast-paced"],
+    focus: ["design", "crm", "english", "admin", "social"],
+    order: ["work", "results", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Design high-converting campaign and flow emails to a consistently high standard", proof: "Two four-email sample campaigns (a luxury perfume launch with an abandoned-bag email, and a makeup brand), each with a hero, one headline and one button. I also build the confirmation, reminder and follow-up flows for a wellness brand in GoHighLevel.", status: "yes", tab: "emailVelour", cta: "See the email campaigns" },
+      { req: "Build and maintain a template system for each client", proof: "For every brand I set the colours, fonts, header, button and footer once, then reuse them in every email, so each new one is quick and always on brand.", status: "yes", tab: "emailRose", cta: "See a second brand" },
+      { req: "Quick turnarounds where speed matters as much as polish", proof: "Every task has a deadline in Asana, Notion or Trello, a short update when it is done and a weekly report. 65 Mbps fiber with a backup mobile Wi-Fi, backup laptop and power generator, so deadlines hold.", status: "yes", tab: "speed", cta: "See my trackers" },
+      { req: "Design around the copy you are given: flow, guide the eye, drive action", proof: "The offer and the button sit above the fold, the headline is the biggest thing on the screen, and the picture leads the eye down to one clear call to action.", status: "yes", tab: "emailVelour", cta: "See the layouts" },
+      { req: "Work across a range of ecommerce brands worldwide", proof: "I work with business owners in Australia, the United States and Europe, and I made sample emails for a perfume brand and a makeup brand, each with its own look and voice.", status: "yes", tab: "emailVelour", cta: "See the brands" },
+      { req: "Confident and quick in Figma and Photoshop", proof: "Photoshop and Canva are my daily design tools for posters, ads, carousels and email layouts.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "A real grasp of the marketing behind email", proof: "I send email and text follow-ups, confirmations and reminders that bring customers back to book, and every email I design has one goal and one button.", status: "yes", tab: "flows", cta: "See the email flows" },
+      { req: "A systems thinker: repeatable templates and processes", proof: "I document every process in Notion and Google Docs, and I reuse one template per brand instead of starting from scratch.", status: "yes", tab: "speed", cta: "See my systems" },
+      { req: "Excellent command of British and American English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write for clients in Australia, the United States and Europe, so I read the tone, punctuation and emphasis in the copy.", status: "yes" },
+      { req: "Own your output and manage your own workload", proof: "A daily update and a weekly report for every client, with my own trackers, so nothing needs chasing.", status: "yes", tab: "speed", cta: "See my updates" }
+    ],
+    workSections: [
+      { type: "block", key: "emailVelour" },
+      { type: "block", key: "emailRose" },
+      { type: "cards", part: "flows", keys: ["plushEmail", "ghlWorkflows", "pgFollow"] },
+      { type: "block", key: "designs" },
+      { type: "cards", part: "speed", keys: ["cdcTracker", "ghlUpdates"] }
+    ],
+    workOverrides: {
+      emailVelour: {
+        label: "Email campaign: VELOUR Perfume",
+        blurb: "A four-email launch campaign for a made-up luxury perfume brand: the launch, the bestselling signature, the gift edit and the abandoned-bag return. Tap to enlarge.",
+        items: [1, 2, 3, 4].map(n => ({ src: "email-velour-" + n + ".jpg", thumb: "email-velour-" + n + ".jpg" }))
+      },
+      emailRose: {
+        label: "Email campaign: Makeup Brand Rose",
+        blurb: "A four-email campaign for a made-up makeup brand, with its own colours and voice. Tap to enlarge.",
+        items: [1, 2, 3, 4].map(n => ({ src: "email-rose-" + n + ".jpg", thumb: "email-rose-" + n + ".jpg" }))
+      }
+    },
+    workHeads: {
+      emailVelour: { label: "Campaign Emails", title: "Emails That Sell the Launch.", text: "Hero, headline and one button above the fold, built around the copy." },
+      emailRose:   { label: "Template System", title: "One Template, Every Brand.", text: "The same structure, restyled in each brand's colours, fonts and voice." },
+      flows:       { label: "Flow Emails", title: "Flows That Bring Customers Back.", text: "Confirmations, reminders and follow-ups that run on their own." },
+      designs:     { label: "Graphics", title: "Graphics That Match Every Email.", text: "Photoshop and Canva graphics, on brand across every channel." },
+      speed:       { label: "Quick Turnaround", title: "On Time, Every Week.", text: "Trackers and weekly updates that keep every send on schedule." }
+    },
+    resultsShots: "none",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Email Designer application"
   }
 };
