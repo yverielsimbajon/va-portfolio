@@ -1559,5 +1559,45 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Video Editor - Maria Simbajon"
+  },
+  "unseen-support": {
+    label: "Customer Support Assistant (UNSEEN Studios, streetwear online store)",
+    headline: "Customer Support Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Customer Emails · Order Checks · Returns & Refunds · Complaints · Templates · Internal Team Messages",
+    tagline: "",
+    summary: "Customer Support Assistant with 5+ years supporting online businesses in Australia, the United States and Europe. I read the full history, check each order and reply to every customer in clear, professional English using templates and rules. I write short internal notes so the team can act fast.",
+    keywords: ["Customer Support", "customer emails", "unread", "oldest to newest", "email history", "order", "payment", "refunds", "fulfillment", "tracking", "return", "withdrawal", "cancellation", "delivery status", "complaint", "wrong or missing item", "size or address change", "discount code", "professional English", "templates", "written rules", "photos and videos", "internal message", "replacement", "store credit", "detail-oriented", "reliable", "Central European hours"],
+    focus: ["support", "english", "admin", "crm", "leads"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Work through all unread emails, oldest to newest, every working day", proof: "I check every new enquiry in order so no customer is left waiting, and I send the team a short end-of-day update on what was answered and what is still open.", status: "yes", tab: "crm", cta: "See the enquiries I handle" },
+      { req: "Read each customer's full email history and check the order (items, payment, refunds, fulfillment, tracking)", proof: "I read the whole conversation first, then check the order record: items, payment status and delivery details. I keep orders and payment records accurate for an online wellness brand with 67 products.", status: "yes", tab: "admin", cta: "See the order and payment records" },
+      { req: "Identify what the customer needs: return, withdrawal, cancellation, delivery status, complaint, wrong or missing item, size or address change, refund status or discount code", proof: "I sort every message by what the customer needs, reply to that exact question, and record the outcome so the next person sees the full story.", status: "yes", tab: "crm", cta: "See my customer conversations" },
+      { req: "Reply professionally in English using your templates and written rules", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I follow written procedures exactly and keep a warm, clear tone in every reply.", status: "yes" },
+      { req: "Request missing information and evidence for complaints, such as photos and videos", proof: "I follow up by email and message until the missing details arrive, and I note every item received so the team can decide quickly.", status: "yes", tab: "admin", cta: "See my follow-ups" },
+      { req: "Write a short internal message whenever someone must act (refund, replacement, store credit, discount code)", proof: "I send short, structured updates covering progress, outstanding tasks and issues. Each internal message states who the customer is, the order, the amount, the reason and the action needed.", status: "yes", tab: "admin", cta: "See my daily updates" },
+      { req: "Detail-oriented and reliable on a daily inbox", proof: "I keep trackers, deadlines and records for several clients at once, and mark each item from start to done.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "Monday to Saturday, overlapping Central European business hours", proof: "I have supported clients in Europe for years, and I work a schedule that overlaps your hours. Reliable internet: 65 Mbps fiber with a backup mobile Wi-Fi, backup laptop and power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "inbox", keys: ["ghlConvos", "pgFollow"] },
+      { type: "cards", part: "orders", keys: ["ghlRecords", "ambAdmin"] },
+      { type: "cards", part: "team", keys: ["ghlUpdates", "cdcTracker"] }
+    ],
+    workHeads: {
+      inbox:  { label: "Customer Emails", title: "Every Customer Answered With Care.", text: "Enquiries read in order, answered clearly and followed up until the case is closed." },
+      orders: { label: "Order Checks", title: "Orders and Payments Checked Before I Reply.", text: "Order and payment records kept accurate, so every answer is based on the facts." },
+      team:   { label: "Internal Team Messages", title: "Short Notes the Team Can Act On.", text: "Daily updates and trackers that show who needs to do what, and by when." }
+    },
+    resultsShots: "none",
+    resultsNote: "Customer enquiries, orders and records I manage every day.",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Customer Support Assistant - Maria Simbajon"
   }
 };
