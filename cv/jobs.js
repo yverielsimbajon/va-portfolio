@@ -1451,7 +1451,7 @@ window.RESUME_JOBS = {
       { req: "Reliable internet, a suitable computer and a quiet workspace", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop, a backup power generator, headset and webcam.", status: "yes" }
     ],
     workSections: [
-      { type: "cards", part: "jobs", keys: ["ghlRecords", "cdcFollow", "sm8Jobs"] },
+      { type: "cards", part: "jobs", keys: ["ghlRecords", "cdcFollow"] },
       { type: "cards", part: "docs", keys: ["cdcTracker", "cdcDrive"] },
       { type: "cards", part: "stock", keys: ["ambAdmin", "notionHq"] },
       { type: "cards", part: "costs", keys: ["engPlanning", "cdcUpdates"] },
