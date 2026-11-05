@@ -436,6 +436,45 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Administrative & Social Media Assistant application"
   },
+  "ghl-course-builder": {
+    label: "GoHighLevel Course Builder & Marketing Content VA",
+    headline: "GoHighLevel Course Builder",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "GoHighLevel Specialist · Workflows & Automations · Websites & Landing Pages · Marketing Content · Video Editing",
+    tagline: "",
+    summary: "Organised Virtual Assistant with 5+ years of experience and hands-on GoHighLevel experience building workflows, automations and pipelines for business owners in Australia, the United States and Europe. I build websites and landing pages, design marketing content in Canva, and edit short-form video in CapCut. Task-oriented, with a portfolio of real client work to show.",
+    keywords: ["Go High Level", "GoHighLevel", "GHL", "online courses", "course", "courses", "task oriented", "task-oriented", "marketing content", "books", "websites", "website", "portfolio", "portfolio of work", "video editing", "edit videos"],
+    focus: ["crm", "web", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Experience with GoHighLevel, building and maintaining online courses", proof: "I work inside the GoHighLevel platform every day: building and maintaining workflows, automations, pipelines, calendars and contact records across 7 workflow folders for real client accounts, and I follow build specs exactly and verify every step before it goes live.", status: "yes", tab: "crm", cta: "See my GoHighLevel work" },
+      { req: "Be task oriented", proof: "I follow documented processes exactly, track every task through to completion, and send a short daily or weekly update on progress.", status: "yes", tab: "crm", cta: "See my daily updates" },
+      { req: "Build marketing content for books, websites and more", proof: "I design marketing graphics and promos in Canva, and I build full websites and landing pages for client brands.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Have a portfolio of work to show", proof: "This page is built from real client work, and my full portfolio is at themariaoffice.com/portfolio.", status: "yes" },
+      { req: "Video editing (a plus)", proof: "I edit Reels and short-form video with captions and music in CapCut.", status: "yes", tab: "reels", cta: "See my Reels" }
+    ],
+    workSections: [
+      { type: "cards", part: "ghl", keys: ["ghlWorkflows", "ghlRecords", "ghlPipeline", "ghlUpdates"] },
+      { type: "block", key: "websites" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" }
+    ],
+    workHeads: {
+      ghl:      { label: "GoHighLevel Platform Work", title: "Built Inside GoHighLevel Every Day.", text: "Workflows, automations, pipelines and records I build and maintain on the GoHighLevel platform." },
+      websites: { label: "Websites & Landing Pages", title: "Pages Built For Your Content.", text: "Websites and landing pages I build and maintain for client brands." },
+      designs:  { label: "Marketing Content", title: "Marketing Content For Books & Websites.", text: "Canva graphics, promos and marketing materials I design for client brands." },
+      reels:    { label: "Video Editing", title: "Short-Form Video, Cut And Captioned.", text: "Reels and short videos edited in CapCut, ready to publish." }
+    },
+    resultsShots: "none",
+    resultsNote: "GoHighLevel platform work: workflows, automations, calendars and records I build and maintain.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "GoHighLevel Course Builder application"
+  },
   "miraco-creative": {
     label: "Creative Strategist (Miraco Nutripharm, health & wellness)",
     headline: "Creative Strategist",
