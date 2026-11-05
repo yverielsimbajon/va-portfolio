@@ -1819,7 +1819,7 @@ window.RESUME_JOBS = {
     emailSubject: "Wunderbuild Virtual Assistant"
   },
   "ea-home-services": {
-    intro: { video: "../images/intro-hook.mp4", poster: "../images/intro-poster.jpg" },
+    intro: { video: "../images/intro-hi-six.mp4", poster: "../images/intro-poster.jpg" },
     label: "Executive Assistant (fast-growing home services company, Australia)",
     headline: "Executive Assistant",
     headlinePill: true,
