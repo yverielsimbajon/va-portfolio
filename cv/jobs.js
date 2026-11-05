@@ -460,7 +460,7 @@ window.RESUME_JOBS = {
       { type: "cards", part: "ghl", keys: ["ghlWorkflows", "ghlRecords", "ghlPipeline", "ghlUpdates"] },
       { type: "block", key: "websites" },
       /* Social media part follows the portfolio's Social Media order:
-         designs, reels, feeds, brand identity, content calendar, UGC videos */
+         designs, reels, feeds, content calendar, UGC videos (brand identity removed for this job) */
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
@@ -1847,11 +1847,10 @@ window.RESUME_JOBS = {
       { type: "cards", part: "crm", keys: ["ghlConvos", "ghlWorkflows"] },
       { type: "cards", part: "followup", keys: ["pgFollow", "cdcTracker", "ghlUpdates"] },
       /* Social media part follows the portfolio's Social Media order:
-         designs, reels, feeds, brand identity, content calendar, UGC videos */
+         designs, reels, feeds, content calendar, UGC videos (brand identity removed for this job) */
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
-      { type: "block", key: "brands" },
       { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
       { type: "block", key: "featReels" }
     ],
@@ -1862,7 +1861,6 @@ window.RESUME_JOBS = {
       designs:  { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos, event graphics and short videos, ready to schedule." },
       reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." },
       feeds:    { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
-      brands:   { label: "Brand Identity", title: "A Brand That Looks the Same Everywhere.", text: "Logos, colours and fonts on one sheet, so every post and page stays on brand." },
       social:   { label: "Content Strategy", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
       featReels: { label: "UGC Videos", title: "Product Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." }
     },
