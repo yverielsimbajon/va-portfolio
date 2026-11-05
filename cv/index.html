@@ -325,6 +325,7 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .phone:after{top:18%;left:-3px;height:42px;box-shadow:0 58px 0 #23272d}
 .pscreen{position:relative;height:100%;overflow:hidden;cursor:pointer;background:#000;border-radius:35px}
 .pscreen video{display:block;width:100%;height:100%;object-fit:cover}
+.reels-row.fit-contain .pscreen video{object-fit:contain;background:#000}
 .pisland{position:absolute;top:9px;left:50%;z-index:3;width:32%;height:22px;background:#000;border-radius:999px;transform:translateX(-50%)}
 .rtop,.rbot{position:absolute;right:0;left:0;z-index:2;color:#fff;pointer-events:none}
 .rtop{top:0;display:flex;align-items:center;justify-content:space-between;padding:40px 12px 26px 14px;background:linear-gradient(rgba(0,0,0,.45),transparent)}
@@ -336,6 +337,7 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .freels{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:clamp(16px,3vw,36px);margin-top:22px}
 .freel{position:relative;aspect-ratio:9/16;overflow:hidden;cursor:pointer;background:#000;border-radius:18px;box-shadow:0 22px 44px rgba(9,24,34,.22)}
 .freel video{display:block;width:100%;height:100%;object-fit:cover}
+.freels.fit-contain .freel video{object-fit:contain}
 .fsound{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;color:#fff;cursor:pointer;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.35);border-radius:999px;backdrop-filter:blur(6px)}
 .fsound svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .fsound[aria-pressed="true"]{background:var(--primary);border-color:transparent}
@@ -822,7 +824,7 @@ function reelsBlock(k){
   const w = B.work[k], c = w.items.length;
   const nav = `<div class="rnav"><button class="rarrow rprev" type="button" aria-label="Previous reel" disabled>${ico.prev}</button><span class="rcount" aria-live="polite">Reel <b>1</b> / ${c}</span><button class="rarrow rnext" type="button" aria-label="Next reel">${ico.next}</button></div>`;
   return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>${nav}
-    <div class="reels-stage"><span class="swipe-hint" aria-hidden="true">Swipe ${ico.next}</span><div class="reels-row${J.reelsWrap ? " wrap-row" : ""}" id="reelsRow">${w.items.map((it, i) => `
+    <div class="reels-stage"><span class="swipe-hint" aria-hidden="true">Swipe ${ico.next}</span><div class="reels-row${J.reelsWrap ? " wrap-row" : ""}${J.reelsContain ? " fit-contain" : ""}" id="reelsRow">${w.items.map((it, i) => `
       <div class="phone"><div class="pscreen" role="button" tabindex="0" aria-label="Reel ${i + 1}: turn sound on or off"><span class="pisland"></span>
         <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
         <div class="rtop"><strong>Reels</strong><button class="rsound" type="button" aria-pressed="false" aria-label="Turn sound on">${SND_OFF}</button></div>
@@ -833,7 +835,7 @@ function reelsBlock(k){
 function featBlock(k){
   const w = B.work[k];
   return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>
-    <div class="freels" data-auto="${w.auto ? 1 : 0}">${w.items.map((it, i) => `<div class="freel" role="button" tabindex="0" aria-label="${esc(it.name || "Reel " + (i + 1))}: turn sound on or off">
+    <div class="freels${J.reelsContain ? " fit-contain" : ""}" data-auto="${w.auto ? 1 : 0}">${w.items.map((it, i) => `<div class="freel" role="button" tabindex="0" aria-label="${esc(it.name || "Reel " + (i + 1))}: turn sound on or off">
       <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
       <button class="fsound" type="button" aria-pressed="false" aria-label="Turn sound on">${SND_OFF}</button></div>`).join("")}</div>`;
 }

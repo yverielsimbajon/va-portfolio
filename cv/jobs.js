@@ -1866,6 +1866,7 @@ window.RESUME_JOBS = {
       social:   { label: "Content Strategy", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
       featReels: { label: "UGC Videos", title: "Product Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." }
     },
+    reelsContain: true,
     workOverrides: {
       designs: {
         items: [
