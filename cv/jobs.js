@@ -1974,5 +1974,45 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Email Designer application"
+  },
+  "beauty-in-steel-smm": {
+    label: "Social Media Manager (Beauty in Steel)",
+    headline: "Social Media Manager",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Startup Jewelry Brand · Business Page · Consistent Content · Value-Driven Posts · Reels · Canva",
+    tagline: "",
+    summary: "Creative Social Media Manager with 5+ years of experience handling business pages and growing brands through consistent, value-driven content. I plan, design and schedule posts and edit Reels. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    keywords: ["Social Media Manager", "startup", "jewelry brand", "grow", "creating content", "business page", "brand connect with its audience", "consistent", "value-driven content", "creative", "portfolio", "rates", "Philippines"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Genuinely enjoys creating content", proof: "I design posts in Canva, edit Reels in CapCut and write captions every week for Facebook and Instagram.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Understands how social media works and handles a business page", proof: "I manage and schedule a brand's Facebook and Instagram pages, and I grew a client's post views 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Makes a brand connect with its audience through consistent, value-driven content", proof: "I plan nine-post feeds around one palette and a content calendar, so a page looks put together and keeps posting on schedule.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Send your portfolio, rates and current location", proof: "My portfolio is on this page and one tap away. I am based in Butuan City, Philippines.", status: "yes", tab: "designs", cta: "See my portfolio" }
+    ],
+    workSections: [
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "brands" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos and event graphics, ready to schedule on Facebook and Instagram." },
+      reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
+      feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
+      brands:  { label: "Brand Identity", title: "A Look Your Audience Remembers.", text: "Logos, colours and fonts on one sheet, so a startup brand looks consistent everywhere." },
+      plan:    { label: "Content Strategy", title: "Consistent Posting That Builds Trust.", text: "A content calendar and posting schedule, so your page keeps growing." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Social Media Manager (Beauty in Steel)"
   }
 };
