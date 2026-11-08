@@ -1,6 +1,7 @@
 /*
   X-Robots-Tag: noindex, nofollow, noarchive, nosnippet, noimageindex
 
-/cv/amb-va/*
+# Resume links: keep out of search, but allow the link preview (title, text, image) in Messenger, WhatsApp, LinkedIn, email
+/cv/*
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
