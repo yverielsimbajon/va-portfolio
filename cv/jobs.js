@@ -1998,7 +1998,6 @@ window.RESUME_JOBS = {
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
-      { type: "block", key: "brands" },
       { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
       { type: "block", key: "featReels" },
       { type: "block", key: "aiModels" },
@@ -2011,7 +2010,6 @@ window.RESUME_JOBS = {
       designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
       feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
-      brands:  { label: "Brand Identity", title: "A Look Your Audience Remembers.", text: "Logos, colours and fonts on one sheet, so a startup brand looks consistent everywhere." },
       plan:    { label: "Content Strategy", title: "Consistent Posting That Builds Trust.", text: "A content calendar and posting schedule, so your page keeps growing." }
     },
     /* Same arrangement as the main portfolio: designs, reels (food, burger, pageant), feeds, brand, content plan, UGC */
