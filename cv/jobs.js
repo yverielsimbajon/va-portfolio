@@ -29,6 +29,7 @@ window.RESUME_JOBS = {
     keywords: ["Real Estate VA", "social media", "Canva", "CRM", "follow-up sequences", "tag and segmenting contacts", "tagging and segmenting contacts", "inputting leads", "input leads", "lead", "leads", "Facebook", "Instagram", "LinkedIn", "admin and tech tasks", "attention to detail", "written English", "long-term"],
     focus: ["social", "design", "crm", "leads", "admin", "english"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
+    workBlocks: ["designs", "reels", "crm", "smm", "emails"],
     workTabs: ["designs", "results", "crm", "websites", "reels", "smm"],
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
@@ -100,7 +101,7 @@ window.RESUME_JOBS = {
     keywords: ["Social Media & Brand Content Coordinator", "social media management", "social media", "graphic design", "digital marketing", "Instagram", "Facebook", "business accounts", "social media strategy", "content pillars", "content calendar", "monthly social media content calendar", "captions", "Reels", "stories", "short-form video", "short-form video content", "branded graphics", "branded content", "promotional graphics", "service spotlights", "Canva", "Meta Business Suite", "CapCut", "branding", "consistent branding", "visual consistency", "marketing strategy", "email and text marketing", "Google Business Profile", "online booking", "digital library", "engagement", "weekly update", "weekly updates", "beauty", "salon", "wellness", "service-based businesses", "U.S.-based businesses", "written English", "independently", "organized", "dependable", "creative"],
     focus: ["social", "design", "web", "admin", "english", "support"],
     order: ["results", "work", "education", "why", "contact"],
-    workBlocks: ["designs", "reels"],
+    workBlocks: ["designs", "reels", "emails"],
     workCards: ["plushStrategy", "plushBranding", "plushCalendar", "plushTrack", "plushEmail", "plushLibrary"],
     workIntro: "Real work matched to what you asked for: social media strategy, consistent branding, content calendar, performance tracking, email and text marketing, and weekly updates. Tap a picture to enlarge it.",
     resultsShots: "results",
@@ -119,7 +120,7 @@ window.RESUME_JOBS = {
     keywords: ["Mailchimp", "Canva", "Instagram", "LinkedIn", "newsletter", "captions", "short videos", "landing pages", "landing page", "email sequences", "automated sequence", "sign-up", "tags", "Google Workspace", "Drive", "Calendar", "end-of-day update", "brief", "confidential", "wellness", "attention to detail"],
     focus: ["social", "design", "web", "crm", "admin", "english"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
-    workBlocks: ["designs", "websites", "reels", "smm", "crm"],
+    workBlocks: ["designs", "websites", "reels", "smm", "emails", "crm"],
     workTitle: "Canva designs I create for wellness brands, real estate and more",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Flourish on Thursdays: Virtual Assistant application"
@@ -135,7 +136,7 @@ window.RESUME_JOBS = {
     keywords: ["Social Media Manager", "Later", "Instagram Reels", "Reels", "short-form videos", "short-form video", "graphics", "promotional posts", "social media ads", "paid social media ad creatives", "captions", "English grammar", "spelling", "brand-appropriate messaging", "social media SEO", "keywords", "hashtags", "content planning", "creative ideas", "consistent brand aesthetic", "brand aesthetic", "Meta Ads", "campaign management", "Canva", "Photoshop", "CapCut", "Adobe Premiere Pro", "DaVinci Resolve", "scheduling platforms", "Instagram", "content strategy", "social media trends", "feminine", "lifestyle", "beauty", "food", "clean, modern", "visually appealing", "detail-oriented", "organized", "punctual", "dependable", "proactive", "fresh ideas", "California business hours", "on time", "quality standards", "written and spoken"],
     focus: ["social", "design", "english", "admin", "web", "support"],
     order: ["results", "work", "education", "why", "contact"],
-    workBlocks: ["designs", "reels", "feeds", "cupSchedule", "cupMore"],
+    workBlocks: ["designs", "reels", "feeds", "cupSchedule", "cupMore", "emails"],
     workIntro: "Real work matched to what you asked for: scheduling, Reels, graphics, captions, content planning, a consistent brand aesthetic and on-time delivery. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
@@ -155,7 +156,7 @@ window.RESUME_JOBS = {
     keywords: ["Reels", "short-form video", "CapCut", "Canva", "carousels", "hooks", "captions", "Claude", "ChatGPT", "human", "viral research", "spreadsheet", "Instagram", "TikTok", "Facebook", "Meta Business Suite", "Metricool", "schedule", "scheduling", "approval", "weekly report", "reliable", "honest", "feedback", "excellent written English", "backup plan"],
     focus: ["social", "design", "english", "admin", "support", "leads"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
-    workBlocks: ["socialDesigns", "reels", "socialFeeds", "socialBrand", "socialStrategy"],
+    workBlocks: ["socialDesigns", "reels", "socialFeeds", "socialBrand", "socialStrategy", "emails"],
     workIntro: "Real work matched to what you asked for: Reels in CapCut, Canva designs, content planning, a consistent feed and tracked results. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
@@ -175,7 +176,7 @@ window.RESUME_JOBS = {
     keywords: ["comments", "comment management", "community management", "Facebook", "Instagram", "ads", "reply", "questions", "friendly", "professional", "spam", "flag", "complaints", "templates", "written English", "responsive", "reliable", "independently", "stable internet"],
     focus: ["social", "support", "english", "admin"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
-    workBlocks: ["socialDesigns", "socialFeeds", "socialStrategy"],
+    workBlocks: ["socialDesigns", "socialFeeds", "socialStrategy", "emails"],
     workIntro: "Real work matched to what you asked for: Facebook and Instagram content, replying to comments and messages, and tracked results. Tap a picture to enlarge it.",
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
@@ -345,9 +346,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "ambFeedMore" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
+      { type: "block", key: "emails" },
       { type: "cards", part: "support", keys: ["plushEmail", "cdcTracker", "ambAdmin"] }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       designs: { label: "Social Media Design", title: "Graphic Design I Create for You", text: "Posters, promos, vouchers and event graphics I design for clients in Canva." },
       reels: { label: "More Reels I Edit", title: "Reels for Other Clients", text: "Edited with captions and music in CapCut, ready for Instagram and Facebook." },
       support: { label: "Admin & Communication", title: "Email, Content Planning & Day-to-Day Admin", text: "Real work matched to what you asked for: email and Instagram communication, Notion content planning, and day-to-day admin." }
@@ -421,9 +424,11 @@ window.RESUME_JOBS = {
       { type: "cards", part: "admin", keys: ["cdcTracker", "plushCalendar", "ghlUpdates"] },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
-      { type: "block", key: "feeds" }
+      { type: "block", key: "feeds" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       admin:   { label: "Administrative Support", title: "Admin That Keeps Business Organized.", text: "Trackers, calendars, content calendars and weekly updates that keep every day running smoothly." },
       designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
@@ -466,9 +471,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "feeds" },
       { type: "block", key: "brands" },
       { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
-      { type: "block", key: "featReels" }
+      { type: "block", key: "featReels" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       ghl:      { label: "GoHighLevel Platform Work", title: "Built Inside GoHighLevel Every Day.", text: "Workflows, automations, pipelines and records I build and maintain on the GoHighLevel platform." },
       websites: { label: "Websites & Landing Pages", title: "Pages Built For Your Content.", text: "Websites and landing pages I build and maintain for client brands." },
       designs:  { label: "Marketing Content", title: "Marketing Content For Books & Websites.", text: "Canva graphics, promos, event graphics and short videos I design for client brands." },
@@ -564,9 +571,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "reels" },
       { type: "cards", part: "brand", keys: ["kkBrand", "plushBranding"] },
       { type: "block", key: "feeds" },
-      { type: "cards", part: "copy", keys: ["cupCaptions", "ghlUpdates"] }
+      { type: "cards", part: "copy", keys: ["cupCaptions", "ghlUpdates"] },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       brand:    { label: "Brand Consistency", title: "One Voice on Every Post.", text: "Brand positioning, tone and a consistent look, so content feels like the same brand everywhere." },
       strategy: { label: "Creative Strategy", title: "Strategy That Turns Ideas Into Posts.", text: "Content plans and calendars built around one goal per post and each platform's format." },
       designs:  { label: "Static Creative", title: "Graphics That Stop the Scroll.", text: "Canva and Photoshop posts, carousels, promos and banner-style graphics, with simple variations to test." },
@@ -614,9 +623,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "feeds" },
       { type: "block", key: "designs" },
       { type: "cards", part: "admin", keys: ["cdcTracker", "plushCalendar", "ghlUpdates"] },
-      { type: "block", key: "reels" }
+      { type: "block", key: "reels" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       thesis:  { label: "SketchUp & AutoCAD", title: "Drawings Built Like a Civil Engineer.", text: "My thesis building modeled in SketchUp and drawn in AutoCAD, from the 3D view to dimensioned plates." },
       feeds:   { label: "Social Media Management", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       designs: { label: "Creative Content", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Instagram and other platforms." },
@@ -660,9 +671,11 @@ window.RESUME_JOBS = {
       { type: "cards", part: "engage", keys: ["plushCalendar", "cupCaptions", "ghlConvos"] },
       { type: "cards", part: "outreach", keys: ["pgLeads", "pgFollow"] },
       { type: "block", key: "feeds" },
+      { type: "block", key: "emails" },
       { type: "cards", part: "track", keys: ["plushTrack", "ghlUpdates", "pgReports"] }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       engage:   { label: "Instagram Engagement", title: "Comments That Sound Like a Real Person.", text: "Accounts I run day to day: content calendars, captions in the brand's voice, and replies to comments and messages." },
       outreach: { label: "Prospects & Outreach", title: "Personal Intros, Not Mass Messages.", text: "Lead research, personalized messages and polite follow-ups, with every conversation kept organized." },
       feeds:    { label: "Instagram Content", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
@@ -746,9 +759,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "cards", part: "copy", keys: ["cupCaptions", "plushCalendar"] },
-      { type: "block", key: "feeds" }
+      { type: "block", key: "feeds" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       designs: { label: "Graphic Design", title: "Graphics That Look On Brand.", text: "Canva posts, carousels and listing-style graphics with clean typography, spacing and alignment." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Raw footage edited in CapCut with clean captions, music and smooth cuts." },
       copy:    { label: "Copywriting & Scheduling", title: "Captions That Sound Like You.", text: "Hooks and captions written from your source material, then scheduled and organised in a content calendar." },
@@ -791,9 +806,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "reels" },
       { type: "block", key: "designs" },
       { type: "block", key: "feeds" },
-      { type: "cards", part: "copy", keys: ["cupCaptions", "plushCalendar"] }
+      { type: "cards", part: "copy", keys: ["cupCaptions", "plushCalendar"] },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Raw footage edited in CapCut with a hook, captions, music and clean cuts." },
       designs: { label: "Visual Storytelling", title: "Graphics That Stop the Scroll.", text: "Canva posts, covers and carousels that match the video and the brand." },
       feeds:   { label: "Brand Consistency", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
@@ -1002,9 +1019,11 @@ window.RESUME_JOBS = {
       { type: "cards", part: "social", keys: ["plushCalendar", "cupResults"] },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
-      { type: "block", key: "feeds" }
+      { type: "block", key: "feeds" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       websites: { label: "Website Development", title: "Websites With a Welcome.", text: "Live client sites and concepts that are elegant, mobile-ready and simple to edit yourself." },
       tickets:  { label: "Tickets & Confirmations", title: "Tickets That Confirm Themselves.", text: "Ticket-purchase, confirmation, reminder and follow-up automations I built and manage, so every guest is looked after." },
       notion:   { label: "Notion Workspace", title: "One Hub for Your Whole Business.", text: "Notion hubs, planning databases and trackers built simple, so you can keep them tidy yourself." },
@@ -1045,7 +1064,8 @@ window.RESUME_JOBS = {
       { type: "block", key: "feedsMine" },
       { type: "block", key: "feeds" },
       { type: "block", key: "reels" },
-      { type: "cards", part: "plan", keys: ["cupSchedule", "plushBranding"] }
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushBranding"] },
+      { type: "block", key: "emails" }
     ],
     workOverrides: {
       foodPosters: {
@@ -1068,6 +1088,7 @@ window.RESUME_JOBS = {
       }
     },
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       foodPosters: { label: "Food Poster Design", title: "Posters That Make People Hungry.", text: "Food posters made to stop the scroll and sell the dish." },
       designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos, vouchers and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
@@ -1115,7 +1136,8 @@ window.RESUME_JOBS = {
       { type: "block", key: "feeds" },
       { type: "block", key: "brands" },
       { type: "block", key: "reels" },
-      { type: "cards", part: "plan", keys: ["cupSchedule", "cupResults"] }
+      { type: "cards", part: "plan", keys: ["cupSchedule", "cupResults"] },
+      { type: "block", key: "emails" }
     ],
     workOverrides: {
       foodPosters: {
@@ -1129,6 +1151,7 @@ window.RESUME_JOBS = {
       }
     },
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       foodPosters: { label: "Product Poster Design", title: "Posters That Make a Product Stand Out.", text: "Cut-out product posters on clean gradients, made to stop the scroll." },
       designs: { label: "Ad & Social Creatives", title: "Creatives That Stop the Scroll.", text: "Static posts, promos and stories for Instagram and Facebook, with variations ready to test." },
       feeds:   { label: "Premium Feed Concepts", title: "A Feed That Looks Premium.", text: "Calm, clean nine-post plans around one palette, previewed before anything goes live." },
@@ -1247,9 +1270,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "websites" },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
+      { type: "block", key: "emails" },
       { type: "cards", part: "ops", keys: ["seoAi", "ghlWorkflows", "plushCalendar", "ghlUpdates"] }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       ops: { label: "Reporting & Admin", title: "Results Tracked, Updates Sent.", text: "Weekly progress updates and performance tracking in Meta Business Suite, plus GoHighLevel automations kept running." }
     },
     resultsShots: "results",
@@ -1500,10 +1525,12 @@ window.RESUME_JOBS = {
       { type: "cards", part: "smm", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
       { type: "block", key: "designs" },
       { type: "block", key: "reels" },
+      { type: "block", key: "emails" },
       { type: "block", key: "websites" },
       { type: "cards", part: "crm", keys: ["ghlConvos", "pgFollow"] }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       smm:      { label: "Social Media Management & Analytics", title: "Pages That Grow and Reports That Prove It.", text: "Content calendars, scheduled posts and performance tracking for Facebook and Instagram." },
       designs:  { label: "Photoshop & Promo Design", title: "Promos That Make People Stop and Book.", text: "Photoshop and Canva promos, vouchers and ad-ready graphics for campaigns." },
       reels:    { label: "Short Promotional Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram, Facebook and TikTok." },
@@ -1852,9 +1879,11 @@ window.RESUME_JOBS = {
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
       { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
-      { type: "block", key: "featReels" }
+      { type: "block", key: "featReels" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
+      emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       records:  { label: "Payments, Bookings & Records", title: "Every Figure Checked Twice.", text: "Orders, payments, bookings and records kept accurate, so nothing slips through the cracks." },
       crm:      { label: "CRM", title: "Customer Records That Stay Clean.", text: "Enquiries, bookings and automations I check every day, with problems flagged and fixed early." },
       followup: { label: "Follow-Through", title: "Followed Up Until It Is Closed.", text: "Trackers, reminders and daily updates that carry every task from start to done." },
@@ -2061,13 +2090,6 @@ window.RESUME_JOBS = {
           { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" },
           { src: "ai-model-walk-turn-pose.mp4", poster: "ai-model-walk-turn-pose.jpg", name: "Walk, Turn, Pose" },
           { src: "ai-model-before-after.mp4", poster: "ai-model-before-after.jpg", name: "Before and After" }
-        ]
-      },
-      emails: {
-        label: "Email marketing",
-        blurb: "Sample campaigns for The Maria Office, a makeup brand and a perfume brand, four emails each, in the brand's own colours and voice.",
-        items: [
-          { src: "email-mo-board.jpg" }, { src: "email-rose-board.jpg" }, { src: "email-velour-board.jpg" }
         ]
       }
     },

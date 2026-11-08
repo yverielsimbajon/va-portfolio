@@ -265,6 +265,19 @@ window.RESUME_BASE = {
         { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
         { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
       ] },
+    emails: { label: "Email Marketing", blurb: "Emails that keep people interested and bring them back. I plan a whole campaign at a time, in the brand's own colours and voice, with one clear button in every email, so subscribers know exactly what to do next. Tap any email to enlarge it.",
+      items: ["mo","rose","velour"].flatMap(c => ["board",1,2,3,4].map(n => ({ src: "email-" + c + "-" + n + ".jpg" }))),
+      campaigns: [
+        { title: "Email Marketing Campaign - The Maria Office", note: "A four-email welcome: hello, services, proof, free call", accent: "#0b6e7f", tint: "#e8f6f6", chips: ["4 emails", "Brand palette", "Welcome series"], start: 0,
+          alt: "Four-email welcome series for The Maria Office, shown side by side",
+          emails: [ { name: "The Welcome", subject: "Welcome in. Your back office, in good hands" }, { name: "The Services", subject: "One person. Six services. Zero juggling." }, { name: "The Proof", subject: "Real work, made with care" }, { name: "The Invitation", subject: "Twenty minutes, on me" } ] },
+        { title: "Sample Email Marketing Campaign - Makeup Brand", note: "A four-email launch: tease, launch, teach, offer", accent: "#8b2f4b", tint: "#fbeff2", chips: ["4 emails", "Brand palette", "Launch campaign"], start: 5,
+          alt: "Four-email launch series for a makeup brand, shown side by side",
+          emails: [ { name: "The Teaser", subject: "Psst... something Rosé is coming" }, { name: "The Launch", subject: "The Rosé Collection is here" }, { name: "The Tutorial", subject: "3 steps to a 5-minute glam" }, { name: "The Offer", subject: "Your shade is waiting" } ] },
+        { title: "Sample Email Marketing Campaign - Perfume / e-commerce", note: "A four-email winter collection: launch, bestseller, gift edit, saved bag", accent: "#3b0a17", tint: "#f6f1e9", chips: ["4 emails", "Brand palette", "E-commerce"], start: 10,
+          alt: "Four-email winter collection series for a luxury perfume brand, shown side by side",
+          emails: [ { name: "The Launch", subject: "Presence, bottled. The Velour Collection" }, { name: "The Signature", subject: "N° 01 Ambre Doré: the one they ask about" }, { name: "The Gift Edit", subject: "Give a scent they will keep" }, { name: "The Return", subject: "Your bag is saved, and two samples are waiting" } ] }
+      ] },
     ambFeedMore: { label: "More Instagram feed concepts I create and plan", blurb: "Sample 9-post feeds for other brands: one colour palette, photos mixed with text posts and a fixed layout, previewed as a flat plan and inside the Instagram app. Tap to enlarge.",
       items: [
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
