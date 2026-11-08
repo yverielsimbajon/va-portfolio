@@ -79,6 +79,7 @@ for (const [folder, [key, brand, section]] of Object.entries(PREVIEW)) {
   const s = SECTIONS[section];
   const img = SITE + "/images/" + s.img + "?v=1";
   const url = SITE + "/cv/" + folder + "/";
+  // No <meta http-equiv="refresh">: Facebook/Messenger follow it and show the main resume preview instead.
   const html = `<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
 <title>${esc(title)} | Maria Simbajon</title>
@@ -94,7 +95,6 @@ for (const [folder, [key, brand, section]] of Object.entries(PREVIEW)) {
 <meta name="twitter:title" content="${esc(title)}">
 <meta name="twitter:description" content="${esc(s.text)}">
 <meta name="twitter:image" content="${img}">
-<meta http-equiv="refresh" content="0; url=../?job=${key}">
 <script>location.replace("../?job=${key}");</script></head>
 <body><a href="../?job=${key}">Open Maria Simbajon's resume</a></body></html>
 `;
