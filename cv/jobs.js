@@ -2016,6 +2016,7 @@ window.RESUME_JOBS = {
     },
     /* Same arrangement as the main portfolio: designs, reels (food, burger, pageant), feeds, brand, content plan, UGC */
     reelsContain: true,
+    reelsWrap: true,     // 3 x 2 reel grid on desktop, like the portfolio
     workOverrides: {
       designs: {
         items: [
