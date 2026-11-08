@@ -2000,10 +2000,14 @@ window.RESUME_JOBS = {
       { type: "block", key: "feeds" },
       { type: "block", key: "brands" },
       { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
-      { type: "block", key: "featReels" }
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "emails" }
     ],
     workHeads: {
       featReels: { label: "UGC Videos", title: "Product Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "Your Piece, Shown in Motion.", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
       feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
@@ -2048,6 +2052,23 @@ window.RESUME_JOBS = {
           { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
           { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
           { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" },
+          { src: "ai-model-walk-turn-pose.mp4", poster: "ai-model-walk-turn-pose.jpg", name: "Walk, Turn, Pose" },
+          { src: "ai-model-before-after.mp4", poster: "ai-model-before-after.jpg", name: "Before and After" }
+        ]
+      },
+      emails: {
+        label: "Email marketing",
+        blurb: "Sample campaigns for The Maria Office, a makeup brand and a perfume brand, four emails each, in the brand's own colours and voice.",
+        items: [
+          { src: "email-mo-board.jpg" }, { src: "email-rose-board.jpg" }, { src: "email-velour-board.jpg" }
         ]
       }
     },

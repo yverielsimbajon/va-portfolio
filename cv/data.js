@@ -275,10 +275,9 @@ window.RESUME_BASE = {
       items: [
         { src: "amb-feed-comp.jpg", phone: "amb-feed-phone.png", grid: "amb-feed-grid.jpg", title: "Alanah Mae Beauty", note: "Matched to her own site and Instagram, not a generic template", accent: "#970C10", tint: "#FDF1EC" }
       ] },
-    brands: { label: "Brand identity design", cols: 2, blurb: "Logos, colour palettes, typography, stationery and mood boards pulled together on one sheet, so a brand looks consistent and professional on every platform. Mock-up brands, tap to enlarge.",
+    brands: { label: "Brand identity design", blurb: "Logos, promotional materials and visual identity elements for a consistent, professional brand across digital platforms. Tap to enlarge.",
       items: [
-        { src: "brand-board-plumbing.webp", title: "Plumbing Business Brand Identity", note: "Reliable, fast and trusted", accent: "#12304f", tint: "#edf4fa", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true },
-        { src: "brand-board-water.webp", title: "Water Refilling Station Brand Identity", note: "Pure, fresh and trusted", accent: "#0b5563", tint: "#eaf6f7", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true }
+        { src: "brand-board-landscaping.webp", title: "Landscaping Services in Australia", note: "Logo, icon and wordmark versions", accent: "#1b4332", tint: "#eef5ef", chips: ["Main logo", "Icon", "Wordmark", "Dark version"] }
       ] },
     seo: { label: "Social media SEO, keywords and hashtags", blurb: "Finding the words people actually search for, then placing them in bios, captions, alt text and hashtag sets, so posts are easier to discover on Instagram and Facebook. Tap to enlarge.",
       items: [

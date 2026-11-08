@@ -628,8 +628,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261026p"></script>
-<script src="jobs.js?v=20261026p"></script>
+<script src="data.js?v=20261108a"></script>
+<script src="jobs.js?v=20261108a"></script>
 <script>
 (function(){
 const B = window.RESUME_BASE, JOBS = window.RESUME_JOBS;
@@ -861,6 +861,7 @@ const WB = {
   designs: n => `${J.workTitle === null ? "" : `<h2 class="title wsub">${esc(J.workTitle || "Graphic Designs I Create for You")}</h2>`}<p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>${marqueeHTML("designs")}`,
   reels: n => reelsBlock("reels"),
   featReels: n => featBlock("featReels"),
+  aiModels: n => featBlock("aiModels"),
   ambReel: n => reelsBlock("ambReel"),
   feeds: n => stacked("feeds"),
   ambFeed: n => stacked("ambFeed"),
