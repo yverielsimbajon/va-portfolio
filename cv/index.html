@@ -10,6 +10,15 @@
 // In-page links (#work, #top) would otherwise resolve against <base>, so scroll to them directly.
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a)return;var id=a.getAttribute("href").slice(1);if(!id)return;var t=document.getElementById(id);if(t){e.preventDefault();t.scrollIntoView({behavior:"smooth"})}});
 </script>
+<script>
+// Switched off resume links (Maria, 2026-11-10). New resumes are active by default: only keys listed here are closed.
+// Still active: photogenic-au, dmwright-redesign, amb-va, and the main /cv/ page.
+(function(){var OFF=" reva-26 jbe-ghl cdc-research plush-rose flourish flourish-dr-lolu cupcake-smm family-care-plan hids-engagement beauty-va rg-gva bdm-anz samui-sales admin-smm-sample ghl-course-builder miraco-creative design-va-interior of-instagram tpp-builder-outreach rosko-creative instinctive-shortform flown-beauty-editor proline-va bkg-lead-funnels igc-vayva sweet-potato-smm parfumcentral-designer casperflow-va funnelish-builder sealix-dm photo-studio-sg beauty-packaging premiumpages-wdd homefield-email vanuatu-smm dynamic-energy-ops patient-coordinator brine-fitness-editor food-lifestyle-editor unseen-support hgbuilt-wunderbuild ea-home-services email-designer-ecom beauty-in-steel-smm ".split(" ");
+var m=location.search.match(/[?&]job=([^&#]+)/)||location.pathname.match(/\/cv\/([^\/]+)\/?$/);
+var k=m&&m[1].toLowerCase();
+if(k&&OFF.indexOf(k)>-1){window.__RESUME_OFF=1;document.addEventListener('DOMContentLoaded',function(){document.documentElement.innerHTML='<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Link closed | Maria Simbajon</title></head><body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F4FCFC;font-family:Poppins,system-ui,sans-serif;color:#173042;text-align:center;padding:24px"><div><h1 style="color:#0B6E7F;font-size:1.6rem;margin:0 0 10px">This resume link is no longer active</h1><p style="margin:0 0 18px;color:#5B7482">Thank you for stopping by. Please email me and I will happily send a fresh link.</p><a href="https://themariaoffice.com/" style="color:#0B6E7F;font-weight:600">themariaoffice.com</a></div></body>';});}
+})();
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>Maria Simbajon | Resume</title>
@@ -634,6 +643,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 <script src="jobs.js?v=20261108d"></script>
 <script>
 (function(){
+if(window.__RESUME_OFF) return;
 const B = window.RESUME_BASE, JOBS = window.RESUME_JOBS;
 const $ = (s, r=document) => r.querySelector(s), $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
