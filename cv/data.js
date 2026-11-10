@@ -18,6 +18,7 @@ window.RESUME_BASE = {
     followers: { value: 147, prefix: "+", suffix: "%", label: "Follower growth", note: "in 90 days" },
     leads:     { value: 1400, suffix: "+", label: "Leads researched", note: "franchise database" },
     calendars: { value: 61, suffix: "", label: "Calendars managed", note: "GoHighLevel bookings" },
+    emails:    { value: 120, suffix: "+", label: "Emails sent", note: "campaigns and flows" },
     events:    { value: 200, suffix: "+", label: "Calendar events", note: "coordinated" },
     brands:    { value: 10, suffix: "+", label: "Brands I helped", note: "across AU, US and EU" },
     years:     { value: 5, suffix: "+", label: "Years supporting", note: "AU, US and EU businesses" }

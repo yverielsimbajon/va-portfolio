@@ -2815,7 +2815,7 @@ window.RESUME_JOBS = {
     },
     resultsShots: "none",
     resultsNote: "Email and text follow-ups, records and calendars I run every day.",
-    stats: ["leads", "calendars", "events", "years"],
+    stats: ["emails", "calendars", "events", "leads"],
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Email Marketing Specialist application"
