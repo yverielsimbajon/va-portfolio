@@ -2124,12 +2124,12 @@ window.RESUME_JOBS = {
       { req: "Organic growth only", proof: "I grow pages with real content, real replies and consistent posting. No bought followers, no bots, no fake engagement.", status: "yes", tab: "results", cta: "See the real screenshots" }
     ],
     workSections: [
-      { type: "block", key: "designs" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
-      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "designs" },
       { type: "block", key: "featReels" },
       { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
       { type: "block", key: "emails" }
     ],
     workHeads: {
