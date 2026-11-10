@@ -65,7 +65,8 @@ const PREVIEW = {
   "email-designer-ecom":    ["email-designer-ecom", "Ecommerce Brands", "social"],
   "beauty-in-steel-smm":    ["beauty-in-steel-smm", null, "social"],
   "fashion-de-smm":         ["fashion-de-smm", null, "social"],
-  "travel-ig-creator":      ["travel-ig-creator", null, "social"]
+  "travel-ig-creator":      ["travel-ig-creator", null, "social"],
+  "soto-group-ea":          ["soto-group-ea", null, "admin"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 

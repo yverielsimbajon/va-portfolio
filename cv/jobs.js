@@ -2310,5 +2310,71 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Travel & Lifestyle Content Creator / Video Editor"
+  },
+  "soto-group-ea": {
+    intro: { video: "../images/intro-hi-six.mp4", poster: "../images/intro-poster.jpg" },
+    label: "Executive Assistant (Soto Group, Perth WA)",
+    headline: "Executive Assistant",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Calendar & Inbox · Director Follow-Ups · SOPs & Registers · Project Checks · Marketing Support · AWST Hours",
+    tagline: "",
+    summary: "Executive Assistant with 5+ years of experience supporting founders, business owners and a CEO in Australia, the United States and Europe. I run calendars and inboxes, keep good systems and close loops on follow-ups, so directors spend their time on clients and strategy. I also support marketing with Canva, scheduling and websites.",
+    keywords: ["executive assistant", "directors", "founder", "calendar", "inbox", "agendas", "reminders", "meeting", "follow ups", "commitments", "SOP", "register", "renewal", "compliance", "onboarding", "checklist", "operations summary", "invoices", "receipts", "Google Workspace", "Microsoft", "Canva", "Asana", "project management", "content calendar", "proofread", "enquiries", "approvals", "close loops", "discreet", "Australian"],
+    focus: ["admin", "ops", "english", "crm", "social"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "At least three years supporting a founder, director or senior manager", proof: "5+ years supporting business owners in Australia, the United States and Europe, including Assistant to the CEO at EO Staff.", status: "yes", tab: "exec", cta: "See my executive support" },
+      { req: "Experience running someone else's calendar and inbox, not just your own", proof: "I managed the CEO's calendar, inbox and appointments at EO Staff, and I run 61 booking calendars and 200+ calendar events for Australian clients, with confirmations and reminders.", status: "yes", tab: "exec", cta: "See the calendars I run" },
+      { req: "Excellent written English: clear, warm, correct", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I write client emails, replies and follow-ups for business owners every day.", status: "yes", tab: "client", cta: "See my client emails" },
+      { req: "Keep a running list of director commitments and nudge until they are done", proof: "Every task sits in Asana, Notion or Trello with an owner and a due date, and I follow up by email and message until it is closed.", status: "yes", tab: "ops", cta: "See my trackers" },
+      { req: "Hands on experience with a project management tool (Teamwork, Asana, ClickUp, Monday)", proof: "Asana, Notion and Trello for client tasks, deadlines and content. I set up new systems from their help docs and videos and keep the steps documented.", status: "yes", tab: "ops", cta: "See my trackers" },
+      { req: "Keep the SOP library tidy and the accounts and renewals register current", proof: "I built a Notion business hub with SOPs and planning pages, and keep every file and record organised in Google Drive so anyone can find it.", status: "yes", tab: "admin", cta: "See my SOP hub" },
+      { req: "Light Xero support: invoices with director approval, receipts attached for the bookkeeper", proof: "I track every order and payment against its record and keep receipts and files organised. Nothing goes out without your approval.", status: "yes", tab: "admin", cta: "See payment records" },
+      { req: "Onboarding and offboarding checklists, and a monthly operations summary", proof: "Daily end-of-day updates and weekly KPI reports with outstanding and overdue items, plus step-by-step checklists in Notion.", status: "yes", tab: "ops", cta: "See my reports" },
+      { req: "Confident with Google Workspace, Microsoft 365 and Canva", proof: "Docs, Sheets, Drive and Calendar daily, Word, Excel and PowerPoint for documents and reports, and Canva for posts, promos and templates.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Marketing support: schedule approved posts, Canva edits, content calendar", proof: "I keep a monthly content calendar and schedule posts with Meta Business Suite and Metricool. One client's post views grew 50% to 265K in 90 days.", status: "yes", tab: "social", cta: "See my content calendar" },
+      { req: "Acknowledge new enquiries, log them in the CRM and chase approvals", proof: "I reply to enquiries, log every contact in GoHighLevel and Zoho CRM, and follow up until the approval, content or login arrives.", status: "yes", tab: "client", cta: "See my enquiry replies" },
+      { req: "Basic understanding of how a website or rebrand project runs", proof: "I designed and built live websites for Australian clients, plus a full brand: logo, wordmark, icon and promotional materials.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Worked for an Australian business and understand the tone", proof: "I work with a wellness brand, a landscaping company and a national pageant, all in Australia.", status: "yes" },
+      { req: "AWST hours, reliable internet and a quiet workspace", proof: "Yes. Philippine time matches AWST. 65 Mbps fiber, backup mobile Wi-Fi, backup laptop and a backup power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "exec", keys: ["ghlBooking", "cdcFollow", "pgFollow"] },
+      { type: "cards", part: "admin", keys: ["notionHq", "cdcDrive", "ambAdmin"] },
+      { type: "cards", part: "ops", keys: ["cdcTracker", "cdcUpdates", "notionPlan"] },
+      { type: "block", key: "websites" },
+      /* Marketing support, in the portfolio's Social Media order: designs, brand identity, content strategy, email */
+      { type: "block", key: "designs" },
+      { type: "block", key: "brands" },
+      { type: "cards", part: "social", keys: ["plushCalendar", "cupSchedule", "plushTrack"] },
+      { type: "block", key: "emails" },
+      { type: "cards", part: "client", keys: ["ghlConvos", "ghlRecords"] }
+    ],
+    workHeads: {
+      exec:     { label: "Executive Support", title: "Calendars Protected, Follow-Ups Closed.", text: "Calls booked, clashes resolved, reminders sent and every commitment chased until it is done." },
+      admin:    { label: "Business Admin", title: "Systems Anyone Can Find Their Way Around.", text: "SOPs, records and files kept tidy and current, with payments matched to every record." },
+      ops:      { label: "Light Operations", title: "Nothing Overdue, Nothing Without an Owner.", text: "Tasks, due dates and owners checked every day, with a short update for the directors." },
+      websites: { label: "Website & Rebrand Projects", title: "I Know How a Website Project Runs.", text: "Live websites I designed and built for Australian clients, from brief to launch." },
+      designs:  { label: "Marketing Support", title: "Canva Edits, Ready to Schedule.", text: "Posts, promos and templates resized and updated in the brand's own look." },
+      brands:   { label: "Brand Identity", title: "Brands That Look the Same Everywhere.", text: "Logos and promotional materials that stay consistent across every platform." },
+      social:   { label: "Content Calendar", title: "Approved Posts That Go Out on Time.", text: "A monthly content calendar, scheduled posts and results tracking." },
+      emails:   { label: "Email Marketing", title: "Newsletters That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
+      client:   { label: "Client Facing Admin", title: "Every Enquiry Acknowledged and Logged.", text: "Warm replies, confirmations and follow-ups, with every contact recorded in the CRM." }
+    },
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every approved post, Reel and story with Meta Business Suite and Metricool.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"],
+        images: ["smm-content-plan.jpg"]
+      }
+    },
+    resultsShots: "none",
+    stats: ["leads", "calendars", "events", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Executive Assistant (Soto Group)"
   }
 };
