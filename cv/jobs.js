@@ -2107,7 +2107,7 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Instagram · Reels · TikTok · CapCut · Canva · Captions · Organic Growth",
     tagline: "",
-    summary: "Social Media Manager with 5+ years of experience running Instagram and Reels content for brands. I plan and publish posts, edit Reels with subtitles, music and transitions in CapCut and Canva, and reply to comments and DMs. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    summary: "Social Media Manager with 5+ years of experience running Instagram and Reels content for brands. I plan and publish posts, edit Reels with subtitles, music and transitions in CapCut and Canva, and reply to comments and DMs.",
     keywords: ["social media manager", "Instagram", "TikTok", "Reels", "carousels", "CapCut", "Canva", "fashion", "clean, minimal aesthetics", "captions", "hashtags", "comments and DMs", "weekly report", "reach", "followers", "organic growth", "portfolio", "availability", "tools"],
     focus: ["social", "design", "english", "admin", "web"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
