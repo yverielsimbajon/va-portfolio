@@ -2143,6 +2143,7 @@ window.RESUME_JOBS = {
     },
     reelsContain: true,
     reelsWrap: true,
+    reelAutoSound: true,   // first reel on screen plays with sound (switches on at the visitor's first tap/key; browsers block sound before that)
     /* shared card text in data.js says "ready to learn": replace it for this resume (never-say-learning rule) */
     caseOverrides: {
       cupSchedule: {
