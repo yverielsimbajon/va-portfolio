@@ -2803,16 +2803,17 @@ window.RESUME_JOBS = {
       // Cloud 9 real-client campaign first, private details covered with blue PRIVATE tags (Maria, 2026-11-10)
       emails: { campaignsPrepend: {
         items: [{ src: "email-c9-board.jpg" }, { src: "email-c9-1.jpg" }, { src: "email-c9-2.jpg" }],
-        campaigns: [{ title: "Email Marketing Campaign - Home Services", note: "Real client: a weather-themed series, private details covered", accent: "#2F5496", tint: "#eaf3ff", chips: ["Real Client", "Brand palette", "Home services"], start: 0,
+        campaigns: [{ title: "Real Client - Email Marketing Campaign - Home Services Business", note: "A weather-themed series, private details covered", accent: "#2F5496", tint: "#eaf3ff", chips: ["Real Client", "Brand palette", "Home services"], start: 0,
           alt: "Weather-themed email campaign for a home services client, private details covered",
           emails: [ { name: "Clear Skies", subject: "Today's forecast: 100% sunshine" }, { name: "Long-Range Forecast", subject: "Stay with us all year (now with LIVE GPS tracking)" } ] }]
       }, campaignsOrder: ["Home Services", "Perfume", "Makeup", "Maria Office"] }
     },
     workHeads: {
-      emails:      { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
+      emails:      { label: "Real Screenshots. Real Clients.", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       flows:       { label: "Email Flows", title: "Real Clients, Real Screenshots.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
       speed:       { label: "Tracking & Reporting", title: "Results You Can Read in a Minute.", text: "Trackers and a weekly report on what was sent, what happened and what to change." }
     },
+    workHeadHide: true,
     resultsShots: "none",
     resultsNote: "Email and text follow-ups, records and calendars I run every day.",
     stats: ["emails", "calendars", "events", "leads"],
