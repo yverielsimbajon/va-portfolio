@@ -1948,12 +1948,15 @@ window.RESUME_JOBS = {
       { req: "Singapore company, Singapore hours", proof: "I am in the Philippines, in the same time zone as Singapore, with 65 Mbps fiber, a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
     ],
     workSections: [
-      { type: "cards", part: "drawings", keys: ["thesisAutocad"] },
+      { type: "cards", part: "drawings", keys: ["thesisAutocad", "thesisSketchup"] },
       { type: "cards", part: "site", keys: ["engSurvey", "engInternship"] }
     ],
     workHeads: {
-      drawings: { label: "AutoCAD Drafting", title: "Drawings Built to Exact Dimensions.", text: "Plans, elevations, framing and details drawn in AutoCAD, each sheet with its own title block." },
+      drawings: { label: "AutoCAD Drafting", title: "Drawings Built to Exact Dimensions.", text: "Plans, elevations, framing and details drawn in AutoCAD, each sheet with its own title block, plus the 3D model in SketchUp." },
       site:     { label: "Engineering Background", title: "I Read Drawings Like an Engineer.", text: "Site measurements and an engineering internship from my Civil Engineering degree." }
+    },
+    caseOverrides: {
+      thesisSketchup: { tools: ["SketchUp Pro", "3D modeling", "Scenes", "Plans to 3D"] }
     },
     resultsShots: "none",
     stats: ["years", "events"],
