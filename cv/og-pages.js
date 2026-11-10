@@ -67,6 +67,7 @@ const PREVIEW = {
   "beauty-in-steel-smm":    ["beauty-in-steel-smm", null, "social"],
   "fashion-de-smm":         ["fashion-de-smm", null, "social"],
   "blnx-marketing":         ["blnx-marketing", null, "crm"],
+  "zippeys-ops":            ["zippeys-ops", "Zippey's", "operations"],
   "travel-ig-creator":      ["travel-ig-creator", null, "social"],
   "soto-group-ea":          ["soto-group-ea", null, "admin"],
   "autocad-sg":             ["autocad-sg", "Singapore Company", "operations"]

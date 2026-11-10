@@ -2613,5 +2613,58 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "BLNX Marketing Coordinator"
+  },
+  "zippeys-ops": {
+    label: "Operations Coordinator (Zippey's, property maintenance and repairs)",
+    headline: "Operations Coordinator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Engineer Scheduling · ServiceM8 Jobs · Parts & Suppliers · WhatsApp Business · Daily Operations Report",
+    tagline: "",
+    summary: "Operations Coordinator with 5+ years supporting business owners in Australia, the United States and Europe. I keep jobs, schedules and follow-ups moving in ServiceM8 and GoHighLevel, reply to WhatsApp enquiries fast, and send a daily report. As a Civil Engineering graduate, I speak engineers' language.",
+    keywords: ["Operations Coordinator", "engineers", "scheduling", "appointments", "ServiceM8", "job status", "next action", "overdue jobs", "parts", "materials", "suppliers", "orders", "return visits", "WhatsApp Business", "customer communication", "enquiries", "complaints", "job notes", "photographs", "completion", "invoicing", "daily operations report", "ownership", "attention to detail", "calm under pressure", "Google Workspace", "property maintenance", "repairs", "construction"],
+    focus: ["admin", "ops", "crm", "support", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Coordinate daily engineer appointments and schedules, and communicate changes and delays promptly", proof: "I manage 61 booking calendars in GoHighLevel and coordinated 200+ calendar events for an Australian landscaping company, with confirmations, reminders and a message to everyone when a time changes.", status: "yes", tab: "sched", cta: "See the calendars I run" },
+      { req: "Maintain accurate job statuses in ServiceM8, with a clear next action and owner on every job", proof: "I have used ServiceM8 for a blue-collar business to keep jobs, stock and schedules organised. Every task I track has an owner, a due date and a next step, marked from start to done.", status: "yes", tab: "jobs", cta: "See my job tracking" },
+      { req: "Identify overdue jobs and take action to resolve delays", proof: "I check my trackers every day, flag what is overdue in my daily update, and follow up by email and message until it is closed.", status: "yes", tab: "jobs", cta: "See my trackers" },
+      { req: "Confirm specifications and coordinate approved orders, then track deliveries", proof: "I track every order and payment against its original record and check each detail before it moves on. As a Civil Engineering graduate, I read measurements and specifications comfortably.", status: "yes", tab: "parts", cta: "See orders and records" },
+      { req: "Arrange return visits and keep customers informed of delays and expected dates", proof: "I follow up with customers by email, WhatsApp and Messenger, and set reminders and rebookings so nobody is left waiting for an update.", status: "yes", tab: "comms", cta: "See my customer follow-ups" },
+      { req: "Respond to WhatsApp Business messages and new enquiries within five minutes in staffed hours", proof: "I check every new enquiry and reply quickly in a warm, clear tone on WhatsApp, email and Messenger, then pass new bookings to the right person.", status: "yes", tab: "comms", cta: "See the enquiries I handle" },
+      { req: "Escalate complaints and sensitive issues to the right team member", proof: "I handle customer support for a wellness brand in Australia. I keep every complaint confidential, record what happened and pass it to the right person with the full details.", status: "yes", tab: "comms", cta: "See my customer support" },
+      { req: "Check job notes, before and after photographs and completion details are recorded", proof: "I keep organised records, notes and files in Google Drive and check each record is complete before it is handed on. Anything missing gets chased.", status: "yes", tab: "quality", cta: "See my records" },
+      { req: "Give Finance complete job information for invoicing", proof: "I keep payment records and orders accurate, and hand over clean, complete records so the person doing the invoices never has to chase me.", status: "yes", tab: "quality", cta: "See my records" },
+      { req: "Produce a concise daily operations report", proof: "I send a short end-of-day update to my clients: progress, outstanding tasks, issues and what needs a decision. A weekly report goes out too.", status: "yes", tab: "report", cta: "See my reports" },
+      { req: "Comfortable with digital scheduling and CRM systems, Google Workspace", proof: "GoHighLevel, ServiceM8, Zoho CRM, HubSpot, Google Calendar, Docs, Sheets and Drive are tools I use every day.", status: "yes" },
+      { req: "Knowledge of property maintenance, repairs or construction", proof: "I am a Civil Engineering graduate. I have worked on site with surveying equipment and drew building plates in AutoCAD, so I can talk with engineers and tradespeople at their level.", status: "yes", tab: "eng", cta: "See my engineering work" },
+      { req: "Strong written and spoken English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "sched", keys: ["ghlBooking", "ghlWorkflows"] },
+      { type: "cards", part: "jobs", keys: ["sm8Jobs", "cdcTracker", "ghlRecords"] },
+      { type: "cards", part: "parts", keys: ["ambAdmin", "engPlanning"] },
+      { type: "cards", part: "comms", keys: ["ghlConvos", "pgFollow"] },
+      { type: "cards", part: "quality", keys: ["cdcDrive", "cdcFollow"] },
+      { type: "cards", part: "report", keys: ["ghlUpdates", "cdcUpdates"] },
+      { type: "cards", part: "eng", keys: ["engSurvey", "thesisAutocad"] }
+    ],
+    workHeads: {
+      sched:   { label: "Engineer Scheduling", title: "Appointments Booked, Changes Shared Early.", text: "Calendars, confirmations and reminders that keep engineers and customers on the same page." },
+      jobs:    { label: "ServiceM8 Job Management", title: "Every Job Has an Owner and a Next Step.", text: "Job statuses and trackers checked daily, with overdue items flagged and chased." },
+      parts:   { label: "Parts and Materials", title: "Orders Checked, Deliveries Tracked.", text: "Order and payment records matched to the original details, so nothing is ordered twice or lost." },
+      comms:   { label: "WhatsApp and Customer Communication", title: "Every Enquiry Answered Quickly.", text: "Fast, warm replies and follow-ups, so no customer is left waiting for an update." },
+      quality: { label: "Job Documentation", title: "Complete Records, Ready for Invoicing.", text: "Notes, files and details kept organised and checked, so Finance gets everything first time." },
+      report:  { label: "Reporting", title: "A Daily Update You Can Read in a Minute.", text: "Progress, overdue items and issues in one short report, with only the real decisions escalated." },
+      eng:     { label: "Engineering Background", title: "I Speak Your Engineers' Language.", text: "Site surveying and AutoCAD plates from my Civil Engineering degree." }
+    },
+    resultsShots: "none",
+    resultsNote: "Records, calendars and trackers I manage every day.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Operations Coordinator application"
   }
 };
