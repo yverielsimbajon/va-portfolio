@@ -1952,11 +1952,11 @@ window.RESUME_JOBS = {
       { type: "cards", part: "site", keys: ["engSurvey", "engInternship"] }
     ],
     workHeads: {
-      drawings: { label: "AutoCAD Drafting", title: "Drawings Built to Exact Dimensions.", text: "Plans, elevations, framing and details drawn in AutoCAD, each sheet with its own title block, plus the 3D model in SketchUp." },
+      drawings: { label: "AutoCAD Drafting", title: "Drawings I Created to Exact Dimensions.", text: "Plans, elevations, framing and details drawn in AutoCAD, each sheet with its own title block, plus the 3D model in SketchUp." },
       site:     { label: "Engineering Background", title: "I Read Drawings Like an Engineer.", text: "Site measurements and an engineering internship from my Civil Engineering degree." }
     },
     caseOverrides: {
-      thesisAutocad: { title: "I created these thesis plates in AutoCAD: elevations, roof framing, footing details and 10 kW hybrid solar system" },
+      thesisAutocad: { title: "Thesis plates I drew in AutoCAD: elevations, roof framing, footing details and 10 kW hybrid solar system" },
       thesisSketchup: { title: "I designed and modeled this thesis building in SketchUp: glass facade, laser-cut panels and rooftop solar", tools: ["SketchUp Pro", "3D modeling", "Scenes", "Plans to 3D"] }
     },
     resultsShots: "none",
