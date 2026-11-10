@@ -640,8 +640,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261111i"></script>
-<script src="jobs.js?v=20261111i"></script>
+<script src="data.js?v=20261111j"></script>
+<script src="jobs.js?v=20261111j"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -665,6 +665,7 @@ if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => {
   if (ov.campaignsOrder){ const items = ov.items || B.work[k].items, cs = ov.campaigns || B.work[k].campaigns, outI = [], outC = [];
     ov.campaignsOrder.map(w => cs.find(c => c.title.includes(w))).concat(cs).filter((c, i, a) => c && a.indexOf(c) === i).forEach(c => {
       outC.push(Object.assign({}, c, { start: outI.length })); outI.push(...items.slice(c.start, c.start + 1 + c.emails.length)); });
+    if (ov.campaignsHide){ for (let i = outC.length - 1; i >= 0; i--) if (ov.campaignsHide.some(w => outC[i].title.includes(w))){ const c = outC[i], len = 1 + c.emails.length; outI.splice(c.start, len); outC.splice(i, 1); outC.forEach(d => { if (d.start > c.start) d.start -= len; }); } delete ov.campaignsHide; }
     ov.items = outI; ov.campaigns = outC; delete ov.campaignsOrder; }
   B.work[k] = Object.assign({}, B.work[k], ov);
 });
