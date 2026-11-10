@@ -2799,6 +2799,15 @@ window.RESUME_JOBS = {
       { type: "cards", part: "flows", keys: ["plushEmail", "ghlWorkflows", "pgFollow"] },
       { type: "cards", part: "speed", keys: ["cdcTracker", "ghlUpdates"] }
     ],
+    workOverrides: {
+      // Cloud 9 client campaign first; brand name, website, phone and areas blurred (Maria, 2026-11-10)
+      emails: { campaignsPrepend: {
+        items: [{ src: "email-c9-board.jpg" }, { src: "email-c9-1.jpg" }, { src: "email-c9-2.jpg" }],
+        campaigns: [{ title: "Email Marketing Campaign - Window Cleaning Company in Australia", note: "Made for a real client: a weather-themed series (brand details blurred)", accent: "#2F5496", tint: "#eaf3ff", chips: ["Client work", "Brand palette", "Service business"], start: 0,
+          alt: "Weather-themed email campaign for a window cleaning company, brand name blurred",
+          emails: [ { name: "Clear Skies", subject: "Today's forecast: 100% sunshine" }, { name: "Long-Range Forecast", subject: "Stay with us all year (now with LIVE GPS tracking)" } ] }]
+      } }
+    },
     workHeads: {
       emails:      { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       flows:       { label: "Flows", title: "Flows That Run on Their Own.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
