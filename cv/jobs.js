@@ -1757,6 +1757,86 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Video Editor - Maria Simbajon"
   },
+  "nordic-ad-localizer": {
+    label: "Video Editor, Nordic Ad Localization (DTC Health & Wellness)",
+    headline: "Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Meta Video Ads · AI-Assisted Localization · Voiceovers · Captions & On-Screen Text · Re-Cuts · Briefs to Finished Cuts",
+    codeWord: "banana",
+    tagline: "",
+    summary: "Video Editor with 5+ years of experience editing Meta video ads and Reels for brands in Australia, the United States and Europe. I take a brief and turn it into a finished cut with accurate captions, voiceover, on-screen text and clean timing.",
+    keywords: ["video editor", "Meta video ads", "localization", "translation", "Danish", "Norwegian", "Swedish", "Finnish", "AI-assisted", "voiceovers", "captions", "on-screen text", "re-cut", "briefs", "performance data", "health and wellness", "DTC", "timing", "detail-oriented", "full-time"],
+    focus: ["social", "design", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Editing Meta video ads", proof: "5+ years of vertical Reels, UGC-style product videos and promo ads for Instagram and Facebook, cut from raw footage with captions, music and clean transitions.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "AI-assisted workflows for voiceovers and video", proof: "My UGC and AI model videos use an AI voiceover and AI-generated video, with the captions re-timed word by word to the new voice and every video labelled as AI-generated.", status: "yes", tab: "featReels", cta: "See my UGC videos" },
+      { req: "Swap voiceovers, re-time captions, adjust on-screen text and re-cut", proof: "When a voiceover or line changes, I re-time the captions to the new audio, rebuild the on-screen text so it fits the screen and re-cut so the pacing stays natural.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Strong eye for timing and captions", proof: "Captions timed word by word to the voice, short clean line breaks and music cut to the beat, so it works with the sound on or off.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Take a brief and deliver a finished cut independently", proof: "I follow the script and direction exactly, keep each brand's fonts and colours the same, and send a finished video with a short update. Nothing goes out before it is previewed.", status: "yes", tab: "designs", cta: "See my brand work" },
+      { req: "Iterate based on performance data", proof: "I read Meta Business Suite every week: one client's post views grew 50% to 265K and followers 147% in 90 days, by keeping what worked and re-cutting what did not.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Detail-oriented: catch mistranslations, awkward line breaks and off-sync audio", proof: "I check every caption against the script line by line, watch each export with and without sound, and fix line breaks and sync before it goes out.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Health and wellness DTC experience", proof: "Wellness brand videos and a Facebook Page for a wellness brand in Australia (see the real screenshots), plus a sample wellness UGC video.", status: "yes", tab: "results", cta: "See the real screenshots" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "organized", keys: ["cdcTracker", "cupResults"] }
+    ],
+    workHeads: {
+      reels:     { label: "Meta Video Ads", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, captions, music and transitions made for Instagram, Facebook and TikTok." },
+      featReels: { label: "Voiceover Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI-Assisted Video", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      organized: { label: "Reliable Turnaround", title: "On Time, Every Week.", text: "Trackers and weekly results that keep every video on schedule." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupResults: { solution: "I track every post's views and followers in Meta Business Suite each week and report what worked, so the next cut is better than the last." }
+    },
+    workOverrides: {
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" },
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "banana - Video Editor, Nordic Ad Localization - Maria Simbajon"
+  },
   "unseen-support": {
     label: "Customer Support Assistant (UNSEEN Studios, streetwear online store)",
     headline: "Customer Support Assistant",

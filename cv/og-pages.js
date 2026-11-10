@@ -59,6 +59,7 @@ const PREVIEW = {
   "patient-coordinator":    ["patient-coordinator", "Canada Clinic", "support"],
   "brine-fitness-editor":   ["brine-fitness-editor", "Brine Fitness", "social"],
   "food-lifestyle-editor":  ["food-lifestyle-editor", "Food & Lifestyle", "social"],
+  "nordic-ad-localizer":    ["nordic-ad-localizer", null, "social"],
   "unseen-support":         ["unseen-support", "UNSEEN Studios", "support"],
   "hgbuilt-wunderbuild":    ["hgbuilt-wunderbuild", "HG Built", "operations"],
   "ea-home-services":       ["ea-home-services", "Home Services Company", "admin"],
