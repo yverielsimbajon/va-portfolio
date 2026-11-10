@@ -1928,6 +1928,7 @@ window.RESUME_JOBS = {
   "autocad-sg": {
     label: "AutoCAD Drafter (Singapore)",
     headline: "AutoCAD Drafter",
+    photo: "maria-civil-hardhat.webp",
     headlinePill: true,
     headlineBadge: "5+ Years",
     highlight: { icon: "&#127891;", text: "Civil Engineering Graduate" },
