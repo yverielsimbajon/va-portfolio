@@ -71,7 +71,8 @@ const PREVIEW = {
   "zippeys-ops":            ["zippeys-ops", "Zippey's", "operations"],
   "travel-ig-creator":      ["travel-ig-creator", null, "social"],
   "soto-group-ea":          ["soto-group-ea", null, "admin"],
-  "autocad-sg":             ["autocad-sg", "Singapore Company", "operations"]
+  "autocad-sg":             ["autocad-sg", "Singapore Company", "operations"],
+  "qlayon-email":           ["qlayon-email", "Qlayon", "crm"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
