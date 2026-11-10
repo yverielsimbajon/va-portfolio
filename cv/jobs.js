@@ -2792,7 +2792,7 @@ window.RESUME_JOBS = {
       { req: "Track opens, clicks and orders, and suggest improvements", proof: "I keep trackers and send a short daily update and a weekly report: what went out, what happened, and the one thing to change next.", status: "yes", tab: "speed", cta: "See my reports" },
       { req: "Built or run email flows yourself, in Klaviyo, Omnisend, Mailchimp or another tool", proof: "I build flows myself in GoHighLevel and Mailchimp every week. The trigger, wait, branch and email logic is the same in Klaviyo, so I adapt to the tool you use.", status: "yes", tab: "flows", cta: "See my flows" },
       { req: "Comfortable using AI tools, and can explain how", proof: "I use Claude for first drafts, subject line options and checking copy against the brand's tone, then I edit and proofread every line myself. I can show the steps.", status: "yes" },
-      { req: "Full-time availability and time zone", proof: "Full-time, Philippine time (UTC+8), with 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a power generator.", status: "yes" }
+      { req: "Full-time availability and time zone", proof: "Full-time, up to 12 hours a day, 7am to 7pm in your own time zone: United States, Canada, the United Kingdom, Australia, New Zealand or Ireland. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a power generator.", status: "yes" }
     ],
     workSections: [
       { type: "block", key: "emails" },
@@ -2806,11 +2806,11 @@ window.RESUME_JOBS = {
         campaigns: [{ title: "Email Marketing Campaign - Home Services", note: "Real client: a weather-themed series, private details covered", accent: "#2F5496", tint: "#eaf3ff", chips: ["Real Client", "Brand palette", "Home services"], start: 0,
           alt: "Weather-themed email campaign for a home services client, private details covered",
           emails: [ { name: "Clear Skies", subject: "Today's forecast: 100% sunshine" }, { name: "Long-Range Forecast", subject: "Stay with us all year (now with LIVE GPS tracking)" } ] }]
-      }, campaignsOrder: ["Home Services", "Makeup", "Perfume", "Maria Office"] }
+      }, campaignsOrder: ["Home Services", "Perfume", "Makeup", "Maria Office"] }
     },
     workHeads: {
       emails:      { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
-      flows:       { label: "Flows", title: "Flows That Run on Their Own.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
+      flows:       { label: "Email Flows", title: "Real Clients, Real Screenshots.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
       speed:       { label: "Tracking & Reporting", title: "Results You Can Read in a Minute.", text: "Trackers and a weekly report on what was sent, what happened and what to change." }
     },
     resultsShots: "none",
