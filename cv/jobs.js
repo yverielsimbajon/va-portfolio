@@ -2800,7 +2800,13 @@ window.RESUME_JOBS = {
       { type: "cards", part: "speed", keys: ["cdcTracker", "ghlUpdates"] }
     ],
     workOverrides: {
-      emails: { campaignsOrder: ["Makeup", "Perfume", "Maria Office"] }
+      // Cloud 9 real-client campaign first, private details covered with blue PRIVATE tags (Maria, 2026-11-10)
+      emails: { campaignsPrepend: {
+        items: [{ src: "email-c9-board.jpg" }, { src: "email-c9-1.jpg" }, { src: "email-c9-2.jpg" }],
+        campaigns: [{ title: "Email Marketing Campaign - Home Services", note: "Real client: a weather-themed series, private details covered", accent: "#2F5496", tint: "#eaf3ff", chips: ["Real Client", "Brand palette", "Home services"], start: 0,
+          alt: "Weather-themed email campaign for a home services client, private details covered",
+          emails: [ { name: "Clear Skies", subject: "Today's forecast: 100% sunshine" }, { name: "Long-Range Forecast", subject: "Stay with us all year (now with LIVE GPS tracking)" } ] }]
+      }, campaignsOrder: ["Home Services", "Makeup", "Perfume", "Maria Office"] }
     },
     workHeads: {
       emails:      { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
