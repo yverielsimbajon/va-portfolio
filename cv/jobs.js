@@ -2107,9 +2107,6 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "Instagram · Reels · TikTok · CapCut · Canva · Captions · Organic Growth",
     tagline: "",
-    crown: { photo: "pageant-hero.webp", text: "I was crowned as Miss Philippines Earth Mindanao-Water 2022" },
-    photo: "pageant-hero.webp",
-    aboutPics: ["pageant-02.webp", "pageant-03.webp", "pageant-01.webp", "about-portrait.jpg"],
     summary: "Social Media Manager with 5+ years of experience running Instagram and Reels content for brands. I plan and publish posts, edit Reels with subtitles, music and transitions in CapCut and Canva, and reply to comments and DMs. One client's post views grew 50% to 265K and followers 147% in 90 days.",
     keywords: ["social media manager", "Instagram", "TikTok", "Reels", "carousels", "CapCut", "Canva", "fashion", "clean, minimal aesthetics", "captions", "hashtags", "comments and DMs", "weekly report", "reach", "followers", "organic growth", "portfolio", "availability", "tools"],
     focus: ["social", "design", "english", "admin", "web"],
@@ -2123,7 +2120,7 @@ window.RESUME_JOBS = {
       { req: "Write simple captions and hashtags", proof: "I write short, friendly captions and hashtag sets for every post, and I follow a brand's own texts and tone when they are supplied.", status: "yes", tab: "designs", cta: "See my posts" },
       { req: "Reply to comments and DMs in a friendly way", proof: "I answer comments and messages every day for business pages and for a national pageant in Australia, always warm and on brand.", status: "yes", tab: "smm", cta: "See my work" },
       { req: "Weekly short report: reach, followers, best posts", proof: "I send a weekly update with what was posted and how it did. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
-      { req: "Good taste for fashion and clean, minimal aesthetics", proof: "I was crowned Miss Philippines Earth Mindanao-Water 2022, so I know fashion, shoots and styling from the inside, and I plan feeds around one calm palette.", status: "yes", tab: "feeds", cta: "See my feed plans" },
+      { req: "Good taste for fashion and clean, minimal aesthetics", proof: "I plan feeds around one calm palette and design clean, minimal posts and carousels in the brand's own colours.", status: "yes", tab: "feeds", cta: "See my feed plans" },
       { req: "Organic growth only", proof: "I grow pages with real content, real replies and consistent posting. No bought followers, no bots, no fake engagement.", status: "yes", tab: "results", cta: "See the real screenshots" }
     ],
     workSections: [
@@ -2133,8 +2130,7 @@ window.RESUME_JOBS = {
       { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
       { type: "block", key: "featReels" },
       { type: "block", key: "aiModels" },
-      { type: "block", key: "emails" },
-      { type: "block", key: "pageant" }
+      { type: "block", key: "emails" }
     ],
     workHeads: {
       designs: { label: "Social Media Design", title: "Carousels That Look Clean and Calm.", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
@@ -2143,8 +2139,7 @@ window.RESUME_JOBS = {
       plan:    { label: "Content Strategy", title: "4-5 Posts a Week, Planned Ahead.", text: "A content calendar and posting schedule, so your page keeps growing." },
       featReels: { label: "UGC Videos", title: "Realistic Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
       aiModels:  { label: "AI Model Videos", title: "Your Outfit, Shown in Motion.", text: "A product photo turned into a model video, labelled as AI-generated." },
-      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
-      pageant:   { label: "Fashion Background", title: "Taste for Fashion, From the Inside.", text: "Runway, photoshoots and styling, from my Miss Philippines Earth Mindanao-Water 2022 title." }
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
     },
     reelsContain: true,
     reelsWrap: true,
