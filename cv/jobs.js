@@ -432,7 +432,7 @@ window.RESUME_JOBS = {
       admin:   { label: "Administrative Support", title: "Admin That Keeps Business Organized.", text: "Trackers, calendars, content calendars and weekly updates that keep every day running smoothly." },
       designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
-      feeds:   { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
+      feeds:   { label: "Content Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
     },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
@@ -480,7 +480,7 @@ window.RESUME_JOBS = {
       websites: { label: "Websites & Landing Pages", title: "Pages Built For Your Content.", text: "Websites and landing pages I build and maintain for client brands." },
       designs:  { label: "Marketing Content", title: "Marketing Content For Books & Websites.", text: "Canva graphics, promos, event graphics and short videos I design for client brands." },
       reels:    { label: "Video Editing", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, ready to publish." },
-      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:    { label: "Content Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       brands:   { label: "Brand Identity", title: "A Brand That Looks the Same Everywhere.", text: "Logos, colours and fonts on one sheet, so every post and page stays on brand." },
       social:   { label: "Content Strategy", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
       featReels: { label: "UGC Videos", title: "Product Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." }
@@ -580,7 +580,7 @@ window.RESUME_JOBS = {
       strategy: { label: "Creative Strategy", title: "Strategy That Turns Ideas Into Posts.", text: "Content plans and calendars built around one goal per post and each platform's format." },
       designs:  { label: "Static Creative", title: "Graphics That Stop the Scroll.", text: "Canva and Photoshop posts, carousels, promos and banner-style graphics, with simple variations to test." },
       reels:    { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Fast vertical edits in CapCut with text overlays, music and clean cuts." },
-      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:    { label: "Content Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       copy:     { label: "Copy & Reporting", title: "Words and Weekly Numbers That Work.", text: "Captions with clear CTAs, plus a simple weekly update on what performed." }
     },
     resultsShots: "results",
@@ -629,7 +629,7 @@ window.RESUME_JOBS = {
     workHeads: {
       emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       thesis:  { label: "SketchUp & AutoCAD", title: "Drawings Built Like a Civil Engineer.", text: "My thesis building modeled in SketchUp and drawn in AutoCAD, from the 3D view to dimensioned plates." },
-      feeds:   { label: "Social Media Management", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:   { label: "Social Media Management", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       designs: { label: "Creative Content", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, carousels, promos and event graphics, ready to schedule on Instagram and other platforms." },
       admin:   { label: "Project Coordination", title: "Admin That Keeps Projects Organized.", text: "Trackers, calendars, files and weekly updates that keep every project running smoothly." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." }
@@ -678,7 +678,7 @@ window.RESUME_JOBS = {
       emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       engage:   { label: "Instagram Engagement", title: "Comments That Sound Like a Real Person.", text: "Accounts I run day to day: content calendars, captions in the brand's voice, and replies to comments and messages." },
       outreach: { label: "Prospects & Outreach", title: "Personal Intros, Not Mass Messages.", text: "Lead research, personalized messages and polite follow-ups, with every conversation kept organized." },
-      feeds:    { label: "Instagram Content", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:    { label: "Instagram Content", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       track:    { label: "Tracking & Reporting", title: "A Tracker That Shows What Happened.", text: "Activity records, engagement results and a short daily update on what is next." }
     },
     resultsShots: "results",
@@ -767,7 +767,7 @@ window.RESUME_JOBS = {
       designs: { label: "Graphic Design", title: "Graphics That Look On Brand.", text: "Canva posts, carousels and listing-style graphics with clean typography, spacing and alignment." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Raw footage edited in CapCut with clean captions, music and smooth cuts." },
       copy:    { label: "Copywriting & Scheduling", title: "Captions That Sound Like You.", text: "Hooks and captions written from your source material, then scheduled and organised in a content calendar." },
-      feeds:   { label: "Content Management", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
+      feeds:   { label: "Content Management", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." }
     },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
@@ -813,7 +813,7 @@ window.RESUME_JOBS = {
       emails: { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       reels:   { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Raw footage edited in CapCut with a hook, captions, music and clean cuts." },
       designs: { label: "Visual Storytelling", title: "Graphics That Stop the Scroll.", text: "Canva posts, covers and carousels that match the video and the brand." },
-      feeds:   { label: "Brand Consistency", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:   { label: "Brand Consistency", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       copy:    { label: "Hooks, Captions & Calendar", title: "Words and a Plan That Work.", text: "Captions with clear CTAs and a content calendar that keeps every video on schedule." }
     },
     resultsShots: "results",
@@ -1030,7 +1030,7 @@ window.RESUME_JOBS = {
       social:   { label: "Social Media Management", title: "Posts That Grow Your Brand.", text: "Content calendars and weekly posting that took a client to 265K views and +147% followers in 90 days." },
       designs:  { label: "Brand & Graphics", title: "Graphics in One Elegant Look.", text: "Event graphics, promos and social posts that match your brand." },
       reels:    { label: "Short-Form Video", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, ready for Instagram and Facebook." },
-      feeds:    { label: "Content Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, ready for your launch and events." }
+      feeds:    { label: "Content Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, ready for your launch and events." }
     },
     resultsShots: "results",
     resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
@@ -1889,7 +1889,7 @@ window.RESUME_JOBS = {
       followup: { label: "Follow-Through", title: "Followed Up Until It Is Closed.", text: "Trackers, reminders and daily updates that carry every task from start to done." },
       designs:  { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos, event graphics and short videos, ready to schedule." },
       reels:    { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, posted on a regular schedule." },
-      feeds:    { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
+      feeds:    { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine-post plans around one palette and a fixed layout, previewed before anything goes live." },
       social:   { label: "Content Strategy", title: "Posts That Go Out on Schedule.", text: "A monthly content calendar, scheduled posts and results tracking for Instagram and Facebook." },
       featReels: { label: "UGC Videos", title: "Product Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." }
     },
@@ -2038,7 +2038,7 @@ window.RESUME_JOBS = {
       emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       designs: { label: "Social Media Design", title: "Graphics That Make Posts Stand Out.", text: "Canva posts, promos and event graphics, ready to schedule on Facebook and Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Edited in CapCut with captions and music, made for Instagram and Facebook." },
-      feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
       plan:    { label: "Content Strategy", title: "Consistent Posting That Builds Trust.", text: "A content calendar and posting schedule, so your page keeps growing." }
     },
     /* Same arrangement as the main portfolio: designs, reels (food, burger, pageant), feeds, brand, content plan, UGC */
@@ -2135,7 +2135,7 @@ window.RESUME_JOBS = {
     workHeads: {
       designs: { label: "Social Media Design", title: "Carousels That Look Clean and Calm.", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
-      feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
       plan:    { label: "Content Strategy", title: "4-5 Posts a Week, Planned Ahead.", text: "A content calendar and posting schedule, so your page keeps growing." },
       featReels: { label: "UGC Videos", title: "Realistic Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
       aiModels:  { label: "AI Model Videos", title: "Your Outfit, Shown in Motion.", text: "A product photo turned into a model video, labelled as AI-generated." },
@@ -2240,7 +2240,7 @@ window.RESUME_JOBS = {
     workHeads: {
       designs: { label: "Social Media Design", title: "Carousels That Get Saved and Shared.", text: "Multi-slide Canva carousels and posts with clean text, ready to schedule on Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels That Stop the Scroll.", text: "Strong hooks, quick cuts, captions and music in CapCut, made for Instagram." },
-      feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
       plan:    { label: "Content Strategy", title: "Weekly Batches, Delivered on Time.", text: "A content calendar and posting schedule, so your page keeps growing organically." },
       featReels: { label: "UGC Videos", title: "Short Videos Ready to Post.", text: "Voiceover, captions and clean shots, ready for Instagram." },
       aiModels:  { label: "AI Model Videos", title: "Your Piece, Shown in Motion.", text: "A product photo turned into a model video, labelled as AI-generated." },

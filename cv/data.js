@@ -259,7 +259,7 @@ window.RESUME_BASE = {
         { src: "amb-trial-reelb.mp4", poster: "amb-trial-reelb.jpg", kind: "video", acct: "Reel edit for you", logo: "amb-logo-icon.jpg" },
         { src: "amb-reel2.mp4", poster: "amb-reel2.jpg", kind: "video", acct: "Alanah Mae Beauty", logo: "amb-logo-icon.jpg" }
       ] },
-    feeds: { label: "Instagram content feed I create and plan for you", blurb: "A consistent feed builds trust, and people follow pages that look put together. I plan nine posts at a time around one colour palette, a mix of photos and text posts and a fixed layout, then preview each feed as a flat plan and inside the Instagram app, ready to schedule. Sample feeds, tap to enlarge.",
+    feeds: { label: "Instagram Feed That Looks Put Together", blurb: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live.",
       items: [
         { src: "ig-feed-makeup.webp", phone: "ig-feed-makeup-phone.webp", grid: "ig-feed-makeup-grid.webp", title: "Makeup Brand Based in Los Angeles, CA", note: "Soft, feminine and shoppable", accent: "#8b2f4b", tint: "#fbeff2" },
         { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },

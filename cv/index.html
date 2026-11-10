@@ -639,8 +639,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261110g"></script>
-<script src="jobs.js?v=20261110g"></script>
+<script src="data.js?v=20261110h"></script>
+<script src="jobs.js?v=20261110h"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -863,7 +863,9 @@ function emailsBlock(k){
 }
 function stacked(k){
   const w = B.work[k];
-  return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>
+  // part header already gives the title + one sentence, so no extra text block (Maria, 2026-11-10)
+  const head = J.workHeads && J.workHeads[k] ? "" : `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>`;
+  return `${head}
     <div class="feeds${w.cols === 2 ? " feeds-2" : ""}">${w.items.map((it, n) => `<div class="feed-card" style="--accent:${it.accent};--tint:${it.tint}">
       <div class="feed-top"><div class="feed-title"><span class="feed-num" aria-hidden="true">${String(n + 1).padStart(2, "0")}</span><div><h4>${esc(it.title)}</h4><p>${esc(it.note)}</p></div></div>
         <div class="feed-chips">${(it.chips || ["9-post grid", "5-colour palette", "Phone preview"]).map(c => `<span>${esc(c)}</span>`).join("")}</div></div>
