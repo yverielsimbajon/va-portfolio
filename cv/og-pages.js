@@ -63,7 +63,8 @@ const PREVIEW = {
   "hgbuilt-wunderbuild":    ["hgbuilt-wunderbuild", "HG Built", "operations"],
   "ea-home-services":       ["ea-home-services", "Home Services Company", "admin"],
   "email-designer-ecom":    ["email-designer-ecom", "Ecommerce Brands", "social"],
-  "beauty-in-steel-smm":    ["beauty-in-steel-smm", null, "social"]
+  "beauty-in-steel-smm":    ["beauty-in-steel-smm", null, "social"],
+  "fashion-de-smm":         ["fashion-de-smm", null, "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
