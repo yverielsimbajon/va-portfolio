@@ -2134,7 +2134,7 @@ window.RESUME_JOBS = {
     ],
     workHeads: {
       designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
-      reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
       feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
       plan:    { label: "Content Strategy", title: "4-5 Posts a Week, Planned Ahead.", text: "A content calendar and posting schedule, so your page keeps growing." },
       featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
