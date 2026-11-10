@@ -2806,7 +2806,7 @@ window.RESUME_JOBS = {
         campaigns: [{ title: "Email Marketing Campaign - Home Services", note: "Real client: a weather-themed series, private details blurred", accent: "#2F5496", tint: "#eaf3ff", chips: ["Real Client", "Brand palette", "Home services"], start: 0,
           alt: "Weather-themed email campaign for a window cleaning company, brand name blurred",
           emails: [ { name: "Clear Skies", subject: "Today's forecast: 100% sunshine" }, { name: "Long-Range Forecast", subject: "Stay with us all year (now with LIVE GPS tracking)" } ] }]
-      } }
+      }, campaignsOrder: ["Makeup", "Perfume", "Home Services", "Maria Office"] }
     },
     workHeads: {
       emails:      { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
