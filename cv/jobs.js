@@ -2498,5 +2498,120 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Executive Assistant (Soto Group)"
+  },
+  "blnx-marketing": {
+    label: "Marketing & Events Coordinator (BLNX Aesthetic Distribution, Texas)",
+    headline: "Marketing & Events Coordinator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "GoHighLevel Email & Text · Monthly Newsletter · Canva Flyers · Event Coordination · Lead Tags & Stages · Metricool",
+    tagline: "",
+    summary: "Marketing & Events Coordinator with 5+ years of experience running email and text campaigns, Canva graphics and events for businesses in Australia, the US and Europe. I build GoHighLevel campaigns and workflows, keep leads tagged and staged, check social calendars in Metricool and reply to comments and DMs.",
+    keywords: ["marketing", "events coordinator", "email campaigns", "text message blasts", "GoHighLevel", "monthly email newsletter", "products", "promotions", "education", "events", "audience lists", "pricing", "dates", "links", "spelling", "formatting", "campaign calendar", "performance updates", "Canva", "flyers", "invitations", "promotional graphics", "brand guidelines", "event calendar", "Eventbrite", "registration forms", "attendee lists", "QR codes", "confirmations", "reminders", "post-event communications", "import leads", "duplicates", "tags", "opportunity stages", "sales reps", "follow-up", "Metricool", "captions", "content creator", "approve posts", "comments", "direct messages", "Central Time"],
+    focus: ["crm", "social", "design", "admin", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Prepare, schedule and send approved email campaigns and text message blasts through GoHighLevel", proof: "I build and send email and SMS campaigns, confirmations and reminders in GoHighLevel for a wellness brand in Australia, organised in 7 workflow folders.", status: "yes", tab: "email", cta: "See my GoHighLevel campaigns" },
+      { req: "Create the monthly email newsletter: products, promotions, education and events", proof: "I design whole email campaigns in the brand's colours with one clear button in every email: welcome, services, proof and offer emails.", status: "yes", tab: "emails", cta: "See my email designs" },
+      { req: "Check audience lists, pricing, dates, links, spelling and formatting before sending", proof: "I test every workflow, booking link and email myself before it goes live, and I check each date, price and link against the approved brief.", status: "yes", tab: "email", cta: "See the checks I run" },
+      { req: "Maintain a campaign calendar and share basic performance updates", proof: "I keep a monthly content and campaign calendar and send a short weekly update. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Create flyers, invitations and promotional graphics in Canva using brand guidelines", proof: "I design event flyers, promos, vouchers and invitations in Canva in each brand's own colours and fonts, and keep every approved file organised in Google Drive.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Maintain the event calendar, registrations, attendee lists and post-event communications", proof: "I manage an events pipeline of 84 opportunities (Booked, Attended, No Show, Cancelled), 61 booking calendars and 200+ calendar events, with ticket, confirmation and reminder workflows.", status: "yes", tab: "events", cta: "See my event coordination" },
+      { req: "Create and update Eventbrite pages, registration forms and QR codes", proof: "I set up event registrations, ticket follow-ups and booking widgets in GoHighLevel. I follow your Eventbrite steps exactly and check every date, price and link before a page goes live.", status: "yes", tab: "events", cta: "See my event setups" },
+      { req: "Import event leads, remove duplicates, apply tags and opportunity stages, assign to sales reps", proof: "I keep a 1,400+ contact lead database clean, and move GoHighLevel opportunities into the right stages with source, value and notes up to date.", status: "yes", tab: "leads", cta: "See my lead records" },
+      { req: "Track follow-up activity and flag outstanding leads", proof: "I follow up by email, SMS and message until each lead confirms, and flag who is still outstanding in my daily update.", status: "yes", tab: "leads", cta: "See my follow-ups" },
+      { req: "Review the Metricool calendar weekly and check captions, graphics, promotions, dates and links", proof: "I schedule and review posts in Metricool and Meta Business Suite, and check every caption, graphic, date and link before it is approved.", status: "yes", tab: "plan", cta: "See my content calendar" },
+      { req: "Monitor comments and DMs in the brand's voice and route inquiries", proof: "I answer comments, messages and enquiries every day for business pages and a national pageant in Australia, and pass each inquiry to the right person.", status: "yes", tab: "email", cta: "See my enquiry replies" },
+      { req: "Strong written English and attention to detail", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Check-ins during Houston/Central Time business hours", proof: "Yes. I already work with clients in the United States, on 65 Mbps fiber with backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "email", keys: ["plushEmail", "ghlWorkflows", "ghlConvos"] },
+      { type: "cards", part: "events", keys: ["ghlPipeline", "ghlBooking", "pgFollow"] },
+      { type: "cards", part: "leads", keys: ["ghlLeads", "ghlRecords", "cdcFollow"] },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      email:   { label: "Email & Text Marketing", title: "Campaigns Checked Before They Send.", text: "Email and text campaigns, confirmations and reminders I build and send in GoHighLevel." },
+      events:  { label: "Event Coordination", title: "Every Attendee Tracked, Every Reminder Sent.", text: "Registrations, attendee stages, confirmations and reminders kept on schedule for every event." },
+      leads:   { label: "GoHighLevel & Lead Organization", title: "Leads Tagged, Staged and Followed Up.", text: "Clean lead records with the right tags, stages and follow-ups, so no lead is missed." },
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Social Media Oversight", title: "Metricool Calendar, Checked Every Week.", text: "A content calendar reviewed for captions, dates and links before every post is approved." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, review the captions, and schedule every post, Reel and story with Metricool and Meta Business Suite, checking dates and links before anything goes live.",
+        tools: ["Metricool", "Meta Business Suite", "Notion", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "BLNX Marketing Coordinator"
   }
 };
