@@ -2785,36 +2785,22 @@ window.RESUME_JOBS = {
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Live client work and practice samples are labelled. Tap a row for the proof.",
     match: [
-      { req: "Plan, write and send email campaigns", proof: "Practice samples: two four-email campaigns with their own colours and voice, a perfume launch (hero, signature product, gift edit, abandoned-bag return) and a makeup launch (tease, launch, tutorial, offer). Live work: email and text campaigns, follow-ups and reminders for a wellness brand in Australia.", status: "yes", tab: "emailVelour", cta: "See the campaigns" },
+      { req: "Plan, write and send email campaigns", proof: "Practice samples: two four-email campaigns with their own colours and voice, a perfume launch (hero, signature product, gift edit, abandoned-bag return) and a makeup launch (tease, launch, tutorial, offer). Live work: email and text campaigns, follow-ups and reminders for a wellness brand in Australia.", status: "yes", tab: "emails", cta: "See the campaigns" },
       { req: "Build, test and improve flows: welcome, abandoned cart, post-purchase and win-back", proof: "Live work: confirmation, reminder and follow-up flows in GoHighLevel and Mailchimp, sorted into 7 workflow folders, tested myself before they go live. Practice sample: a welcome series and an abandoned-bag email in the perfume campaign.", status: "yes", tab: "flows", cta: "See the email flows" },
       { req: "Segment the list so each customer gets the right message", proof: "I keep a 1,400+ contact database clean in GoHighLevel with tags and statuses, so each person gets the reminder, follow-up or offer that fits where they are.", status: "yes", tab: "flows", cta: "See the CRM work" },
-      { req: "Write clear, warm emails in English, in the brand's tone", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. Every sample has its own voice, and I proofread each email before it goes out.", status: "yes", tab: "emailRose", cta: "See a second brand" },
+      { req: "Write clear, warm emails in English, in the brand's tone", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. Every sample has its own voice, and I proofread each email before it goes out.", status: "yes", tab: "emails", cta: "See a second brand" },
       { req: "Track opens, clicks and orders, and suggest improvements", proof: "I keep trackers and send a short daily update and a weekly report: what went out, what happened, and the one thing to change next.", status: "yes", tab: "speed", cta: "See my reports" },
       { req: "Built or run email flows yourself, in Klaviyo, Omnisend, Mailchimp or another tool", proof: "I build flows myself in GoHighLevel and Mailchimp every week. The trigger, wait, branch and email logic is the same in Klaviyo, so I adapt to the tool you use.", status: "yes", tab: "flows", cta: "See my flows" },
       { req: "Comfortable using AI tools, and can explain how", proof: "I use Claude for first drafts, subject line options and checking copy against the brand's tone, then I edit and proofread every line myself. I can show the steps.", status: "yes" },
       { req: "Full-time availability and time zone", proof: "Full-time, Philippine time (UTC+8), with 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a power generator.", status: "yes" }
     ],
     workSections: [
-      { type: "block", key: "emailVelour" },
-      { type: "block", key: "emailRose" },
+      { type: "block", key: "emails" },
       { type: "cards", part: "flows", keys: ["plushEmail", "ghlWorkflows", "pgFollow"] },
       { type: "cards", part: "speed", keys: ["cdcTracker", "ghlUpdates"] }
     ],
-    workOverrides: {
-      emailVelour: {
-        label: "Practice sample: VELOUR Perfume",
-        blurb: "A four-email campaign for a made-up luxury perfume brand (practice work, not a live client): the launch, the bestselling signature, the gift edit and the abandoned-bag return. Tap to enlarge.",
-        items: [1, 2, 3, 4].map(n => ({ src: "email-velour-" + n + ".jpg", thumb: "email-velour-" + n + ".jpg" }))
-      },
-      emailRose: {
-        label: "Practice sample: Makeup Brand Rose",
-        blurb: "A four-email campaign for a made-up makeup brand (practice work, not a live client), with its own colours and voice. Tap to enlarge.",
-        items: [1, 2, 3, 4].map(n => ({ src: "email-rose-" + n + ".jpg", thumb: "email-rose-" + n + ".jpg" }))
-      }
-    },
     workHeads: {
-      emailVelour: { label: "Email Campaigns", title: "Campaigns That Bring Customers Back.", text: "A launch, a bestseller, a gift edit and a saved-bag reminder, each with one clear button." },
-      emailRose:   { label: "Brand Tone", title: "Warm Emails in Every Brand's Voice.", text: "The same structure, written and styled for a different brand and customer." },
+      emails:      { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
       flows:       { label: "Flows", title: "Flows That Run on Their Own.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
       speed:       { label: "Tracking & Reporting", title: "Results You Can Read in a Minute.", text: "Trackers and a weekly report on what was sent, what happened and what to change." }
     },
