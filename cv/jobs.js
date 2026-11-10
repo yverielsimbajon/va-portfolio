@@ -2133,12 +2133,12 @@ window.RESUME_JOBS = {
       { type: "block", key: "emails" }
     ],
     workHeads: {
-      designs: { label: "Social Media Design", title: "Carousels That Look Clean and Calm.", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels That Keep People Watching.", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
       feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
       plan:    { label: "Content Strategy", title: "4-5 Posts a Week, Planned Ahead.", text: "A content calendar and posting schedule, so your page keeps growing." },
-      featReels: { label: "UGC Videos", title: "Realistic Videos Ready to Post.", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
-      aiModels:  { label: "AI Model Videos", title: "Your Outfit, Shown in Motion.", text: "A product photo turned into a model video, labelled as AI-generated." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
       emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
     },
     reelsContain: true,
