@@ -2210,5 +2210,112 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Social Media Manager (Fashion Brand, Germany)"
+  },
+  "travel-ig-creator": {
+    label: "Travel & Lifestyle Instagram Content Creator / Video Editor",
+    headline: "Instagram Content Creator / Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Travel & Lifestyle · Instagram Reels · Photo Carousels · CapCut · Canva · Hook-Driven Captions · Weekly Batches",
+    tagline: "",
+    summary: "Creative Content Creator and Video Editor with 5+ years of experience turning raw footage into scroll-stopping Instagram Reels and photo carousels. I research trends, edit with hooks, captions and music, and deliver on weekly deadlines. One client's post views grew 50% to 265K and followers 147% in 90 days.",
+    keywords: ["content creator", "video editor", "travel", "lifestyle", "Instagram Reels", "photo carousels", "raw photos and videos", "Google Drive", "CapCut", "trending audio", "trends", "3-second visual hooks", "short-form pacing", "clean text placement", "hook-driven captions", "weekly batches", "unique", "fresh content ideas", "tools", "trend idea", "portfolio", "organically"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Your content: 2-3 Reels you edited", proof: "The Reels below are mine: food, burger, promo and before-and-after edits with captions and music, plus UGC product videos. Tap any phone to play it.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Tools: the main editing apps", proof: "CapCut for every Reel, Canva for carousels, posts and covers, and Google Drive to receive footage and send each batch back.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Browse trip folders and edit scroll-stopping Reels from raw footage", proof: "I sort a folder of raw clips and photos, pick the strongest shots first and cut them into a finished Reel with captions and music. One client's post views grew 50% to 265K in 90 days.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Strong 3-second hooks, short-form pacing and clean text placement", proof: "Every Reel opens on the best moment with a short on-screen hook, quick cuts on the beat and captions kept clear of the face and the key shot.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Photo carousels with written captions", proof: "I design multi-slide carousels in Canva, write the caption and the first-line hook for each, and keep one palette across the whole feed.", status: "yes", tab: "designs", cta: "See my carousels" },
+      { req: "Trending audio and travel formats", proof: "I check what is trending each week, match the audio to the footage and send the audio note with every draft, so you can post it straight away.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Weekly batches on time, ready for you to schedule", proof: "I plan a weekly mix of Reels, carousels and posts with a content calendar, deliver the batch in a shared Drive folder and you schedule it.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Self-starter who pitches fresh ideas", proof: "I made feed plans and sample Reels without a brief and send new ideas with every batch.", status: "yes", tab: "feeds", cta: "See my feed plans" },
+      { req: "Trend idea: one Reel format for travel footage right now", proof: "\"Skip this, do this instead\": open on the most beautiful shot with the hook text \"Don't do this in [place]\", cut to the crowded tourist spot for one second, then show the quiet local favourite on a trending sound, and end on a save-worthy tip.", status: "yes", tab: "reels", cta: "See how I edit" }
+    ],
+    workSections: [
+      { type: "block", key: "designs" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Carousels That Get Saved and Shared.", text: "Multi-slide Canva carousels and posts with clean text, ready to schedule on Instagram." },
+      reels:   { label: "Instagram Videos", title: "Reels That Stop the Scroll.", text: "Strong hooks, quick cuts, captions and music in CapCut, made for Instagram." },
+      feeds:   { label: "Instagram Feed Planning", title: "A Feed That Looks Put Together.", text: "Nine-post plans around one palette, previewed before anything goes live." },
+      plan:    { label: "Content Strategy", title: "Weekly Batches, Delivered on Time.", text: "A content calendar and posting schedule, so your page keeps growing organically." },
+      featReels: { label: "UGC Videos", title: "Short Videos Ready to Post.", text: "Voiceover, captions and clean shots, ready for Instagram." },
+      aiModels:  { label: "AI Model Videos", title: "Your Piece, Shown in Motion.", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    /* shared card text in data.js says "ready to learn": replace it for this resume (never-say-learning rule) */
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool, so a page posts every week without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" },
+          { src: "ai-model-walk-turn-pose.mp4", poster: "ai-model-walk-turn-pose.jpg", name: "Walk, Turn, Pose" },
+          { src: "ai-model-before-after.mp4", poster: "ai-model-before-after.jpg", name: "Before and After" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Travel & Lifestyle Content Creator / Video Editor"
   }
 };
