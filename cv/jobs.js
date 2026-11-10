@@ -1925,6 +1925,42 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Wunderbuild Virtual Assistant"
   },
+  "autocad-sg": {
+    label: "AutoCAD Drafter (Singapore)",
+    headline: "AutoCAD Drafter",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    highlight: { icon: "&#127891;", text: "Civil Engineering Graduate" },
+    sub: "AutoCAD · Layout & Working Drawings · Title Blocks · Dimensions · Submission Sets · Singapore Hours",
+    tagline: "",
+    summary: "Civil Engineering graduate and Virtual Assistant with 5+ years of experience, drafting in AutoCAD. I draw plans, elevations, structural details and title blocks to exact dimensions, ready for your engineer to review.",
+    keywords: ["AutoCAD", "drafting", "layout", "renovation", "as-built", "working drawings", "layers", "lineweights", "title block", "submission sets", "QP endorsement", "HDB", "MCST", "BCA", "URA", "SCDF", "Singapore"],
+    focus: ["admin", "ops", "english"],
+    order: ["work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Drafting in AutoCAD: layout, renovation, as-built and working drawings", proof: "I drew a full set of plates in AutoCAD for my Civil Engineering thesis: front and side elevations, roof framing and truss plans, footing and column details, a power layout and a solar system diagram. Tap to see the drawings.", status: "yes", tab: "drawings", cta: "See my AutoCAD drawings" },
+      { req: "Layers, lineweights and title block", proof: "Every plate in my set has its own title block and dimensions, arranged neatly and kept consistent from the first sheet to the last.", status: "yes", tab: "drawings", cta: "See the title blocks" },
+      { req: "Submission-ready drawing sets for your QP's endorsement", proof: "As a Civil Engineering graduate I am used to drawings that an engineer reviews and signs. I follow the QP's markups exactly and check every sheet against your requirements list before I send the set.", status: "yes", tab: "site", cta: "See my site and engineering work" },
+      { req: "Reading plans and working with engineers", proof: "I trained in the field with an automatic level and tripod and worked as a Project Engineering Intern, so I speak the language of engineers and contractors.", status: "yes", tab: "site", cta: "See my site work" },
+      { req: "AutoCAD drawings only, as requested", proof: "Understood. I deliver exactly the drawings you ask for, in the format and naming you set, on time.", status: "yes" },
+      { req: "Singapore company, Singapore hours", proof: "I am in the Philippines, in the same time zone as Singapore, with 65 Mbps fiber, a backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "drawings", keys: ["thesisAutocad"] },
+      { type: "cards", part: "site", keys: ["engSurvey", "engInternship"] }
+    ],
+    workHeads: {
+      drawings: { label: "AutoCAD Drafting", title: "Drawings Built to Exact Dimensions.", text: "Plans, elevations, framing and details drawn in AutoCAD, each sheet with its own title block." },
+      site:     { label: "Engineering Background", title: "I Read Drawings Like an Engineer.", text: "Site measurements and an engineering internship from my Civil Engineering degree." }
+    },
+    resultsShots: "none",
+    stats: ["years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "AutoCAD Drafter"
+  },
   "ea-home-services": {
     intro: { video: "../images/intro-hi-six.mp4", poster: "../images/intro-poster.jpg" },
     label: "Executive Assistant (fast-growing home services company, Australia)",
