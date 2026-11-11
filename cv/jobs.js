@@ -2958,7 +2958,7 @@ window.RESUME_JOBS = {
       { type: "cards", part: "local", keys: ["seoAi"] }
     ],
     workHeads: {
-      websites:    { label: "Lead Funnels & Landing Pages", title: "Pages That Turn Visitors Into Booked Calls.", text: "Live client sites and concepts built around one clear request, mobile-friendly and simple to fill in." },
+      websites:    { label: "Lead Funnels & Landing Pages", title: "Funnels I Created on GoHighLevel.", text: "Live client sites and concepts built around one clear request, mobile-friendly and simple to fill in." },
       automations: { label: "Lead Follow-Up Automations", title: "Every Lead Followed Up.", text: "Email and SMS confirmations, reminders and follow-ups I build in GoHighLevel, so no lead is left waiting." },
       pipeline:    { label: "CRM & Sales Pipeline", title: "See Where Every Prospect Stands.", text: "Opportunity stages, lead sources and clean records, with documented processes your team can follow." },
       local:       { label: "Local Search", title: "Found by Local Customers.", text: "On-page SEO and AI search optimization for a local service business in Australia." }
