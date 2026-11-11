@@ -73,7 +73,8 @@ const PREVIEW = {
   "soto-group-ea":          ["soto-group-ea", null, "admin"],
   "autocad-sg":             ["autocad-sg", "Singapore Company", "operations"],
   "qlayon-email":           ["qlayon-email", "Qlayon", "crm"],
-  "alfonso-travel-editor":  ["alfonso-travel-editor", "Alfonso Boada", "social"]
+  "alfonso-travel-editor":  ["alfonso-travel-editor", "Alfonso Boada", "social"],
+  "ghl-lead-system":        ["ghl-lead-system", null, "crm"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 

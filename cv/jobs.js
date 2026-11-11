@@ -2926,5 +2926,48 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Travel Video Editor"
+  },
+  "ghl-lead-system": {
+    label: "GoHighLevel Expert: Snapshot, Funnels & Lead Automations (Hank, local marketing business)",
+    headline: "GoHighLevel Expert",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "GoHighLevel · Lead Funnels · Email & SMS Workflows · Sales Pipeline · Snapshots · Local Search",
+    tagline: "",
+    codeWord: "GHL Lead System",
+    summary: "GoHighLevel specialist with 5+ years supporting local businesses in Australia, the United States and Europe, building follow-up workflows, booking calendars and sales pipelines. I build the landing page and form, connect the calendar, set up email and SMS follow-up, and test every step before it goes live.",
+    keywords: ["GoHighLevel", "GHL", "snapshot", "funnels", "landing pages", "lead capture", "appointment booking", "forms", "surveys", "calendar", "booking confirmations", "thank-you pages", "mobile-friendly", "tracking", "workflows", "automations", "email", "SMS", "reminders", "missed appointments", "cancellations", "notifications", "tasks", "tags", "custom fields", "triggers", "pipeline", "opportunity stages", "lead sources", "local search", "Google Maps", "Google Business Profile", "local SEO", "walkthrough", "documentation", "test"],
+    focus: ["crm", "leads", "web", "admin", "english"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Experience building GoHighLevel funnels, workflows and snapshots", proof: "I build GoHighLevel workflows for a live client account: SMS and email confirmations, reminders, ticket purchases and follow-ups, sorted into 7 workflow folders. I build every part so it packs cleanly into a snapshot, and I test the install in a separate account before handover.", status: "yes", tab: "automations", cta: "See my workflows" },
+      { req: "Lead generation and appointment-booking systems", proof: "I manage 61 GoHighLevel booking calendars and 200+ calendar events, and I built a live service website designed to bring in quote enquiries.", status: "yes", tab: "websites", cta: "See my pages" },
+      { req: "Organise a CRM and sales pipeline", proof: "I run an events pipeline of 84 opportunities through Booked, Attended, No Show and Cancelled, with source, value and notes kept up to date, and a 1,400+ contact lead database.", status: "yes", tab: "pipeline", cta: "See my pipeline" },
+      { req: "Email and SMS follow-up workflows", proof: "Confirmations, reminders and follow-up sequences by email and SMS, running every day for a wellness brand in Australia.", status: "yes", tab: "automations", cta: "See my follow-ups" },
+      { req: "Forms, calendars, tags, custom fields and triggers", proof: "My workflows start from bookings and form submissions, add tags and move opportunities to the right stage, so each lead's status is clear.", status: "yes", tab: "automations", cta: "See my triggers" },
+      { req: "Local businesses, Google Business Profile or local SEO (a plus)", proof: "I published posts to Google Business Profile for a US company, and set up SEO and AI search optimization for a landscaping business in Australia so local customers can find it.", status: "yes", tab: "local", cta: "See my local SEO" },
+      { req: "Explain recommendations clearly, plus a walkthrough and documentation", proof: "Online English teacher and former Editor-in-Chief. I write step-by-step SOPs in Notion and send clear daily and weekly updates, and I will record a screen walkthrough of every workflow.", status: "yes", tab: "pipeline", cta: "See my documentation" },
+      { req: "Attention to detail and willingness to test your work", proof: "I submit every form, book every calendar and check every email and SMS myself before anything goes live.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "cards", part: "automations", keys: ["ghlWorkflows", "ghlBooking", "ghlConvos"] },
+      { type: "cards", part: "pipeline", keys: ["ghlPipeline", "ghlRecords", "ghlLeads", "ghlUpdates"] },
+      { type: "cards", part: "local", keys: ["seoAi"] }
+    ],
+    workHeads: {
+      websites:    { label: "Lead Funnels & Landing Pages", title: "Pages That Turn Visitors Into Booked Calls.", text: "Live client sites and concepts built around one clear request, mobile-friendly and simple to fill in." },
+      automations: { label: "Lead Follow-Up Automations", title: "Every Lead Followed Up.", text: "Email and SMS confirmations, reminders and follow-ups I build in GoHighLevel, so no lead is left waiting." },
+      pipeline:    { label: "CRM & Sales Pipeline", title: "See Where Every Prospect Stands.", text: "Opportunity stages, lead sources and clean records, with documented processes your team can follow." },
+      local:       { label: "Local Search", title: "Found by Local Customers.", text: "On-page SEO and AI search optimization for a local service business in Australia." }
+    },
+    resultsShots: "none",
+    resultsNote: "GoHighLevel work: calendars, workflows, pipelines and lead records I build and manage.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "GHL Lead System"
   }
 };
