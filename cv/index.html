@@ -640,8 +640,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261111m"></script>
-<script src="jobs.js?v=20261111m"></script>
+<script src="data.js?v=20261111n"></script>
+<script src="jobs.js?v=20261111n"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -654,6 +654,11 @@ const IMG = "../images/", THUMB = "../images/thumbs/";
 const qp = new URLSearchParams(location.search);
 const key = (qp.get("job") || (location.pathname.match(/\/cv\/([^\/]+)\/?$/) || [])[1] || "default").toLowerCase();
 const J = Object.assign({}, JOBS.default, JOBS[key] || {});
+// per-job edit of a website card by title: J.webProjectOverrides = { "Title": { group, title, desc, btn, first } }
+if (J.webProjectOverrides && B.webProjects){
+  B.webProjects = B.webProjects.map(p => J.webProjectOverrides[p.title] ? Object.assign({}, p, J.webProjectOverrides[p.title]) : p);
+  B.webProjects.sort((x, y) => (y.first ? 1 : 0) - (x.first ? 1 : 0));
+}
 // per-job replacement of a work block (items, blurb...): J.workOverrides = { designs: { blurb, items } }
 if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => {
   const ov = Object.assign({}, J.workOverrides[k]);
