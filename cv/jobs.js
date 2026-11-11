@@ -3246,5 +3246,114 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Brand Designer application"
+  },
+  "resmile-marketing": {
+    label: "Digital Marketing & Lead Generation Specialist (ReSmile, Australia)",
+    headline: "Digital Marketing & Lead Generation Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Facebook & Instagram · Meta Business Suite · Reels · Canva · Lead Generation · Australian Audiences",
+    tagline: "",
+    codeWord: "RESMILE LAUNCH",
+    summary: "Digital Marketing & Lead Generation Specialist with 5+ years managing Facebook and Instagram business accounts for beauty, healthcare and service brands. I create Canva graphics, Reels and ad creatives, plan monthly content calendars, and turn enquiries into booked consultations with lead funnels and follow-ups.",
+    keywords: ["digital marketing", "lead generation", "Facebook", "Instagram", "Meta Business Suite", "Meta Ads Manager", "paid advertising", "advertising graphics", "ad creatives", "Reels", "Stories", "carousel", "captions", "marketing copy", "content calendar", "monthly content calendars", "Canva", "video editing", "engagement", "brand awareness", "brand trust", "enquiries", "consultation bookings", "cost per lead", "weekly reporting", "recommendations", "Australian audiences", "Australia", "dental", "healthcare", "cosmetic", "beauty", "lifestyle", "aesthetic clinic", "launch", "proactive", "independently", "reliable"],
+    focus: ["social", "design", "leads", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Facebook and Instagram business account management", proof: "From 2022 to 2025 I ran Facebook and Instagram for an aesthetic clinic and two skincare and wellness brands, and I post daily on Instagram for a window cleaning company in Sydney.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Plan and maintain monthly content calendars", proof: "I plan a month of Reels, Stories, carousels and posts ahead in a content calendar and schedule them in Meta Business Suite, so the page never goes quiet.", status: "yes", tab: "plan", cta: "See my calendars" },
+      { req: "Content creation and Canva", proof: "I design posts, carousels, promos and educational graphics in Canva, always in the brand's own colours and fonts.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Instagram Reels and video editing", proof: "Every Reel I edit has a hook in the first second, clean cuts, subtitles and music, made for Instagram and Facebook.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Create advertising graphics, videos and copy", proof: "I edit UGC-style product videos with voiceover and captions, ready to run as Instagram or Facebook ads, and write the ad copy and captions to match.", status: "yes", tab: "featReels", cta: "See my ad videos" },
+      { req: "Meta Business Suite, advertising metrics and weekly reporting", proof: "I read reach, views, followers and enquiries in Meta Business Suite every week and send a short report with what to post or test next. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the real screenshots" },
+      { req: "Facebook and Instagram lead generation: genuine enquiries and consultation bookings", proof: "At the aesthetic clinic I handled enquiries, bookings and follow-ups from our social pages. Today I manage 61 GoHighLevel booking calendars and email and SMS follow-ups for a wellness brand in Australia, so every enquiry gets an answer and a booked time.", status: "yes", tab: "leads", cta: "See my lead follow-ups" },
+      { req: "Experience marketing to Australian audiences", proof: "I work with an Australian wellness brand, a national pageant in Australia, a landscaping business and a window cleaning company in Sydney, all on Australian time.", status: "yes", tab: "results", cta: "See my Australian work" },
+      { req: "Dental, healthcare, cosmetic, beauty or lifestyle industries", proof: "Three years marketing an aesthetic clinic and skincare brands, plus an aesthetic clinic Instagram feed and website concept with an online consultation booking form.", status: "yes", tab: "feeds", cta: "See my clinic feed" },
+      { req: "Proactive, reliable and able to work independently", proof: "I keep my own trackers and calendars, bring new content ideas every week, and deliver on time without being reminded.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "cards", part: "leads", keys: ["ghlBooking", "ghlWorkflows", "ghlPipeline"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Instagram & Facebook Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Content Strategy", title: "A Month of Content, Planned Ahead.", text: "Monthly content calendars for Facebook and Instagram, so ReSmile launches with a steady, trusted presence." },
+      leads:   { label: "Lead Generation", title: "Every Enquiry Followed Up.", text: "Booking calendars, email and SMS follow-ups and pipelines that turn enquiries into consultation bookings." },
+      featReels: { label: "Ad Creatives & UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a monthly content calendar, write the captions, and schedule every post, Reel and Story with Meta Business Suite and Metricool, so a page posts consistently without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Facebook", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do, ready to run as ads. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "RESMILE LAUNCH - Digital Marketing & Lead Generation Specialist"
   }
 };
