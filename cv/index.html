@@ -641,8 +641,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261111z2"></script>
-<script src="jobs.js?v=20261111z2"></script>
+<script src="data.js?v=20261111z3"></script>
+<script src="jobs.js?v=20261111z3"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -660,6 +660,8 @@ if (J.webProjectOverrides && B.webProjects){
   B.webProjects = B.webProjects.map(p => J.webProjectOverrides[p.title] ? Object.assign({}, p, J.webProjectOverrides[p.title]) : p);
   B.webProjects.sort((x, y) => (y.first ? 1 : 0) - (x.first ? 1 : 0));
 }
+// per-job hiding of website cards by title: J.webProjectsHide = ["Landscaping Services in Australia", ...]
+if (J.webProjectsHide && B.webProjects) B.webProjects = B.webProjects.filter(p => !J.webProjectsHide.includes(p.title));
 // per-job card order by title: J.webProjectsOrder = ["Cleaning Services", ...]; titles not listed keep their order after these
 if (J.webProjectsOrder && B.webProjects){
   const r = t => { const i = J.webProjectsOrder.indexOf(t); return i < 0 ? 999 : i; };
@@ -923,7 +925,7 @@ const WB = {
   crm: n => loopBlock("crm", "CRM screenshot"),
   smm: n => loopBlock("smm", "Content planning screenshot"),
   admin: n => loopBlock("admin", "Admin screenshot"),
-  websites: n => B.webProjects ? `<h2 class="title wsub">Website designs I create</h2><p class="blurb">Real client websites and design concepts. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
+  websites: n => B.webProjects ? `<h2 class="title wsub">Website designs I create</h2><p class="blurb">${J.webProjectsHide ? "Website design concepts" : "Real client websites and design concepts"}. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
 };
 
 S.experience = () => {

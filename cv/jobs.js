@@ -3096,7 +3096,7 @@ window.RESUME_JOBS = {
     headlineBadge: "5+ Years",
     sub: "SiteGround Email · DNS & MX Records · Google Workspace · WordPress · Account Security · 1300 Number",
     tagline: "",
-    summary: "Philippines-based IT specialist with 5+ years supporting Australian businesses with WordPress websites, domains, DNS records and Google Workspace. I follow setup steps exactly, test every email and form myself, and keep every login confidential.",
+    summary: "Philippines-based IT specialist with 5+ years supporting Australian businesses with WordPress, domains, DNS records and Google Workspace. I update WordPress content and contact details, test every email and form myself, and keep every login confidential.",
     keywords: ["IT specialist", "SiteGround", "business email", "email delivery", "Google Workspace", "DNS", "MX records", "WordPress", "website content", "contact details", "ownership change", "secure", "website and email accounts", "email access", "contact forms", "1300 number", "Australian business", "confidentiality", "data security", "one-off project"],
     focus: ["web", "admin", "ops", "english", "crm"],
     order: ["results", "work", "experience", "skills", "why", "contact"],
@@ -3104,12 +3104,12 @@ window.RESUME_JOBS = {
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
       { req: "Troubleshoot SiteGround business email delivery", proof: "I test delivery myself: send a test email both ways, read the bounce message, then check the mailbox settings, the sender records and the DNS in that order. I follow the host's own steps and report each finding with screenshots, so you can see exactly what was wrong and what fixed it.", status: "yes", tab: "websites", cta: "See my domain work" },
-      { req: "Investigate Google Workspace and DNS configuration", proof: "Google Workspace every day for 5+ years, and DNS records in Cloudflare for client domains: A, CNAME and TXT records, custom domains and SSL verification. I check every record against the setup steps and verify it after the change.", status: "yes", tab: "websites", cta: "See my domain work" },
-      { req: "Update WordPress website content and contact details", proof: "WordPress is part of my website toolkit, with Wix Studio, Webflow and Framer. I update text, phone numbers, emails and addresses on live client sites, then check every page on phone and desktop.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Investigate Google Workspace and DNS configuration", proof: "Google Workspace every day for 5+ years, and DNS records in Cloudflare for my own domain and website projects: A, CNAME and TXT records, custom domains and SSL verification. I check every record against the setup steps and verify it after the change.", status: "yes", tab: "websites", cta: "See my domain work" },
+      { req: "Update WordPress website content and contact details", proof: "WordPress is part of my website toolkit, with Wix Studio, Webflow and Framer. I update text, phone numbers, emails and addresses on the websites I build, then check every page on phone and desktop.", status: "yes", tab: "websites", cta: "See my websites" },
       { req: "Secure website and email accounts following a business ownership change", proof: "I list every account first (website, hosting, domain, email, social), then change the passwords, turn on two-step verification, remove old access and hand you the finished list. I already hold logins for client CRMs, hosting and domains, and I keep them in a password manager.", status: "yes", tab: "records", cta: "See my records" },
       { req: "Configure business email access and contact forms", proof: "I set up sender details, signatures and email settings in Google Workspace and GoHighLevel, and I have built working request forms. I submit every form myself and confirm the enquiry arrives in the right inbox.", status: "yes", tab: "forms", cta: "See my forms and follow-up" },
       { req: "Assist with integrating a new Australian 1300 business number", proof: "I update every place the number appears (website, contact forms, email signatures, booking pages), then call it myself to test. For the phone line itself I follow your provider's setup steps exactly.", status: "yes", tab: "forms", cta: "See my follow-up work" },
-      { req: "Strong WordPress and SiteGround experience", proof: "I connect domains to live client sites and work from the host's own steps. I take a backup first, change one thing at a time and check the site after every change.", status: "yes", tab: "websites", cta: "See the live sites" },
+      { req: "Strong WordPress and SiteGround experience", proof: "I connect domains to my own site and my website projects, and work from the host's own steps. I take a backup first, change one thing at a time and check the site after every change.", status: "yes", tab: "websites", cta: "See my websites" },
       { req: "Experience with DNS, MX records and Google Workspace", proof: "DNS and Google Workspace are tools I use for client work today. MX records are set from the email provider's own values, and I verify the mail flow with a test email after the change.", status: "yes", tab: "websites", cta: "See my domain work" },
       { req: "Good written English and communication skills", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I send a short update after every step: what I did, what I saw, and what I need from you.", status: "yes", tab: "records", cta: "See my updates" },
       { req: "Ability to work remotely with an Australian business", proof: "I already work with Australian clients every day: a landscaping company, a wellness brand and a national pageant. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" },
@@ -3122,10 +3122,11 @@ window.RESUME_JOBS = {
       { type: "cards", part: "records", keys: ["cdcTracker", "cdcDrive", "cdcUpdates"] }
     ],
     workHeads: {
-      websites: { label: "Websites, Domains & DNS", title: "Domains I Point and Keep Live.", text: "Live client sites I connect myself: domains, DNS records set in Cloudflare, SSL verified and every page tested." },
+      websites: { label: "Websites, Domains & DNS", title: "Domains I Point and Keep Live.", text: "WordPress, Wix Studio and hand-coded websites I designed and built, with domains and DNS records set in Cloudflare and every page tested on phone and desktop." },
       forms:    { label: "Email, Forms & Follow-Up", title: "Every Enquiry Reaches the Right Inbox.", text: "Confirmation emails, forms and follow-ups I set up and test myself, so nothing gets lost on the way." },
       records:  { label: "Access, Records & Updates", title: "Every Account Listed, Every Step Reported.", text: "Trackers, organised files and a short update after every task, so you always know where things stand." }
     },
+    webProjectsHide: ["Landscaping Services in Australia", "Wellness Brand in Australia"],
     resultsShots: "none",
     resultsNote: "Websites, calendars and client records I handle every day.",
     stats: ["years", "brands", "calendars", "leads"],
