@@ -2835,7 +2835,7 @@ window.RESUME_JOBS = {
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
-      { req: "Portfolio with your best lifestyle and cinematic Reels", proof: "First up is a Siargao travel Reel I edited for this application (stock footage, the hook I pitched). Then my food, lifestyle and event promo edits with music, text and smooth transitions. Tap any phone to play it with sound.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Portfolio with your best lifestyle and cinematic Reels", proof: "Right after the numbers is a Siargao travel Reel I edited for this application (stock footage, the hook I pitched). Below it are my food, lifestyle and event promo edits with music, text and smooth transitions. Tap any phone to play it with sound.", status: "yes", tab: "reels", cta: "See my Reels" },
       { req: "Turn raw footage into high-retention Reels (6 to 25 seconds)", proof: "I cut every Reel short and tight, most between 8 and 20 seconds, so it is watched to the end and replayed. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
       { req: "Find the hook: an opening that stops the scroll", proof: "Every Reel opens on its strongest moment with a short line of text in the first second, then the story builds from there.", status: "yes", tab: "reels", cta: "See my hooks" },
       { req: "Choose the strongest clips and place them in the most effective order", proof: "My process: I download the raw files into one folder per trip, watch everything once, star the best 5-8 shots, then build hook, journey and payoff before I add any text or music.", status: "yes", tab: "reels", cta: "See how I edit" },
@@ -2846,6 +2846,7 @@ window.RESUME_JOBS = {
       { req: "Pitch: a new hook for one of our Reels", proof: "Siargao Reel (\"The Ocean heals the soul\"): instead of opening on the calm beach shot, I would open on the clearest turquoise water with the text \"This is the Philippines, not the Maldives\". Then quick cuts on the beat through the island (palm roads, the boat, the waves), slowing down only for the final moment of you lying on the sand, as the payoff. I would end on \"Save this for your Siargao trip\" and keep it under 12 seconds so it gets replayed.", status: "yes", tab: "reels", cta: "See how I edit" }
     ],
     workSections: [
+      { type: "block", key: "samplePitch" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
       { type: "block", key: "designs" },
@@ -2855,6 +2856,7 @@ window.RESUME_JOBS = {
       { type: "block", key: "emails" }
     ],
     workHeads: {
+      samplePitch: { label: "Sample Reel For @alfonsoboada", title: "Your Siargao Reel, Edited My Way.", text: "The hook I pitched, edited and ready to watch: the clearest water first, cuts on the beat, and a save line to end." },
       designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
       feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
@@ -2874,6 +2876,14 @@ window.RESUME_JOBS = {
       }
     },
     workOverrides: {
+      samplePitch: {
+        label: "Your Siargao Reel, Edited My Way.",
+        blurb: "The hook I pitched for your Siargao Reel, edited with stock footage. Tap the video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "reel-siargao-hook-sample.mp4", poster: "reel-siargao-hook-sample.jpg", name: "Siargao hook sample" }
+        ]
+      },
       designs: {
         items: [
           "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
@@ -2891,14 +2901,14 @@ window.RESUME_JOBS = {
           : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
       },
       reels: {
-        blurb: "A travel Reel first, then food, promo and before-and-after Reels with captions and music. Tap a phone to play.",
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-siargao-hook-sample.mp4", poster: "reel-siargao-hook-sample.jpg", kind: "video", acct: "Siargao sample reel" },
           { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
           { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" }
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
       featReels: {

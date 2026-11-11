@@ -344,6 +344,7 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .rsound[aria-pressed="true"]{background:var(--primary);border-color:transparent}
 @media(min-width:761px){.reels-row.wrap-row{flex-wrap:wrap;row-gap:40px}.reels-row.wrap-row .phone{flex:0 0 280px}}
 .freels{display:grid;grid-template-columns:repeat(2,minmax(0,340px));justify-content:center;gap:clamp(16px,3vw,36px);margin-top:22px}
+.freels.one{grid-template-columns:minmax(0,340px)}
 .freel{position:relative;aspect-ratio:9/16;overflow:hidden;cursor:pointer;background:#000;border-radius:18px;box-shadow:0 22px 44px rgba(9,24,34,.22)}
 .freel video{display:block;width:100%;height:100%;object-fit:cover}
 .freels.fit-contain .freel video{object-fit:contain}
@@ -640,8 +641,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261111q"></script>
-<script src="jobs.js?v=20261111q"></script>
+<script src="data.js?v=20261111s"></script>
+<script src="jobs.js?v=20261111s"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -870,7 +871,7 @@ const sameHead = (k, t) => { const H = J.workHeads && J.workHeads[k], n = s => S
 function featBlock(k){
   const w = B.work[k];
   return `${sameHead(k, w.label) ? "" : `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>`}
-    <div class="freels${J.reelsContain ? " fit-contain" : ""}" data-auto="${w.auto ? 1 : 0}">${w.items.map((it, i) => `<div class="freel" role="button" tabindex="0" aria-label="${esc(it.name || "Reel " + (i + 1))}: turn sound on or off">
+    <div class="freels${J.reelsContain ? " fit-contain" : ""}${w.items.length === 1 ? " one" : ""}" data-auto="${w.auto ? 1 : 0}">${w.items.map((it, i) => `<div class="freel" role="button" tabindex="0" aria-label="${esc(it.name || "Reel " + (i + 1))}: turn sound on or off">
       <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
       <button class="fsound" type="button" aria-pressed="false" aria-label="Turn sound on">${SND_OFF}</button></div>`).join("")}</div>`;
 }
@@ -908,6 +909,7 @@ const WB = {
   designs: n => `${sameHead("designs", J.workTitle || "Graphic Designs I Create for You") ? "" : `${J.workTitle === null ? "" : `<h2 class="title wsub">${esc(J.workTitle || "Graphic Designs I Create for You")}</h2>`}<p class="blurb">${esc(B.work.designs.blurb)} Tap any design to enlarge it.</p>`}${marqueeHTML("designs")}`,
   reels: n => reelsBlock("reels"),
   featReels: n => featBlock("featReels"),
+  samplePitch: n => featBlock("samplePitch"),
   aiModels: n => featBlock("aiModels"),
   ambReel: n => reelsBlock("ambReel"),
   feeds: n => stacked("feeds"),
