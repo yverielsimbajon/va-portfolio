@@ -2964,6 +2964,9 @@ window.RESUME_JOBS = {
       local:       { label: "Local Search", title: "Found by Local Customers.", text: "On-page SEO and AI search optimization for a local service business in Australia." }
     },
     resultsShots: "none",
+    webProjectOverrides: {
+      "Wellness Brand in Australia": { group: "Funnel I Created via GoHighLevel", desc: "A funnel I created via GoHighLevel: a program landing page that makes it easy for clients to learn about a therapy and enquire.", first: true }
+    },
     resultsNote: "GoHighLevel work: calendars, workflows, pipelines and lead records I build and manage.",
     stats: ["calendars", "events", "leads", "years"],
     workTitle: "Graphic Designs I Create for You",
