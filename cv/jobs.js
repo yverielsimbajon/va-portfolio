@@ -2856,7 +2856,7 @@ window.RESUME_JOBS = {
       { type: "block", key: "emails" }
     ],
     workHeads: {
-      samplePitch: { label: "Sample Reel For @alfonsoboada", title: "Your Siargao Reel, Edited My Way.", text: "The hook I pitched, edited and ready to watch: the clearest water first, cuts on the beat, and a save line to end." },
+      samplePitch: { label: "Sample Reel For @alfonsoboada", title: "Your Siargao Reel, I Edited for You", text: "The hook I pitched, edited and ready to watch: the clearest water first, cuts on the beat, and a save line to end." },
       designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
       reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
       feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
@@ -2877,11 +2877,11 @@ window.RESUME_JOBS = {
     },
     workOverrides: {
       samplePitch: {
-        label: "Your Siargao Reel, Edited My Way.",
+        label: "Your Siargao Reel, I Edited for You",
         blurb: "The hook I pitched for your Siargao Reel, edited with stock footage. Tap the video to switch the sound.",
         auto: true,
         items: [
-          { src: "reel-siargao-hook-sample.mp4", poster: "reel-siargao-hook-sample.jpg", name: "Siargao hook sample" }
+          { src: "reel-siargao-hook-sample-v3.mp4", poster: "reel-siargao-hook-sample-v3.jpg", name: "Siargao hook sample" }
         ]
       },
       designs: {
