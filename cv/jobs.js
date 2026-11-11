@@ -2965,8 +2965,9 @@ window.RESUME_JOBS = {
     },
     resultsShots: "none",
     webProjectOverrides: {
-      "Wellness Brand in Australia": { group: "Funnel I Created via GoHighLevel", desc: "A funnel I created via GoHighLevel: a program landing page that makes it easy for clients to learn about a therapy and enquire.", first: true }
+      "Wellness Brand in Australia": { group: "Funnel I Created via GoHighLevel", desc: "A funnel I created via GoHighLevel: a program landing page that makes it easy for clients to learn about a therapy and enquire." }
     },
+    webProjectsOrder: ["Cleaning Services", "Aesthetic Clinic", "Real Estate", "Tutoring Centre"],
     resultsNote: "GoHighLevel work: calendars, workflows, pipelines and lead records I build and manage.",
     stats: ["calendars", "events", "leads", "years"],
     workTitle: "Graphic Designs I Create for You",
