@@ -2835,7 +2835,7 @@ window.RESUME_JOBS = {
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
-      { req: "Portfolio with your best lifestyle and cinematic Reels", proof: "The Reels below are mine: food, lifestyle, wellness and event promo edits with music, text and smooth transitions, plus UGC product videos. Tap any phone to play it with sound.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Portfolio with your best lifestyle and cinematic Reels", proof: "First up is a Siargao travel Reel I edited for this application (stock footage, the hook I pitched). Then my food, lifestyle and event promo edits with music, text and smooth transitions. Tap any phone to play it with sound.", status: "yes", tab: "reels", cta: "See my Reels" },
       { req: "Turn raw footage into high-retention Reels (6 to 25 seconds)", proof: "I cut every Reel short and tight, most between 8 and 20 seconds, so it is watched to the end and replayed. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
       { req: "Find the hook: an opening that stops the scroll", proof: "Every Reel opens on its strongest moment with a short line of text in the first second, then the story builds from there.", status: "yes", tab: "reels", cta: "See my hooks" },
       { req: "Choose the strongest clips and place them in the most effective order", proof: "My process: I download the raw files into one folder per trip, watch everything once, star the best 5-8 shots, then build hook, journey and payoff before I add any text or music.", status: "yes", tab: "reels", cta: "See how I edit" },
@@ -2891,14 +2891,14 @@ window.RESUME_JOBS = {
           : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
       },
       reels: {
-        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        blurb: "A travel Reel first, then food, promo and before-and-after Reels with captions and music. Tap a phone to play.",
         items: [
+          { src: "reel-siargao-hook-sample.mp4", poster: "reel-siargao-hook-sample.jpg", kind: "video", acct: "Siargao sample reel" },
           { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
           { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
-          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" }
         ]
       },
       featReels: {
