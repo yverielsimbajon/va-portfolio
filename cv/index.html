@@ -517,6 +517,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 .bs-logo .wm{display:block;max-width:100%;overflow-wrap:anywhere;font-size:clamp(1.7rem,5.4vw,2.7rem);line-height:1.1}
 .bs-logo .ws{display:block;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
 .bs-logo img.lg{display:block;width:min(100%,300px);height:auto;border-radius:14px}
+.bs-logo img.lg.wide{width:100%;max-width:440px;border-radius:0}
 .bs-thumbs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.bs-thumbs img{display:block;width:70px;height:70px;object-fit:cover;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.18)}
 .bs-side{display:grid;align-content:start;gap:14px}
 .bs-box{padding:14px 16px;background:#fff;border:1px solid rgba(17,76,89,.08);border-radius:16px}
@@ -669,8 +670,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261111ze"></script>
-<script src="jobs.js?v=20261111ze"></script>
+<script src="data.js?v=20261111zg"></script>
+<script src="jobs.js?v=20261111zg"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -935,7 +936,7 @@ function brandSystemsBlock(){
   return `<div class="bs-list">${w.brands.map((b, n) => `<article class="bs-card" style="--accent:${b.accent};--tint:${b.tint}">
     <div class="bs-top"><div class="feed-title"><span class="feed-num" aria-hidden="true">${String(n + 1).padStart(2, "0")}</span><div><h4>${esc(b.name)}</h4><p>${esc(b.note)}</p></div></div><span class="bs-tag ${b.kind || "sample"}">${tagTxt[b.kind || "sample"]}</span></div>
     <div class="bs-grid">
-      <div class="bs-logo" style="background:${b.bg};color:${b.fg}">${b.logo ? `<img class="lg" src="${IMG + b.logo}" alt="${esc(b.name)} logo" loading="lazy">` : `<span class="wm" style="font-family:'${b.font}',sans-serif;font-weight:${b.wmWeight || 600};letter-spacing:${b.wmSpace || "0"}">${esc(b.wordmark || b.name)}</span>${b.sub ? `<span class="ws">${esc(b.sub)}</span>` : ""}`}${b.thumbs ? `<div class="bs-thumbs">${b.thumbs.map(t => `<img src="${IMG + t}" alt="${esc(b.name)} logo version" loading="lazy">`).join("")}</div>` : ""}</div>
+      <div class="bs-logo" style="background:${b.bg};color:${b.fg}">${b.logo ? `<img class="lg${b.logoWide ? " wide" : ""}" src="${IMG + b.logo}" alt="${esc(b.name)} logo" loading="lazy">` : `<span class="wm" style="font-family:'${b.font}',sans-serif;font-weight:${b.wmWeight || 600};letter-spacing:${b.wmSpace || "0"}">${esc(b.wordmark || b.name)}</span>${b.sub ? `<span class="ws">${esc(b.sub)}</span>` : ""}`}${b.thumbs ? `<div class="bs-thumbs">${b.thumbs.map(t => `<img src="${IMG + t}" alt="${esc(b.name)} logo version" loading="lazy">`).join("")}</div>` : ""}</div>
       <div class="bs-side">
         <div class="bs-box"><h5>Colour palette</h5><div class="bs-pal">${b.palette.map(c => `<div class="bs-sw"><i style="background:${c[1]}"></i><span>${esc(c[0])}<em>${esc(c[1])}</em></span></div>`).join("")}</div></div>
         <div class="bs-box"><h5>Typography</h5><div class="bs-type"><b style="font-family:'${b.font}',sans-serif;color:${b.accent}">Aa</b><span>${esc(b.fontNote)}</span></div></div>
