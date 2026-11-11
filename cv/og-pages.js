@@ -76,6 +76,7 @@ const PREVIEW = {
   "qlayon-email":           ["qlayon-email", "Qlayon", "crm"],
   "alfonso-travel-editor":  ["alfonso-travel-editor", "Alfonso Boada", "social"],
   "ghl-lead-system":        ["ghl-lead-system", null, "crm"],
+  "tiktok-shop-fitness":    ["tiktok-shop-fitness", null, "social"],
   "kind-hearts-it":         ["kind-hearts-it", "Kind Hearts Home Care", "website"],
   "aviation-brand-designer": ["aviation-brand-designer", "Aviation Gaming Company", "social"],
   "resmile-marketing":      ["resmile-marketing", null, "social"]

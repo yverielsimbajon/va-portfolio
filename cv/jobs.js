@@ -3190,63 +3190,6 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Brand Designer application"
   },
-  "aviation-brand-designer": {
-    label: "Brand Designer (Aviation gaming company, brand refresh)",
-    headline: "Brand Designer",
-    headlinePill: true,
-    headlineBadge: "5+ Years",
-    sub: "Brand Identity · Brand Style Guide · Website Direction · Social Presence · Marketing Design · Long-Term Part-Time",
-    tagline: "",
-    summary: "Brand designer with 5+ years of experience building brand identity, brand boards, websites and social presence for brands in Australia, the United States and Europe. I design logo suites, colour palettes and typography, then carry them into a website and a feed that looks like one brand.",
-    keywords: ["brand designer", "brand identity", "rebrand", "brand refresh", "brand style guide", "logo", "colour palette", "typography", "website direction", "social media presence", "marketing", "modern", "distinctive", "credible", "community", "aviation", "gaming", "part-time", "long-term", "portfolio"],
-    focus: ["design", "web", "social", "english", "admin"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
-    matchTitle: "Your list, my proof",
-    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
-    match: [
-      { req: "A strong portfolio showing complete, detailed brand systems", proof: "My fullest system is for a landscaping business in Australia: logo suite (primary, icon, wordmark, dark version), colour palette, typography, brand positioning, voice and tone, content pillars, a live website and a matching feed. The same one-look rule runs through a wellness brand's feed and several sample brands.", status: "yes", tab: "brands", cta: "See my brand systems" },
-      { req: "Develop a brand identity through close discussion with management", proof: "I research first, then design. For the landscaping business I reviewed every local competitor, found the gap none of them covered, and built the identity and positioning around it. I send drafts early, ask for notes and keep every version so we can compare.", status: "yes", tab: "brand", cta: "See the brand direction" },
-      { req: "Create an initial brand style guide", proof: "I put the logo suite, colour palette, typography and stationery on one brand board, and write the voice and tone as a short guide: how the brand sounds, what it never sounds like, and its key phrases.", status: "yes", tab: "brands", cta: "See my brand board" },
-      { req: "Help shape direction for the brand, website, social media and marketing", proof: "I carry one identity across a live website, a nine-post Instagram feed plan and email campaigns, so the logo, colours and tone match on every touchpoint.", status: "yes", tab: "websites", cta: "See my websites" },
-      { req: "Understanding of the latest trends in the digital world", proof: "I work in today's formats every week: Instagram carousels and Reels, UGC-style product videos, AI model videos clearly labelled as AI, and email campaigns, all in the brand's own look.", status: "yes", tab: "designs", cta: "See my designs" },
-      { req: "Original thinking and a willingness to push back on ideas", proof: "I bring my own ideas with a reason: the landscaping brand's positioning came from what competitors were not saying, not from copying them. If an idea works against the brand, I say so politely and bring a better option.", status: "yes", tab: "brand", cta: "See how I research" },
-      { req: "Clear communication and reliability", proof: "I send a short update after every step, reply the same day and work the same steady hours for the same clients for months. 65 Mbps fiber with backup internet, a backup laptop and a backup generator.", status: "yes" },
-      { req: "Part-time, long-term brand designer after the initial project", proof: "Yes. I stay with clients for the long run and keep a brand moving month after month: new posts, pages and campaigns that all follow the same guide.", status: "yes" }
-    ],
-    workSections: [
-      { type: "block", key: "brands" },
-      { type: "cards", part: "brand", keys: ["kkBrand", "kkCompetitors", "plushBranding"] },
-      { type: "block", key: "websites" },
-      { type: "block", key: "feeds" },
-      { type: "block", key: "designs" },
-      { type: "block", key: "emails" }
-    ],
-    workOverrides: {
-      brands: {
-        label: "Brand identity design",
-        blurb: "A real brand board I built for a landscaping business in Australia (logo suite, colour palette, typography on one sheet), plus the logo set I designed for it: wordmark, icon and alternate lockups.",
-        items: [
-          { src: "brand-board-landscaping.webp", title: "Landscaping Services Brand Identity", note: "Reliable, professional and trusted", accent: "#1f4d2c", tint: "#eef5ef", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true },
-          { src: "logo-kerbing-king-wordmark.jpg", title: "Logo Suite: Wordmark" }, { src: "logo-kerbing-king-icon.jpg", title: "Logo Suite: Icon" },
-          { src: "logo-kerbing-king.png", title: "Logo Suite: Primary Lockup" }, { src: "logo-kerbing-king-alt.jpg", title: "Logo Suite: Alternate Lockup" }
-        ]
-      }
-    },
-    workHeads: {
-      brands:   { label: "Brand Identity", title: "A Brand Identity That Feels Like One Brand.", text: "Logo suite, colours and typography on one sheet, so every piece looks like it belongs." },
-      brand:    { label: "Brand Style & Voice", title: "Positioning, Voice and Tone Written Down.", text: "Competitor research, a clear position and a voice guide the whole team can follow." },
-      websites: { label: "Website Direction", title: "Websites That Carry the Brand.", text: "Live sites and concepts where the logo, colours and photography match the identity." },
-      feeds:    { label: "Social Presence", title: "A Feed That Looks Put Together.", text: "Nine posts planned around one palette, previewed before anything goes live." },
-      designs:  { label: "Marketing Design", title: "Graphic Designs I Create for You", text: "Posts, carousels and promos in the brand's own colours, ready to publish." },
-      emails:   { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
-    },
-    resultsShots: "results",
-    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
-    stats: ["brands", "years", "views", "followers"],
-    workTitle: "Graphic Designs I Create for You",
-    portfolioLabel: "View my Portfolio",
-    emailSubject: "Brand Designer application"
-  },
   "resmile-marketing": {
     label: "Digital Marketing & Lead Generation Specialist (ReSmile, Australia)",
     headline: "Digital Marketing & Lead Generation Specialist",
@@ -3355,5 +3298,113 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "RESMILE LAUNCH - Digital Marketing & Lead Generation Specialist"
+  },
+  "tiktok-shop-fitness": {
+    label: "Short-Form Video Editor (TikTok Shop Fitness & Home Workout)",
+    headline: "Short-Form Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "TikTok Shop Videos · Hooks · Fast Pacing · Captions & Zooms · CapCut · Clear Audio",
+    tagline: "",
+    codeWord: "GYM",
+    summary: "Short-form video editor with 5+ years of experience editing TikTok, Reels and UGC-style videos for business owners in Australia, the United States and Europe. I turn raw footage into natural-looking videos with a strong opening, fast pacing, readable captions, zooms and clear audio.",
+    keywords: ["short-form video editor", "TikTok Shop", "TikTok", "Reels", "Shorts", "UGC", "raw creator footage", "vertical video", "15-40 seconds", "hooks", "first 1-2 seconds", "pacing", "retention", "captions", "on-screen text", "zooms", "cuts", "product demonstration", "B-roll", "audio clarity", "voice levels", "creative briefs", "consistent style", "deadlines", "revisions", "CapCut", "organic", "authentic", "e-commerce", "long-term"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Edit raw creator footage into vertical TikToks (15-40 seconds)", proof: "5+ years of vertical videos cut from raw footage in CapCut, most of them between 15 and 40 seconds. Reels, TikTok and Shorts share the same 9:16 format, so every edit is ready for all three.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Strong openings that capture attention in the first 1-2 seconds", proof: "Every video opens on its strongest moment with a short line of text in the first second, so the viewer has a reason to stay.", status: "yes", tab: "reels", cta: "See my hooks" },
+      { req: "Remove pauses and keep fast, natural pacing", proof: "I cut every pause, breath gap and repeated take, keep the strongest take, and time the cuts to the speech so it still sounds like a real person talking.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Readable captions, on-screen text, zooms and cuts", proof: "Captions timed word by word to the voice and placed clear of the face, short text for key points, and slow punch-in zooms on the words that matter.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Product demonstration footage and B-roll where useful", proof: "My UGC product videos mix the voiceover, clean product shots and B-roll, so the viewer sees the product being used while they hear why it works.", status: "yes", tab: "featReels", cta: "See my UGC videos" },
+      { req: "Improve audio clarity and balance voice levels", proof: "I clean up the voice, level it against the music and sound effects, and check the final mix on a phone speaker so the words stay clear.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Videos that feel authentic and organic, not overly produced", proof: "My UGC-style edits keep the natural voice and simple captions, with light music and effects, so they look like a real creator's video and not an ad.", status: "yes", tab: "featReels", cta: "See my UGC videos" },
+      { req: "Follow creative briefs and keep a consistent editing style", proof: "I follow the brief and the example videos, keep the same caption style, fonts and music feel on every video, and send a draft for a check before anything is final.", status: "yes", tab: "feeds", cta: "See the brand consistency" },
+      { req: "Organise finished videos and deliver on agreed deadlines", proof: "Every task has a deadline in Asana, Notion or Trello, a short update when it is done, and a weekly report. Finished videos are named and sorted into one folder per week.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Reasonable revisions based on feedback", proof: "I change a draft the same day after your notes and keep a short list of what you like, so each batch needs fewer changes than the last.", status: "yes" },
+      { req: "Editing software", proof: "CapCut every day for editing, with Canva for covers and graphics.", status: "yes", tab: "reels", cta: "See my Reels" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Short-Form Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Content Strategy", title: "Videos Planned Ahead, Delivered on Time.", text: "A simple weekly plan with a deadline for every video, so nothing is rushed or late." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool, so a page posts every week without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "GYM - Short-Form Video Editor"
   }
 };
