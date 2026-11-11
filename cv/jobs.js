@@ -2951,8 +2951,10 @@ window.RESUME_JOBS = {
       { req: "Explain recommendations clearly, plus a walkthrough and documentation", proof: "Online English teacher and former Editor-in-Chief. I write step-by-step SOPs in Notion and send clear daily and weekly updates, and I will record a screen walkthrough of every workflow.", status: "yes", tab: "pipeline", cta: "See my documentation" },
       { req: "Attention to detail and willingness to test your work", proof: "I submit every form, book every calendar and check every email and SMS myself before anything goes live.", status: "yes" }
     ],
+    workHeadHide: true,
     workSections: [
       { type: "block", key: "websites" },
+      { type: "heading" },
       { type: "cards", part: "automations", keys: ["ghlWorkflows", "ghlBooking", "ghlConvos"] },
       { type: "cards", part: "pipeline", keys: ["ghlPipeline", "ghlRecords", "ghlLeads", "ghlUpdates"] },
       { type: "cards", part: "local", keys: ["seoAi"] }
