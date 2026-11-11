@@ -3189,5 +3189,62 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Brand Designer application"
+  },
+  "aviation-brand-designer": {
+    label: "Brand Designer (Aviation gaming company, brand refresh)",
+    headline: "Brand Designer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Brand Identity · Brand Style Guide · Website Direction · Social Presence · Marketing Design · Long-Term Part-Time",
+    tagline: "",
+    summary: "Brand designer with 5+ years of experience building brand identity, brand boards, websites and social presence for brands in Australia, the United States and Europe. I design logo suites, colour palettes and typography, then carry them into a website and a feed that looks like one brand.",
+    keywords: ["brand designer", "brand identity", "rebrand", "brand refresh", "brand style guide", "logo", "colour palette", "typography", "website direction", "social media presence", "marketing", "modern", "distinctive", "credible", "community", "aviation", "gaming", "part-time", "long-term", "portfolio"],
+    focus: ["design", "web", "social", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "A strong portfolio showing complete, detailed brand systems", proof: "My fullest system is for a landscaping business in Australia: logo suite (primary, icon, wordmark, dark version), colour palette, typography, brand positioning, voice and tone, content pillars, a live website and a matching feed. The same one-look rule runs through a wellness brand's feed and several sample brands.", status: "yes", tab: "brands", cta: "See my brand systems" },
+      { req: "Develop a brand identity through close discussion with management", proof: "I research first, then design. For the landscaping business I reviewed every local competitor, found the gap none of them covered, and built the identity and positioning around it. I send drafts early, ask for notes and keep every version so we can compare.", status: "yes", tab: "brand", cta: "See the brand direction" },
+      { req: "Create an initial brand style guide", proof: "I put the logo suite, colour palette, typography and stationery on one brand board, and write the voice and tone as a short guide: how the brand sounds, what it never sounds like, and its key phrases.", status: "yes", tab: "brands", cta: "See my brand board" },
+      { req: "Help shape direction for the brand, website, social media and marketing", proof: "I carry one identity across a live website, a nine-post Instagram feed plan and email campaigns, so the logo, colours and tone match on every touchpoint.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Understanding of the latest trends in the digital world", proof: "I work in today's formats every week: Instagram carousels and Reels, UGC-style product videos, AI model videos clearly labelled as AI, and email campaigns, all in the brand's own look.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Original thinking and a willingness to push back on ideas", proof: "I bring my own ideas with a reason: the landscaping brand's positioning came from what competitors were not saying, not from copying them. If an idea works against the brand, I say so politely and bring a better option.", status: "yes", tab: "brand", cta: "See how I research" },
+      { req: "Clear communication and reliability", proof: "I send a short update after every step, reply the same day and work the same steady hours for the same clients for months. 65 Mbps fiber with backup internet, a backup laptop and a backup generator.", status: "yes" },
+      { req: "Part-time, long-term brand designer after the initial project", proof: "Yes. I stay with clients for the long run and keep a brand moving month after month: new posts, pages and campaigns that all follow the same guide.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "brands" },
+      { type: "cards", part: "brand", keys: ["kkBrand", "kkCompetitors", "plushBranding"] },
+      { type: "block", key: "websites" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "emails" }
+    ],
+    workOverrides: {
+      brands: {
+        label: "Brand identity design",
+        blurb: "A real brand board I built for a landscaping business in Australia (logo suite, colour palette, typography on one sheet), plus the logo set I designed for it: wordmark, icon and alternate lockups.",
+        items: [
+          { src: "brand-board-landscaping.webp", title: "Landscaping Services Brand Identity", note: "Reliable, professional and trusted", accent: "#1f4d2c", tint: "#eef5ef", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true },
+          { src: "logo-kerbing-king-wordmark.jpg", title: "Logo Suite: Wordmark" }, { src: "logo-kerbing-king-icon.jpg", title: "Logo Suite: Icon" },
+          { src: "logo-kerbing-king.png", title: "Logo Suite: Primary Lockup" }, { src: "logo-kerbing-king-alt.jpg", title: "Logo Suite: Alternate Lockup" }
+        ]
+      }
+    },
+    workHeads: {
+      brands:   { label: "Brand Identity", title: "A Brand Identity That Feels Like One Brand.", text: "Logo suite, colours and typography on one sheet, so every piece looks like it belongs." },
+      brand:    { label: "Brand Style & Voice", title: "Positioning, Voice and Tone Written Down.", text: "Competitor research, a clear position and a voice guide the whole team can follow." },
+      websites: { label: "Website Direction", title: "Websites That Carry the Brand.", text: "Live sites and concepts where the logo, colours and photography match the identity." },
+      feeds:    { label: "Social Presence", title: "A Feed That Looks Put Together.", text: "Nine posts planned around one palette, previewed before anything goes live." },
+      designs:  { label: "Marketing Design", title: "Graphic Designs I Create for You", text: "Posts, carousels and promos in the brand's own colours, ready to publish." },
+      emails:   { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["brands", "years", "views", "followers"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Brand Designer application"
   }
 };

@@ -76,7 +76,8 @@ const PREVIEW = {
   "qlayon-email":           ["qlayon-email", "Qlayon", "crm"],
   "alfonso-travel-editor":  ["alfonso-travel-editor", "Alfonso Boada", "social"],
   "ghl-lead-system":        ["ghl-lead-system", null, "crm"],
-  "kind-hearts-it":         ["kind-hearts-it", "Kind Hearts Home Care", "website"]
+  "kind-hearts-it":         ["kind-hearts-it", "Kind Hearts Home Care", "website"],
+  "aviation-brand-designer": ["aviation-brand-designer", "Aviation Gaming Company", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
