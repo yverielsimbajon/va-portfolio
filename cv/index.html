@@ -531,6 +531,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 .bs-app{display:block;height:230px;padding:0;overflow:hidden;cursor:zoom-in;background:#fff;border:0;border-radius:14px;box-shadow:0 10px 26px rgba(17,76,89,.14)}
 .bs-app img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
 .bs-app.wide{grid-column:1/-1;height:auto}.bs-app.wide img{height:auto}
+.bs-app.grid{grid-column:1/-1;width:100%;max-width:460px;height:auto;justify-self:center}.bs-app.grid img{height:auto}
 @media(max-width:760px){.bs-grid{grid-template-columns:1fr}.bs-logo{min-height:190px}}
 @media(max-width:600px){.bs-card{padding:14px 12px;border-radius:18px}.bs-top{margin-bottom:14px}.bs-tag{font-size:.64rem;padding:6px 11px}.bs-app{height:210px}.bs-pal{grid-template-columns:repeat(2,minmax(0,1fr))}}
 #work .wrap h2.wsub{margin-top:84px}#work .wrap h2.wsub.first,#work .wrap h3.shots-title + h2.wsub{margin-top:30px}
@@ -668,8 +669,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261111z7"></script>
-<script src="jobs.js?v=20261111z7"></script>
+<script src="data.js?v=20261111z8"></script>
+<script src="jobs.js?v=20261111z8"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -940,7 +941,7 @@ function brandSystemsBlock(){
         <div class="bs-box"><h5>Typography</h5><div class="bs-type"><b style="font-family:'${b.font}',sans-serif;color:${b.accent}">Aa</b><span>${esc(b.fontNote)}</span></div></div>
         <div class="bs-box"><h5>Brand voice</h5><div class="bs-voice">${b.voice.map(v => `<span>${esc(v)}</span>`).join("")}</div></div>
       </div></div>
-    ${b.apps && b.apps.length ? `<div class="bs-apps"><h5>The identity in use</h5>${b.apps.map(a => `<button class="bs-app${a.wide ? " wide" : ""}" type="button" data-lb="brandSystems" data-i="${a.i}" aria-label="View ${esc(a.label)}"><img src="${IMG + w.items[a.i].src}" alt="${esc(a.label)}" loading="lazy" decoding="async"></button>`).join("")}</div>` : ""}</article>`).join("")}</div>`;
+    ${b.apps && b.apps.length ? `<div class="bs-apps"><h5>The identity in use</h5>${b.apps.map(a => `<button class="bs-app${a.wide ? " wide" : ""}${a.grid ? " grid" : ""}" type="button" data-lb="brandSystems" data-i="${a.i}" aria-label="View ${esc(a.label)}"><img src="${IMG + w.items[a.i].src}" alt="${esc(a.label)}" loading="lazy" decoding="async"></button>`).join("")}</div>` : ""}</article>`).join("")}</div>`;
 }
 function hcRows(list){
   return (list || []).map(c => `<div class="hc-row"><div class="hc-t">${c.title.includes(" · ") ? `<span class="hc-n">${esc(c.title.split(" · ")[0])}</span><div class="hc-name">${esc(c.title.split(" · ").slice(1).join(" · "))}</div>${c.sub ? `<div class="hc-sub">${esc(c.sub)}</div>` : ""}<div class="hc-hint">Click each photo to zoom</div>` : esc(c.title)}</div><div class="hc-strip">${c.images.map((f, i) => `<img src="${IMG + f}" data-file="${f}" alt="${esc(c.title)}, slide ${i + 1}" loading="lazy">`).join("")}</div></div>`).join("");
