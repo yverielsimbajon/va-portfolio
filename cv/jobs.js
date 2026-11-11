@@ -2326,6 +2326,109 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Social Media Manager (Fashion Brand, Germany)"
   },
+  "law-study-smm": {
+    label: "TikTok & Instagram Manager (Law Study Page)",
+    headline: "TikTok & Instagram Manager",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "TikTok · Instagram · Study Tips · Productivity · Law School Content · CapCut · Canva",
+    tagline: "",
+    summary: "Social Media Manager with 5+ years of experience managing TikTok and Instagram accounts. I plan and post short-form content, edit videos in CapCut and Canva, and follow a page's existing style and tone.",
+    keywords: ["TikTok", "Instagram", "Reels", "study tips", "productivity", "law school content", "CapCut", "Canva", "captions", "content calendar", "5 posts per week", "2-3 posts per week", "existing style and tone", "engagement", "followers", "organic growth", "portfolio", "availability", "tools"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Post on TikTok, 5 posts per week", proof: "I plan, edit and schedule short videos with a weekly content calendar, so a page posts every week without gaps. My Reels are cut for Instagram and TikTok.", status: "yes", tab: "reels", cta: "See my short videos" },
+      { req: "Post 2-3 times per week on Instagram (depending on engagement)", proof: "I plan the Instagram mix around what the audience reacts to, then post more or less of it. I design the carousels and posts in Canva.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Follow the page's existing style and tone", proof: "I work inside a brand's own colours, fonts, photos and texts, and I match the voice of the page in every caption.", status: "yes", tab: "feeds", cta: "See my feed plans" },
+      { req: "Experience managing TikTok and Instagram accounts", proof: "I have managed social media for business pages and for a national pageant in Australia. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the real screenshots" },
+      { req: "Good speaking and written English", proof: "I write captions, comment replies and client updates in English every day, always clear and friendly.", status: "yes" },
+      { req: "Reliable, organized, and able to work independently", proof: "I keep my own trackers, calendars and weekly updates, and I deliver on time without being chased.", status: "yes", tab: "smm", cta: "See my planning" },
+      { req: "An interest in study, productivity, or law content", proof: "I make educational and productivity-style posts, and I plan my own days with task trackers and weekly plans.", status: "yes", tab: "designs", cta: "See my educational posts" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "TikTok & Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Content Strategy", title: "5 TikToks a Week, Planned Ahead.", text: "A content calendar for 5 TikToks and 2-3 Instagram posts a week, so your page keeps growing." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post and Reel with Meta Business Suite and Metricool, so a page posts 5 times a week on TikTok and 2-3 times on Instagram without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "TikTok", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "TikTok & Instagram Manager (Law Study Page)"
+  },
   "northnoble-smm": {
     label: "Social Media Manager (North & Noble, AHS, SDS)",
     headline: "Social Media Manager",
@@ -2985,5 +3088,106 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "GHL Lead System"
+  },
+  "kind-hearts-it": {
+    label: "IT Specialist (Kind Hearts Home Care, Australian disability support business)",
+    headline: "IT Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "SiteGround Email · DNS & MX Records · Google Workspace · WordPress · Account Security · 1300 Number",
+    tagline: "",
+    summary: "Philippines-based IT specialist with 5+ years supporting Australian businesses with WordPress websites, domains, DNS records and Google Workspace. I follow setup steps exactly, test every email and form myself, and keep every login confidential.",
+    keywords: ["IT specialist", "SiteGround", "business email", "email delivery", "Google Workspace", "DNS", "MX records", "WordPress", "website content", "contact details", "ownership change", "secure", "website and email accounts", "email access", "contact forms", "1300 number", "Australian business", "confidentiality", "data security", "one-off project"],
+    focus: ["web", "admin", "ops", "english", "crm"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Troubleshoot SiteGround business email delivery", proof: "I test delivery myself: send a test email both ways, read the bounce message, then check the mailbox settings, the sender records and the DNS in that order. I follow the host's own steps and report each finding with screenshots, so you can see exactly what was wrong and what fixed it.", status: "yes", tab: "websites", cta: "See my domain work" },
+      { req: "Investigate Google Workspace and DNS configuration", proof: "Google Workspace every day for 5+ years, and DNS records in Cloudflare for client domains: A, CNAME and TXT records, custom domains and SSL verification. I check every record against the setup steps and verify it after the change.", status: "yes", tab: "websites", cta: "See my domain work" },
+      { req: "Update WordPress website content and contact details", proof: "WordPress is part of my website toolkit, with Wix Studio, Webflow and Framer. I update text, phone numbers, emails and addresses on live client sites, then check every page on phone and desktop.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Secure website and email accounts following a business ownership change", proof: "I list every account first (website, hosting, domain, email, social), then change the passwords, turn on two-step verification, remove old access and hand you the finished list. I already hold logins for client CRMs, hosting and domains, and I keep them in a password manager.", status: "yes", tab: "records", cta: "See my records" },
+      { req: "Configure business email access and contact forms", proof: "I set up sender details, signatures and email settings in Google Workspace and GoHighLevel, and I have built working request forms. I submit every form myself and confirm the enquiry arrives in the right inbox.", status: "yes", tab: "forms", cta: "See my forms and follow-up" },
+      { req: "Assist with integrating a new Australian 1300 business number", proof: "I update every place the number appears (website, contact forms, email signatures, booking pages), then call it myself to test. For the phone line itself I follow your provider's setup steps exactly.", status: "yes", tab: "forms", cta: "See my follow-up work" },
+      { req: "Strong WordPress and SiteGround experience", proof: "I connect domains to live client sites and work from the host's own steps. I take a backup first, change one thing at a time and check the site after every change.", status: "yes", tab: "websites", cta: "See the live sites" },
+      { req: "Experience with DNS, MX records and Google Workspace", proof: "DNS and Google Workspace are tools I use for client work today. MX records are set from the email provider's own values, and I verify the mail flow with a test email after the change.", status: "yes", tab: "websites", cta: "See my domain work" },
+      { req: "Good written English and communication skills", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief. I send a short update after every step: what I did, what I saw, and what I need from you.", status: "yes", tab: "records", cta: "See my updates" },
+      { req: "Ability to work remotely with an Australian business", proof: "I already work with Australian clients every day: a landscaping company, a wellness brand and a national pageant. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" },
+      { req: "Respect for confidentiality and data security", proof: "Logins stay in a password manager and are never shared or reused. I only touch what the task needs, and I ask before anything outside it. Care of client information is already part of how I work.", status: "yes" },
+      { req: "One-off project, with potential for ongoing work", proof: "Happy to start with the project and stay on afterwards for updates, fixes and monthly checks, with a written update after each step.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "cards", part: "forms", keys: ["ghlWorkflows", "ghlConvos", "ghlRecords"] },
+      { type: "cards", part: "records", keys: ["cdcTracker", "cdcDrive", "cdcUpdates"] }
+    ],
+    workHeads: {
+      websites: { label: "Websites, Domains & DNS", title: "Domains I Point and Keep Live.", text: "Live client sites I connect myself: domains, DNS records set in Cloudflare, SSL verified and every page tested." },
+      forms:    { label: "Email, Forms & Follow-Up", title: "Every Enquiry Reaches the Right Inbox.", text: "Confirmation emails, forms and follow-ups I set up and test myself, so nothing gets lost on the way." },
+      records:  { label: "Access, Records & Updates", title: "Every Account Listed, Every Step Reported.", text: "Trackers, organised files and a short update after every task, so you always know where things stand." }
+    },
+    resultsShots: "none",
+    resultsNote: "Websites, calendars and client records I handle every day.",
+    stats: ["years", "brands", "calendars", "leads"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "IT Specialist application"
+  },
+  "aviation-brand-designer": {
+    label: "Brand Designer (Aviation gaming company, brand refresh)",
+    headline: "Brand Designer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Brand Identity · Brand Style Guide · Website Direction · Social Presence · Marketing Design · Long-Term Part-Time",
+    tagline: "",
+    summary: "Brand designer with 5+ years of experience building brand identity, brand boards, websites and social presence for brands in Australia, the United States and Europe. I design logo suites, colour palettes and typography, then carry them into a website and a feed that looks like one brand.",
+    keywords: ["brand designer", "brand identity", "rebrand", "brand refresh", "brand style guide", "logo", "colour palette", "typography", "website direction", "social media presence", "marketing", "modern", "distinctive", "credible", "community", "aviation", "gaming", "part-time", "long-term", "portfolio"],
+    focus: ["design", "web", "social", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "A strong portfolio showing complete, detailed brand systems", proof: "My fullest system is for a landscaping business in Australia: logo suite (primary, icon, wordmark, dark version), colour palette, typography, brand positioning, voice and tone, content pillars, a live website and a matching feed. The same one-look rule runs through a wellness brand's feed and several sample brands.", status: "yes", tab: "brands", cta: "See my brand systems" },
+      { req: "Develop a brand identity through close discussion with management", proof: "I research first, then design. For the landscaping business I reviewed every local competitor, found the gap none of them covered, and built the identity and positioning around it. I send drafts early, ask for notes and keep every version so we can compare.", status: "yes", tab: "brand", cta: "See the brand direction" },
+      { req: "Create an initial brand style guide", proof: "I put the logo suite, colour palette, typography and stationery on one brand board, and write the voice and tone as a short guide: how the brand sounds, what it never sounds like, and its key phrases.", status: "yes", tab: "brands", cta: "See my brand board" },
+      { req: "Help shape direction for the brand, website, social media and marketing", proof: "I carry one identity across a live website, a nine-post Instagram feed plan and email campaigns, so the logo, colours and tone match on every touchpoint.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Understanding of the latest trends in the digital world", proof: "I work in today's formats every week: Instagram carousels and Reels, UGC-style product videos, AI model videos clearly labelled as AI, and email campaigns, all in the brand's own look.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Original thinking and a willingness to push back on ideas", proof: "I bring my own ideas with a reason: the landscaping brand's positioning came from what competitors were not saying, not from copying them. If an idea works against the brand, I say so politely and bring a better option.", status: "yes", tab: "brand", cta: "See how I research" },
+      { req: "Clear communication and reliability", proof: "I send a short update after every step, reply the same day and work the same steady hours for the same clients for months. 65 Mbps fiber with backup internet, a backup laptop and a backup generator.", status: "yes" },
+      { req: "Part-time, long-term brand designer after the initial project", proof: "Yes. I stay with clients for the long run and keep a brand moving month after month: new posts, pages and campaigns that all follow the same guide.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "brands" },
+      { type: "cards", part: "brand", keys: ["kkBrand", "kkCompetitors", "plushBranding"] },
+      { type: "block", key: "websites" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "emails" }
+    ],
+    workOverrides: {
+      brands: {
+        label: "Brand identity design",
+        blurb: "A real brand board I built for a landscaping business in Australia (logo suite, colour palette, typography on one sheet), plus the logo set I designed for it: wordmark, icon and alternate lockups.",
+        items: [
+          { src: "brand-board-landscaping.webp", title: "Landscaping Services Brand Identity", note: "Reliable, professional and trusted", accent: "#1f4d2c", tint: "#eef5ef", chips: ["Logo suite", "Colour palette", "Typography", "Stationery"], board: true, scroll: true },
+          { src: "logo-kerbing-king-wordmark.jpg", title: "Logo Suite: Wordmark" }, { src: "logo-kerbing-king-icon.jpg", title: "Logo Suite: Icon" },
+          { src: "logo-kerbing-king.png", title: "Logo Suite: Primary Lockup" }, { src: "logo-kerbing-king-alt.jpg", title: "Logo Suite: Alternate Lockup" }
+        ]
+      }
+    },
+    workHeads: {
+      brands:   { label: "Brand Identity", title: "A Brand Identity That Feels Like One Brand.", text: "Logo suite, colours and typography on one sheet, so every piece looks like it belongs." },
+      brand:    { label: "Brand Style & Voice", title: "Positioning, Voice and Tone Written Down.", text: "Competitor research, a clear position and a voice guide the whole team can follow." },
+      websites: { label: "Website Direction", title: "Websites That Carry the Brand.", text: "Live sites and concepts where the logo, colours and photography match the identity." },
+      feeds:    { label: "Social Presence", title: "A Feed That Looks Put Together.", text: "Nine posts planned around one palette, previewed before anything goes live." },
+      designs:  { label: "Marketing Design", title: "Graphic Designs I Create for You", text: "Posts, carousels and promos in the brand's own colours, ready to publish." },
+      emails:   { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["brands", "years", "views", "followers"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Brand Designer application"
   }
 };
