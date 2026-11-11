@@ -72,7 +72,8 @@ const PREVIEW = {
   "travel-ig-creator":      ["travel-ig-creator", null, "social"],
   "soto-group-ea":          ["soto-group-ea", null, "admin"],
   "autocad-sg":             ["autocad-sg", "Singapore Company", "operations"],
-  "qlayon-email":           ["qlayon-email", "Qlayon", "crm"]
+  "qlayon-email":           ["qlayon-email", "Qlayon", "crm"],
+  "alfonso-travel-editor":  ["alfonso-travel-editor", "Alfonso Boada", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 

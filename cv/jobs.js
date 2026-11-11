@@ -2820,5 +2820,111 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Email Marketing Specialist application"
+  },
+  "alfonso-travel-editor": {
+    label: "Travel Video Editor (@alfonsoboada)",
+    headline: "Travel Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Cinematic Reels · Hooks · Pacing · Visual Storytelling · CapCut · High Retention",
+    tagline: "",
+    summary: "Creative video editor with 5+ years of experience turning raw footage into high-retention Instagram Reels. I choose the strongest clips, find the hook, put them in the most effective order and add text and music in CapCut for a cinematic flow that keeps people watching.",
+    keywords: ["video editor", "creative", "cinematic", "travel", "Reels", "raw footage", "high-retention", "hook", "strongest clips", "effective order", "text", "story", "retention", "cinematic flow", "pacing", "CapCut", "short-form", "trends", "feedback", "alternative versions", "test", "portfolio"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Portfolio with your best lifestyle and cinematic Reels", proof: "The Reels below are mine: food, lifestyle, wellness and event promo edits with music, text and smooth transitions, plus UGC product videos. Tap any phone to play it with sound.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Turn raw footage into high-retention Reels (6 to 25 seconds)", proof: "I cut every Reel short and tight, most between 8 and 20 seconds, so it is watched to the end and replayed. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Find the hook: an opening that stops the scroll", proof: "Every Reel opens on its strongest moment with a short line of text in the first second, then the story builds from there.", status: "yes", tab: "reels", cta: "See my hooks" },
+      { req: "Choose the strongest clips and place them in the most effective order", proof: "My process: I download the raw files into one folder per trip, watch everything once, star the best 5-8 shots, then build hook, journey and payoff before I add any text or music.", status: "yes", tab: "reels", cta: "See how I edit" },
+      { req: "Text where needed to support the story and retention", proof: "Short on-screen lines that open a question and pay it off at the end, placed clear of the face and the main shot.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Cinematic flow and beautiful shots", proof: "Cuts on the beat of the music, smooth speed ramps and matching colour across every clip, so the video feels like one story.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Feedback, alternative versions and tweaks based on what performs", proof: "I send a draft with two hook versions, change it the same day after your notes, and check each Reel's views, watch time and follows a week after posting to choose the next hook.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Watches social media trends and knows why videos grab attention", proof: "I check trending sounds and formats every week for the brands I manage and bring one new idea with each batch.", status: "yes", tab: "feeds", cta: "See my feed plans" },
+      { req: "Pitch: a new hook for one of our Reels", proof: "Siargao Reel (\"The Ocean heals the soul\"): instead of opening on the calm beach shot, I would open on the clearest turquoise water with the text \"This is the Philippines, not the Maldives\". Then quick cuts on the beat through the island (palm roads, the boat, the waves), slowing down only for the final moment of you lying on the sand, as the payoff. I would end on \"Save this for your Siargao trip\" and keep it under 12 seconds so it gets replayed.", status: "yes", tab: "reels", cta: "See how I edit" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Content Strategy", title: "1-3 Reels a Week, Planned Ahead.", text: "A simple posting plan with hooks to test, so the page keeps a steady rhythm." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,   // first reel on screen plays with sound (switches on at the visitor's first tap/key; browsers block sound before that)
+    /* shared card text in data.js says "ready to learn": replace it for this resume (never-say-learning rule) */
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool, so a page posts every week without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Travel Video Editor"
   }
 };
