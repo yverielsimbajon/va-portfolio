@@ -83,7 +83,8 @@ const PREVIEW = {
   "pikklepuss-sma":         ["pikklepuss-sma", "PIKKLEPUSS", "social"],
   "ai-growth-coach":        ["ai-growth-coach", null, "social"],
   "npp-smm":                ["npp-smm", "The New Pink Paradigm", "social"],
-  "salon-bridal-coordinator": ["salon-bridal-coordinator", "Hair & Bridal Salon", "social"]
+  "salon-bridal-coordinator": ["salon-bridal-coordinator", "Hair & Bridal Salon", "social"],
+  "js-wordpress-seo":       ["js-wordpress-seo", "Photography & Videography Studio, London", "website"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 

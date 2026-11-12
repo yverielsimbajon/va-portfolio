@@ -3824,5 +3824,52 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Social Media Content & Growth Specialist"
+  },
+  "js-wordpress-seo": {
+    label: "WordPress Web Developer & SEO Specialist (photography and videography business, London UK)",
+    headline: "WordPress Web Developer & SEO Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "WordPress · Landing Pages · Keyword Research · Technical SEO · Local SEO London · GA4 & Search Console",
+    tagline: "",
+    codeWord: "WEB",
+    summary: "WordPress Web Developer & SEO Specialist with 5+ years building websites and landing pages for service businesses in Australia, the United States and Europe. I build responsive pages, set up on-page SEO and Google Analytics tracking, and send clear reports on traffic and enquiries.",
+    keywords: ["WordPress", "web developer", "SEO specialist", "landing pages", "responsive", "portfolios", "plugins", "themes", "updates", "maintenance", "broken links", "speed", "mobile responsiveness", "user experience", "backups", "security", "keyword research", "rank higher on Google", "headings", "metadata", "alt text", "image alt text", "internal linking", "SEO strategy", "organic traffic", "enquiries", "Google Analytics", "Google Analytics 4", "GA4", "Google Search Console", "local SEO", "London", "conversions", "reports", "blog posts", "SEO-friendly", "graphic designer", "video editor", "Notion", "HTML", "CSS", "JavaScript", "Elementor", "Gutenberg", "Rank Math", "Yoast", "Google Business Profile", "email marketing", "automated workflows", "photography", "visual branding", "long-term"],
+    focus: ["web", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Build, update and maintain WordPress websites with responsive, visually appealing pages", proof: "WordPress is part of my website toolkit, with Wix Studio, Webflow and Framer. I designed and built my own site, themariaoffice.com, plus full website concepts for service businesses, and I check every page on phone and desktop before I send the link.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Build and optimise landing pages for services, workshops, courses and products", proof: "I build pages around one clear request: quote calculators, free assessment booking, consultation forms and program pages, each with one main button and the enquiry form close to it.", status: "yes", tab: "websites", cta: "See my pages" },
+      { req: "Update photography and videography portfolios with recent projects", proof: "My concepts and my own portfolio use full-photo heroes, galleries and video sections, with compressed images so the photos stay sharp and the page stays fast.", status: "yes", tab: "websites", cta: "See my galleries" },
+      { req: "Plugins, themes, updates, backups, security, broken links and speed", proof: "I take a backup first, change one thing at a time and check the site after every change. I compress images, set robots and noindex rules, and connect domains, DNS records and SSL in Cloudflare for the sites I run.", status: "yes", tab: "websites", cta: "See my builds" },
+      { req: "Keyword research, headings, metadata, image alt text and internal linking", proof: "I set up on-page SEO and AI search optimisation for a local service business in Australia: page titles, meta descriptions, headings, alt text and links between pages, built around what local customers search for.", status: "yes", tab: "ops", cta: "See my SEO work" },
+      { req: "Local SEO for London and the UK, plus Google Business Profile", proof: "I published posts to Google Business Profile for a US company, and I build service keywords around the area a business serves. For you that means London service pages, the same business details everywhere and a fully filled Business Profile.", status: "yes", tab: "ops", cta: "See my local SEO" },
+      { req: "Google Analytics 4 and Google Search Console, with regular reports", proof: "I am Google Analytics and Digital Marketing (Google) certified. I work in GA4 and Search Console the way I work in Meta Business Suite for my social media clients: track what brings people in, then send a short written report with traffic, rankings, enquiries and completed work.", status: "yes", tab: "ops", cta: "See my reports" },
+      { req: "Elementor, Bricks or Gutenberg, and Rank Math or Yoast", proof: "I work in Elementor and Gutenberg the way I work in Wix Studio and Webflow every day: sections, columns, reusable blocks, and mobile settings checked on every page. Rank Math and Yoast hold the same titles, descriptions, schema and sitemaps I already set on my own sites.", status: "yes", tab: "websites", cta: "See my builds" },
+      { req: "HTML, CSS and basic JavaScript", proof: "I hand-code HTML, CSS and JavaScript for my own site and my concept pages, with Claude Code as my daily coding partner.", status: "yes", tab: "websites", cta: "See my code-built pages" },
+      { req: "SEO-friendly blog posts, with your graphic designer and video editor", proof: "Online English teacher, English radio broadcasting awardee and former Editor-in-Chief. I also design graphics in Canva and edit video in CapCut, so blog headers and embedded videos come together easily with your team.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Manage tasks and deadlines in Notion, with regular updates", proof: "I build Notion workspaces and trackers for clients and send a short daily or weekly update: what is done, what is next and what I need from you.", status: "yes", tab: "ops", cta: "See my updates" },
+      { req: "Bonus: creative businesses, email marketing and automated workflows", proof: "I work with beauty, wellness and event brands, build email campaigns, and set up email and SMS workflows in GoHighLevel for a live client account.", status: "yes", tab: "designs", cta: "See my creative work" },
+      { req: "Reliable internet and a long-term opportunity", proof: "65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator. I stay with clients for the long run and bring ideas without waiting to be asked.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "cards", part: "ops", keys: ["seoAi", "ghlUpdates", "cdcTracker"] },
+      { type: "block", key: "designs" }
+    ],
+    workHeads: {
+      websites: { label: "Websites & Landing Pages", title: "Pages That Turn Visitors Into Enquiries.", text: "Responsive websites and landing pages I designed and built, with full-photo heroes, galleries and one clear enquiry button." },
+      ops:      { label: "SEO, Reporting & Notion", title: "Found on Google, Reported Every Week.", text: "On-page SEO and local search for a service business, plus the written updates and Notion trackers I keep for every client." },
+      designs:  { label: "Blog & Website Graphics", title: "Graphics That Match the Page.", text: "Headers, promos and social posts in the brand's own colours, ready for the website and the blog." }
+    },
+    webProjectsHide: ["Landscaping Services in Australia", "Wellness Brand in Australia"],
+    resultsShots: "none",
+    resultsNote: "Websites, brands and client work behind the pages I build.",
+    stats: ["brands", "years", "leads", "calendars"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "WEB - WordPress Web Developer & SEO Specialist"
   }
 };
