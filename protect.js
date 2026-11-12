@@ -97,11 +97,53 @@
 
   /* videos: no download, no picture-in-picture, no casting */
   function lock(v) {
-    v.setAttribute("controlsList", "nodownload noremoteplayback noplaybackrate");
+    /* work videos also lose the native fullscreen button, which would hide the watermark */
+    v.setAttribute("controlsList", "nodownload noremoteplayback noplaybackrate" + (v.id === "introVideo" ? "" : " nofullscreen"));
     v.setAttribute("disablePictureInPicture", "");
     v.setAttribute("disableRemotePlayback", "");
     v.setAttribute("oncontextmenu", "return false");
+    mark(v);
   }
+  /* watermark: "Maria Simbajon" centred on every work video (not her own intro video).
+     A sibling overlay sized to the video's box, so it works in every card, phone frame and pop-up. */
+  var wmCss = document.createElement("style");
+  wmCss.textContent =
+    ".__wm{position:absolute;z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden;" +
+    "font:800 16px/1 'DM Sans','Segoe UI',Arial,sans-serif;letter-spacing:.03em;color:rgba(255,255,255,.62);white-space:nowrap;" +
+    "text-shadow:0 1px 4px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.5)}";
+  (document.head || document.documentElement).appendChild(wmCss);
+  var ro = window.ResizeObserver ? new ResizeObserver(function (es) { es.forEach(function (e) { place(e.target); }); }) : null;
+  function place(v) {
+    var w = v.__wm;
+    if (!w) return;
+    if (!v.isConnected) { w.remove(); return; }
+    if (w.parentNode !== v.parentNode || w.previousSibling !== v) v.after(w);
+    var vw = v.offsetWidth, vh = v.offsetHeight;
+    if (!vw || !vh || v.hidden) { w.style.display = "none"; return; }
+    w.style.display = "flex";
+    w.style.left = v.offsetLeft + "px";
+    w.style.top = v.offsetTop + "px";
+    w.style.width = vw + "px";
+    w.style.height = vh + "px";
+    w.style.fontSize = Math.max(15, Math.min(vw * 0.11, 72)) + "px";
+  }
+  function mark(v) {
+    if (v.__wm || v.id === "introVideo" || !v.parentNode) return;
+    var w = document.createElement("div");
+    w.className = "__wm";
+    w.setAttribute("aria-hidden", "true");
+    w.textContent = "Maria Simbajon";
+    v.__wm = w;
+    v.after(w);
+    place(v);
+    if (ro) ro.observe(v);
+    ["loadedmetadata", "play"].forEach(function (ev) { v.addEventListener(ev, function () { place(v); }); });
+    new MutationObserver(function () { place(v); }).observe(v, { attributes: true, attributeFilter: ["hidden", "style", "class"] });
+  }
+  function placeAll() { document.querySelectorAll("video").forEach(place); }
+  window.addEventListener("resize", placeAll);
+  window.addEventListener("load", placeAll);
+
   function lockAll(r) { (r || document).querySelectorAll("video").forEach(lock); }
   lockAll();
   new MutationObserver(function (ms) {
