@@ -109,8 +109,8 @@
   var wmCss = document.createElement("style");
   wmCss.textContent =
     ".__wm{position:absolute;z-index:3;display:flex;align-items:center;justify-content:center;pointer-events:none;overflow:hidden;" +
-    "font:800 16px/1 'DM Sans','Segoe UI',Arial,sans-serif;letter-spacing:.03em;color:rgba(255,255,255,.8);white-space:nowrap;" +
-    "text-shadow:0 1px 4px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.5)}";
+    "font:800 16px/1 'DM Sans','Segoe UI',Arial,sans-serif;letter-spacing:.03em;color:rgba(255,255,255,.45);white-space:nowrap;" +
+    "text-shadow:0 1px 4px rgba(0,0,0,.25),0 0 2px rgba(0,0,0,.3)}";
   (document.head || document.documentElement).appendChild(wmCss);
   var ro = window.ResizeObserver ? new ResizeObserver(function (es) { es.forEach(function (e) { place(e.target); }); }) : null;
   function place(v) {
