@@ -674,8 +674,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261112zj"></script>
-<script src="jobs.js?v=20261112zj"></script>
+<script src="data.js?v=20261112zk"></script>
+<script src="jobs.js?v=20261112zk"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -812,7 +812,7 @@ const blockPart = (k, n) => {
 const cardsPart = (key, keys, html) => part(key, html, keys.length + " Featured Project" + (keys.length === 1 ? "" : "s"));
 S.redesign = () => { const R = J.redesign;
   return `<section class="block" id="redesign"><div class="wrap">
-    <div class="eyebrow">Website redesign</div><h2 class="title">${esc(R.title)}</h2>
+    <div class="eyebrow">${esc(R.eyebrow || "Website redesign")}</div><h2 class="title">${esc(R.title)}</h2>
     <h3 class="rd-sub">Computer view</h3>
     <div class="rd-shots">${R.desk.map(it => `<a class="rd-shot" href="${IMG + it.src}" target="_blank" rel="noopener"><div class="rd-browser"><div class="rd-bar"><i></i><i></i><i></i><span>${esc(R.domain)}</span></div><img src="${IMG + it.src}" alt="${esc(it.cap)}" loading="lazy"></div><span class="rd-cap">${esc(it.cap)}</span></a>`).join("")}</div>
     <h3 class="rd-sub">Phone view</h3>

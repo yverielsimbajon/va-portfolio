@@ -3836,7 +3836,7 @@ window.RESUME_JOBS = {
     summary: "WordPress Web Developer & SEO Specialist with 5+ years building websites and landing pages for service businesses in Australia, the United States and Europe. I build responsive pages, set up on-page SEO and Google Analytics tracking, and send clear reports on traffic and enquiries.",
     keywords: ["WordPress", "web developer", "SEO specialist", "landing pages", "responsive", "portfolios", "plugins", "themes", "updates", "maintenance", "broken links", "speed", "mobile responsiveness", "user experience", "backups", "security", "keyword research", "rank higher on Google", "headings", "metadata", "alt text", "image alt text", "internal linking", "SEO strategy", "organic traffic", "enquiries", "Google Analytics", "Google Analytics 4", "GA4", "Google Search Console", "local SEO", "London", "conversions", "reports", "blog posts", "SEO-friendly", "graphic designer", "video editor", "Notion", "HTML", "CSS", "JavaScript", "Elementor", "Gutenberg", "Rank Math", "Yoast", "Google Business Profile", "email marketing", "automated workflows", "photography", "visual branding", "long-term"],
     focus: ["web", "design", "english", "admin"],
-    order: ["results", "work", "experience", "skills", "why", "contact"],
+    order: ["results", "redesign", "work", "experience", "skills", "why", "contact"],
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
@@ -3941,8 +3941,119 @@ window.RESUME_JOBS = {
     resultsShots: "none",
     resultsNote: "Websites, brands and client work behind the pages I build.",
     stats: ["brands", "years", "leads", "calendars"],
+    redesign: { eyebrow: "Website concept for joshuasokoya.com", title: "Website Concept Improvements I proposed to you", hint: "Scroll to see the improved website concept I created for you", domain: "joshuasokoya.com (enhancement concept)", url: "../concepts/joshua-sokoya/",
+      desk: [{ src: "web-joshuasokoya-desk-home.jpg", cap: "1. One clean brand" }, { src: "web-joshuasokoya-desk-services.jpg", cap: "2. A London page for every service" }, { src: "web-joshuasokoya-desk-quote.jpg", cap: "3. Easy to enquire" }, { src: "web-joshuasokoya-desk-service-page.jpg", cap: "Example service page with SEO" }],
+      phone: [{ src: "web-joshuasokoya-phone.jpg", cap: "Phone view" }] },
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "WEB - WordPress Web Developer & SEO Specialist"
+  },
+  "ecom-video-manager": {
+    label: "Video Editing Team Manager (E-commerce Ads, Europe)",
+    headline: "Video Editing Team Manager",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Team Management · Video Ads · Caption Checking · Revision Notes · Deadlines · Meta Ads",
+    codeWord: "QUALITY CHECK",
+    tagline: "",
+    summary: "Video Editing Team Manager with 5+ years of experience editing Meta video ads and Reels for brands in Australia, the United States and Europe. I plan the work, review every video word by word for captions, timing and cuts, and send clear revision notes.",
+    keywords: ["team manager", "video editors", "e-commerce", "video ads", "plan next day", "assign projects", "deadlines", "review every video", "captions", "spelling", "timing", "cuts", "music", "product shots", "revision notes", "hours and overtime", "upload and publish", "Swedish", "Norwegian", "Danish", "Finnish", "German", "Dutch", "å ä ö ø æ ü", "ads analyst", "product researcher", "reliable", "attention to detail"],
+    focus: ["social", "design", "english", "admin", "support"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Management experience: leading a team, planning work, assigning tasks and following up", proof: "Former Editor-in-Chief. I plan the work, set deadlines in Asana, Notion and Trello, hand out each task, follow up every day and send a short end-of-day update on what is done and what is next.", status: "yes", tab: "ops", cta: "See my trackers" },
+      { req: "Plan your team's work for the next day and decide what gets made and in what order", proof: "I plan a content calendar around what matters most first: new items, fresh versions of what already works, then the rest. Everyone knows tomorrow's list before today ends.", status: "yes", tab: "ops", cta: "See my planning" },
+      { req: "Assign video projects and make sure every deadline is met", proof: "Every task has an owner, a due date and a status in a tracker, so nothing goes quiet. I check progress during the day and flag a risk early, not at the deadline.", status: "yes", tab: "ops", cta: "See my trackers" },
+      { req: "Review every video: captions, spelling, timing, cuts, music, product shots and quality", proof: "I watch every export with and without sound and check each line of captions, the cuts, the music level and the product shots before anything goes out. 5+ years of Reels, UGC and promo ads cut from raw footage.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Compare captions to the script word for word: missing words, typos, wrong letters (å, ä, ö, ø, æ, ü)", proof: "I read captions against the script line by line and letter by letter, accents included, so I do not need to speak the language to catch a missing word, a wrong letter, captions out of sync or text cut off on screen.", status: "yes", tab: "reels", cta: "See my captions" },
+      { req: "Send clear revision notes and check every fix", proof: "Short numbered notes with the exact timestamp and what to change, in plain English. I re-watch each fix against the note before I approve it.", status: "yes", tab: "ops", cta: "See my updates" },
+      { req: "Track your editors' hours and overtime", proof: "I keep a daily activity log and timesheet for my own client work, so hours are always clear. The same log works for a team: who worked, how long and any overtime.", status: "yes", tab: "ops", cta: "See my trackers" },
+      { req: "Upload and publish the finished ads", proof: "I schedule and publish posts, Reels and ads with Meta Business Suite and Metricool, with the right caption, cover and time on every one.", status: "yes", tab: "plan", cta: "See my scheduling" },
+      { req: "Work with the ads analyst and product researcher on what to make next", proof: "I read Meta Business Suite every week and keep what works: one client's post views grew 50% to 265K and followers 147% in 90 days, so the next video is decided by the numbers.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "E-commerce or social media ads experience", proof: "UGC product videos, perfume and skincare promo videos, AI model product videos and a perfume email campaign, all made for Instagram, TikTok and Meta ads.", status: "yes", tab: "featReels", cta: "See my product videos" },
+      { req: "Clear written English", proof: "Online English teacher, English radio broadcasting awardee and former Editor-in-Chief. My notes are short, specific and easy to act on.", status: "yes", tab: "ops", cta: "See my updates" },
+      { req: "Reliability: show up every day, stay on top of the team and deliver on time", proof: "I send an update every day and deliver on time. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator, so work never stops.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "ops", keys: ["cdcTracker", "cupResults"] },
+      { type: "block", key: "reels" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "saasVideos" },
+      { type: "block", key: "logoVideos" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      ops:        { label: "Planning & Quality Control", title: "Every Video Planned, Checked and On Time.", text: "Daily task plans, deadlines and trackers that keep every video moving until it is approved." },
+      reels:      { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      featReels:  { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:   { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      saasVideos: { label: "SaaS Videos", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
+      logoVideos: { label: "Logo Announcement Videos", title: "Branding Logo Announcement Video I Edit for You", text: "A brand identity and the video that announces it: logo reveal, jersey mockup and brand board." },
+      designs:    { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      emails:     { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupResults: { solution: "I track every post's views and followers in Meta Business Suite each week and report what worked, so the next video is better than the last." }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "QUALITY CHECK - Video Editing Team Manager - Maria Simbajon"
   }
 };
