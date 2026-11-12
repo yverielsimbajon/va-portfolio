@@ -4146,5 +4146,107 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Senior WordPress Developer - Maria Simbajon"
+  },
+  "whiskey-library-editor": {
+    label: "Direct Response Video Editor (Whiskey Library, Meta & TikTok Ads)",
+    headline: "Direct Response Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Meta & TikTok Ads · 9:16 Vertical · 3-Second Hooks · Hook Variations · Sound-Off Captions · CapCut",
+    tagline: "",
+    codeWord: "WL",
+    summary: "Video editor with 5+ years of experience editing vertical ads, Reels and UGC-style videos for brands in Australia, the United States and Europe. I cut creator and product footage into 9:16 ads with a hook in the first 3 seconds, fast pacing, clean captions, proof on screen and one clear call to action.",
+    keywords: ["video editor", "direct response", "ads", "Meta", "TikTok", "short-form", "vertical", "9:16", "raw creator footage", "product footage", "launch-ready", "hook", "first 3 seconds", "stop the scroll", "hook variations", "same body, new opening", "testing", "fast pacing", "captions", "on-screen text", "music", "sound", "sound off", "proof on screen", "call to action", "feedback", "show what changed", "CapCut", "Premiere Pro", "DaVinci Resolve", "Final Cut Pro", "portfolio", "subscription", "e-commerce", "US EST hours", "full-time", "reliable", "communicative"],
+    focus: ["social", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Edit short-form vertical ads (9:16) from raw creator and product footage, to a launch-ready standard", proof: "5+ years of 9:16 videos cut from raw footage in CapCut: promo Reels for a real landscaping client in Australia and UGC-style product ads with voiceover, captions and clean product shots. Every export is checked on a phone, with and without sound, before it is delivered.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "A hook in the first 3 seconds that stops a viewer mid-scroll", proof: "Every video opens on its strongest moment: a bold line of text in the first second, a slow zoom in and out, and the most surprising shot first, so the viewer has a reason to stay.", status: "yes", tab: "reels", cta: "See my hooks" },
+      { req: "Hook variations: same body, new opening, so you can test what stops the scroll", proof: "I lock the body of the ad once, then cut new first 3 seconds with a different line, shot or question. Each version is exported and named clearly (Hook A, B, C), so your test results are easy to read.", status: "yes", tab: "featReels", cta: "See my ad-style videos" },
+      { req: "Fast pacing", proof: "I cut every pause, breath gap and repeated take, keep only the strongest take, and time each cut to the speech and the beat of the music.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Captions, on-screen text, music and sound that keep the ad clear with the sound off", proof: "Captions timed word by word and placed clear of the face, short on-screen text that carries the message on mute, and music and sound effects levelled under the voice.", status: "yes", tab: "reels", cta: "See my captions" },
+      { req: "Proof on screen and one clear call to action", proof: "My product videos show the product in use, with the key benefit on screen, and end on one clear call to action. My email campaigns follow the same rule: one clear button in every email.", status: "yes", tab: "featReels", cta: "See my product videos" },
+      { req: "Know the difference between an ad that sells and a video that just looks good", proof: "I read Meta Business Suite every week and keep what works: one client's post views grew 50% to 265K and followers 147% in 90 days. Every edit has one job: stop the scroll, show the proof, get the click.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Editing skill in Premiere Pro, CapCut, DaVinci Resolve or Final Cut Pro", proof: "CapCut every day for cuts, captions, zooms, music and transitions, with Canva for graphics and code-built motion graphics for promo and SaaS videos.", status: "yes", tab: "reels", cta: "See my edits" },
+      { req: "Personal or client short-form work you can show us", proof: "Real client Reels for Landscaping Services in Australia, plus UGC product ads, SaaS promo videos and a logo announcement video, all on this page.", status: "yes", tab: "reels", cta: "See my work" },
+      { req: "Take feedback fast, apply it, and show what changed", proof: "I change a draft the same day after your notes and send a short list of what changed, with timestamps, so you can check each fix in seconds.", status: "yes" },
+      { req: "Reliable, communicative, and available full-time during US EST hours", proof: "I send a short update every day and deliver on time. US Eastern hours fit my day in the Philippines. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator, so work never stops.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "saasVideos" },
+      { type: "block", key: "logoVideos" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      reels:      { label: "Short-Form Video Ads", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      featReels:  { label: "UGC Ads", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      saasVideos: { label: "Promo Videos", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
+      logoVideos: { label: "Logo Announcement Videos", title: "Branding Logo Announcement Video I Edit for You", text: "A brand identity and the video that announces it: logo reveal, jersey mockup and brand board." },
+      aiModels:   { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      designs:    { label: "Ad Graphics", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      emails:     { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "WL - Direct Response Video Editor - Maria Simbajon"
   }
 };
