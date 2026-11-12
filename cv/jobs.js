@@ -3864,6 +3864,9 @@ window.RESUME_JOBS = {
       ops:      { label: "SEO, Reporting & Notion", title: "Found on Google, Reported Every Week.", text: "On-page SEO and local search for a service business, plus the written updates and Notion trackers I keep for every client." },
       designs:  { label: "Blog & Website Graphics", title: "Graphics That Match the Page.", text: "Headers, promos and social posts in the brand's own colours, ready for the website and the blog." }
     },
+    caseOverrides: {
+      seoAi: { tools: ["On-page SEO", "AI search optimization", "Meta titles & descriptions"] }
+    },
     webProjectsHide: ["Landscaping Services in Australia", "Wellness Brand in Australia"],
     resultsShots: "none",
     resultsNote: "Websites, brands and client work behind the pages I build.",
