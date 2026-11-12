@@ -80,7 +80,8 @@ const PREVIEW = {
   "kind-hearts-it":         ["kind-hearts-it", "Kind Hearts Home Care", "website"],
   "aviation-brand-designer": ["aviation-brand-designer", "Aviation Gaming Company", "social"],
   "resmile-marketing":      ["resmile-marketing", null, "social"],
-  "pikklepuss-sma":         ["pikklepuss-sma", "PIKKLEPUSS", "social"]
+  "pikklepuss-sma":         ["pikklepuss-sma", "PIKKLEPUSS", "social"],
+  "salon-bridal-coordinator": ["salon-bridal-coordinator", "Hair & Bridal Salon", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
