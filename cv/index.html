@@ -281,12 +281,14 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .wlink{align-self:flex-start;margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:10px 20px;color:#fff;background:var(--primary);border:0;border-radius:999px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px rgba(11,110,127,.25);transition:background .25s,transform .25s var(--ease)}
 .wlink:hover{background:var(--primary-dark);transform:translateY(-2px)}
 .rd-sub{margin:34px 0 14px;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.01em}
-.rd-shots{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.rd-shots{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
+.rd-shot,.rd-col{min-width:0}
+html,body{overflow-x:clip}
 .rd-shot{display:block;text-decoration:none;color:inherit}
 .rd-shot .rd-browser img{display:block;width:100%;height:auto}
 .rd-pimg{display:block;width:100%;height:auto;border-radius:16px;border:1px solid var(--line);box-shadow:var(--shadow)}
 .rd-cap{display:block;margin-top:8px;font-size:13.5px;font-weight:600;color:var(--muted)}
-@media (max-width:760px){.rd-shots{grid-template-columns:1fr}}
+@media (max-width:760px){.rd-shots{grid-template-columns:minmax(0,1fr)}}
 .rd-grid{display:grid;grid-template-columns:minmax(0,1fr) 407px;gap:34px;align-items:start}
 .rd-tag{display:inline-block;margin:0 0 10px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--primary)}
 .rd-hint{display:inline-flex;align-items:center;gap:8px;margin:0 0 22px;padding:9px 16px;background:var(--gold-bg);border:1px solid rgba(255,194,61,.7);color:var(--gold-ink);border-radius:999px;font-weight:600;font-size:14px}
@@ -299,7 +301,8 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .rd-screen{border-radius:34px;overflow:hidden;background:#fff;height:min(78vh,740px)}
 .rd-screen iframe{width:100%;height:100%;border:0;display:block}
 .rd-open{margin-top:22px}
-@media (max-width:960px){.rd-grid{grid-template-columns:1fr}.rd-phonecol{text-align:center}}
+@media (max-width:960px){.rd-grid{grid-template-columns:minmax(0,1fr)}.rd-phonecol{text-align:center}}
+@media (max-width:480px){.rd-phone{border-radius:38px;padding:10px}.rd-screen{border-radius:28px;height:min(72vh,640px)}}
 .site-modal{position:fixed;z-index:110;inset:0;display:grid;padding:6vh 5vw;visibility:hidden;place-items:center;background:rgba(9,24,34,0);opacity:0;transition:opacity .35s,background .35s,visibility .35s}
 .site-modal.open{visibility:visible;background:rgba(9,24,34,.55);backdrop-filter:blur(2px);opacity:1}
 .site-window{display:flex;flex-direction:column;width:min(100%,1200px);height:100%;overflow:hidden;background:#fff;border-radius:18px;box-shadow:0 30px 90px rgba(0,0,0,.4);transform:translateY(14px) scale(.98);transition:transform .4s var(--ease)}
@@ -674,8 +677,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261112zm"></script>
-<script src="jobs.js?v=20261112zm"></script>
+<script src="data.js?v=20261112zn"></script>
+<script src="jobs.js?v=20261112zn"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -940,7 +943,7 @@ function stacked(k){
   const head = J.workHeads && J.workHeads[k] ? "" : `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>`;
   return `${head}
     <div class="feeds${w.cols === 2 ? " feeds-2" : ""}">${w.items.map((it, n) => `<div class="feed-card" style="--accent:${it.accent};--tint:${it.tint}">
-      <div class="feed-top"><div class="feed-title"><span class="feed-num" aria-hidden="true">${String(n + 1).padStart(2, "0")}</span><div><h4>${/ig-feed-/.test(it.src) ? `<span class="sample-tag">SAMPLE CONCEPT I DESIGNED:</span> ${esc(it.title.replace(/\s+Based in .*$/, ""))}` : esc(it.title)}</h4><p>${esc(it.note)}</p></div></div>
+      <div class="feed-top"><div class="feed-title"><span class="feed-num" aria-hidden="true">${String(n + 1).padStart(2, "0")}</span><div><h4>${/ig-feed-/.test(it.src) ? `<span class="sample-tag">Sample Instagram Feed Concept I Created:</span> ${esc(it.title.replace(/\s+Based in .*$/, ""))}` : esc(it.title)}</h4><p>${esc(it.note)}</p></div></div>
         <div class="feed-chips">${(it.chips || ["9-post grid", "5-colour palette", "Phone preview"]).map(c => `<span>${esc(c)}</span>`).join("")}</div></div>
       <button class="feed-media${it.phone ? " has-split" : ""}${it.scroll ? " has-scroll" : ""}" type="button" data-lb="${k}" data-i="${n}" aria-label="View ${esc(it.title)}"><img src="${IMG + it.src}" alt="${esc(it.title)}" loading="lazy" decoding="async"></button>
       ${it.phone ? `<div class="feed-split"><img class="fs-phone" src="${IMG + it.phone}" alt="${esc(it.title)}: Instagram profile on a phone" loading="lazy" decoding="async"><img class="fs-grid" src="${IMG + it.grid}" alt="${esc(it.title)}: nine-post Instagram grid" loading="lazy" decoding="async"></div>` : ""}
@@ -992,7 +995,7 @@ const WB = {
   crm: n => loopBlock("crm", "CRM screenshot"),
   smm: n => loopBlock("smm", "Content planning screenshot"),
   admin: n => loopBlock("admin", "Admin screenshot"),
-  websites: n => B.webProjects ? `<h2 class="title wsub">Website designs I create</h2><p class="blurb">${J.webProjectsHide && J.webProjectsHide.includes("Landscaping Services in Australia") ? "Website design concepts" : "Real client website and design concepts"}. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
+  websites: n => B.webProjects ? `<h2 class="title wsub">Website Design Concepts I Created</h2><p class="blurb">${J.webProjectsHide && J.webProjectsHide.includes("Landscaping Services in Australia") ? "Website design concepts" : "Real client website and design concepts"}. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
 };
 
 S.experience = () => {
