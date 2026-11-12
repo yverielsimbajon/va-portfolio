@@ -79,7 +79,8 @@ const PREVIEW = {
   "tiktok-shop-fitness":    ["tiktok-shop-fitness", null, "social"],
   "kind-hearts-it":         ["kind-hearts-it", "Kind Hearts Home Care", "website"],
   "aviation-brand-designer": ["aviation-brand-designer", "Aviation Gaming Company", "social"],
-  "resmile-marketing":      ["resmile-marketing", null, "social"]
+  "resmile-marketing":      ["resmile-marketing", null, "social"],
+  "pikklepuss-sma":         ["pikklepuss-sma", "PIKKLEPUSS", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
