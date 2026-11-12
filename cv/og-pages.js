@@ -22,6 +22,7 @@ const PREVIEW = {
   "reva-26":                ["reva-26", "Real Estate Virtual Assistant", "social"],
   "jbe-ghl":                ["jbe-ghl", "Justin Bucknell Electrical", "crm"],
   "cdc-research":           ["cdc-research", "Chicago Defender Charities", "admin"],
+  "hawaii-tour-admin":      ["hawaii-tour-admin", "Hawaii Tour Company", "admin"],
   "plush-rose":             ["plush-rose", "Plush Rose", "social"],
   "flourish":               ["flourish-dr-lolu", "Flourish with Dr Lolu", "admin"],
   "cupcake-smm":            ["cupcake-smm", null, "social"],

@@ -441,6 +441,50 @@ window.RESUME_JOBS = {
     portfolioLabel: "View my Portfolio",
     emailSubject: "Administrative & Social Media Assistant application"
   },
+  "hawaii-tour-admin": {
+    label: "Administrative & Data Processing Specialist (Hawaii Tour Company)",
+    headline: "Administrative & Data Processing Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Data Processing · Booking Records · Excel & Google Sheets · Reservations · Daily & Weekly Reports",
+    tagline: "",
+    summary: "Organised, detail-oriented Administrative & Data Processing Specialist with 5+ years of experience supporting business owners in Australia, the United States and Europe. I enter, check and organise booking records and spreadsheets accurately, and send a clear weekly report.",
+    keywords: ["Administrative", "Data Processing", "data entry", "booking", "bookings", "reservation", "reservations", "tour", "customer information", "customer records", "spreadsheets", "Microsoft Excel", "Excel", "Google Sheets", "Google Workspace", "Google Drive", "Microsoft Word", "CRM", "duplicate", "accuracy", "accurate", "daily and weekly reports", "reports", "confidential", "independently", "attention to detail", "written English", "deadlines"],
+    focus: ["admin", "ops", "leads", "crm", "english", "support"],
+    order: ["results", "work", "education", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Enter, process and maintain business information in databases and spreadsheets", proof: "I keep client and lead records accurate in Google Sheets, Zoho CRM and GoHighLevel, including a 1,400+ contact database I built and cleaned.", status: "yes", tab: "admin", cta: "See my records" },
+      { req: "Review entries for accuracy, and fix missing, duplicate or incorrect information", proof: "I check every record before it goes in, remove duplicates and fill gaps, so lists stay clean and easy to search.", status: "yes", tab: "admin", cta: "See organised records" },
+      { req: "Process tour reservations and keep booking records, dates and statuses updated", proof: "I managed bookings across 61 GoHighLevel calendars and 200+ calendar events, with notes and status on each one, and confirmations and reminders sent automatically.", status: "yes", tab: "admin", cta: "See my booking calendars" },
+      { req: "Organise confirmations, invoices, customer records and documents", proof: "Documents, records and spreadsheets organised in Google Drive, Docs and Sheets so every file is easy to find.", status: "yes", tab: "admin", cta: "See my Drive files" },
+      { req: "Microsoft Excel and Google Sheets", proof: "I build trackers, lists and reports in Google Sheets every day, and I work in Excel the same way: clean columns, checked entries, and reports ready for management.", status: "yes", tab: "admin", cta: "See my spreadsheets" },
+      { req: "Booking and reservation systems, CRM platforms", proof: "GoHighLevel (booking calendars, pipelines, follow-ups), Zoho CRM and HubSpot. I follow your reservation procedure exactly and verify each booking.", status: "yes", tab: "crm", cta: "See my CRM work" },
+      { req: "Basic email correspondence and follow-ups with customers", proof: "I answer enquiries by email, Messenger and the CRM, and send follow-ups, booking links and reminders in clear, friendly English.", status: "yes", tab: "admin", cta: "See follow-ups" },
+      { req: "Daily and weekly data reports", proof: "I send a brief daily and weekly update to owners and a CEO: what is done, what is pending and what needs a decision.", status: "yes", tab: "admin", cta: "See my reports" },
+      { req: "Handle confidential customer information professionally", proof: "I work with client and customer details every day and keep them private, with access only where needed.", status: "yes" },
+      { req: "Work independently with a reliable internet connection", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop and a backup power generator. I work independently and meet deadlines.", status: "yes" }
+    ],
+    workSections: [
+      { type: "cards", part: "records", keys: ["ghlRecords", "cdcDrive"] },
+      { type: "cards", part: "bookings", keys: ["ghlBooking", "plushCalendar"] },
+      { type: "cards", part: "followups", keys: ["ghlConvos", "cdcFollow"] },
+      { type: "cards", part: "reports", keys: ["cdcUpdates", "ghlUpdates", "cdcTracker"] }
+    ],
+    workHeads: {
+      records:   { label: "Data Processing", title: "Records That Stay Accurate and Organized.", text: "Customer details and business records entered, checked and kept free of duplicates and gaps." },
+      bookings:  { label: "Reservation Administration", title: "Bookings That Stay Up to Date.", text: "Calendars, dates, statuses and confirmations kept accurate for every reservation." },
+      followups: { label: "Customer Information", title: "Customer Follow-Ups Handled on Time.", text: "Enquiries organised and answered, with records updated after every booking change." },
+      reports:   { label: "Reporting", title: "Reports and Trackers Ready for Management.", text: "Daily and weekly updates, trackers and pending tasks in one clear place." }
+    },
+    resultsShots: "none",
+    resultsNote: "Records, bookings and reports I handle every day.",
+    stats: ["years", "leads", "events", "calendars"],
+    workTitle: "Admin & data work I do",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Your Administrative & Data Processing Specialist is Here"
+  },
   "ghl-course-builder": {
     label: "GoHighLevel Course Builder & Marketing Content VA",
     headline: "GoHighLevel Course Builder",
