@@ -4099,5 +4099,52 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "QUALITY CHECK - Video Editing Team Manager - Maria Simbajon"
+  },
+  "bullion-wp-dev": {
+    label: "Senior WordPress Developer (online bullion dealer, London UK)",
+    headline: "Senior WordPress Developer",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "WordPress · WooCommerce · Elementor Pro · Speed & Core Web Vitals · Technical SEO & GEO · Live Data",
+    tagline: "",
+    summary: "Senior WordPress Developer with 5+ years building and improving websites for service businesses in Australia, the United States and Europe. I build fast, mobile-first pages, set up technical SEO and tracking, and report every change in plain English with a backup and an undo plan.",
+    keywords: ["WordPress", "WooCommerce", "Elementor", "Elementor Pro", "theme builder", "loop grids", "global styles", "custom PHP", "CSS", "JavaScript", "AJAX", "REST", "API", "live prices", "caching", "speed", "Core Web Vitals", "PageSpeed", "security", "backups", "monitoring", "staging", "undo plan", "change log", "conversion", "checkout", "mobile", "product pages", "filters", "cart", "technical SEO", "structured data", "Product schema", "Merchant Center", "sitemaps", "canonical tags", "GEO", "AI search", "ChatGPT", "Perplexity", "Search Console", "GA4", "price alerts", "portfolio dashboard", "London", "9am to 5pm UK time", "report to founders"],
+    focus: ["web", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "5+ years of WordPress development, including live WooCommerce stores", proof: "5+ years building and running live websites for businesses in Australia, the United States and Europe, including a real client site that brings in quote enquiries. On the shop side I keep product and order data exact: 67 products and every customer order organised in one system, checked against the source before anything goes live.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Elementor and Elementor Pro: theme builder templates, loop grids, global styles", proof: "I work in Elementor Pro the way I work in Wix Studio and Webflow every day: templates for headers, product pages and archives, loop grids fed by the product list, global colours and fonts set once, and mobile settings checked on every page.", status: "yes", tab: "websites", cta: "See my builds" },
+      { req: "CSS and PHP: clean responsive styles, custom functions, hooks and WooCommerce customisation", proof: "I hand-code HTML, CSS and JavaScript for my own site and my concept pages, with Claude Code as my daily coding partner. Custom PHP follows the same method: small functions, one change at a time, tested on staging and written in the change log.", status: "yes", tab: "websites", cta: "See my code-built pages" },
+      { req: "APIs: REST integrations and live data with JavaScript/AJAX, cached so it never slows the site", proof: "My own site runs a small API on Cloudflare: every visit is stored in a database and an alert is pushed to my phone the moment it happens. I also connect tools with Zapier, n8n and GoHighLevel automations, and I keep live data light so pages stay fast.", status: "yes", tab: "ops", cta: "See my systems" },
+      { req: "Performance: PageSpeed and Core Web Vitals, with before and after numbers", proof: "I compress and resize every image, keep pages lean and test on phone and desktop. Every change goes in a log with the before and after, so you can see exactly what made the site faster.", status: "yes", tab: "websites", cta: "See my builds" },
+      { req: "SEO and GEO: technical SEO, structured data and visibility in AI search", proof: "I set up on-page SEO and AI search optimisation (Google, ChatGPT, Perplexity and Gemini) for a local business in Australia: page titles, meta descriptions, headings, alt text and internal links. Structured data, canonicals and sitemaps follow the same checklist.", status: "yes", tab: "ops", cta: "See my SEO work" },
+      { req: "Search Console and GA4: track rankings, clicks and visibility", proof: "I am Google Analytics and Digital Marketing (Google) certified. I read GA4 and Search Console the way I read Meta Business Suite for my clients, then send a short written report: what grew, what dropped and what to fix next. One client's post views grew 50% to 265K in 90 days.", status: "yes", tab: "ops", cta: "See my reports" },
+      { req: "Conversion and UX: product pages, filters, cart and checkout, especially on mobile", proof: "I design pages around one clear action: a quote calculator, a booking form, one main button with the form close to it. I check the whole journey on a phone first, from landing to submit.", status: "yes", tab: "websites", cta: "See my pages" },
+      { req: "Security: WordPress hardening, firewall and bot management", proof: "I connect domains, DNS records and SSL in Cloudflare and keep every login private. My own site logs visits by country and city and alerts me to any unusual activity, so I notice problems before visitors do.", status: "yes", tab: "websites", cta: "See my builds" },
+      { req: "A careful way of working: staging first, a backup before every change, an undo plan and a change log", proof: "That is how I work on every client site: a backup first, one change at a time, a check after each change, and a written note of what changed and how to undo it.", status: "yes", tab: "ops", cta: "See my updates" },
+      { req: "New features: live price charts, a customer portfolio dashboard and price alerts", proof: "I built my own live dashboard for leads and tasks, with data that updates as I work, and a visitor log that pushes a phone alert when something happens. A holdings dashboard and price alerts use the same pattern: live data in, a clear number out, an alert when it moves.", status: "yes", tab: "ops", cta: "See my dashboards" },
+      { req: "Document your work and report back to the founders with progress and results", proof: "I send a short daily or weekly update: what is done, what is next and what I need from you. Processes are written in a Notion hub, so nothing lives only in my head.", status: "yes", tab: "ops", cta: "See my updates" },
+      { req: "Available 9am to 5pm UK time", proof: "9am to 5pm in London is 5pm to 1am in my day in the Philippines, and that schedule suits me. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "websites" },
+      { type: "cards", part: "ops", keys: ["ghlRecords", "seoAi", "ghlUpdates", "cdcTracker"] }
+    ],
+    workHeads: {
+      websites: { label: "Websites & Landing Pages", title: "Sites Built to Win Enquiries.", text: "Responsive websites I designed and built, with full-photo heroes, clear journeys and one main button on every page." },
+      ops:      { label: "Data, SEO & Reporting", title: "Accurate Data, Found on Google, Reported Clearly.", text: "Product and order records, on-page SEO and AI search, and the written updates I send every week." }
+    },
+    caseOverrides: {
+      seoAi: { tools: ["On-page SEO", "AI search optimization", "Meta titles & descriptions"] }
+    },
+    webProjectsHide: ["Wellness Brand in Australia"],
+    resultsShots: "none",
+    resultsNote: "Websites, brands and client work behind the pages I build.",
+    stats: ["brands", "years", "leads", "calendars"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Senior WordPress Developer - Maria Simbajon"
   }
 };

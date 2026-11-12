@@ -86,7 +86,8 @@ const PREVIEW = {
   "npp-smm":                ["npp-smm", "The New Pink Paradigm", "social"],
   "salon-bridal-coordinator": ["salon-bridal-coordinator", "Hair & Bridal Salon", "social"],
   "js-wordpress-seo":       ["js-wordpress-seo", "Photography & Videography Studio, London", "website"],
-  "ecom-video-manager":     ["ecom-video-manager", null, "social"]
+  "ecom-video-manager":     ["ecom-video-manager", null, "social"],
+  "bullion-wp-dev":         ["bullion-wp-dev", "Online Bullion Dealer, London", "website"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
