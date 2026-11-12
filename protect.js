@@ -125,14 +125,14 @@
     w.style.top = v.offsetTop + "px";
     w.style.width = vw + "px";
     w.style.height = vh + "px";
-    w.style.fontSize = Math.max(12, Math.min(vw * 0.07, 44)) + "px";
+    w.style.fontSize = Math.max(11, Math.min(vw * 0.05, 40)) + "px";
   }
   function mark(v) {
     if (v.__wm || v.id === "introVideo" || !v.parentNode) return;
     var w = document.createElement("div");
     w.className = "__wm";
     w.setAttribute("aria-hidden", "true");
-    w.textContent = "© Maria Simbajon";
+    w.textContent = "© Edited by: Maria Simbajon";
     v.__wm = w;
     v.after(w);
     place(v);
