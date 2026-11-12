@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Joshua Sokoya Proposed Improvements</title>
+<meta name="description" content="Website enhancement concept for Joshua Sokoya, London photographer and videographer, by Maria Simbajon.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#f3f5f3; --ink-2:#d2d6d3; --muted:#9ba19d; --line:#303432;
+  --paper:#1b1d1c; --card:#232625; --deep:#131514; --accent:#97ea90; --accent-ink:#0c2410; --accent-dark:#97ea90;
+  --note:#97ea90; --note-bg:rgba(151,234,144,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Inter",system-ui,sans-serif;background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 22px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;border:0;cursor:pointer;font-family:inherit;transition:transform .15s ease,background .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:var(--accent);color:var(--accent-ink)}
+.btn-gold:hover{background:#b3f2ad}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.4)}
+.btn-dark{background:#fff;color:#1b1d1c}
+
+.block .eyebrow,.sp-hero .eyebrow,.quote .eyebrow{color:var(--accent-dark)}
+summary::after{color:var(--accent-dark)!important}
+/* concept bar */
+.cbar{background:var(--accent);color:var(--accent-ink);font-size:14px}
+.cbar .wrap{display:flex;gap:14px;align-items:center;justify-content:space-between;padding-top:10px;padding-bottom:10px;flex-wrap:wrap}
+.cbar b{font-weight:700}
+.cbar button{background:#1b1d1c;color:#fff;border:0;border-radius:999px;padding:7px 14px;font:600 13px "Inter",sans-serif;cursor:pointer}
+
+/* improvement notes */
+.note{display:flex;gap:12px;align-items:flex-start;background:var(--note-bg);border:1px solid rgba(151,234,144,.4);color:#cfe9cc;border-radius:14px;padding:14px 16px;font-size:14px;line-height:1.5;margin:0 0 22px}
+.note .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--note);color:var(--accent-ink);font-weight:700;display:grid;place-items:center;font-size:14px}
+.note b{display:block;color:var(--accent)}
+body.hide-notes .note{display:none}
+.hero .note{position:absolute;right:24px;bottom:24px;max-width:340px;margin:0;z-index:3;background:rgba(19,21,20,.9)}
+
+/* nav */
+header.nav{position:absolute;top:0;left:0;right:0;z-index:5}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:10px;color:#fff;text-decoration:none;font-weight:700;letter-spacing:.02em}
+.logo img{height:34px;width:auto}
+.logo span{font-size:17px}
+.menu{display:flex;gap:26px;align-items:center}
+.menu a{color:#fff;text-decoration:none;font-size:15px;opacity:.9}
+.menu a:hover{opacity:1}
+.menu .btn{padding:10px 18px;font-size:14px}
+.burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer}
+
+/* hero */
+.hero{position:relative;min-height:clamp(620px,88vh,860px);display:flex;align-items:center;color:#fff;overflow:hidden}
+.hero > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.55) 45%,rgba(10,10,10,.1) 100%)}
+.hero > .wrap{position:relative;z-index:2;padding-top:110px;padding-bottom:80px;width:100%}
+.eyebrow{display:inline-block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--accent)}
+.hero h1{font-size:clamp(38px,5.6vw,68px);line-height:1.05;font-weight:700;max-width:720px;margin:14px 0 18px;letter-spacing:-.02em}
+.hero p.lead{font-size:18px;max-width:540px;color:#e4e8e5}
+.hero .ctas{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.trustbar{display:flex;gap:26px;margin-top:40px;flex-wrap:wrap;font-size:14px;color:#cfd4d0}
+.trustbar b{color:#fff;font-size:15px}
+
+/* logos */
+.clients{background:var(--deep);border-bottom:1px solid var(--line)}
+.clients .wrap{padding-top:34px;padding-bottom:34px}
+.clients p{text-align:center;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:22px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:30px 52px}
+.logos img{height:34px;width:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.7}
+
+section.block{padding:90px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:36px;flex-wrap:wrap}
+.head h2{font-size:clamp(28px,3.4vw,42px);line-height:1.12;letter-spacing:-.02em;max-width:640px}
+.head p{max-width:420px;color:var(--muted)}
+
+/* services */
+.services{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc{position:relative;border-radius:18px;overflow:hidden;min-height:340px;display:flex;align-items:flex-end;color:#fff;text-decoration:none}
+.svc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.svc:hover img{transform:scale(1.04)}
+.svc::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.8),rgba(0,0,0,.05) 65%)}
+.svc div{position:relative;z-index:2;padding:22px}
+.svc small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.svc h3{font-size:22px;line-height:1.2;margin:6px 0 4px}
+.svc span{font-size:14px;color:#e4e8e5}
+
+/* work */
+.work{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:20px}
+.work figure{background:var(--card);border-radius:18px;overflow:hidden;border:1px solid var(--line)}
+.work figure:first-child{grid-row:span 2}
+.work figure img{width:100%;height:240px;object-fit:cover}
+.work figure:first-child img{height:520px}
+.work figcaption{padding:16px 18px}
+.work figcaption b{display:block;font-size:16px}
+.work figcaption span{font-size:13px;color:var(--muted)}
+
+/* process */
+.dark{background:var(--deep);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.step{border-top:1px solid rgba(255,255,255,.2);padding-top:18px}
+.step b{color:var(--accent);font-size:14px}
+.step h3{font-size:19px;margin:8px 0 6px}
+.step p{color:#9ba19d;font-size:15px}
+.dark .head p{color:#9ba19d}
+
+/* quote */
+.quote{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:start}
+.quote .side h2{font-size:clamp(28px,3.4vw,42px);line-height:1.12;letter-spacing:-.02em}
+.quote .side p{color:var(--muted);margin:14px 0 22px}
+.contact-list{list-style:none;display:grid;gap:10px}
+.contact-list a{text-decoration:none;font-weight:600}
+form.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px;display:grid;gap:14px;grid-template-columns:1fr 1fr}
+form.card .full{grid-column:1/-1}
+label{font-size:13px;font-weight:600;color:var(--ink-2);display:grid;gap:6px}
+input,select,textarea{font:inherit;font-size:15px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);color:var(--ink);width:100%;color-scheme:dark}
+textarea{min-height:110px;resize:vertical}
+.thanks{display:none;grid-column:1/-1;background:var(--note-bg);color:var(--accent);padding:14px 16px;border-radius:12px;font-weight:600}
+
+/* faq */
+.faq{max-width:820px}
+details{border-bottom:1px solid var(--line);padding:18px 0}
+summary{font-weight:600;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--accent);font-size:22px;line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{color:var(--muted);margin-top:10px}
+
+/* service page mock */
+.svcpage{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden}
+.browser{display:flex;align-items:center;gap:8px;padding:12px 16px;background:#2a2e2c;border-bottom:1px solid var(--line)}
+.browser i{width:11px;height:11px;border-radius:50%;background:#e0a39b;display:block}
+.browser i:nth-child(2){background:#e6c88f}.browser i:nth-child(3){background:#a7cf9f}
+.browser span{margin-left:10px;background:var(--paper);border-radius:8px;padding:5px 12px;font-size:13px;color:var(--muted);flex:1;max-width:520px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.sp-hero{display:grid;grid-template-columns:1.1fr 1fr}
+.sp-hero .txt{padding:46px}
+.sp-hero h3{font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-.02em;margin:10px 0 14px}
+.sp-hero p{color:var(--muted)}
+.sp-hero ul{margin:18px 0 24px 18px;color:var(--ink-2)}
+.sp-hero img{width:100%;height:100%;min-height:380px;object-fit:cover}
+.seo{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 46px 46px}
+.seo div{background:var(--paper);border-radius:14px;padding:16px;font-size:13px;color:var(--ink-2)}
+.seo b{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--note);margin-bottom:6px}
+.seo code{font-family:inherit;color:var(--ink)}
+
+footer{background:var(--deep);color:#9ba19d;padding:50px 0 90px;font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap}
+footer b{color:#fff}
+footer a{text-decoration:none}
+
+/* sticky mobile CTA */
+.sticky{position:fixed;left:12px;right:12px;bottom:12px;z-index:20;display:none;gap:10px}
+.sticky a{flex:1;justify-content:center}
+
+@media (max-width:900px){
+  .menu{display:none}
+  .burger{display:block}
+  .menu.open{display:flex;position:absolute;top:70px;right:16px;left:16px;flex-direction:column;background:#131514;padding:18px;border-radius:16px}
+  .services,.steps,.seo{grid-template-columns:1fr 1fr}
+  .work{grid-template-columns:1fr 1fr}
+  .work figure:first-child{grid-row:auto;grid-column:1/-1}
+  .work figure:first-child img{height:320px}
+  .quote,.sp-hero{grid-template-columns:1fr}
+  .hero{flex-direction:column;align-items:stretch}
+  .hero .note{position:relative;right:auto;bottom:auto;max-width:none;margin:0 16px 28px}
+  .sticky{display:flex}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px}
+  section.block{padding:64px 0}
+  .services,.steps,.seo,.work{grid-template-columns:1fr}
+  form.card{grid-template-columns:1fr;padding:20px}
+  .sp-hero .txt{padding:26px 20px}
+  .seo{padding:0 20px 26px}
+  .hero{min-height:auto}
+  .hero > .wrap{padding-top:130px;padding-bottom:50px}
+  .logos{gap:22px 30px}.logos img{height:26px}
+  .eyebrow{font-size:11px;letter-spacing:.08em;white-space:normal}
+}
+</style>
+</head>
+<body>
+
+<div class="cbar"><div class="wrap">
+  <span><b>Proposed improvements</b> for joshuasokoya.com, a concept by Maria Simbajon. Each numbered note shows one proposed improvement.</span>
+  <button type="button" id="toggleNotes">Hide notes</button>
+</div></div>
+
+<section class="hero">
+  <img src="https://joshuasokoya.com/wp-content/uploads/2025/08/5-scaled.jpg" alt="Harley Therapy brand photoshoot by Joshua Sokoya, London photographer">
+  <header class="nav"><div class="wrap">
+    <a class="logo" href="#top"><img src="https://joshuasokoya.com/wp-content/uploads/2025/10/White-JS-TS.png" alt="Joshua Sokoya logo"><span>Joshua Sokoya</span></a>
+    <button class="burger" type="button" aria-label="Open menu" id="burger">&#9776;</button>
+    <nav class="menu" id="menu">
+      <a href="#services">Services</a>
+      <a href="#work">Portfolio</a>
+      <a href="#process">Process</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-gold" href="#quote">Get a quote</a>
+    </nav>
+  </div></header>
+  <div class="wrap">
+    <span class="eyebrow">London photographer &amp; videographer</span>
+    <h1>Photos and video that make London brands look their best.</h1>
+    <p class="lead">Corporate headshots, brand photography, events and video production for businesses across London and the UK.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#quote">Get a quote in 24 hours</a>
+      <a class="btn btn-ghost" href="#work">See recent work</a>
+    </div>
+    <div class="trustbar">
+      <span><b>Gumtree · Google · Callaway</b><br>trusted by brands like</span>
+      <span><b>Photo + video</b><br>one team, one shoot</span>
+      <span><b>London &amp; UK</b><br>studio or on location</span>
+    </div>
+  </div>
+  <div class="note"><span class="n">1</span><span><b>Proposed improvement 1: One clean brand</b>"JS Store Here" removed from the logo and page titles. Same name, same menu and same links on every page.</span></div>
+</section>
+
+<div class="clients"><div class="wrap">
+  <p>Brands I have worked with</p>
+  <div class="logos">
+    <img src="https://joshuasokoya.com/wp-content/uploads/2025/10/Gumtree-2.png" alt="Gumtree">
+    <img src="https://joshuasokoya.com/wp-content/uploads/2025/10/Google-1.png" alt="Google">
+    <img src="https://joshuasokoya.com/wp-content/uploads/2025/10/Callaway-2.png" alt="Callaway">
+    <img src="https://joshuasokoya.com/wp-content/uploads/2025/10/Malaria-Consortium-2.png" alt="Malaria Consortium">
+    <img src="https://joshuasokoya.com/wp-content/uploads/2025/10/Hilco-2.png" alt="Hilco Capital">
+    <img src="https://joshuasokoya.com/wp-content/uploads/2025/10/Joma-2.png" alt="Joma">
+  </div>
+</div></div>
+
+<section class="block" id="services"><div class="wrap">
+  <div class="note"><span class="n">2</span><span><b>Proposed improvement 2: A London page for every service</b>Each card opens its own page (for example /corporate-headshots-london/) with photos, FAQs and a quote form, so Google can rank each service for what clients search.</span></div>
+  <div class="head">
+    <h2>Services for London businesses</h2>
+    <p>Choose a service to see examples, what is included and how to book.</p>
+  </div>
+  <div class="services">
+    <a class="svc" href="#service-page"><img src="https://joshuasokoya.com/wp-content/uploads/2025/08/1-scaled.png" alt="Corporate headshot photographed in London"><div><small>Photography</small><h3>Corporate Headshots London</h3><span>Team and personal headshots, studio or in your office</span></div></a>
+    <a class="svc" href="#service-page"><img src="https://joshuasokoya.com/wp-content/uploads/2024/01/TRS-x-GAC-1120x631.png" alt="The Royal Society x Google Arts and Culture video production"><div><small>Videography</small><h3>Commercial Video Production London</h3><span>Promo, brand and testimonial films</span></div></a>
+    <a class="svc" href="#service-page"><img src="https://joshuasokoya.com/wp-content/uploads/2025/10/E0A0536-1120x747.jpg" alt="Anneka Rice bus campaign photography"><div><small>Photography</small><h3>Brand &amp; Campaign Photography</h3><span>Images for ads, websites and social media</span></div></a>
+    <a class="svc" href="#service-page"><img src="https://joshuasokoya.com/wp-content/uploads/2025/08/4-1120x747.jpg" alt="Tripleseat x Gaucho testimonial video shoot"><div><small>Videography</small><h3>Testimonial Videos</h3><span>Your clients telling your story</span></div></a>
+    <a class="svc" href="#service-page"><img src="https://joshuasokoya.com/wp-content/uploads/2025/09/E0A6421-scaled-e1757268322274.jpg" alt="Event photography in London"><div><small>Photo &amp; video</small><h3>Event Photography London</h3><span>Launches, conferences and private events</span></div></a>
+    <a class="svc" href="#service-page"><img src="https://joshuasokoya.com/wp-content/uploads/2025/09/IMG_1095-scaled.jpg" alt="Photography workshop and education"><div><small>Education</small><h3>Photography Workshops</h3><span>Learn to shoot with confidence</span></div></a>
+  </div>
+</div></section>
+
+<section class="block" id="work" style="padding-top:0"><div class="wrap">
+  <div class="head">
+    <h2>Recent work</h2>
+    <p>Every image now has a description, so it can also be found in Google Images.</p>
+  </div>
+  <div class="work">
+    <figure><img src="https://joshuasokoya.com/wp-content/uploads/2025/08/E0A5713-2-1120x747.jpg" alt="Harley Therapy brand photography and video in London"><figcaption><b>Harley Therapy</b><span>Photography · Videography</span></figcaption></figure>
+    <figure><img src="https://joshuasokoya.com/wp-content/uploads/2024/01/Es-1120x631.png" alt="National Portrait Gallery x Es Devlin x Google Arts and Culture film"><figcaption><b>National Portrait Gallery x Es Devlin x Google Arts &amp; Culture</b><span>Videography</span></figcaption></figure>
+    <figure><img src="https://joshuasokoya.com/wp-content/uploads/2025/08/4-1120x747.jpg" alt="Tripleseat x Gaucho testimonial video"><figcaption><b>Tripleseat x Gaucho</b><span>Testimonial video</span></figcaption></figure>
+    <figure><img src="https://joshuasokoya.com/wp-content/uploads/2025/10/E0A0536-1120x747.jpg" alt="Anneka Rice bus campaign photography"><figcaption><b>Anneka Rice</b><span>Bus campaign photography</span></figcaption></figure>
+    <figure><img src="https://joshuasokoya.com/wp-content/uploads/2024/01/TRS-x-GAC-1120x631.png" alt="The Royal Society x Google Arts and Culture video"><figcaption><b>The Royal Society x Google Arts &amp; Culture</b><span>Videography</span></figcaption></figure>
+  </div>
+</div></section>
+
+<section class="block dark" id="process"><div class="wrap">
+  <div class="head">
+    <h2>How booking works</h2>
+    <p>Simple steps, so every enquiry turns into a confirmed shoot.</p>
+  </div>
+  <div class="steps">
+    <div class="step"><b>01</b><h3>Send your brief</h3><p>Tell us what you need with the short quote form.</p></div>
+    <div class="step"><b>02</b><h3>Get your quote</h3><p>A clear quote and a call to plan the shoot.</p></div>
+    <div class="step"><b>03</b><h3>Shoot day</h3><p>Studio or on location in London and across the UK.</p></div>
+    <div class="step"><b>04</b><h3>Edited and delivered</h3><p>Finished photos and video, ready for your website and social media.</p></div>
+  </div>
+</div></section>
+
+<section class="block" id="quote"><div class="wrap">
+  <div class="note"><span class="n">3</span><span><b>Proposed improvement 3: Easy to enquire</b>A short quote form on every page instead of only an email link, plus a sticky "Get a quote" button on phones. Every form is tracked in Google Analytics 4 as a lead.</span></div>
+  <div class="quote">
+    <div class="side">
+      <span class="eyebrow">Get a quote</span>
+      <h2>Tell me about your shoot.</h2>
+      <p>Share a few details and I will come back with a quote and next steps.</p>
+      <ul class="contact-list">
+        <li>Call: <a href="tel:+447539272864">+44 7539 272864</a></li>
+        <li>Email: <a href="mailto:hello@joshuasokoya.com">hello@joshuasokoya.com</a></li>
+        <li>Instagram: <a href="https://www.instagram.com/shutterbyjs" target="_blank" rel="noopener">@shutterbyjs</a></li>
+      </ul>
+    </div>
+    <form class="card" id="qform">
+      <label>Name<input required name="name" autocomplete="name"></label>
+      <label>Email<input required type="email" name="email" autocomplete="email"></label>
+      <label>Service<select name="service">
+        <option>Corporate headshots</option><option>Commercial video</option><option>Brand photography</option>
+        <option>Testimonial video</option><option>Event photography</option><option>Workshop</option></select></label>
+      <label>Preferred date<input type="date" name="date"></label>
+      <label class="full">Tell me about the project<textarea name="msg" placeholder="Number of people, location, where the photos or video will be used"></textarea></label>
+      <button class="btn btn-dark full" type="submit">Request my quote</button>
+      <div class="thanks" id="thanks">Thank you! This is a concept form, so nothing was sent. On the real site this goes straight to your inbox and is counted as a lead in Google Analytics.</div>
+    </form>
+  </div>
+</div></section>
+
+<section class="block" id="service-page" style="padding-top:0"><div class="wrap">
+  <div class="head">
+    <h2>Example service page</h2>
+    <p>One of the new London pages, built to rank and to turn visitors into enquiries.</p>
+  </div>
+  <div class="svcpage">
+    <div class="browser"><i></i><i></i><i></i><span>joshuasokoya.com/corporate-headshots-london/</span></div>
+    <div class="sp-hero">
+      <div class="txt">
+        <span class="eyebrow">Corporate headshots</span>
+        <h3>Corporate Headshots in London</h3>
+        <p>Professional headshots for teams, founders and LinkedIn profiles, photographed in your office or on location in London.</p>
+        <ul>
+          <li>Individual and full-team sessions</li>
+          <li>On-site setup at your London office</li>
+          <li>Edited images ready for your website and LinkedIn</li>
+        </ul>
+        <a class="btn btn-gold" href="#quote">Get a headshot quote</a>
+      </div>
+      <img src="https://joshuasokoya.com/wp-content/uploads/2025/08/1-scaled.png" alt="Corporate headshot photography in London by Joshua Sokoya">
+    </div>
+    <div class="seo">
+      <div><b>Page title</b><code>Corporate Headshots London | Joshua Sokoya Photography</code></div>
+      <div><b>Meta description</b><code>Professional corporate headshots in London for teams and founders. On-site sessions, edited images ready for LinkedIn. Get a quote.</code></div>
+      <div><b>Behind the scenes</b><code>LocalBusiness schema, descriptive alt text, compressed images, links to related services and the matching Google Business Profile.</code></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="block" id="faq" style="padding-top:0"><div class="wrap">
+  <div class="head"><h2>Questions clients ask</h2><p>FAQs answer real searches and help each page rank.</p></div>
+  <div class="faq">
+    <details open><summary>Do you travel to our office for headshots?</summary><p>Yes, sessions can be photographed on location in London and across the UK. Share your address in the quote form.</p></details>
+    <details><summary>Can you do photos and video on the same day?</summary><p>Yes, photography and videography can be planned as one shoot, so you get both from one day.</p></details>
+    <details><summary>How do I get a quote?</summary><p>Fill in the short form with your service, date and a few details, and you will receive a quote with next steps.</p></details>
+    <details><summary>Do you run photography workshops?</summary><p>Yes, workshops and photography education are part of what we do. Choose "Workshop" in the quote form to ask about dates.</p></details>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <div><b>Joshua Sokoya</b><br>Photographer &amp; videographer, London UK</div>
+  <div><a href="tel:+447539272864">+44 7539 272864</a><br><a href="mailto:hello@joshuasokoya.com">hello@joshuasokoya.com</a></div>
+  <div>Concept by <b>Maria Simbajon</b><br><a href="https://themariaoffice.com/cv/js-wordpress-seo/">themariaoffice.com</a></div>
+</div></footer>
+
+<div class="sticky"><a class="btn btn-gold" href="#quote">Get a quote</a><a class="btn btn-dark" href="tel:+447539272864">Call</a></div>
+
+<script>
+document.getElementById("toggleNotes").addEventListener("click", e => {
+  const off = document.body.classList.toggle("hide-notes");
+  e.target.textContent = off ? "Show notes" : "Hide notes";
+});
+const menu = document.getElementById("menu");
+document.getElementById("burger").addEventListener("click", () => menu.classList.toggle("open"));
+menu.addEventListener("click", e => { if (e.target.tagName === "A") menu.classList.remove("open"); });
+document.getElementById("qform").addEventListener("submit", e => {
+  e.preventDefault();
+  document.getElementById("thanks").style.display = "block";
+  e.target.querySelector("button[type=submit]").disabled = true;
+});
+</script>
+</body>
+</html>
