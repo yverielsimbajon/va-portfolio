@@ -674,8 +674,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261112ze"></script>
-<script src="jobs.js?v=20261112ze"></script>
+<script src="data.js?v=20261112zf"></script>
+<script src="jobs.js?v=20261112zf"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -841,13 +841,13 @@ S.work = () => {
     const out = (J.workSplit ? J.workSections.slice(0, J.workSplit) : J.workSections).map(s => {
       if (s.type === "cards") return cardsPart(s.part, s.keys, `<div class="pgrid">${s.keys.map(caseCard).join("")}</div>`);
       if (s.type === "block") return blockPart(s.key);
-      if (s.type === "heading") return `<div class="eyebrow" style="margin-top:34px">Work samples</div><h3 class="shots-title" style="margin-top:14px">${esc(s.text || "Real Screenshots. Real Clients.")}</h3>`;
+      if (s.type === "heading") return `<div class="eyebrow" style="margin-top:34px">Work samples</div><h3 class="shots-title" style="margin-top:14px">${esc(s.text || "Real Screenshots. Real Work.")}</h3>`;
       if (s.type === "intro") return `<p class="lede" style="text-align:center;margin:34px auto 26px">${esc(s.text)}</p>`;
       return "";
     }).join("");
     return `<section class="block" id="work"><div class="wrap">
     ${J.workHeadHide ? "" : `<div class="eyebrow">Work samples</div>
-    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>`}${out}</div></section>`;
+    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Work.</h3>`}${out}</div></section>`;
   }
   if (J.workCards && J.workBlocks) {
     const out = J.workBlocks.map((k, n) => blockPart(k, n)).join("");
@@ -855,19 +855,19 @@ S.work = () => {
     <div class="pgrid">${J.workCards.map(caseCard).join("")}</div>`;
     return `<section class="block" id="work"><div class="wrap">
     <div class="eyebrow">Work samples</div>
-    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>${out}
+    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Work.</h3>${out}
     ${cardsPart("cards", J.workCards, cards)}</div></section>`;
   }
   if (J.workCards) return `<section class="block" id="work"><div class="wrap">
     <div class="eyebrow">Work samples</div>
-    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>
+    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Work.</h3>
     ${cardsPart("cards", J.workCards, `<p class="lede" style="text-align:center;margin:10px auto 26px">${esc(J.workIntro || "Real client work, matched to what you asked for. Tap a picture to enlarge it.")}</p>
     <div class="pgrid">${J.workCards.map(caseCard).join("")}</div>`)}</div></section>`;
   const blocks = J.workBlocks || ["designs", "reels", "crm", "smm"];
   const out = blocks.map((k, n) => blockPart(k, n)).join("");
   return `<section class="block" id="work"><div class="wrap">
     <div class="eyebrow">Work samples</div>
-    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Clients.</h3>${out}</div></section>`;
+    <h3 class="shots-title" style="margin-top:14px">Real Screenshots. Real Work.</h3>${out}</div></section>`;
 };
 const ico = { prev: '<svg viewBox="0 0 24 24"><path d="m15 5-7 7 7 7"/></svg>', next: '<svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg>' };
 const SND_OFF = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="m23 9-6 6M17 9l6 6"/></svg>', SND_ON = '<svg viewBox="0 0 24 24"><path d="M11 5 6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"/></svg>';

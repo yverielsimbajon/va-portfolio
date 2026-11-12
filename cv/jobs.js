@@ -505,11 +505,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -518,9 +518,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       }
     },
@@ -1081,8 +1081,8 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Two food Reels (cupcakes and a restaurant edit), plus before-and-after Reels with captions and music for Landscaping Services in Australia. Tap a phone to play.",
         items: [
-          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
-          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
+          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Shop Video Sample" },
+          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       }
@@ -1723,8 +1723,8 @@ window.RESUME_JOBS = {
         blurb: "Two restaurant food Reels with music, sound effects and a warm colour grade, made for sample brands. Tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", name: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", name: "Stack'd Burgers (sample)" }
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", name: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", name: "Burger Shop Video Sample" }
         ]
       },
       foodPosters: {
@@ -1736,9 +1736,9 @@ window.RESUME_JOBS = {
         label: "Reels I edit for you",
         blurb: "A fresh smoothie product video, two more food Reels (a restaurant edit and cupcakes), plus before-and-after Reels with captions and music. Sample brands, tap a phone to play.",
         items: [
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
-          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant (sample)" },
-          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Business (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-food.mp4", poster: "reel-food.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-cupcake.mp4", poster: "reel-cupcake.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Cupcake Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" }, { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       }
@@ -1803,11 +1803,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -1816,9 +1816,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" },
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" }
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" },
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" }
         ]
       },
       aiModels: {
@@ -2035,11 +2035,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2048,9 +2048,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       }
     },
@@ -2185,11 +2185,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2198,9 +2198,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -2292,11 +2292,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2305,9 +2305,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -2396,11 +2396,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2409,9 +2409,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -2499,11 +2499,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2512,9 +2512,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -2603,11 +2603,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2616,9 +2616,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -2708,11 +2708,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2721,9 +2721,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -2891,11 +2891,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -2904,9 +2904,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -3016,8 +3016,8 @@ window.RESUME_JOBS = {
       }, campaignsOrder: ["Home Services", "Perfume", "Makeup"], campaignsHide: ["The Maria Office"] }
     },
     workHeads: {
-      emails:      { label: "Real Screenshots. Real Clients.", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
-      flows:       { label: "Email Flows", title: "Real Clients, Real Screenshots.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
+      emails:      { label: "Real Screenshots. Real Work.", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." },
+      flows:       { label: "Email Flows", title: "Real Work, Real Screenshots.", text: "Confirmations, reminders and follow-ups I build, test and improve in the live tool." },
       speed:       { label: "Tracking & Reporting", title: "Results You Can Read in a Minute.", text: "Trackers and a weekly report on what was sent, what happened and what to change." }
     },
     workHeadHide: true,
@@ -3110,11 +3110,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -3123,9 +3123,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -3367,11 +3367,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -3380,9 +3380,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do, ready to run as ads. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -3475,11 +3475,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -3488,9 +3488,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -3579,11 +3579,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -3592,9 +3592,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -3685,11 +3685,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -3698,9 +3698,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
@@ -3791,11 +3791,11 @@ window.RESUME_JOBS = {
       reels: {
         blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
         items: [
-          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
-          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
         ]
       },
@@ -3804,9 +3804,9 @@ window.RESUME_JOBS = {
         blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
         auto: true,
         items: [
-          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
-          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
-          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
         ]
       },
       aiModels: {
