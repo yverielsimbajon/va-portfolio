@@ -3612,5 +3612,111 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "PIKKLE - Social Media Assistant"
+  },
+  "ai-growth-coach": {
+    label: "AI Marketing & Content Growth Specialist (Online Coaching Brand)",
+    headline: "AI Marketing & Content Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "AI Tools · Automation · Content Repurposing · Hooks & CTAs · Instagram Growth · Funnels",
+    tagline: "",
+    summary: "AI marketing and content specialist with 5+ years of experience helping brands grow online. I use AI and automation to turn long-form content into Reels, carousels, captions and emails, and I build the workflows that save time and increase output.",
+    keywords: ["AI tools", "automation", "marketing", "content", "virality", "business growth", "personal brand", "online coaching", "repurposing long-form content", "Reels", "carousels", "captions", "emails", "lead magnets", "hooks", "CTAs", "storytelling", "funnels", "lead generation", "GoHighLevel", "Claude", "ChatGPT", "Notion", "workflows", "systems", "trends", "Instagram growth", "video repurposing"],
+    focus: ["social", "crm", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Use AI tools to maximize content production", proof: "I use Claude and ChatGPT every day for content ideas, caption drafts, scripts and planning, and I make AI UGC and AI model videos, always labelled as AI-generated.", status: "yes", tab: "aiModels", cta: "See my AI videos" },
+      { req: "Repurpose long-form content into reels, carousels, captions, emails and stories", proof: "One idea becomes a Reel with subtitles and music, a Canva carousel, captions and a whole email campaign in the same brand colours.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Stronger hooks, CTAs and storytelling angles", proof: "Every Reel opens on its strongest moment with a short line of text in the first second, and every email and post ends with one clear button or next step.", status: "yes", tab: "reels", cta: "See my hooks" },
+      { req: "Build automations and systems that save time", proof: "I build GoHighLevel workflows for a live client account (SMS and email confirmations, reminders and follow-ups), and I keep my own lead trackers, task lists and daily routines running on automations.", status: "yes", tab: "automations", cta: "See my automations" },
+      { req: "Organize workflows for content, marketing and sales", proof: "A content calendar in Notion, a weekly posting schedule and a sales pipeline with clear stages, so everyone knows what is next.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Instagram growth and social media that performs", proof: "One client's post views grew 50% to 265K and followers 147% in 90 days, with real content, real replies and consistent posting.", status: "yes", tab: "results", cta: "See the real screenshots" },
+      { req: "Optimize funnels, messaging and lead generation", proof: "I created a GoHighLevel funnel with a landing page and booking calendar, and I write the email and SMS follow-up that moves a lead to the next step.", status: "yes", tab: "websites", cta: "See my funnels" },
+      { req: "Email and SMS marketing", proof: "Whole email campaigns in the brand's colours with one clear button in every email, plus SMS and email follow-up sequences in GoHighLevel.", status: "yes", tab: "emails", cta: "See my email campaigns" },
+      { req: "Campaign ideas, launches and promotions", proof: "I plan campaigns around the calendar, from a launch email series to seasonal promotions, with the posts, Reels and emails to match.", status: "yes", tab: "emails", cta: "See my campaigns" },
+      { req: "Keep up with new AI tools and trends", proof: "I test new AI tools as they come out and use the ones that work in my daily workflow, then turn trends into content ideas quickly.", status: "yes", tab: "aiModels", cta: "See what I make with AI" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Content Strategy", title: "Content Planned, Posted and Repurposed.", text: "A content calendar and weekly system, so one idea becomes posts, Reels and emails." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool, repurposing one idea across every channel so a page posts every week without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "AI Marketing Growth Specialist"
   }
 };
