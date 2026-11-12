@@ -1493,6 +1493,26 @@
       .ugc-row { grid-template-columns: minmax(0, 1fr); }
     }
 
+    /* ---------- Widescreen video card (SaaS videos, logo announcements) ---------- */
+    .feeds-wide { align-items: start; }
+    .feeds-wide .feed-card.is-full { grid-column: 1 / -1; }
+    .feeds-wide .feed-chips { display: flex; }
+    .wide-video {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      cursor: pointer;
+      background: #0b1b24;
+      border-radius: 18px;
+      box-shadow: 0 14px 34px rgba(17, 76, 89, 0.18);
+    }
+    .wide-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
+    .wide-video .reel-sound { position: absolute; right: 14px; bottom: 14px; z-index: 2; }
+    @media (max-width: 760px) {
+      .feeds-wide .feed-chips { display: none; }
+      .wide-video { border-radius: 12px; }
+    }
+
     /* Phones: fewer layers around the content so pictures can use the screen */
     @media (max-width: 540px) {
       .service-section .container { width: calc(100% - 20px); }
@@ -2430,6 +2450,35 @@
       },
       {
         category: "social",
+        layout: "wide",      // widescreen video card, two videos side by side
+        title: "SaaS Videos I Edit For You",
+        clients: ["Sample videos: a Jollibee concept ad and The Maria Office"],
+        description: "Premium app-style promo videos with kinetic text, clicking cursors, clean interface cards, a voiceover and background music, built to explain a product or service in under a minute and end on a clear call to action.",
+        tools: ["HyperFrames", "CapCut", "Canva"],
+        /* New SaaS videos go straight into this list (and into images, in the same order) */
+        items: [
+          { title: "Jollibee App Promo", note: "A sample concept ad, ordering made simple", chips: ["Voiceover", "Music", "Motion graphics"], accent: "#DA001C", tint: "#fdeff0" },
+          { title: "The Maria Office, Monday Handled", note: "One busy Monday, sorted from start to finish", chips: ["Voiceover", "Music", "Motion graphics"], accent: "#0b6e7f", tint: "#e8f6f6" }
+        ],
+        images: ["saas-jollibee.mp4", "saas-maria-office.mp4"]
+      },
+      {
+        category: "social",
+        layout: "wide",
+        title: "Branding Logo Announcement Video I Edit For You",
+        clients: ["Sample brand: Aviation Gaming (concept)"],
+        description: "A brand identity and the video that announces it. The logo is built on screen, shown on the app icon, the jersey and the website, then closed with a clean end card, so a new brand looks put together from day one.",
+        tools: ["HyperFrames", "Figma", "Canva"],
+        /* New brand identities and logo videos go straight into this list (and into images, in the same order) */
+        items: [
+          { title: "Logo Announcement Video", note: "The logo comes to life, then the brand follows", chips: ["Logo reveal", "Music", "Brand colours"], accent: "#0258B8", tint: "#eaf3fc" },
+          { title: "Team Jersey Mockup", note: "The logo on the kit, ready for the squad", w: 1536, h: 1024, alt: "Aviation Gaming logo on a team jersey", accent: "#0258B8", tint: "#eaf3fc" },
+          { title: "Brand Identity Board", note: "Logo, colours, fonts, app icon and brand voice on one page", w: 1800, h: 1012, alt: "logo, colour palette, typography, app icon and brand voice", full: true, accent: "#0258B8", tint: "#eaf3fc" }
+        ],
+        images: ["brand-aviation-gaming-logo-animation.mp4", "brand-aviation-gaming-jersey.webp", "brand-aviation-gaming-board.webp"]
+      },
+      {
+        category: "social",
         layout: "ugc",       // same feed-style card, one sub-card per video
         title: "AI Model Videos I Edit For Your Product",
         clients: ["Sample videos: made from free stock clothing photos"],
@@ -2859,8 +2908,38 @@
           <p class="reels-hint">Swipe or tap the arrows to see more videos</p>
         </article>`;
 
+    // Widescreen videos (and boards) in a two-up grid; an item with full: true spans both columns
+    const wideHtml = (p, i, label) => `
+        <article class="feature-card reveal" data-index="${i}">
+          <div class="feature-head">
+            <div>${featureHead(p, label)}</div>
+            ${toolsHtml(p)}
+          </div>
+          <div class="feeds feeds-2 feeds-wide">
+            ${p.items.map((it, n) => `
+            <div class="feed-card${it.full ? " is-full" : ""}" style="--accent:${it.accent};--tint:${it.tint}">
+              <div class="feed-top">
+                <div class="feed-title"><span class="feed-num" aria-hidden="true">${pad(n + 1)}</span><div><h4>${esc(it.title)}</h4><p>${esc(it.note)}</p></div></div>
+                <div class="feed-chips">${(it.chips || []).map((c) => `<span>${esc(c)}</span>`).join("")}</div>
+              </div>
+              ${isVideo(p.images[n]) ? `
+              <div class="wide-video" role="button" tabindex="0" aria-label="${esc(it.title)}: turn sound on or off">
+                <video src="../images/${p.images[n]}" poster="../images/${p.images[n].replace(/\.mp4$/i, ".jpg")}" muted loop playsinline preload="none"></video>
+                <button class="reel-sound" type="button" aria-pressed="false">${soundIcon.off}<span>Tap for sound</span></button>
+              </div>
+              <p class="feed-by">Edited by Yours Truly, Maria Simbajon</p>` : `
+              <button class="feed-media" type="button" data-n="${n}" aria-label="View ${esc(it.title)}">
+                <img src="../images/${p.images[n]}" alt="${esc(it.title)}: ${esc(it.alt || it.note)}" loading="lazy" decoding="async" width="${it.w}" height="${it.h}" />
+                <span class="design-zoom" aria-hidden="true">${icon.zoom}</span>
+              </button>
+              <p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>`}
+            </div>`).join("")}
+          </div>
+        </article>`;
+
     const renderProject = (p, i, label) =>
-      p.layout === "ugc" ? ugcHtml(p, i, label)
+      p.layout === "wide" ? wideHtml(p, i, label)
+        : p.layout === "ugc" ? ugcHtml(p, i, label)
         : p.layout === "emails" ? emailsHtml(p, i, label)
         : p.layout === "gallery" ? galleryHtml(p, i, label)
         : p.layout === "results" ? resultsHtml(p, i, label)
@@ -3097,6 +3176,43 @@
       });
     }, { threshold: 0.5 });
     reels.forEach((r) => reelObserver.observe(r.video));
+
+    /* ---------- Widescreen videos: autoplay muted, tap for sound (one at a time) ---------- */
+    const wides = [...document.querySelectorAll(".wide-video")].map((box) => ({
+      box,
+      video: box.querySelector("video"),
+      button: box.querySelector(".reel-sound")
+    }));
+    const showWideSound = (r) => {
+      const on = !r.video.muted;
+      r.button.setAttribute("aria-pressed", String(on));
+      r.button.innerHTML = on ? `${soundIcon.on}<span>Sound on</span>` : `${soundIcon.off}<span>Tap for sound</span>`;
+    };
+    const toggleWideSound = (r) => {
+      const turnOn = r.video.muted;
+      wides.forEach((o) => { o.video.muted = true; showWideSound(o); });
+      reels.forEach((o) => { o.video.muted = true; showSound(o); });
+      r.video.muted = !turnOn;
+      if (turnOn && r.video.paused) r.video.play().catch(() => {});
+      showWideSound(r);
+    };
+    wides.forEach((r) => {
+      r.button.addEventListener("click", (e) => { e.stopPropagation(); toggleWideSound(r); });
+      r.box.addEventListener("click", () => toggleWideSound(r));
+      r.box.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggleWideSound(r); } });
+    });
+    const wideObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        const video = entry.target;
+        if (entry.isIntersecting && (!reduceMotion || !video.muted)) video.play().catch(() => {});
+        else if (!entry.isIntersecting) {
+          video.pause();
+          const r = wides.find((x) => x.video === video);
+          if (r && !video.muted) { video.muted = true; showWideSound(r); }
+        }
+      });
+    }, { threshold: 0.5 });
+    wides.forEach((r) => wideObserver.observe(r.video));
 
     /* ---------- Reels on phones: arrows, "Reel 1 / 3" and a one-time swipe hint ---------- */
     document.querySelectorAll(".reels-stage").forEach((stage) => {
