@@ -266,6 +266,17 @@ window.RESUME_BASE = {
         { src: "ig-feed-coffee.webp", phone: "ig-feed-coffee-phone.webp", grid: "ig-feed-coffee-grid.webp", title: "Coffee Shop Based in Melbourne, Australia", note: "Warm, cosy and café-fresh", accent: "#6b4a2f", tint: "#f6efe6" },
         { src: "ig-feed-clinic.webp", phone: "ig-feed-clinic-phone.webp", grid: "ig-feed-clinic-grid.webp", title: "Aesthetic Clinic Based in Beverly Hills, CA", note: "Calm, clean and premium", accent: "#3f5a4b", tint: "#eef3ee" }
       ] },
+    saasVideos: { label: "SaaS Videos I Edit For You", blurb: "Premium app-style promo videos with kinetic text, clicking cursors, clean interface cards, a voiceover and background music, built to explain a product or service in under a minute and end on a clear call to action. Tap a video to switch the sound.",
+      items: [
+        { src: "saas-jollibee.mp4", poster: "saas-jollibee.jpg", kind: "video", title: "Jollibee App Promo", note: "A sample concept ad, ordering made simple", chips: ["Voiceover", "Music", "Motion graphics"], accent: "#DA001C", tint: "#fdeff0" },
+        { src: "saas-maria-office.mp4", poster: "saas-maria-office.jpg", kind: "video", title: "The Maria Office, Monday Handled", note: "One busy Monday, sorted from start to finish", chips: ["Voiceover", "Music", "Motion graphics"], accent: "#0b6e7f", tint: "#e8f6f6" }
+      ] },
+    logoVideos: { label: "Branding Logo Announcement Video I Edit For You", blurb: "A brand identity and the video that announces it. The logo is built on screen, shown on the app icon, the jersey and the website, then closed with a clean end card, so a new brand looks put together from day one. Tap the video to switch the sound.",
+      items: [
+        { src: "brand-aviation-gaming-logo-animation.mp4", poster: "brand-aviation-gaming-logo-animation.jpg", kind: "video", title: "Logo Announcement Video", note: "The logo comes to life, then the brand follows", chips: ["Logo reveal", "Music", "Brand colours"], accent: "#0258B8", tint: "#eaf3fc" },
+        { src: "brand-aviation-gaming-jersey.webp", title: "Team Jersey Mockup", note: "The logo on the kit, ready for the squad", alt: "Aviation Gaming logo on a team jersey", chips: ["Logo", "Jersey", "Mockup"], accent: "#0258B8", tint: "#eaf3fc" },
+        { src: "brand-aviation-gaming-board.webp", title: "Brand Identity Board", note: "Logo, colours, fonts, app icon and brand voice on one page", alt: "logo, colour palette, typography, app icon and brand voice", chips: ["Palette", "Fonts", "App icon"], full: true, accent: "#0258B8", tint: "#eaf3fc" }
+      ] },
     emails: { label: "Email Marketing", blurb: "Emails that keep people interested and bring them back. I plan a whole campaign at a time, in the brand's own colours and voice, with one clear button in every email, so subscribers know exactly what to do next. Tap any email to enlarge it.",
       items: ["mo","rose","velour"].flatMap(c => ["board",1,2,3,4].map(n => ({ src: "email-" + c + "-" + n + ".jpg" }))),
       campaigns: [

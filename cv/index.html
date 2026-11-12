@@ -348,6 +348,8 @@ h2.title{margin:8px 0 6px;font-size:clamp(26px,3.6vw,38px);line-height:1.15;lett
 .freel{position:relative;aspect-ratio:9/16;overflow:hidden;cursor:pointer;background:#000;border-radius:18px;box-shadow:0 22px 44px rgba(9,24,34,.22)}
 .freel video{display:block;width:100%;height:100%;object-fit:cover}
 .freels.fit-contain .freel video{object-fit:contain}
+.freels.wide{grid-template-columns:minmax(0,1fr);margin-top:0}.freels.wide .freel{aspect-ratio:16/9;border-radius:18px;box-shadow:0 14px 34px rgba(17,76,89,.18)}.freels.wide .freel video{object-fit:cover}
+.feed-card.is-full{grid-column:1/-1}.feeds-wide{align-items:start}.feeds-wide .feed-chips{display:flex}@media(max-width:760px){.feeds-wide .feed-chips{display:none}.freels.wide .freel{border-radius:12px}}
 .fsound{position:absolute;top:12px;right:12px;z-index:2;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;color:#fff;cursor:pointer;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.35);border-radius:999px;backdrop-filter:blur(6px)}
 .fsound svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .fsound[aria-pressed="true"]{background:var(--primary);border-color:transparent}
@@ -672,8 +674,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261112zd"></script>
-<script src="jobs.js?v=20261112zd"></script>
+<script src="data.js?v=20261112ze"></script>
+<script src="jobs.js?v=20261112ze"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -908,6 +910,18 @@ function featBlock(k){
       <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
       <button class="fsound" type="button" aria-pressed="false" aria-label="Turn sound on">${SND_OFF}</button></div>`).join("")}</div>`;
 }
+// widescreen videos + boards in a two-up grid (SaaS promos, logo announcement); an item with full:true spans both columns
+function wideBlock(k){
+  const w = B.work[k], pad = n => String(n).padStart(2, "0");
+  const head = J.workHeads && J.workHeads[k] ? "" : `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>`;
+  return `${head}<div class="feeds feeds-2 feeds-wide">${w.items.map((it, n) => `<div class="feed-card${it.full ? " is-full" : ""}" style="--accent:${it.accent};--tint:${it.tint}">
+      <div class="feed-top"><div class="feed-title"><span class="feed-num" aria-hidden="true">${pad(n + 1)}</span><div><h4>${esc(it.title)}</h4><p>${esc(it.note)}</p></div></div>
+        <div class="feed-chips">${(it.chips || []).map(c => `<span>${esc(c)}</span>`).join("")}</div></div>
+      ${it.kind === "video" ? `<div class="freels wide one" data-auto="0"><div class="freel" role="button" tabindex="0" aria-label="${esc(it.title)}: turn sound on or off">
+        <video src="${IMG + it.src}" poster="${IMG + it.poster}" muted loop playsinline preload="metadata"></video>
+        <button class="fsound" type="button" aria-pressed="false" aria-label="Turn sound on">${SND_OFF}</button></div></div><p class="feed-by">Edited by Yours Truly, Maria Simbajon</p>`
+      : `<button class="feed-media" type="button" data-lb="${k}" data-i="${n}" aria-label="View ${esc(it.title)}"><img src="${IMG + it.src}" alt="${esc(it.title)}: ${esc(it.alt || it.note)}" loading="lazy" decoding="async"></button><p class="feed-by">Designed by Yours Truly, Maria Simbajon</p>`}</div>`).join("")}</div>`;
+}
 function emailsBlock(k){
   const w = B.work[k], pad = n => String(n).padStart(2, "0");
   return `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>
@@ -961,6 +975,8 @@ const WB = {
   featReels: n => featBlock("featReels"),
   samplePitch: n => featBlock("samplePitch"),
   aiModels: n => featBlock("aiModels"),
+  saasVideos: n => wideBlock("saasVideos"),
+  logoVideos: n => wideBlock("logoVideos"),
   ambReel: n => reelsBlock("ambReel"),
   feeds: n => stacked("feeds"),
   emails: n => emailsBlock("emails"),
