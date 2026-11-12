@@ -82,6 +82,7 @@ const PREVIEW = {
   "resmile-marketing":      ["resmile-marketing", null, "social"],
   "pikklepuss-sma":         ["pikklepuss-sma", "PIKKLEPUSS", "social"],
   "ai-growth-coach":        ["ai-growth-coach", null, "social"],
+  "npp-smm":                ["npp-smm", "The New Pink Paradigm", "social"],
   "salon-bridal-coordinator": ["salon-bridal-coordinator", "Hair & Bridal Salon", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).

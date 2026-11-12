@@ -3718,5 +3718,111 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "AI Marketing Growth Specialist"
+  },
+  "npp-smm": {
+    label: "Social Media Content & Growth Specialist (The New Pink Paradigm)",
+    headline: "Social Media Content & Growth Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Facebook · Instagram · TikTok · YouTube Shorts · Short-Form Video · Organic Growth",
+    tagline: "",
+    summary: "Social Media Content & Growth Specialist with 5+ years of experience growing accounts organically on Facebook, Instagram and TikTok. I edit short-form videos, write hooks and captions, and plan monthly content calendars that turn engagement into website visits and email sign-ups.",
+    keywords: ["social media content", "growth specialist", "Facebook", "Instagram", "TikTok", "YouTube Shorts", "Reels", "carousels", "CapCut", "Canva", "Metricool", "hooks", "captions", "content calendar", "batch production", "organic growth", "webinars", "digital products", "email community", "AI tools", "portfolio", "availability", "tools"],
+    focus: ["social", "design", "english", "admin", "web"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Managing and growing social media accounts organically", proof: "I grow pages with real content, real replies and consistent posting. No bought followers, no bots. One client's post views grew 50% to 265K and followers 147% in 90 days.", status: "yes", tab: "results", cta: "See the real screenshots" },
+      { req: "Short-form video editing for Reels, TikTok and YouTube Shorts", proof: "Every Reel I edit has clean cuts, word-by-word subtitles, music and smooth transitions, made for Instagram, TikTok and Shorts.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Turn books, interviews and webinars into social posts", proof: "I cut long talking-to-camera clips into short Reels with a strong hook, and turn key lines and ideas into carousels and quote posts in Canva.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Strong hooks, captions and calls to action in conversational American English", proof: "I write short, warm hooks and captions with one clear call to action, in a natural voice that matches the brand.", status: "yes", tab: "designs", cta: "See my posts" },
+      { req: "Monthly content calendars and production batches", proof: "I plan a content calendar around themes and launches, then create and schedule the content in batches with Meta Business Suite and Metricool.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Canva, Metricool, CapCut and scheduling platforms", proof: "I use Canva and CapCut every day and schedule with Metricool and Meta Business Suite.", status: "yes", tab: "designs", cta: "See my Canva designs" },
+      { req: "Using AI tools thoughtfully for research, brainstorming and production", proof: "I use AI for research, idea lists and video drafts, then review everything by hand. My AI model videos are always labelled as AI-generated.", status: "yes", tab: "aiModels", cta: "See my AI videos" },
+      { req: "Promoting digital products, webinars and online programs", proof: "I design event, webinar and offer posts and write the calls to action that send people to a website, an email list or a registration page. I also build whole email campaigns.", status: "yes", tab: "emails", cta: "See my email campaigns" },
+      { req: "Sensitive topics handled with empathy and authenticity", proof: "I reply to comments and messages every day for wellness brands and a national pageant, always warm, respectful and on brand.", status: "yes", tab: "smm", cta: "See my work" },
+      { req: "Tracking follower growth, engagement and traffic", proof: "I send a weekly update with what was posted and how it did, and I recommend changes based on what worked instead of repeating the same routine.", status: "yes", tab: "results", cta: "See the results" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Social Media Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Short-Form Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      plan:    { label: "Content Strategy", title: "Monthly Calendars, Made in Batches.", text: "A monthly content calendar planned around your launches and themes, so your page keeps growing." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a monthly content calendar, write the captions, and schedule every post, Reel and story in batches with Meta Business Suite and Metricool, so a page posts steadily without gaps.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Ember & Salt (sample)" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Stack'd Burgers (sample)" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "ROSELLE Wellness (sample)" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "LUMERA Skincare (sample)" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "VELOUR Perfume (sample)" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "ROSELLE Wellness (sample)" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Social Media Content & Growth Specialist"
   }
 };
