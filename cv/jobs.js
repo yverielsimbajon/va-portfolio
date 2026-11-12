@@ -3230,7 +3230,7 @@ window.RESUME_JOBS = {
       forms:    { label: "Email, Forms & Follow-Up", title: "Every Enquiry Reaches the Right Inbox.", text: "Confirmation emails, forms and follow-ups I set up and test myself, so nothing gets lost on the way." },
       records:  { label: "Access, Records & Updates", title: "Every Account Listed, Every Step Reported.", text: "Trackers, organised files and a short update after every task, so you always know where things stand." }
     },
-    webProjectsHide: ["Landscaping Services in Australia", "Wellness Brand in Australia"],
+    webProjectsHide: ["Wellness Brand in Australia"],
     resultsShots: "none",
     resultsNote: "Websites, calendars and client records I handle every day.",
     stats: ["years", "brands", "calendars", "leads"],
@@ -3937,7 +3937,7 @@ window.RESUME_JOBS = {
         ]
       }
     },
-    webProjectsHide: ["Landscaping Services in Australia", "Wellness Brand in Australia"],
+    webProjectsHide: ["Wellness Brand in Australia"],
     resultsShots: "none",
     resultsNote: "Websites, brands and client work behind the pages I build.",
     stats: ["brands", "years", "leads", "calendars"],

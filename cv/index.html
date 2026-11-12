@@ -674,8 +674,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261112zi"></script>
-<script src="jobs.js?v=20261112zi"></script>
+<script src="data.js?v=20261112zj"></script>
+<script src="jobs.js?v=20261112zj"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -700,6 +700,8 @@ if (J.webProjectsOrder && B.webProjects){
   const r = t => { const i = J.webProjectsOrder.indexOf(t); return i < 0 ? 999 : i; };
   B.webProjects = B.webProjects.map((p, i) => [p, i]).sort((a, b) => r(a[0].title) - r(b[0].title) || a[1] - b[1]).map(x => x[0]);
 }
+// Landscaping (the real client website) always comes first in every website block (Maria, 2026-11-12)
+if (B.webProjects){ const lk = B.webProjects.findIndex(p => p.title === "Landscaping Services in Australia"); if (lk > 0) B.webProjects.unshift(B.webProjects.splice(lk, 1)[0]); }
 // per-job replacement of a work block (items, blurb...): J.workOverrides = { designs: { blurb, items } }
 if (J.workOverrides) Object.keys(J.workOverrides).forEach(k => {
   const ov = Object.assign({}, J.workOverrides[k]);
@@ -882,7 +884,7 @@ function loopBlock(k, what){
 }
 function webCards(){
   const P = B.webProjects, chev = ico;
-  return `<div class="wgrid">${P.map((p, i) => `<article class="wcard" data-w="${i}" data-n="0">
+  return `${P[0] && P[0].title === "Landscaping Services in Australia" ? '<h3 class="shots-title" style="margin-top:6px">Real Screenshots. Real Client.</h3>' : ""}<div class="wgrid">${P.map((p, i) => `<article class="wcard" data-w="${i}" data-n="0">
     <div class="wmedia"><img class="wimg" src="${IMG + p.images[0]}" alt="${esc(p.title)}" loading="lazy" decoding="async">
       <button class="wbtn wprev" type="button" aria-label="Previous picture">${chev.prev}</button><button class="wbtn wnext" type="button" aria-label="Next picture">${chev.next}</button>
       <div class="wdots">${p.images.map((_, n) => `<button type="button" data-d="${n}" aria-label="Show picture ${n + 1}"${n === 0 ? ' class="on"' : ""}></button>`).join("")}</div></div>
@@ -990,7 +992,7 @@ const WB = {
   crm: n => loopBlock("crm", "CRM screenshot"),
   smm: n => loopBlock("smm", "Content planning screenshot"),
   admin: n => loopBlock("admin", "Admin screenshot"),
-  websites: n => B.webProjects ? `<h2 class="title wsub">Website designs I create</h2><p class="blurb">${J.webProjectsHide ? "Website design concepts" : "Real client websites and design concepts"}. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
+  websites: n => B.webProjects ? `<h2 class="title wsub">Website designs I create</h2><p class="blurb">${J.webProjectsHide && J.webProjectsHide.includes("Landscaping Services in Australia") ? "Website design concepts" : "Real client website and design concepts"}. Tap a picture to enlarge it, or open the site in a pop-up without leaving this page.</p>${webCards()}` : loopBlock("websites", "Website screenshot")
 };
 
 S.experience = () => {
