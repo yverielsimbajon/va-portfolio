@@ -4350,5 +4350,104 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "AI Performance Creative Specialist - Maria Simbajon"
+  },
+  "dtc-video-editor": {
+    label: "Junior Video Editor (DTC Video Ads, Facebook, Instagram & TikTok)",
+    headline: "Junior Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Video Ads · Facebook, Instagram & TikTok · CapCut · Hooks & Pacing · AI UGC & B-Roll · E-commerce",
+    tagline: "",
+    summary: "Video editor with 5+ years of experience creating high-converting video ads and Reels for DTC and e-commerce brands in Australia, the United States and Europe. I cut hooks, pacing, captions and AI UGC, B-roll and animations for Facebook, Instagram and TikTok.",
+    keywords: ["video editor", "DTC", "video ads", "high-converting", "Facebook", "Instagram", "TikTok", "Reels", "CapCut", "Premiere Pro", "hooks", "pacing", "AI tools", "UGC", "B-roll", "animations", "e-commerce", "product videos", "captions", "music", "creative", "detail-oriented", "English", "full-time", "long-term", "performance bonuses", "senior video editor", "creative strategist", "portfolio", "location", "editing experience"],
+    focus: ["social", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Experience with Premiere Pro or CapCut", proof: "CapCut every day for 5+ years of cuts, captions, zooms, music and transitions, with Canva for graphics and code-built motion graphics for promo videos. Every export is checked on a phone, with and without sound, before it is delivered.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Understanding of video editing, hooks and pacing", proof: "Every video opens on its strongest moment in the first second: a bold line of text, a slow zoom in and out and the most surprising shot first. I cut every pause and repeated take and time each cut to the speech and the music.", status: "yes", tab: "reels", cta: "See my hooks" },
+      { req: "Video ads for Facebook, Instagram and TikTok", proof: "Reels and ads made in 9:16 for Instagram, Facebook and TikTok, with captions placed clear of the face, music levelled under the voice and one clear call to action. I schedule and publish them with Meta Business Suite and Metricool.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Familiarity with AI tools for UGC, B-roll and animations", proof: "AI voiceover for UGC-style product videos, free AI model tools for product-to-model videos (each one labelled as AI-generated), stock and AI-made B-roll, and code-built animations for SaaS and logo videos. Claude writes my scripts, hooks and variations.", status: "yes", tab: "featReels", cta: "See my UGC videos" },
+      { req: "E-commerce video ad experience", proof: "UGC product videos for skincare, perfume and wellness brands, AI model product videos and a perfume email campaign, all made for Instagram, TikTok and Meta ads. Each one shows the product in use and ends on one clear call to action.", status: "yes", tab: "featReels", cta: "See my product videos" },
+      { req: "Creative and detail-oriented", proof: "I watch every export word by word for captions, spelling, timing and cuts before it goes out. The creative side shows in the brand colours, concepts and styles behind every video, design and email on this page.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Good English communication", proof: "Online English teacher, English radio broadcasting awardee and former Editor-in-Chief. My updates are short, specific and easy to act on, and I change a draft the same day after your notes.", status: "yes" },
+      { req: "Full-time, long-term, with room to grow into Senior Video Editor or Creative Strategist", proof: "I read Meta Business Suite every week and keep what works: one client's post views grew 50% to 265K and followers 147% in 90 days. That is the creative strategy side of the job, and I want to grow with your brand for the long term.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Portfolio, location and previous editing experience", proof: "Portfolio is right on this page. I am based in the Philippines with 5+ years of editing Reels, UGC and promo videos. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator, so work never stops.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "featReels" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "saasVideos" },
+      { type: "block", key: "logoVideos" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      featReels:  { label: "UGC Video Ads", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      reels:      { label: "Short-Form Video Ads", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      aiModels:   { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      saasVideos: { label: "Promo Videos", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
+      logoVideos: { label: "Logo Announcement Videos", title: "Branding Logo Announcement Video I Edit for You", text: "A brand identity and the video that announces it: logo reveal, jersey mockup and brand board." },
+      designs:    { label: "Ad Graphics", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      emails:     { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Your Junior Video Editor is Here - Maria Simbajon"
   }
 };
