@@ -4464,7 +4464,7 @@ window.RESUME_JOBS = {
     matchTitle: "Your list, my proof",
     matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
     match: [
-      { req: "Memes, image posts with captions and story posts", proof: "I design image posts, carousels and quote posts in Canva and write the caption for each one, with a strong first line so people stop scrolling.", status: "yes", tab: "designs", cta: "See my posts" },
+      { req: "Memes, image posts with captions and story posts", proof: "I make fan-style memes and design image posts and carousels in Canva, then write the caption for each one with a strong first line so people stop scrolling.", status: "yes", tab: "memes", cta: "See my memes" },
       { req: "Proven experience making FB posts with real results (reach, shares, comments)", proof: "On a client's Facebook Page my posts grew post views 50% to 265K and followers 147% in 90 days. The real Meta Business Suite screenshots are on this page.", status: "yes", tab: "results", cta: "See the real screenshots" },
       { req: "Good English writing with a natural, fan-to-fan voice", proof: "I write captions the way people talk in the comments: short, warm and a little playful, never stiff or salesy.", status: "yes", tab: "designs", cta: "See my captions" },
       { req: "An eye for what goes viral in fan communities", proof: "I build every post around one hook in the first line or first second, then look at what got shares and comments and make more of that.", status: "yes", tab: "reels", cta: "See my Reels" },
@@ -4474,6 +4474,7 @@ window.RESUME_JOBS = {
       { req: "Up to 12 posts a day, 7 days a week", proof: "I plan and create posts in daily batches, so a full set is ready to approve every day without gaps.", status: "yes", tab: "smm", cta: "See my content planning" }
     ],
     workSections: [
+      { type: "block", key: "memes" },
       { type: "block", key: "reels" },
       { type: "block", key: "feeds" },
       { type: "block", key: "designs" },
@@ -4485,6 +4486,7 @@ window.RESUME_JOBS = {
       { type: "block", key: "emails" }
     ],
     workHeads: {
+      memes: { label: "Fan Page Memes", title: "Memes That Make Fans Stop Scrolling.", text: "One joke, one punchline and a fan-to-fan caption, sized for Facebook." },
       designs: { label: "Facebook Post Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
       reels:   { label: "Short-Form Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
       feeds:   { label: "Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },

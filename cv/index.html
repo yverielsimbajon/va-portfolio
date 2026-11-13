@@ -498,6 +498,7 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 .feeds{display:grid;gap:26px;margin-top:22px}
 .feeds-2{grid-template-columns:repeat(2,minmax(0,1fr))}.feeds-2 .feed-chips{display:none}
 @media(max-width:760px){.feeds-2{grid-template-columns:1fr}}
+.feeds-3{grid-template-columns:repeat(3,minmax(0,1fr))}@media(max-width:1000px) and (min-width:761px){.feeds-3{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:760px){.feeds-3{grid-template-columns:1fr}}
 .feed-split,.feed-swipe{display:none}
 @media(max-width:600px){.feed-media.has-split{display:none}.feed-split{display:grid;gap:14px;justify-items:center}.feed-split img{display:block;height:auto;border-radius:16px;box-shadow:0 10px 26px rgba(17,76,89,.14)}.fs-phone{width:94%}.fs-grid{width:100%}
 .feed-media.has-scroll{overflow-x:auto;overflow-y:hidden;border-radius:14px;cursor:default;-webkit-overflow-scrolling:touch}.feed-media.has-scroll img{width:900px;max-width:none}
@@ -677,8 +678,8 @@ footer{background:#031f26;color:rgba(255,255,255,.6);font-size:13px;padding:18px
 </div>
 <div class="toast" id="toast" role="status"></div>
 
-<script src="data.js?v=20261113e"></script>
-<script src="jobs.js?v=20261113e"></script>
+<script src="data.js?v=20261113h"></script>
+<script src="jobs.js?v=20261113h"></script>
 <script>
 (function(){
 if(window.__RESUME_OFF) return;
@@ -919,7 +920,7 @@ function featBlock(k){
 function wideBlock(k){
   const w = B.work[k], pad = n => String(n).padStart(2, "0");
   const head = J.workHeads && J.workHeads[k] ? "" : `<h2 class="title wsub">${esc(w.label)}</h2><p class="blurb">${esc(w.blurb)}</p>`;
-  return `${head}<div class="feeds feeds-2 feeds-wide">${w.items.map((it, n) => `<div class="feed-card${it.full ? " is-full" : ""}" style="--accent:${it.accent};--tint:${it.tint}">
+  return `${head}<div class="feeds feeds-2 feeds-wide${w.cols === 3 ? " feeds-3" : ""}">${w.items.map((it, n) => `<div class="feed-card${it.full ? " is-full" : ""}" style="--accent:${it.accent};--tint:${it.tint}">
       <div class="feed-top"><div class="feed-title"><span class="feed-num" aria-hidden="true">${pad(n + 1)}</span><div><h4>${esc(it.title)}</h4><p>${esc(it.note)}</p></div></div>
         <div class="feed-chips">${(it.chips || []).map(c => `<span>${esc(c)}</span>`).join("")}</div></div>
       ${it.kind === "video" ? `<div class="freels wide one" data-auto="0"><div class="freel" role="button" tabindex="0" aria-label="${esc(it.title)}: turn sound on or off">
@@ -982,6 +983,7 @@ const WB = {
   aiModels: n => featBlock("aiModels"),
   saasVideos: n => wideBlock("saasVideos"),
   logoVideos: n => wideBlock("logoVideos"),
+  memes: n => wideBlock("memes"),
   ambReel: n => reelsBlock("ambReel"),
   feeds: n => stacked("feeds"),
   emails: n => emailsBlock("emails"),

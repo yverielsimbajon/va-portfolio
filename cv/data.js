@@ -277,6 +277,14 @@ window.RESUME_BASE = {
         { src: "brand-aviation-gaming-jersey.webp", title: "Team Jersey Mockup", note: "The logo on the kit, ready for the squad", alt: "Aviation Gaming logo on a team jersey", chips: ["Logo", "Jersey", "Mockup"], accent: "#0258B8", tint: "#eaf3fc" },
         { src: "brand-aviation-gaming-board.webp", title: "Brand Identity Board", note: "Logo, colours, fonts, app icon and brand voice on one page", alt: "logo, colour palette, typography, app icon and brand voice", chips: ["Palette", "Fonts", "App icon"], full: true, accent: "#0258B8", tint: "#eaf3fc" }
       ] },
+    memes: { cols: 3, label: "Memes I Make for You", blurb: "Fan-style meme posts built around one joke and one clear punchline, sized for Facebook. Tap a meme to enlarge it.",
+      items: [
+        { src: "meme-starwars-1.jpg", title: "Meme Post: \"Hello there.\"", note: "Sample fan-page meme with a fan-to-fan caption", alt: "Star Wars fan meme: someone says Hello there and the reply is General Kenobi", chips: ["Meme", "Facebook", "Fan voice"], accent: "#0258B8", tint: "#eaf3fc" },
+        { src: "meme-starwars-2.jpg", title: "Meme Post: Automatic Doors", note: "Sample relatable meme, the Force push that never grows old", alt: "Star Wars fan meme: 6-year-old me and 30-year-old me opening automatic doors with a Force push", chips: ["Meme", "Facebook", "Relatable"], accent: "#0258B8", tint: "#eaf3fc" },
+        { src: "meme-starwars-3.jpg", title: "Meme Post: Who Would Win?", note: "Sample lore meme, Revenge of the Sith opera scene", alt: "Star Wars fan meme: who would win, years of Jedi training versus the tragedy of Darth Plagueis the Wise", chips: ["Meme", "Facebook", "Lore"], accent: "#0258B8", tint: "#eaf3fc" },
+        { src: "meme-starwars-4.jpg", title: "Meme Post: \"The prequels, right?\"", note: "Sample chat-style meme for comment debates", alt: "Star Wars fan meme as a text chat: including the prequels, right?", chips: ["Meme", "Facebook", "Comment bait"], accent: "#0258B8", tint: "#eaf3fc" },
+        { src: "meme-starwars-5.jpg", title: "Meme Post: \"So precise\"", note: "Sample quote meme, A New Hope", alt: "Star Wars fan meme: Obi-Wan says only Imperial stormtroopers are so precise, then the stormtroopers miss the target", chips: ["Meme", "Facebook", "Quote"], accent: "#0258B8", tint: "#eaf3fc" }
+      ] },
     emails: { label: "Email Marketing", blurb: "Emails that keep people interested and bring them back. I plan a whole campaign at a time, in the brand's own colours and voice, with one clear button in every email, so subscribers know exactly what to do next. Tap any email to enlarge it.",
       items: ["mo","rose","velour"].flatMap(c => ["board",1,2,3,4].map(n => ({ src: "email-" + c + "-" + n + ".jpg" }))),
       campaigns: [
