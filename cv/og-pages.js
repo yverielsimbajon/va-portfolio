@@ -58,6 +58,7 @@ const PREVIEW = {
   "vanuatu-smm":            ["vanuatu-smm", "Vanuatu Team", "social"],
   "dynamic-energy-ops":     ["dynamic-energy-ops", "Dynamic Energy Solutions", "operations"],
   "patient-coordinator":    ["patient-coordinator", "Canada Clinic", "support"],
+  "lotus-rentals":          ["lotus-rentals", null, "operations"],
   "brine-fitness-editor":   ["brine-fitness-editor", "Brine Fitness", "social"],
   "food-lifestyle-editor":  ["food-lifestyle-editor", "Food & Lifestyle", "social"],
   "nordic-ad-localizer":    ["nordic-ad-localizer", null, "social"],

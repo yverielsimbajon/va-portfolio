@@ -4668,5 +4668,61 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Funny Dogs - Your Instagram Reels Creator is Here - Maria Simbajon"
+  },
+  "lotus-rentals": {
+    label: "Virtual Assistant, Car Rental Operations (Lotus Rentals)",
+    headline: "Virtual Assistant – Car Rental Operations",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Customer Inquiries · Reservations · Invoices & Payment Reminders · Records & Spreadsheets · Vehicle Listings · GoHighLevel",
+    tagline: "",
+    summary: "Dependable, detail-oriented Virtual Assistant with 5+ years supporting business owners in Australia, the United States and Europe. I answer customers by email, message and social media, send invoices and payment reminders, and keep records accurate in GoHighLevel and Google Sheets.",
+    keywords: ["Virtual Assistant", "Car Rental", "customer inquiries", "phone", "text", "email", "social media", "reservations", "rental questions", "rental agreements", "invoices", "payment reminders", "customer documents", "verify", "customer records", "spreadsheets", "overdue payments", "vehicle listings", "pickups and returns", "scheduling", "administrative", "GoHighLevel", "Google Sheets", "CRM", "attention to detail", "independently", "customer service", "reliable internet", "dependable", "professional"],
+    focus: ["admin", "crm", "support", "leads", "english", "ops"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Respond to customer inquiries via phone, text, email and social media", proof: "I reply to customers every day on email, Messenger, WhatsApp and Instagram in a warm, clear tone, and I check every new enquiry so no one is left waiting. As an online English teacher, I speak clearly on calls too.", status: "yes", tab: "crm", cta: "See the enquiries I handle" },
+      { req: "Assist customers with reservations and rental questions", proof: "I manage 61 booking calendars in GoHighLevel: I confirm each booking, answer the customer's questions and keep accurate notes on every reservation.", status: "yes", tab: "crm", cta: "See the booking calendars" },
+      { req: "Send rental agreements, invoices and payment reminders", proof: "I send branded invoices and reminders to my own clients, track every order and payment in GoHighLevel, and follow your agreement and invoice steps exactly, checking each one before it goes out.", status: "yes", tab: "admin", cta: "See my payment records" },
+      { req: "Verify customer documents and information", proof: "I check every record against the original email, message or document before it goes in, and I keep customer details confidential.", status: "yes", tab: "admin", cta: "See organised records" },
+      { req: "Update customer records and spreadsheets", proof: "I keep contacts, bookings and orders current in GoHighLevel and Google Sheets, including a 1,400+ contact database I built and cleaned.", status: "yes", tab: "crm", cta: "See the records I keep" },
+      { req: "Follow up professionally on overdue payments", proof: "I follow up politely and clearly by email and message until the customer confirms, and I note every outcome so the owner always knows where each payment stands.", status: "yes", tab: "admin", cta: "See my follow-ups" },
+      { req: "Post and manage vehicle listings online", proof: "I post and schedule content for business pages on Instagram and Facebook with Meta Business Suite. For vehicle listings I do the same: clear photos, accurate details, checked before it goes live.", status: "yes", tab: "admin", cta: "See my scheduling" },
+      { req: "Assist with scheduling vehicle pickups and returns", proof: "I ran a CEO's calendar with 200+ calendar events coordinated, and I send confirmations and reminders so every pickup and return time is clear to the customer and the team.", status: "yes", tab: "admin", cta: "See my calendar work" },
+      { req: "Perform general administrative tasks", proof: "Trackers, deadlines, Google Drive files and a short daily update to the owner, with each task marked from start to done.", status: "yes", tab: "admin", cta: "See my trackers" },
+      { req: "GoHighLevel CRM and Google Sheets", proof: "GoHighLevel is where I work every day: 61 booking calendars, 7 workflow folders, pipelines, conversations and orders. Google Sheets holds my trackers, lead lists and reports. I am ready to show both in a practical assessment.", status: "yes", tab: "crm", cta: "See my GoHighLevel work" },
+      { req: "Good written and spoken English", proof: "Online English teacher, English radio broadcasting awardee and a former Editor-in-Chief.", status: "yes" },
+      { req: "Reliable internet connection and a computer", proof: "65 Mbps fiber with a backup mobile Wi-Fi, a backup laptop, a backup power generator, headset and webcam.", status: "yes" },
+      { req: "Strong attention to detail and the ability to work independently", proof: "I run daily admin for several clients at once with no one watching, double-checking each record and sending a short end-of-day update.", status: "yes", tab: "admin", cta: "See my daily updates" }
+    ],
+    workSections: [
+      { type: "cards", part: "inbox", keys: ["ghlConvos", "pgFollow"] },
+      { type: "cards", part: "bookings", keys: ["ghlBooking", "cdcFollow", "ghlWorkflows"] },
+      { type: "cards", part: "billing", keys: ["ambAdmin", "ghlRecords"] },
+      { type: "cards", part: "listings", keys: ["cupSchedule"] },
+      { type: "cards", part: "admin", keys: ["cdcTracker", "cdcDrive", "ghlUpdates"] }
+    ],
+    workHeads: {
+      inbox:    { label: "Customer Service", title: "Every Customer Answered With Care.", text: "Calls, texts, emails and social media enquiries answered clearly and followed up, so no customer is left waiting." },
+      bookings: { label: "Reservations and Scheduling", title: "Bookings, Pickups and Returns Kept on Time.", text: "Calendars, confirmations and reminders that keep customers and the team on the same page." },
+      billing:  { label: "Invoices and Records", title: "Invoices, Payments and Records Kept Accurate.", text: "Every order, payment and customer record tracked in GoHighLevel and Google Sheets, with polite follow-ups." },
+      listings: { label: "Online Listings", title: "Listings That Go Live Right.", text: "Posts and listings planned, checked and scheduled so they go out on time." },
+      admin:    { label: "Administrative Support", title: "Admin That Keeps the Day Organized.", text: "Trackers, organised files and a short daily update in one clear place." }
+    },
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan a content calendar, write the captions, and schedule every post, Reel and story with Meta Business Suite and Metricool.",
+        tools: ["Meta Business Suite", "Metricool", "Notion", "Instagram"],
+        images: ["smm-content-plan.jpg"]
+      }
+    },
+    resultsShots: "none",
+    resultsNote: "Bookings, calendars, records and follow-ups I manage every day.",
+    stats: ["calendars", "events", "leads", "years"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Your Virtual Assistant for Car Rental Operations is Here - Maria Simbajon"
   }
 };
