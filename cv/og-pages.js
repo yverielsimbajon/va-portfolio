@@ -88,7 +88,8 @@ const PREVIEW = {
   "js-wordpress-seo":       ["js-wordpress-seo", "Photography & Videography Studio, London", "website"],
   "ecom-video-manager":     ["ecom-video-manager", null, "social"],
   "bullion-wp-dev":         ["bullion-wp-dev", "Online Bullion Dealer, London", "website"],
-  "whiskey-library-editor": ["whiskey-library-editor", "Whiskey Library", "social"]
+  "whiskey-library-editor": ["whiskey-library-editor", "Whiskey Library", "social"],
+  "nypot-creative":         ["nypot-creative", "NYPOT", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 

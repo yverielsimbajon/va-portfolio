@@ -4248,5 +4248,107 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "WL - Direct Response Video Editor - Maria Simbajon"
+  },
+  "nypot-creative": {
+    label: "AI Performance Creative Specialist (NYPOT, Meta Ads & Shopify)",
+    headline: "AI Performance Creative Specialist",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Meta Ads · Direct-Response Creatives · AI Images & Video · UGC · Shopify · Creative Testing",
+    tagline: "",
+    summary: "AI Performance Creative Specialist with 5+ years of experience creating Meta ad creatives, UGC videos and Reels for e-commerce brands in Australia, the United States and Europe. I turn customer insights into new hooks, angles and variations, then read the results to plan the next test.",
+    keywords: ["performance creative", "e-commerce", "Meta Ads", "Ads Manager", "creative testing", "AI images", "AI video", "static ads", "short videos", "UGC", "hooks", "angles", "offers", "variations", "formats", "customer reviews", "customer insights", "CTR", "CPA", "ROAS", "conversion rate", "AOV", "Shopify", "landing page", "product page", "testing backlog", "TikTok Ads", "Central European Time", "part-time", "remote"],
+    focus: ["social", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Create AI-assisted static images, short videos, UGC-style concepts and direct-response ad creatives", proof: "5+ years of Canva ad graphics, Reels cut in CapCut, UGC-style product videos with voiceover and captions, and AI model product videos, all made for Instagram, TikTok and Meta ads. Every piece is checked on a phone, with and without sound.", status: "yes", tab: "featReels", cta: "See my ad creatives" },
+      { req: "Adapt existing product, lifestyle and winning creative into new variations and formats", proof: "I take one product photo or one winning video and turn it into a feed post, a carousel, a 9:16 Reel and an email banner, in the brand's own colours. A winning ad keeps its body and gets a new opening, a new line or a new size.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "New hooks, angles, messages, offers and visual concepts based on customer insights", proof: "I read what real customers say, then write each hook from their own words: the problem they describe, the result they want and the objection they have. Every video opens on its strongest line in the first second.", status: "yes", tab: "reels", cta: "See my hooks" },
+      { req: "Launch and monitor creative tests in Meta Ads Manager, with Shopify as the conversion destination", proof: "I work in Ads Manager the way I work in Meta Business Suite, which I read every week for my clients: one change per test, clear names for every version, a note of what is live and what to check next. I connect the ad to the page it sends people to and check the journey on a phone.", status: "yes", tab: "results", cta: "See my reporting" },
+      { req: "Read results and turn performance data into the next round of creative ideas", proof: "I keep what works and change what does not. One client's post views grew 50% to 265K and followers 147% in 90 days, and the next post was planned from those numbers.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Suggest landing-page and product-page improvements based on ad performance", proof: "I design pages around one clear action, with one main button and the form close to it, and I check the whole journey on a phone first. I build and improve websites for real businesses and send a short note on what to change and why.", status: "yes", tab: "websites", cta: "See my websites" },
+      { req: "Maintain a clear testing backlog: what was tested, what worked, what failed and what happens next", proof: "I run content calendars and trackers in Notion, Airtable and Google Sheets: every idea has an owner, a status, a result and a next step, so nothing is tested twice by accident.", status: "yes", tab: "ops", cta: "See my trackers" },
+      { req: "Gradually support TikTok creative and TikTok Ads", proof: "Every Reel I edit is made for TikTok as well as Instagram: 9:16, captions placed clear of the face, music and sound effects levelled under the voice. I set up TikTok ad creatives the same way as Meta ones, with a hook in the first 3 seconds.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Comfortable with AI tools for images, short-form video concepts, scripts and variations", proof: "Claude for scripts, hooks and variations, free AI model and try-on tools for product videos (each one labelled as AI-generated), AI voiceover for UGC-style edits, and code-built motion graphics for promo videos. CapCut and Canva for the final edit.", status: "yes", tab: "aiModels", cta: "See my AI videos" },
+      { req: "Shopify, TikTok Ads, UGC or video editing experience", proof: "Video editing and UGC every day, with product videos for skincare, perfume and wellness brands. I handle store pages the way I handle my website builds in Wix Studio and Webflow: product details exact, one clear button and a quick phone check.", status: "yes", tab: "featReels", cta: "See my product videos" },
+      { req: "Connect creative decisions with CTR, CPA, ROAS, conversion rate and AOV", proof: "Every creative has one job: stop the scroll, show the proof, get the click. I pair each version with the number it should move, and write a short note on what the result means for the next round.", status: "yes", tab: "results", cta: "See the results" },
+      { req: "Independent, organized, curious, and comfortable working asynchronously", proof: "I work from a clear daily plan and send a short written update: what is done, what is next and what I need from you. 65 Mbps fiber, backup mobile Wi-Fi, a backup laptop and a backup power generator. Philippine afternoons overlap with Central European mornings.", status: "yes" }
+    ],
+    workSections: [
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "reels" },
+      { type: "block", key: "saasVideos" },
+      { type: "block", key: "logoVideos" },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs:    { label: "Static Ad Creatives", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      featReels:  { label: "UGC Ads", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:   { label: "AI Model Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      reels:      { label: "Short-Form Video Ads", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      saasVideos: { label: "Promo Videos", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
+      logoVideos: { label: "Logo Announcement Videos", title: "Branding Logo Announcement Video I Edit for You", text: "A brand identity and the video that announces it: logo reveal, jersey mockup and brand board." },
+      emails:     { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "AI Performance Creative Specialist - Maria Simbajon"
   }
 };
