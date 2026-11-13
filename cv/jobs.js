@@ -4449,5 +4449,113 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Your Junior Video Editor is Here - Maria Simbajon"
+  },
+  "starwars-fb-posts": {
+    label: "Facebook Post Creator (Star Wars Fan Pages)",
+    headline: "Facebook Post Creator",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    sub: "Facebook Posts · Memes · Story & Lore Captions · Canva · ChatGPT · Midjourney",
+    tagline: "",
+    summary: "Facebook post creator with 5+ years of experience making memes, image posts with captions and story posts that people actually stop scrolling for. I write in a natural, fan-to-fan voice and design in Canva, using AI tools for drafts while the ideas, humor and accuracy come from me.",
+    keywords: ["Facebook", "fan pages", "posts", "memes", "image posts", "captions", "story posts", "lore", "Canon", "Legends", "fan-to-fan", "natural voice", "English", "viral", "reach", "shares", "comments", "Canva", "ChatGPT", "Midjourney", "AI tools", "humor", "accuracy", "approved post", "7 days a week", "screenshots", "links"],
+    focus: ["social", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Memes, image posts with captions and story posts", proof: "I design image posts, carousels and quote posts in Canva and write the caption for each one, with a strong first line so people stop scrolling.", status: "yes", tab: "designs", cta: "See my posts" },
+      { req: "Proven experience making FB posts with real results (reach, shares, comments)", proof: "On a client's Facebook Page my posts grew post views 50% to 265K and followers 147% in 90 days. The real Meta Business Suite screenshots are on this page.", status: "yes", tab: "results", cta: "See the real screenshots" },
+      { req: "Good English writing with a natural, fan-to-fan voice", proof: "I write captions the way people talk in the comments: short, warm and a little playful, never stiff or salesy.", status: "yes", tab: "designs", cta: "See my captions" },
+      { req: "An eye for what goes viral in fan communities", proof: "I build every post around one hook in the first line or first second, then look at what got shares and comments and make more of that.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Lore accuracy, Canon vs Legends", proof: "Every story and lore caption is checked against official Star Wars sources and Wookieepedia and marked Canon or Legends before it reaches you. Nothing goes out from AI alone.", status: "yes" },
+      { req: "Canva, ChatGPT Plus and Midjourney", proof: "I use Canva every day. I work in ChatGPT and Midjourney the way I work in my AI tools for product and model videos: quick drafts, then I choose, fix and finish everything by hand.", status: "yes", tab: "aiModels", cta: "See my AI work" },
+      { req: "No low-effort AI images or generic captions", proof: "The idea, the joke and the story come from me. AI only speeds up the draft, and every image is checked for odd hands, faces and text before it is sent.", status: "yes", tab: "designs", cta: "See my designs" },
+      { req: "Up to 12 posts a day, 7 days a week", proof: "I plan and create posts in daily batches, so a full set is ready to approve every day without gaps.", status: "yes", tab: "smm", cta: "See my content planning" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "saasVideos" },
+      { type: "block", key: "logoVideos" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      designs: { label: "Facebook Post Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      reels:   { label: "Short-Form Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      feeds:   { label: "Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      aiModels:  { label: "AI Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      saasVideos: { label: "Promo Videos", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
+      logoVideos: { label: "Logo Announcement Videos", title: "Branding Logo Announcement Video I Edit for You", text: "A brand identity and the video that announces it: logo reveal, jersey mockup and brand board." },
+      plan:    { label: "Content Strategy", title: "Up to 12 Posts a Day, Planned Ahead.", text: "Posts made in daily batches, so a full set is ready to approve every day, 7 days a week." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan the posts ahead, write the captions, and create and schedule every post in daily batches with Meta Business Suite, so a page posts steadily without gaps.",
+        tools: ["Meta Business Suite", "Canva", "Facebook", "Instagram"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Your Facebook Post Creator is Here - Maria Simbajon"
   }
 };
