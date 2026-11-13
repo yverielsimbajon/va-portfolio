@@ -91,7 +91,8 @@ const PREVIEW = {
   "whiskey-library-editor": ["whiskey-library-editor", "Whiskey Library", "social"],
   "nypot-creative":         ["nypot-creative", "NYPOT", "social"],
   "dtc-video-editor":       ["dtc-video-editor", null, "social"],
-  "starwars-fb-posts":      ["starwars-fb-posts", null, "social"]
+  "starwars-fb-posts":      ["starwars-fb-posts", null, "social"],
+  "funny-dogs-reels":       ["funny-dogs-reels", null, "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 

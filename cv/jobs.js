@@ -4559,5 +4559,114 @@ window.RESUME_JOBS = {
     workTitle: "Graphic Designs I Create for You",
     portfolioLabel: "View my Portfolio",
     emailSubject: "Your Facebook Post Creator is Here - Maria Simbajon"
+  },
+  "funny-dogs-reels": {
+    label: "Instagram Reels Creator & Video Editor (Funny Pet Content)",
+    headline: "Instagram Reels Creator & Video Editor",
+    headlinePill: true,
+    headlineBadge: "5+ Years",
+    codeWord: "Funny Dogs",
+    sub: "Instagram Reels · CapCut · Hooks · Funny Captions · Music & Sound Effects · Comedic Timing",
+    tagline: "",
+    summary: "Instagram Reels creator and video editor with 5+ years of experience in short-form video and growing accounts. I edit in CapCut with strong hooks, funny captions, music and sound effects, and I bring my own ideas instead of waiting for instructions.",
+    keywords: ["Instagram", "Reels", "CapCut", "hooks", "funny captions", "captions", "music", "sound effects", "comedic timing", "storytelling", "trends", "reference video", "ideas", "pet content", "shareable", "grow", "short-form", "cover text", "performance", "organized files", "revision"],
+    focus: ["social", "design", "english", "admin"],
+    order: ["results", "work", "experience", "skills", "why", "contact"],
+    matchTitle: "Your list, my proof",
+    matchIntro: "Here is each thing you asked for, and what I have already done. Tap a row for the proof.",
+    match: [
+      { req: "Strong CapCut skills and a portfolio of Instagram Reels", proof: "I edit Reels in CapCut every week: cuts, subtitles, music, sound effects and transitions. Six of them are in the Reels section below, tap a phone to play.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Experience helping grow Instagram or other short-form accounts", proof: "On a client's Facebook Page my posts grew post views 50% to 265K and followers 147% in 90 days. The real Meta Business Suite screenshots are on this page.", status: "yes", tab: "results", cta: "See the real screenshots" },
+      { req: "Excellent written English, natural and funny on-screen captions", proof: "I write captions the way people talk in the comments: short, warm and a little playful, with the punchline landing on the right beat.", status: "yes", tab: "designs", cta: "See my captions" },
+      { req: "Hooks, storytelling and what makes people share a video", proof: "Every Reel starts with one hook in the first second, then one clear beat at a time. I check what got shares and saves and make more of it.", status: "yes", tab: "reels", cta: "See my Reels" },
+      { req: "Match relevant music and audio to the content", proof: "I pick music and sound effects to fit each cut, with sound effects on the beat, and my Reels here play with sound on.", status: "yes", tab: "reels", cta: "Hear them" },
+      { req: "Work from a reference Reel and make our own version", proof: "I break a reference down into hook, timing and format, then rebuild it with your footage and your dogs' personalities, never a copy.", status: "yes", tab: "featReels", cta: "See my UGC edits" },
+      { req: "Bring ideas independently, suggest captions, cover text and extra shots", proof: "I send the idea, the caption, the cover text and the shots worth filming together, so you can film once and get a full Reel.", status: "yes", tab: "smm", cta: "See my content planning" },
+      { req: "Organized file management and consistent delivery", proof: "Footage is sorted by moment and every Reel is delivered on schedule with one revision round. My planning calendars are in the content section.", status: "yes", tab: "smm", cta: "See my planning" }
+    ],
+    workSections: [
+      { type: "block", key: "reels" },
+      { type: "block", key: "featReels" },
+      { type: "block", key: "designs" },
+      { type: "block", key: "feeds" },
+      { type: "block", key: "aiModels" },
+      { type: "block", key: "saasVideos" },
+      { type: "block", key: "logoVideos" },
+      { type: "cards", part: "plan", keys: ["cupSchedule", "plushCalendar"] },
+      { type: "block", key: "emails" }
+    ],
+    workHeads: {
+      reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
+      featReels: { label: "UGC Videos", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
+      designs: { label: "Cover & Caption Design", title: "Graphic Designs I Create for You", text: "Canva posts and carousels in the brand's own colours, ready to schedule on Instagram." },
+      feeds:   { label: "Instagram Feed Planning", title: "Instagram Feed That Looks Put Together.", text: "Nine posts planned around one colour palette, previewed as a flat plan and inside the Instagram app before anything goes live." },
+      aiModels:  { label: "AI Videos", title: "AI Model Videos I Edit for Your Product", text: "A product photo turned into a model video, labelled as AI-generated." },
+      saasVideos: { label: "Promo Videos", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
+      logoVideos: { label: "Logo Announcement Videos", title: "Branding Logo Announcement Video I Edit for You", text: "A brand identity and the video that announces it: logo reveal, jersey mockup and brand board." },
+      plan:    { label: "Content Strategy", title: "Three Reels a Week, Planned Ahead.", text: "Footage reviewed, ideas researched and captions written ahead, so a steady set of Reels is ready every week." },
+      emails:    { label: "Email Marketing", title: "Emails That Bring People Back.", text: "Whole campaigns in the brand's colours, with one clear button in every email." }
+    },
+    reelsContain: true,
+    reelsWrap: true,
+    reelAutoSound: true,
+    caseOverrides: {
+      cupSchedule: {
+        solution: "I plan the posts ahead, write the captions, and create and schedule every post in weekly batches with Meta Business Suite, so an account posts steadily without gaps.",
+        tools: ["Meta Business Suite", "Canva", "Instagram", "CapCut"]
+      }
+    },
+    workOverrides: {
+      designs: {
+        items: [
+          "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
+          "design-video-1.mp4", "design-stress-relief.jpg", "design-food-2.jpg",
+          "design-valentine-pink.webp", "design-9d-breathwork.jpg", "design-food-3.jpg",
+          "design-taxi-dark.webp", "design-video-2.mp4", "design-food-4.jpg",
+          "design-coupon-5.webp", "design-valentine-call.jpg", "design-food-5.jpg",
+          "design-breathwork-events.jpg", "design-9dmt-trip.jpg", "design-food-6.jpg",
+          "design-promo.jpg", "design-education.jpg", "design-food-7.jpg",
+          "design-voucher-20.png", "design-book-now-pay-later.png", "design-food-8.jpg",
+          "design-social-media-management.png", "design-video-3.mp4", "design-food-9.jpg",
+          "design-video-4.mp4", "design-food-10.jpg"
+        ].map(f => f.endsWith(".mp4")
+          ? { src: f, thumb: f.replace(".mp4", ".jpg"), kind: "video" }
+          : { src: f, thumb: f.replace(/\.(webp|png)$/, ".jpg") })
+      },
+      reels: {
+        blurb: "Food Reels, before-and-after Reels and promo Reels with captions and music, made for Landscaping Services in Australia and sample brands. Tap a phone to play.",
+        items: [
+          { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
+          { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
+          { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" }
+        ]
+      },
+      featReels: {
+        label: "UGC videos I edit for your brand",
+        blurb: "Product videos with a voiceover, captions, sound effects and music, edited the way UGC creators do. Sample brands, tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ugc-lumera-skincare.mp4", poster: "ugc-lumera-skincare.jpg", name: "Skincare Video Sample" },
+          { src: "ugc-velour-perfume.mp4", poster: "ugc-velour-perfume.jpg", name: "Perfume Video Sample" },
+          { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", name: "Wellness Drink Video Sample" }
+        ]
+      },
+      aiModels: {
+        label: "AI model videos I edit for your product",
+        blurb: "Your product photo, worn by an AI model who walks, turns and poses, so you can show a piece in motion without booking a shoot. Every video is labelled as AI-generated. Tap a video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "ai-model-product-to-runway.mp4", poster: "ai-model-product-to-runway.jpg", name: "Product to Runway" }
+        ]
+      }
+    },
+    resultsShots: "results",
+    resultsNote: "Meta Business Suite screenshots: Facebook Page of Wellness Brand in Australia, last 90 days.",
+    stats: ["views", "followers", "years", "events"],
+    workTitle: "Graphic Designs I Create for You",
+    portfolioLabel: "View my Portfolio",
+    emailSubject: "Funny Dogs - Your Instagram Reels Creator is Here - Maria Simbajon"
   }
 };
