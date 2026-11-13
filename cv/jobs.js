@@ -4752,6 +4752,7 @@ window.RESUME_JOBS = {
       { req: "Premiere Pro or After Effects (a strong advantage)", proof: "I work in Premiere Pro and After Effects the way I work in CapCut: timeline cuts, captions, motion text and clean exports, set up, checked and delivered on time. My motion-graphic promos are in the SaaS and logo video sections.", status: "yes", tab: "saasVideos", cta: "See my motion videos" }
     ],
     workSections: [
+      { type: "block", key: "samplePitch" },
       { type: "block", key: "reels" },
       { type: "block", key: "featReels" },
       { type: "block", key: "saasVideos" },
@@ -4763,6 +4764,7 @@ window.RESUME_JOBS = {
       { type: "block", key: "emails" }
     ],
     workHeads: {
+      samplePitch: { label: "Sample Reel For Kenny Johnson University", title: "Your Briefing Video, Edited Into a Reel for You", text: "Your own talking-head footage cut to 25 seconds with a hook, B-roll, zooms, clean captions and a clear call to action." },
       reels:   { label: "Instagram Videos", title: "Reels I Edit for You That Keep People Watching", text: "Cuts, subtitles, music and transitions in CapCut, made for Instagram and TikTok." },
       featReels: { label: "Ad Creatives & UGC", title: "UGC Videos I Edit for Your Brand", text: "Voiceover, captions and clean product shots, ready for Instagram or an ad." },
       saasVideos: { label: "Motion Graphics", title: "SaaS Videos I Edit for You", text: "Promo videos with kinetic text, interface cards, voiceover and music, built to explain a product in under a minute." },
@@ -4783,6 +4785,14 @@ window.RESUME_JOBS = {
       }
     },
     workOverrides: {
+      samplePitch: {
+        label: "Your Briefing Video, Edited Into a Reel for You",
+        blurb: "Made from your own 2-minute briefing on kennyjohnsonuniversity.com: a hook over B-roll, zooms and pop-up cards as attention resets, clean captions, and your free-call offer at the end. Tap the video to switch the sound.",
+        auto: true,
+        items: [
+          { src: "reel-kju-credit-sample.mp4", poster: "reel-kju-credit-sample.jpg", name: "Kenny Johnson University sample Reel" }
+        ]
+      },
       designs: {
         items: [
           "design-coupon-20.webp", "design-taxi-light.webp", "design-food-1.jpg",
