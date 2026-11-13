@@ -93,7 +93,8 @@ const PREVIEW = {
   "nypot-creative":         ["nypot-creative", "NYPOT", "social"],
   "dtc-video-editor":       ["dtc-video-editor", null, "social"],
   "starwars-fb-posts":      ["starwars-fb-posts", null, "social"],
-  "funny-dogs-reels":       ["funny-dogs-reels", null, "social"]
+  "funny-dogs-reels":       ["funny-dogs-reels", null, "social"],
+  "kenny-video-editor":     ["kenny-video-editor", "Kenny Johnson University", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
