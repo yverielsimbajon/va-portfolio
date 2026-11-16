@@ -117,7 +117,7 @@ nav .links a:hover{color:var(--ink)}
 .btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:#fff}
 /* reels */
-.reels{margin-top:38px}
+.reels{margin-top:26px}
 .reel{flex:0 0 min(390px,100%);scroll-snap-align:start;position:relative}
 .reel .vbox{position:relative}
 .reel video{width:100%;aspect-ratio:9/16;background:#000;object-fit:cover}
@@ -304,12 +304,16 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
  <div class="caps num">03 · Reels</div>
  <h2>Your first six reels</h2>
  <p class="lead">Made from the photos and videos in your folder, with your logo, fashion music and your photos shown bright and true to colour.</p>
+ <h3 class="fonts-title">Before and after reels I edit for you</h3>
  <div class="reels">
-  <div class="reel"><div class="vbox"><video src="video/r1.mp4" poster="img/r1-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 1 · Cream cards</div><h4 style="margin-top:4px">Short to long</h4><p>From a short blonde bob to long, soft waves with tape extensions.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r2.mp4" poster="img/r2-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 2 · Signature cream</div><h4 style="margin-top:4px">Short to long</h4><p>The same glow-up in your Signature Cream look, with your fonts and 76 logo.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r3.mp4" poster="img/r3-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 3 · Sway extensions</div><h4 style="margin-top:4px">Colour, without colouring</h4><p>Soft caramel tones added with Sway nano extensions, no colour on her own hair.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r4.mp4" poster="img/r4-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 4 · Cream</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>Side-by-side before &amp; after, short blonde to long waves with tapes.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r5.mp4" poster="img/r5-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 5 · Black</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>The same before &amp; after in your black template, bold and glam.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r3.mp4" poster="img/r3-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 1 · Sway extensions</div><h4 style="margin-top:4px">Colour, without colouring</h4><p>Soft caramel tones added with Sway nano extensions, no colour on her own hair.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r5.mp4" poster="img/r5-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 2 · Black</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>The same before &amp; after in your black template, bold and glam.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r2.mp4" poster="img/r2-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 3 · Signature cream</div><h4 style="margin-top:4px">Short to long</h4><p>The same glow-up in your Signature Cream look, with your fonts and 76 logo.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r1.mp4" poster="img/r1-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 4 · Cream cards</div><h4 style="margin-top:4px">Short to long</h4><p>From a short blonde bob to long, soft waves with tape extensions.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r4.mp4" poster="img/r4-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 5 · Cream</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>Side-by-side before &amp; after, short blonde to long waves with tapes.</p></div>
+ </div>
+ <h3 class="fonts-title">Remi Cachet reels I edit for you</h3>
+ <div class="reels">
   <div class="reel"><div class="vbox"><video src="video/r6.mp4" poster="img/r6-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 6 · Remi Cachet</div><h4 style="margin-top:4px">Find your perfect shade</h4><p>Remi Cachet shades, colour matched, with nanos, wefts and tapes results.</p></div>
  </div>
 </div></section>
@@ -375,6 +379,7 @@ document.querySelectorAll('.grid4, .reels').forEach(row=>{
    +items.map((_,i)=>'<button aria-label="Show '+(i+1)+'"></button>').join('')+'</div><div class="count"><b>1</b> / '+n+'</div></div>'
    +'<button class="arr next" aria-label="Next">'+CHEV_R+'</button></div>';
   stage.after(nav);
+  if(n<2){ nav.style.display='none'; pill.remove(); return; }
   const prev=nav.querySelector('.prev'), next=nav.querySelector('.next'), dots=[...nav.querySelectorAll('.dotsnav button')], cnt=nav.querySelector('.count b');
   const cur=()=>{ let best=0, bd=1e9; items.forEach((it,i)=>{ const d=Math.abs(it.offsetLeft-row.offsetLeft-row.scrollLeft); if(d<bd){bd=d;best=i;} });
     if(row.scrollLeft+row.clientWidth>=row.scrollWidth-4) best=Math.max(best, n-1); return best; };
@@ -437,7 +442,7 @@ function unlock(){ if(unlocked) return; unlocked=true;
 const vo=new IntersectionObserver(sync,{threshold:[0,.3,.5,.7,1]}); vids.forEach(v=>vo.observe(v));
 let ct; const later=()=>{ clearTimeout(ct); ct=setTimeout(sync,100); };
 addEventListener('scroll',later,{passive:true}); addEventListener('resize',later);
-document.querySelector('.reels').addEventListener('scroll',later,{passive:true});
+document.querySelectorAll('.reels').forEach(r=>r.addEventListener('scroll',later,{passive:true}));
 addEventListener('load',sync);
 </script>
 </body>
