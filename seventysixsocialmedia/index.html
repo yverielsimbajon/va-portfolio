@@ -289,15 +289,15 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
  <h2>Before and after reels I edit for you</h2>
  <p class="lead">Made from the photos and videos in your folder, with your logo, fashion music and your photos shown bright and true to colour.</p>
  <div class="reels">
-  <div class="reel"><div class="vbox"><video src="video/r3.mp4" poster="img/r3-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 1 · Sway extensions</div><h4 style="margin-top:4px">Colour, without colouring</h4><p>Soft caramel tones added with Sway nano extensions, no colour on her own hair.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r5.mp4" poster="img/r5-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 2 · Black</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>The same before &amp; after in your black template, bold and glam.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r2.mp4" poster="img/r2-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 3 · Signature cream</div><h4 style="margin-top:4px">Short to long</h4><p>The same glow-up in your Signature Cream look, with your fonts and 76 logo.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r1.mp4" poster="img/r1-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 4 · Cream cards</div><h4 style="margin-top:4px">Short to long</h4><p>From a short blonde bob to long, soft waves with tape extensions.</p></div>
-  <div class="reel"><div class="vbox"><video src="video/r4.mp4" poster="img/r4-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 5 · Cream</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>Side-by-side before &amp; after, short blonde to long waves with tapes.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r3.mp4" poster="img/r3-poster.jpg" controls playsinline muted preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 1 · Sway extensions</div><h4 style="margin-top:4px">Colour, without colouring</h4><p>Soft caramel tones added with Sway nano extensions, no colour on her own hair.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r5.mp4" poster="img/r5-poster.jpg" controls playsinline muted preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 2 · Black</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>The same before &amp; after in your black template, bold and glam.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r2.mp4" poster="img/r2-poster.jpg" controls playsinline muted preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 3 · Signature cream</div><h4 style="margin-top:4px">Short to long</h4><p>The same glow-up in your Signature Cream look, with your fonts and 76 logo.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r1.mp4" poster="img/r1-poster.jpg" controls playsinline muted preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 4 · Cream cards</div><h4 style="margin-top:4px">Short to long</h4><p>From a short blonde bob to long, soft waves with tape extensions.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r4.mp4" poster="img/r4-poster.jpg" controls playsinline muted preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 5 · Cream</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>Side-by-side before &amp; after, short blonde to long waves with tapes.</p></div>
  </div>
  <h3 class="fonts-title">Remi Cachet reels I edit for you</h3>
  <div class="reels">
-  <div class="reel"><div class="vbox"><video src="video/r6b.mp4" poster="img/r6b-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 6 · Remi Cachet</div><h4 style="margin-top:4px">Find your perfect shade</h4><p>Remi Cachet shades, colour matched, with nanos, wefts and tapes results.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/r6b.mp4" poster="img/r6b-poster.jpg" controls playsinline muted preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 6 · Remi Cachet</div><h4 style="margin-top:4px">Find your perfect shade</h4><p>Remi Cachet shades, colour matched, with nanos, wefts and tapes results.</p></div>
  </div>
 </div></section>
 
@@ -407,13 +407,13 @@ stage.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedT
 // Swiping to the next reel pauses the old one and plays the new one with sound.
 // (Browsers only allow sound after the visitor's first tap, click or key on the page,
 // so before that the reel plays silently and the sound switches on at that first touch.)
-const vids=[...document.querySelectorAll('.reel video')]; let unlocked=false, active=null;
+const vids=[...document.querySelectorAll('.reel video')]; let unlocked=false, active=null, want=null;
 function seen(v){ const r=v.getBoundingClientRect(), w=v.closest('.reels').getBoundingClientRect();
   const h=Math.max(0,Math.min(r.bottom,innerHeight)-Math.max(r.top,0))/Math.max(1,r.height);
   const x=Math.max(0,Math.min(r.right,w.right,innerWidth)-Math.max(r.left,w.left,0))/Math.max(1,r.width);
   return h*x; }
 function start(v){ v.muted=!unlocked; const p=v.play(); if(p) p.catch(()=>{ v.muted=true; v.play().catch(()=>{}); }); }
-function sync(){ let best=null, bs=.3; vids.forEach(v=>{ const k=seen(v); if(k>bs){ bs=k; best=v; } });
+function sync(){ let best=null, bs=.3; vids.forEach(v=>{ const k=(v.ended&&v!==want)?0:seen(v)+(v===want?.01:0); if(k>bs){ bs=k; best=v; } });
   vids.forEach(v=>{ if(v!==best && !v.paused) v.pause(); });
   active=best; if(best && (best.paused || best.muted===unlocked)) start(best); }
 function unlock(){ if(unlocked) return; unlocked=true;
@@ -422,11 +422,18 @@ function unlock(){ if(unlocked) return; unlocked=true;
   vids.forEach(v=>{ if(v===active) return; v.muted=false; const p=v.play(); if(p) p.then(()=>{ if(v!==active) v.pause(); }).catch(()=>{}); });
   sync(); }
 ['pointerdown','touchend','click','keydown'].forEach(t=>addEventListener(t,unlock,true));
+document.querySelectorAll('#reels').forEach(r=>['pointerdown','touchstart'].forEach(t=>r.addEventListener(t,()=>{want=null},{passive:true})));
 const vo=new IntersectionObserver(sync,{threshold:[0,.3,.5,.7,1]}); vids.forEach(v=>vo.observe(v));
 let ct; const later=()=>{ clearTimeout(ct); ct=setTimeout(sync,100); };
 addEventListener('scroll',later,{passive:true}); addEventListener('resize',later);
 document.querySelectorAll('.reels').forEach(r=>r.addEventListener('scroll',later,{passive:true}));
 addEventListener('load',sync);
+// when a reel finishes, slide to the next reel in the same row and play it (the last one goes back to the first)
+vids.forEach(v=>v.addEventListener('ended',()=>{ const row=v.closest('.reels'), all=[...row.querySelectorAll('video')];
+  const nx=all[(all.indexOf(v)+1)%all.length]; nx.currentTime=0; want=nx;
+  if(nx===v){ start(v); return; }
+  const L=nx.closest('.reel').offsetLeft-row.offsetLeft; row.scrollTo({left:L,behavior:RM?'instant':'smooth'});
+  setTimeout(()=>{ const T=Math.min(L,row.scrollWidth-row.clientWidth); if(Math.abs(row.scrollLeft-T)>8) row.scrollTo({left:T,behavior:'instant'}); sync(); },700); }));
 </script>
 </body>
 </html>
