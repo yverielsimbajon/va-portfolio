@@ -99,9 +99,16 @@ nav .links a:hover{color:var(--ink)}
 /* 2x2 overview */
 .overview{margin-top:34px}
 .overview .ovh{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--soft);margin-bottom:12px}
-.ov{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px}
-.ov button{display:block;aspect-ratio:4/5;background:var(--paper);border:1px solid var(--line);padding:8px;cursor:zoom-in}
-.ov img{width:100%;height:100%;object-fit:contain}
+.ig{max-width:560px;background:#fff;border:1px solid var(--line)}
+.ig-head{display:flex;align-items:center;gap:12px;padding:14px 16px}
+.ig-head .av{width:46px;height:46px;border-radius:50%;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex:none}
+.ig-head .av img{width:30px}
+.ig-head b{display:block;font-size:14.5px;font-weight:600;line-height:1.3}
+.ig-head small{display:block;font-size:12.5px;color:var(--soft);line-height:1.3}
+.ov{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+.ov button{display:block;aspect-ratio:3/4;border:0;padding:0;background:#eee;cursor:zoom-in;overflow:hidden}
+.ov img{width:100%;height:100%;object-fit:cover}
+.ovnote{font-size:13.5px;color:var(--soft);margin-top:10px;max-width:560px}
 .btn{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:14px 22px;white-space:nowrap}
 .btn:hover{background:#fff;color:var(--ink)}
 .btn svg{width:18px;height:18px;flex:none}
@@ -183,7 +190,7 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
  <div class="swatches">
   <div class="sw"><i style="background:#111111"></i><div><b>Black</b><small>Logo, capes, Chelmsford front</small></div></div>
   <div class="sw"><i style="background:#FFFFFF"></i><div><b>White</b><small>Logo, salon walls</small></div></div>
-  <div class="sw"><i style="background:#DCCEC6"></i><div><b>Soft nude</b><small>Your “Don’t keep us a secret” post</small></div></div>
+  <div class="sw"><i style="background:#DCCEC6"></i><div><b>Soft nude</b><small>Your soft background posts</small></div></div>
   <div class="sw"><i style="background:#B9A69B"></i><div><b>Caramel taupe</b><small>Warm hair tones</small></div></div>
   <div class="sw"><i style="background:#F29BC6"></i><div><b>Candy pink</b><small>Your pink 76 highlight</small></div></div>
   <div class="sw"><i style="background:#F8E0E8"></i><div><b>Blush</b><small>Seventy Six Bridal</small></div></div>
@@ -192,7 +199,7 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
  <h3 class="fonts-title">Fonts</h3>
  <p class="lead">Two fonts, used the same way on every post, so your page always looks like one brand.</p>
  <div class="fonts" style="margin-top:26px">
-  <div class="font"><div class="caps num">Headlines</div><div class="big gar" style="letter-spacing:.12em;font-size:clamp(40px,5vw,58px);margin-top:16px">SEVENTY SIX</div><div class="gar" style="font-size:32px;line-height:1.15">Don’t keep us a secret</div><div class="meta">Cormorant Garamond · the classic serif from your own posts</div></div>
+  <div class="font"><div class="caps num">Headlines</div><div class="big gar" style="letter-spacing:.12em;font-size:clamp(40px,5vw,58px);margin-top:16px">SEVENTY SIX</div><div class="gar" style="font-size:clamp(34px,4vw,44px);line-height:1.15">Seventy Six</div><div class="gar" style="font-size:24px;line-height:1.3;margin-top:14px">Name of Font: Cormorant Garamond.</div><div class="meta">The classic serif from your own posts</div></div>
   <div class="font"><div class="caps num">Details</div><div class="big" style="font-size:clamp(28px,3.4vw,38px);font-weight:600;margin-top:18px">Book your appointment</div><div class="sample">Recommend a friend &amp; both enjoy 20% off. Tap the link in our bio to book.</div><div class="meta">Open Sans · clean and easy to read on a phone</div></div>
  </div>
 </div></section>
@@ -357,16 +364,21 @@ document.querySelectorAll('.grid4, .reels').forEach(row=>{
   const ho=new IntersectionObserver(es=>{ if(!es[0].isIntersecting) return; ho.disconnect(); if(RM) return;
     setTimeout(()=>{ stage.classList.add('hinting'); ht=setTimeout(stop,3300); },500); },{threshold:.6});
   ho.observe(row);
-  // 2x2 overview of the same four posters, so the colours can be seen together
-  if(!isReel){ const ov=document.createElement('div'); ov.className='overview';
-    ov.innerHTML='<div class="ovh">Overview · all four together</div><div class="ov">'+items.map((f,i)=>{ const im=f.querySelector('img'); return '<button data-i="'+i+'" aria-label="Zoom '+im.alt+'"><img loading="lazy" src="'+im.getAttribute('src')+'" alt="'+im.alt+'"></button>'; }).join('')+'</div>';
-    nav.after(ov); ov.querySelectorAll('button').forEach(b=>b.onclick=()=>openLb(items[+b.dataset.i].querySelector('img'))); }
+  // 3x3 Instagram feed preview: the 4 posters mixed with 5 real, unedited hair photos
+  if(!isReel){ const P=k=>{ const im=items[k].querySelector('img'); return {src:im.getAttribute('src'),alt:im.alt}; };
+    const R=(n,a)=>({src:'img/real-'+n+'.jpg',alt:'Real photo, '+a});
+    const feed=[P(1),R('wefts','brunette wefts'),R('curls','long dark curls'),R('sway','caramel colour with Sway extensions'),P(0),R('tapes','blonde tape extensions'),P(3),R('waves','long blonde waves'),P(2)];
+    const ov=document.createElement('div'); ov.className='overview';
+    ov.innerHTML='<div class="ovh">Instagram feed preview · 9 posts</div><div class="ig"><div class="ig-head"><div class="av"><img src="img/76-logo-black.png" alt=""></div><div><b>seventysixsalon</b><small>Hair · Makeup · Bridal</small></div></div><div class="ov">'
+      +feed.map(f=>'<button aria-label="Zoom '+f.alt+'"><img loading="lazy" src="'+f.src+'" alt="'+f.alt+'"></button>').join('')+'</div></div>'
+      +'<p class="ovnote">4 posters in this style, mixed with 5 real photos of your hair work, no edits.</p>';
+    nav.after(ov); const fi=[...ov.querySelectorAll('.ov img')]; ov.querySelectorAll('.ov button').forEach((b,k)=>b.onclick=()=>openLb(fi[k],fi)); }
 });
 // zoom view: logo on top, X to close, arrows + swipe through that style's posters
 const lb=document.getElementById('lb'), lbi=lb.querySelector('.lb-stage img'), cap=lb.querySelector('.lb-cap');
 let group=[], idx=0;
 function show(i){ idx=(i+group.length)%group.length; const im=group[idx]; lbi.src=im.src; lbi.alt=im.alt; const st=im.closest('.style'); cap.textContent=(st?st.querySelector('h3').textContent+' · ':'')+(idx+1)+' / '+group.length; }
-function openLb(img){ group=[...img.closest('.style').querySelector('.grid4').querySelectorAll('img')]; show(group.indexOf(img)); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+function openLb(img,g){ group=g||[...img.closest('.style').querySelector('.grid4').querySelectorAll('img')]; show(group.indexOf(img)); lb.classList.add('on'); document.body.style.overflow='hidden'; }
 function closeLb(){ lb.classList.remove('on'); document.body.style.overflow=''; }
 document.querySelectorAll('.grid4 img').forEach(i=>i.addEventListener('click',()=>openLb(i)));
 lb.querySelector('.lb-x').onclick=closeLb;
