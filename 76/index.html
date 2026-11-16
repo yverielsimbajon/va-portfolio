@@ -75,19 +75,33 @@ nav .links a:hover{color:var(--ink)}
 .grid4 img{width:100%;cursor:zoom-in}
 .grid4 figcaption{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--soft);padding:12px 4px 4px}
 @media(max-width:820px){.grid4 figure{flex:0 0 74%}}
-.ctrl{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
-.hint{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--soft)}
-.swipe{position:relative;width:46px;height:22px;flex:none;display:inline-block}
-.swipe:before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:var(--line)}
-.swipe i{position:absolute;top:4px;left:0;width:14px;height:14px;border-radius:50%;background:var(--ink);animation:swipe 1.6s ease-in-out infinite}
-@keyframes swipe{0%{transform:translateX(30px);opacity:0}20%{opacity:1}75%{transform:translateX(0);opacity:1}100%{transform:translateX(0);opacity:0}}
-.arrows{display:flex;gap:10px}
+.stage{position:relative}
+.pill{position:absolute;top:50%;left:50%;z-index:5;display:none;align-items:center;gap:10px;padding:13px 24px;background:rgba(20,20,20,.86);color:#fff;border-radius:999px;pointer-events:none;font:600 13px 'Open Sans',sans-serif;letter-spacing:.24em;text-transform:uppercase;transform:translate(-50%,-50%);box-shadow:0 10px 26px rgba(20,20,20,.25)}
+.pill svg{width:18px;height:18px}
+.stage.hinting .pill{display:inline-flex;animation:pillFade 3.2s ease both}
+.stage.hinting .pill svg{animation:pillArrow .75s ease-in-out infinite alternate}
+.stage.hinting .grid4>*,.stage.hinting .reels>*{animation:nudge 1.5s cubic-bezier(.2,.8,.2,1) 2}
+@keyframes nudge{0%,100%{transform:none}35%,55%{transform:translateX(-56px)}}
+@keyframes pillFade{0%{opacity:0;transform:translate(-50%,-50%) scale(.9)}12%,85%{opacity:1;transform:translate(-50%,-50%)}100%{opacity:0;transform:translate(-50%,-50%)}}
+@keyframes pillArrow{to{transform:translateX(6px)}}
+.zoomtip{text-align:center;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--soft);margin-top:18px}
+.nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:12px}
+.nav .mid{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:96px}
+.dotsnav{display:flex;gap:8px}
+.dotsnav button{width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;padding:0;cursor:pointer}
+.dotsnav button.on{background:var(--ink)}
+.count{font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1}
+.count b{font-weight:600}
 .arr{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s;flex:none}
 .arr:hover{background:var(--ink);color:#fff}.arr:disabled{opacity:.25;cursor:default;background:transparent;color:var(--ink)}
 .arr svg{width:20px;height:20px}
-@media(max-width:560px){.hint .long{display:none}}
-.nudge{animation:nudge 1.4s ease-in-out 2}
-@keyframes nudge{0%,100%{transform:translateX(0)}40%{transform:translateX(-46px)}}
+@media(prefers-reduced-motion:reduce){.stage.hinting .grid4>*,.stage.hinting .reels>*{animation:none}}
+/* 2x2 overview */
+.overview{margin-top:34px}
+.overview .ovh{font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--soft);margin-bottom:12px}
+.ov{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:720px}
+.ov button{display:block;aspect-ratio:4/5;background:var(--paper);border:1px solid var(--line);padding:8px;cursor:zoom-in}
+.ov img{width:100%;height:100%;object-fit:contain}
 .btn{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:14px 22px;white-space:nowrap}
 .btn:hover{background:#fff;color:var(--ink)}
 .btn svg{width:18px;height:18px;flex:none}
@@ -309,31 +323,50 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
   <img alt="">
   <button class="arr lb-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
  </div>
- <div class="lb-bot"><span class="lb-cap"></span><span class="swipe"><i></i></span><span>Swipe to see more</span></div>
+ <div class="lb-bot"><span class="lb-cap"></span><span>·</span><span>Swipe to see more</span></div>
 </div>
 <script>
 const CHEV_L='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
 const CHEV_R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>';
-// carousels: hint + arrows under each row, and a one-time nudge when the row first comes into view
+// carousels (like the portfolio reels): "Swipe" pill + nudge the first time a row is on screen,
+// arrows with dots and "1 / 4" under the row, and a 2x2 overview under each poster style
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
 document.querySelectorAll('.grid4, .reels').forEach(row=>{
   const isReel=row.classList.contains('reels');
-  const ctrl=document.createElement('div'); ctrl.className='ctrl';
-  ctrl.innerHTML='<div class="hint"><span class="swipe"><i></i></span><span>'+(isReel?'Swipe to see more':'<span class="long">Click each photo to zoom · </span>Swipe to see more')+'</span></div>'
-   +'<div class="arrows"><button class="arr prev" aria-label="Previous">'+CHEV_L+'</button><button class="arr next" aria-label="Next">'+CHEV_R+'</button></div>';
-  row.after(ctrl);
-  const prev=ctrl.querySelector('.prev'), next=ctrl.querySelector('.next');
-  const step=()=>{const c=row.firstElementChild; return c? c.getBoundingClientRect().width+14 : 300};
-  prev.onclick=()=>row.scrollBy({left:-step(),behavior:'smooth'});
-  next.onclick=()=>row.scrollBy({left:step(),behavior:'smooth'});
-  const upd=()=>{prev.disabled=row.scrollLeft<4; next.disabled=row.scrollLeft+row.clientWidth>=row.scrollWidth-4};
-  row.addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
-  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ [...row.children].forEach(c=>c.classList.add('nudge')); o.disconnect(); } }),{threshold:.6}).observe(row);
+  const items=[...row.children], n=items.length;
+  const stage=document.createElement('div'); stage.className='stage'; row.before(stage); stage.appendChild(row);
+  const pill=document.createElement('span'); pill.className='pill'; pill.setAttribute('aria-hidden','true'); pill.innerHTML='Swipe '+CHEV_R; stage.appendChild(pill);
+  const nav=document.createElement('div');
+  nav.innerHTML=(isReel?'':'<div class="zoomtip">Click each photo to zoom</div>')
+   +'<div class="nav"><button class="arr prev" aria-label="Previous">'+CHEV_L+'</button><div class="mid"><div class="dotsnav">'
+   +items.map((_,i)=>'<button aria-label="Show '+(i+1)+'"></button>').join('')+'</div><div class="count"><b>1</b> / '+n+'</div></div>'
+   +'<button class="arr next" aria-label="Next">'+CHEV_R+'</button></div>';
+  stage.after(nav);
+  const prev=nav.querySelector('.prev'), next=nav.querySelector('.next'), dots=[...nav.querySelectorAll('.dotsnav button')], cnt=nav.querySelector('.count b');
+  const cur=()=>{ let best=0, bd=1e9; items.forEach((it,i)=>{ const d=Math.abs(it.offsetLeft-row.offsetLeft-row.scrollLeft); if(d<bd){bd=d;best=i;} });
+    if(row.scrollLeft+row.clientWidth>=row.scrollWidth-4) best=Math.max(best, n-1); return best; };
+  const goTo=i=>{ i=Math.max(0,Math.min(n-1,i)); row.scrollTo({left:items[i].offsetLeft-row.offsetLeft,behavior:RM?'auto':'smooth'}); };
+  const upd=()=>{ const i=cur(); cnt.textContent=i+1; dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+    prev.disabled=row.scrollLeft<4; next.disabled=row.scrollLeft+row.clientWidth>=row.scrollWidth-4; };
+  prev.onclick=()=>{stop();goTo(cur()-1)}; next.onclick=()=>{stop();goTo(cur()+1)};
+  dots.forEach((d,k)=>d.onclick=()=>{stop();goTo(k)});
+  let fr=null; row.addEventListener('scroll',()=>{ if(fr) return; fr=requestAnimationFrame(()=>{fr=null;upd();}); },{passive:true});
+  addEventListener('resize',upd); upd();
+  let ht=null; const stop=()=>{ clearTimeout(ht); stage.classList.remove('hinting'); };
+  row.addEventListener('touchstart',stop,{passive:true}); row.addEventListener('mousedown',stop);
+  const ho=new IntersectionObserver(es=>{ if(!es[0].isIntersecting) return; ho.disconnect(); if(RM) return;
+    setTimeout(()=>{ stage.classList.add('hinting'); ht=setTimeout(stop,3300); },500); },{threshold:.6});
+  ho.observe(row);
+  // 2x2 overview of the same four posters, so the colours can be seen together
+  if(!isReel){ const ov=document.createElement('div'); ov.className='overview';
+    ov.innerHTML='<div class="ovh">Overview · all four together</div><div class="ov">'+items.map((f,i)=>{ const im=f.querySelector('img'); return '<button data-i="'+i+'" aria-label="Zoom '+im.alt+'"><img loading="lazy" src="'+im.getAttribute('src')+'" alt="'+im.alt+'"></button>'; }).join('')+'</div>';
+    nav.after(ov); ov.querySelectorAll('button').forEach(b=>b.onclick=()=>openLb(items[+b.dataset.i].querySelector('img'))); }
 });
 // zoom view: logo on top, X to close, arrows + swipe through that style's posters
 const lb=document.getElementById('lb'), lbi=lb.querySelector('.lb-stage img'), cap=lb.querySelector('.lb-cap');
 let group=[], idx=0;
 function show(i){ idx=(i+group.length)%group.length; const im=group[idx]; lbi.src=im.src; lbi.alt=im.alt; const st=im.closest('.style'); cap.textContent=(st?st.querySelector('h3').textContent+' · ':'')+(idx+1)+' / '+group.length; }
-function openLb(img){ group=[...img.closest('.grid4').querySelectorAll('img')]; show(group.indexOf(img)); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+function openLb(img){ group=[...img.closest('.style').querySelector('.grid4').querySelectorAll('img')]; show(group.indexOf(img)); lb.classList.add('on'); document.body.style.overflow='hidden'; }
 function closeLb(){ lb.classList.remove('on'); document.body.style.overflow=''; }
 document.querySelectorAll('.grid4 img').forEach(i=>i.addEventListener('click',()=>openLb(i)));
 lb.querySelector('.lb-x').onclick=closeLb;
