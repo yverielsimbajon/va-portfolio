@@ -56,6 +56,9 @@ nav .links a:hover{color:var(--ink)}
 .fonts{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
 .font{background:var(--paper);border:1px solid var(--line);padding:26px 28px}
 .font .big{font-size:52px;line-height:1.05;margin:10px 0 6px}
+.fonts-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(32px,4.4vw,44px);margin:64px 0 6px}
+.font .meta{font-size:13.5px;color:var(--soft);margin-top:14px}
+.font .sample{font-size:15.5px;color:#3a3330;margin-top:10px}
 @media(max-width:700px){.fonts{grid-template-columns:1fr}}
 /* styles */
 .style{margin-top:56px}
@@ -65,18 +68,39 @@ nav .links a:hover{color:var(--ink)}
 .dots{display:flex;gap:6px;margin-top:14px}
 .dots i{width:22px;height:22px;border-radius:50%;border:1px solid rgba(0,0,0,.12)}
 .tag{display:inline-block;background:var(--ink);color:#fff;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;padding:6px 12px;margin-left:10px;vertical-align:middle}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;align-items:start}
+.grid4,.reels{display:flex;gap:14px;align-items:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.grid4::-webkit-scrollbar,.reels::-webkit-scrollbar{display:none}
+.grid4 figure{flex:0 0 calc((100% - 28px)/3.3);scroll-snap-align:start}
 .grid4 figure{background:var(--paper);border:1px solid var(--line);padding:10px}
 .grid4 img{width:100%;cursor:zoom-in}
 .grid4 figcaption{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--soft);padding:12px 4px 4px}
-@media(max-width:820px){.grid4{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;margin:0 -22px;padding-left:22px;padding-right:22px}.grid4 figure{flex:0 0 72%;scroll-snap-align:start}}
+@media(max-width:820px){.grid4 figure{flex:0 0 74%}}
+.ctrl{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:16px}
+.hint{display:flex;align-items:center;gap:12px;font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.swipe{position:relative;width:46px;height:22px;flex:none;display:inline-block}
+.swipe:before{content:"";position:absolute;left:0;right:0;top:10px;height:2px;background:var(--line)}
+.swipe i{position:absolute;top:4px;left:0;width:14px;height:14px;border-radius:50%;background:var(--ink);animation:swipe 1.6s ease-in-out infinite}
+@keyframes swipe{0%{transform:translateX(30px);opacity:0}20%{opacity:1}75%{transform:translateX(0);opacity:1}100%{transform:translateX(0);opacity:0}}
+.arrows{display:flex;gap:10px}
+.arr{width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:transparent;color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s,color .2s;flex:none}
+.arr:hover{background:var(--ink);color:#fff}.arr:disabled{opacity:.25;cursor:default;background:transparent;color:var(--ink)}
+.arr svg{width:20px;height:20px}
+@media(max-width:560px){.hint .long{display:none}}
+.nudge{animation:nudge 1.4s ease-in-out 2}
+@keyframes nudge{0%,100%{transform:translateX(0)}40%{transform:translateX(-46px)}}
 .btn{display:inline-flex;align-items:center;gap:10px;border:1.5px solid var(--ink);background:var(--ink);color:#fff;text-decoration:none;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:14px 22px;white-space:nowrap}
 .btn:hover{background:#fff;color:var(--ink)}
 .btn svg{width:18px;height:18px;flex:none}
 .btn.ghost{background:transparent;color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:#fff}
 /* reels */
-.reels{display:grid;grid-template-columns:repeat(2,minmax(0,330px));gap:28px;margin-top:38px}
+.reels{margin-top:38px}
+.reel{flex:0 0 300px;scroll-snap-align:start;position:relative}
+.reel .vbox{position:relative}
+.sound{position:absolute;right:12px;top:12px;display:flex;align-items:center;gap:8px;background:rgba(20,20,20,.82);color:#fff;border:0;border-radius:40px;padding:10px 16px;animation:pulse 1.8s ease-in-out infinite;font:600 12.5px 'Open Sans',sans-serif;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;white-space:nowrap}
+.sound svg{width:20px;height:20px}
+.sound.off{display:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(242,155,198,.7)}50%{box-shadow:0 0 0 8px rgba(242,155,198,0)}}
 .reel video{width:100%;aspect-ratio:9/16;background:#000;object-fit:cover}
 .reel h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;margin-top:16px}
 .reel p{font-size:15px;color:#3a3330}
@@ -84,7 +108,7 @@ nav .links a:hover{color:var(--ink)}
 .labelnote .demo{background:url(img/label-demo.jpg) center 30%/cover;aspect-ratio:9/10;display:flex;flex-direction:column;justify-content:center;padding:26px}
 .demo .script{font-family:"Dancing Script",cursive;font-weight:700;font-size:58px;color:var(--pink);-webkit-text-stroke:4px #111;paint-order:stroke fill;line-height:1.25}
 .demo .strip{display:inline-block;white-space:nowrap;background:#111;color:#fff;font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;padding:10px 14px;margin-top:6px;align-self:flex-start}
-@media(max-width:820px){.reels{grid-template-columns:1fr 1fr;gap:14px}.labelnote{grid-template-columns:minmax(0,1fr);padding:18px}.demo .strip{white-space:normal}}
+@media(max-width:820px){.reel{flex:0 0 74%}.labelnote{grid-template-columns:minmax(0,1fr);padding:18px}.demo .strip{white-space:normal}}
 /* calendar */
 .cal{margin-top:38px;border-top:1px solid var(--ink)}
 .cal .row{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
@@ -105,9 +129,19 @@ nav .links a:hover{color:var(--ink)}
 .close .btns{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
 footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px;border-top:1px solid var(--line)}
 /* lightbox */
-#lb{position:fixed;inset:0;background:rgba(20,20,20,.92);display:none;align-items:center;justify-content:center;z-index:50;padding:20px;cursor:zoom-out}
+#lb{position:fixed;inset:0;background:rgba(246,241,236,.98);display:none;flex-direction:column;z-index:50}
 #lb.on{display:flex}
-#lb img{max-height:94vh;max-width:94vw;object-fit:contain}
+.lb-top{display:flex;align-items:center;justify-content:center;position:relative;height:74px;border-bottom:1px solid var(--line);flex:none}
+.lb-top .lb-brand{display:flex;align-items:center;gap:12px}
+.lb-top img{height:46px}
+.lb-top span{font-family:'Cormorant Garamond',serif;font-size:20px;letter-spacing:.22em;text-transform:uppercase}
+.lb-x{position:absolute;right:14px;top:13px;width:48px;height:48px;border-radius:50%;border:1.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lb-x svg{width:20px;height:20px}
+.lb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:18px;padding:16px;min-height:0;touch-action:pan-y}
+.lb-stage img{max-height:100%;max-width:min(80vw,760px);object-fit:contain;box-shadow:0 10px 40px rgba(0,0,0,.12)}
+.lb-bot{flex:none;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px 22px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--soft);flex-wrap:wrap}
+#lb .arr{background:#fff}
+@media(max-width:700px){.lb-stage{padding:10px 8px;gap:0}.lb-stage .arr{display:none}.lb-stage img{max-width:94vw}.lb-top span{display:none}}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -141,16 +175,18 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
   <div class="sw"><i style="background:#F8E0E8"></i><div><b>Blush</b><small>Seventy Six Bridal</small></div></div>
   <div class="sw"><i style="background:#3C4D57"></i><div><b>Slate</b><small>The Dunmow sign</small></div></div>
  </div>
- <div class="fonts">
-  <div class="font"><div class="caps num">Headlines</div><div class="big gar">Don’t keep us a secret</div><div style="font-size:14px;color:var(--soft)">Cormorant Garamond, the classic serif from your own posts</div></div>
-  <div class="font"><div class="caps num">Details</div><div class="big" style="font-size:34px;margin:22px 0 14px">Recommend a friend &amp; both enjoy 20% off</div><div style="font-size:14px;color:var(--soft)">Open Sans, clean and easy to read on a phone</div></div>
+ <h3 class="fonts-title">Fonts</h3>
+ <p class="lead">Two fonts, used the same way on every post, so your page always looks like one brand.</p>
+ <div class="fonts" style="margin-top:26px">
+  <div class="font"><div class="caps num">Headlines</div><div class="big gar" style="letter-spacing:.12em;font-size:clamp(40px,5vw,58px);margin-top:16px">SEVENTY SIX</div><div class="gar" style="font-size:32px;line-height:1.15">Don’t keep us a secret</div><div class="meta">Cormorant Garamond · the classic serif from your own posts</div></div>
+  <div class="font"><div class="caps num">Details</div><div class="big" style="font-size:clamp(28px,3.4vw,38px);font-weight:600;margin-top:18px">Book your appointment</div><div class="sample">Recommend a friend &amp; both enjoy 20% off. Tap the link in our bio to book.</div><div class="meta">Open Sans · clean and easy to read on a phone</div></div>
  </div>
 </div></section>
 
 <section id="posters"><div class="wrap">
  <div class="caps num">02 · Poster styles</div>
  <h2>Four styles, one for every mood</h2>
- <p class="lead">Each style has the same four templates you’ll use every week: appointment availability, an offer, a before &amp; after and a client review. Tap any poster to see it bigger.</p>
+ <p class="lead">Each style has the same four templates you’ll use every week: appointment availability, an offer, a before &amp; after and a client review. Click each photo to zoom, and swipe or use the arrows to see more.</p>
 
  <div class="style" id="style-1">
   <div class="style-head"><div>
@@ -222,8 +258,8 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
  <h2>Your first two reels</h2>
  <p class="lead">Made from the photos and videos in your folder, with your logo, fashion music and your photos shown bright and true to colour.</p>
  <div class="reels">
-  <div class="reel"><video src="video/reel-1.mp4" poster="img/reel-1-poster.jpg" controls playsinline preload="none"></video><h4>Short to long</h4><p>From a short blonde bob to long, soft waves with tape extensions.</p></div>
-  <div class="reel"><video src="video/reel-2.mp4" poster="img/reel-2-poster.jpg" controls playsinline preload="none"></video><h4>Find your shade</h4><p>Remi Cachet shades, colour matched, with tapes and wefts results.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/reel-1.mp4" poster="img/reel-1-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><h4>Short to long</h4><p>From a short blonde bob to long, soft waves with tape extensions.</p></div>
+  <div class="reel"><div class="vbox"><video src="video/reel-2.mp4" poster="img/reel-2-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><h4>Find your shade</h4><p>Remi Cachet shades, colour matched, with tapes and wefts results.</p></div>
  </div>
  <div class="labelnote">
   <div class="demo"><div class="script">After</div><div class="strip">Long, soft blonde waves</div></div>
@@ -265,12 +301,64 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 
 <footer>Prepared for Seventy Six Salon by Maria · The Maria Office · Private link, please don’t share publicly</footer>
 
-<div id="lb" role="dialog" aria-label="Poster preview"><img alt=""></div>
+<div id="lb" role="dialog" aria-modal="true" aria-label="Poster preview">
+ <div class="lb-top"><div class="lb-brand"><img src="img/76-logo-black.png" alt="76"><span>Seventy Six Salon</span></div>
+  <button class="lb-x" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
+ <div class="lb-stage">
+  <button class="arr lb-prev" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <img alt="">
+  <button class="arr lb-next" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+ </div>
+ <div class="lb-bot"><span class="lb-cap"></span><span class="swipe"><i></i></span><span>Swipe to see more</span></div>
+</div>
 <script>
-const lb=document.getElementById('lb'), lbi=lb.querySelector('img');
-document.querySelectorAll('.grid4 img').forEach(i=>i.addEventListener('click',()=>{lbi.src=i.src;lbi.alt=i.alt;lb.classList.add('on')}));
-lb.addEventListener('click',()=>lb.classList.remove('on'));
-document.addEventListener('keydown',e=>{if(e.key==='Escape')lb.classList.remove('on')});
+const CHEV_L='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>';
+const CHEV_R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>';
+// carousels: hint + arrows under each row, and a one-time nudge when the row first comes into view
+document.querySelectorAll('.grid4, .reels').forEach(row=>{
+  const isReel=row.classList.contains('reels');
+  const ctrl=document.createElement('div'); ctrl.className='ctrl';
+  ctrl.innerHTML='<div class="hint"><span class="swipe"><i></i></span><span>'+(isReel?'Swipe to see more':'<span class="long">Click each photo to zoom · </span>Swipe to see more')+'</span></div>'
+   +'<div class="arrows"><button class="arr prev" aria-label="Previous">'+CHEV_L+'</button><button class="arr next" aria-label="Next">'+CHEV_R+'</button></div>';
+  row.after(ctrl);
+  const prev=ctrl.querySelector('.prev'), next=ctrl.querySelector('.next');
+  const step=()=>{const c=row.firstElementChild; return c? c.getBoundingClientRect().width+14 : 300};
+  prev.onclick=()=>row.scrollBy({left:-step(),behavior:'smooth'});
+  next.onclick=()=>row.scrollBy({left:step(),behavior:'smooth'});
+  const upd=()=>{prev.disabled=row.scrollLeft<4; next.disabled=row.scrollLeft+row.clientWidth>=row.scrollWidth-4};
+  row.addEventListener('scroll',upd,{passive:true}); addEventListener('resize',upd); upd();
+  new IntersectionObserver((es,o)=>es.forEach(e=>{ if(e.isIntersecting){ [...row.children].forEach(c=>c.classList.add('nudge')); o.disconnect(); } }),{threshold:.6}).observe(row);
+});
+// zoom view: logo on top, X to close, arrows + swipe through that style's posters
+const lb=document.getElementById('lb'), lbi=lb.querySelector('.lb-stage img'), cap=lb.querySelector('.lb-cap');
+let group=[], idx=0;
+function show(i){ idx=(i+group.length)%group.length; const im=group[idx]; lbi.src=im.src; lbi.alt=im.alt; const st=im.closest('.style'); cap.textContent=(st?st.querySelector('h3').textContent+' · ':'')+(idx+1)+' / '+group.length; }
+function openLb(img){ group=[...img.closest('.grid4').querySelectorAll('img')]; show(group.indexOf(img)); lb.classList.add('on'); document.body.style.overflow='hidden'; }
+function closeLb(){ lb.classList.remove('on'); document.body.style.overflow=''; }
+document.querySelectorAll('.grid4 img').forEach(i=>i.addEventListener('click',()=>openLb(i)));
+lb.querySelector('.lb-x').onclick=closeLb;
+lb.querySelector('.lb-prev').onclick=()=>show(idx-1);
+lb.querySelector('.lb-next').onclick=()=>show(idx+1);
+lb.querySelector('.lb-stage').addEventListener('click',e=>{ if(e.target.classList.contains('lb-stage')) closeLb(); });
+document.addEventListener('keydown',e=>{ if(!lb.classList.contains('on')) return; if(e.key==='Escape') closeLb(); if(e.key==='ArrowRight') show(idx+1); if(e.key==='ArrowLeft') show(idx-1); });
+let tx=null; const stage=lb.querySelector('.lb-stage');
+stage.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+stage.addEventListener('touchend',e=>{ if(tx===null) return; const dx=e.changedTouches[0].clientX-tx; if(Math.abs(dx)>40) show(idx+(dx<0?1:-1)); tx=null; });
+// reels: autoplay when in view (silent until the first tap, phones block sound before that), "Tap for sound" button
+let soundOn=false; const vids=[...document.querySelectorAll('.reel video')];
+const SPK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H3v6h3l5 4z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>';
+const hideSound=()=>document.querySelectorAll('.sound').forEach(x=>x.classList.add('off'));
+vids.forEach(v=>{ const b=document.createElement('button'); b.className='sound'; b.innerHTML=SPK+'Tap for sound'; v.parentElement.appendChild(b);
+  b.onclick=()=>{ soundOn=true; hideSound(); vids.forEach(o=>{ if(o!==v) o.pause(); }); v.muted=false; v.currentTime=0; v.play(); };
+  v.addEventListener('volumechange',()=>{ if(!v.muted){ soundOn=true; hideSound(); } }); });
+const vo=new IntersectionObserver(es=>es.forEach(e=>{ const v=e.target; if(e.isIntersecting){ if(soundOn) vids.forEach(o=>{ if(o!==v) o.pause(); }); v.muted=!soundOn; v.play().catch(()=>{ v.muted=true; v.play().catch(()=>{}); }); } else v.pause(); }),{threshold:.45});
+vids.forEach(v=>vo.observe(v));
+// backup check on scroll, so autoplay also works where the observer is slow
+function checkVids(){ vids.forEach(v=>{ const r=v.getBoundingClientRect(); const vis=Math.max(0,Math.min(r.bottom,innerHeight)-Math.max(r.top,0))/Math.max(1,r.height);
+  const inX=r.right>0&&r.left<innerWidth; if(vis>=.45&&inX){ if(v.paused){ if(soundOn) vids.forEach(o=>{ if(o!==v) o.pause(); }); v.muted=!soundOn; v.play().catch(()=>{ v.muted=true; v.play().catch(()=>{}); }); } } else if(!v.paused) v.pause(); }); }
+let ct; addEventListener('scroll',()=>{ clearTimeout(ct); ct=setTimeout(checkVids,120); },{passive:true});
+document.querySelector('.reels').addEventListener('scroll',()=>{ clearTimeout(ct); ct=setTimeout(checkVids,120); },{passive:true});
+addEventListener('load',checkVids);
 </script>
 </body>
 </html>
