@@ -118,16 +118,12 @@ nav .links a:hover{color:var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:#fff}
 /* reels */
 .reels{margin-top:38px}
-.reel{flex:0 0 300px;scroll-snap-align:start;position:relative}
+.reel{flex:0 0 min(390px,100%);scroll-snap-align:start;position:relative}
 .reel .vbox{position:relative}
 .reel video{width:100%;aspect-ratio:9/16;background:#000;object-fit:cover}
 .reel h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;margin-top:16px}
 .reel p{font-size:15px;color:#3a3330}
-.labelnote{display:grid;grid-template-columns:330px 1fr;gap:34px;align-items:center;margin-top:56px;background:var(--paper);border:1px solid var(--line);padding:30px}
-.labelnote .demo{background:url(img/label-demo.jpg) center 30%/cover;aspect-ratio:9/10;display:flex;flex-direction:column;justify-content:center;padding:26px}
-.demo .script{font-family:"Dancing Script",cursive;font-weight:700;font-size:58px;color:var(--pink);-webkit-text-stroke:4px #111;paint-order:stroke fill;line-height:1.25}
-.demo .strip{display:inline-block;white-space:nowrap;background:#111;color:#fff;font-size:13px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;padding:10px 14px;margin-top:6px;align-self:flex-start}
-@media(max-width:820px){.reel{flex:0 0 74%}.labelnote{grid-template-columns:minmax(0,1fr);padding:18px}.demo .strip{white-space:normal}}
+@media(max-width:820px){.reel{flex:0 0 100%}}
 /* calendar */
 .cal{margin-top:38px;border-top:1px solid var(--ink)}
 .cal .row{display:grid;grid-template-columns:220px 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line)}
@@ -162,7 +158,6 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 #lb .arr{background:#fff}
 @media(max-width:700px){.lb-stage{padding:10px 8px;gap:0}.lb-stage .arr{display:none}.lb-stage img{max-width:94vw}.lb-top span{display:none}}
 </style>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -316,10 +311,6 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
   <div class="reel"><div class="vbox"><video src="video/r4.mp4" poster="img/r4-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 4 · Cream</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>Side-by-side before &amp; after, short blonde to long waves with tapes.</p></div>
   <div class="reel"><div class="vbox"><video src="video/r5.mp4" poster="img/r5-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 5 · Black</div><h4 style="margin-top:4px">Short to long, before &amp; after</h4><p>The same before &amp; after in your black template, bold and glam.</p></div>
   <div class="reel"><div class="vbox"><video src="video/r6.mp4" poster="img/r6-poster.jpg" controls playsinline muted loop preload="metadata"></video></div><div class="caps num" style="margin-top:16px">Reel 6 · Remi Cachet</div><h4 style="margin-top:4px">Find your perfect shade</h4><p>Remi Cachet shades, colour matched, with nanos, wefts and tapes results.</p></div>
- </div>
- <div class="labelnote">
-  <div class="demo"><div class="script">After</div><div class="strip">Long, soft blonde waves</div></div>
-  <div><div class="caps num">Reel label style</div><h3 class="gar" style="font-size:38px;line-height:1.1;margin:10px 0 12px">Bold labels on every reel</h3><p style="color:#3a3330">Fun and easy to read on any hair colour, so every reel looks like Seventy Six. Coming next: a “how is your salon always so busy?” reel, a same-angle before &amp; after reveal, and a “behind every great salon is an even greater team” reel with the girls.</p></div>
  </div>
 </div></section>
 
