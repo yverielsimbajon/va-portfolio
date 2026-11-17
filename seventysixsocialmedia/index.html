@@ -186,13 +186,14 @@ nav .links a:hover{color:var(--ink)}
 .cal .what b{font-weight:600}
 @media(max-width:700px){.cal .row{grid-template-columns:1fr;gap:6px}}
 /* bridal logos */
-.logos{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.logos{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
+.logos .logo-o{flex:0 0 calc((100% - 28px)/3)}
 .logo-o{background:var(--paper);border:1px solid var(--line);padding:10px 10px 16px;display:flex;flex-direction:column;gap:12px}
 .logo-o img{width:100%;cursor:zoom-in}
 .logo-o .btn{justify-content:center;padding:12px 14px;font-size:11.5px}
 .logo-o p{font-size:14px;color:#3a3330;padding:0 4px}
-@media(max-width:900px){.logos{grid-template-columns:1fr 1fr}}
-@media(max-width:520px){.logos{grid-template-columns:1fr}}
+@media(max-width:900px){.logos .logo-o{flex-basis:calc((100% - 14px)/2)}}
+@media(max-width:520px){.logos .logo-o{flex-basis:100%}}
 .cur{display:flex;gap:16px;align-items:center;margin-top:20px;font-size:14.5px;color:var(--soft)}
 .cur img{width:64px;height:64px;border-radius:50%;border:1px solid var(--line)}
 /* steps */
@@ -313,7 +314,7 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
   <div><b>Premium feed preview</b>: my posts mixed with the girls’ real work, plus Remi Cachet</div>
   <div><b>Three new reels</b>: Emma’s colour, Rachael’s blondes and the girls of 76</div>
   <div><b>A fuller content plan</b>: a weekly rhythm and a campaign every month</div>
-  <div><b>Bridal logo</b>: four options to choose from</div>
+  <div><b>Bridal logo</b>: five options to choose from</div>
  </div>
 </div></section>
 
@@ -445,14 +446,15 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 
 <section id="bridal"><div class="wrap">
  <div class="caps num">05 · Bridal logo</div>
- <h2>Seventy Six Bridal</h2>
- <p class="lead">Four options in your new look, all with “Hair · Makeup · Nails” like your current logo. The arch comes from the arched windows at Dunmow and your arched mirrors, and it doubles as a wedding arch. Tap the one you love, or mix and match.</p>
- <div class="cur"><img src="img/bridal-current.jpg" alt="Current Seventy Six Bridal logo"><span>Your current logo, for reference</span></div>
+ <h2>76 Bridal</h2>
+ <p class="lead">Five options for 76 Bridal, keeping the pink and black of your current logo and “Hair · Makeup · Nails” underneath. Tap the one you love, or mix and match.</p>
+ <div class="cur"><img src="img/bridal-current.jpg" alt="Current 76 Bridal logo"><span>Your current logo, for reference</span></div>
  <div class="logos style" id="logos">
-  <div class="logo-o"><img loading="lazy" src="img/bridal-1.jpg" alt="Bridal logo option 1, The Arch"><p><b>1 · The Arch.</b> 76 inside the arch, forest green on soft nude.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%201%20-%20The%20Arch%20%F0%9F%92%95">Choose this logo</a></div>
-  <div class="logo-o"><img loading="lazy" src="img/bridal-2.jpg" alt="Bridal logo option 2, Monogram"><p><b>2 · Monogram.</b> S &amp; B in the arch, black on blush.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%202%20-%20Monogram%20%F0%9F%92%95">Choose this logo</a></div>
-  <div class="logo-o"><img loading="lazy" src="img/bridal-3.jpg" alt="Bridal logo option 3, with the 76 logo"><p><b>3 · With your 76.</b> Your salon logo above a bridal wordmark.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%203%20-%20With%20the%2076%20logo%20%F0%9F%92%95">Choose this logo</a></div>
-  <div class="logo-o"><img loading="lazy" src="img/bridal-4.jpg" alt="Bridal logo option 4, current logo refreshed"><p><b>4 · Refreshed.</b> Your current idea, with cleaner type.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%204%20-%20Refreshed%20%F0%9F%92%95">Choose this logo</a></div>
+  <div class="logo-o"><img loading="lazy" src="img/bridal76-1.jpg" alt="76 Bridal logo option 1, The Emblem"><p><b>1 · The Emblem.</b> A round badge made for your Instagram profile circle, with Hair · Makeup · Nails around it.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%201%20-%20The%20Emblem%20%F0%9F%92%95">Choose this logo</a></div>
+  <div class="logo-o"><img loading="lazy" src="img/bridal76-2.jpg" alt="76 Bridal logo option 2, Bold Pink"><p><b>2 · Bold Pink.</b> Your candy pink with a black 76 and a white Bridal signature. Loud and fun.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%202%20-%20Bold%20Pink%20%F0%9F%92%95">Choose this logo</a></div>
+  <div class="logo-o"><img loading="lazy" src="img/bridal76-3.jpg" alt="76 Bridal logo option 3, The Ring"><p><b>3 · The Ring.</b> An engagement ring with a pink diamond, with the 76 sitting inside the band.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%203%20-%20The%20Ring%20%F0%9F%92%95">Choose this logo</a></div>
+  <div class="logo-o"><img loading="lazy" src="img/bridal76-4.jpg" alt="76 Bridal logo option 4, The Pearl Ribbon"><p><b>4 · The Pearl Ribbon.</b> A rose-gold satin ribbon and a pearl wrapped through the 76.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%204%20-%20The%20Pearl%20Ribbon%20%F0%9F%92%95">Choose this logo</a></div>
+  <div class="logo-o"><img loading="lazy" src="img/bridal76-5.jpg" alt="76 Bridal logo option 5, The Bride"><p><b>5 · The Bride.</b> The 6 flows into a bride in gold line art, with a pearl earring.</p><a class="btn" href="https://wa.me/639094928860?text=Hi%20Maria!%20I%20choose%20Bridal%20logo%20Option%205%20-%20The%20Bride%20%F0%9F%92%95">Choose this logo</a></div>
  </div>
 </div></section>
 
