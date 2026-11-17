@@ -138,6 +138,39 @@ nav .links a:hover{color:var(--ink)}
 .cap .cap-copy:hover{background:var(--ink);color:#fff}
 .reel .cap .cap-b,.reel .cap .cap-t{font-size:14px}
 .storyrow .cap{margin-top:0;border-top:0;padding-top:0}
+/* post title under the label (no emoji) */
+.ptitle{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.15;color:var(--ink);padding:2px 4px 0}
+.grid4 figure>.cap{margin-top:12px}
+.stories figure{flex:0 0 calc((100% - 28px)/3)}
+@media(max-width:820px){.stories figure{flex:0 0 78%}}
+.storycap{max-width:680px;margin-top:22px;background:var(--paper);border:1px solid var(--line);padding:18px 20px}
+.storycap .cap{margin-top:8px;border-top:0;padding-top:0}
+/* premium feed preview */
+.ig{max-width:600px;background:#fff;border:1px solid var(--line);box-shadow:0 18px 50px rgba(60,45,35,.08)}
+.ig-head{display:flex;align-items:center;gap:18px;padding:22px 20px 8px}
+.ig-head .av{width:76px;height:76px}
+.ig-head .av img{width:46px}
+.ig-head b{font-size:16px}
+.ig-bio{padding:4px 20px 6px;font-size:13px;line-height:1.5;color:#3a3330}
+.ig-hl{display:flex;gap:16px;padding:14px 20px 18px;overflow:hidden}
+.ig-hl div{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;color:#3a3330;flex:none}
+.ig-hl i{width:58px;height:58px;border-radius:50%;border:1px solid var(--line);padding:3px;display:block}
+.ig-hl i span{display:flex;width:100%;height:100%;border-radius:50%;align-items:center;justify-content:center}
+.ig-hl i img{width:22px}
+.ov{gap:3px;border-top:1px solid var(--line)}
+/* weekly rhythm */
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:10px;margin-top:30px}
+.day{background:var(--paper);border:1px solid var(--line);padding:18px 14px}
+.day .d{font-family:'Cormorant Garamond',serif;font-size:26px;line-height:1;color:var(--green)}
+.day .w{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--soft);margin-top:8px}
+.day p{font-size:14px;line-height:1.5;color:#3a3330;margin-top:8px}
+@media(max-width:1000px){.week{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:620px){.week{grid-template-columns:1fr 1fr}}
+.offplate{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.offplate div{background:var(--paper);border:1px solid var(--line);padding:22px 22px}
+.offplate b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:26px;line-height:1.1;margin-bottom:8px}
+.offplate p{font-size:15px;color:#3a3330}
+@media(max-width:820px){.offplate{grid-template-columns:1fr}}
 /* valentine's */
 .vgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px}
 .vcard{background:var(--paper);border:1px solid var(--line);padding:30px 30px 26px}
@@ -188,6 +221,16 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 .lb-bot{flex:none;display:flex;align-items:center;justify-content:center;gap:14px;padding:10px 16px 22px;font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--soft);flex-wrap:wrap}
 #lb .arr{background:#fff}
 @media(max-width:700px){.lb-stage{padding:10px 8px;gap:0}.lb-stage .arr{display:none}.lb-stage img{max-width:94vw}.lb-top span{display:none}}
+
+/* idea cards */
+.ideas{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:26px}
+.ideas.three{grid-template-columns:repeat(3,1fr)}
+.ideas>div{background:var(--paper);border:1px solid var(--line);padding:22px 24px}
+.ideas .ic{font-size:26px;line-height:1}
+.ideas b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:27px;line-height:1.1;margin:10px 0 6px}
+.ideas p{font-size:15px;color:#3a3330}
+.ideas p i{font-style:normal;font-weight:600;color:var(--green)}
+@media(max-width:900px){.ideas,.ideas.three{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -235,7 +278,10 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
   <div><b>Girl-power music</b> on the reels: Spice Girls, Eternal and Sugababes</div>
   <div><b>Every reel ends</b> with the salon, the stylist and the number to book</div>
   <div><b>Black reel</b> taken out (not your vibe)</div>
-  <div><b>Valentine’s ideas</b>: one for hair, one for makeup, with your one-to-one lessons</div>
+  <div><b>Valentine’s ideas</b>: your one-to-one lessons, plus lots more for the salon, the girls and our clients</div>
+  <div><b>Premium feed preview</b>: my posts mixed with the girls’ real work, plus Remi Cachet</div>
+  <div><b>Three new reels</b>: Emma’s colour, Rachael’s blondes and the girls of 76</div>
+  <div><b>A fuller content plan</b>: a weekly rhythm and a campaign every month</div>
   <div><b>Bridal logo</b>: four options to choose from</div>
  </div>
 </div></section>
@@ -258,78 +304,101 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 <section id="posts"><div class="wrap">
  <div class="caps num">02 · Posts</div>
  <h2>Your feed, in Soft Nude</h2>
- <p class="lead">Five posts for the grid: an offer, a before &amp; after, a client review, the team and a stylist intro. The photos do the talking, and each caption explains the picture and gently invites clients in. Click any post to zoom.</p>
+ <p class="lead">Seven posts for the grid: an offer, your Remi Cachet extensions, the team, the salon, a before &amp; after, the shade edit and a client review. The photos do the talking, and each caption explains the picture and gently invites clients in. Click any post to zoom.</p>
  <div class="style" id="feed">
   <div class="grid4">
    <figure data-cap="offer"><img loading="lazy" src="img/sn-offer.jpg" alt="Offer post: 30% off colour with Madison"><figcaption>Offer</figcaption></figure>
+   <figure data-cap="remiPost"><img loading="lazy" src="img/sn-remi.jpg" alt="Remi Cachet extensions post: find your perfect shade"><figcaption>Extensions</figcaption></figure>
+   <figure data-cap="team"><img loading="lazy" src="img/sn-team.jpg" alt="Team 76 post with the team photo"><figcaption>The team</figcaption></figure>
+   <figure data-cap="salon"><img loading="lazy" src="img/sn-salon.jpg" alt="The salon post: 76 Salon Chelmsford, clean and classic"><figcaption>The salon</figcaption></figure>
    <figure data-cap="ba"><img loading="lazy" src="img/sn-ba.jpg" alt="Before and after post: Sway extensions"><figcaption>Before &amp; after</figcaption></figure>
+   <figure data-cap="shades"><img loading="lazy" src="img/sn-shades.jpg" alt="Remi Cachet shade edit post"><figcaption>Extensions</figcaption></figure>
    <figure data-cap="review"><img loading="lazy" src="img/sn-review.jpg" alt="Client review post in black"><figcaption>Client review</figcaption></figure>
-   <figure data-cap="team"><img loading="lazy" src="img/sn-team.jpg" alt="Team 76 post with the team photo"><figcaption>Team 76</figcaption></figure>
-   <figure data-cap="emma"><img loading="lazy" src="img/sn-emma.jpg" alt="Meet Emma post"><figcaption>Meet the stylist</figcaption></figure>
   </div>
  </div>
  <div class="overview" id="feedpreview"></div>
 
  <h3 class="sub-h">Stories only <span class="tag">Every Monday</span></h3>
- <p class="lead">Appointment availability goes on Stories, never the grid. The times are on the story itself, so the text is short and sweet.</p>
- <div class="storyrow style" id="story">
-  <figure><img loading="lazy" src="img/sn-story.jpg" alt="Appointment availability story, Great Dunmow"></figure>
-  <div data-cap="avail"></div>
+ <p class="lead">Appointment availability goes on Stories, never the grid. Here are three looks to choose from (or we can rotate them week to week). The times are on the story itself, so the text is short and sweet.</p>
+ <div class="style" id="story">
+  <div class="grid4 stories">
+   <figure><img loading="lazy" src="img/sn-story.jpg" alt="Availability story option 1, Soft Nude with the salon photo"><figcaption>Option 1 · Soft Nude</figcaption></figure>
+   <figure><img loading="lazy" src="img/sn-story2.jpg" alt="Availability story option 2, forest green"><figcaption>Option 2 · Forest green</figcaption></figure>
+   <figure><img loading="lazy" src="img/sn-story3.jpg" alt="Availability story option 3, the Dunmow shopfront"><figcaption>Option 3 · The shopfront</figcaption></figure>
+  </div>
+  <div class="storycap" data-cap="avail"></div>
  </div>
 </div></section>
 
 <section id="reels"><div class="wrap">
  <div class="caps num">03 · Reels</div>
- <h2>Reels, fixed and ready</h2>
- <p class="lead">Every reel now ends with the salon, the stylist and the number to book (07432 027611). The light blonde is labelled as nano bonds, with the yellow tapes photo taken out. And every reel has new girl-power music, timed so the chorus lands on the big reveal. You loved Reel 1 and the Remi reel, so the originals are still here, right next to the new-music versions.</p>
- <p class="note">Two quick questions so the end cards are 100% right: <b>who did each of these looks, and at which salon?</b> For now the end card says “Hair by Team 76”, and I’ll put the stylist’s name in as soon as you tell me. On Instagram I’ll use trending sounds and girl-power music (Eternal, Spice Girls, house) and your list when you send it.</p>
+ <h2>Reels, ready to post</h2>
+ <p class="lead">Six reels with girl-power music, each timed so the chorus lands on the big reveal. Three are brand new, made from the girls’ own work on Instagram, so every stylist gets her moment. Every reel ends with the salon, the stylist and the number to book (07432 027611).</p>
+ <p class="note">Emma, Rachael and the team reel say who did the hair, straight from their captions. For the Sway, nano bonds and Remi Cachet reels, just tell me who did each look and I’ll put her name on the end card.</p>
  <div class="reels">
-  <div class="reel" data-cap="sway"><video src="video/v3-sway-say-youll-be-there.mp4" poster="img/v3-sway-say-youll-be-there.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 1 · Sway extensions · <span style="color:var(--green)">new music</span></div><h4>Colour, without colouring</h4><p>♪ Spice Girls, Say You’ll Be There. “I’ll give you everything” lands on the before &amp; after slider.</p></div>
-  <div class="reel" data-cap="sway"><video src="video/v2-sway.mp4" poster="img/v2-sway.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 1 · Sway extensions · <span style="color:var(--green)">the original you loved</span></div><h4>Colour, without colouring</h4><p>The same reel with its original music, in case you’d like to keep it.</p></div>
-  <div class="reel" data-cap="nano"><video src="video/v2-nano-wannabe.mp4" poster="img/v2-nano-wannabe.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 2 · Short to long (was Reel 3)</div><h4>Nano bonds, with Wannabe</h4><p>♪ Spice Girls, Wannabe. Light blonde nano bonds, from a short blonde bob to long soft waves.</p></div>
-  <div class="reel" data-cap="nano"><video src="video/v3-nano-cards-who-do.mp4" poster="img/v3-nano-cards-who-do.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 3 · Short to long (was Reel 4)</div><h4>Nano bonds, cream cards</h4><p>♪ Spice Girls, Who Do You Think You Are. “Swing it, shake it” lands on the After.</p></div>
-  <div class="reel" data-cap="nano"><video src="video/v3-nano-ba-push-the-button.mp4" poster="img/v3-nano-ba-push-the-button.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 4 · Short to long (was Reel 5)</div><h4>Nano bonds, before &amp; after</h4><p>♪ Sugababes, Push the Button. “Push the button” lands on the slider reveal.</p></div>
-  <div class="reel" data-cap="remi"><video src="video/v3-remi-power-of-a-woman.mp4" poster="img/v3-remi-power-of-a-woman.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 5 · Remi Cachet · <span style="color:var(--green)">new music</span></div><h4>Find your perfect shade</h4><p>♪ Eternal, Power of a Woman. “The power of a woman” lands on the results.</p></div>
-  <div class="reel" data-cap="remi"><video src="video/v2-remi.mp4" poster="img/v2-remi.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 5 · Remi Cachet · <span style="color:var(--green)">the original you loved</span></div><h4>Find your perfect shade</h4><p>The same reel with its original music, in case you’d like to keep it.</p></div>
+  <div class="reel" data-cap="emmaReel"><video src="video/v4-emma.mp4" poster="img/v4-emma.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 1 · Colour by Emma · <span style="color:var(--green)">new</span></div><h4>Pink perfection</h4><p>♪ Spice Girls, Say You’ll Be There. Emma’s pink, pumpkin spice and grey blending, with the pink before &amp; after on the chorus.</p></div>
+  <div class="reel" data-cap="sway"><video src="video/v2-sway.mp4" poster="img/v2-sway.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 2 · Sway extensions</div><h4>Colour, without colouring</h4><p>Soft caramel tones added with Sway nano extensions, no colour on our client’s own hair.</p></div>
+  <div class="reel" data-cap="teamReel"><video src="video/v4-team.mp4" poster="img/v4-team.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 3 · The girls of 76 · <span style="color:var(--green)">new</span></div><h4>Team 76</h4><p>♪ Spice Girls, Wannabe. “You gotta get with my friends” lands on the Thursday dream team.</p></div>
+  <div class="reel" data-cap="nano"><video src="video/v3-nano-cards-who-do.mp4" poster="img/v3-nano-cards-who-do.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 4 · Nano bonds</div><h4>Short to long</h4><p>♪ Spice Girls, Who Do You Think You Are. Light blonde nano bonds, “Swing it, shake it” on the After.</p></div>
+  <div class="reel" data-cap="rachaelReel"><video src="video/v4-rachael.mp4" poster="img/v4-rachael.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 5 · Colour by Rachael · <span style="color:var(--green)">new</span></div><h4>Lived-in blonde</h4><p>♪ Sugababes, Push the Button. “Push the button” lands on the tone-it-down before &amp; after.</p></div>
+  <div class="reel" data-cap="remi"><video src="video/v3-remi-power-of-a-woman.mp4" poster="img/v3-remi-power-of-a-woman.jpg" controls playsinline muted preload="metadata"></video><div class="caps num" style="margin-top:16px">Reel 6 · Remi Cachet</div><h4>Find your perfect shade</h4><p>♪ Eternal, Power of a Woman. “The power of a woman” lands on the results.</p></div>
  </div>
 </div></section>
 
 <section id="valentines"><div class="wrap">
  <div class="caps num">04 · Valentine’s</div>
- <h2>My Valentine’s ideas</h2>
- <p class="lead">Valentine’s Day 2027 falls on a <b>Sunday</b>, when the salons are closed, so <b>Saturday 13 February</b> becomes the big day. It’s also Galentine’s Day, which gives us a lovely second angle for the girls. One idea for hair, one for makeup, both using your one-to-one lessons.</p>
+ <h2>Valentine’s at Seventy Six</h2>
+ <p class="lead">Lots of ideas to pick from, for the salon, for the girls and for our clients. Valentine’s is about more than couples: date nights, Galentine’s with the besties, mums and daughters, and treating yourself. Pick your favourites and I’ll build the posts, reels and captions around them.</p>
+
+ <h3 class="sub-h">One-to-one lessons <span class="tag">Sat 13 Feb</span></h3>
  <div class="vgrid">
-  <div class="vcard">
-   <div class="k">Hair</div>
-   <h4>Love Your Hair</h4>
-   <dl>
-    <dt>The offer</dt><dd><b>Date-night &amp; Galentine’s blow-dries</b> on Saturday 13 Feb, plus a “bring your bestie” option: two chairs side by side for you and a friend.</dd>
-    <dt>1:1 lesson</dt><dd><b>“Blow-dry like a pro”</b>: a one-to-one lesson where our client learns to recreate soft, bouncy waves at home for date night. A lovely gift idea too.</dd>
-    <dt>Content</dt><dd>A reel of 3 date-night hairstyles from the team, a before &amp; after of a Valentine’s blow-dry, and Stories with a “which look are you?” poll and a countdown sticker.</dd>
-    <dt>Push</dt><dd>Monday availability stories in February flagged as “Valentine’s week”, and every stylist shares the post on her own page.</dd>
-   </dl>
-  </div>
-  <div class="vcard">
-   <div class="k">Makeup</div>
-   <h4>Date Night Glam with Kelsey</h4>
-   <dl>
-    <dt>The offer</dt><dd><b>Valentine’s makeup</b> for Saturday 13 Feb: soft glam for date night or a night out with the girls.</dd>
-    <dt>1:1 lesson</dt><dd><b>“Learn your date-night look”</b>: Kelsey does one side of the face, our client copies it on the other, and leaves with a personal product list. Can also be gifted to someone you love.</dd>
-    <dt>Content</dt><dd>A makeup transformation reel, a carousel of “Kelsey’s 3 date-night tips”, and a Stories Q&amp;A: “Ask Kelsey anything”.</dd>
-    <dt>Push</dt><dd>Pair it with the hair offer: “Hair &amp; makeup, done before your date”, so one booking can include both.</dd>
-   </dl>
-  </div>
+  <div class="vcard"><div class="k">Hair with Kimmy</div><h4>Blow-dry like a pro</h4>
+   <dl><dt>The idea</dt><dd>A one-to-one lesson on Saturday 13 February (Galentine’s Day): our client learns to recreate soft, bouncy waves at home before date night.</dd>
+   <dt>Gift it</dt><dd>“Give them a lesson they’ll love”: a lovely gift for partners, friends and mums to book for someone special.</dd></dl></div>
+  <div class="vcard"><div class="k">Makeup with Kelsey</div><h4>Learn your date-night look</h4>
+   <dl><dt>The idea</dt><dd>Kelsey does one side of the face, our client copies it on the other, and leaves with a personal product list.</dd>
+   <dt>Pair it</dt><dd>“Hair &amp; makeup, done before your date”: one booking that includes both.</dd></dl></div>
  </div>
+
+ <h3 class="sub-h">More ideas for the salon</h3>
+ <div class="ideas">
+  <div><span class="ic">💕</span><b>Valentine’s Glow-Up packages</b><p><i>Date Night Glam:</i> colour, conditioning treatment and blow-dry. <i>Galentine’s:</i> blow-dry and makeup for two. <i>Bride-to-be:</i> a treatment plus a bridal trial with Emily.</p></div>
+  <div><span class="ic">👯‍♀️</span><b>Bring your bestie</b><p>Book together and both save: best friends, sisters, or a mother &amp; daughter hair day, side by side in the chairs.</p></div>
+  <div><span class="ic">🌹</span><b>Love Your Hair Week</b><p>Mon 8 to Sat 13 Feb, a different treat each day: a free hair mask with colour, colour savings, a free curl upgrade, a keratin blow-dry offer, styling specials and Galentine’s duos.</p></div>
+  <div><span class="ic">📅</span><b>Early bird bookings</b><p>Book your Valentine’s appointment before Sat 6 Feb and get a free treatment added, so the diaries fill early.</p></div>
+  <div><span class="ic">🎡</span><b>Valentine’s lucky draw</b><p>Clients enter through a simple form (name and email), like the post and share it to their Story. We spin an online wheel live on Friday 12 Feb. Prizes like a free colour, a treatment or a gift basket. Bonus: every entry grows our email list for future campaigns (with a tick-box so they agree to emails).</p></div>
+  <div><span class="ic">🎁</span><b>Little love touches</b><p>A fresh rose, a mini chocolate and a handwritten thank-you card for every client that week, plus pink treats while they sit. Small, memorable, very shareable.</p></div>
+  <div><span class="ic">💌</span><b>Gift vouchers</b><p>“Not sure what to give? Give the gift of beautiful hair.” Pushed for partners, parents and friends from late January.</p></div>
+  <div><span class="ic">🎨</span><b>Romantic colour edit</b><p>A carousel of Valentine’s shades: cherry red, chocolate brown, rose gold, burgundy, soft caramel and honey blonde. Emma’s pink waves are the perfect cover.</p></div>
+  <div><span class="ic">🎥</span><b>Reels to film</b><p>“POV: getting ready for your date”, a date-night hair tutorial, client reactions, a Valentine’s transformation and a besties makeover.</p></div>
+  <div><span class="ic">🪞</span><b>Love yourself first</b><p>A self-love theme for everyone, single or not: “Love yourself, love your hair”, “Your best date starts with you”, “Fall in love with your reflection”.</p></div>
+ </div>
+
+ <h3 class="sub-h">Getting the girls involved</h3>
+ <div class="ideas">
+  <div><span class="ic">🏆</span><b>Galentine’s Glam Battle</b><p>Each stylist creates one Valentine’s look. We post them side by side, followers vote in a Story poll, and the winner gets a little prize from you. Fun for the team, and great reach as each girl shares it.</p></div>
+  <div><span class="ic">💘</span><b>Secret Cupid</b><p>The team swaps small secret gifts during Valentine’s week, and we film the reveal for behind-the-scenes Stories.</p></div>
+  <div><span class="ic">🎀</span><b>Pink dress code</b><p>Everyone in a touch of pink on Saturday 13 Feb, for a team photo and a fun “Team 76 in love” reel.</p></div>
+  <div><span class="ic">📲</span><b>Every girl shares</b><p>I make each stylist her own Valentine’s availability Story in our style, so she can share it from her page and fill her own chair.</p></div>
+ </div>
+
+ <h3 class="sub-h">Three creative extras</h3>
+ <div class="ideas three">
+  <div><span class="ic">📱</span><b>Swipe right on your new look</b><p>A dating-app style carousel and Stories where shades have their own “profiles” (“Honey Blonde, loves sunsets and long walks to the salon”). Followers vote for their match, and the winning shade gets a special that week.</p></div>
+  <div><span class="ic">✉️</span><b>Blind date with a treatment</b><p>Wrapped, sealed envelopes at the desk. After the appointment, our client picks one to open: a free treatment, money off the next visit or a mini product. Lovely to film for Stories.</p></div>
+  <div><span class="ic">📝</span><b>The love notes wall</b><p>A pink wall in the salon where clients write a love note to their bestie, their mum or themselves. We share the sweetest ones on Stories, and the favourite wins a treat.</p></div>
+ </div>
+
  <h3 class="sub-h">The plan, week by week</h3>
  <div class="cal">
   <div class="row"><div class="when">Mon 18 Jan</div><div class="what"><b>Teaser.</b> A Story: “Something lovely is coming for Valentine’s 💌”, to get people curious.</div></div>
-  <div class="row"><div class="when">Mon 25 Jan</div><div class="what"><b>Launch.</b> The hair post and the makeup post go live, and bookings for Saturday 13 Feb open.</div></div>
-  <div class="row"><div class="when">w/c 1 Feb</div><div class="what"><b>Reels.</b> Date-night hairstyles and Kelsey’s glam reel, shared by the girls on their own pages.</div></div>
-  <div class="row"><div class="when">w/c 8 Feb</div><div class="what"><b>Last spaces.</b> Countdown Stories and the Monday availability story for Valentine’s week.</div></div>
-  <div class="row"><div class="when">Sat 13 Feb</div><div class="what"><b>The big day.</b> Behind-the-scenes Stories all day: the girls getting ready, blow-dries and glam.</div></div>
-  <div class="row"><div class="when">Mon 15 Feb</div><div class="what"><b>Thank you.</b> A post with the best looks of the day and a client review, no hard sell.</div></div>
+  <div class="row"><div class="when">Mon 25 Jan</div><div class="what"><b>Launch.</b> The packages, the one-to-one lessons and gift vouchers go live, and the lucky draw opens.</div></div>
+  <div class="row"><div class="when">w/c 1 Feb</div><div class="what"><b>Reels &amp; votes.</b> Date-night hair and Kelsey’s glam reels, “Swipe right on your new look”, and the Glam Battle. Early bird ends Sat 6 Feb.</div></div>
+  <div class="row"><div class="when">Mon 8 – Sat 13 Feb</div><div class="what"><b>Love Your Hair Week.</b> A treat each day, the love notes wall, roses for every client, and the lucky draw spin on Friday 12 Feb.</div></div>
+  <div class="row"><div class="when">Sat 13 Feb</div><div class="what"><b>Galentine’s Day.</b> One-to-one lessons, pink dress code, and behind-the-scenes Stories all day.</div></div>
+  <div class="row"><div class="when">Mon 15 Feb</div><div class="what"><b>Thank you.</b> A post with the best looks of the week, the Glam Battle winner and a client review, no hard sell.</div></div>
  </div>
- <p class="note">Prices and which girls are in on 13 Feb are yours to decide. Once you’re happy with an idea, I’ll design the posts in your Soft Nude style and write the captions.</p>
+ <p class="note">Prices, prizes and which offers to run are all yours to decide. Once you pick your favourites, I’ll design everything in your Soft Nude style and set up the lucky draw form.</p>
 </div></section>
 
 <section id="bridal"><div class="wrap">
@@ -346,16 +415,36 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 </div></section>
 
 <section id="plan"><div class="wrap">
- <div class="caps num">06 · Season plan</div>
+ <div class="caps num">06 · Content plan</div>
  <h2>What we’ll post, and when</h2>
- <p class="lead">The year ahead, so there’s always a reason for clients to book.</p>
+ <p class="lead">A weekly rhythm I run for you, plus a campaign every month, so the page always feels busy and you never have to think about what to post.</p>
+ <h3 class="sub-h">Every week</h3>
+ <div class="week">
+  <div class="day"><div class="d">Mon</div><div class="w">Availability</div><p>The availability Story for Dunmow and Chelmsford goes out first thing.</p></div>
+  <div class="day"><div class="d">Tue</div><div class="w">Before &amp; after</div><p>A transformation from one of the girls, with her name in the caption.</p></div>
+  <div class="day"><div class="d">Wed</div><div class="w">Reel</div><p>A reveal, salon life or a trend, on a trending sound.</p></div>
+  <div class="day"><div class="d">Thu</div><div class="w">The team</div><p>Behind the scenes and the girls, because people buy from people.</p></div>
+  <div class="day"><div class="d">Fri</div><div class="w">Review or tips</div><p>A client review, or a Remi Cachet, colour or aftercare tip.</p></div>
+  <div class="day"><div class="d">Sat</div><div class="w">Live Stories</div><p>Weekend blow-dries, glam and bridal mornings, as they happen.</p></div>
+  <div class="day"><div class="d">Sun</div><div class="w">I plan</div><p>I prepare next week, ask the girls for availability and photos, and send it all to you in one go.</p></div>
+ </div>
+ <p class="note">About 3 grid posts and 1 to 2 reels a week, with Stories most days.</p>
+ <h3 class="sub-h">Month by month</h3>
  <div class="cal">
-  <div class="row"><div class="when">November – December</div><div class="what"><b>Party season.</b> Christmas party and New Year’s Eve hair, glam packages and the last Christmas appointments.</div></div>
-  <div class="row"><div class="when">January</div><div class="what"><b>New year, new look.</b> Fresh colour, new trends and treatments for after-Christmas hair, plus the team trip as fun behind-the-scenes content.</div></div>
-  <div class="row"><div class="when">Late January – February</div><div class="what"><b>Valentine’s.</b> Love Your Hair and Date Night Glam, see above.</div></div>
-  <div class="row"><div class="when">March</div><div class="what"><b>Mother’s Day.</b> Treat-your-mum ideas for hair and makeup.</div></div>
-  <div class="row"><div class="when">April – September</div><div class="what"><b>Wedding season.</b> Seventy Six Bridal every week, plus prom hair in May and June.</div></div>
-  <div class="row"><div class="when">All year</div><div class="what"><b>Availability Stories every Monday</b>, before &amp; afters, client reviews and the girls behind the chair, because people buy from people.</div></div>
+  <div class="row"><div class="when">December</div><div class="what"><b>Party season.</b> Christmas party and New Year’s Eve hair, Kelsey’s makeup (full face with lashes, plus hair up or a blow-dry), a “last Christmas appointments” countdown and the team’s Christmas behind the scenes.</div></div>
+  <div class="row"><div class="when">January</div><div class="what"><b>New year, new you.</b> Treatments and keratin blow-dries for winter hair, “new year, new length” Remi Cachet consultations, a self-care treat on Blue Monday (18 Jan) and the team trip as fun content.</div></div>
+  <div class="row"><div class="when">February</div><div class="what"><b>Valentine’s.</b> Love Your Hair Week, the lessons, the lucky draw and Galentine’s Day. All the ideas are above.</div></div>
+  <div class="row"><div class="when">March</div><div class="what"><b>Mums &amp; women.</b> Mother’s Day (Sun 7 March) packages and gift vouchers, and International Women’s Day (8 March) celebrating our team of amazing women.</div></div>
+  <div class="row"><div class="when">April – May</div><div class="what"><b>Wedding season begins.</b> Seventy Six Bridal every week with Emily, bridal trials and real brides, plus prom hair in May.</div></div>
+  <div class="row"><div class="when">June – August</div><div class="what"><b>Summer hair.</b> Summer blondes, holiday-ready extensions, festival hair and summer aftercare tips. Weddings every weekend.</div></div>
+  <div class="row"><div class="when">September – October</div><div class="what"><b>Autumn colour.</b> Coppers and pumpkin spice (like Emma’s), lived-in blondes (like Rachael’s), bridal enquiries for next year and wedding fayres.</div></div>
+  <div class="row"><div class="when">November</div><div class="what"><b>Get Christmas-ready.</b> Christmas bookings open, gift vouchers and party glam, before the busiest month of the year.</div></div>
+ </div>
+ <h3 class="sub-h">How I’ll take it off your plate</h3>
+ <div class="offplate">
+  <div><b>One calendar, one approval</b><p>At the start of each month you get the whole month’s posts in one place, so you approve them in one go.</p></div>
+  <div><b>I chase the content</b><p>I ask the girls for photos, videos and availability every week, so you don’t have to.</p></div>
+  <div><b>A monthly mini report</b><p>What got the most likes, comments, enquiries and bookings, and what I’ll do more of next month.</p></div>
  </div>
 </div></section>
 
@@ -395,36 +484,53 @@ const CHEV_R='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-
 // captions in Kimmy's tone (17 Nov): professional + friendly "girl vibe", "our client" never "her",
 // max 5 hashtags, and not every post pushes "book"
 const CAP={
- offer:{h:'30% off colour with Madison 💚',b:"New season, new shade? ✨\nMadison is treating you to 30% off colour at 76 Salon Dunmow next week only. Soft blondes, rich brunettes or a glossy refresh, she’s got you 💕\n\nSpaces are limited, so tap the link in our bio to grab your spot with Madison 📲",t:'#seventysixsalon #dunmowhair #essexhairdresser #haircolour #hairoffer'},
- ba:{h:'Colour, added with extensions ✨',b:"Fancy a new shade, the easy way? 😍\nInstead of colouring our client’s hair, we added these gorgeous caramel tones using Sway Professional extensions 🤎\n\nSwipe to see the before ➡️\nThinking about extensions? Send us a message or book a consultation through the link in our bio 💕",t:'#seventysixsalon #swayhairextensions #hairextensions #beforeandafter #essexhair'},
- review:{h:'Client review ⭐⭐⭐⭐⭐',b:"Reviews like this mean everything 🥹💕\nThank you so much Ami for the lovely words about your colour with Madison at 76 Salon Dunmow. We love that your blow-dry held up in the storm too ⛈️😂\n\nIf you’ve never visited 76, maybe this is why ✨",t:'#seventysixsalon #clientlove #dunmowhair #essexhairdresser #team76'},
- team:{h:'Team 76 🥂',b:"The girls behind the chair 💕\nColour experts, extension specialists, bridal stylists and makeup artists, across our Chelmsford and Great Dunmow salons, all here to make you feel amazing.\n\nTag the girl who does your hair below 👇",t:'#seventysixsalon #team76 #essexhairdresser #chelmsfordhair #dunmowhair'},
- emma:{h:'Meet Emma 💚',b:"Say hello to Emma, one of our Wella colour experts at 76 Salon Chelmsford ✨\nPart of our lovely Chelmsford team, and ready to create your next colour.\n\nYou’ll find Emma on our booking link in bio 💕",t:'#seventysixsalon #chelmsfordhair #wellacolour #essexhairdresser #team76'},
- avail:{h:'Story text · Appointment availability',b:"Next week’s chairs are ready for you at 76 Salon Dunmow! 💇‍♀️\nSee above where you can grab a spot with Gabriella and Madison 👆\n\n💕 Plus 30% off colour with Madison next week!\nTap the link in our bio to book, these appointments will go fast, girls 🏃‍♀️",t:'Stories: no hashtags needed. Add the link sticker to the booking page.'},
+ salon:{title:'Clean & classic',h:'Clean & classic',b:"Our Chelmsford salon had a little glow up, and we’re in love 😍\nFresh, calm and ready for you. Pull up a chair, relax, you’re in good hands ✨\n\nCome and see it for yourself, we can’t wait to welcome you 💕",t:'#seventysixsalon #saloninchelmsford #hairdressersinchelmsford #chelmsfordhair #essexsalon'},
+ remiPost:{title:'Find your perfect shade',h:'Find your perfect shade',b:"Soft blondes, rich brunettes and bold reds & pinks ✨\nOur Remi Cachet extensions are colour matched and blended to your own hair, for length, volume and a seamless finish 💛\n\nWhich shade are you? Tell us below 👇",t:'#seventysixsalon #remicachet #hairextensions #extensionspecialist #essexhairextensions'},
+ shades:{title:'The shade edit',h:'The shade edit',b:"Blonde, brunette or a little pop of pink? 💕\nA peek at some of our favourite Remi Cachet shades. Every set is colour matched, so it blends beautifully with your hair ✨\n\nThinking about extensions? Send us a message and we’ll find your match.",t:'#seventysixsalon #remicachet #hairextensions #extensionspecialist #essexhairextensions'},
+ emmaReel:{h:'Colour by Emma 💕',b:"Pink perfection from root to ends, pumpkin spice copper and soft grey blending… Emma has been busy ✨\nSwipe through some of her favourite colour transformations from 76 Salon Chelmsford.\n\nWho’s obsessed? 🙋‍♀️",t:'#seventysixsalon #chelmsfordhair #hairtransformation #haircolour #essexhairdresser'},
+ teamReel:{h:'The girls of Seventy Six 💕',b:"Hair, makeup and bridal, all under one roof (well, two!) ✨\nFrom our Thursday dream team to bridal trials and glam with Kelsey, this is the team that makes you feel amazing.\n\nTag the girl who does your hair 👇",t:'#seventysixsalon #team76 #essexsalon #chelmsfordhair #dunmowhair'},
+ rachaelReel:{h:'Lived-in blonde, by Rachael ✨',b:"“I hate my dark roots!” A face frame of babylights, a root tap and a blonde gloss later, and our client’s hair feels brighter and blonder 💛\nPlus a blonde toned down for autumn, soft and lived-in.\n\nWhich look is more you? 1 or 2? 👇",t:'#seventysixsalon #blondebalayage #faceframe #livedinblonde #essexhairdresser'},
+ offer:{title:'30% off colour with Madison',h:'30% off colour with Madison 💚',b:"New season, new shade? ✨\nMadison is treating you to 30% off colour at 76 Salon Dunmow next week only. Soft blondes, rich brunettes or a glossy refresh, she’s got you 💕\n\nSpaces are limited, so tap the link in our bio to grab your spot with Madison 📲",t:'#seventysixsalon #dunmowhair #essexhairdresser #haircolour #hairoffer'},
+ ba:{title:'Colour, added with extensions',h:'Colour, added with extensions ✨',b:"Fancy a new shade, the easy way? 😍\nInstead of colouring our client’s hair, we added these gorgeous caramel tones using Sway Professional extensions 🤎\n\nSwipe to see the before ➡️\nThinking about extensions? Send us a message or book a consultation through the link in our bio 💕",t:'#seventysixsalon #swayhairextensions #hairextensions #beforeandafter #essexhair'},
+ review:{title:'Client review',h:'Client review ⭐⭐⭐⭐⭐',b:"Reviews like this mean everything 🥹💕\nThank you so much Ami for the lovely words about your colour with Madison at 76 Salon Dunmow. We love that your blow-dry held up in the storm too ⛈️😂\n\nIf you’ve never visited 76, maybe this is why ✨",t:'#seventysixsalon #clientlove #dunmowhair #essexhairdresser #team76'},
+ team:{title:'Team 76',h:'Team 76 🥂',b:"The girls behind the chair 💕\nColour experts, extension specialists, bridal stylists and makeup artists, across our Chelmsford and Great Dunmow salons, all here to make you feel amazing.\n\nTag the girl who does your hair below 👇",t:'#seventysixsalon #team76 #essexhairdresser #chelmsfordhair #dunmowhair'},
+ avail:{title:'Appointment availability',story:true,h:'Appointment availability',b:"Next week’s chairs are ready for you at 76 Salon Dunmow! 💇‍♀️\nSee above where you can grab a spot with Gabriella and Madison 👆\n\n💕 Plus 30% off colour with Madison next week!\nTap the link in our bio to book, these appointments will go fast, girls 🏃‍♀️",t:'Stories: no hashtags needed. Add the link sticker to the booking page.'},
  sway:{h:'Colour, without colouring 🤎',b:"Our client wanted a softer, warmer look without colouring their natural brunette, so we added the colour with Sway nano extensions ✨\nSoft caramel tones, with zero colour on our client’s own hair.\n\nThinking about a change without the commitment? Send us a message, we’d love to help 💕",t:'#seventysixsalon #swayhairextensions #nanoextensions #beforeandafter #essexhairextensions'},
  nano:{h:'Short to long, the blonde edition 😍',b:"Light blonde nano bonds, blended in for length, volume and soft, bouncy waves ✨\nSame hair, just more of it 💛\n\nDreaming of longer hair? Send us a message and we’ll plan your new look together 💕",t:'#seventysixsalon #nanobonds #hairextensions #shorttolong #essexhairextensions'},
  remi:{h:'Find your perfect shade 😍',b:"Soft blondes, rich brunettes, reds & pinks… our Remi Cachet extensions are colour matched and blended to your hair ✨\nChoose from nanos, wefts or tapes for length, volume and a seamless finish 💛\n\nComment your dream shade below 👇",t:'#seventysixsalon #remicachet #hairextensions #extensionspecialist #essexhairextensions'}
 };
-function capBox(c){
+function capBox(c,post){
+  // posts: the title sits under the label (no emoji) and the caption box holds the text to paste on Instagram
   const d=document.createElement('div'); d.className='cap';
-  const l=document.createElement('div'); l.className='cap-l'; l.append('Caption');
+  const l=document.createElement('div'); l.className='cap-l'; l.append(c.story?'Story text':'Caption');
   const btn=document.createElement('button'); btn.type='button'; btn.className='cap-copy'; btn.textContent='Copy';
-  btn.onclick=()=>{ const txt=(c.h.startsWith('Story text')?'':c.h+'\n')+c.b+(c.t.startsWith('#')?'\n\n'+c.t:''); const ok=()=>{btn.textContent='Copied ✓'; setTimeout(()=>btn.textContent='Copy',1800);};
+  btn.onclick=()=>{ const txt=(post||c.story?'':c.h+'\n')+c.b+(c.t.startsWith('#')?'\n\n'+c.t:''); const ok=()=>{btn.textContent='Copied ✓'; setTimeout(()=>btn.textContent='Copy',1800);};
     try{ navigator.clipboard.writeText(txt).then(ok,()=>{}); }catch(e){} };
-  l.append(btn);
-  const h=document.createElement('b'); h.className='cap-h'; h.textContent=c.h;
+  l.append(btn); d.append(l);
+  if(!post){ const h=document.createElement('b'); h.className='cap-h'; h.textContent=c.h; d.append(h); }
   const b=document.createElement('p'); b.className='cap-b'; b.textContent=c.b;
   const t=document.createElement('p'); t.className='cap-t'; t.textContent=c.t;
-  d.append(l,h,b,t); return d;
+  d.append(b,t); return d;
 }
-document.querySelectorAll('[data-cap]').forEach(el=>{ const c=CAP[el.dataset.cap]; if(c) el.appendChild(capBox(c)); });
-// 3x3 Instagram feed preview: the 5 posts mixed with 4 real, unedited hair photos. No availability on the grid.
+document.querySelectorAll('[data-cap]').forEach(el=>{ const c=CAP[el.dataset.cap]; if(!c) return;
+  const post=el.tagName==='FIGURE'||c.story;
+  if(post&&c.title){ const tt=document.createElement('div'); tt.className='ptitle'; tt.textContent=c.title; el.appendChild(tt); }
+  el.appendChild(capBox(c,post)); });
+// Instagram feed preview (premium): 12 posts, my Soft Nude posters mixed with the team's real work from Instagram,
+// in a checkerboard so photos and posters alternate. No availability on the grid (Stories only).
 (function(){
-  const F=[['sn-offer','Offer'],['real-curls','Real photo, long dark curls'],['sn-team','Team 76'],['sn-ba','Before and after'],['real-waves','Real photo, long blonde waves'],['sn-emma','Meet Emma'],['sn-review','Client review'],['real-wefts','Real photo, brunette wefts'],['real-sway','Real photo, caramel colour with Sway']];
+  const F=[['sn-offer','30% off colour with Madison'],['ig-pink','Pink perfection by Emma'],['sn-remi','Remi Cachet, find your perfect shade'],
+           ['ig-roots','Lived-in blonde by Rachael'],['sn-team','Team 76'],['ig-pumpkin','Pumpkin spice copper by Emma'],
+           ['sn-shades','The shade edit'],['ig-makeup','Makeup by Kelsey'],['sn-salon','Clean and classic, Chelmsford'],
+           ['ig-grey','Grey blending by Emma'],['sn-review','Client review'],['ig-bridal','Seventy Six Bridal']];
+  const HL=[['Aftercare','#EFE6E0'],['Team 76','#2F4B3A'],['Policy','#EFE6E0'],['Bridal Makeup','#F3E2E4'],['The Salon','#151515'],['Find us','#EFE6E0']];
   const ov=document.getElementById('feedpreview');
-  ov.innerHTML='<div class="ovh">Instagram feed preview · 9 posts</div><div class="ig"><div class="ig-head"><div class="av"><img src="img/76-logo-black.png" alt=""></div><div><b>seventysixsalon</b><small>Hair · Makeup · Bridal</small></div></div><div class="ov">'
-   +F.map(([f,a])=>'<button aria-label="Zoom '+a+'"><img loading="lazy" src="img/'+f+'.jpg" alt="'+a+'"></button>').join('')+'</div></div>'
-   +'<p class="ovnote">5 posts in your style, mixed with 4 real photos of your hair work, plus a black post now and then. Availability stays on Stories.</p>';
+  ov.innerHTML='<div class="ovh">Instagram feed preview · 12 posts</div><div class="ig">'
+   +'<div class="ig-head"><div class="av"><img src="img/76-logo-black.png" alt=""></div><div><b>seventysixsalon</b><small>SEVENTYSIX | Chelmsford Salon</small></div></div>'
+   +'<div class="ig-bio">HAIR • MAKEUP • BRIDAL<br>🎨 Colour Experts · 👰 Bridal Hair &amp; Makeup<br><span style="color:#2F4B3A;font-weight:600">book.heygoldie.com/Seventy-six-salon</span></div>'
+   +'<div class="ig-hl">'+HL.map(([n,c])=>'<div><i><span style="background:'+c+'"><img src="img/'+(c==='#2F4B3A'||c==='#151515'?'76-logo-white':'76-logo-black')+'.png" alt=""></span></i>'+n+'</div>').join('')+'</div>'
+   +'<div class="ov">'+F.map(([f,a])=>'<button aria-label="Zoom '+a+'"><img loading="lazy" src="img/'+f+'.jpg" alt="'+a+'"></button>').join('')+'</div></div>'
+   +'<p class="ovnote">My Soft Nude posts mixed with the girls’ real work from your Instagram, photo and poster taking turns, so the grid feels calm, premium and full of real hair. The highlights are your own, with matching covers. Availability stays on Stories.</p>';
   const fi=[...ov.querySelectorAll('.ov img')]; ov.querySelectorAll('.ov button').forEach((b,k)=>b.onclick=()=>openLb(fi[k],fi,'Feed preview'));
 })();
 // carousels: "Swipe" pill + nudge the first time a row is on screen, arrows + dots + "1 / n" under the row
