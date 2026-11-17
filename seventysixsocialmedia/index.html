@@ -249,18 +249,6 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
 </style>
 </head>
 <body>
-<!-- WIP screen: shows while Maria is still arranging. Maria previews with ?preview -->
-<div id="wip" style="position:fixed;inset:0;z-index:99999;background:#F6F1EC;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;overflow:auto">
- <div style="max-width:520px">
-  <img src="img/76-logo-black.png" alt="Seventy Six Salon logo" style="height:150px;margin:0 auto 26px">
-  <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,30px);letter-spacing:.24em;text-transform:uppercase">Seventy Six Salon</div>
-  <div style="width:64px;height:1.5px;background:#141414;margin:24px auto"></div>
-  <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(38px,7vw,58px);line-height:1.05;margin:0 0 18px">Almost ready</h1>
-  <p style="color:#3a3330">Hi Kimmy! I’m still arranging your updated guide so everything is perfect for you. I’ll message you as soon as it’s ready. Thank you so much for your patience!</p>
-  <p style="margin-top:18px;color:#6E625B;font-size:12.5px;letter-spacing:.32em;text-transform:uppercase;font-weight:600">With love, Maria</p>
- </div>
-</div>
-<script>if(/preview/.test(location.search)){document.getElementById('wip').remove()}else{document.documentElement.style.overflow='hidden'}</script>
 <!-- Welcome screen: browsers only allow sound after one tap, so this tap switches the reels' sound on for the whole visit -->
 <div id="hello" style="position:fixed;inset:0;z-index:9000;background:#F6F1EC;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .5s ease">
  <div style="max-width:520px">
@@ -274,7 +262,7 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
   <p style="margin-top:16px;color:#6E625B;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Sound on for the reels</p>
  </div>
 </div>
-<script>(function(){ const h=document.getElementById('hello'); if(document.getElementById('wip')){ h.remove(); return; }
+<script>(function(){ const h=document.getElementById('hello');
   document.documentElement.style.overflow='hidden';
   document.getElementById('hello-go').addEventListener('click',()=>{ h.style.opacity='0'; document.documentElement.style.overflow=''; setTimeout(()=>h.remove(),500); });
 })();</script>
