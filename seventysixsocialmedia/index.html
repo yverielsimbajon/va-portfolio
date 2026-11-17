@@ -253,6 +253,23 @@ footer{text-align:center;padding:30px 22px 50px;color:var(--soft);font-size:13px
  </div>
 </div>
 <script>if(/preview/.test(location.search)){document.getElementById('wip').remove()}else{document.documentElement.style.overflow='hidden'}</script>
+<!-- Welcome screen: browsers only allow sound after one tap, so this tap switches the reels' sound on for the whole visit -->
+<div id="hello" style="position:fixed;inset:0;z-index:9000;background:#F6F1EC;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .5s ease">
+ <div style="max-width:520px">
+  <img src="img/76-logo-black.png" alt="Seventy Six Salon logo" style="height:150px;margin:0 auto 26px">
+  <div style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,4vw,30px);letter-spacing:.24em;text-transform:uppercase">Seventy Six Salon</div>
+  <div style="width:64px;height:1.5px;background:#141414;margin:24px auto"></div>
+  <h1 style="font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(40px,7vw,60px);line-height:1.05;margin:0 0 14px">Hi Kimmy!</h1>
+  <p style="color:#3a3330">Your social media guide is ready.</p>
+  <button id="hello-go" type="button" style="margin-top:28px;display:inline-flex;align-items:center;gap:12px;border:1.5px solid #141414;background:#141414;color:#fff;font:600 13px 'Open Sans',sans-serif;letter-spacing:.22em;text-transform:uppercase;padding:16px 28px;cursor:pointer">
+   <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path d="M15.5 8.5a5 5 0 0 1 0 7"/><path d="M18.5 5.5a9 9 0 0 1 0 13"/></svg>Open my guide</button>
+  <p style="margin-top:16px;color:#6E625B;font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:600">Sound on for the reels</p>
+ </div>
+</div>
+<script>(function(){ const h=document.getElementById('hello'); if(document.getElementById('wip')){ h.remove(); return; }
+  document.documentElement.style.overflow='hidden';
+  document.getElementById('hello-go').addEventListener('click',()=>{ h.style.opacity='0'; document.documentElement.style.overflow=''; setTimeout(()=>h.remove(),500); });
+})();</script>
 
 <nav><div class="wrap">
  <a class="brand" href="#top"><img src="img/76-logo-black.png" alt="76"><span>Seventy Six</span></a>
