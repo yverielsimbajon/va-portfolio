@@ -4927,6 +4927,8 @@ window.RESUME_JOBS = {
         items: [
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
           { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-kk-royal-decree.mp4", poster: "reel-kk-royal-decree.jpg", kind: "video" },
+          { src: "reel-kk-garden-edging.mp4", poster: "reel-kk-garden-edging.jpg", kind: "video" },
           { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" },
           { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
