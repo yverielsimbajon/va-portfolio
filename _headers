@@ -5,3 +5,8 @@
 /cv/*
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
+
+# 76 team upload page: private, but show the link preview in WhatsApp
+/seventysix-content-upload/*
+  ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
