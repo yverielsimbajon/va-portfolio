@@ -19,6 +19,8 @@
 <script>
 /* Design options: ?d=1 Classic Cream, 2 Full Photo, 3 Forest Green, 4 Black Luxe, 5 Soft Nude Cards */
 (function(){ var DEFAULT_D = '1'; var d = (location.search.match(/[?&]d=([1-5])/) || [])[1] || DEFAULT_D; document.documentElement.setAttribute('data-d', d); })();
+/* Thank-you options: ?t=1 Classic, 2 Team Photo, 3 Forest Green, 4 Your Uploads, 5 Receipt. Add &preview=thanks to see it without uploading. */
+(function(){ var DEFAULT_T = '1'; var t = (location.search.match(/[?&]t=([1-5])/) || [])[1] || DEFAULT_T; document.documentElement.setAttribute('data-t', t); })();
 </script>
 <link rel="icon" href="img/76-logo-black.png">
 <link rel="apple-touch-icon" href="img/76-logo-black.png">
@@ -160,7 +162,11 @@ textarea.field{min-height:84px;resize:vertical;line-height:1.5}
 .progress{display:none;margin-top:24px;padding:22px;background:var(--paper);text-align:center}
 .sending .progress{display:block}
 .progress .serif{font-size:26px;line-height:1.2}
-.progress .track{height:4px;background:var(--line);margin:16px 0 12px;overflow:hidden}
+.progress .pct{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:76px;line-height:.9;color:var(--green);font-variant-numeric:lining-nums tabular-nums;margin-bottom:10px}
+.progress .pct small{font-size:34px;margin-left:2px}
+.progress .track{height:6px;background:var(--line);margin:16px 0 12px;overflow:hidden}
+.thumb .pc{position:absolute;inset:0;display:none;place-items:center;background:rgba(21,21,21,.38);color:#fff;font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:500;font-variant-numeric:lining-nums tabular-nums}
+.tile.busy .pc{display:grid}
 .progress .track i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
 .sending .btn{display:none}
 
@@ -231,6 +237,42 @@ html[data-d="5"] .chip[aria-pressed="true"],html[data-d="5"] .salon[aria-pressed
 html[data-d="5"] .drop{background:var(--paper)}
 html[data-d="5"] .send{padding-top:10px}
 html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);padding:46px 22px 34px}
+
+/* ===== thank-you options (?t=1-5) ===== */
+.t-photo,.t-logo,.t-thumbs,.t-receipt,.t-where{display:none}
+/* 2 · Team Photo: photo on top, green tick sitting on its edge */
+html[data-t="2"] .thanks{padding-top:14px}
+html[data-t="2"] .t-photo{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--nude)}
+html[data-t="2"] .t-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+html[data-t="2"] .ring{position:relative;margin-top:-37px;background:var(--green);border:4px solid var(--white)}
+html[data-t="2"] .ring svg{stroke:#fff}
+/* 3 · Forest Green: the whole card turns green with the white 76 logo */
+html[data-t="3"] .card.done{background:var(--green);border-color:var(--green);padding-left:22px;padding-right:22px}
+html[data-d="5"][data-t="3"] .thanks{background:var(--green);border-color:var(--green)}
+html[data-t="3"] .thanks{color:#F8F3EF}
+html[data-t="3"] .t-logo{display:block;height:74px;width:auto;margin:0 auto 26px}
+html[data-t="3"] .ring{display:none}
+html[data-t="3"] .thanks .soft{color:rgba(248,243,239,.7)}
+html[data-t="3"] .thanks p{color:rgba(248,243,239,.88)}
+html[data-t="3"] .thanks .btn{background:#F8F3EF;color:var(--green)}
+html[data-t="3"] .thanks .warn{background:rgba(255,255,255,.1);color:#F8F3EF}
+/* 4 · Your Uploads: little tiles of what she sent, each ticked */
+html[data-t="4"] .ring{width:56px;height:56px;margin-bottom:18px}
+html[data-t="4"] .t-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:420px;margin:26px auto 0}
+html[data-t="4"] .t-where{display:block;margin-top:12px;font-size:13px}
+.t-thumbs span{position:relative;display:block;aspect-ratio:4/5;background:var(--nude) center/cover no-repeat}
+.t-thumbs span::after{content:"";position:absolute;right:4px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.t-thumbs span.vid::before{content:"Video";position:absolute;left:4px;bottom:4px;background:rgba(21,21,21,.78);color:#fff;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:2px 6px}
+.t-thumbs .more{display:grid;place-items:center;background:var(--paper);font-family:'Cormorant Garamond',serif;font-size:24px}
+.t-thumbs .more::after{display:none}
+/* 5 · Receipt: a little summary card she can screenshot */
+html[data-t="5"] .ring{width:56px;height:56px;margin-bottom:18px}
+html[data-t="5"] .t-receipt{display:block;max-width:380px;margin:26px auto 0;padding:6px 20px 8px;background:var(--paper);border-top:2px solid var(--green);text-align:left}
+.t-receipt div{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:11px 0;border-bottom:1px dashed var(--taupe)}
+.t-receipt div:last-child{border-bottom:0}
+.t-receipt dt{font-size:10px;letter-spacing:.24em;text-transform:uppercase;font-weight:600;color:var(--soft);white-space:nowrap}
+.t-receipt dd{text-align:right;font-size:14.5px}
+html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
 </style>
 </head>
 <body>
@@ -315,19 +357,26 @@ html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);pa
       <div class="send">
         <button class="btn" type="submit" id="sendBtn">Send to Maria</button>
         <div class="progress" id="progress">
+          <div class="pct"><span id="pPct">0</span><small>%</small></div>
           <div class="serif" id="pTitle">Sending your work</div>
           <div class="track"><i id="pBar"></i></div>
-          <div class="caps soft" id="pText">Please keep this page open</div>
+          <div class="caps soft" id="pSize"></div>
+          <div class="soft" id="pText" style="font-size:13px;margin-top:6px">Please keep this page open</div>
         </div>
         <p class="hint" id="sendHint">Big videos can take a minute. Keep the page open until you see the thank you.</p>
       </div>
     </form>
 
     <div class="thanks" id="thanks">
+      <div class="t-photo"><img src="img/team.jpg" alt="The Seventy Six Salon team" loading="lazy" width="1100" height="900"></div>
+      <img class="t-logo" src="img/76-logo-white.png" alt="Seventy Six Salon" width="400" height="733">
       <div class="ring"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></div>
       <div class="caps soft" id="tCount">All sent</div>
       <h2 id="tTitle" style="margin-top:12px">Thank you</h2>
       <p>Your work is safely in your 76 folder. I'll take it from here and let you know when it goes up.</p>
+      <div class="t-thumbs" id="tThumbs"></div>
+      <dl class="t-receipt" id="tReceipt"></dl>
+      <div class="t-where soft" id="tWhere"></div>
       <div class="warn" id="tWarn"></div>
       <button class="btn" type="button" id="againBtn">Send another client</button>
     </div>
@@ -474,6 +523,8 @@ html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);pa
       const x = document.createElement('button'); x.type = 'button'; x.className = 'x'; x.setAttribute('aria-label','Remove'); x.textContent = '×';
       x.addEventListener('click', () => { URL.revokeObjectURL(it.url); st.files.splice(i,1); renderFiles(); });
       th.appendChild(x);
+      const pc = document.createElement('div'); pc.className = 'pc'; pc.textContent = '0%'; th.appendChild(pc);
+      it.pcEl = pc;
       const bar = document.createElement('div'); bar.className = 'bar'; bar.innerHTML = '<i></i>'; th.appendChild(bar);
       it.barEl = bar.firstChild;
       t.appendChild(th);
@@ -599,7 +650,13 @@ html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);pa
     const todo = st.files.filter(it => it.state !== 'ok');
     const totalBytes = todo.reduce((a,b) => a + b.file.size, 0) || 1;
     let doneBytes = 0;
-    const setBar = cur => { $('pBar').style.width = Math.min(100, (doneBytes + cur) / totalBytes * 100).toFixed(1) + '%'; };
+    const setBar = cur => {
+      const sent = Math.min(totalBytes, doneBytes + cur), p = sent / totalBytes * 100;
+      $('pBar').style.width = p.toFixed(1) + '%';
+      $('pPct').textContent = sent >= totalBytes ? 100 : Math.min(99, Math.floor(p));
+      $('pSize').textContent = `${sizeText(sent)} of ${sizeText(totalBytes)}`;
+    };
+    setBar(0);
 
     for (let i = 0; i < todo.length; i++) {
       const it = todo[i];
@@ -607,7 +664,12 @@ html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);pa
       $('pText').textContent = 'Please keep this page open';
       it.state = 'busy'; it.el.className = 'tile busy';
       try {
-        it.id = await uploadOne(it, meta, n => { setBar(n); it.barEl.style.width = (n / it.file.size * 100) + '%'; });
+        it.id = await uploadOne(it, meta, n => {
+          setBar(n);
+          const fp = n / it.file.size * 100;
+          it.barEl.style.width = fp + '%';
+          it.pcEl.textContent = (n >= it.file.size ? 100 : Math.min(99, Math.floor(fp))) + '%';
+        });
         it.state = 'ok';
       } catch (err) {
         it.state = 'fail'; it.err = err.message;
@@ -637,9 +699,44 @@ html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);pa
       showAlert('Those files didn\'t send. Check your signal and tap Send to Maria again. If it keeps happening, send them to Maria on WhatsApp.');
       return;
     }
+    showThanks(meta, st.files.filter(x => x.state === 'ok'), failed.length);
+    store.set('sent', '1'); remembered();
+    $('card').classList.add('done');
+    $('card').scrollIntoView({ behavior:'smooth', block:'start' });
+  });
+
+  function filesText(list){
+    const v = list.filter(x => x.kind === 'video').length, p = list.length - v;
+    return [p && `${p} photo${p>1?'s':''}`, v && `${v} video${v>1?'s':''}`].filter(Boolean).join(' · ');
+  }
+  function esc(s){ return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c]); }
+
+  function showThanks(meta, sent, failedCount){
     const first = meta.girl.split(' ')[0];
     $('tTitle').textContent = `Thank you, ${first}`;
-    $('tCount').textContent = `${st.files.filter(x => x.state === 'ok').length} file${ok.length > 1 || st.files.length > 1 ? 's' : ''} sent`;
+    $('tCount').textContent = `${sent.length} file${sent.length > 1 ? 's' : ''} sent`;
+    // 4 · Your Uploads tiles
+    const box = $('tThumbs'); box.innerHTML = '';
+    const MAX = 8, shown = sent.length > MAX ? sent.slice(0, MAX - 1) : sent;
+    shown.forEach(it => {
+      const s = document.createElement('span');
+      if (it.kind === 'video') {
+        s.className = 'vid';
+        const v = document.createElement('video'); v.muted = true; v.playsInline = true; v.preload = 'metadata'; v.src = it.url + '#t=0.1';
+        v.style.cssText = 'width:100%;height:100%;object-fit:cover';
+        s.appendChild(v);
+      } else { s.style.backgroundImage = `url("${it.url}")`; if (it.pos) s.style.backgroundPosition = it.pos; }
+      box.appendChild(s);
+    });
+    if (sent.length > MAX) { const m = document.createElement('span'); m.className = 'more'; m.textContent = '+' + (sent.length - shown.length); box.appendChild(m); }
+    // 5 · Receipt rows
+    const when = new Date().toLocaleString('en-GB', { weekday:'short', day:'numeric', month:'short', hour:'numeric', minute:'2-digit', hour12:true });
+    const work = meta.service || (meta.details.length > 40 ? meta.details.slice(0, 40) + '…' : meta.details);
+    $('tReceipt').innerHTML = [['Name', meta.girl], ['Salon', meta.salon], ['Work', work], ['Files', filesText(sent)], ['Sent', when]]
+      .filter(r => r[1]).map(r => `<div><dt>${r[0]}</dt><dd>${esc(r[1])}</dd></div>`).join('');
+    const t = document.documentElement.getAttribute('data-t');
+    $('tWhere').textContent = t === '5' ? 'Screenshot this if you’d like a copy' : `In your 76 folder · ${filesText(sent)}`;
+    const failed = { length: failedCount };
     if (failed.length) {
       $('tWarn').textContent = `${failed.length} file${failed.length>1?'s':''} didn't go through. Tap below to try ${failed.length>1?'them':'it'} again, or send ${failed.length>1?'them':'it'} to Maria on WhatsApp.`;
       $('tWarn').classList.add('show');
@@ -650,10 +747,25 @@ html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);pa
       $('againBtn').textContent = 'Send another client';
       $('againBtn').dataset.mode = 'new';
     }
-    store.set('sent', '1'); remembered();
+  }
+
+  // Preview the thank-you or the sending screen without uploading: ?preview=thanks | ?preview=sending
+  const preview = qs.get('preview');
+  if (preview === 'thanks') {
+    const pos = ['50% 35%','10% 40%','90% 40%','35% 60%','65% 30%'];
+    const sample = pos.map(p => ({ kind:'image', url:'img/team.jpg', pos:p }));
+    showThanks({ girl:'Emma', salon:'Chelmsford', service:'Balayage, Blow dry', details:'' }, sample, 0);
     $('card').classList.add('done');
-    $('card').scrollIntoView({ behavior:'smooth', block:'start' });
-  });
+  } else if (preview === 'sending') {
+    $('card').classList.add('sending'); $('sendHint').style.display = 'none';
+    $('pPct').textContent = '64'; $('pBar').style.width = '64%';
+    $('pTitle').textContent = 'Sending 3 of 5'; $('pSize').textContent = '96 MB of 150 MB';
+  }
+  if (preview && 'scrollRestoration' in history) history.scrollRestoration = 'manual';
+  if (preview) window.addEventListener('load', () => (document.fonts ? document.fonts.ready : Promise.resolve()).then(() => setTimeout(() => {
+    const el = preview === 'sending' ? $('progress') : $('card');
+    window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 16);
+  }, 250)));
 
   $('againBtn').addEventListener('click', () => {
     $('card').classList.remove('done');
