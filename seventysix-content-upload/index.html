@@ -20,7 +20,7 @@
 /* Design options: ?d=1 Classic Cream, 2 Full Photo, 3 Forest Green, 4 Black Luxe, 5 Soft Nude Cards */
 (function(){ var DEFAULT_D = '1'; var d = (location.search.match(/[?&]d=([1-5])/) || [])[1] || DEFAULT_D; document.documentElement.setAttribute('data-d', d); })();
 /* Thank-you options: ?t=1 Classic, 2 Team Photo, 3 Forest Green, 4 Your Uploads, 5 Receipt. Add &preview=thanks to see it without uploading. */
-(function(){ var DEFAULT_T = '1'; var t = (location.search.match(/[?&]t=([1-5])/) || [])[1] || DEFAULT_T; document.documentElement.setAttribute('data-t', t); })();
+(function(){ var DEFAULT_T = '5'; var t = (location.search.match(/[?&]t=([1-5])/) || [])[1] || DEFAULT_T; document.documentElement.setAttribute('data-t', t); })();
 </script>
 <link rel="icon" href="img/76-logo-black.png">
 <link rel="apple-touch-icon" href="img/76-logo-black.png">
@@ -258,14 +258,15 @@ html[data-t="3"] .thanks .btn{background:#F8F3EF;color:var(--green)}
 html[data-t="3"] .thanks .warn{background:rgba(255,255,255,.1);color:#F8F3EF}
 /* 4 · Your Uploads: little tiles of what she sent, each ticked */
 html[data-t="4"] .ring{width:56px;height:56px;margin-bottom:18px}
-html[data-t="4"] .t-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:420px;margin:26px auto 0}
+html[data-t="4"] .t-thumbs,html[data-t="5"] .t-thumbs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;max-width:420px;margin:26px auto 0}
 html[data-t="4"] .t-where{display:block;margin-top:12px;font-size:13px}
 .t-thumbs span{position:relative;display:block;aspect-ratio:4/5;background:var(--nude) center/cover no-repeat}
 .t-thumbs span::after{content:"";position:absolute;right:4px;top:4px;width:20px;height:20px;border-radius:50%;background:var(--green) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
 .t-thumbs span.vid::before{content:"Video";position:absolute;left:4px;bottom:4px;background:rgba(21,21,21,.78);color:#fff;font-size:8.5px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;padding:2px 6px}
 .t-thumbs .more{display:grid;place-items:center;background:var(--paper);font-family:'Cormorant Garamond',serif;font-size:24px}
 .t-thumbs .more::after{display:none}
-/* 5 · Receipt: a little summary card she can screenshot */
+/* 5 · Receipt + Uploads (default): her ticked photo tiles, then a little summary card she can screenshot */
+html[data-t="5"] .t-receipt{margin-top:14px !important}
 html[data-t="5"] .ring{width:56px;height:56px;margin-bottom:18px}
 html[data-t="5"] .t-receipt{display:block;max-width:380px;margin:26px auto 0;padding:6px 20px 8px;background:var(--paper);border-top:2px solid var(--green);text-align:left}
 .t-receipt div{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:11px 0;border-bottom:1px dashed var(--taupe)}
