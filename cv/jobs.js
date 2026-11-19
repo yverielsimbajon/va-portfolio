@@ -4926,8 +4926,8 @@ window.RESUME_JOBS = {
         blurb: "Before-and-after Reels from raw footage for Landscaping Services in Australia, plus food and promo Reels with captions and music. Tap a phone to play.",
         items: [
           { src: "reel-2.mp4", poster: "reel-2.jpg", kind: "video" },
-          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" },
           { src: "reel-ember-funk.mp4", poster: "reel-ember-funk.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Restaurant Video Sample" },
+          { src: "reel-1.mp4", poster: "reel-1.jpg", kind: "video" },
           { src: "reel-stackd-burger.mp4", poster: "reel-stackd-burger.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Burger Shop Video Sample" },
           { src: "reel-4.mp4", poster: "reel-4.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Pageant Promo in Australia" },
           { src: "ugc-roselle-wellness.mp4", poster: "ugc-roselle-wellness.jpg", kind: "video", logo: "logo-crave-icon.jpg", acct: "Wellness Drink Video Sample" }
