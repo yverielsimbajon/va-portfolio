@@ -169,6 +169,15 @@ textarea.field{min-height:84px;resize:vertical;line-height:1.5}
 .tile.busy .pc{display:grid}
 .progress .track i{display:block;height:100%;width:0;background:var(--green);transition:width .3s}
 .sending .btn{display:none}
+/* while sending: the form disappears, the card becomes one frame (team photo + percentage) */
+.sending .step,.sending .alert,body.is-sending .intro,body.is-sending footer{display:none}
+body.is-sending .card{margin-top:22px}
+@media(min-width:960px){body.is-sending .page{grid-template-columns:minmax(0,560px);justify-content:center}}
+.sending .send{margin:0;padding:22px 0 8px}
+.sending .progress{margin:0;padding:0 0 30px;background:transparent}
+.progress .p-photo{aspect-ratio:4/3;overflow:hidden;background:var(--nude);margin-bottom:30px}
+.progress .p-photo img{width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+html[data-d="5"] .sending .send{background:var(--white);border:1px solid var(--line);padding:22px 20px 8px}
 
 /* thank you */
 .thanks{display:none;text-align:center;padding:46px 6px 20px}
@@ -358,6 +367,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
       <div class="send">
         <button class="btn" type="submit" id="sendBtn">Send to Maria</button>
         <div class="progress" id="progress">
+          <div class="p-photo"><img src="img/team.jpg" alt="The Seventy Six Salon team" width="1100" height="900"></div>
           <div class="pct"><span id="pPct">0</span><small>%</small></div>
           <div class="serif" id="pTitle">Sending your work</div>
           <div class="track"><i id="pBar"></i></div>
@@ -647,6 +657,8 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
     sending = true;
     $('card').classList.add('sending');
     $('sendHint').style.display = 'none';
+    document.body.classList.add('is-sending');
+    window.scrollTo(0, 0);
     const meta = { girl:girlName(), salon:st.salon, service:services(), extensions:extensions(), details:$('details').value.trim() };
     const todo = st.files.filter(it => it.state !== 'ok');
     const totalBytes = todo.reduce((a,b) => a + b.file.size, 0) || 1;
@@ -695,6 +707,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
 
     sending = false;
     $('card').classList.remove('sending');
+    document.body.classList.remove('is-sending');
     $('sendHint').style.display = '';
     if (!ok.length) {
       showAlert('Those files didn\'t send. Check your signal and tap Send to Maria again. If it keeps happening, send them to Maria on WhatsApp.');
@@ -758,7 +771,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
     showThanks({ girl:'Emma', salon:'Chelmsford', service:'Balayage, Blow dry', details:'' }, sample, 0);
     $('card').classList.add('done');
   } else if (preview === 'sending') {
-    $('card').classList.add('sending'); $('sendHint').style.display = 'none';
+    $('card').classList.add('sending'); document.body.classList.add('is-sending'); $('sendHint').style.display = 'none';
     $('pPct').textContent = '64'; $('pBar').style.width = '64%';
     $('pTitle').textContent = 'Sending 3 of 5'; $('pSize').textContent = '96 MB of 150 MB';
   }
