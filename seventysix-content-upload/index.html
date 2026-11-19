@@ -16,6 +16,10 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://themariaoffice.com/seventysix-content-upload/">
 <meta name="twitter:card" content="summary_large_image">
+<script>
+/* Design options: ?d=1 Classic Cream, 2 Full Photo, 3 Forest Green, 4 Black Luxe, 5 Soft Nude Cards */
+(function(){ var DEFAULT_D = '1'; var d = (location.search.match(/[?&]d=([1-5])/) || [])[1] || DEFAULT_D; document.documentElement.setAttribute('data-d', d); })();
+</script>
 <link rel="icon" href="img/76-logo-black.png">
 <link rel="apple-touch-icon" href="img/76-logo-black.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -83,6 +87,16 @@ button,input,textarea{font:inherit;color:inherit}
 .chip:hover{border-color:var(--ink)}
 .chip[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
 .chips.names .chip{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;padding:8px 20px}
+.ig{display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:8px 14px 8px 10px;background:var(--paper);border:1px solid var(--line);border-radius:999px;font-size:14px;color:var(--ink);text-decoration:none}
+.ig[hidden]{display:none}
+.ig svg{width:18px;height:18px;color:var(--green)}
+.salons{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.salon{appearance:none;border:1px solid var(--taupe);background:transparent;padding:16px 10px 15px;cursor:pointer;text-align:center;transition:background .15s,color .15s,border-color .15s;-webkit-tap-highlight-color:transparent}
+.salon span{display:block;font-size:9.5px;letter-spacing:.26em;text-transform:uppercase;font-weight:600;color:var(--soft)}
+.salon b{display:block;font-family:'Cormorant Garamond',serif;font-weight:500;font-size:25px;line-height:1.15;margin-top:4px}
+.salon:hover{border-color:var(--ink)}
+.salon[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.salon[aria-pressed="true"] span{color:rgba(255,255,255,.75)}
 .sub{margin-top:20px;padding:18px 18px 20px;background:var(--paper);border-left:2px solid var(--green)}
 .sub[hidden]{display:none}
 .sub .lbl{margin-bottom:10px;display:block;color:var(--soft)}
@@ -163,6 +177,54 @@ footer{text-align:center;padding:10px 16px 40px;color:var(--soft);font-size:12.5
 footer .serif{font-size:18px;color:var(--ink)}
 .setup{background:var(--ink);color:#fff;text-align:center;font-size:13px;padding:10px 16px}
 .setup[hidden]{display:none}
+
+/* ===== design options ===== */
+.top .logo-w{display:none}
+html[data-d="3"] .top .logo-b,html[data-d="4"] .top .logo-b{display:none}
+html[data-d="3"] .top .logo-w,html[data-d="4"] .top .logo-w{display:block}
+
+/* 2 · Full Photo: big edge-to-edge team photo first, open form */
+html[data-d="2"] .intro{display:flex;flex-direction:column;padding-top:22px}
+html[data-d="2"] .arch{order:-1;margin:0 -16px;max-width:none;aspect-ratio:4/5}
+html[data-d="2"] .intro .kicker{margin-top:30px}
+html[data-d="2"] .how{width:100%;max-width:460px;align-self:center}
+@media(min-width:960px){html[data-d="2"] .how{max-width:none}}
+html[data-d="2"] .card{background:transparent;border:0;padding-left:0;padding-right:0;border-top:1px solid var(--ink)}
+html[data-d="2"] .chip,html[data-d="2"] .salon{border-radius:0}
+html[data-d="2"] .step-h .n{color:var(--green)}
+@media(min-width:960px){html[data-d="2"] .arch{margin:0;aspect-ratio:4/5} html[data-d="2"] .intro{padding-top:56px}}
+
+/* 3 · Forest Green and 4 · Black Luxe: dark top, light form */
+html[data-d="3"]{--hero:#2F4B3A;--hero-soft:#DCCEC6}
+html[data-d="4"]{--hero:#151515;--hero-soft:#B9A69B}
+html[data-d="3"] .top,html[data-d="4"] .top,
+html[data-d="3"] .intro,html[data-d="4"] .intro{background:var(--hero);box-shadow:0 0 0 100vmax var(--hero);clip-path:inset(0 -100vmax)}
+html[data-d="3"] .top,html[data-d="4"] .top{padding-bottom:6px;color:#F8F3EF}
+html[data-d="3"] .intro,html[data-d="4"] .intro{padding-bottom:40px;color:#F8F3EF}
+html[data-d="3"] .intro p,html[data-d="4"] .intro p{color:rgba(248,243,239,.82)}
+html[data-d="3"] .intro .kicker,html[data-d="4"] .intro .kicker{color:var(--hero-soft)}
+html[data-d="3"] .how,html[data-d="4"] .how{border-color:rgba(248,243,239,.22)}
+html[data-d="3"] .how div+div,html[data-d="4"] .how div+div{border-color:rgba(248,243,239,.22)}
+html[data-d="3"] .how span,html[data-d="4"] .how span{color:rgba(248,243,239,.65)}
+html[data-d="3"] .arch,html[data-d="4"] .arch{outline:1px solid rgba(248,243,239,.35);outline-offset:8px}
+html[data-d="4"] .chip[aria-pressed="true"],html[data-d="4"] .salon[aria-pressed="true"],html[data-d="4"] .btn{background:#151515;border-color:#151515}
+html[data-d="4"] .step-h .n{color:var(--green)}
+@media(min-width:960px){
+  html[data-d="3"] .intro,html[data-d="4"] .intro{box-shadow:none;clip-path:none;padding:48px 44px;margin-top:36px}
+}
+
+/* 5 · Soft Nude Cards: nude page, wide photo banner, every step its own card */
+html[data-d="5"] body{background:var(--nude)}
+html[data-d="5"] .arch{aspect-ratio:16/10}
+html[data-d="5"] .card{background:transparent;border:0;padding:0}
+html[data-d="5"] .step{background:var(--white);border:1px solid var(--line);padding:24px 20px 24px;margin-bottom:12px}
+html[data-d="5"] .step-h .n{display:grid;place-items:center;flex:none;width:32px;height:32px;min-width:32px;border-radius:50%;background:var(--green);color:#fff;font-family:'Open Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.05em;align-self:center}
+html[data-d="5"] .step-h{align-items:center}
+html[data-d="5"] .chip,html[data-d="5"] .salon{border-radius:6px;background:var(--paper);border-color:var(--line)}
+html[data-d="5"] .chip[aria-pressed="true"],html[data-d="5"] .salon[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+html[data-d="5"] .drop{background:var(--paper)}
+html[data-d="5"] .send{padding-top:10px}
+html[data-d="5"] .thanks{background:var(--white);border:1px solid var(--line);padding:46px 22px 34px}
 </style>
 </head>
 <body>
@@ -170,7 +232,8 @@ footer .serif{font-size:18px;color:var(--ink)}
 <div class="setup" id="setupBar" hidden>Almost ready: this page goes live once Maria connects it to Google Drive.</div>
 
 <header class="top">
-  <img src="img/76-logo-black.png" alt="Seventy Six Salon logo" width="400" height="733">
+  <img class="logo-b" src="img/76-logo-black.png" alt="Seventy Six Salon logo" width="400" height="733">
+  <img class="logo-w" src="img/76-logo-white.png" alt="" width="400" height="733">
   <span>Seventy Six Salon</span>
 </header>
 
@@ -194,20 +257,21 @@ footer .serif{font-size:18px;color:var(--ink)}
       <div class="alert" id="alert"></div>
 
       <div class="step" id="s-name">
-        <div class="step-h"><span class="n">01</span><div><h2>Who are you?</h2></div></div>
+        <div class="step-h"><span class="n">01</span><div><h2>Your name</h2></div></div>
         <p class="need">Please pick your name.</p>
         <div class="chips names" id="names"></div>
+        <a class="ig" id="igLine" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg><span id="igHandle"></span></a>
         <input class="field other-name" id="otherName" placeholder="Type your first name" hidden maxlength="40">
       </div>
 
       <div class="step" id="s-salon">
         <div class="step-h"><span class="n">02</span><div><h2>Which salon?</h2><small>Where was this client done?</small></div></div>
         <p class="need">Please pick the salon.</p>
-        <div class="chips" id="salons"></div>
+        <div class="salons" id="salons"></div>
       </div>
 
       <div class="step" id="s-service">
-        <div class="step-h"><span class="n">03</span><div><h2>What did you do?</h2><small>Pick everything that fits.</small></div></div>
+        <div class="step-h"><span class="n">03</span><div><h2>Describe your work</h2><small>Pick everything that fits.</small></div></div>
         <p class="need">Please pick at least one, or write a little note.</p>
         <div class="chips" id="services"></div>
         <div class="sub" id="extBox" hidden>
@@ -217,7 +281,7 @@ footer .serif{font-size:18px;color:var(--ink)}
           <div class="chips" id="extBrand"></div>
         </div>
         <div style="margin-top:22px">
-          <textarea class="field" id="details" maxlength="1500" placeholder="Shades, products, anything special. e.g. Wella toner 9/16, face-framing highlights, she wanted soft and lived-in"></textarea>
+          <textarea class="field" id="details" maxlength="1500" placeholder="Write here (optional): shades, products, anything special"></textarea>
         </div>
       </div>
 
@@ -273,8 +337,11 @@ footer .serif{font-size:18px;color:var(--ink)}
 (() => {
   /* ===== settings ===== */
   const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbws4EUY0xbseQmKnOs3O7MLG4jB0zMA9It-1E5CEsKzjb_7OQ4Rn58RflF5LaMPQv_Adw/exec'; // Google Apps Script web app (Maria's account)
-  const TEAM = ['Kimmy','Emma','Rachael','Claudia','Gabs','Madi','Leah','Nicky','Kelsey','Emily'];
-  const SALONS = ['Chelmsford','Dunmow','76 Bridal'];
+  // Instagram handles checked on @seventysixsalon / @seventysixsalon_dunmow (19 Nov 2026)
+  const IG = { Kimmy:'hair_bykimberley', Emma:'emma_oliver_hair', Rachael:'hair_by.rachael', Claudia:'hair.by.claudia.x',
+    Gabs:'styled.by.gabriella', Madi:'hair.bymadison_x', Leah:'hairbyleahx', Nicky:'nickysteelehair', Kelsey:'khillbeauty', Emily:'hair_byemilye' };
+  const TEAM = Object.keys(IG);
+  const SALONS = ['Chelmsford','Dunmow'];
   const SERVICES = ['Colour','Blonde & highlights','Balayage','Extensions','Cut & style','Blow dry','Keratin blowdry','Treatment','Bridal hair','Makeup','Salon & team'];
   const EXT_TYPES = ['Nano bonds','Tapes','Wefts','Not sure'];
   const EXT_BRANDS = ['Remi Cachet','Sway','Other'];
@@ -302,21 +369,27 @@ footer .serif{font-size:18px;color:var(--ink)}
     el.innerHTML = '';
     list.forEach(label => {
       const b = document.createElement('button');
-      b.type = 'button'; b.className = 'chip'; b.textContent = label;
+      b.type = 'button'; b.className = opts.cls || 'chip'; b.dataset.v = label;
+      if (opts.html) b.innerHTML = opts.html(label); else b.textContent = label;
       b.setAttribute('aria-pressed','false');
       b.addEventListener('click', () => opts.onClick(label, b));
       el.appendChild(b);
     });
   }
-  function single(el, value){ el.querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed', String(b.textContent === value))); }
+  function single(el, value){ el.querySelectorAll('[data-v]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.v === value))); }
+  function showIg(name){
+    const h = IG[name]; const a = $('igLine');
+    if (!h) { a.hidden = true; return; }
+    a.hidden = false; a.href = 'https://www.instagram.com/' + h + '/'; $('igHandle').textContent = '@' + h;
+  }
 
   chips($('names'), TEAM.concat('Someone else'), { onClick(label){
-    st.girl = label; single($('names'), label);
+    st.girl = label; single($('names'), label); showIg(label);
     $('otherName').hidden = label !== 'Someone else';
     if (label === 'Someone else') $('otherName').focus();
     store.set('girl', label); clearMissing('s-name');
   }});
-  chips($('salons'), SALONS, { onClick(label){ st.salon = label; single($('salons'), label); store.set('salon', label); clearMissing('s-salon'); }});
+  chips($('salons'), SALONS, { cls:'salon', html: l => '<span>Seventy Six Salon</span><b>' + l + '</b>', onClick(label){ st.salon = label; single($('salons'), label); store.set('salon', label); clearMissing('s-salon'); }});
   chips($('services'), SERVICES, { onClick(label, b){
     if (st.services.has(label)) st.services.delete(label); else st.services.add(label);
     b.setAttribute('aria-pressed', String(st.services.has(label)));
@@ -329,7 +402,7 @@ footer .serif{font-size:18px;color:var(--ink)}
   $('details').addEventListener('input', () => clearMissing('s-service'));
 
   // remember name + salon on this phone
-  const g = store.get('girl'); if (g && (TEAM.includes(g) || g === 'Someone else')) { st.girl = g; single($('names'), g); if (g === 'Someone else') { $('otherName').hidden = false; $('otherName').value = store.get('other'); } }
+  const g = store.get('girl'); if (g && (TEAM.includes(g) || g === 'Someone else')) { st.girl = g; single($('names'), g); showIg(g); if (g === 'Someone else') { $('otherName').hidden = false; $('otherName').value = store.get('other'); } }
   const s = store.get('salon'); if (SALONS.includes(s)) { st.salon = s; single($('salons'), s); }
   $('otherName').addEventListener('input', e => { store.set('other', e.target.value); clearMissing('s-name'); });
 
@@ -576,7 +649,7 @@ footer .serif{font-size:18px;color:var(--ink)}
     // fresh form, keep name + salon
     st.files.forEach(it => URL.revokeObjectURL(it.url));
     st.files = []; st.services.clear(); st.extType = ''; st.extBrand = ''; st.tag = '';
-    ['services','extType','extBrand','tag'].forEach(id => $(id).querySelectorAll('.chip').forEach(b => b.setAttribute('aria-pressed','false')));
+    ['services','extType','extBrand','tag'].forEach(id => $(id).querySelectorAll('[data-v]').forEach(b => b.setAttribute('aria-pressed','false')));
     $('extBox').hidden = true; $('clientIg').hidden = true; $('clientIg').value = ''; $('details').value = '';
     $('pBar').style.width = '0';
     renderFiles();
