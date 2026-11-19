@@ -94,7 +94,8 @@ const PREVIEW = {
   "dtc-video-editor":       ["dtc-video-editor", null, "social"],
   "starwars-fb-posts":      ["starwars-fb-posts", null, "social"],
   "funny-dogs-reels":       ["funny-dogs-reels", null, "social"],
-  "kenny-video-editor":     ["kenny-video-editor", "Kenny Johnson University", "social"]
+  "kenny-video-editor":     ["kenny-video-editor", "Kenny Johnson University", "social"],
+  "chucks-flooring-smm":    ["chucks-flooring-smm", "Chuck's Flooring", "social"]
 };
 // amb-va keeps its own custom preview (Alanah's carousel + reel delivery page).
 
