@@ -149,13 +149,10 @@ POSTS.forEach((p,k)=>{
    <div class="head"><div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
     <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>
     <span class="follow">+ Follow</span></div>
-   <div class="cap short">${fmt(p.cap)}</div><button class="more">…more</button>
+   <div class="cap">${fmt(p.cap)}</div>
    ${media}
    <div class="acts"><span>${I.like}Like</span><span>${I.com}Comment</span><span>${I.rep}Repost</span><span>${I.send}Send</span></div>`;
   feed.appendChild(el);
-  const cap=el.querySelector('.cap'),more=el.querySelector('.more');
-  const first=p.cap.split('\n\n')[0];cap.innerHTML=fmt(first);
-  more.onclick=()=>{const s=cap.classList.toggle('short');cap.innerHTML=fmt(s?first:p.cap);more.textContent=s?'…more':'show less'};
   if(p.imgs){
     const tr=el.querySelector('.track'),pg=el.querySelector('.pg'),pv=el.querySelector('.nav.p'),nx=el.querySelector('.nav.n'),n=p.imgs.length;
     const cur=()=>Math.round(tr.scrollLeft/tr.clientWidth);
