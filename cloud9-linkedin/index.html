@@ -51,6 +51,14 @@ img{display:block;max-width:100%}
 .nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:rgba(0,0,0,.6);color:#fff;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .nav.p{left:10px}.nav.n{right:10px}
 .nav[disabled]{opacity:0;pointer-events:none}
+.vid{position:relative;background:#000}
+.vid img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.vid .play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center}
+.vid .play svg{width:30px;height:30px;margin-left:5px}
+.vid .dur{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.7);color:#fff;font-size:13px;font-weight:600;padding:3px 8px;border-radius:4px}
+.series{max-width:556px;margin:0 auto 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);padding:6px 2px 0}
+.note h3{font-size:15px;color:var(--navy);margin:16px 0 8px}
+.note .draft{background:#F4F6FA;border-left:3px solid var(--royal);padding:14px 16px;font-size:14px;line-height:1.5;color:#1D2226;white-space:pre-line;border-radius:4px}
 .acts{display:flex;justify-content:space-around;border-top:1px solid var(--line);margin:0 12px;padding:4px 0}
 .acts span{display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--muted);padding:12px 8px}
 .acts svg{width:20px;height:20px}
@@ -66,10 +74,31 @@ img{display:block;max-width:100%}
 <header class="hero">
   <div class="k">LinkedIn content sample</div>
   <h1>Cloud 9 Window Cleaning on LinkedIn</h1>
-  <p>A preview of how your company page could look: corporate, professional and on brand. Four post types, each with a ready-to-post caption.</p>
+  <p>A preview of how your company page could look: corporate, professional and on brand. Starting with James Spenceley coming on board, each post with a ready-to-post caption.</p>
 </header>
 
 <main class="feed" id="feed"></main>
+
+<div class="feed" style="margin-top:0;padding-bottom:0">
+  <div class="note">
+    <h2>Onboarding James on LinkedIn: 4-week plan</h2>
+    <ul>
+      <li><b>Week 1:</b> Welcome post (post 1). Tag James and Dan, and ask James to reshare with a few words of his own.</li>
+      <li><b>Week 2:</b> "Why James chose Cloud 9" video (post 2), his talk about building businesses and how he met Dan.</li>
+      <li><b>Week 3:</b> "4 lessons on growing a business" carousel (post 3), his own quotes from the talk.</li>
+      <li><b>Week 4:</b> "Listening to customers" video (post 4), his story of the team cleaning his own home.</li>
+      <li>The same story also goes into the fortnightly newsletter and on Instagram and Facebook, so every channel matches.</li>
+    </ul>
+    <h3>Suggested repost for James's own profile (for his approval)</h3>
+    <div class="draft">Proud to be backing Dan and the team at Cloud 9 Window Cleaning.
+
+I started out cleaning wheelie bins as a kid, so I've always loved this stage of business: you know everyone's name, and everything the team does makes a difference.
+
+A thousand five-star reviews is a massive achievement. What impressed me more is a team that treats five stars as the baseline.
+
+Looking forward to what's next.</div>
+  </div>
+</div>
 
 <div class="feed" style="margin-top:0;padding-bottom:0">
   <div class="note">
@@ -88,6 +117,54 @@ img{display:block;max-width:100%}
 <script>
 const LOGO='img/logo-blue.png';
 const POSTS=[
+ {tag:'Image post',type:'Welcome · James Spenceley',img:'img/post-james-welcome.jpg?v=1',
+  cap:`We're proud to welcome James Spenceley to Cloud 9 Window Cleaning as an investor.
+
+James is the founder of Vocus, which he grew to a team of around 1,500 people.
+
+Like many great business stories, his started small: when he was young, he ran his own business cleaning wheelie bins.
+
+James joins Dan and the team as Cloud 9 grows across Sydney, with the same focus on culture and five-star service.
+
+Welcome to the team, James.
+
+#Leadership #Growth #Sydney`},
+ {tag:'Video post',type:'Why James chose Cloud 9',video:'img/james-video-story.jpg?v=1',dur:'2:46',
+  cap:`Why James Spenceley chose Cloud 9.
+
+At our 1,000 five-star reviews celebration, James spoke to the team about building businesses, from cleaning wheelie bins when he was young to growing Vocus.
+
+In his words: "There's lots of other businesses I could be in and around, and this one I really like."
+
+His message to the team: a thousand five-star reviews is a massive achievement, but the really impressive thing is a team that sets five stars as the baseline.
+
+Watch his full talk below.
+
+#Leadership #CompanyCulture #Sydney`},
+ {tag:'Document carousel',type:'Lessons from our investor',doc:'4 lessons on growing a business',
+  imgs:[1,2,3,4,5,6].map(i=>`img/post-james-slide-${i}.jpg?v=1`),
+  cap:`4 lessons on growing a business, from James Spenceley.
+
+James founded Vocus and has seen every stage of growth. Here is what he shared with our team:
+
+01  Five stars is the baseline.
+02  Culture is how you scale.
+03  Love the stage where you know everyone.
+04  Listen to your customers.
+
+Which one resonates with you most?
+
+#Leadership #Growth #CompanyCulture`},
+ {tag:'Video post',type:'Listening to customers',video:'img/james-video-speech.jpg?v=1',dur:'1:26',
+  cap:`What happens when a business really listens?
+
+James Spenceley shares a story from his own home. Once the team knew what customers expect, his wife noticed the difference the next time they came: the shoes lined up neatly by the door, and extra equipment for the tracks.
+
+"And for the next hour she was telling me how good a job the guys did."
+
+Every detail matters. That is how we earn five stars.
+
+#CustomerExperience #Sydney`},
  {tag:'Image post',type:'Company milestone',img:'img/post-1-milestone.jpg?v=6',
   cap:`1,000 five-star reviews.
 
@@ -144,6 +221,7 @@ POSTS.forEach((p,k)=>{
   const media=p.imgs?`<div class="doc"><div class="bar"><b>${p.doc}</b><span class="pg">1 / ${p.imgs.length}</span></div>
      <div class="track">${p.imgs.map((s,i)=>`<img src="${s}" alt="Slide ${i+1}" loading="lazy">`).join('')}</div>
      <button class="nav p" aria-label="Previous" disabled>&#8249;</button><button class="nav n" aria-label="Next">&#8250;</button></div>`
+   :p.video?`<div class="vid"><img src="${p.video}" alt="${p.type}" loading="lazy"><div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></div><span class="dur">${p.dur}</span></div>`
    :`<div class="media"><img src="${p.img}" alt="${p.type}" loading="lazy"></div>`;
   const el=document.createElement('article');el.className='card';
   el.innerHTML=`<div class="tag"><b>${k+1}</b> ${p.tag} · ${p.type}</div>
