@@ -117,7 +117,9 @@ Looking forward to what's next.</div>
 <script>
 const LOGO='img/logo-blue.png';
 const POSTS=[
- {tag:'Image post',type:'Welcome · James Spenceley',img:'img/post-james-welcome.jpg?v=3',
+ {num:'1A',tag:'Image post',type:'Welcome · James Spenceley (option A)',img:'img/post-james-welcome.jpg?v=3',
+  cap:''},
+ {num:'1B',tag:'Image post',type:'Welcome · James Spenceley (option B)',img:'img/post-james-welcome-b.jpg?v=1',
   cap:`We're proud to welcome James Spenceley to Cloud 9 Window Cleaning as an investor.
 
 James is the founder of Vocus, which he grew to a team of around 1,500 people.
@@ -217,14 +219,17 @@ const I={
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const fmt=s=>esc(s).replace(/#(\w+)/g,'<span class="hash">#$1</span>');
 const feed=document.getElementById('feed');
+POSTS[0].cap=POSTS[1].cap;   // option A and B share the welcome caption
+let pn=0;
 POSTS.forEach((p,k)=>{
+  const num=p.num?(p.num==='1A'?(pn=1,'1A'):p.num):String(++pn);
   const media=p.imgs?`<div class="doc"><div class="bar"><b>${p.doc}</b><span class="pg">1 / ${p.imgs.length}</span></div>
      <div class="track">${p.imgs.map((s,i)=>`<img src="${s}" alt="Slide ${i+1}" loading="lazy">`).join('')}</div>
      <button class="nav p" aria-label="Previous" disabled>&#8249;</button><button class="nav n" aria-label="Next">&#8250;</button></div>`
    :p.video?`<div class="vid"><img src="${p.video}" alt="${p.type}" loading="lazy"><div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></div><span class="dur">${p.dur}</span></div>`
    :`<div class="media"><img src="${p.img}" alt="${p.type}" loading="lazy"></div>`;
   const el=document.createElement('article');el.className='card';
-  el.innerHTML=`<div class="tag"><b>${k+1}</b> ${p.tag} · ${p.type}</div>
+  el.innerHTML=`<div class="tag"><b>${num}</b> ${p.tag} · ${p.type}</div>
    <div class="head"><div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
     <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>
     <span class="follow">+ Follow</span></div>
