@@ -81,6 +81,11 @@ footer{text-align:center;padding:30px 16px 50px;color:var(--soft);font-size:13px
 .pm{position:relative;background:#000;display:flex;align-items:center;justify-content:center;flex:none}
 .pm img,.pm video{display:block;max-height:calc(100vh - 56px);width:auto;max-width:min(62vw,720px);object-fit:contain}
 .pm video{cursor:pointer}
+.pm .sz{visibility:hidden}
+.pm .track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab}
+.pm .track::-webkit-scrollbar{display:none}
+.pm .track img{flex:none;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;scroll-snap-align:center;scroll-snap-stop:always;-webkit-user-drag:none;user-select:none}
+.pm .sa{transition:opacity .2s}.pm .dots i{transition:background .2s,transform .2s}.pm .dots i.on{transform:scale(1.15)}
 .pm .sa{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.88);color:#000;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(0,0,0,.25)}
 .pm .sa svg{width:14px;height:14px}.pm .sa.p{left:12px}.pm .sa.n{right:12px}
 .pm .dots{position:absolute;bottom:14px;left:0;right:0;display:flex;justify-content:center;gap:4px}
@@ -430,7 +435,8 @@ function openPost(g,i){G=g;I=i;SI=0;$('#pop').classList.add('on');document.body.
 function media(p){
  if(p.video) return `<video id="pv" src="${p.video}" poster="${p.img}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`;
  const s=p.slides||[p.img];
- return `<img src="${s[SI]}" alt="">`+(s.length>1?`${SI>0?`<button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button>`:''}${SI<s.length-1?`<button class="sa n" id="sn" aria-label="Next slide">${ARR}</button>`:''}<div class="dots">${s.map((_,k)=>`<i class="${k===SI?'on':''}"></i>`).join('')}</div>`:'');
+ if(s.length<2) return `<img src="${s[0]}" alt="">`;
+ return `<img class="sz" src="${s[0]}" alt=""><div class="track" id="tk">${s.map(u=>`<img src="${u}" alt="" draggable="false">`).join('')}</div><button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button><button class="sa n" id="sn" aria-label="Next slide">${ARR}</button><div class="dots">${s.map((_,k)=>`<i class="${k===0?'on':''}"></i>`).join('')}</div>`;
 }
 function draw(full){
  const list=GRIDS[G],p=list[I];
@@ -445,9 +451,22 @@ function draw(full){
  wire(p);
 }
 function wire(p){
- const sp=$('#sp'),sn=$('#sn');
- if(sp) sp.onclick=e=>{e.stopPropagation();SI--;draw(false)};
- if(sn) sn.onclick=e=>{e.stopPropagation();SI++;draw(false)};
+ const tk=$('#tk');
+ if(tk){
+  const n=p.slides.length,sp=$('#sp'),sn=$('#sn'),dots=[...document.querySelectorAll('.pm .dots i')];
+  const upd=()=>{SI=Math.max(0,Math.min(n-1,Math.round(tk.scrollLeft/tk.clientWidth)));
+   dots.forEach((d,k)=>d.classList.toggle('on',k===SI));
+   sp.style.opacity=SI===0?0:1;sp.style.pointerEvents=SI===0?'none':'';
+   sn.style.opacity=SI===n-1?0:1;sn.style.pointerEvents=SI===n-1?'none':''};
+  tk.addEventListener('scroll',upd,{passive:true});
+  sp.onclick=e=>{e.stopPropagation();slideBy(-1)};
+  sn.onclick=e=>{e.stopPropagation();slideBy(1)};
+  // mouse drag on desktop (touch uses native swipe)
+  let mx=null;
+  tk.addEventListener('mousedown',e=>{mx=e.clientX});
+  window.addEventListener('mouseup',e=>{if(mx===null)return;const dx=e.clientX-mx;mx=null;if(Math.abs(dx)>40)slideBy(dx<0?1:-1)});
+  tk.scrollTo({left:SI*tk.clientWidth,behavior:'auto'});upd();
+ }
  const v=$('#pv');
  if(v){
   v.muted=false; v.volume=1;
@@ -455,12 +474,8 @@ function wire(p){
   v.onclick=()=>v.paused?v.play():v.pause();
   $('#snd').onclick=e=>{e.stopPropagation();v.muted=!v.muted;$('#snd').innerHTML=v.muted?SND_OFF:SND_ON};
  }
- // swipe on phones
- const m=$('#pm');let x0=null;
- m.ontouchstart=e=>x0=e.touches[0].clientX;
- m.ontouchend=e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)<40)return;
-  if(dx<0&&$('#sn'))$('#sn').click(); if(dx>0&&$('#sp'))$('#sp').click()};
 }
+function slideBy(d){const tk=$('#tk');if(!tk)return false;const n=GRIDS[G][I].slides.length,t=SI+d;if(t<0||t>=n)return false;tk.scrollTo({left:t*tk.clientWidth,behavior:'smooth'});return true}
 function closePost(){const v=$('#pv');if(v)v.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''}
 $('#px').onclick=closePost;
 $('#pp').onclick=()=>{if(I>0){I--;SI=0;draw(true)}};
@@ -468,8 +483,8 @@ $('#pn').onclick=()=>{if(I<GRIDS[G].length-1){I++;SI=0;draw(true)}};
 $('#pop').addEventListener('click',e=>{if(e.target.id==='pop')closePost()});
 document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))return;
  if(e.key==='Escape')closePost();
- if(e.key==='ArrowRight'){$('#sn')?$('#sn').click():$('#pn').click()}
- if(e.key==='ArrowLeft'){$('#sp')?$('#sp').click():$('#pp').click()}});
+ if(e.key==='ArrowRight'){slideBy(1)||$('#pn').click()}
+ if(e.key==='ArrowLeft'){slideBy(-1)||$('#pp').click()}});
 </script>
 </body>
 </html>
