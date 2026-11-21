@@ -61,6 +61,9 @@ nav .links a:hover{color:var(--royal)}
 .tile .ico{position:absolute;top:8px;right:8px;width:20px;height:20px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
 .tile .day{position:absolute;left:6px;bottom:6px;background:rgba(15,37,71,.82);color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;padding:3px 8px;border-radius:20px}
 .tile.live .day{background:#fff;color:var(--ink)}
+.ov{position:relative}
+.prevlbl{position:absolute;left:calc(100%/3 + 1px);right:0;top:calc(200%/3 + 7%);display:flex;justify-content:center;pointer-events:none;z-index:2}
+.prevlbl span{background:#fff;color:var(--ink);font-size:clamp(11px,2.6vw,14px);font-weight:700;line-height:1;white-space:nowrap;padding:9px 16px;border-radius:30px;box-shadow:0 4px 14px rgba(15,37,71,.25)}
 .legend{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin-top:16px;font-size:13px;color:var(--soft)}
 .legend span{display:flex;align-items:center;gap:6px}
 .legend svg{width:16px;height:16px}
@@ -183,20 +186,16 @@ So we stopped, grabbed some cake and celebrated together.
 Thank you, Sydney. Same team, at your home.
 
 #cloud9windowcleaning #sydneywindowcleaning #teamculture #sydneysmallbusiness`,{video:'img/reel-more-than-a-team.mp4'}),
- C('carousel','Fri 27 Nov','img/visit-1.jpg',`What happens on a Cloud 9 visit? Here's how it goes.
+ C('photo','Sun 29 Nov','img/trolley.jpg',`Pure water, clear glass. 💧
 
-Punctual and fully equipped, we arrive ready to start.
+This is our deionised water system on the job. Pure water rinses the glass, so there is nothing left behind to dry into spots.
 
-Then the clean. We scrub off the dirt and grime, finish the glass streak-free, and detail the frames, sills and corners.
+We clean windows, frames, tracks and sills, plus glass balustrades and pool fences, across the North Shore, Northern Beaches, Sutherland Shire and beyond.
 
-To finish, Rainblock Tech: a protective coating that repels water and dirt. It's free on our maintenance plans.
+Book on 0485 013 333 or cloud9windowcleaning.com.au
 
-Matt, Alexis and Killian are just a few of the friendly faces on our team. Swipe to see what our clients say about them.
-
-Ready for windows cleaned properly? Call 0485 013 333 or book at cloud9windowcleaning.com.au ✨
-
-#cloud9windowcleaning #sydneywindowcleaning #windowcleaningsydney #northshoresydney`,{slides:S('img/visit',6)}),
- C('reel','Wed 25 Nov','img/reel-pool-fence.jpg',`Did you know what dulls your pool fence glass? 💡
+#Cloud9WindowCleaning #WindowCleaningSydney #PureWater`),
+ C('reel','Thu 26 Nov','img/reel-pool-fence.jpg',`Did you know what dulls your pool fence glass? 💡
 
 Pool water carries dissolved calcium and chlorine. Every splash dries in the Sydney sun and leaves those white mineral spots behind.
 
@@ -207,7 +206,7 @@ That's why we finish with microfibre. Its fibres are finer than a human hair, so
 Glass balustrade and pool fence cleaning, plus hard water spot removal, across the North Shore, Northern Beaches and Sutherland Shire. Book on 0485 013 333 or cloud9windowcleaning.com.au
 
 #PoolFence #WindowCleaningSydney #GlassBalustrade #Cloud9WindowCleaning`,{video:'img/reel-pool-fence.mp4'}),
- C('photo','Thu 26 Nov','img/review.jpg',`A good result and a plan that works. 💙
+ C('photo','Wed 25 Nov','img/review.jpg',`A good result and a plan that works. 💙
 
 Thank you, Michael, for the kind words. We're so glad Hugo and Lloyd's maintenance tips helped, and that the plan is working for you.
 
@@ -217,7 +216,7 @@ Want sparkling windows all year round? Ask us about our maintenance plans.
 🌐 cloud9windowcleaning.com.au
 
 #WindowCleaningSydney #Cloud9WindowCleaning #GoogleReview`),
- C('carousel','Sun 29 Nov','img/airbnb-1.jpg',`Airbnb owners, your guests notice the windows. ✨
+ C('carousel','Sat 28 Nov','img/airbnb-1.jpg',`Airbnb owners, your guests notice the windows. ✨
 
 Clean glass is the first thing in every listing photo, and the first thing guests see when they walk in.
 
@@ -229,7 +228,7 @@ Get your place guest-ready across the North Shore, Northern Beaches, Sutherland 
 📞 0485 013 333 · cloud9windowcleaning.com.au
 
 #Airbnb #SydneyAirbnb #WindowCleaningSydney #Cloud9WindowCleaning`,{slides:S('img/airbnb',5)}),
- C('carousel','Sat 28 Nov','img/bbq-1.jpg',`Hosting a birthday or BBQ? 🎉
+ C('carousel','Fri 27 Nov','img/bbq-1.jpg',`Hosting a birthday or BBQ? 🎉
 
 Before the guests arrive, the glass is the first thing they see. Sliding doors, windows and the pool fence all catch the light.
 
@@ -288,6 +287,10 @@ Which one surprised you? Tell us in the comments.
 Ready for clear glass? Call 0485 013 333 or visit cloud9windowcleaning.com.au
 
 #cloud9windowcleaning #windowcleaning #windowcleaningsydney #sydneywindowcleaner #sydneyhomes #cleanwindows #solarpanelcleaning #solarcleaning #purewaterwindowcleaning #waterfedpole #streakfreeglass #housecleaningsydney #sydneyproperty #homecare #mythsvsfacts`,{slides:S('img/past/w2-myths',4)}),
+ C('reel','Thu 19 Nov','img/past/w2-pov.jpg',`POV: You want to impress your wife... so you call Cloud 9 to make your windows sparkle ✨🪟
+
+Making you feel on Cloud 9 ☁️
+#cloud9windowcleaning #windowcleaning #sydney`,{video:'img/past/w2-pov.mp4'}),
  JAMES,
  C('carousel','Sun 22 Nov','img/past/w2-christmas-1.jpg',`Windows are the first thing people notice when they walk up to your home. Clear glass lets the light in and makes everything feel fresh.
 
@@ -402,8 +405,8 @@ Ready for crystal-clear windows? Send us a message for a free quote ☁️
 
 /* grids: newest top-left, 9 tiles */
 const GRIDS={
- 'ig-next':[...NEXT].reverse().concat([W2[4],JAMES]),
- 'ig-w2':[...W2].reverse().concat([...W1].reverse().slice(0,4)),
+ 'ig-next':[...NEXT].reverse().concat([W2[5],JAMES]),
+ 'ig-w2':[...W2].reverse().concat([...W1].reverse().slice(0,3)),
  'ig-w1':[...W1].reverse()
 };
 const HEAD=`<div class="ig-head"><div class="av"><img src="img/logo-white.png" alt=""></div><div><b>cloud9windowcleaningau</b><small>Cloud 9 Window Cleaning</small><small>Window cleaning · Sydney</small></div></div>
@@ -411,7 +414,7 @@ const HEAD=`<div class="ig-head"><div class="av"><img src="img/logo-white.png" a
 <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>`;
 const $=s=>document.querySelector(s);
 for(const [id,list] of Object.entries(GRIDS)){
- $('#'+id).innerHTML=HEAD+'<div class="ov">'+list.map((p,i)=>`<button class="tile${p.live&&id==='ig-next'?' live':''}" data-g="${id}" data-i="${i}" aria-label="Open post"><img src="${p.img}" alt="" loading="lazy">${ICO[p.type]}<span class="day">${p.day}</span></button>`).join('')+'</div>';
+ $('#'+id).innerHTML=HEAD+'<div class="ov">'+list.map((p,i)=>`<button class="tile${p.live&&id==='ig-next'?' live':''}" data-g="${id}" data-i="${i}" aria-label="Open post"><img src="${p.img}" alt="" loading="lazy">${ICO[p.type]}<span class="day">${p.day}</span></button>`).join('')+(id==='ig-next'?'<div class="prevlbl"><span>Previous week\'s posts</span></div>':'')+'</div>';
 }
 document.querySelectorAll('.tile').forEach(b=>b.onclick=()=>openPost(b.dataset.g,+b.dataset.i));
 
