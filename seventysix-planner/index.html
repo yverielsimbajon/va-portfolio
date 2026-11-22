@@ -163,6 +163,25 @@ header p{color:#4A423D;margin-top:8px}
  .checks{padding:12px 14px}.prow b{font-size:20px}
  .pm video{max-height:70vh}
 }
+/* blueprint */
+.t.bp{display:flex;flex-direction:column;justify-content:space-between;padding:8px 8px 7px;font-family:'Open Sans',sans-serif;background:var(--nude);color:var(--black)}
+.t.bp.k-T{background:var(--green);color:#fff}
+.t.bp.k-R{background:#2a2624;color:#fff}
+.t.bp .bw{font-size:9.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75}
+.t.bp .bg{font-family:'Cormorant Garamond',serif;font-size:clamp(17px,4.4cqw,24px);font-weight:600;line-height:1}
+.t.bp .bx{font-size:10.5px;line-height:1.25;opacity:.85}
+.t.bp .bk{position:absolute;top:7px;right:7px;font-size:9px;font-weight:700;border:1px solid currentColor;border-radius:8px;padding:0 5px;opacity:.8}
+.grid{container-type:inline-size}
+.bpl .prow{grid-template-columns:118px 1fr}
+.bpl .who{display:inline-block;font-size:11px;font-weight:700;border-radius:10px;padding:1px 8px;margin-right:4px;color:#fff;background:var(--taupe)}
+.need{color:var(--warn);font-size:12.5px;margin-top:4px}
+.bfopts{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin-top:10px}
+.bfopts button{border:2px solid transparent;border-radius:6px;padding:0;background:none;overflow:hidden;position:relative}
+.bfopts button.on{border-color:var(--green)}
+.bfopts img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.bfopts span{position:absolute;left:4px;top:4px;background:rgba(255,255,255,.92);font-size:10.5px;font-weight:700;border-radius:8px;padding:0 6px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px;font-size:12.5px}
+.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:5px}
 footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px;border-top:1px solid var(--line)}
 @container (max-width:520px){.prow{grid-template-columns:minmax(0,1fr);gap:10px}.opts{gap:6px}.opt{flex:1;width:auto;max-width:96px}}
 </style>
@@ -171,7 +190,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
 <header><div class="wrap">
   <div class="caps">Our planning board · Maria &amp; Claude</div>
   <h1>Chelmsford · 23 to 29 November</h1>
-  <p>14 posts, 2 a day. Compare the feed looks, see my plan, drag to swap, tap a post to see it full size.</p>
+  <p>14 posts, 2 a day. Start with the Blueprint (the 14 slots), then compare the feed looks. Drag to swap.</p>
   <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
 </div></header>
 
@@ -190,6 +209,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
     <div class="caps" id="tabcaps">Feed A</div>
     <h2 id="tabtitle">Editorial magazine</h2>
     <p class="lead" id="tablead"></p>
+    <div class="legend" id="legend"><span><i style="background:#2F4B3A"></i>Word poster (offer / review)</span><span><i style="background:#EFE6E0;border:1px solid #d8ccc3"></i>The girls' real work, clean</span><span><i style="background:#2a2624"></i>Reel</span></div>
     <div class="styles">
       <div class="sty"><b>A · Editorial</b><p>Full photo, thin forest green line, big Cormorant title on a paper panel.</p></div>
       <div class="sty"><b>B · Polaroid &amp; film</b><p>Hair photos as taped polaroids and film strips on soft paper.</p></div>
@@ -330,15 +350,37 @@ const FEEDS0={A:['Feed A','Editorial magazine','Every post as a full photo with 
  R:['My plan',"Claude's pick","7 of the 14 posts are the girls' real hair with just the logo, and 2 more are photo polaroids. Only the tiles with lots of words (the blow-dry offer, 3 tips and the review) are spread out so they never touch or line up: no checkerboard, no diagonal. The same girl never sits side by side, and both offers go out on Monday so they get the whole Black Friday week. Tap each post below to see why it gets its look."],
  M:['My mix','Pick per post','Choose A, B or C for each post in the list below. Your picks are saved on this device.']};
 
-const FEEDS={R:FEEDS0.R,A:FEEDS0.A,B:FEEDS0.B,C:FEEDS0.C,M:FEEDS0.M};
+/* BLUEPRINT (22 Nov): the 14 slots first, designs after. Like the guide's feed preview: mostly the girls' real work, only 3 word posters, never touching or in a line. Fair rotation. */
+const BP={
+ emmabf:{k:'T',g:'Emma',w:'Black Friday · £150 colour',x:'Offer poster, pick the design below',ty:'photo',ok:true},
+ money:{k:'P',g:'Rachael',w:'Halo money piece',x:'Clean photo + logo',ty:'carousel',ok:true},
+ violet:{k:'R',g:'Rachael',w:'Blonde to violet & magenta',x:'Reel',ty:'reel',ok:true},
+ restyle:{k:'P',g:'Claudia',w:'Big restyle',x:'Clean photo + logo',ty:'carousel',ok:false,need:'Check with Claudia this is a Chelmsford client'},
+ salon:{k:'R',g:'Team',w:'Walk into 76 Chelmsford',x:'Reel',ty:'reel',ok:true},
+ pkg:{k:'T',g:'Team',w:'Black Friday · blow-dry package £80',x:'Offer poster (ready to post)',ty:'photo',ok:true},
+ tip:{k:'P',g:'Learn',w:'Tip: why blonde turns brassy',x:'Photo-led cover, words inside the carousel',ty:'carousel',ok:true},
+ bob:{k:'P',g:'Emma',w:'The big chop (bob)',x:'Clean after, before on the last slide',ty:'carousel',ok:true},
+ emmafri:{k:'R',g:'Emma',w:"It's Black Friday · Emma's colours",x:'Reel of red, copper, blonde, brunette, £150 end card',ty:'reel',ok:true},
+ teddy:{k:'P',g:'Claudia',w:'Creamy teddy blonde',x:'Clean photo + logo',ty:'photo',ok:true},
+ review:{k:'T',g:'Kimmy',w:'Love notes: Karen',x:'Review on a paper panel',ty:'photo',ok:true},
+ kimwork:{k:'P',g:'Kimmy',w:"Kimmy's work",x:'Clean photo + logo',ty:'photo',ok:false,need:'Need a photo of Kimmy\'s own work (ask her for one)'},
+ team:{k:'P',g:'Team',w:'Team 76 / Christmas',x:'Team photo, festive',ty:'photo',ok:false,need:'Team photo (or the Santa wish lists when the girls answer)'},
+ copper:{k:'P',g:'Rachael',w:'Blonde to copper',x:'Clean after, before on slide 2',ty:'carousel',ok:true}};
+const BP_DEFAULT=['emmabf','money','violet','restyle','salon','pkg','tip','bob','emmafri','teddy','review','kimwork','team','copper'];
+const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Team:'#6B625C',Learn:'#4E6E83'};
+const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
+const FEEDS={P:['Blueprint','The 14 slots',"The plan before the designs. Like the feed preview Kimmy saw: mostly the girls' real work, and only 3 word posters (Emma's £150, the blow-dry package and a review), never touching and never in a row, column or diagonal. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Claudia 2, Kimmy 2, team 3, 1 tip. Emma's offer goes first thing Monday so it gets the whole week. Drag to swap."],R:FEEDS0.R,A:FEEDS0.A,B:FEEDS0.B,C:FEEDS0.C,M:FEEDS0.M};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 let order=LS.order&&LS.order.length===14?LS.order:[...DEFAULT];
 let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
-let tab=LS.tab||'R';
+let bpOrder=LS.bp&&LS.bp.length===14&&LS.bp.every(k=>BP[k])?LS.bp:[...BP_DEFAULT];
+let bfPick=LS.bf||'emma-fade-0';
+let tab=LS.bp&&LS.tab?LS.tab:'P';
 (()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
- if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t')})();
-const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({order,mix,tab}))}catch(e){}};
+ if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t');
+ if(h.get('b')){const b=h.get('b').split(',');if(b.length===14&&b.every(k=>BP[k]))bpOrder=b}if(h.get('f')&&BFO.some(x=>x[0]===h.get('f')))bfPick=h.get('f')})();
+const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({order,mix,tab,bp:bpOrder,bf:bfPick}))}catch(e){}};
 const $=s=>document.querySelector(s);
 const v=k=>tab==='M'?mix[k]:tab==='R'?RECO[k]:tab;
 const toMix=()=>{if(tab!=='M'){Object.keys(mix).forEach(k=>mix[k]=v(k));tab='M'}};
@@ -380,7 +422,36 @@ function renderPosts(){
   <div class="opts">${'ABCD'.split('').map(x=>`<button class="opt${v(k)===x?' on':''}" data-k="${k}" data-v="${x}"><img src="img/covers/${k}-${x}.jpg" alt="" loading="lazy"><span>${x}</span></button>`).join('')}</div></div>`}).join('');
  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{toMix();mix[b.dataset.k]=b.dataset.v;save();render()});
  document.querySelectorAll('.see').forEach(b=>b.onclick=()=>openPost(b.dataset.k))}
-function render(){renderTabs();renderGrid();renderChecks();renderPosts()}
+/* blueprint mode */
+const bpSlot=k=>SLOTS[bpOrder.indexOf(k)];
+function bpTile(k,i,flags){const b=BP[k],s=bpSlot(k);const icon=b.ty==='reel'?'Reel':b.ty==='carousel'?'Carousel':'';
+ return `<div class="t new bp k-${b.k}${flags&&flags.has(i)?' flag':''}" data-k="${k}">${icon?`<span class="bk">${icon}</span>`:''}<div class="bw">${s[0]} · ${s[1]}</div><div><div class="bg">${b.g==='Learn'?'Tip':b.g==='Team'?'Team 76':b.g}</div><div class="bx">${b.w}</div></div></div>`}
+function bpFlags(vis){const f=new Set();vis.forEach((k,i)=>vis.forEach((k2,j)=>{if(j<=i)return;const[a,b]=[Math.floor(i/3),i%3],[c,d]=[Math.floor(j/3),j%3];
+  const g1=BP[k].g,g2=BP[k2].g;if(g1===g2&&g1!=='Team'&&((a===c&&Math.abs(b-d)===1)||(b===d&&Math.abs(a-c)===1))){f.add(i);f.add(j)}}));return f}
+function bpLined(vis){const T=vis.map((k,i)=>BP[k].k==='T'?[Math.floor(i/3),i%3]:null).filter(Boolean);let bad=false;
+ for(let x=0;x<T.length;x++)for(let y=x+1;y<T.length;y++){const[a,b]=T[x],[c,d]=T[y];if(a===c||(b===d&&Math.abs(a-c)<=2)||(Math.abs(a-c)<=1&&Math.abs(b-d)<=1))bad=true}
+ if(T.length===3){const[[a1,b1],[a2,b2],[a3,b3]]=T;if((a2-a1)*(b3-b1)===(a3-a1)*(b2-b1))bad=true}return bad}
+function renderBP(){
+ const vis=[...bpOrder].reverse(),fl=bpFlags(vis);
+ const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
+ $('#grid').innerHTML=[1,2,3].map(old).join('')+vis.map((k,i)=>bpTile(k,i,fl)).join('')+[4,5,6,7,8,9].map(old).join('');
+ wireDrag();
+ const lined=bpLined(vis),gc={};Object.values(BP).forEach(b=>gc[b.g]=(gc[b.g]||0)+1);const need=bpOrder.filter(k=>!BP[k].ok);
+ $('#checks').innerHTML=[[fl.size===0,fl.size===0?'The same girl never sits next to herself':'Red outline: same girl side by side. Drag one away'],
+  [!lined,!lined?'Only 3 word posters, not touching and not in a row, column or diagonal':'Word posters touch or line up. Move one'],
+  [bpOrder.indexOf('emmabf')<=1,bpOrder.indexOf('emmabf')<=1?"Emma's £150 goes out Monday, so it gets the whole Black Friday week":"Move Emma's £150 back to Monday so it gets the whole week"],
+  [bpOrder.indexOf('pkg')<=7,bpOrder.indexOf('pkg')<=7?'Blow-dry package is up before Thursday night (paid by 28.11.26)':'Blow-dry package is late in the week. Move it earlier'],
+  [true,'Availability stays in Stories, never on the feed'],
+  [need.length===0,need.length?`${need.length} slots still need a photo (see the red notes below)`:'Every slot has its photo']]
+  .map(([ok,t])=>`<li class="${ok?'ok':'no'}">${ok?'✓':'!'} <span style="color:#333">${t}</span></li>`).join('');
+ $('#bal').innerHTML=Object.entries(gc).map(([k,n])=>`<span style="background:#E3ECE5">${k==='Learn'?'Tip':k} · ${n}</span>`).join('');
+ $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 9:30 am to Sun 7:30 pm (UK)</div><div class="bpl">`+bpOrder.map(k=>{const b=BP[k],s=bpSlot(k);
+  return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><span class="who" style="background:${GC[b.g]}">${b.g==='Learn'?'Tip':b.g}</span></div>
+  <div><b>${b.w}</b><span class="pill">${b.k==='T'?'Word poster':b.k==='R'?'Reel':b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
+  ${k==='emmabf'?`<div class="bfopts">${BFO.map(([f,l])=>`<button class="${f===bfPick?'on':''}" data-f="${f}"><img src="img/bf/${f}.jpg" alt="${l}" loading="lazy"><span>${l}</span></button>`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
+ document.querySelectorAll('.bfopts button').forEach(b=>b.onclick=()=>{bfPick=b.dataset.f;save();renderBP();toast(b.querySelector('span').textContent+' picked for Emma')})}
+function render(){renderTabs();const P=tab==='P';$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
+ ['#days','#reset'].forEach(s=>$(s).style.display=P?'none':'');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
 
 /* drag to swap (mouse + touch) */
 /* mouse: drag straight away. touch: press and hold ~0.35 s, then drag (a normal swipe still scrolls the page) */
@@ -392,7 +463,7 @@ function wireDrag(){
   el.onpointerdown=e=>{
    const touch=e.pointerType!=='mouse';if(!touch)e.preventDefault();
    const k=el.dataset.k,x0=e.clientX,y0=e.clientY;let ghost=null,over=null,armed=!touch,cancelled=false,lx=x0,ly=y0;
-   const start=()=>{DRAGGING=true;ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift');place(lx,ly);if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}};
+   const start=()=>{DRAGGING=true;ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=tab==='P'?bpTile(k,0).replace('class="t new','style="width:100%;height:100%" class="t'):`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift');place(lx,ly);if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}};
    const place=(x,y)=>{ghost.style.left=(x-60)+'px';ghost.style.top=(y-80)+'px';
     const t=document.elementFromPoint(x,y);const tt=t&&t.closest?t.closest('.t.new'):null;
     if(over&&over!==tt)over.classList.remove('over');over=tt&&tt!==el?tt:null;if(over)over.classList.add('over')};
@@ -404,7 +475,8 @@ function wireDrag(){
    const end=(quiet)=>{clearTimeout(hold);DRAGGING=false;window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);window.removeEventListener('pointercancel',cancel);
     if(ghost){ghost.remove();el.classList.remove('lift')}if(over)over.classList.remove('over');return !quiet};
    const up=()=>{const g=ghost,o=over;end();
-    if(!g){if(!cancelled)openPost(k);return}
+    if(!g){if(!cancelled&&tab!=='P')openPost(k);return}
+    if(o&&tab==='P'){const a=bpOrder.indexOf(k),b=bpOrder.indexOf(o.dataset.k);[bpOrder[a],bpOrder[b]]=[bpOrder[b],bpOrder[a]];save();render();toast('Swapped. Days and times updated.');return}
     if(o){const a=order.indexOf(k),b=order.indexOf(o.dataset.k);[order[a],order[b]]=[order[b],order[a]];save();render();toast('Swapped. Days and times updated.')}};
    const cancel=()=>{cancelled=true;end(true)};
    window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',cancel)}})}
@@ -457,8 +529,8 @@ document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))r
 
 /* actions */
 const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>el.classList.remove('on'),2600)};
-const link=()=>location.origin+location.pathname+'#o='+order.join(',')+'&m='+DEFAULT.map(k=>mix[k]).join('')+'&t='+tab;
-const planText=()=>`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
+const link=()=>location.origin+location.pathname+'#o='+order.join(',')+'&m='+DEFAULT.map(k=>mix[k]).join('')+'&t='+tab+'&b='+bpOrder.join(',')+'&f='+bfPick;
+const planText=()=>tab==='P'?`Seventy Six Chelmsford · 23-29 Nov · Blueprint\n`+bpOrder.map(k=>{const s=bpSlot(k),b=BP[k];return `${s[0]} ${s[1]} · ${b.g==='Learn'?'Tip':b.g} · ${b.w}`}).join('\n'):`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
 const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{prompt('Copy this:',t)})};
 $('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the chat.');
 $('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
