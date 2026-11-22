@@ -272,10 +272,10 @@ Available with all our stylists, except Nicky and Kimmy. Packages must be paid i
 To buy yours, ${BOOK}
 
 #seventysixsalon #blackfriday #blowdry #chelmsfordhair #essexhairdresser`},
- emmabf:{t:'Black Friday · £150 colour with Emma',g:'Emma',pil:'Offer',type:'carousel',n:4,cap:`Black Friday at 76 Chelmsford 🖤
+ emmabf:{t:'Black Friday · £150 colour with Emma',g:'Emma',pil:'Offer',type:'carousel',n:3,cap:`Black Friday at 76 Chelmsford 🖤
 This week only, Emma is treating you to any colour service for £150, with a cut, blow-dry and treatment all included ✨
 
-Lived-in blonde, bold red, glossy brunette or a full refresh. Swipe for a little inspo from Emma's chair ➡️
+Pretty pink, fiery red or golden caramel balayage. Swipe for a little inspo from Emma's chair ➡️
 
 To book with Emma, ${BOOK}
 
@@ -372,7 +372,7 @@ const FEEDS0={A:['Feed A','Editorial magazine','Every post as a full photo with 
 
 /* BLUEPRINT (22 Nov): the 14 slots first, designs after. Like the guide's feed preview: mostly the girls' real work, only 3 word posters, never touching or in a line. Fair rotation. */
 const BP={
- emmabf:{k:'T',c:'g',g:'Emma',w:'Black Friday · £150 colour',x:'Offer poster, pick the design below',ty:'photo',ok:true},
+ emmabf:{k:'T',g:'Emma',w:'Black Friday · £150 colour',x:'Carousel (ready): pink cover with the £150 stamp, fiery red, caramel balayage, Book with Emma on the 76 logo background',full:'img/wk/emmabf-1.jpg',ty:'carousel',ok:true},
  money:{k:'P',g:'Rachael',w:'Halo money piece',x:'Clean photo + logo',ty:'carousel',ok:true},
  violet:{k:'R',c:'b',g:'Rachael',w:'Blonde to violet & magenta',x:'Reel with a beige text box + swipe design',ty:'reel',ok:true},
  nano:{k:'P',g:'Extensions',w:'Reel: nano bonds, short to long',img:'img/guide-nano.jpg',x:"Ready-made reel from the social media guide (Kimmy's Drive), ends on the Team 76 card",ty:'reel',ok:true,need:'Claudia is off sick, so this fills her slot. Ask Kimmy who did the look if she wants a name on the end card'},
@@ -484,8 +484,8 @@ function renderBP(){
  $('#bal').innerHTML=Object.entries(gc).map(([k,n])=>`<span style="background:#E3ECE5">${k==='Learn'?'Tip':k} · ${n}</span>`).join('');
  $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 9:30 am to Sun 7:30 pm (UK)</div><div class="bpl">`+BPO().map(k=>{const b=BP[k],s=bpSlot(k);
   return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><span class="who" style="background:${GC[b.g]}">${b.g==='Learn'?'Tip':b.g}</span></div>
-  <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':'Graphic · beige'):b.k==='R'?(b.c==='g'?'Reel · green box':'Reel · beige box'):b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
-  ${k==='emmabf'?`<div class="bfopts">${BFO.map(([f,l])=>`<button class="${f===bfPick?'on':''}" data-f="${f}"><img src="img/bf/${f}.jpg" alt="${l}" loading="lazy"><span>${l}</span></button>`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
+  <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':b.c==='b'?'Graphic · beige':'Carousel · photo'):b.k==='R'?(b.c==='g'?'Reel · green box':'Reel · beige box'):b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
+  ${k==='emmabf'?`<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">${[1,2,3,4].map(i=>`<img src="img/wk/emmabf-${i}.jpg" alt="Slide ${i}" loading="lazy" style="width:72px;height:90px;object-fit:cover;border-radius:4px">`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
  document.querySelectorAll('.bfopts button').forEach(b=>b.onclick=()=>{bfPick=b.dataset.f;save();renderBP();toast(b.querySelector('span').textContent+' picked for Emma')})}
 function render(){renderTabs();const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
  $('#reset').style.display=P?'none':'';$('#days').textContent=(showDays?'Hide':'Show')+(P?' days & names':' days on tiles');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
