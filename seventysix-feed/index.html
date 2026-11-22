@@ -175,7 +175,7 @@ footer{text-align:center;padding:30px 16px 50px;color:var(--soft);font-size:13px
   <img src="img/logo-black.png" alt="Seventy Six Salon">
   <h1>Your feed for next week</h1>
   <div class="date">Monday 23 to Friday 27 November · tap any post to see it with its caption</div>
-  <div class="chips"><span>9 posts</span><span>2 a day</span><span>All from the girls' uploads</span><span>3 reels, 3 different edits</span></div>
+  <div class="chips"><span>10 posts</span><span>2 a day</span><span>All from the girls' uploads</span><span>3 reels, 3 different edits</span></div>
 </div></header>
 
 <section id="feeds"><div class="wrap">
@@ -184,7 +184,7 @@ footer{text-align:center;padding:30px 16px 50px;color:var(--soft);font-size:13px
   <p class="lead" style="margin:0 auto;text-align:center">Your 3 pinned posts stay on top. The new posts (green dates) slot in underneath, and the faded tiles are what's already on your page.</p>
   <div class="feeds">
     <div><div class="salon"><small>Chelmsford · 5 posts</small>@seventysixsalon</div><div class="ig" id="ig-chelm"></div></div>
-    <div><div class="salon"><small>Great Dunmow · 4 posts</small>@seventysixsalon_dunmow</div><div class="ig" id="ig-dun"></div></div>
+    <div><div class="salon"><small>Great Dunmow · 5 posts</small>@seventysixsalon_dunmow</div><div class="ig" id="ig-dun"></div></div>
   </div>
   <div class="legend">
     <span><svg width="16" height="16" viewBox="0 0 24 24"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" fill="#151515"/><path d="M10 9v6l5-3z" fill="#fff"/></svg>Reel</span>
@@ -243,7 +243,7 @@ const PAGES={
 const STYLIST={Rachael:'@hair_by.rachael',Emma:'@emma_oliver_hair',Claudia:'@hair.by.claudia.x',Madi:'@hair.bymadison_x',Gabs:'@styled.by.gabriella'};
 const S=(id,n)=>Array.from({length:n},(_,i)=>`img/${id}-${i+1}.jpg`);
 
-/* the 9 posts, in posting order */
+/* the 10 posts, in posting order */
 const POSTS=[
  {id:'rachael-moneypiece',page:'chelm',day:'Mon 23 Nov',time:'9:30 am',girl:'Rachael',type:'carousel',title:'Halo money piece',slides:S('rachael-moneypiece',3),client:'',
   cap:`Halo money piece ✨
@@ -252,6 +252,15 @@ A ring of soft blonde around the face, blended into our client's rich brunette. 
 Created by Rachael at 76 Salon Chelmsford 💛
 
 #seventysixsalon #moneypiece #faceframe #chelmsfordhair #essexhairdresser`},
+ {id:'madi-bf',page:'dun',day:'Mon 23 Nov',time:'9:30 am',girl:'Madi',type:'carousel',title:'Black Friday · £20 blow-dries with Madison',slides:S('madi-bf',4),client:'',
+  cap:`£20 blow-dries this Friday 💚
+Black Friday at 76 Dunmow! Madison is treating you to £20 blow-dries on Friday 27 November. Bouncy, glossy and ready for the weekend ✨
+
+Swipe for a little inspo from Madison's chair ➡️
+
+To book with Madison, WhatsApp or text the salon on 07432 027611, or email SeventySix.salon@outlook.com 💕
+
+#seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`},
  {id:'claudia-restyle',page:'dun',day:'Mon 23 Nov',time:'7:30 pm',girl:'Claudia',type:'carousel',title:'The inspo? Kat from MobLand',slides:S('claudia-restyle',4),client:'',
   cap:`The inspo? Kat from MobLand 🖤
 Our client brought the picture, and Claudia made it happen. A sharp, textured restyle that shows off those gorgeous silver tones.
@@ -339,7 +348,7 @@ $('#weekgrid').innerHTML=DAYS.map(d=>{const ps=POSTS.filter(p=>p.day===d);
 document.querySelectorAll('.slot').forEach(b=>b.onclick=()=>{const p=POSTS.find(x=>x.id===b.dataset.id);openPost(p.page,GRIDS[p.page].indexOf(p))});
 
 /* rotation */
-const ROT=[['Rachael',19,'Halo money piece · Violet & magenta reel'],['Emma',19,'The big chop · Walk into 76 reel'],['Claudia',6,'Kat from MobLand restyle · Creamy teddy blonde'],['Madison',5,'Rich glossy brunette · Remi Cachet nano bonds'],['Gabriella',1,'Bright blonde reel (one upload, one post)'],['Kimmy',0,''],['Leah',0,''],['Nicky',0,''],['Kelsey',0,''],['Emily',0,'']];
+const ROT=[['Rachael',19,'Halo money piece · Violet & magenta reel'],['Emma',19,'The big chop · Walk into 76 reel'],['Claudia',6,'Kat from MobLand restyle · Creamy teddy blonde'],['Madison',5,'Black Friday £20 blow-dries · Rich glossy brunette · Remi Cachet nano bonds'],['Gabriella',1,'Bright blonde reel (one upload, one post)'],['Kimmy',0,''],['Leah',0,''],['Nicky',0,''],['Kelsey',0,''],['Emily',0,'']];
 $('#rotbody').innerHTML=ROT.map(([n,u,w])=>{const k=u?(n==='Gabriella'?1:2):0;return `<tr><td>${n}</td><td><span class="dots">${'<i></i>'.repeat(k)}${'<i class="e"></i>'.repeat(2-k)}</span> ${k}</td><td class="hide">${u?u+' upload'+(u>1?'s':''):'<span class="muted">None yet</span>'}</td><td>${w||'<span class="muted">Nothing sent this week, so first in line next week</span>'}</td></tr>`}).join('');
 
 /* popup */
