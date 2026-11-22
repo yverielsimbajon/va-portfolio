@@ -64,8 +64,8 @@ header p{color:#4A423D;margin-top:8px}
 /* side */
 .side h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;line-height:1.1;margin:6px 0 8px}
 .lead{color:#4A423D;max-width:620px}
-.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
-@media(max-width:560px){.styles{grid-template-columns:1fr}}
+.styles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:1100px){.styles{grid-template-columns:1fr 1fr}}
 .sty{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
 .sty b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;display:block;line-height:1.1}
 .sty p{font-size:13px;color:var(--soft);margin-top:4px}
@@ -87,7 +87,7 @@ header p{color:#4A423D;margin-top:8px}
 .prow b{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;display:block;line-height:1.15}
 .pill{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--nude);border-radius:10px;padding:1px 7px;margin-top:4px}
 .opts{display:flex;gap:8px}
-.opt{position:relative;width:74px;border:2px solid transparent;border-radius:6px;padding:0;background:none;overflow:hidden}
+.opt{position:relative;width:64px;border:2px solid transparent;border-radius:6px;padding:0;background:none;overflow:hidden}
 .opt img{aspect-ratio:4/5;object-fit:cover;width:100%}
 .opt span{position:absolute;left:4px;top:4px;background:rgba(255,255,255,.92);font-size:11px;font-weight:700;border-radius:8px;padding:0 6px}
 .opt.on{border-color:var(--green)}
@@ -124,7 +124,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
 <header><div class="wrap">
   <div class="caps">Seventy Six · Feed planner</div>
   <h1>Chelmsford · 23 to 29 November</h1>
-  <p>14 posts, 2 a day. Three looks to choose from. Drag any new post to swap it, tap to see it full size.</p>
+  <p>14 posts, 2 a day. Four looks to choose from, plus my recommended mix. Drag any new post to swap it, tap to see it full size.</p>
   <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
 </div></header>
 
@@ -147,6 +147,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
       <div class="sty"><b>A · Editorial</b><p>Full photo, thin forest green line, big Cormorant title on a paper panel.</p></div>
       <div class="sty"><b>B · Polaroid &amp; film</b><p>Hair photos as taped polaroids and film strips on soft paper.</p></div>
       <div class="sty"><b>C · Swatch cards</b><p>Arched photo with shade chips taken from the real hair colour.</p></div>
+      <div class="sty"><b>D · Clean</b><p>Just the photo and the small 76 logo. The words go in the caption.</p></div>
     </div>
     <div class="actions">
       <button class="btn" id="choose">I choose this feed</button>
@@ -265,9 +266,11 @@ Swipe to see what's on the wish lists at 76 this year…
 /* default posting order Mon 9:30 am → Sun 7:30 pm (chosen so the feed has no lines or diagonals) */
 const DEFAULT=['pkg','emmabf','brassy','bob','money','teddy','week','hotroots','violet','salon','copper','bleach','santa','review'];
 const SLOTS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[[d,'9:30 am'],[d,'7:30 pm']]);
+const RECO={review:'A',santa:'B',bleach:'C',copper:'B',salon:'D',violet:'D',hotroots:'A',week:'B',teddy:'D',money:'D',bob:'D',brassy:'C',emmabf:'A',pkg:'C'};
 const FEEDS={A:['Feed A','Editorial magazine','Every post as a full photo with a paper panel and a thin forest green line. Closest to the look Kimmy already picked.'],
  B:['Feed B','Polaroid & film','Taped polaroids and film strips on soft paper. Feels personal and arty, like a moodboard.'],
  C:['Feed C','Swatch cards','An arched photo with shade chips taken from the real hair colour. Very "colour expert".'],
+ R:['Recommended',"Maria's pick","My recommendation: mostly clean photos with just the logo, so the girls' work leads (Kimmy's picture-led rule). Editorial for the offers and one tip, polaroids for the team and before & afters, swatch cards for the colour science. No two looks line up."],
  M:['My mix','Pick per post','Choose A, B or C for each post in the list below. Your picks are saved on this device.']};
 
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm')||'{}')}catch(e){}
@@ -275,10 +278,11 @@ let order=LS.order&&LS.order.length===14?LS.order:[...DEFAULT];
 let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
 let tab=LS.tab||'A';
 (()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
- if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABC'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t')})();
+ if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t')})();
 const save=()=>{try{localStorage.setItem('76plan-chelm',JSON.stringify({order,mix,tab}))}catch(e){}};
 const $=s=>document.querySelector(s);
-const v=k=>tab==='M'?mix[k]:tab;
+const v=k=>tab==='M'?mix[k]:tab==='R'?RECO[k]:tab;
+const toMix=()=>{if(tab!=='M'){Object.keys(mix).forEach(k=>mix[k]=v(k));tab='M'}};
 const cover=k=>`img/covers/${k}-${v(k)}.jpg`;
 const ICO={reel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm6 6v6l5-3z"/></svg>',carousel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v13h13" fill="none" stroke="#fff" stroke-width="2"/></svg>',photo:''};
 const slotOf=k=>SLOTS[order.indexOf(k)];
@@ -286,7 +290,7 @@ const slotOf=k=>SLOTS[order.indexOf(k)];
 function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
  const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];
- $('#choose').textContent=tab==='M'?'I choose my mix':`I choose ${f[0]}`}
+ $('#choose').textContent=tab==='M'?'I choose my mix':tab==='R'?"I choose Maria's pick":`I choose ${f[0]}`}
 function renderGrid(){
  const vis=[...order].reverse(); // newest top-left
  const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""><span class="d">${n<=3?'Pinned':'On your page'}</span></div>`;
@@ -315,8 +319,8 @@ function renderChecks(){
 function renderPosts(){
  $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">All 14 posts · ${tab==='M'?'tap a design to pick it':'tap a design to start your own mix'}</div>`+order.map(k=>{const p=POSTS[k],s=slotOf(k);
   return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><b>${p.t}</b><span class="pill">${p.pil}</span><br><button class="see" data-k="${k}">See post &amp; caption</button></div>
-  <div class="opts">${'ABC'.split('').map(x=>`<button class="opt${v(k)===x?' on':''}" data-k="${k}" data-v="${x}"><img src="img/covers/${k}-${x}.jpg" alt="" loading="lazy"><span>${x}</span></button>`).join('')}</div></div>`}).join('');
- document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(tab!=='M'){Object.keys(mix).forEach(k=>mix[k]=tab);tab='M'}mix[b.dataset.k]=b.dataset.v;save();render()});
+  <div class="opts">${'ABCD'.split('').map(x=>`<button class="opt${v(k)===x?' on':''}" data-k="${k}" data-v="${x}"><img src="img/covers/${k}-${x}.jpg" alt="" loading="lazy"><span>${x}</span></button>`).join('')}</div></div>`}).join('');
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{toMix();mix[b.dataset.k]=b.dataset.v;save();render()});
  document.querySelectorAll('.see').forEach(b=>b.onclick=()=>openPost(b.dataset.k))}
 function render(){renderTabs();renderGrid();renderChecks();renderPosts()}
 
@@ -342,10 +346,10 @@ function openPost(k){cur=k;const p=POSTS[k],s=slotOf(k),vv=v(k);
   :`<div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="">`).join('')}</div>${imgs.length>1?`<button class="ar p" id="ap">‹</button><button class="ar n" id="an">›</button><div class="dots">${imgs.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div>`:''}`;
  $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
   <div class="ph"><div class="pav"><img src="img/logo-black.png" alt=""></div><div><b>seventysixsalon</b><div style="font-size:12px;color:#737373">${s[0]} · ${s[1]} UK · ${p.pil}</div></div></div>
-  <div class="pv">Cover design: ${'ABC'.split('').map(x=>`<button data-v="${x}" class="${x===vv?'on':''}">${x}</button>`).join('')}${p.type==='reel'?'<span>(reel cover)</span>':''}</div>
+  <div class="pv">Cover design: ${'ABCD'.split('').map(x=>`<button data-v="${x}" class="${x===vv?'on':''}">${x}</button>`).join('')}${p.type==='reel'?'<span>(reel cover)</span>':''}</div>
   <div class="pb">${p.draft?`<div class="draft">${p.draft}</div>`:''}<b>seventysixsalon</b> ${p.cap.replace(/&/g,'&amp;').replace(/</g,'&lt;')}${p.tag?`<div class="tg"><b>Collab / tag:</b> ${p.tag}</div>`:''}</div></div>`;
  $('#pop').classList.add('on');document.body.style.overflow='hidden';
- document.querySelectorAll('.pv button').forEach(b=>b.onclick=()=>{if(tab!=='M'){Object.keys(mix).forEach(x=>mix[x]=tab);tab='M'}mix[k]=b.dataset.v;save();render();openPost(k)});
+ document.querySelectorAll('.pv button').forEach(b=>b.onclick=()=>{toMix();mix[k]=b.dataset.v;save();render();openPost(k)});
  const tk=$('#tk');if(tk&&imgs.length>1){const dots=[...document.querySelectorAll('.pm .dots i')];
   tk.onscroll=()=>{const i=Math.round(tk.scrollLeft/tk.clientWidth);dots.forEach((d,j)=>d.classList.toggle('on',j===i))};
   $('#ap').onclick=()=>tk.scrollBy({left:-tk.clientWidth,behavior:'smooth'});$('#an').onclick=()=>tk.scrollBy({left:tk.clientWidth,behavior:'smooth'})}}
@@ -360,7 +364,7 @@ const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promi
 $('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the chat.');
 $('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
 $('#reset').onclick=()=>{order=[...DEFAULT];save();render();toast('Back to the suggested order.')};
-$('#choose').onclick=()=>{const t=`Hi Maria! For Chelmsford I choose ${tab==='M'?'my mix':FEEDS[tab][0]+' ('+FEEDS[tab][1]+')'}.\n${link()}`;
+$('#choose').onclick=()=>{const t=`Hi Maria! For Chelmsford I choose ${tab==='M'?'my mix':tab==='R'?"your recommended mix (Maria's pick)":FEEDS[tab][0]+' ('+FEEDS[tab][1]+')'}.\n${link()}`;
  window.open('https://wa.me/639094928860?text='+encodeURIComponent(t),'_blank')};
 render();
 </script>
