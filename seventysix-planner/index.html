@@ -164,6 +164,11 @@ header p{color:#4A423D;margin-top:8px}
  .pm video{max-height:70vh}
 }
 /* blueprint */
+.t.bp .tag,.t.ph .tag{position:absolute;left:5px;top:5px;z-index:3;display:flex;align-items:center;gap:3px;background:rgba(255,255,255,.94);color:#222;font-family:'Open Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.02em;line-height:1;border-radius:7px;padding:2px 5px 2px 3px;white-space:nowrap;box-shadow:0 0 0 .5px rgba(0,0,0,.15)}
+.tag i{display:inline-block;width:7px;height:7px;border-radius:50%;border:1px solid rgba(0,0,0,.25)}
+.tag i.g{background:#2F4B3A}.tag i.b{background:#EFE6E0}.tag i.p{background:linear-gradient(135deg,#c9a27a,#6b4a35)}
+.t.bp .tag+.lab,.t.ph .tag~.lab{top:21px}
+.t.bp.k-T{padding-top:22px}
 .t.bp{display:flex;flex-direction:column;justify-content:space-between;padding:8px 8px 7px;font-family:'Open Sans',sans-serif;background:var(--nude);color:var(--black)}
 .t.bp.c-g{background:var(--green);color:#fff}
 .t.bp.c-b{background:#EFE6E0;color:var(--black)}
@@ -445,13 +450,15 @@ function renderPosts(){
  document.querySelectorAll('.see').forEach(b=>b.onclick=()=>openPost(b.dataset.k))}
 /* blueprint mode */
 const bpSlot=k=>SLOTS[BPO().indexOf(k)];
+const TAGN={emmabf:'Black Friday',pkg:'Black Friday',emmafri:'Black Friday',review:'Reviews',tip:'Tips'};
+function bpTag(k){const b=BP[k],n=TAGN[k]||(b.g==='Team'?'Team':b.g),c=b.c||'p',cw=b.c==='g'?' · green':b.c==='b'?' · beige':' · photo';return `<span class="tag"><i class="${c}"></i>${n}${cw}</span>`}
 const TT={violet:['Violet & magenta','with Rachael'],salon:['Walk into 76','Chelmsford'],emmafri:["It's Black Friday",'£150 colour · Emma'],emmabf:['Black Friday','£150 colour · with Emma'],pkg:['4 blow-dries £80','Black Friday · save £60'],review:['“Love notes”','Karen · 5 stars']};
 function bpTile(k,i,flags){const b=BP[k],s=bpSlot(k),f=flags&&flags.has(i)?' flag':'',who=b.g==='Learn'?'Tip':b.g==='Team'?'Team 76':b.g;
  if(b.k==='T'){const lg=b.c==='g'?'logo-white':'logo-black';
-  return `<div class="t new bp k-T c-${b.c}${f}" data-k="${k}"><div class="lab">${showDays?`${s[0]} · ${s[1]} · ${who}`:'&nbsp;'}</div><div><div class="bg">${TT[k][0]}</div><div class="bx" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(11px,3.4cqw,16px)">${TT[k][1]}</div></div><img class="blg" src="img/${lg}.png" alt=""></div>`}
+  return `<div class="t new bp k-T c-${b.c}${f}" data-k="${k}">${bpTag(k)}<div class="lab">${showDays?`${s[0]} · ${s[1]} · ${who}`:'&nbsp;'}</div><div><div class="bg">${TT[k][0]}</div><div class="bx" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(11px,3.4cqw,16px)">${TT[k][1]}</div></div><img class="blg" src="img/${lg}.png" alt=""></div>`}
  if(b.k==='R'){const lg=b.c==='g'?'logo-white':'logo-black';
-  return `<div class="t new bp ph rl${f}" data-k="${k}"><img class="s" src="img/sample-photo.jpg" alt="">${ICO.reel}${showDays?`<span class="lab">${s[0]} · ${s[1]} · ${who}</span>`:''}<div class="rbox c-${b.c}"><div><div class="rt">${TT[k][0]}</div><div class="rs">${TT[k][1]}</div></div><img src="img/${lg}.png" alt=""></div></div>`}
- return `<div class="t new bp ph${f}" data-k="${k}"><img class="s" src="img/sample-photo.jpg" alt="">${ICO[b.ty]}${showDays?`<span class="lab">${s[0]} · ${s[1]} · ${who}</span>`:''}<img class="blg" src="img/logo-black.png" alt=""></div>`}
+  return `<div class="t new bp ph rl${f}" data-k="${k}"><img class="s" src="img/sample-photo.jpg" alt="">${bpTag(k)}${ICO.reel}${showDays?`<span class="lab">${s[0]} · ${s[1]} · ${who}</span>`:''}<div class="rbox c-${b.c}"><div><div class="rt">${TT[k][0]}</div><div class="rs">${TT[k][1]}</div></div><img src="img/${lg}.png" alt=""></div></div>`}
+ return `<div class="t new bp ph${f}" data-k="${k}"><img class="s" src="img/sample-photo.jpg" alt="">${bpTag(k)}${ICO[b.ty]}${showDays?`<span class="lab">${s[0]} · ${s[1]} · ${who}</span>`:''}<img class="blg" src="img/logo-black.png" alt=""></div>`}
 function bpFlags(vis){const f=new Set();vis.forEach((k,i)=>vis.forEach((k2,j)=>{if(j<=i)return;const[a,b]=[Math.floor(i/3),i%3],[c,d]=[Math.floor(j/3),j%3];
   const g1=BP[k].g,g2=BP[k2].g;if(g1===g2&&g1!=='Team'&&((a===c&&Math.abs(b-d)===1)||(b===d&&Math.abs(a-c)===1))){f.add(i);f.add(j)}}));return f}
 function bpColour(vis){let bad=false;vis.forEach((k,i)=>vis.forEach((k2,j)=>{if(j<=i||!BP[k].c||BP[k].c!==BP[k2].c)return;if(Math.abs(Math.floor(i/3)-Math.floor(j/3))<=1&&Math.abs(i%3-j%3)<=1)bad=true}));return bad}
