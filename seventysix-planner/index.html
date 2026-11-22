@@ -189,6 +189,13 @@ header p{color:#4A423D;margin-top:8px}
 .bfopts button.on{border-color:var(--green)}
 .bfopts img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .bfopts span{position:absolute;left:4px;top:4px;background:rgba(255,255,255,.92);font-size:10.5px;font-weight:700;border-radius:8px;padding:0 6px}
+.grp{flex:none;align-self:center;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:0 4px 0 10px;line-height:1.3;border-left:2px solid var(--green)}
+.grp b{font-family:'Cormorant Garamond',serif;font-size:17px;letter-spacing:0;text-transform:none;color:var(--green)}
+.t.rl .rbox{position:absolute;left:6%;right:6%;bottom:6%;padding:6px 7px;display:flex;align-items:flex-end;justify-content:space-between;gap:4px}
+.rbox.c-g{background:var(--green);color:#fff}.rbox.c-b{background:#EFE6E0;color:var(--black)}
+.rbox .rt{font-family:'Cormorant Garamond',serif;font-size:clamp(11px,3.6cqw,19px);font-weight:600;line-height:1}
+.rbox .rs{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(9px,2.6cqw,13px);line-height:1.1;margin-top:2px}
+.t.bp.rl .rbox img{position:static;width:auto;height:clamp(14px,4.6cqw,26px);flex:none;object-fit:contain}
 .legend{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px;font-size:12.5px}
 .legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:5px}
 footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px;border-top:1px solid var(--line)}
@@ -218,7 +225,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
     <div class="caps" id="tabcaps">Feed A</div>
     <h2 id="tabtitle">Editorial magazine</h2>
     <p class="lead" id="tablead"></p>
-    <div class="legend" id="legend"><span><i style="background:#2F4B3A"></i><i style="background:#EFE6E0;border:1px solid #d8ccc3"></i>Graphic design post (green or beige)</span><span><i style="background:url(img/sample-photo.jpg) center/cover"></i>Photo only + small 76 logo (sample photo, the real one goes in later)</span></div>
+    <div class="legend" id="legend"><span><i style="background:#2F4B3A"></i><i style="background:#EFE6E0;border:1px solid #d8ccc3"></i>Graphic post or reel text box (green or beige)</span><span><i style="background:url(img/sample-photo.jpg) center/cover"></i>Photo only + small 76 logo (sample photo for now)</span></div>
     <div class="styles">
       <div class="sty"><b>A · Editorial</b><p>Full photo, thin forest green line, big Cormorant title on a paper panel.</p></div>
       <div class="sty"><b>B · Polaroid &amp; film</b><p>Hair photos as taped polaroids and film strips on soft paper.</p></div>
@@ -363,33 +370,38 @@ const FEEDS0={A:['Feed A','Editorial magazine','Every post as a full photo with 
 const BP={
  emmabf:{k:'T',c:'g',g:'Emma',w:'Black Friday · £150 colour',x:'Offer poster, pick the design below',ty:'photo',ok:true},
  money:{k:'P',g:'Rachael',w:'Halo money piece',x:'Clean photo + logo',ty:'carousel',ok:true},
- violet:{k:'R',g:'Rachael',w:'Blonde to violet & magenta',x:'Reel',ty:'reel',ok:true},
+ violet:{k:'R',c:'b',g:'Rachael',w:'Blonde to violet & magenta',x:'Reel with a beige text box + swipe design',ty:'reel',ok:true},
  restyle:{k:'P',g:'Claudia',w:'Big restyle',x:'Clean photo + logo',ty:'carousel',ok:false,need:'Check with Claudia this is a Chelmsford client'},
- salon:{k:'R',g:'Team',w:'Walk into 76 Chelmsford',x:'Reel',ty:'reel',ok:true},
+ salon:{k:'R',c:'g',g:'Team',w:'Walk into 76 Chelmsford',x:'Reel with a green text box + swipe design',ty:'reel',ok:true},
  pkg:{k:'T',c:'b',g:'Team',w:'Black Friday · blow-dry package £80',x:'Offer poster (ready to post)',ty:'photo',ok:true},
  tip:{k:'P',g:'Learn',w:'Tip: why blonde turns brassy',x:'Photo-led cover, words inside the carousel',ty:'carousel',ok:true},
  bob:{k:'P',g:'Emma',w:'The big chop (bob)',x:'Clean after, before on the last slide',ty:'carousel',ok:true},
- emmafri:{k:'R',g:'Emma',w:"It's Black Friday · Emma's colours",x:'Reel of red, copper, blonde, brunette, £150 end card',ty:'reel',ok:true},
+ emmafri:{k:'R',c:'g',g:'Emma',w:"It's Black Friday · Emma's colours",x:'Reel of red, copper, blonde, brunette, green text box, £150 end card',ty:'reel',ok:true},
  teddy:{k:'P',g:'Claudia',w:'Creamy teddy blonde',x:'Clean photo + logo',ty:'photo',ok:true},
  review:{k:'T',c:'b',g:'Kimmy',w:'Love notes: Karen',x:'Review on a paper panel',ty:'photo',ok:true},
  kimwork:{k:'P',g:'Kimmy',w:"Kimmy's work",x:'Clean photo + logo',ty:'photo',ok:false,need:'Need a photo of Kimmy\'s own work (ask her for one)'},
  team:{k:'P',g:'Team',w:'Team 76 / Christmas',x:'Team photo, festive',ty:'photo',ok:false,need:'Team photo (or the Santa wish lists when the girls answer)'},
  copper:{k:'P',g:'Rachael',w:'Blonde to copper',x:'Clean after, before on slide 2',ty:'carousel',ok:true}};
-const BP_DEFAULT=['emmabf','money','violet','restyle','salon','pkg','tip','bob','emmafri','teddy','review','kimwork','team','copper'];
+const BP_OPTS={P1:['emmabf','violet','tip','restyle','kimwork','pkg','money','salon','emmafri','team','review','copper','teddy','bob'],
+ P2:['emmabf','tip','bob','team','money','pkg','kimwork','salon','emmafri','copper','restyle','violet','teddy','review'],
+ P3:['emmabf','kimwork','copper','teddy','violet','pkg','money','bob','emmafri','restyle','review','team','tip','salon']};
 const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Team:'#6B625C',Learn:'#4E6E83'};
 const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
-const FEEDS={P:['Blueprint','The 14 slots',"The plan before the designs, so we can see how the feed will look. 11 posts are photo only with the small 76 logo (shown here with one sample photo of Claudia's balayage; each slot gets its real photo later). Only 3 are graphic design posts in green or beige (Emma's £150, the blow-dry package and a review), never touching and never in a row, column or diagonal. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Claudia 2, Kimmy 2, team 3, 1 tip. Emma's offer goes first thing Monday so it gets the whole week. Drag to swap."],R:FEEDS0.R,A:FEEDS0.A,B:FEEDS0.B,C:FEEDS0.C,M:FEEDS0.M};
+const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Claudia 2, Kimmy 2, team 3, 1 tip. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P2:['Blueprint 2','Review up top',"Karen's review and Rachael's violet reel close the week at the top, so new visitors see a love note first. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Claudia 2, Kimmy 2, team 3, 1 tip. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the walk into 76 Chelmsford reel at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Claudia 2, Kimmy 2, team 3, 1 tip. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],R:FEEDS0.R,A:FEEDS0.A,B:FEEDS0.B,C:FEEDS0.C,M:FEEDS0.M};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 let order=LS.order&&LS.order.length===14?LS.order:[...DEFAULT];
 let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
-let bpOrder=LS.bp&&LS.bp.length===14&&LS.bp.every(k=>BP[k])?LS.bp:[...BP_DEFAULT];
+const okO=o=>o&&o.length===14&&o.every(k=>BP[k]);
+let bpOrders=Object.fromEntries(Object.entries(BP_OPTS).map(([k,o])=>[k,LS.bps&&okO(LS.bps[k])?LS.bps[k]:[...o]]));
 let bfPick=LS.bf||'emma-fade-0';
-let tab=LS.bp&&LS.tab?LS.tab:'P';
+let tab=LS.bps&&LS.tab&&FEEDS[LS.tab]?LS.tab:'P1';
+const isBP=()=>tab[0]==='P';
+const BPO=()=>bpOrders[isBP()?tab:'P1'];
 (()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
  if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t');
- if(h.get('b')){const b=h.get('b').split(',');if(b.length===14&&b.every(k=>BP[k]))bpOrder=b}if(h.get('f')&&BFO.some(x=>x[0]===h.get('f')))bfPick=h.get('f')})();
-const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({order,mix,tab,bp:bpOrder,bf:bfPick}))}catch(e){}};
+ if(h.get('b')){const b=h.get('b').split(',');if(okO(b)&&BP_OPTS[tab])bpOrders[tab]=b}if(h.get('f')&&BFO.some(x=>x[0]===h.get('f')))bfPick=h.get('f')})();
+const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({order,mix,tab,bps:bpOrders,bf:bfPick}))}catch(e){}};
 const $=s=>document.querySelector(s);
 const v=k=>tab==='M'?mix[k]:tab==='R'?RECO[k]:tab;
 const toMix=()=>{if(tab!=='M'){Object.keys(mix).forEach(k=>mix[k]=v(k));tab='M'}};
@@ -397,7 +409,7 @@ const cover=k=>`img/covers/${k}-${v(k)}.jpg`;
 const ICO={reel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm6 6v6l5-3z"/></svg>',carousel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v13h13" fill="none" stroke="#fff" stroke-width="2"/></svg>',photo:''};
 const slotOf=k=>SLOTS[order.indexOf(k)];
 
-function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
+function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>(k==='P1'?'<span class="grp">Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
  const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];}
 function renderGrid(){
@@ -432,37 +444,41 @@ function renderPosts(){
  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{toMix();mix[b.dataset.k]=b.dataset.v;save();render()});
  document.querySelectorAll('.see').forEach(b=>b.onclick=()=>openPost(b.dataset.k))}
 /* blueprint mode */
-const bpSlot=k=>SLOTS[bpOrder.indexOf(k)];
-const TT={emmabf:['Black Friday','£150 colour · with Emma'],pkg:['4 blow-dries £80','Black Friday · save £60'],review:['“Love notes”','Karen · 5 stars']};
+const bpSlot=k=>SLOTS[BPO().indexOf(k)];
+const TT={violet:['Violet & magenta','with Rachael'],salon:['Walk into 76','Chelmsford'],emmafri:["It's Black Friday",'£150 colour · Emma'],emmabf:['Black Friday','£150 colour · with Emma'],pkg:['4 blow-dries £80','Black Friday · save £60'],review:['“Love notes”','Karen · 5 stars']};
 function bpTile(k,i,flags){const b=BP[k],s=bpSlot(k),f=flags&&flags.has(i)?' flag':'',who=b.g==='Learn'?'Tip':b.g==='Team'?'Team 76':b.g;
  if(b.k==='T'){const lg=b.c==='g'?'logo-white':'logo-black';
   return `<div class="t new bp k-T c-${b.c}${f}" data-k="${k}"><div class="lab">${showDays?`${s[0]} · ${s[1]} · ${who}`:'&nbsp;'}</div><div><div class="bg">${TT[k][0]}</div><div class="bx" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(11px,3.4cqw,16px)">${TT[k][1]}</div></div><img class="blg" src="img/${lg}.png" alt=""></div>`}
+ if(b.k==='R'){const lg=b.c==='g'?'logo-white':'logo-black';
+  return `<div class="t new bp ph rl${f}" data-k="${k}"><img class="s" src="img/sample-photo.jpg" alt="">${ICO.reel}${showDays?`<span class="lab">${s[0]} · ${s[1]} · ${who}</span>`:''}<div class="rbox c-${b.c}"><div><div class="rt">${TT[k][0]}</div><div class="rs">${TT[k][1]}</div></div><img src="img/${lg}.png" alt=""></div></div>`}
  return `<div class="t new bp ph${f}" data-k="${k}"><img class="s" src="img/sample-photo.jpg" alt="">${ICO[b.ty]}${showDays?`<span class="lab">${s[0]} · ${s[1]} · ${who}</span>`:''}<img class="blg" src="img/logo-black.png" alt=""></div>`}
 function bpFlags(vis){const f=new Set();vis.forEach((k,i)=>vis.forEach((k2,j)=>{if(j<=i)return;const[a,b]=[Math.floor(i/3),i%3],[c,d]=[Math.floor(j/3),j%3];
   const g1=BP[k].g,g2=BP[k2].g;if(g1===g2&&g1!=='Team'&&((a===c&&Math.abs(b-d)===1)||(b===d&&Math.abs(a-c)===1))){f.add(i);f.add(j)}}));return f}
+function bpColour(vis){let bad=false;vis.forEach((k,i)=>vis.forEach((k2,j)=>{if(j<=i||!BP[k].c||BP[k].c!==BP[k2].c)return;if(Math.abs(Math.floor(i/3)-Math.floor(j/3))<=1&&Math.abs(i%3-j%3)<=1)bad=true}));return bad}
 function bpLined(vis){const T=vis.map((k,i)=>BP[k].k==='T'?[Math.floor(i/3),i%3]:null).filter(Boolean);let bad=false;
  for(let x=0;x<T.length;x++)for(let y=x+1;y<T.length;y++){const[a,b]=T[x],[c,d]=T[y];if(a===c||(b===d&&Math.abs(a-c)<=2)||(Math.abs(a-c)<=1&&Math.abs(b-d)<=1))bad=true}
  if(T.length===3){const[[a1,b1],[a2,b2],[a3,b3]]=T;if((a2-a1)*(b3-b1)===(a3-a1)*(b2-b1))bad=true}return bad}
 function renderBP(){
- const vis=[...bpOrder].reverse(),fl=bpFlags(vis);
+ const vis=[...BPO()].reverse(),fl=bpFlags(vis);
  const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+vis.map((k,i)=>bpTile(k,i,fl)).join('')+[4,5,6,7,8,9].map(old).join('');
  wireDrag();
- const lined=bpLined(vis),gc={};Object.values(BP).forEach(b=>gc[b.g]=(gc[b.g]||0)+1);const need=bpOrder.filter(k=>!BP[k].ok);
+ const lined=bpLined(vis),gc={};Object.values(BP).forEach(b=>gc[b.g]=(gc[b.g]||0)+1);const need=BPO().filter(k=>!BP[k].ok);
  $('#checks').innerHTML=[[fl.size===0,fl.size===0?'The same girl never sits next to herself':'Red outline: same girl side by side. Drag one away'],
   [!lined,!lined?'Only 3 graphic posts, not touching and not in a row, column or diagonal':'Graphic posts touch or line up. Move one'],
-  [bpOrder.indexOf('emmabf')<=1,bpOrder.indexOf('emmabf')<=1?"Emma's £150 goes out Monday, so it gets the whole Black Friday week":"Move Emma's £150 back to Monday so it gets the whole week"],
-  [bpOrder.indexOf('pkg')<=7,bpOrder.indexOf('pkg')<=7?'Blow-dry package is up before Thursday night (paid by 28.11.26)':'Blow-dry package is late in the week. Move it earlier'],
+  [BPO().indexOf('emmabf')<=1,BPO().indexOf('emmabf')<=1?"Emma's £150 goes out Monday, so it gets the whole Black Friday week":"Move Emma's £150 back to Monday so it gets the whole week"],
+  [BPO().indexOf('pkg')<=7,BPO().indexOf('pkg')<=7?'Blow-dry package is up before Thursday night (paid by 28.11.26)':'Blow-dry package is late in the week. Move it earlier'],
+  [!bpColour(vis),!bpColour(vis)?'Two greens or two beiges never touch (posts and reel boxes)':'Two tiles of the same colour touch. Drag one away'],
   [true,'Availability stays in Stories, never on the feed'],
   [need.length===0,need.length?`${need.length} slots still need a photo (see the red notes below)`:'Every slot has its photo']]
   .map(([ok,t])=>`<li class="${ok?'ok':'no'}">${ok?'✓':'!'} <span style="color:#333">${t}</span></li>`).join('');
  $('#bal').innerHTML=Object.entries(gc).map(([k,n])=>`<span style="background:#E3ECE5">${k==='Learn'?'Tip':k} · ${n}</span>`).join('');
- $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 9:30 am to Sun 7:30 pm (UK)</div><div class="bpl">`+bpOrder.map(k=>{const b=BP[k],s=bpSlot(k);
+ $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 9:30 am to Sun 7:30 pm (UK)</div><div class="bpl">`+BPO().map(k=>{const b=BP[k],s=bpSlot(k);
   return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><span class="who" style="background:${GC[b.g]}">${b.g==='Learn'?'Tip':b.g}</span></div>
-  <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':'Graphic · beige'):b.k==='R'?'Reel · photo only':b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
+  <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':'Graphic · beige'):b.k==='R'?(b.c==='g'?'Reel · green box':'Reel · beige box'):b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
   ${k==='emmabf'?`<div class="bfopts">${BFO.map(([f,l])=>`<button class="${f===bfPick?'on':''}" data-f="${f}"><img src="img/bf/${f}.jpg" alt="${l}" loading="lazy"><span>${l}</span></button>`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
  document.querySelectorAll('.bfopts button').forEach(b=>b.onclick=()=>{bfPick=b.dataset.f;save();renderBP();toast(b.querySelector('span').textContent+' picked for Emma')})}
-function render(){renderTabs();const P=tab==='P';$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
+function render(){renderTabs();const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
  $('#reset').style.display=P?'none':'';$('#days').textContent=(showDays?'Hide':'Show')+(P?' days & names':' days on tiles');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
 
 /* drag to swap (mouse + touch) */
@@ -475,7 +491,7 @@ function wireDrag(){
   el.onpointerdown=e=>{
    const touch=e.pointerType!=='mouse';if(!touch)e.preventDefault();
    const k=el.dataset.k,x0=e.clientX,y0=e.clientY;let ghost=null,over=null,armed=!touch,cancelled=false,lx=x0,ly=y0;
-   const start=()=>{DRAGGING=true;ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=tab==='P'?bpTile(k,0).replace('class="t new','style="width:100%;height:100%" class="t'):`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift');place(lx,ly);if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}};
+   const start=()=>{DRAGGING=true;ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=isBP()?bpTile(k,0).replace('class="t new','style="width:100%;height:100%" class="t'):`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift');place(lx,ly);if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}};
    const place=(x,y)=>{ghost.style.left=(x-60)+'px';ghost.style.top=(y-80)+'px';
     const t=document.elementFromPoint(x,y);const tt=t&&t.closest?t.closest('.t.new'):null;
     if(over&&over!==tt)over.classList.remove('over');over=tt&&tt!==el?tt:null;if(over)over.classList.add('over')};
@@ -488,7 +504,7 @@ function wireDrag(){
     if(ghost){ghost.remove();el.classList.remove('lift')}if(over)over.classList.remove('over');return !quiet};
    const up=()=>{const g=ghost,o=over;end();
     if(!g){if(!cancelled&&tab!=='P')openPost(k);return}
-    if(o&&tab==='P'){const a=bpOrder.indexOf(k),b=bpOrder.indexOf(o.dataset.k);[bpOrder[a],bpOrder[b]]=[bpOrder[b],bpOrder[a]];save();render();toast('Swapped. Days and times updated.');return}
+    if(o&&isBP()){const a=BPO().indexOf(k),b=BPO().indexOf(o.dataset.k);{const O=BPO();[O[a],O[b]]=[O[b],O[a]]};save();render();toast('Swapped. Days and times updated.');return}
     if(o){const a=order.indexOf(k),b=order.indexOf(o.dataset.k);[order[a],order[b]]=[order[b],order[a]];save();render();toast('Swapped. Days and times updated.')}};
    const cancel=()=>{cancelled=true;end(true)};
    window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',cancel)}})}
@@ -541,8 +557,8 @@ document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))r
 
 /* actions */
 const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>el.classList.remove('on'),2600)};
-const link=()=>location.origin+location.pathname+'#o='+order.join(',')+'&m='+DEFAULT.map(k=>mix[k]).join('')+'&t='+tab+'&b='+bpOrder.join(',')+'&f='+bfPick;
-const planText=()=>tab==='P'?`Seventy Six Chelmsford · 23-29 Nov · Blueprint\n`+bpOrder.map(k=>{const s=bpSlot(k),b=BP[k];return `${s[0]} ${s[1]} · ${b.g==='Learn'?'Tip':b.g} · ${b.w}`}).join('\n'):`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
+const link=()=>location.origin+location.pathname+'#o='+order.join(',')+'&m='+DEFAULT.map(k=>mix[k]).join('')+'&t='+tab+'&b='+BPO().join(',')+'&f='+bfPick;
+const planText=()=>isBP()?`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+BPO().map(k=>{const s=bpSlot(k),b=BP[k];return `${s[0]} ${s[1]} · ${b.g==='Learn'?'Tip':b.g} · ${b.w}`}).join('\n'):`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
 const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{prompt('Copy this:',t)})};
 $('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the chat.');
 $('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
