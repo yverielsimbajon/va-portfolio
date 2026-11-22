@@ -59,7 +59,8 @@ img{display:block;max-width:100%}
 .series{max-width:556px;margin:0 auto 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);padding:6px 2px 0}
 .series.pill{background:#fff;border-radius:10px;box-shadow:0 0 0 1px rgba(0,0,0,.08);padding:14px 16px;margin:0 0 14px;position:relative}
 .feed2{margin-top:0}
-.av.dan{border-radius:50%;border:0;background:var(--navy);color:#fff;font:700 16px 'Plus Jakarta Sans',sans-serif;letter-spacing:.5px}
+.av.dan{border-radius:50%;overflow:hidden;border:0}
+.av.dan img{width:48px;height:48px;object-fit:cover}
 .media.wide img{aspect-ratio:auto}
 .doc.gal .bar{position:absolute;top:10px;right:10px;left:auto;background:rgba(0,0,0,.6);border-radius:12px;padding:3px 10px;z-index:2}
 .doc.gal .bar b{display:none}
@@ -370,7 +371,7 @@ list.forEach((p,k)=>{
   }
 });
 }
-render(DAN,document.getElementById('dan'),`<div class="av dan">DV</div>
+render(DAN,document.getElementById('dan'),`<div class="av dan"><img src="img/dan-avatar.jpg?v=2" alt="Daniel Vincent"></div>
     <div class="who"><div class="n">Daniel Vincent</div><div class="s">Founder &amp; Owner, Cloud 9 Window Cleaning</div><div class="s">Now · 🌐</div></div>`);
 render(POSTS,document.getElementById('feed'),`<div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
     <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>`);
