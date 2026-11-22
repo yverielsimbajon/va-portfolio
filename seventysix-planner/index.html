@@ -264,10 +264,10 @@ const PHONE='07432 027611', MAIL='SeventySix.salon@outlook.com';
 const BOOK=`WhatsApp or text the salon on ${PHONE}, or email ${MAIL} 💕`;
 /* the 14 Chelmsford posts */
 const POSTS={
- pkg:{t:'Black Friday blow-dry package',g:'Team',pil:'Offer',type:'photo',cap:`The Black Friday blow-dry package 🖤
+ pkg:{t:'Black Friday blow-dry package',g:'Team',pil:'Offer',type:'carousel',n:4,cap:`The Black Friday blow-dry package 🖤
 4 blow-dries a month for £80, all with the same stylist. That's a saving of £60 ✨
 
-Available with all our stylists, except Nicky and Kimmy. Packages must be paid in full by 28.11.26.
+Available with all our stylists, except Nicky and Kimmy. Offer ends 28.11.26.
 
 To buy yours, ${BOOK}
 
@@ -377,7 +377,7 @@ const BP={
  violet:{k:'R',c:'b',g:'Rachael',w:'Blonde to violet & magenta',x:'Reel with a beige text box + swipe design',ty:'reel',ok:true},
  nano:{k:'P',g:'Extensions',w:'Reel: nano bonds, short to long',img:'img/guide-nano.jpg',x:"Ready-made reel from the social media guide (Kimmy's Drive), ends on the Team 76 card",ty:'reel',ok:true,need:'Claudia is off sick, so this fills her slot. Ask Kimmy who did the look if she wants a name on the end card'},
  salon:{k:'R',c:'g',g:'Team',w:'Walk into 76 Chelmsford',x:'Reel with a green text box + swipe design',ty:'reel',ok:true},
- pkg:{k:'T',c:'b',g:'Team',w:'Black Friday · blow-dry package £80',x:'Offer poster (ready to post)',ty:'photo',ok:true},
+ pkg:{k:'T',g:'Team',w:'Black Friday · blow-dry package £80',x:"Carousel (ready): Emma's blow-dry cover with the 4 for £80 stamp, Rachael's soft waves, Claudia's glossy waves, 4 blow-dries £80 on the 76 logo background",full:'img/wk/pkg-1.jpg',ty:'carousel',ok:true},
  tip:{k:'P',g:'Learn',w:'Tip: why blonde hair needs aftercare',x:'Easy version (ready): photo cover, 5 slides in plain words, no science names',full:'img/wk/tip-brassy-easy.jpg',ty:'carousel',ok:true},
  bob:{k:'P',g:'Emma',w:'The big chop (bob)',x:'Clean after, before on the last slide',ty:'carousel',ok:true},
  emmafri:{k:'R',c:'g',g:'Emma',w:"It's Black Friday · Emma's colours",x:'Reel of red, copper, blonde, brunette, green text box, £150 end card',ty:'reel',ok:true},
@@ -485,7 +485,7 @@ function renderBP(){
  $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 9:30 am to Sun 7:30 pm (UK)</div><div class="bpl">`+BPO().map(k=>{const b=BP[k],s=bpSlot(k);
   return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><span class="who" style="background:${GC[b.g]}">${b.g==='Learn'?'Tip':b.g}</span></div>
   <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':b.c==='b'?'Graphic · beige':'Carousel · photo'):b.k==='R'?(b.c==='g'?'Reel · green box':'Reel · beige box'):b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
-  ${k==='emmabf'?`<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">${[1,2,3,4].map(i=>`<img src="img/wk/emmabf-${i}.jpg" alt="Slide ${i}" loading="lazy" style="width:72px;height:90px;object-fit:cover;border-radius:4px">`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
+  ${(k==='emmabf'||k==='pkg')?`<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">${[1,2,3,4].map(i=>`<img src="img/wk/${k}-${i}.jpg" alt="Slide ${i}" loading="lazy" style="width:72px;height:90px;object-fit:cover;border-radius:4px">`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
  document.querySelectorAll('.bfopts button').forEach(b=>b.onclick=()=>{bfPick=b.dataset.f;save();renderBP();toast(b.querySelector('span').textContent+' picked for Emma')})}
 function render(){renderTabs();const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
  $('#reset').style.display=P?'none':'';$('#days').textContent=(showDays?'Hide':'Show')+(P?' days & names':' days on tiles');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
