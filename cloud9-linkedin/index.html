@@ -59,8 +59,7 @@ img{display:block;max-width:100%}
 .series{max-width:556px;margin:0 auto 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);padding:6px 2px 0}
 .series.pill{background:#fff;border-radius:10px;box-shadow:0 0 0 1px rgba(0,0,0,.08);padding:14px 16px;margin:0 0 14px;position:relative}
 .feed2{margin-top:0}
-.av.dan{border-radius:50%;overflow:hidden;border:0}
-.av.dan img{width:48px;height:48px;object-fit:cover}
+.av.dan{border-radius:50%;border:0;background:var(--navy);color:#fff;font:700 16px 'Plus Jakarta Sans',sans-serif;letter-spacing:.5px}
 .media.wide img{aspect-ratio:auto}
 .doc.gal .bar{position:absolute;top:10px;right:10px;left:auto;background:rgba(0,0,0,.6);border-radius:12px;padding:3px 10px;z-index:2}
 .doc.gal .bar b{display:none}
@@ -81,7 +80,7 @@ img{display:block;max-width:100%}
 <header class="hero">
   <div class="k">LinkedIn content sample</div>
   <h1>Cloud 9 Window Cleaning on LinkedIn</h1>
-  <p>Part 1: six posts for Daniel's own profile, in his voice, with his photos and Cloud 9's. Part 2: the company page, starting with James Spenceley coming on board. Every post has a ready-to-post caption.</p>
+  <p>Part 1: six posts for Daniel's own profile, in his voice, using only Cloud 9 team and job photos (Daniel stays off camera). Part 2: the company page, starting with James Spenceley coming on board. Every post has a ready-to-post caption.</p>
 </header>
 
 <div class="feed" style="padding-bottom:0"><div class="series pill">Part 1 · Daniel's profile · 6 posts</div></div>
@@ -142,7 +141,7 @@ Looking forward to what's next.</div>
 <script>
 const LOGO='img/logo-blue.png';
 const DAN=[
- {tag:'Photo post',type:'Founder story',imgs:['img/dan-1-founder.jpg?v=1','img/dan-1-team.jpg?v=1'],gal:true,
+ {tag:'Photo post',type:'Founder story',imgs:['img/dan-5-ute.jpg?v=1','img/dan-1-team.jpg?v=1'],gal:true,
   cap:`I'm 22, and I lead a team of 40.
 
 A year and a half ago I started Cloud 9 Window Cleaning. Today we look after homes across Sydney, from the North Shore and Northern Beaches to the Sutherland Shire.
@@ -155,7 +154,7 @@ People ask me how it grew so fast. Honestly, it's simple:
 The team in the second photo is the real reason. I just get to lead them.
 
 #Entrepreneurship #Leadership #Sydney`},
- {tag:'Photo post',type:'Personal lesson',img:'img/dan-2-sales.jpg?v=1',wide:true,
+ {tag:'Photo post',type:'Personal lesson',img:'img/dan-2-onthejob.jpg?v=1',
   cap:`I almost didn't choose sales.
 
 Three or four years ago I was starting my first sales job, and I nearly walked away from it.
@@ -179,7 +178,7 @@ We celebrated together at the office, and I couldn't be prouder.
 Thank you to every Sydney homeowner who trusted us. Here's to the next 1,000.
 
 #Teamwork #CustomerExperience #Sydney`},
- {tag:'Photo post',type:'Gratitude · investor',img:'img/dan-4-james.jpg?v=1',
+ {tag:'Photo post',type:'Gratitude · investor',img:'img/dan-4-james.jpg?v=2',
   cap:`Grateful to have James Spenceley backing Cloud 9.
 
 James founded Vocus and was a seed investor in Airtasker. Having him believe in what we're building means a lot.
@@ -189,7 +188,7 @@ At our celebration he told the team something I'll keep with me: a thousand five
 Thank you, James. Let's build.
 
 #Leadership #Growth #Mentorship`},
- {tag:'Photo post',type:'Culture · new starters',img:'img/dan-5-ute.jpg?v=1',
+ {tag:'Photo post',type:'Culture · new starters',img:'img/dan-5-newstarter.jpg?v=1',
   cap:`What I tell every new starter on day one.
 
 Every person who joins Cloud 9 gets a welcome video from me before their first day.
@@ -371,7 +370,7 @@ list.forEach((p,k)=>{
   }
 });
 }
-render(DAN,document.getElementById('dan'),`<div class="av dan"><img src="img/dan-avatar.jpg" alt="Daniel Vincent"></div>
+render(DAN,document.getElementById('dan'),`<div class="av dan">DV</div>
     <div class="who"><div class="n">Daniel Vincent</div><div class="s">Founder &amp; Owner, Cloud 9 Window Cleaning</div><div class="s">Now · 🌐</div></div>`);
 render(POSTS,document.getElementById('feed'),`<div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
     <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>`);
