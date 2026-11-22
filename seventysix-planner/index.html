@@ -53,7 +53,7 @@ header p{color:#4A423D;margin-top:8px}
 .t .ico{position:absolute;top:6px;right:6px;width:17px;height:17px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
 .t .d{position:absolute;left:5px;bottom:5px;background:var(--green);color:#fff;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
 .t.new{cursor:grab}
-.t.old img{filter:saturate(.75) brightness(.97)}
+.t.old.dim img{filter:none}
 .t.old .d{background:rgba(255,255,255,.92);color:#444}
 .t.lift{opacity:.35}
 .t.over{outline:3px solid var(--green);outline-offset:-3px}
@@ -86,7 +86,7 @@ header p{color:#4A423D;margin-top:8px}
 .prow .when{font-size:12px;color:var(--soft)}
 .prow b{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;display:block;line-height:1.15}
 .pill{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--nude);border-radius:10px;padding:1px 7px;margin-top:4px}
-.opts{display:flex;gap:8px}
+.opts{display:flex;gap:8px;align-items:flex-start}
 .opt{position:relative;width:64px;border:2px solid transparent;border-radius:6px;padding:0;background:none;overflow:hidden}
 .opt img{aspect-ratio:4/5;object-fit:cover;width:100%}
 .opt span{position:absolute;left:4px;top:4px;background:rgba(255,255,255,.92);font-size:11px;font-weight:700;border-radius:8px;padding:0 6px}
@@ -122,9 +122,9 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
 </head>
 <body>
 <header><div class="wrap">
-  <div class="caps">Seventy Six · Feed planner</div>
+  <div class="caps">Our planning board · Maria &amp; Claude</div>
   <h1>Chelmsford · 23 to 29 November</h1>
-  <p>14 posts, 2 a day. Four looks to choose from, plus my recommended mix. Drag any new post to swap it, tap to see it full size.</p>
+  <p>14 posts, 2 a day. Compare the feed looks, see my plan, drag to swap, tap a post to see it full size.</p>
   <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
 </div></header>
 
@@ -136,7 +136,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
     <div class="ig-bio">HAIR • MAKEUP • BRIDAL<br>Colour, Cut &amp; Extension specialists</div>
     <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>
     <div class="grid" id="grid"></div>
-    <div class="hint">Drag a green-dated post onto another to swap them. The day and time follow the spot.</div>
+    <div class="hint">Drag a new post onto another to swap them. The day and time follow the spot (tap "Show days on tiles" to see them).</div>
   </div>
 
   <div class="side">
@@ -150,7 +150,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
       <div class="sty"><b>D · Clean</b><p>Just the photo and the small 76 logo. The words go in the caption.</p></div>
     </div>
     <div class="actions">
-      <button class="btn" id="choose">I choose this feed</button>
+      <button class="btn" id="days">Show days on tiles</button>
       <button class="btn o" id="copy">Copy the plan</button>
       <button class="btn o" id="share">Copy share link</button>
       <button class="btn o" id="reset">Reset order</button>
@@ -264,22 +264,29 @@ Swipe to see what's on the wish lists at 76 this year…
 #seventysixsalon #team76 #christmas #chelmsfordhair #essexhairdresser`},
 };
 /* default posting order Mon 9:30 am → Sun 7:30 pm (chosen so the feed has no lines or diagonals) */
-const DEFAULT=['pkg','emmabf','brassy','bob','money','teddy','week','hotroots','violet','salon','copper','bleach','santa','review'];
+const DEFAULT=['emmabf','pkg','hotroots','teddy','violet','bob','week','brassy','review','santa','money','copper','bleach','salon'];
 const SLOTS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[[d,'9:30 am'],[d,'7:30 pm']]);
-const RECO={review:'A',santa:'B',bleach:'C',copper:'B',salon:'D',violet:'D',hotroots:'A',week:'B',teddy:'D',money:'D',bob:'D',brassy:'C',emmabf:'A',pkg:'C'};
-const FEEDS={A:['Feed A','Editorial magazine','Every post as a full photo with a paper panel and a thin forest green line. Closest to the look Kimmy already picked.'],
+const RECO={emmabf:'B',pkg:'A',hotroots:'A',teddy:'D',violet:'D',bob:'D',week:'D',brassy:'C',review:'A',santa:'B',money:'D',copper:'D',bleach:'C',salon:'D'};
+const WHY={emmabf:"Polaroids of copper, blonde and red show Emma's range, with the £150 big underneath.",pkg:'An offer needs words, so Editorial: classy, photo on top, price on the panel.',
+ hotroots:'Editorial so the foils photo carries it. Mixing A and C keeps the three tips from matching.',teddy:"Clean. Claudia's colour speaks for itself.",violet:'Clean. The colour is the hook, nothing should cover it.',
+ bob:'Clean after shot. The before is the last slide.',week:'Clean cover, the polaroids are inside the carousel.',brassy:'Swatch cards explain the colour wheel right from the grid.',
+ review:'The odd word post: the quote on a paper panel over our salon.',santa:'A taped polaroid of the team feels festive and personal.',money:"Rachael's best photo with nothing on top.",
+ copper:'Clean after on the grid. The film-strip before and after is slide 2.',bleach:'Lightening levels as swatch chips: colour science you can see.',salon:'Top-left is the newest spot, so a calm salon moment welcomes people in.'};
+const FEEDS0={A:['Feed A','Editorial magazine','Every post as a full photo with a paper panel and a thin forest green line. Closest to the look Kimmy already picked.'],
  B:['Feed B','Polaroid & film','Taped polaroids and film strips on soft paper. Feels personal and arty, like a moodboard.'],
  C:['Feed C','Swatch cards','An arched photo with shade chips taken from the real hair colour. Very "colour expert".'],
- R:['Recommended',"Maria's pick","My recommendation: mostly clean photos with just the logo, so the girls' work leads (Kimmy's picture-led rule). Editorial for the offers and one tip, polaroids for the team and before & afters, swatch cards for the colour science. No two looks line up."],
+ R:['My plan',"Claude's pick","7 of the 14 posts are the girls' real hair with just the logo, and 2 more are photo polaroids. Only the tiles with lots of words (the blow-dry offer, 3 tips and the review) are spread out so they never touch or line up: no checkerboard, no diagonal. The same girl never sits side by side, and both offers go out on Monday so they get the whole Black Friday week. Tap each post below to see why it gets its look."],
  M:['My mix','Pick per post','Choose A, B or C for each post in the list below. Your picks are saved on this device.']};
 
-let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm')||'{}')}catch(e){}
+const FEEDS={R:FEEDS0.R,A:FEEDS0.A,B:FEEDS0.B,C:FEEDS0.C,M:FEEDS0.M};
+let showDays=false;
+let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 let order=LS.order&&LS.order.length===14?LS.order:[...DEFAULT];
 let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
-let tab=LS.tab||'A';
+let tab=LS.tab||'R';
 (()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
  if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t')})();
-const save=()=>{try{localStorage.setItem('76plan-chelm',JSON.stringify({order,mix,tab}))}catch(e){}};
+const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({order,mix,tab}))}catch(e){}};
 const $=s=>document.querySelector(s);
 const v=k=>tab==='M'?mix[k]:tab==='R'?RECO[k]:tab;
 const toMix=()=>{if(tab!=='M'){Object.keys(mix).forEach(k=>mix[k]=v(k));tab='M'}};
@@ -289,14 +296,13 @@ const slotOf=k=>SLOTS[order.indexOf(k)];
 
 function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
- const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];
- $('#choose').textContent=tab==='M'?'I choose my mix':tab==='R'?"I choose Maria's pick":`I choose ${f[0]}`}
+ const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];}
 function renderGrid(){
  const vis=[...order].reverse(); // newest top-left
- const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""><span class="d">${n<=3?'Pinned':'On your page'}</span></div>`;
+ const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt="">${showDays?`<span class="d">${n<=3?'Pinned':'Already up'}</span>`:''}</div>`;
  const flags=checkFlags(vis);
  $('#grid').innerHTML=[1,2,3].map(old).join('')+vis.map((k,i)=>{const p=POSTS[k],s=slotOf(k);
-  return `<div class="t new${flags.has(i)?' flag':''}" data-k="${k}"><img src="${cover(k)}" alt="${p.t}">${ICO[p.type]}<span class="d">${s[0]} · ${s[1]}</span></div>`}).join('')+[4,5,6,7,8,9].map(old).join('');
+  return `<div class="t new${flags.has(i)?' flag':''}" data-k="${k}"><img src="${cover(k)}" alt="${p.t}">${ICO[p.type]}${showDays?`<span class="d">${s[0]} · ${s[1]}</span>`:''}</div>`}).join('')+[4,5,6,7,8,9].map(old).join('');
  wireDrag()}
 function checkFlags(vis){ // same stylist or two Learn posts touching side by side / above-below
  const f=new Set(),g=i=>POSTS[vis[i]].g;
@@ -318,7 +324,7 @@ function renderChecks(){
  $('#bal').innerHTML=Object.entries(cnt).map(([k,n])=>`<span>${k} · ${n}</span>`).join('')+Object.entries(gc).map(([k,n])=>`<span style="background:#E3ECE5">${k} · ${n}</span>`).join('')}
 function renderPosts(){
  $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">All 14 posts · ${tab==='M'?'tap a design to pick it':'tap a design to start your own mix'}</div>`+order.map(k=>{const p=POSTS[k],s=slotOf(k);
-  return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><b>${p.t}</b><span class="pill">${p.pil}</span><br><button class="see" data-k="${k}">See post &amp; caption</button></div>
+  return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><b>${p.t}</b><span class="pill">${p.pil}</span>${tab==='R'?`<div style="font-size:12.5px;color:#4A423D;margin-top:6px"><strong>${RECO[k]} · </strong>${WHY[k]}</div>`:''}<br><button class="see" data-k="${k}">See post &amp; caption</button></div>
   <div class="opts">${'ABCD'.split('').map(x=>`<button class="opt${v(k)===x?' on':''}" data-k="${k}" data-v="${x}"><img src="img/covers/${k}-${x}.jpg" alt="" loading="lazy"><span>${x}</span></button>`).join('')}</div></div>`}).join('');
  document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{toMix();mix[b.dataset.k]=b.dataset.v;save();render()});
  document.querySelectorAll('.see').forEach(b=>b.onclick=()=>openPost(b.dataset.k))}
@@ -364,8 +370,7 @@ const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promi
 $('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the chat.');
 $('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
 $('#reset').onclick=()=>{order=[...DEFAULT];save();render();toast('Back to the suggested order.')};
-$('#choose').onclick=()=>{const t=`Hi Maria! For Chelmsford I choose ${tab==='M'?'my mix':tab==='R'?"your recommended mix (Maria's pick)":FEEDS[tab][0]+' ('+FEEDS[tab][1]+')'}.\n${link()}`;
- window.open('https://wa.me/639094928860?text='+encodeURIComponent(t),'_blank')};
+$('#days').onclick=()=>{showDays=!showDays;$('#days').textContent=showDays?'Hide days on tiles':'Show days on tiles';renderGrid()};
 render();
 </script>
 </body>
