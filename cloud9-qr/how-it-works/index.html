@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Cloud 9 · QR Code Sample</title>
+<meta name="description" content="How one Cloud 9 QR code takes customers to Facebook, Instagram and Google reviews in one scan.">
+<meta property="og:title" content="Cloud 9 · QR Code Sample">
+<meta property="og:description" content="One scan: Follow on Facebook, Follow on Instagram, leave a Google review.">
+<meta property="og:image" content="https://themariaoffice.com/cloud9-qr/img/qr-card.png">
+<meta property="og:url" content="https://themariaoffice.com/cloud9-qr/how-it-works/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--royal:#2F6BFF;--navy:#0F2547;--bg:#F4F7FF;--line:#E3E9F7;--muted:#5A6A86}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--navy);-webkit-font-smoothing:antialiased}
+a{color:var(--royal)}
+img{display:block;max-width:100%}
+.top{background:var(--royal);color:#fff;text-align:center;padding:48px 16px 56px}
+.top img{width:130px;margin:0 auto 26px}
+.top .k{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;opacity:.8}
+.top h1{font-size:clamp(30px,6vw,46px);line-height:1.1;font-weight:700;letter-spacing:-1px;margin:12px auto;max-width:640px}
+.top p{font-size:16px;line-height:1.6;max-width:540px;margin:0 auto;opacity:.92}
+.sec{max-width:980px;margin:0 auto;padding:48px 16px}
+.sec h2{font-size:26px;font-weight:700;letter-spacing:-.6px;margin-bottom:6px}
+.sec .sub{color:var(--muted);font-size:15px;line-height:1.6;margin-bottom:26px;max-width:620px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:22px}
+.step .n{font-size:34px;font-weight:700;color:var(--royal);letter-spacing:-1px}
+.step b{display:block;font-size:17px;margin:8px 0 6px}
+.step p{font-size:14px;line-height:1.55;color:var(--muted)}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.card{background:var(--royal);border-radius:26px;padding:34px 28px 30px;color:#fff;text-align:center;max-width:380px;margin:0 auto;width:100%}
+.card .lg{width:120px;margin:0 auto 18px}
+.card h3{font-size:30px;line-height:1.1;font-weight:700;letter-spacing:-.8px}
+.card .qr{background:#fff;border-radius:18px;padding:14px;margin:20px auto 18px;width:230px}
+.card .three{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.card .three span{border:2px solid rgba(255,255,255,.85);border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+.dl{display:block;text-align:center;margin-top:14px;font-size:14px;font-weight:600}
+.phone{width:300px;height:610px;margin:0 auto;border:10px solid #0F2547;border-radius:42px;overflow:hidden;background:#fff;box-shadow:0 20px 50px rgba(15,37,71,.18)}
+.phone iframe{width:100%;height:100%;border:0;display:block}
+.cap{text-align:center;font-size:13px;color:var(--muted);margin-top:12px}
+.where{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.where div{background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:18px}
+.where b{display:block;font-size:15px;margin-bottom:4px}
+.where p{font-size:13.5px;line-height:1.5;color:var(--muted)}
+.honest{background:#fff;border:1.5px solid var(--line);border-radius:18px;padding:24px 24px 10px}
+.honest li{list-style:none;padding:0 0 14px 30px;position:relative;font-size:14.5px;line-height:1.55;color:var(--muted)}
+.honest li::before{content:"";position:absolute;left:0;top:3px;width:18px;height:18px;border-radius:50%;background:var(--royal);-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a10 10 0 100 20 10 10 0 000-20zm-1.2 14.2l-4-4 1.4-1.4 2.6 2.6 5.6-5.6 1.4 1.4-7 7z'/%3E%3C/svg%3E") center/contain no-repeat}
+.honest li b{color:var(--navy)}
+.foot{text-align:center;color:var(--muted);font-size:13px;padding:10px 16px 48px}
+@media (max-width:760px){.steps,.where,.demo{grid-template-columns:1fr}.phone{width:280px;height:570px}}
+</style>
+</head>
+<body>
+<header class="top">
+  <img src="../img/logo-white.png" alt="Cloud 9 Window Cleaning">
+  <div class="k">QR code sample</div>
+  <h1>One scan. Facebook, Instagram and Google reviews.</h1>
+  <p>Customers scan one QR code and land on a simple Cloud 9 page. From there it is one tap to follow you, and one tap to leave a 5-star review.</p>
+</header>
+
+<section class="sec">
+  <h2>How it works</h2>
+  <p class="sub">A QR code can only open one link, so it opens one small page with three buttons. Each button opens the right app straight away.</p>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><b>Customer scans</b><p>With the normal phone camera. No app needed.</p></div>
+    <div class="step"><div class="n">02</div><b>Cloud 9 page opens</b><p>Logo, a thank-you line and three big buttons: Facebook, Instagram, Google review.</p></div>
+    <div class="step"><div class="n">03</div><b>One tap</b><p>Facebook and Instagram open in their own app on the Cloud 9 page, ready to Follow. Google opens the review stars directly.</p></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <h2>Try it now</h2>
+  <p class="sub">Scan this code with your phone camera, or use the live preview on the right.</p>
+  <div class="demo">
+    <div>
+      <div class="card">
+        <img class="lg" src="../img/logo-white.png" alt="">
+        <h3>Scan to follow us</h3>
+        <div class="qr"><img src="../img/qr.png" alt="QR code to the Cloud 9 follow page"></div>
+        <div class="three"><span>Facebook</span><span>Instagram</span><span>Google review</span></div>
+      </div>
+      <a class="dl" href="../img/qr-card.png" download>Download the card (PNG)</a>
+    </div>
+    <div>
+      <div class="phone"><iframe src="../" title="Cloud 9 follow page preview" loading="lazy"></iframe></div>
+      <p class="cap">What customers see after scanning</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <h2>Where to put it</h2>
+  <p class="sub">Best moment = right after a clean, when the customer is happy and the windows are sparkling.</p>
+  <div class="where">
+    <div><b>Thank-you card</b><p>Left at the door or on the bench after each job.</p></div>
+    <div><b>Invoice and receipt</b><p>Small QR in the corner of every invoice and email.</p></div>
+    <div><b>Vans</b><p>On the back window or side panel for neighbours walking past.</p></div>
+    <div><b>Business card</b><p>On the back of the card the team hands out.</p></div>
+    <div><b>Fridge magnet</b><p>Stays in the home until the next clean.</p></div>
+    <div><b>Team shirts or lanyard</b><p>"Scan to follow" tag the team can show on the spot.</p></div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <h2>Good to know</h2>
+  <div class="honest"><ul>
+    <li><b>Follow is one tap after the scan.</b> Facebook and Instagram don't allow a working Follow button inside another website, so each button opens the Cloud 9 page in the app where the Follow button is.</li>
+    <li><b>Google review opens the stars right away.</b> The customer only needs to be signed in to Google (most phones already are).</li>
+    <li><b>The QR never needs reprinting.</b> If a link changes, we update the page, and every printed QR keeps working.</li>
+    <li><b>Before printing</b>, the page can move on your own website (for example cloud9windowcleaning.com.au/follow) so customers only ever see the Cloud 9 name.</li>
+  </ul></div>
+</section>
+
+<p class="foot">Prepared by Maria for Cloud 9 Window Cleaning</p>
+</body>
+</html>
