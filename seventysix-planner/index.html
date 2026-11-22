@@ -400,6 +400,22 @@ const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Ext
 const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
 const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Claudia 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick, made prettier on 22 Nov: only Chelmsford photos now (no product or stock pictures). Chrissy's review, Claudia's soft blonde and Emma's balayage reel close the week at the top, Rachael's violet pops on row 2, and Karen's review sits lower down so the two reviews never touch. Fair rotation: Emma 4 (2 are her Black Friday), Rachael 3, Claudia 1, Kimmy 1, team 3 (the Inside 76 salon photos and 2 reviews), 1 tip. Emma's £150 goes out Monday 9:30 am, the blow-dry package Wednesday night, It's Black Friday on Friday night. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Claudia 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."]};
 FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, Chelmsford photos only, no labels. Kimmy's slot still shows a sample photo until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
+FEEDS.DR=['Dream feed',"Claude's free pick","If we forget the blueprint rules: how I would arrange the week to look its prettiest. Every poster is redesigned as one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), the reels get clean photo covers, and Emma's bob is now a reel. Chelmsford photos only. Posters never sit on top of or beside each other, the warm reds and the soft blondes are spread out, and Emma's £150 still goes out Monday morning. Tap a post to open it."];
+/* dream feed (22 Nov): grid order newest first */
+const DRO=['claudia','review','violet','tip','salon','emmafri','copper','bob','karen','pkg','kimwork','balay','money','emmabf'];
+const DRI={claudia:'img/wk/claudia-bp-2.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',salon:'img/wk/salon-1.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',kimwork:'img/wk/claudia-bp.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
+const DRTY={bob:'reel'};
+const DRV={bob:'video/emma-bob.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
+const DRCAP={bob:`The big chop, done beautifully 😍
+Our client was ready for a change. Emma took the length off, added a soft fringe and blended cool-toned highlights through for this gorgeous bob.
+
+Fancy a change? WhatsApp or text 07432 027611 💕
+
+#seventysixsalon #bobhaircut #hairtransformation #chelmsfordhair #essexhairdresser`};
+const isDR=()=>tab==='DR';
+function renderDR(){const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
+ $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||BP[k].ty]}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
+ document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
 /* clean Instagram feed: the real cover for each slot */
 const IGCAP={karen:`Reviews like this mean everything 🥹💕
 Thank you so much Karen for the lovely words. We love having you in Kim's chair.
@@ -514,9 +530,9 @@ function renderIG(){
  const vis=[...BPO()].reverse(),old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+vis.map(k=>`<div class="t new" data-k="${k}"><img src="${IGI[k]||'img/sample-photo.jpg'}" alt="">${ICO[BP[k].ty]}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  wireDrag()}
-function render(){renderTabs();const G=isIG();
+function render(){renderTabs();const G=isIG()||isDR();
  ['.styles','#legend','.checks','#posts','#reset','#days'].forEach(q=>{const e=$(q);if(e)e.style.display=G?'none':''});
- if(G){renderIG();return}
+ if(G){isDR()?renderDR():renderIG();return}
  const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
  $('#reset').style.display=P?'none':'';$('#days').textContent=(showDays?'Hide':'Show')+(P?' days & names':' days on tiles');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
 
@@ -583,9 +599,9 @@ function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
  if(vd){vd.muted=false;vd.volume=1;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();
   $('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
-function openIG(k){cur=k;SI=0;const b=BP[k],p=POSTS[k]||{},cap=IGCAP[k]||p.cap||(b.w);
- const imgs=[IGI[k]].concat(IGS[k]||[]),vid=IGV[k];
- const media=vid?`<video id="pv" src="${vid}" poster="${IGI[k]}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
+function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k],p=POSTS[k]||{},cap=(D&&DRCAP[k])||IGCAP[k]||p.cap||(b.w);
+ const imgs=[(D?DRI:IGI)[k]].concat(IGS[k]||[]),vid=(D?DRV:IGV)[k];
+ const media=vid?`<video id="pv" src="${vid}" poster="${imgs[0]}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
   :imgs.length<2?`<img src="${imgs[0]}" alt="">`
   :`<img class="sz" src="${imgs[0]}" alt=""><div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="" draggable="false">`).join('')}</div><button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button><button class="sa n" id="sn" aria-label="Next slide">${ARR}</button><div class="dots">${imgs.map(()=>'<i></i>').join('')}</div>`;
  const AV='<div class="pav"><img src="img/logo-black.png" alt=""></div>';
@@ -594,7 +610,7 @@ function openIG(k){cur=k;SI=0;const b=BP[k],p=POSTS[k]||{},cap=IGCAP[k]||p.cap||
   <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>seventysixsalon</b> ${fmt(cap)}</div></div></div>
   <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div></div></div>`;
  $('#pop').classList.add('on');document.body.style.overflow='hidden';
- const F=[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
+ const F=D?DRO:[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
  const tk=$('#tk');
  if(tk){const n=imgs.length,sp=$('#sp'),sn=$('#sn'),dots=[...document.querySelectorAll('.pm .dots i')];
   const upd=()=>{SI=Math.max(0,Math.min(n-1,Math.round(tk.scrollLeft/tk.clientWidth)));dots.forEach((d,j)=>d.classList.toggle('on',j===SI));
@@ -606,8 +622,8 @@ function openIG(k){cur=k;SI=0;const b=BP[k],p=POSTS[k]||{},cap=IGCAP[k]||p.cap||
 function slideBy(d){const tk=$('#tk');if(!tk)return false;const n=tk.children.length,t=SI+d;if(t<0||t>=n)return false;tk.scrollTo({left:t*tk.clientWidth,behavior:'smooth'});return true}
 const closePop=()=>{const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
 $('#px').onclick=closePop;
-$('#pp').onclick=()=>{if(isIG()){const F=[...BPO()].reverse(),i=F.indexOf(cur);if(i>0)openIG(F[i-1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
-$('#pn').onclick=()=>{if(isIG()){const F=[...BPO()].reverse(),i=F.indexOf(cur);if(i<F.length-1)openIG(F[i+1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
+$('#pp').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DRO:[...BPO()].reverse(),i=F.indexOf(cur);if(i>0)openIG(F[i-1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
+$('#pn').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DRO:[...BPO()].reverse(),i=F.indexOf(cur);if(i<F.length-1)openIG(F[i+1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
 $('#pop').addEventListener('click',e=>{if(e.target.id==='pop')closePop()});
 document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))return;
  if(e.key==='Escape')closePop();
