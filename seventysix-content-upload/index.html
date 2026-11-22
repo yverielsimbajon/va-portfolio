@@ -659,7 +659,10 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
     $('sendHint').style.display = 'none';
     document.body.classList.add('is-sending');
     window.scrollTo(0, 0);
-    const meta = { girl:girlName(), salon:st.salon, service:services(), extensions:extensions(), details:$('details').value.trim() };
+    // batch = one folder in Drive for this send (girl / date - salon - service - @client)
+    const batch = Date.now().toString(36) + Math.random().toString(36).slice(2, 10);
+    const meta = { girl:girlName(), salon:st.salon, service:services(), extensions:extensions(), details:$('details').value.trim(),
+      batch, clientIg: $('clientIg').hidden ? '' : $('clientIg').value.trim() };
     const todo = st.files.filter(it => it.state !== 'ok');
     const totalBytes = todo.reduce((a,b) => a + b.file.size, 0) || 1;
     let doneBytes = 0;
