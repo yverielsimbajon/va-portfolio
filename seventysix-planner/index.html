@@ -399,6 +399,11 @@ const BP_OPTS={P1:['emmabf','violet','tip','nano','kimwork','pkg','money','salon
 const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Extensions:'#8A6E4B',Team:'#6B625C',Learn:'#4E6E83'};
 const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
 const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, extension reels 2 (Claudia is off sick, so her 2 slots are the nano bonds + Remi Cachet reels from Kimmy's Drive), team 3, 1 review, 1 tip. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick (22 Nov): this is the layout we design for. Chrissy's review and Rachael's violet reel close the week at the top, so new visitors see a love note first. Fair rotation: Emma 4 (2 are her Black Friday, plus her beige balayage reel in the old team photo slot), Rachael 3, Kimmy 1, extension reels 2 (Claudia is off sick, so her 2 slots are the nano bonds + Remi Cachet reels from Kimmy's Drive), team 2 (one is the Inside 76 salon photos), 1 review, 1 tip. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, extension reels 2 (Claudia is off sick, so her 2 slots are the nano bonds + Remi Cachet reels from Kimmy's Drive), team 3, 1 review, 1 tip. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."]};
+FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, no labels. Kimmy's slot still shows a sample photo until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
+/* clean Instagram feed: the real cover for each slot */
+const IGI={emmabf:'img/wk/emmabf-1.jpg',money:'img/covers/money-D.jpg',violet:'img/wk/violet-bp.jpg',nano:'img/guide-nano.jpg',salon:'img/wk/salon-bp.jpg',pkg:'img/wk/pkg-1.jpg',tip:'img/wk/tip-brassy-easy.jpg',bob:'img/covers/bob-D.jpg',emmafri:'img/wk/emmafri-bp.jpg',remi:'img/guide-remi.jpg',review:'img/wk/review-chrissy.jpg',kimwork:'img/wk/claudia-bp.jpg',team:'img/wk/claudia-bp.jpg',copper:'img/covers/copper-D.jpg',balay:'img/wk/balay-bp.jpg'};
+const IGS={emmabf:[2,3,4].map(i=>`img/wk/emmabf-${i}.jpg`),pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg']};
+const IGV={violet:'video/rachael-vivid.mp4',salon:'video/emma-salon.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 /* 22 Nov: Claudia off sick, her 2 slots became the extension reels (keep any saved drag order) */
@@ -412,10 +417,11 @@ let bpOrders=Object.fromEntries(Object.entries(BP_OPTS).map(([k,o])=>[k,LS.bps&&
 let bfPick=LS.bf||'emma-fade-0';
 let tab=LS.pick2&&LS.tab&&FEEDS[LS.tab]?LS.tab:'P2';
 const isBP=()=>tab[0]==='P';
-const BPO=()=>bpOrders[isBP()?tab:'P1'];
+const isIG=()=>tab==='IG';
+const BPO=()=>bpOrders[isBP()?tab:isIG()?'P2':'P1'];
 (()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
  if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t');
- if(h.get('b')){const b=h.get('b').split(',');if(okO(b)&&BP_OPTS[tab])bpOrders[tab]=b}if(h.get('f')&&BFO.some(x=>x[0]===h.get('f')))bfPick=h.get('f')})();
+ if(h.get('b')){const b=h.get('b').split(',');const bk=tab==='IG'?'P2':tab;if(okO(b)&&BP_OPTS[bk])bpOrders[bk]=b}if(h.get('f')&&BFO.some(x=>x[0]===h.get('f')))bfPick=h.get('f')})();
 const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({pick2:1,order,mix,tab,bps:bpOrders,bf:bfPick}))}catch(e){}};
 const $=s=>document.querySelector(s);
 const v=k=>tab==='M'?mix[k]:tab==='R'?RECO[k]:tab;
@@ -424,7 +430,7 @@ const cover=k=>isBP()&&BP[k]&&(BP[k].full||BP[k].img)?(BP[k].full||BP[k].img):`i
 const ICO={reel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm6 6v6l5-3z"/></svg>',carousel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v13h13" fill="none" stroke="#fff" stroke-width="2"/></svg>',photo:''};
 const slotOf=k=>isBP()&&BPO().includes(k)?bpSlot(k):SLOTS[order.indexOf(k)]||bpSlot(k);
 
-function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>(k==='P1'?'<span class="grp">Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
+function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>(k==='P1'?'<span class="grp">Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
  const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];}
 function renderGrid(){
@@ -496,7 +502,14 @@ function renderBP(){
   <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':b.c==='b'?'Graphic · beige':'Carousel · photo'):b.k==='R'?(b.c==='g'?'Reel · green box':'Reel · beige box'):b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
   ${(k==='emmabf'||k==='pkg')?`<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">${[1,2,3,4].map(i=>`<img src="img/wk/${k}-${i}.jpg" alt="Slide ${i}" loading="lazy" style="width:72px;height:90px;object-fit:cover;border-radius:4px">`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
  document.querySelectorAll('.bfopts button').forEach(b=>b.onclick=()=>{bfPick=b.dataset.f;save();renderBP();toast(b.querySelector('span').textContent+' picked for Emma')})}
-function render(){renderTabs();const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
+function renderIG(){
+ const vis=[...BPO()].reverse(),old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
+ $('#grid').innerHTML=[1,2,3].map(old).join('')+vis.map(k=>`<div class="t new" data-k="${k}"><img src="${IGI[k]||'img/sample-photo.jpg'}" alt="">${ICO[BP[k].ty]}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
+ wireDrag()}
+function render(){renderTabs();const G=isIG();
+ ['.styles','#legend','.checks','#posts','#reset','#days'].forEach(q=>{const e=$(q);if(e)e.style.display=G?'none':''});
+ if(G){renderIG();return}
+ const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
  $('#reset').style.display=P?'none':'';$('#days').textContent=(showDays?'Hide':'Show')+(P?' days & names':' days on tiles');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
 
 /* drag to swap (mouse + touch) */
@@ -509,7 +522,7 @@ function wireDrag(){
   el.onpointerdown=e=>{
    const touch=e.pointerType!=='mouse';if(!touch)e.preventDefault();
    const k=el.dataset.k,x0=e.clientX,y0=e.clientY;let ghost=null,over=null,armed=!touch,cancelled=false,lx=x0,ly=y0;
-   const start=()=>{DRAGGING=true;ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=isBP()?bpTile(k,0).replace('class="t new','style="width:100%;height:100%" class="t'):`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift');place(lx,ly);if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}};
+   const start=()=>{DRAGGING=true;ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=isIG()?`<img src="${IGI[k]}">`:isBP()?bpTile(k,0).replace('class="t new','style="width:100%;height:100%" class="t'):`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift');place(lx,ly);if(navigator.vibrate)try{navigator.vibrate(15)}catch(_){}};
    const place=(x,y)=>{ghost.style.left=(x-60)+'px';ghost.style.top=(y-80)+'px';
     const t=document.elementFromPoint(x,y);const tt=t&&t.closest?t.closest('.t.new'):null;
     if(over&&over!==tt)over.classList.remove('over');over=tt&&tt!==el?tt:null;if(over)over.classList.add('over')};
@@ -521,8 +534,8 @@ function wireDrag(){
    const end=(quiet)=>{clearTimeout(hold);DRAGGING=false;window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);window.removeEventListener('pointercancel',cancel);
     if(ghost){ghost.remove();el.classList.remove('lift')}if(over)over.classList.remove('over');return !quiet};
    const up=()=>{const g=ghost,o=over;end();
-    if(!g){if(!cancelled&&tab!=='P')openPost(k);return}
-    if(o&&isBP()){const a=BPO().indexOf(k),b=BPO().indexOf(o.dataset.k);{const O=BPO();[O[a],O[b]]=[O[b],O[a]]};save();render();toast('Swapped. Days and times updated.');return}
+    if(!g){if(!cancelled){if(isIG())openIG(k);else if(POSTS[k])openPost(k)}return}
+    if(o&&(isBP()||isIG())){const a=BPO().indexOf(k),b=BPO().indexOf(o.dataset.k);{const O=BPO();[O[a],O[b]]=[O[b],O[a]]};save();render();toast('Swapped. Days and times updated.');return}
     if(o){const a=order.indexOf(k),b=order.indexOf(o.dataset.k);[order[a],order[b]]=[order[b],order[a]];save();render();toast('Swapped. Days and times updated.')}};
    const cancel=()=>{cancelled=true;end(true)};
    window.addEventListener('pointermove',move);window.addEventListener('pointerup',up);window.addEventListener('pointercancel',cancel)}})}
@@ -562,11 +575,31 @@ function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
  if(vd){vd.muted=false;vd.volume=1;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();
   $('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
+function openIG(k){cur=k;SI=0;const b=BP[k],p=POSTS[k]||{},cap=p.cap||(b.w);
+ const imgs=[IGI[k]].concat(IGS[k]||[]),vid=IGV[k];
+ const media=vid?`<video id="pv" src="${vid}" poster="${IGI[k]}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
+  :imgs.length<2?`<img src="${imgs[0]}" alt="">`
+  :`<img class="sz" src="${imgs[0]}" alt=""><div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="" draggable="false">`).join('')}</div><button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button><button class="sa n" id="sn" aria-label="Next slide">${ARR}</button><div class="dots">${imgs.map(()=>'<i></i>').join('')}</div>`;
+ const AV='<div class="pav"><img src="img/logo-black.png" alt=""></div>';
+ $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
+  <div class="ph">${AV}<div><b>seventysixsalon</b><span>SeventySix Salon, Chelmsford</span></div></div>
+  <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>seventysixsalon</b> ${fmt(cap)}</div></div></div>
+  <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div></div></div>`;
+ $('#pop').classList.add('on');document.body.style.overflow='hidden';
+ const F=[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
+ const tk=$('#tk');
+ if(tk){const n=imgs.length,sp=$('#sp'),sn=$('#sn'),dots=[...document.querySelectorAll('.pm .dots i')];
+  const upd=()=>{SI=Math.max(0,Math.min(n-1,Math.round(tk.scrollLeft/tk.clientWidth)));dots.forEach((d,j)=>d.classList.toggle('on',j===SI));
+   sp.style.opacity=SI===0?0:1;sp.style.pointerEvents=SI===0?'none':'';sn.style.opacity=SI===n-1?0:1;sn.style.pointerEvents=SI===n-1?'none':''};
+  tk.addEventListener('scroll',upd,{passive:true});sp.onclick=e=>{e.stopPropagation();slideBy(-1)};sn.onclick=e=>{e.stopPropagation();slideBy(1)};upd()}
+ const vd=$('#pv');
+ if(vd){vd.muted=false;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
+  vd.onclick=()=>vd.paused?vd.play():vd.pause();$('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
 function slideBy(d){const tk=$('#tk');if(!tk)return false;const n=tk.children.length,t=SI+d;if(t<0||t>=n)return false;tk.scrollTo({left:t*tk.clientWidth,behavior:'smooth'});return true}
 const closePop=()=>{const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
 $('#px').onclick=closePop;
-$('#pp').onclick=()=>{const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
-$('#pn').onclick=()=>{const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
+$('#pp').onclick=()=>{if(isIG()){const F=[...BPO()].reverse(),i=F.indexOf(cur);if(i>0)openIG(F[i-1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
+$('#pn').onclick=()=>{if(isIG()){const F=[...BPO()].reverse(),i=F.indexOf(cur);if(i<F.length-1)openIG(F[i+1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
 $('#pop').addEventListener('click',e=>{if(e.target.id==='pop')closePop()});
 document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))return;
  if(e.key==='Escape')closePop();
@@ -576,7 +609,7 @@ document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))r
 /* actions */
 const toast=t=>{const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>el.classList.remove('on'),2600)};
 const link=()=>location.origin+location.pathname+'#o='+order.join(',')+'&m='+DEFAULT.map(k=>mix[k]).join('')+'&t='+tab+'&b='+BPO().join(',')+'&f='+bfPick;
-const planText=()=>isBP()?`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+BPO().map(k=>{const s=bpSlot(k),b=BP[k];return `${s[0]} ${s[1]} · ${b.g==='Learn'?'Tip':b.g} · ${b.w}`}).join('\n'):`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
+const planText=()=>(isBP()||isIG())?`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+BPO().map(k=>{const s=bpSlot(k),b=BP[k];return `${s[0]} ${s[1]} · ${b.g==='Learn'?'Tip':b.g} · ${b.w}`}).join('\n'):`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
 const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{prompt('Copy this:',t)})};
 $('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the chat.');
 $('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
