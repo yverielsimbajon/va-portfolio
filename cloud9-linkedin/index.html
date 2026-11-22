@@ -57,6 +57,13 @@ img{display:block;max-width:100%}
 .vid .play svg{width:30px;height:30px;margin-left:5px}
 .vid .dur{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,.7);color:#fff;font-size:13px;font-weight:600;padding:3px 8px;border-radius:4px}
 .series{max-width:556px;margin:0 auto 10px;font-family:'Plus Jakarta Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy);padding:6px 2px 0}
+.series.pill{background:#fff;border-radius:10px;box-shadow:0 0 0 1px rgba(0,0,0,.08);padding:14px 16px;margin:0 0 14px;position:relative}
+.feed2{margin-top:0}
+.av.dan{border-radius:50%;overflow:hidden;border:0}
+.av.dan img{width:48px;height:48px;object-fit:cover}
+.media.wide img{aspect-ratio:auto}
+.doc.gal .bar{position:absolute;top:10px;right:10px;left:auto;background:rgba(0,0,0,.6);border-radius:12px;padding:3px 10px;z-index:2}
+.doc.gal .bar b{display:none}
 .note h3{font-size:15px;color:var(--navy);margin:16px 0 8px}
 .note .draft{background:#F4F6FA;border-left:3px solid var(--royal);padding:14px 16px;font-size:14px;line-height:1.5;color:#1D2226;white-space:pre-line;border-radius:4px}
 .acts{display:flex;justify-content:space-around;border-top:1px solid var(--line);margin:0 12px;padding:4px 0}
@@ -74,10 +81,28 @@ img{display:block;max-width:100%}
 <header class="hero">
   <div class="k">LinkedIn content sample</div>
   <h1>Cloud 9 Window Cleaning on LinkedIn</h1>
-  <p>A preview of how your company page could look: corporate, professional and on brand. Starting with James Spenceley coming on board, each post with a ready-to-post caption.</p>
+  <p>Part 1: six posts for Daniel's own profile, in his voice, with his photos and Cloud 9's. Part 2: the company page, starting with James Spenceley coming on board. Every post has a ready-to-post caption.</p>
 </header>
 
-<main class="feed" id="feed"></main>
+<div class="feed" style="padding-bottom:0"><div class="series pill">Part 1 · Daniel's profile · 6 posts</div></div>
+<main class="feed feed2" id="dan"></main>
+
+<div class="feed" style="margin-top:0;padding-bottom:0">
+  <div class="note">
+    <h2>Facts check (Daniel's posts)</h2>
+    <ul>
+      <li><b>22, founder, team of 40, about a year and a half:</b> Daniel's own words (sent to Maria 6 Nov, and his onboarding video)</li>
+      <li><b>Sales story and "find the right company":</b> Daniel's onboarding video for new starters</li>
+      <li><b>1,000 five-star reviews:</b> the team celebration (cake and banner at the office party)</li>
+      <li><b>James Spenceley quotes:</b> James's talk at the celebration (video)</li>
+      <li><b>Services and areas:</b> cloud9windowcleaning.com.au (pure deionised water, frames, tracks and sills, solar panels, balustrades; North Shore, Northern Beaches, Sutherland Shire)</li>
+      <li>Please check post 2: Dan, is it OK to share that you nearly didn't choose sales?</li>
+    </ul>
+  </div>
+</div>
+
+<div class="feed" style="margin-top:0;padding-bottom:0"><div class="series pill">Part 2 · Cloud 9 company page</div></div>
+<main class="feed feed2" id="feed"></main>
 
 <div class="feed" style="margin-top:0;padding-bottom:0">
   <div class="note">
@@ -116,6 +141,83 @@ Looking forward to what's next.</div>
 
 <script>
 const LOGO='img/logo-blue.png';
+const DAN=[
+ {tag:'Photo post',type:'Founder story',imgs:['img/dan-1-founder.jpg?v=1','img/dan-1-team.jpg?v=1'],gal:true,
+  cap:`I'm 22, and I lead a team of 40.
+
+A year and a half ago I started Cloud 9 Window Cleaning. Today we look after homes across Sydney, from the North Shore and Northern Beaches to the Sutherland Shire.
+
+People ask me how it grew so fast. Honestly, it's simple:
+→ Show up on time
+→ Do the job properly
+→ Look after the people who do the work
+
+The team in the second photo is the real reason. I just get to lead them.
+
+#Entrepreneurship #Leadership #Sydney`},
+ {tag:'Photo post',type:'Personal lesson',img:'img/dan-2-sales.jpg?v=1',wide:true,
+  cap:`I almost didn't choose sales.
+
+Three or four years ago I was starting my first sales job, and I nearly walked away from it.
+
+I'm so glad I stayed. Sales changed my life, and the lives of the people around me.
+
+If I could tell my younger self one thing: apply yourself, find the right company, and do it properly. You'll go places you never dreamed of.
+
+Now I get to say that to every new person who joins Cloud 9.
+
+#Sales #CareerGrowth #Mindset`},
+ {tag:'Photo post',type:'Team milestone',img:'img/dan-3-reviews.jpg?v=1',
+  cap:`1,000 five-star reviews.
+
+That number belongs to this team.
+
+Every review is one home, one family, and one of these guys turning up on time, taking care of the property and leaving the glass spotless.
+
+We celebrated together at the office, and I couldn't be prouder.
+
+Thank you to every Sydney homeowner who trusted us. Here's to the next 1,000.
+
+#Teamwork #CustomerExperience #Sydney`},
+ {tag:'Photo post',type:'Gratitude · investor',img:'img/dan-4-james.jpg?v=1',
+  cap:`Grateful to have James Spenceley backing Cloud 9.
+
+James founded Vocus and was a seed investor in Airtasker. Having him believe in what we're building means a lot.
+
+At our celebration he told the team something I'll keep with me: a thousand five-star reviews is a massive achievement, but the really impressive thing is a team that sets five stars as the baseline.
+
+Thank you, James. Let's build.
+
+#Leadership #Growth #Mentorship`},
+ {tag:'Photo post',type:'Culture · new starters',img:'img/dan-5-ute.jpg?v=1',
+  cap:`What I tell every new starter on day one.
+
+Every person who joins Cloud 9 gets a welcome video from me before their first day.
+
+Here's what I say:
+1. Be proud. Lots of people applied, and you were chosen.
+2. We picked you for your character and your potential.
+3. We're going to grow together: your skills, your confidence, your income.
+
+Then it's training day, and a seat in the team chat.
+
+Small business is a people business. It starts with how you welcome someone.
+
+#Hiring #CompanyCulture #Leadership`},
+ {tag:'Photo post',type:'Behind the work',imgs:[1,2,3,4].map(i=>`img/dan-6-job-${i}.jpg?v=1`),gal:true,
+  cap:`What "doing it properly" looks like.
+
+→ Pure deionised water, so glass dries spot-free
+→ Frames, tracks and sills, not just the glass
+→ Water-fed poles that reach upper storeys from the ground
+→ Solar panels and balustrades looked after too
+
+None of it is fancy. It's the detail, done every single time, that turns a clean into a five-star review.
+
+Proud of the crew. Swipe for a normal day on the job.
+
+#SmallBusiness #Sydney #CustomerExperience`}
+];
 const POSTS=[
  {num:'1A',tag:'Caption option A',type:'Welcome · the full story',img:'img/post-james-welcome-c.jpg?v=1',
   cap:`We're proud to welcome James Spenceley to Cloud 9 Window Cleaning as an investor.
@@ -242,19 +344,18 @@ const I={
  send:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M21 3L3 10l7 3 3 7 8-17zM10 13l5-5"/></svg>'};
 const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const fmt=s=>esc(s).replace(/#(\w+)/g,'<span class="hash">#$1</span>');
-const feed=document.getElementById('feed');
+function render(list,feed,who){
 let pn=0;
-POSTS.forEach((p,k)=>{
+list.forEach((p,k)=>{
   const num=p.num?(p.num==='1A'?(pn=1,'1A'):p.num):String(++pn);
-  const media=p.imgs?`<div class="doc"><div class="bar"><b>${p.doc}</b><span class="pg">1 / ${p.imgs.length}</span></div>
+  const media=p.imgs?`<div class="doc${p.gal?' gal':''}"><div class="bar"><b>${p.doc||''}</b><span class="pg">1 / ${p.imgs.length}</span></div>
      <div class="track">${p.imgs.map((s,i)=>`<img src="${s}" alt="Slide ${i+1}" loading="lazy">`).join('')}</div>
      <button class="nav p" aria-label="Previous" disabled>&#8249;</button><button class="nav n" aria-label="Next">&#8250;</button></div>`
    :p.video?`<div class="vid"><img src="${p.video}" alt="${p.type}" loading="lazy"><div class="play"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6 4l14 8-14 8z"/></svg></div><span class="dur">${p.dur}</span></div>`
-   :`<div class="media"><img src="${p.img}" alt="${p.type}" loading="lazy"></div>`;
+   :`<div class="media${p.wide?' wide':''}"><img src="${p.img}" alt="${p.type}" loading="lazy"></div>`;
   const el=document.createElement('article');el.className='card';
   el.innerHTML=`<div class="tag"><b>${num}</b> ${p.tag} · ${p.type}</div>
-   <div class="head"><div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
-    <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>
+   <div class="head">${who}
     <span class="follow">+ Follow</span></div>
    <div class="cap">${fmt(p.cap)}</div>
    ${media}
@@ -269,6 +370,11 @@ POSTS.forEach((p,k)=>{
     nx.onclick=()=>tr.scrollTo({left:(cur()+1)*tr.clientWidth,behavior:'smooth'});
   }
 });
+}
+render(DAN,document.getElementById('dan'),`<div class="av dan"><img src="img/dan-avatar.jpg" alt="Daniel Vincent"></div>
+    <div class="who"><div class="n">Daniel Vincent · You</div><div class="s">Founder &amp; Owner, Cloud 9 Window Cleaning</div><div class="s">Now · 🌐</div></div>`);
+render(POSTS,document.getElementById('feed'),`<div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
+    <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>`);
 </script>
 </body>
 </html>
