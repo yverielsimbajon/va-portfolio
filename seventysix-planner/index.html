@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Seventy Six · Feed Planner</title>
+<meta name="description" content="Plan the Seventy Six Instagram feed: 3 design options per post, 3 feed previews, drag to swap.">
+<meta property="og:title" content="Seventy Six · Feed planner">
+<meta property="og:description" content="Chelmsford, 23 to 29 November. 3 feed looks to choose from.">
+<meta property="og:image" content="https://themariaoffice.com/seventysix-planner/img/og.jpg">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--nude:#EFE6E0;--paper:#F8F3EF;--green:#2F4B3A;--black:#151515;--taupe:#B9A69B;--soft:#6B625C;--line:#E3D8D0;--igline:#DBDBDB;--igsoft:#737373;--warn:#B5543B}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--black);font-family:'Open Sans',sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+button{font-family:inherit;cursor:pointer}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+.serif{font-family:'Cormorant Garamond',serif}
+.caps{font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--green)}
+header{background:var(--nude);padding:34px 0 26px;text-align:center}
+header h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(34px,6vw,56px);line-height:1}
+header p{color:#4A423D;margin-top:8px}
+.salons{display:flex;justify-content:center;gap:8px;margin-top:18px}
+.salons button{border:1.5px solid var(--green);background:none;color:var(--green);border-radius:30px;padding:7px 18px;font-weight:600;font-size:13.5px}
+.salons button.on{background:var(--green);color:#fff}
+.salons button[disabled]{opacity:.45;cursor:not-allowed}
+/* tabs */
+.tabs{position:sticky;top:0;z-index:20;background:rgba(248,243,239,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.tabs .wrap{display:flex;gap:6px;overflow-x:auto;padding-top:10px;padding-bottom:10px;scrollbar-width:none}
+.tab{flex:none;border:1px solid var(--line);background:#fff;border-radius:12px;padding:8px 14px;text-align:left;color:inherit}
+.tab b{display:block;font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.1;font-weight:600}
+.tab small{font-size:12px;color:var(--soft)}
+.tab.on{border-color:var(--green);box-shadow:0 0 0 2px var(--green) inset;background:var(--paper)}
+/* layout */
+.main{display:grid;grid-template-columns:minmax(0,440px) minmax(0,1fr);gap:34px;padding:28px 0 60px;align-items:start}
+@media(max-width:920px){.main{grid-template-columns:1fr}}
+.phone{background:#fff;border:1px solid var(--line);border-radius:28px;box-shadow:0 20px 50px rgba(21,21,21,.08);overflow:hidden;position:sticky;top:86px}
+@media(max-width:920px){.phone{position:static;max-width:440px;margin:0 auto;width:100%}}
+.ig-head{display:flex;align-items:center;gap:14px;padding:16px 14px 6px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.av{width:62px;height:62px;border-radius:50%;background:var(--nude);display:flex;align-items:center;justify-content:center;flex:none;box-shadow:0 0 0 3px #fff,0 0 0 5px #e6dcd5}
+.av img{height:46px}
+.ig-head b{display:block;font-size:15px}.ig-head small{display:block;font-size:12.5px;color:var(--igsoft);line-height:1.35}
+.ig-bio{padding:2px 14px 10px;font-size:12.5px;color:#333;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.ig-tabs{display:flex;justify-content:space-around;border-top:1px solid var(--igline);padding:8px 0;color:var(--igsoft)}
+.ig-tabs svg{width:20px;height:20px}.ig-tabs .on{color:#000}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;touch-action:none;user-select:none}
+.t{position:relative;aspect-ratio:3/4;background:#eee;overflow:hidden}
+.t img{width:100%;height:100%;object-fit:cover;pointer-events:none;-webkit-user-drag:none}
+.t .ico{position:absolute;top:6px;right:6px;width:17px;height:17px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
+.t .d{position:absolute;left:5px;bottom:5px;background:var(--green);color:#fff;font-size:9.5px;font-weight:700;padding:2px 7px;border-radius:20px;white-space:nowrap}
+.t.new{cursor:grab}
+.t.old img{filter:saturate(.75) brightness(.97)}
+.t.old .d{background:rgba(255,255,255,.92);color:#444}
+.t.lift{opacity:.35}
+.t.over{outline:3px solid var(--green);outline-offset:-3px}
+.t.flag:after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 3px var(--warn)}
+.ghost{position:fixed;z-index:80;pointer-events:none;width:120px;aspect-ratio:3/4;box-shadow:0 14px 30px rgba(0,0,0,.3);transform:rotate(-3deg);border-radius:4px;overflow:hidden}
+.ghost img{width:100%;height:100%;object-fit:cover}
+.hint{font-size:12.5px;color:var(--soft);text-align:center;padding:10px 12px 14px}
+/* side */
+.side h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:34px;line-height:1.1;margin:6px 0 8px}
+.lead{color:#4A423D;max-width:620px}
+.styles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0 6px}
+@media(max-width:560px){.styles{grid-template-columns:1fr}}
+.sty{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+.sty b{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;display:block;line-height:1.1}
+.sty p{font-size:13px;color:var(--soft);margin-top:4px}
+.actions{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 4px}
+.btn{border:1.5px solid var(--green);background:var(--green);color:#fff;border-radius:30px;padding:9px 18px;font-weight:600;font-size:13.5px}
+.btn.o{background:#fff;color:var(--green)}
+.toast{font-size:13px;color:var(--green);min-height:20px;margin-top:4px}
+.checks{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.checks h4{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600}
+.checks ul{list-style:none;margin-top:6px}
+.checks li{font-size:13.5px;padding:4px 0;display:flex;gap:8px}
+.ok{color:var(--green)}.no{color:var(--warn)}
+.bal{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.bal span{background:var(--nude);border-radius:20px;padding:3px 10px;font-size:12.5px}
+/* per post chooser */
+.posts{margin-top:26px}
+.prow{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.prow .when{font-size:12px;color:var(--soft)}
+.prow b{font-family:'Cormorant Garamond',serif;font-size:21px;font-weight:600;display:block;line-height:1.15}
+.pill{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--nude);border-radius:10px;padding:1px 7px;margin-top:4px}
+.opts{display:flex;gap:8px}
+.opt{position:relative;width:74px;border:2px solid transparent;border-radius:6px;padding:0;background:none;overflow:hidden}
+.opt img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.opt span{position:absolute;left:4px;top:4px;background:rgba(255,255,255,.92);font-size:11px;font-weight:700;border-radius:8px;padding:0 6px}
+.opt.on{border-color:var(--green)}
+.prow .see{font-size:12.5px;color:var(--green);background:none;border:0;text-decoration:underline;margin-top:6px;padding:0}
+/* popup */
+#pop{position:fixed;inset:0;z-index:90;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:24px}
+#pop.on{display:flex}
+.pc{display:flex;background:#fff;max-height:calc(100vh - 48px);max-width:1060px;width:100%;border-radius:6px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.pm{position:relative;background:#000;flex:0 0 min(56vw,600px);display:flex;align-items:center}
+.pm .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;width:100%;scrollbar-width:none}
+.pm .track::-webkit-scrollbar{display:none}
+.pm .track>*{flex:none;width:100%;scroll-snap-align:center;aspect-ratio:4/5;object-fit:contain;background:#000}
+.pm video{width:100%;max-height:calc(100vh - 48px);aspect-ratio:9/16;object-fit:contain}
+.pm .dots{position:absolute;bottom:12px;left:0;right:0;display:flex;justify-content:center;gap:4px}
+.pm .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45)}.pm .dots i.on{background:#fff}
+.pm .ar{position:absolute;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;border:0;background:rgba(255,255,255,.88);font-size:18px;line-height:30px}
+.pm .ar.p{left:10px}.pm .ar.n{right:10px}
+.ps{flex:1;display:flex;flex-direction:column;min-width:0}
+.ph{display:flex;gap:10px;align-items:center;padding:12px 14px;border-bottom:1px solid var(--igline)}
+.ph .pav{width:32px;height:32px;border-radius:50%;background:var(--nude);display:flex;align-items:center;justify-content:center}.ph .pav img{height:24px}
+.ph b{font-size:14px}
+.pv{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--igline);align-items:center;font-size:12.5px;color:var(--igsoft)}
+.pv button{border:1px solid var(--igline);background:#fff;border-radius:8px;padding:3px 10px;font-weight:700;font-size:12.5px}
+.pv button.on{background:var(--green);border-color:var(--green);color:#fff}
+.pb{flex:1;overflow-y:auto;padding:14px;font-size:14px;line-height:1.45;white-space:pre-line}
+.pb .tg{white-space:normal;margin-top:12px;font-size:12.5px;background:#F6F2EE;border-radius:8px;padding:8px 10px}
+.pb .draft{white-space:normal;margin-bottom:10px;font-size:12.5px;background:#FBEDE8;color:#8a3b25;border-radius:8px;padding:8px 10px}
+.px{position:fixed;top:10px;right:14px;width:40px;height:40px;border:0;background:none;color:#fff;font-size:30px}
+@media(max-width:820px){#pop{padding:0}.pc{flex-direction:column;max-height:100vh;height:100%;border-radius:0;overflow-y:auto}.pm{flex:none}.px{color:#000;background:rgba(255,255,255,.8);border-radius:50%}}
+footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px;border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="caps">Seventy Six · Feed planner</div>
+  <h1>Chelmsford · 23 to 29 November</h1>
+  <p>14 posts, 2 a day. Three looks to choose from. Drag any new post to swap it, tap to see it full size.</p>
+  <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
+</div></header>
+
+<nav class="tabs"><div class="wrap" id="tabs"></div></nav>
+
+<div class="wrap main">
+  <div class="phone">
+    <div class="ig-head"><div class="av"><img src="img/logo-black.png" alt=""></div><div><b>seventysixsalon</b><small>SEVENTYSIX | CHELMSFORD SALON</small><small>Beauty, cosmetic &amp; personal care</small></div></div>
+    <div class="ig-bio">HAIR • MAKEUP • BRIDAL<br>Colour, Cut &amp; Extension specialists</div>
+    <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>
+    <div class="grid" id="grid"></div>
+    <div class="hint">Drag a green-dated post onto another to swap them. The day and time follow the spot.</div>
+  </div>
+
+  <div class="side">
+    <div class="caps" id="tabcaps">Feed A</div>
+    <h2 id="tabtitle">Editorial magazine</h2>
+    <p class="lead" id="tablead"></p>
+    <div class="styles">
+      <div class="sty"><b>A · Editorial</b><p>Full photo, thin forest green line, big Cormorant title on a paper panel.</p></div>
+      <div class="sty"><b>B · Polaroid &amp; film</b><p>Hair photos as taped polaroids and film strips on soft paper.</p></div>
+      <div class="sty"><b>C · Swatch cards</b><p>Arched photo with shade chips taken from the real hair colour.</p></div>
+    </div>
+    <div class="actions">
+      <button class="btn" id="choose">I choose this feed</button>
+      <button class="btn o" id="copy">Copy the plan</button>
+      <button class="btn o" id="share">Copy share link</button>
+      <button class="btn o" id="reset">Reset order</button>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <div class="checks"><h4>Feed check</h4><ul id="checks"></ul><div class="bal" id="bal"></div></div>
+
+    <div class="posts" id="posts"></div>
+  </div>
+</div>
+
+<footer>Prepared by Maria · The Maria Office · for Seventy Six Salon</footer>
+
+<div id="pop"><button class="px" id="px" aria-label="Close">×</button><div class="pc" id="pc"></div></div>
+
+<script>
+const PHONE='07432 027611', MAIL='SeventySix.salon@outlook.com';
+const BOOK=`WhatsApp or text the salon on ${PHONE}, or email ${MAIL} 💕`;
+/* the 14 Chelmsford posts */
+const POSTS={
+ pkg:{t:'Black Friday blow-dry package',g:'Team',pil:'Offer',type:'photo',cap:`The Black Friday blow-dry package 🖤
+4 blow-dries a month for £80, all with the same stylist. That's a saving of £60 ✨
+
+Available with all our stylists, except Nicky and Kimmy. Packages must be paid in full by 28.11.26.
+
+To buy yours, ${BOOK}
+
+#seventysixsalon #blackfriday #blowdry #chelmsfordhair #essexhairdresser`},
+ emmabf:{t:'Black Friday · £150 colour with Emma',g:'Emma',pil:'Offer',type:'carousel',n:4,cap:`Black Friday at 76 Chelmsford 🖤
+This week only, Emma is treating you to any colour service for £150, with a cut, blow-dry and treatment all included ✨
+
+Lived-in blonde, bold red, glossy brunette or a full refresh. Swipe for a little inspo from Emma's chair ➡️
+
+To book with Emma, ${BOOK}
+
+#seventysixsalon #blackfriday #chelmsfordhair #haircolour #essexhairdresser`,tag:'@emma_oliver_hair'},
+ brassy:{t:'Learn: why blonde turns brassy',g:'Learn',pil:'Learn with 76',type:'carousel',n:4,cap:`Why does blonde turn brassy? 💛
+Your hair holds two pigments, and lightening breaks the dark one down faster than the warm one. That leftover warmth is the brass.
+
+Toner cancels it out with the colour wheel: violet tones down yellow, blue tones down orange 🎨
+
+Swipe for the science, and save this for your next wash day 📌
+
+#seventysixsalon #blondehair #toner #haireducation #chelmsfordhair`},
+ money:{t:'Halo money piece',g:'Rachael',pil:'The work',type:'carousel',n:2,cap:`Halo money piece ✨
+A ring of soft blonde around the face, blended into our client's rich brunette. Bright where it matters, and it grows out beautifully.
+
+Created by Rachael at 76 Salon Chelmsford 💛
+
+#seventysixsalon #moneypiece #faceframe #chelmsfordhair #essexhairdresser`,tag:'@hair_by.rachael'},
+ teddy:{t:'Creamy teddy blonde',g:'Claudia',pil:'The work',type:'photo',cap:`Creamy teddy blonde 🧸
+A soft, tonal blonde with a root melt, so the grow out is seamless. Finished with a fresh cut and loose waves by Claudia ✨
+
+Would you go teddy blonde this winter? 👇
+
+#seventysixsalon #teddyblonde #rootmelt #chelmsfordhair #essexhairdresser`,tag:'@hair.by.claudia.x · client @amy_lou_h'},
+ bob:{t:'The big chop',g:'Emma',pil:'The work',type:'carousel',n:3,cap:`The big chop, done beautifully 😍
+Our client was ready for a change. Emma took the length off, added a soft fringe and blended cool-toned highlights through for this gorgeous bob.
+
+Swipe to the end for the before ➡️
+
+#seventysixsalon #bobhaircut #hairtransformation #chelmsfordhair #essexhairdresser`,tag:'@emma_oliver_hair · client @melanieparradine'},
+ hotroots:{t:'Learn: hot roots, explained',g:'Learn',pil:'Learn with 76',type:'carousel',n:4,cap:`Hot roots, explained 🔥
+Ever had roots come out lighter or warmer than the rest? Heat from your scalp makes colour develop faster at the base.
+
+That's why we apply the roots last and use a gentler mix close to the scalp, so everything blends ✨
+
+Save this one for later 📌
+
+#seventysixsalon #hotroots #haircolour #haireducation #chelmsfordhair`},
+ violet:{t:'Reel: blonde to violet & magenta',g:'Rachael',pil:'The work',type:'reel',video:'video/rachael-vivid.mp4',cap:`From blonde to violet & magenta 💜💖
+Rachael lightened the roots with Wella Blondor, toned the blonde, then sectioned our client's hair for two vivid shades: Wella Color Fresh Create in pure violet and magenta pink.
+
+The result? Pure colour heaven. Who's brave enough to go bold? 👀
+
+#seventysixsalon #vividhair #wellacolor #chelmsfordhair #essexhairdresser`,tag:'@hair_by.rachael'},
+ salon:{t:'Reel: walk into 76 Chelmsford',g:'Emma',pil:'Meet the girls',type:'reel',video:'video/emma-salon.mp4',cap:`POV: your walk into 76 Chelmsford ✨
+Down the lane, past the sign and into your chair. Our Chelmsford salon is calm, bright and ready for you.
+
+Fancy treating yourself before Christmas? WhatsApp or text ${PHONE} to book 💕
+
+#seventysixsalon #chelmsfordsalon #saloninchelmsford #chelmsfordhair #essexhairdresser`,tag:'@emma_oliver_hair'},
+ week:{t:"A week in Rachael's chair",g:'Rachael',pil:'Meet the girls',type:'carousel',n:4,cap:`A week in Rachael's chair ✨
+A halo money piece, violet & magenta, a big restyle, foilayage and a lived-in balayage for our client who works on cruise ships 🛳️
+
+Which look would you book? 👇
+
+#seventysixsalon #wellacolour #chelmsfordhair #hairtransformation #essexhairdresser`,tag:'@hair_by.rachael'},
+ bleach:{t:'Learn: what lightener does',g:'Learn',pil:'Learn with 76',type:'carousel',n:4,cap:`What does lightener actually do? 🧪
+Hair is held together by bonds, and studies found a normal bleach breaks around 15 to 25% of the strongest ones. That's why lightening is a professional job: the right strength, timing and aftercare.
+
+Swipe for the science, then show your lightened hair some love 💛
+
+#seventysixsalon #blondehair #haireducation #lightening #chelmsfordhair`},
+ copper:{t:'Blonde to copper',g:'Rachael',pil:'The work',type:'carousel',n:3,cap:`Blonde to copper 🧡
+For this rich copper, Rachael pre-coloured our client's blonde to an orange tone first, then applied the chosen copper shade, so the colour sits beautifully and lasts.
+
+Swipe to the end for the before ➡️
+
+#seventysixsalon #copperhair #colourchange #chelmsfordhair #essexhairdresser`,tag:'@hair_by.rachael'},
+ review:{t:'Love notes: Karen',g:'Team',pil:'Love notes',type:'photo',cap:`Reviews like this mean everything 🥹💕
+Thank you so much Karen for the lovely words about your colour with Kim. We love having you in the chair.
+
+If you've never visited 76, maybe this is why ✨
+
+#seventysixsalon #clientlove #chelmsfordhair #essexhairdresser #team76`},
+ santa:{t:'What the girls are asking Santa for',g:'Team',pil:'Christmas',type:'carousel',n:1,draft:'Draft: I need each girl\'s real answer before this one is finished.',cap:`What the girls are asking Santa for 🎄
+Swipe to see what's on the wish lists at 76 this year…
+
+#seventysixsalon #team76 #christmas #chelmsfordhair #essexhairdresser`},
+};
+/* default posting order Mon 9:30 am → Sun 7:30 pm (chosen so the feed has no lines or diagonals) */
+const DEFAULT=['pkg','emmabf','brassy','bob','money','teddy','week','hotroots','violet','salon','copper','bleach','santa','review'];
+const SLOTS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[[d,'9:30 am'],[d,'7:30 pm']]);
+const FEEDS={A:['Feed A','Editorial magazine','Every post as a full photo with a paper panel and a thin forest green line. Closest to the look Kimmy already picked.'],
+ B:['Feed B','Polaroid & film','Taped polaroids and film strips on soft paper. Feels personal and arty, like a moodboard.'],
+ C:['Feed C','Swatch cards','An arched photo with shade chips taken from the real hair colour. Very "colour expert".'],
+ M:['My mix','Pick per post','Choose A, B or C for each post in the list below. Your picks are saved on this device.']};
+
+let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm')||'{}')}catch(e){}
+let order=LS.order&&LS.order.length===14?LS.order:[...DEFAULT];
+let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
+let tab=LS.tab||'A';
+(()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
+ if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABC'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t')})();
+const save=()=>{try{localStorage.setItem('76plan-chelm',JSON.stringify({order,mix,tab}))}catch(e){}};
+const $=s=>document.querySelector(s);
+const v=k=>tab==='M'?mix[k]:tab;
+const cover=k=>`img/covers/${k}-${v(k)}.jpg`;
+const ICO={reel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm6 6v6l5-3z"/></svg>',carousel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v13h13" fill="none" stroke="#fff" stroke-width="2"/></svg>',photo:''};
+const slotOf=k=>SLOTS[order.indexOf(k)];
+
+function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
+ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
+ const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];
+ $('#choose').textContent=tab==='M'?'I choose my mix':`I choose ${f[0]}`}
+function renderGrid(){
+ const vis=[...order].reverse(); // newest top-left
+ const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""><span class="d">${n<=3?'Pinned':'On your page'}</span></div>`;
+ const flags=checkFlags(vis);
+ $('#grid').innerHTML=[1,2,3].map(old).join('')+vis.map((k,i)=>{const p=POSTS[k],s=slotOf(k);
+  return `<div class="t new${flags.has(i)?' flag':''}" data-k="${k}"><img src="${cover(k)}" alt="${p.t}">${ICO[p.type]}<span class="d">${s[0]} · ${s[1]}</span></div>`}).join('')+[4,5,6,7,8,9].map(old).join('');
+ wireDrag()}
+function checkFlags(vis){ // same stylist or two Learn posts touching side by side / above-below
+ const f=new Set(),g=i=>POSTS[vis[i]].g;
+ vis.forEach((k,i)=>{const r=Math.floor(i/3),c=i%3;const nb=[];if(c<2&&i+1<vis.length)nb.push(i+1);if(i+3<vis.length)nb.push(i+3);
+  nb.forEach(j=>{if(g(i)===g(j)&&g(i)!=='Team'){f.add(i);f.add(j)}})});return f}
+function renderChecks(){
+ const vis=[...order].reverse(),fl=checkFlags(vis);
+ const learn=vis.map((k,i)=>POSTS[k].g==='Learn'?i:-1).filter(i=>i>=0);
+ const rc=i=>[Math.floor(i/3),i%3];let lined=false;
+ for(let x=0;x<learn.length;x++)for(let y=x+1;y<learn.length;y++){const[a,b]=rc(learn[x]),[c,d]=rc(learn[y]);
+  if(a===c||(b===d&&Math.abs(a-c)<=2)||(Math.abs(a-c)===1&&Math.abs(b-d)===1))lined=true}
+ if(learn.length===3){const[[a1,b1],[a2,b2],[a3,b3]]=learn.map(rc);if((a2-a1)*(b3-b1)===(a3-a1)*(b2-b1))lined=true}
+ const items=[[fl.size===0,fl.size===0?'No same girl or same kind of post touching':'Red outline: same girl (or two tips) side by side. Drag one away'],
+  [!lined,!lined?'Tip posts are scattered (no row, column or diagonal)':'Tip posts sit close or in a line. Move one so they look random'],
+  [true,'Availability stays in Stories, never on the feed'],
+  [false,'Santa carousel is a draft until the girls send their wish lists']];
+ $('#checks').innerHTML=items.map(([ok,t])=>`<li class="${ok?'ok':'no'}">${ok?'✓':'!'} <span style="color:#333">${t}</span></li>`).join('');
+ const cnt={};Object.values(POSTS).forEach(p=>cnt[p.pil]=(cnt[p.pil]||0)+1);const gc={};Object.values(POSTS).forEach(p=>{if(!['Learn','Team'].includes(p.g))gc[p.g]=(gc[p.g]||0)+1});
+ $('#bal').innerHTML=Object.entries(cnt).map(([k,n])=>`<span>${k} · ${n}</span>`).join('')+Object.entries(gc).map(([k,n])=>`<span style="background:#E3ECE5">${k} · ${n}</span>`).join('')}
+function renderPosts(){
+ $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">All 14 posts · ${tab==='M'?'tap a design to pick it':'tap a design to start your own mix'}</div>`+order.map(k=>{const p=POSTS[k],s=slotOf(k);
+  return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><b>${p.t}</b><span class="pill">${p.pil}</span><br><button class="see" data-k="${k}">See post &amp; caption</button></div>
+  <div class="opts">${'ABC'.split('').map(x=>`<button class="opt${v(k)===x?' on':''}" data-k="${k}" data-v="${x}"><img src="img/covers/${k}-${x}.jpg" alt="" loading="lazy"><span>${x}</span></button>`).join('')}</div></div>`}).join('');
+ document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{if(tab!=='M'){Object.keys(mix).forEach(k=>mix[k]=tab);tab='M'}mix[b.dataset.k]=b.dataset.v;save();render()});
+ document.querySelectorAll('.see').forEach(b=>b.onclick=()=>openPost(b.dataset.k))}
+function render(){renderTabs();renderGrid();renderChecks();renderPosts()}
+
+/* drag to swap (mouse + touch) */
+function wireDrag(){
+ document.querySelectorAll('.t.new').forEach(el=>{
+  el.onpointerdown=e=>{e.preventDefault();const k=el.dataset.k,x0=e.clientX,y0=e.clientY;let ghost=null,over=null;
+   const move=ev=>{if(!ghost&&Math.hypot(ev.clientX-x0,ev.clientY-y0)>8){ghost=document.createElement('div');ghost.className='ghost';ghost.innerHTML=`<img src="${cover(k)}">`;document.body.appendChild(ghost);el.classList.add('lift')}
+    if(!ghost)return;ghost.style.left=(ev.clientX-60)+'px';ghost.style.top=(ev.clientY-80)+'px';
+    const t=document.elementFromPoint(ev.clientX,ev.clientY);const tt=t&&t.closest?t.closest('.t.new'):null;
+    if(over&&over!==tt)over.classList.remove('over');over=tt&&tt!==el?tt:null;if(over)over.classList.add('over')};
+   const up=()=>{window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',up);
+    if(!ghost){openPost(k);return}
+    ghost.remove();el.classList.remove('lift');
+    if(over){const a=order.indexOf(k),b=order.indexOf(over.dataset.k);[order[a],order[b]]=[order[b],order[a]];save();render();toast('Swapped. Days and times updated.')}};
+   window.addEventListener('pointermove',move);window.addEventListener('pointerup',up)}})}
+
+/* popup */
+let cur=null;
+function openPost(k){cur=k;const p=POSTS[k],s=slotOf(k),vv=v(k);
+ const imgs=[cover(k)].concat(p.n?Array.from({length:p.n},(_,i)=>`img/slides/${k}-${i+2}.jpg`):[]);
+ const media=p.type==='reel'?`<video src="${p.video}" poster="${cover(k)}" controls playsinline autoplay loop></video>`
+  :`<div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="">`).join('')}</div>${imgs.length>1?`<button class="ar p" id="ap">‹</button><button class="ar n" id="an">›</button><div class="dots">${imgs.map((_,i)=>`<i class="${i?'':'on'}"></i>`).join('')}</div>`:''}`;
+ $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
+  <div class="ph"><div class="pav"><img src="img/logo-black.png" alt=""></div><div><b>seventysixsalon</b><div style="font-size:12px;color:#737373">${s[0]} · ${s[1]} UK · ${p.pil}</div></div></div>
+  <div class="pv">Cover design: ${'ABC'.split('').map(x=>`<button data-v="${x}" class="${x===vv?'on':''}">${x}</button>`).join('')}${p.type==='reel'?'<span>(reel cover)</span>':''}</div>
+  <div class="pb">${p.draft?`<div class="draft">${p.draft}</div>`:''}<b>seventysixsalon</b> ${p.cap.replace(/&/g,'&amp;').replace(/</g,'&lt;')}${p.tag?`<div class="tg"><b>Collab / tag:</b> ${p.tag}</div>`:''}</div></div>`;
+ $('#pop').classList.add('on');document.body.style.overflow='hidden';
+ document.querySelectorAll('.pv button').forEach(b=>b.onclick=()=>{if(tab!=='M'){Object.keys(mix).forEach(x=>mix[x]=tab);tab='M'}mix[k]=b.dataset.v;save();render();openPost(k)});
+ const tk=$('#tk');if(tk&&imgs.length>1){const dots=[...document.querySelectorAll('.pm .dots i')];
+  tk.onscroll=()=>{const i=Math.round(tk.scrollLeft/tk.clientWidth);dots.forEach((d,j)=>d.classList.toggle('on',j===i))};
+  $('#ap').onclick=()=>tk.scrollBy({left:-tk.clientWidth,behavior:'smooth'});$('#an').onclick=()=>tk.scrollBy({left:tk.clientWidth,behavior:'smooth'})}}
+const closePop=()=>{const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
+$('#px').onclick=closePop;$('#pop').onclick=e=>{if(e.target.id==='pop')closePop()};document.addEventListener('keydown',e=>{if(e.key==='Escape')closePop()});
+
+/* actions */
+const toast=t=>{$('#toast').textContent=t;clearTimeout(toast.h);toast.h=setTimeout(()=>$('#toast').textContent='',3500)};
+const link=()=>location.origin+location.pathname+'#o='+order.join(',')+'&m='+DEFAULT.map(k=>mix[k]).join('')+'&t='+tab;
+const planText=()=>`Seventy Six Chelmsford · 23-29 Nov · ${FEEDS[tab][0]} (${FEEDS[tab][1]})\n`+order.map(k=>{const s=slotOf(k);return `${s[0]} ${s[1]} · ${POSTS[k].t} · design ${v(k)}`}).join('\n');
+const copy=(t,msg)=>{(navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast(msg),()=>{prompt('Copy this:',t)})};
+$('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the chat.');
+$('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
+$('#reset').onclick=()=>{order=[...DEFAULT];save();render();toast('Back to the suggested order.')};
+$('#choose').onclick=()=>{const t=`Hi Maria! For Chelmsford I choose ${tab==='M'?'my mix':FEEDS[tab][0]+' ('+FEEDS[tab][1]+')'}.\n${link()}`;
+ window.open('https://wa.me/639094928860?text='+encodeURIComponent(t),'_blank')};
+render();
+</script>
+</body>
+</html>
