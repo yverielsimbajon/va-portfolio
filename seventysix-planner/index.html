@@ -381,7 +381,7 @@ const BP={
  emmabf:{k:'T',g:'Emma',w:'Black Friday · £150 colour',x:'Carousel (ready): pink cover with the £150 stamp, fiery red, caramel balayage, Book with Emma on the 76 logo background',full:'img/wk/emmabf-1.jpg',ty:'carousel',ok:true},
  money:{k:'P',g:'Rachael',w:'Halo money piece',x:'Clean photo + logo',ty:'carousel',ok:true},
  violet:{k:'P',g:'Rachael',w:'Blonde to violet & magenta',x:'Reel with a clean cover on the grid (the colour is the hook). The beige text box + swipe design stay inside the reel',img:'img/wk/violet-clean.jpg',ty:'reel',ok:true},
- claudia:{k:'P',g:'Claudia',w:"Claudia's soft blonde",x:'Clean photo + logo. Her Chelmsford work, so she still gets a post while she is off sick',img:'img/wk/claudia-bp-2.jpg',ty:'photo',ok:true},
+ remi:{k:'P',g:'Extensions',w:'Reel: Remi Cachet, find your shade',x:"Ready-made reel from the social media guide, new song (Say You'll Be There) so it doesn't match Emma's balayage. Replaces Claudia's photo (Claudia is Dunmow)",img:'img/dream/remi.jpg',ty:'reel',ok:true},
  salon:{k:'P',g:'Team',w:'Inside 76 Chelmsford (salon photos)',x:'Carousel (ready): 6 salon photos from our Instagram post, "Relax, you’re in good hands" neon cover. Replaces the walk into 76 reel (Maria, 22 Nov)',img:'img/wk/salon-1.jpg',ty:'carousel',ok:true},
  pkg:{k:'T',g:'Team',w:'Black Friday · blow-dry package £80',x:"Carousel (ready): Emma's blow-dry cover with the 4 for £80 stamp, Rachael's soft waves, Claudia's glossy waves, 4 blow-dries £80 on the 76 logo background",full:'img/wk/pkg-1.jpg',ty:'carousel',ok:true},
  tip:{k:'P',g:'Learn',w:'Tip: why blonde hair needs aftercare',x:'Easy version (ready): photo cover, 5 slides in plain words, no science names',full:'img/wk/tip-brassy-easy.jpg',ty:'carousel',ok:true},
@@ -389,24 +389,61 @@ const BP={
  emmafri:{k:'R',c:'g',g:'Emma',w:"It's Black Friday · Emma's colours",x:'Reel of red, copper, blonde, brunette, green text box, £150 end card',ty:'reel',ok:true},
  karen:{k:'P',g:'Team',w:'Love notes: Karen',x:'Real Goldie review (Karen, colour with Kim, 23 Oct) on our Chelmsford salon photo, paper panel (ready)',full:'img/covers/review-A.jpg',ty:'photo',ok:true},
  review:{k:'T',c:'b',g:'Team',w:'Love notes: Chrissy',x:'Beige review, faded 76 logo behind (ready)',full:'img/wk/review-chrissy.jpg',ty:'photo',ok:true},
- kimwork:{k:'P',g:'Kimmy',w:"Kimmy's work",x:'Clean photo + logo',ty:'photo',ok:false,need:'Need a photo of Kimmy\'s own work (ask her for one)'},
+ kimwork:{k:'P',g:'Kimmy',w:"Kimmy's work",x:'Clean photo + logo',img:'img/dream/kimmy-coming.jpg',ty:'photo',ok:false,need:'Need a photo of Kimmy\'s own work (ask her for one)'},
  team:{k:'P',g:'Team',w:'Team 76 / Christmas',x:'Team photo, festive',ty:'photo',ok:false,need:'Team photo (or the Santa wish lists when the girls answer)'},
  copper:{k:'P',g:'Rachael',w:'Blonde to copper',x:'Clean after, before on slide 2',ty:'carousel',ok:true},
  balay:{k:'R',c:'b',g:'Emma',w:'Reel: balayage, colour & cut',x:'Reel (ready, beige): before, before/after split, the waves, the hair flip, Hair by Emma end card. Power of a Woman',full:'img/wk/balay-bp.jpg',ty:'reel',ok:true}};
-const BP_OPTS={P1:['emmabf','violet','tip','claudia','kimwork','pkg','money','salon','emmafri','balay','review','copper','karen','bob'],
- P2:['emmabf','tip','copper','karen','bob','pkg','kimwork','salon','money','emmafri','violet','balay','claudia','review'],
- P3:['emmabf','kimwork','copper','karen','violet','pkg','money','bob','emmafri','claudia','review','balay','tip','salon']};
+const BP_OPTS={P1:['emmabf','violet','tip','remi','kimwork','pkg','money','salon','emmafri','balay','review','copper','karen','bob'],
+ P2:['emmabf','tip','copper','karen','bob','pkg','kimwork','salon','money','emmafri','violet','balay','remi','review'],
+ P3:['emmabf','kimwork','copper','karen','violet','pkg','money','bob','emmafri','remi','review','balay','tip','salon']};
 const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Extensions:'#8A6E4B',Team:'#6B625C',Learn:'#4E6E83'};
 const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
-const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Claudia 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick, made prettier on 22 Nov: only Chelmsford photos now (no product or stock pictures). Chrissy's review, Claudia's soft blonde and Emma's balayage reel close the week at the top, Rachael's violet pops on row 2, and Karen's review sits lower down so the two reviews never touch. Fair rotation: Emma 4 (2 are her Black Friday), Rachael 3, Claudia 1, Kimmy 1, team 3 (the Inside 76 salon photos and 2 reviews), 1 tip. Emma's £150 goes out Monday 9:30 am, the blow-dry package Wednesday night, It's Black Friday on Friday night. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Claudia 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only. 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."]};
-FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, Chelmsford photos only, no labels. Kimmy's slot still shows a sample photo until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
-FEEDS.DR=['Dream feed',"Claude's free pick","If we forget the blueprint rules: how I would arrange the week to look its prettiest. Every poster is redesigned as one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), the reels get clean photo covers, and Emma's bob is now a reel. Chelmsford photos only. Posters never sit on top of or beside each other, the warm reds and the soft blondes are spread out, and Emma's £150 still goes out Monday morning. Tap a post to open it."];
+const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick, made prettier on 22 Nov: only Chelmsford photos now (no product or stock pictures). Chrissy's review, Claudia's soft blonde and Emma's balayage reel close the week at the top, Rachael's violet pops on row 2, and Karen's review sits lower down so the two reviews never touch. Fair rotation: Emma 4 (2 are her Black Friday), Rachael 3, Remi Cachet reel 1, Kimmy 1, team 3 (the Inside 76 salon photos and 2 reviews), 1 tip. Emma's £150 goes out Monday 9:30 am, the blow-dry package Wednesday night, It's Black Friday on Friday night. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."]};
+FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, Chelmsford photos only, no labels. Kimmy's slot says photo coming until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
+FEEDS.DR=['Dream feed',"Claude's free pick","If we forget the blueprint rules: how I would arrange the week to look its prettiest. Only Chelmsford girls (Emma, Rachael and the team; Claudia is Dunmow so she's out). Every poster is redesigned as one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), the reels get clean photo covers, Emma's bob is now a reel, Rachael's violet reel has real transitions, the walk into 76 reel replaces the salon photos, and the Remi Cachet reel is back with a new song. Chelmsford photos only. Posters never sit on top of or beside each other, the warm reds and the soft blondes are spread out, and Emma's £150 still goes out Monday morning. Tap a post to open it."];
 /* dream feed (22 Nov): grid order newest first */
-const DRO=['claudia','review','violet','tip','salon','emmafri','copper','bob','karen','pkg','kimwork','balay','money','emmabf'];
-const DRI={claudia:'img/wk/claudia-bp-2.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',salon:'img/wk/salon-1.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',kimwork:'img/wk/claudia-bp.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
-const DRTY={bob:'reel'};
-const DRV={bob:'video/emma-bob.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
-const DRCAP={bob:`The big chop, done beautifully 😍
+const DRO=['violet','review','remi','tip','walk','emmafri','copper','bob','karen','pkg','money','balay','foilayage','emmabf'];
+const DRI={remi:'img/dream/remi.jpg',walk:'img/dream/walk.jpg',foilayage:'img/dream/foilayage.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
+const DRTY={bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',foilayage:'photo',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
+const DRV={bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
+const DRCAP={
+ violet:`From blonde to violet & magenta 💜💖
+Rachael lightened the roots with Wella Blondor, toned the blonde, then sectioned our client's hair for two vivid shades: Wella Color Fresh Create in pure violet and magenta pink.
+
+The result? Pure colour heaven. Who's brave enough to go bold? 👀
+
+#seventysixsalon #vividhair #wellacolor #chelmsfordhair #essexhairdresser`,
+ walk:`POV: your walk into 76 Chelmsford ✨
+Down the lane, past the sign and into your chair. Our Chelmsford salon is calm, bright and ready for you.
+
+Fancy treating yourself before Christmas? WhatsApp or text 07432 027611 to book 💕
+
+#seventysixsalon #chelmsfordsalon #saloninchelmsford #chelmsfordhair #essexhairdresser`,
+ remi:`Find your perfect shade with Remi Cachet ✨
+From soft blondes to reds and pinks, there's a shade for everyone. Choose your method: nanos, wefts or tapes, for hair that's longer, fuller and beautifully blended.
+
+Thinking about extensions? WhatsApp or text 07432 027611 for a chat 💕
+
+#seventysixsalon #remicachet #hairextensions #chelmsfordhair #essexhairdresser`,
+ emmafri:`It's Black Friday 🖤
+Red, copper, blonde or brunette: this week Emma is treating you to any colour service for £150, with a cut, blow-dry and treatment all included ✨
+
+WhatsApp or text 07432 027611 to grab your spot 💕
+
+#seventysixsalon #blackfriday #chelmsfordhair #haircolour #essexhairdresser`,
+ tip:`Why does blonde hair need aftercare? 💛
+Lightening opens up the hair, so your blonde needs a little extra love at home to stay bright, soft and shiny.
+
+Swipe for our easy tips and save this for your next wash day ✨
+
+#seventysixsalon #blondehair #haircaretips #chelmsfordhair #essexhairdresser`,
+ foilayage:`Soft, bright foilayage by Rachael ✨
+Hand-painted and foiled for a lighter, brighter blend that grows out beautifully.
+
+Which would you go for, bright or soft? 👇
+
+#seventysixsalon #foilayage #blondebalayage #chelmsfordhair #essexhairdresser`,
+ bob:`The big chop, done beautifully 😍
 Our client was ready for a change. Emma took the length off, added a soft fringe and blended cool-toned highlights through for this gorgeous bob.
 
 Fancy a change? WhatsApp or text 07432 027611 💕
@@ -414,7 +451,7 @@ Fancy a change? WhatsApp or text 07432 027611 💕
 #seventysixsalon #bobhaircut #hairtransformation #chelmsfordhair #essexhairdresser`};
 const isDR=()=>tab==='DR';
 function renderDR(){const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
- $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||BP[k].ty]}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
+ $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
 /* clean Instagram feed: the real cover for each slot */
 const IGCAP={karen:`Reviews like this mean everything 🥹💕
@@ -425,9 +462,9 @@ Thank you so much Karen for the lovely words. We love having you in Kim's chair.
 Bright through the lengths and blended at the root, so it grows out beautifully.
 
 #seventysixsalon #chelmsfordhair #blondebalayage #essexhairdresser #livedinblonde`};
-const IGI={emmabf:'img/wk/emmabf-1.jpg',money:'img/covers/money-D.jpg',violet:'img/wk/violet-clean.jpg',claudia:'img/wk/claudia-bp-2.jpg',salon:'img/wk/salon-1.jpg',pkg:'img/wk/pkg-1.jpg',tip:'img/wk/tip-brassy-easy.jpg',bob:'img/covers/bob-D.jpg',emmafri:'img/wk/emmafri-bp.jpg',karen:'img/covers/review-A.jpg',review:'img/wk/review-chrissy.jpg',kimwork:'img/wk/claudia-bp.jpg',team:'img/wk/claudia-bp.jpg',copper:'img/covers/copper-D.jpg',balay:'img/wk/balay-bp.jpg'};
+const IGI={emmabf:'img/wk/emmabf-1.jpg',money:'img/covers/money-D.jpg',violet:'img/wk/violet-clean.jpg',remi:'img/dream/remi.jpg',salon:'img/wk/salon-1.jpg',pkg:'img/wk/pkg-1.jpg',tip:'img/wk/tip-brassy-easy.jpg',bob:'img/covers/bob-D.jpg',emmafri:'img/wk/emmafri-bp.jpg',karen:'img/covers/review-A.jpg',review:'img/wk/review-chrissy.jpg',kimwork:'img/dream/kimmy-coming.jpg',team:'img/dream/kimmy-coming.jpg',copper:'img/covers/copper-D.jpg',balay:'img/wk/balay-bp.jpg'};
 const IGS={emmabf:[2,3,4].map(i=>`img/wk/emmabf-${i}.jpg`),pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg'],salon:[2,3,4,5,6].map(i=>`img/slides/salon-${i}.jpg`)};
-const IGV={violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
+const IGV={remi:'video/remi.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 /* 22 Nov: Claudia off sick, her 2 slots became the extension reels (keep any saved drag order) */
@@ -599,7 +636,7 @@ function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
  if(vd){vd.muted=false;vd.volume=1;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();
   $('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
-function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k],p=POSTS[k]||{},cap=(D&&DRCAP[k])||IGCAP[k]||p.cap||(b.w);
+function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=(D&&DRCAP[k])||IGCAP[k]||p.cap||(b.w);
  const imgs=[(D?DRI:IGI)[k]].concat(IGS[k]||[]),vid=(D?DRV:IGV)[k];
  const media=vid?`<video id="pv" src="${vid}" poster="${imgs[0]}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
   :imgs.length<2?`<img src="${imgs[0]}" alt="">`
