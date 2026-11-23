@@ -402,10 +402,10 @@ const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls'
 FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, Chelmsford photos only, no labels. Kimmy's slot says photo coming until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
 FEEDS.DR=['Dream feed',"Claude's free pick","If we forget the blueprint rules: how I would arrange the week to look its prettiest. Only Chelmsford girls (Emma, Rachael and the team; Claudia is Dunmow so she's out). Every poster is redesigned as one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), the reels get clean photo covers, Emma's bob is now a reel, Rachael's violet reel has real transitions, the walk into 76 reel replaces the salon photos, and the Remi Cachet reel is back with a new song. Chelmsford photos only. Posters never sit on top of or beside each other, the warm reds and the soft blondes are spread out, and Emma's £150 still goes out Monday morning. Tap a post to open it."];
 /* dream feed (22 Nov): grid order newest first */
-const DRO=['violet','review','remi','tip','walk','emmafri','copper','bob','karen','pkg','money','balay','foilayage','emmabf'];
-const DRI={remi:'img/dream/remi.jpg',walk:'img/dream/walk.jpg',foilayage:'img/dream/foilayage.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
-const DRTY={bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',foilayage:'photo',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
-const DRV={bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
+const DRO=['violet','review','remi','tip','walk','emmafri','copper','bob','karen','pkg','money','balay','rachbalay','emmabf'];
+const DRI={remi:'img/dream/remi.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
+const DRTY={bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',rachbalay:'reel',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
+const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
 const DRCAP={
  violet:`From blonde to violet & magenta 💜💖
 Rachael lightened the roots with Wella Blondor, toned the blonde, then sectioned our client's hair for two vivid shades: Wella Color Fresh Create in pure violet and magenta pink.
@@ -437,12 +437,12 @@ Lightening opens up the hair, so your blonde needs a little extra love at home t
 Swipe for our easy tips and save this for your next wash day ✨
 
 #seventysixsalon #blondehair #haircaretips #chelmsfordhair #essexhairdresser`,
- foilayage:`Soft, bright foilayage by Rachael ✨
-Hand-painted and foiled for a lighter, brighter blend that grows out beautifully.
+ rachbalay:`Soft, bright balayage by Rachael ✨
+Foiled for a brighter lift, then blended for a soft, lived-in finish that grows out beautifully.
 
-Which would you go for, bright or soft? 👇
+Want yours? WhatsApp or text 07432 027611 💕
 
-#seventysixsalon #foilayage #blondebalayage #chelmsfordhair #essexhairdresser`,
+#seventysixsalon #balayage #blondebalayage #chelmsfordhair #essexhairdresser`,
  bob:`The big chop, done beautifully 😍
 Our client was ready for a change. Emma took the length off, added a soft fringe and blended cool-toned highlights through for this gorgeous bob.
 
@@ -450,6 +450,7 @@ Fancy a change? WhatsApp or text 07432 027611 💕
 
 #seventysixsalon #bobhaircut #hairtransformation #chelmsfordhair #essexhairdresser`};
 const isDR=()=>tab==='DR';
+try{const v=localStorage.getItem('76dream-bf');if(v)DRI.emmabf=v}catch(e){}
 function renderDR(){const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
@@ -646,6 +647,9 @@ function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=
   <div class="ph">${AV}<div><b>seventysixsalon</b><span>SeventySix Salon, Chelmsford</span></div></div>
   <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>seventysixsalon</b> ${fmt(cap)}</div></div></div>
   <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div></div></div>`;
+ if(D&&k==='emmabf'){const ps=document.querySelector('#pc .ps .ph');const row=document.createElement('div');row.className='pv';
+  row.innerHTML='Black Friday cover: '+'ABCDEF'.split('').map(x=>`<button data-v="${x}" class="${DRI.emmabf.endsWith('bf-options/'+x+'.jpg')?'on':''}">${x}</button>`).join('')+'<button data-v="0" class="'+(DRI.emmabf==='img/dream/emmabf.jpg'?'on':'')+'">old</button>';
+  ps.after(row);row.querySelectorAll('button').forEach(bt=>bt.onclick=()=>{DRI.emmabf=bt.dataset.v==='0'?'img/dream/emmabf.jpg':'img/dream/bf-options/'+bt.dataset.v+'.jpg';try{localStorage.setItem('76dream-bf',DRI.emmabf)}catch(e){}renderDR();openIG('emmabf')})}
  $('#pop').classList.add('on');document.body.style.overflow='hidden';
  const F=D?DRO:[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
  const tk=$('#tk');
