@@ -275,7 +275,7 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
 <body>
 <nav class="knav"><div class="wrap">
  <a class="brand" href="#top"><img src="img/logo-black.png" alt="76"><span>Seventy Six</span></a>
- <div class="links"><a href="#stories">Stories</a><a href="#feed" data-go="chelm">Chelmsford feed</a><a href="#feed" data-go="dun">Dunmow feed</a></div>
+ <div class="links"><a href="#stories">Stories</a><a href="#feed" data-go="chelm">Chelmsford feed</a><a href="#feed-dun">Dunmow feed</a></div>
 </div></nav>
 <section class="khero" id="top"><div class="wrap">
  <img src="img/logo-black.png" alt="Seventy Six Salon logo">
@@ -361,6 +361,22 @@ WhatsApp the salon to book</div>
     <div class="checks"><h4>Feed check</h4><ul id="checks"></ul><div class="bal" id="bal"></div></div>
 
     <div class="posts" id="posts"></div>
+  </div>
+</div>
+
+<div class="wrap feedhead" id="feed-dun" style="border-top:1px solid var(--line);padding-top:34px"><div class="caps">Instagram feed · Great Dunmow</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 23 to 29 November</h2><p style="color:#4A423D;margin-top:6px">2 posts a day. Tap any post to see it with its caption. Dunmow girls only, white 76 logo.</p></div>
+<div class="wrap main">
+  <div class="phone">
+    <div class="ig-head"><div class="av" style="background:#2F4B3A"><img src="img/logo-white.png" alt=""></div><div><b>seventysixsalon_dunmow</b><small>SEVENTYSIX | GREAT DUNMOW SALON</small><small>Beauty, cosmetic &amp; personal care</small></div></div>
+    <div class="ig-bio">HAIR • MAKEUP • BRIDAL<br>Colour, Cut &amp; Extension specialists</div>
+    <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>
+    <div class="grid" id="grid2"></div>
+  </div>
+  <div class="side">
+    <div class="caps" id="dcaps">Final feed</div>
+    <h2 id="dtitle">Great Dunmow · ready to post</h2>
+    <p class="lead" id="dlead"></p>
+    <div class="dunplan" id="dunplan2"></div>
   </div>
 </div>
 
@@ -574,88 +590,90 @@ const DUN={
  TY:{copper:'reel',kat:'reel',ashy:'reel',d20r:'reel',team:'reel',gabsr:'reel',nano:'reel',d20c:'carousel',gabsp:'photo',rachel:'photo',brun:'photo',ami:'photo',cblonde:'photo',pkg:'photo'},
  W:{pkg:'Black Friday blow-dry package · £80',nano:'Reel · Nano bonds, Remi Cachet · Madison',gabsr:'Reel · Bright blonde, soft grow out · Gabriella',d20c:'Carousel · £20 blow-dries Friday · Madison',cblonde:'Photo · Soft blonde · Claudia',ami:'Review · Ami, colour with Madison',team:'Reel · The girls of 76 Dunmow',d20r:'Reel · £20 blow-dries tomorrow · Madison',ashy:'Reel · Ashy dreamy blonde · Claudia',brun:'Photo · Rich, glossy brunette · Madison',rachel:'Review · Rachel, cut with Gabriella',gabsp:'Photo · Bright blonde finish · Gabriella',kat:'Reel · The restyle (Kat from MobLand) · Claudia',copper:'Reel · Toned copper balayage · Madison'},
  CAP:{
- pkg:`The Black Friday blow-dry package 🖤
-4 blow-dries a month for £80, all with the same stylist. That's a saving of £60 ✨
+ pkg:`Black Friday treat: your blow-dries, sorted for the month 🖤
+4 blow-dries for £80 with the same stylist, so you save £60 and stay salon-fresh all month long.
 
 Available with all our stylists, except Nicky and Kimmy. Packages must be paid in full by 28.11.26.
 
-To buy yours, WhatsApp or text the salon on 07432 027611, or email SeventySix.salon@outlook.com 💕
+To buy yours, WhatsApp or text the salon on 07432 027611, or email SeventySix.salon@outlook.com 💌
 
-#seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
- nano:`Nano bonds by Madison ✨
-Remi Cachet nano bond extensions, blended into our client's blonde highlights for long, full, bouncy hair 💛
+#seventysixsalon #blackfriday #blowdry #greatdunmow #essexhairdresser`,
+ nano:`Madison's nano bond magic 💫
+Remi Cachet nano bonds, blended into our client's blonde highlights. The result: long, full hair with so much bounce.
 
-Want length and volume? Ask us about Remi Cachet.
+Dreaming of extra length? Ask the girls about Remi Cachet 💬
 
 #seventysixsalon #nanobonds #remicachet #hairextensions #dunmowhair`,
- gabsr:`Bright blonde, soft grow out ✨
-Gabriella placed a full head of highlights, then balayaged the halo section on top. Our client gets that bright blonde with a softer, easier grow out 💛
+ gabsr:`Bright on top, soft at the root 🌼
+Gabriella placed a full head of highlights, then balayaged the halo section, so our client gets all the brightness with an easy, gentle grow out.
 
-Watch it go from before to after 😍
+Stay till the end for the after 👀
 
-#seventysixsalon #brightblonde #balayage #dunmowhair #essexhairdresser`,
- d20c:`£20 blow-dries this Friday 💚
-Black Friday at 76 Dunmow! Madison is treating you to £20 blow-dries on Friday 27 November. Bouncy, glossy and ready for the weekend ✨
+#seventysixsalon #balayage #highlights #dunmowhair #essexblonde`,
+ d20c:`Friday plans? A £20 blow-dry with Madison 💚
+For Black Friday, Madison is doing £20 blow-dries on Friday 27 November. Glossy, bouncy and ready for the weekend.
 
-Swipe for a little inspo from Madison's chair ➡️
+Swipe through a few favourites from her chair ➡️
 
 To book with Madison, WhatsApp or text the salon on 07432 027611, or email SeventySix.salon@outlook.com 💕
 
 #seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
- cblonde:`Soft, bright blonde by Claudia ✨
-Colour, blonde highlights and a cut & style, finished with soft, bouncy waves 💛
+ cblonde:`Claudia, you've outdone yourself 🌟
+Colour, blonde highlights and a cut & style for our client, all finished with soft, bouncy waves.
 
-#seventysixsalon #blondehighlights #blondehair #dunmowhair #essexhairdresser`,
- ami:`"The blowdry stood up to stormy weather too." Best compliment ever ⛈️✨
-Ami, thank you for your kind words! Madison had so much fun on your colour, and we're so happy you love it 💛
+#seventysixsalon #blondehighlights #wavyhair #dunmowhair #essexhairdresser`,
+ ami:`"The blowdry stood up to stormy weather too." ⛈️
+Now that's a blow-dry! Ami, thank you for taking the time to write this. Madison loved doing your colour and we're thrilled you're happy with it 💛
 
-Your next visit with Madison is waiting at 76 Dunmow 😊
+Looking forward to seeing you back in Madison's chair 🥰
 
-#seventysixsalon #clientlove #dunmowhair #blondehair #essexhairdresser`,
- team:`The girls of 76 Dunmow 🖤
-Nicky, Claudia, Leah, Gabriella, Madison and Kelsey. Colour, cuts, extensions, bridal hair and makeup, all under one roof ✨
+#seventysixsalon #goldiereviews #happyclient #dunmowhair #greatdunmow`,
+ team:`Say hello to the girls of 76 Dunmow 👋
+Nicky, Claudia, Leah, Gabriella, Madison and Kelsey: colour, cuts, extensions, bridal hair and makeup, all under one roof.
 
-Who's your 76 girl? 👇
+Which of the girls is your go-to? Tell us below 👇
 
 #seventysixsalon #dunmowhair #essexhairdresser #greatdunmow #hairteam`,
- d20r:`£20 blow-dries this Friday 💨
-Black Friday at 76 Dunmow: Madison is doing £20 blow-dries on Friday 27 November ✨
+ d20r:`Tomorrow's the day 💨
+£20 blow-dries with Madison on Friday 27 November, for Black Friday at 76 Dunmow. Weekend hair, sorted.
 
-Spaces are limited, girls. WhatsApp or text 07432 027611, or email SeventySix.salon@outlook.com to grab yours.
+Spaces are limited, so message us quick: WhatsApp or text 07432 027611, or email SeventySix.salon@outlook.com 📲
 
-#seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
- ashy:`Ashy dreamy blonde ✨
-Our client came in with a brassy blonde and left with a shiny, ashy, dreamy blonde. Half head highlights, finished with a cut and style by Claudia 😊
+#seventysixsalon #blowdryfriday #blackfridaydeals #greatdunmow #blowout`,
+ ashy:`From brassy to beautifully ashy ❄️
+Claudia gave our client half head highlights plus a cut and style, swapping the warm tones for a shiny, cool, dreamy blonde.
 
-Before to after, all in one visit 😍
+All done in one visit 🙌
 
-#seventysixsalon #ashblonde #blondehighlights #dunmowhair #essexhairdresser`,
- brun:`Rich, glossy brunette 🤎
-An all over colour and tape extensions by Madison, for length and bounce that lasts all season.
+#seventysixsalon #ashblonde #coolblonde #dunmowhair #essexhairdresser`,
+ brun:`Brunette, but make it glossy 🤎
+Madison gave our client an all over colour and added tape extensions, for length and bounce that lasts all season.
 
-If you've never visited 76 Dunmow, maybe this is why ✨
+Brunettes, this one's for you 🍫
 
 #seventysixsalon #tapeextensions #brunettehair #dunmowhair #essexhairextensions`,
- rachel:`Reviews like this mean everything 🥹💕
-Thank you so much Rachel! Gabriella loved giving you your new cut, and we can't wait to see you again.
+ rachel:`"I absolutely love my new hair" 🥰
+Rachel, you've made our week! Gabriella had the best time giving you your new cut, and we can't wait for your next appointment.
 
-#seventysixsalon #clientlove #dunmowhair #essexhairdresser #team76`,
- gabsp:`The finish 😍
-Bright, soft blonde by Gabriella: a full head of highlights with a balayaged halo on top, so it grows out beautifully 💛
+#seventysixsalon #goldiereviews #newhaircut #dunmowhair #team76`,
+ gabsp:`Close up on Gabriella's blonde 📸
+Full head highlights with a balayaged halo: bright, soft and so easy to wear 💛
 
-#seventysixsalon #brightblonde #blondehighlights #dunmowhair #essexhairdresser`,
- kat:`The restyle ✂️
-Our client brought Kat from MobLand as her inspo, and Claudia gave her a sharp, short restyle with soft textured layers 🖤
+Save this one for your next appointment 📌
 
-Bringing your inspo pic? We love that 😍
+#seventysixsalon #blondehighlights #blondehair #greatdunmow #essexhairdresser`,
+ kat:`Inspo pic: Kat from MobLand. The result? 🔥
+Claudia gave our client a sharp, short restyle with soft textured layers, and it suits her perfectly 🖤
 
-#seventysixsalon #restyle #shorthair #dunmowhair #essexhairdresser`,
- copper:`Toned copper 🍂
-Balayage toned to a warm, glossy copper, finished with a cut and blow-dry by Madison ✨
+Got a screenshot saved for your next cut? Bring it in, the girls love a challenge ✂️
 
-Copper season is here 😍
+#seventysixsalon #restyle #shorthaircut #dunmowhair #essexhairdresser`,
+ copper:`Copper season has officially arrived 🍂
+Our client's balayage, toned to a warm, glossy copper, then finished with a cut and blow-dry by Madison.
 
-#seventysixsalon #copperhair #balayage #dunmowhair #essexhairdresser`}};
+Would you go copper this winter? 🧡
+
+#seventysixsalon #copperhair #balayage #autumnhair #dunmowhair`}};
 FEEDS.DN=['Final feed','Great Dunmow · ready to post',"The Dunmow week, 14 posts, 2 a day. Dunmow girls only (Claudia, Madison, Gabriella and the team), white 76 logo. 7 reels, Madison's £20 Friday blow-dries go out Tuesday night (carousel) and Thursday night (reel), the blow-dry package on Monday morning, and 2 real Goldie reviews (Ami for Madison, Rachel for Gabriella) that never touch. Same girl never side by side. Tap any post to see it with its caption."];
 const isDN=()=>tab==='DN';
 const HN=()=>isDN()?'seventysixsalon_dunmow':'seventysixsalon';
@@ -701,12 +719,12 @@ let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
 const okO=o=>o&&o.length===14&&o.every(k=>BP[k]);
 let bpOrders=Object.fromEntries(Object.entries(BP_OPTS).map(([k,o])=>[k,LS.bps&&okO(LS.bps[k])?LS.bps[k]:[...o]]));
 let bfPick=LS.bf||'emma-fade-0';
-let tab='DR';
+let tab='DR';try{if(LS.tab==='DN')LS.tab='DR'}catch(e){}
 const isBP=()=>tab[0]==='P';
 const isIG=()=>tab==='IG';
 const BPO=()=>bpOrders[isBP()?tab:isIG()?'P2':'P1'];
 (()=>{const h=new URLSearchParams(location.hash.slice(1));if(h.get('o')){const o=h.get('o').split(',');if(o.length===14&&o.every(k=>POSTS[k]))order=o}
- if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')])tab=h.get('t');
+ if(h.get('m')){const m=h.get('m');DEFAULT.forEach((k,i)=>{if('ABCD'.includes(m[i]))mix[k]=m[i]})}if(h.get('t')&&FEEDS[h.get('t')]&&h.get('t')!=='DN')tab=h.get('t');
  if(h.get('b')){const b=h.get('b').split(',');const bk=tab==='IG'?'P2':tab;if(okO(b)&&BP_OPTS[bk])bpOrders[bk]=b}if(h.get('f')&&BFO.some(x=>x[0]===h.get('f')))bfPick=h.get('f')})();
 const save=()=>{try{localStorage.setItem('76plan-chelm-v2',JSON.stringify({pick2:1,order,mix,tab,bps:bpOrders,bf:bfPick}))}catch(e){}};
 const $=s=>document.querySelector(s);
@@ -907,7 +925,8 @@ function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=
  if(vd){vidCtl(vd);vd.muted=false;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();$('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
 function slideBy(d){const tk=$('#tk');if(!tk)return false;const n=tk.children.length,t=SI+d;if(t<0||t>=n)return false;tk.scrollTo({left:t*tk.clientWidth,behavior:'smooth'});return true}
-const closePop=()=>{const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
+let PREV=null;
+const closePop=()=>{if(PREV){tab=PREV;PREV=null}const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
 $('#px').onclick=closePop;
 $('#pp').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DX().O:[...BPO()].reverse(),i=F.indexOf(cur);if(i>0)openIG(F[i-1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
 $('#pn').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DX().O:[...BPO()].reverse(),i=F.indexOf(cur);if(i<F.length-1)openIG(F[i+1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
@@ -928,11 +947,22 @@ $('#reset').onclick=()=>{order=[...DEFAULT];save();render();toast('Back to the s
 $('#days').onclick=()=>{showDays=!showDays;render()};
 /* Kimmy view: ?for=kimmy = stories + final feed only */
 const KIM=new URLSearchParams(location.search).get('for')==='kimmy';
-document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>{const t=a.dataset.go==='dun'?'DN':'DR';if(t!==tab){tab=t;render()}}));
-document.querySelectorAll('.salons button').forEach(b=>b.onclick=()=>{const t=b.dataset.s==='dun'?'DN':'DR';if(t===tab)return;tab=t;try{save()}catch(e){}render();document.getElementById('feed').scrollIntoView({behavior:'smooth'})});
-if(KIM){document.body.classList.add('kim');tab=location.hash.includes('t=DN')?'DN':'DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Seven reels, Madison's £20 Black Friday blow-dries, the blow-dry package on Monday, and two lovely Goldie reviews. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one forest green review, and reels with clean photo covers: Rachael's violet and balayage, Emma's walk-in, bob, Black Friday colours and balayage, plus the Remi Cachet reel. Tap any post to see it with its caption."]}
+
+document.querySelectorAll('.salons button').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.s==='dun'?'feed-dun':'feed').scrollIntoView({behavior:'smooth'}));
+if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Seven reels, Madison's £20 Black Friday blow-dries, the blow-dry package on Monday, and two lovely Goldie reviews. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one forest green review, and reels with clean photo covers: Rachael's violet and balayage, Emma's walk-in, bob, Black Friday colours and balayage, plus the Remi Cachet reel. Tap any post to see it with its caption."]}
 {const bx=$('#stbox');document.querySelectorAll('.st-row button').forEach(b=>b.onclick=()=>{bx.querySelector('img').src='img/stories/'+b.dataset.s+'.jpg';bx.classList.add('on')});bx.onclick=e=>{if(e.target.tagName!=='IMG')bx.classList.remove('on')}}
 applyBF();render();
+/* Great Dunmow feed: always shown under Chelmsford */
+function renderDun2(){
+ $('#grid2').innerHTML=DUN.O.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DUN.I[k]}" alt="">${ICO[DUN.TY[k]||'photo']}</div>`).join('');
+ const op=k=>{if(!PREV)PREV=tab;tab='DN';openIG(k)};
+ document.querySelectorAll('#grid2 .t').forEach(el=>el.onclick=()=>op(el.dataset.k));
+ const f=FEEDS.DN;if(f){$('#dlead').textContent=f[2]}
+ const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 9:30 am',d+' 7:30 pm']);
+ const L=$('#dunplan2');L.innerHTML='<h4>Dunmow posting plan (UK time)</h4><ol>'+[...DUN.O].reverse().map((k,i)=>`<li><b>${SL[i]}</b> · <a href="#" data-k="${k}">${DUN.W[k]}</a></li>`).join('')+'</ol>';
+ L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();op(a.dataset.k)})}
+renderDun2();
+if(location.hash.includes('t=DN'))setTimeout(()=>document.getElementById('feed-dun').scrollIntoView(),300);
 </script>
 </body>
 </html>
