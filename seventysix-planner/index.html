@@ -210,6 +210,29 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
 .bfbar button{flex:0 0 auto;border:2px solid transparent;background:none;padding:0;cursor:pointer;border-radius:6px;text-align:center;font:600 12px/1.6 inherit;color:#151515}
 .bfbar button img{display:block;width:46px;height:58px;object-fit:cover;border-radius:4px}
 .bfbar button.on{border-color:#2F4B3A}
+/* stories + Kimmy view */
+.sec{padding-top:30px}
+.sec h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px}
+.sec .lead{color:#4A423D;margin-top:6px;max-width:680px}
+.st-salon{margin-top:18px}
+.st-salon h3{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:24px;display:flex;align-items:center;gap:10px}
+.st-salon h3 span{font-family:'Open Sans',sans-serif;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-weight:600}
+.st-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:10px}
+@media(max-width:760px){.st-row{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.st-row figure{flex:0 0 58%;scroll-snap-align:start}}
+.st-row figure{position:relative}
+.st-row button{display:block;width:100%;border:1px solid var(--line);background:#fff;padding:0;border-radius:10px;overflow:hidden}
+.st-row img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.st-row figcaption{font-size:13px;margin-top:6px;color:#4A423D}
+.st-row figcaption b{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--black);margin-right:4px}
+.st-row .pick{position:absolute;left:8px;top:8px;background:var(--green);color:#fff;font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px}
+.st-cap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:13.5px;white-space:pre-line;color:#4A423D}
+.st-cap b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
+.stbox{position:fixed;inset:0;z-index:80;background:rgba(21,21,21,.88);display:none;align-items:center;justify-content:center;padding:16px}
+.stbox.on{display:flex}
+.stbox img{max-height:92vh;width:auto;border-radius:10px}
+.stbox button{position:absolute;top:12px;right:14px;background:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px}
+.feedhead{padding-top:34px;border-top:1px solid var(--line);margin-top:30px}
+body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{display:none!important}
 </style>
 </head>
 <body>
@@ -219,6 +242,40 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
   <p>14 posts, 2 a day. Final feed is the week we post. Tap a post to see it with its caption.</p>
   <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
 </div></header>
+
+<section class="wrap sec" id="stories">
+  <div class="caps">Stories · Availability · Monday</div>
+  <h2>This week's availability story</h2>
+  <p class="lead">Availability stays in Stories, never on the feed. Four looks for each salon. Tap any story to see it big, and tell me which one you like.</p>
+  <div class="st-salon"><h3>Chelmsford <span>Black 76 logo</span></h3>
+    <div class="st-row">
+      <figure><button data-s="chelm-B"><img src="img/stories/chelm-B.jpg" alt="Chelmsford story option B" loading="lazy"></button><span class="pick">Our pick</span><figcaption><b>B</b>Book in with the girls · by stylist</figcaption></figure>
+      <figure><button data-s="chelm-A"><img src="img/stories/chelm-A.jpg" alt="Chelmsford story option A" loading="lazy"></button><figcaption><b>A</b>Grab a spot · photos on top</figcaption></figure>
+      <figure><button data-s="chelm-C"><img src="img/stories/chelm-C.jpg" alt="Chelmsford story option C" loading="lazy"></button><figcaption><b>C</b>This week · day tiles</figcaption></figure>
+      <figure><button data-s="chelm-D"><img src="img/stories/chelm-D.jpg" alt="Chelmsford story option D" loading="lazy"></button><figcaption><b>D</b>Big photo · list below</figcaption></figure>
+    </div>
+    <div class="st-cap"><b>Story caption</b>76 Salon Chelmsford
+See above where you can grab a spot with Emma and Madison this week
+Black Friday: any colour service £150 with Emma (cut, blow-dry &amp; treatment included)
+These appointments will go fast, girls
+WhatsApp the salon to book</div>
+  </div>
+  <div class="st-salon"><h3>Great Dunmow <span>White 76 logo</span></h3>
+    <div class="st-row">
+      <figure><button data-s="dun-A"><img src="img/stories/dun-A.jpg" alt="Dunmow story option A" loading="lazy"></button><figcaption><b>A</b>Grab a spot · photos on top</figcaption></figure>
+      <figure><button data-s="dun-B"><img src="img/stories/dun-B.jpg" alt="Dunmow story option B" loading="lazy"></button><figcaption><b>B</b>Book in with the girls · by stylist</figcaption></figure>
+      <figure><button data-s="dun-C"><img src="img/stories/dun-C.jpg" alt="Dunmow story option C" loading="lazy"></button><figcaption><b>C</b>This week · day tiles</figcaption></figure>
+      <figure><button data-s="dun-D"><img src="img/stories/dun-D.jpg" alt="Dunmow story option D" loading="lazy"></button><figcaption><b>D</b>Big photo · list below</figcaption></figure>
+    </div>
+    <div class="st-cap"><b>Story caption</b>76 Salon Dunmow
+See above where you can grab a spot with Madison, Gabriella and Claudia this week
+£20 blow-dries this Friday with Madison
+These appointments will go fast, girls
+WhatsApp the salon to book</div>
+  </div>
+</section>
+<div class="wrap feedhead"><div class="caps">Instagram feed · Chelmsford</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 23 to 29 November</h2><p style="color:#4A423D;margin-top:6px">2 posts a day. Tap any post to see it with its caption. Dunmow's feed comes next.</p></div>
+<div class="stbox" id="stbox"><button aria-label="Close">×</button><img alt=""></div>
 
 <nav class="tabs"><div class="wrap" id="tabs"></div></nav>
 
@@ -699,6 +756,10 @@ $('#copy').onclick=()=>copy(planText(),'Plan copied. Paste it in WhatsApp or the
 $('#share').onclick=()=>copy(link(),'Share link copied. It opens with this exact order and designs.');
 $('#reset').onclick=()=>{order=[...DEFAULT];save();render();toast('Back to the suggested order.')};
 $('#days').onclick=()=>{showDays=!showDays;render()};
+/* Kimmy view: ?for=kimmy = stories + final feed only */
+const KIM=new URLSearchParams(location.search).get('for')==='kimmy';
+if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one forest green review, and reels with clean photo covers: Rachael's violet and balayage, Emma's walk-in, bob, Black Friday colours and balayage, plus the Remi Cachet reel. Tap any post to see it with its caption."]}
+{const bx=$('#stbox');document.querySelectorAll('.st-row button').forEach(b=>b.onclick=()=>{bx.querySelector('img').src='img/stories/'+b.dataset.s+'.jpg';bx.classList.add('on')});bx.onclick=e=>{if(e.target.tagName!=='IMG')bx.classList.remove('on')}}
 applyBF();render();
 </script>
 </body>
