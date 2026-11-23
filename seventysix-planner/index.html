@@ -217,6 +217,8 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
 .bfbar button{flex:0 0 auto;border:2px solid transparent;background:none;padding:0;cursor:pointer;border-radius:6px;text-align:center;font:600 12px/1.6 inherit;color:#151515}
 .bfbar button img{display:block;width:46px;height:58px;object-fit:cover;border-radius:4px}
 .bfbar button.on{border-color:#2F4B3A}
+.yp{position:absolute;left:6px;bottom:6px;z-index:3;background:rgba(248,243,239,.94);color:#151515;font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.1em;text-transform:uppercase;padding:4px 7px;border-radius:3px}
+.t.old{position:relative}
 /* stories + Kimmy view */
 .sec{padding-top:30px}
 .sec h2{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px}
@@ -280,7 +282,7 @@ These appointments will go fast, girls
 WhatsApp the salon to book</div>
   </div>
 </section>
-<div class="wrap feedhead"><div class="caps">Instagram feed · Chelmsford</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 23 to 29 November</h2><p style="color:#4A423D;margin-top:6px">2 posts a day. Tap any post to see it with its caption. Dunmow's feed comes next.</p></div>
+<div class="wrap feedhead"><div class="caps">Instagram feed · Chelmsford</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 23 to 29 November</h2><p style="color:#4A423D;margin-top:6px">2 posts a day. Tap any post to see it with its caption. Tiles marked “Your post” are already on your page, so my new posts are everything above them. Dunmow's feed comes next.</p></div>
 <div class="stbox" id="stbox"><button aria-label="Close">×</button><img alt=""></div>
 
 <nav class="tabs"><div class="wrap" id="tabs"></div></nav>
@@ -473,10 +475,10 @@ FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on I
 FEEDS.DR=['Final feed','Chelmsford · ready to post',"The final Chelmsford week (Maria, 23 Nov). Chelmsford girls only (Emma, Rachael and the team; Claudia is Dunmow). Every poster in one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), clean photo covers on the reels: Rachael's violet and balayage, Emma's walk into 76 (main character era), bob (bouncy, glossy, bob-tastic), Black Friday colours and balayage, plus the Remi Cachet reel. Emma's £150 Black Friday uses cover D with colour collage slide 4. Tap any post to see it with its caption. The Blueprint and Clean feed tabs are the earlier options."];
 {const d=FEEDS.DR;delete FEEDS.DR;const o={DR:d,...FEEDS};Object.keys(FEEDS).forEach(k=>delete FEEDS[k]);Object.assign(FEEDS,o)}
 /* dream feed (22 Nov): grid order newest first */
-const DRO=['remi','violet','review','tip','copper','walk','money','balay','karen','rachbalay','bob','emmafri','pkg','emmabf'];
+const DRO=['remi','review','violet','tip','copper','walk','money','balay','karen','rachbalay','bob','emmafri','pkg','emmabf'];
 const DRI={remi:'img/dream/remi-box.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tipp-1.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
 const DRTY={bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',rachbalay:'reel',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
-const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon-v2.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-premium.mp4'};
+const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon-v2.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-emotions.mp4'};
 const DRCAP={
  violet:`From blonde to violet & magenta 💜💖
 Rachael lightened the roots with Wella Blondor, toned the blonde, then sectioned our client's hair for two vivid shades: Wella Color Fresh Create in pure violet and magenta pink.
@@ -533,7 +535,7 @@ function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG();b.style.d
  b.querySelectorAll('.bo:not(.s4) button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v));
  b.querySelectorAll('.bo.s4 button').forEach(bt=>bt.onclick=()=>setBF4(bt.dataset.v))}
 function renderDR(){if(BFP!=='D'||BF4!=='1'){BFP='D';BF4='1';applyBF()}
- $('.hint').style.display='none';const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
+ $('.hint').style.display='none';const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""><span class="yp">Your post</span></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
 /* clean Instagram feed: the real cover for each slot */
@@ -547,7 +549,7 @@ Bright through the lengths and blended at the root, so it grows out beautifully.
 #seventysixsalon #chelmsfordhair #blondebalayage #essexhairdresser #livedinblonde`};
 const IGI={emmabf:'img/wk/emmabf-1.jpg',money:'img/covers/money-D.jpg',violet:'img/wk/violet-clean.jpg',remi:'img/dream/remi.jpg',salon:'img/wk/salon-1.jpg',pkg:'img/wk/pkg-1.jpg',tip:'img/wk/tip-brassy-easy.jpg',bob:'img/covers/bob-D.jpg',emmafri:'img/wk/emmafri-bp.jpg',karen:'img/covers/review-A.jpg',review:'img/wk/review-chrissy.jpg',kimwork:'img/dream/kimmy-coming.jpg',team:'img/dream/kimmy-coming.jpg',copper:'img/covers/copper-D.jpg',balay:'img/wk/balay-bp.jpg'};
 const IGS={emmabf:[],tip:[2,3,4,5,6,7].map(i=>`img/slides/tipp-${i}.jpg`),pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg'],salon:[2,3,4,5,6].map(i=>`img/slides/salon-${i}.jpg`)};
-const IGV={remi:'video/remi.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-premium.mp4'};
+const IGV={remi:'video/remi.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-emotions.mp4'};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 /* 22 Nov: Claudia off sick, her 2 slots became the extension reels (keep any saved drag order) */
