@@ -957,7 +957,7 @@ function renderDun2(){
  $('#grid2').innerHTML=DUN.O.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DUN.I[k]}" alt="">${ICO[DUN.TY[k]||'photo']}</div>`).join('');
  const op=k=>{if(!PREV)PREV=tab;tab='DN';openIG(k)};
  document.querySelectorAll('#grid2 .t').forEach(el=>el.onclick=()=>op(el.dataset.k));
- const f=FEEDS.DN;if(f){$('#dlead').textContent=f[2]}
+ const f=FEEDS.DN;if(f){$('#dcaps').textContent=f[0];$('#dtitle').textContent=f[1];$('#dlead').textContent=f[2]}
  const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 9:30 am',d+' 7:30 pm']);
  const L=$('#dunplan2');L.innerHTML='<h4>Dunmow posting plan (UK time)</h4><ol>'+[...DUN.O].reverse().map((k,i)=>`<li><b>${SL[i]}</b> · <a href="#" data-k="${k}">${DUN.W[k]}</a></li>`).join('')+'</ol>';
  L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();op(a.dataset.k)})}
