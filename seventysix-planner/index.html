@@ -267,6 +267,13 @@ body.kim .sec{border-top:1px solid var(--line);margin-top:0;padding-top:46px}
 .stbox.on{display:flex}
 .stbox img{max-height:92vh;width:auto;border-radius:10px}
 .stbox button{position:absolute;top:12px;right:14px;background:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px}
+.stbox{flex-direction:column;gap:10px;touch-action:pan-y}
+.stbox img{max-height:84vh;max-width:100%;user-select:none;-webkit-user-drag:none;transition:transform .2s,opacity .2s}
+.stbox .snav{top:50%;transform:translateY(-50%);right:auto;width:46px;height:46px;font-size:26px;line-height:1;opacity:.92}
+.stbox .sprev{left:14px}.stbox .snext{left:auto;right:14px}
+.stbox .slbl{color:#fff;font-size:14px;text-align:center}.stbox .slbl b{font-family:'Cormorant Garamond',serif;font-size:20px;margin-right:4px}
+.stbox .sdots{display:flex;gap:7px}.stbox .sdots i{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.4)}.stbox .sdots i.on{background:#fff}
+@media(max-width:700px){.stbox .snav{width:38px;height:38px;font-size:22px}.stbox .sprev{left:6px}.stbox .snext{right:6px}}
 .dunplan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:14px 0}.dunplan h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}.dunplan ol{list-style:none;font-size:14px;line-height:1.75}.dunplan a{color:var(--green)}
 .fsal{justify-content:flex-start;margin:14px 0 4px}
 .feedhead{padding-top:34px;border-top:1px solid var(--line);margin-top:30px}
@@ -330,7 +337,7 @@ WhatsApp the salon to book</div>
   </div>
 </section>
 <div class="wrap feedhead" id="feed"><div class="caps">Instagram feed · Chelmsford</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 23 to 29 November</h2><div class="salons fsal"><button class="on" data-s="chelm">Chelmsford</button><button data-s="dun">Great Dunmow</button></div><p style="color:#4A423D;margin-top:6px">2 posts a day. Tap any post to see it with its caption. Tiles marked “Your post” are already on your page, so my new posts are everything above them.</p></div>
-<div class="stbox" id="stbox"><button aria-label="Close">×</button><img alt=""></div>
+<div class="stbox" id="stbox"><button class="sx" aria-label="Close">×</button><button class="snav sprev" aria-label="Previous option">‹</button><img alt=""><button class="snav snext" aria-label="Next option">›</button><div class="slbl"></div><div class="sdots"></div></div>
 
 <nav class="tabs"><div class="wrap" id="tabs"></div></nav>
 
@@ -956,7 +963,17 @@ const KIM=new URLSearchParams(location.search).get('for')==='kimmy';
 
 document.querySelectorAll('.salons button').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.s==='dun'?'feed-dun':'feed').scrollIntoView({behavior:'smooth'}));
 if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Seven reels, Madison's £20 Black Friday blow-dries, the blow-dry package on Monday, and two lovely Goldie reviews. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one soft nude review, and reels with clean photo covers: Rachael's violet and balayage, Emma's walk-in, bob, Black Friday colours and balayage, plus the Remi Cachet reel. Tap any post to see it with its caption."]}
-{const bx=$('#stbox');document.querySelectorAll('.st-row button').forEach(b=>b.onclick=()=>{bx.querySelector('img').src='img/stories/'+b.dataset.s+'.jpg';bx.classList.add('on')});bx.onclick=e=>{if(e.target.tagName!=='IMG')bx.classList.remove('on')}}
+{const bx=$('#stbox'),im=bx.querySelector('img'),lb=bx.querySelector('.slbl'),dt=bx.querySelector('.sdots');let set=[],i=0;
+const show=d=>{const f=set[i];im.src=f.querySelector('img').getAttribute('src');im.alt=f.querySelector('img').alt;lb.innerHTML=f.querySelector('figcaption').innerHTML+' · '+(i+1)+' of '+set.length;dt.innerHTML=set.map((_,k)=>'<i'+(k===i?' class="on"':'')+'></i>').join('');if(d){im.style.transition='none';im.style.transform='translateX('+(d*40)+'px)';im.style.opacity='.4';requestAnimationFrame(()=>{im.style.transition='';im.style.transform='';im.style.opacity=''})}};
+const go=d=>{if(set.length<2)return;i=(i+d+set.length)%set.length;show(d)};
+const close=()=>bx.classList.remove('on');
+document.querySelectorAll('.st-row button').forEach(b=>b.onclick=()=>{set=[...b.closest('.st-row').querySelectorAll('figure')];i=set.indexOf(b.closest('figure'));show(0);bx.classList.add('on')});
+bx.querySelector('.sprev').onclick=e=>{e.stopPropagation();go(-1)};bx.querySelector('.snext').onclick=e=>{e.stopPropagation();go(1)};bx.querySelector('.sx').onclick=close;
+bx.onclick=e=>{if(e.target===bx||e.target===lb)close()};
+let x0=null,y0=0;bx.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+bx.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))go(dx<0?1:-1)},{passive:true});
+let mx=null;im.addEventListener('pointerdown',e=>{if(e.pointerType==='mouse')mx=e.clientX});im.addEventListener('pointerup',e=>{if(mx===null)return;const dx=e.clientX-mx;mx=null;if(Math.abs(dx)>40)go(dx<0?1:-1)});
+document.addEventListener('keydown',e=>{if(!bx.classList.contains('on'))return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1);else if(e.key==='Escape')close()})}
 applyBF();render();
 /* Great Dunmow feed: always shown under Chelmsford */
 function renderDun2(){
