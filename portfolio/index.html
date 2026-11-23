@@ -3394,7 +3394,8 @@
       if (!video || !btn) return;
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       let inView = true;
-      let loaded = document.readyState === "complete";
+      // the video starts on the visitor's first scroll / touch / mouse move, so the page itself shows up fast
+      let loaded = false;
 
       // If the browser still refuses to play with sound, fall back to muted so the video keeps playing
       const play = () => {
@@ -3411,7 +3412,13 @@
       };
 
       if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
-      if (!loaded) addEventListener("load", () => { loaded = true; if (inView && video.dataset.userPaused !== "1" && !reduceMotion) play(); }, { once: true });
+      const wake = () => {
+        if (loaded) return;
+        loaded = true;
+        ["scroll", "pointermove", "pointerdown", "touchstart", "keydown", "wheel"].forEach((ev) => removeEventListener(ev, wake));
+        if (inView && video.dataset.userPaused !== "1" && !reduceMotion) { video.preload = "auto"; play(); }
+      };
+      ["scroll", "pointermove", "pointerdown", "touchstart", "keydown", "wheel"].forEach((ev) => addEventListener(ev, wake, { passive: true }));
       setState();
 
 

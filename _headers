@@ -11,11 +11,7 @@
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
 
-# Public pages Google may list (home, portfolio, booking page). Everything else stays hidden.
-/
-  ! X-Robots-Tag
-  X-Robots-Tag: index, follow
-
+# Public pages Google may list (portfolio, booking page; the home page is handled in worker.js). Everything else stays hidden.
 /index.html
   ! X-Robots-Tag
 

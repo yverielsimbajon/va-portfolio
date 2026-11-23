@@ -104,6 +104,13 @@ export default {
     const { pathname } = new URL(request.url);
     if (pathname === "/api/e") return recordEvent(request, env, ctx);
     if (pathname === "/api/stats") return statsPage(request, env);
+    // Home page is public on Google: drop the site-wide noindex header (_headers can't remove it on "/")
+    if (pathname === "/") {
+      const page = await env.ASSETS.fetch(request);
+      const h = new Headers(page.headers);
+      h.delete("X-Robots-Tag");
+      return new Response(page.body, { status: page.status, statusText: page.statusText, headers: h });
+    }
     const range = request.headers.get("Range");
     // Ask for the whole file; the static assets service ignores Range headers
     const asset = await env.ASSETS.fetch(new Request(request.url, { method: "GET" }));
