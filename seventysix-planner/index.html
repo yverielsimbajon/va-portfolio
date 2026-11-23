@@ -105,7 +105,11 @@ header p{color:#4A423D;margin-top:8px}
 .pm{position:relative;background:#000;display:flex;align-items:center;justify-content:center;flex:none}
 .pm img,.pm video{display:block;max-height:calc(100vh - 56px);width:auto;max-width:min(58vw,720px);object-fit:contain}
 .pm video{cursor:pointer}
-.vc{position:absolute;left:10px;right:10px;bottom:10px;z-index:4;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:24px;padding:5px 10px;color:#fff;font:600 12px/1 -apple-system,'Segoe UI',sans-serif}
+/* reel controls sit UNDER the video so the whole reel is visible */
+.pm.hasvc{flex-direction:column;align-items:stretch}
+.pm.hasvc video{max-height:calc(100vh - 56px - 46px);margin:0 auto}
+.vc{position:static;width:100%;box-sizing:border-box;display:flex;align-items:center;gap:6px;background:#111;padding:8px 10px;color:#fff;font:600 12px/1 -apple-system,'Segoe UI',sans-serif}
+.pm .vc .snd{position:static;flex:none;background:none}
 .vc button{flex:none;width:30px;height:30px;border:0;background:none;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:50%;padding:0}
 .vc button:hover{background:rgba(255,255,255,.15)}
 .vc button svg{width:18px;height:18px}
@@ -169,6 +173,8 @@ header p{color:#4A423D;margin-top:8px}
  .side h2{font-size:30px}.actions{gap:6px}.btn{padding:8px 14px;font-size:13px}
  .checks{padding:12px 14px}.prow b{font-size:20px}
  .pm video{max-height:70vh}
+ .pm.hasvc video{max-height:64vh}
+ .vc .tm{min-width:0;font-size:11px}
 }
 /* blueprint */
 .t.bp .tag,.t.ph .tag{position:absolute;left:5px;top:5px;z-index:3;display:flex;align-items:center;gap:3px;background:none;color:#fff;text-shadow:0 0 3px rgba(0,0,0,.9),0 1px 2px rgba(0,0,0,.8);font-family:'Open Sans',sans-serif;font-size:8.5px;font-weight:700;letter-spacing:.02em;line-height:1;padding:0;white-space:nowrap}
@@ -864,7 +870,7 @@ const VI={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l
 /* reel controls: back to start, back 5 s, play/pause, forward 5 s, seek bar */
 function vidCtl(vd){const pm=vd.closest('.pm');if(!pm)return;const c=document.createElement('div');c.className='vc';
  c.innerHTML=`<button data-a="start" aria-label="Back to start">${VI.start}</button><button data-a="back" aria-label="Back 5 seconds">${VI.back}</button><button data-a="pp" aria-label="Play or pause">${VI.pause}</button><button data-a="fwd" aria-label="Forward 5 seconds">${VI.fwd}</button><input type="range" min="0" max="1000" value="0" aria-label="Seek"><span class="tm">0:00 / 0:00</span>`;
- pm.appendChild(c);const r=c.querySelector('input'),tm=c.querySelector('.tm'),pp=c.querySelector('[data-a=pp]');let drag=false;
+ pm.appendChild(c);pm.classList.add('hasvc');const sb=pm.querySelector('.snd');if(sb)c.appendChild(sb);const r=c.querySelector('input'),tm=c.querySelector('.tm'),pp=c.querySelector('[data-a=pp]');let drag=false;
  const f=t=>{t=Math.max(0,t||0);return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0')};
  const upd=()=>{const d=vd.duration||0;if(!drag)r.value=d?Math.round(vd.currentTime/d*1000):0;tm.textContent=f(vd.currentTime)+' / '+f(d);pp.innerHTML=vd.paused?VI.play:VI.pause};
  ['timeupdate','loadedmetadata','play','pause'].forEach(e=>vd.addEventListener(e,upd));
