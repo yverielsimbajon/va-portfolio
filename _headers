@@ -10,3 +10,31 @@
 /seventysix-content-upload/*
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
+
+# Public pages Google may list (home, portfolio, booking page). Everything else stays hidden.
+/
+  ! X-Robots-Tag
+
+/index.html
+  ! X-Robots-Tag
+
+/portfolio/
+  ! X-Robots-Tag
+
+/portfolio/index.html
+  ! X-Robots-Tag
+
+/discovery-call
+  ! X-Robots-Tag
+
+/discovery-call.html
+  ! X-Robots-Tag
+
+/robots.txt
+  ! X-Robots-Tag
+
+/sitemap.xml
+  ! X-Robots-Tag
+
+/images/*
+  ! X-Robots-Tag

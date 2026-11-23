@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Keeps the page out of Google while it's only shared by link. Remove this line to let search engines list it. -->
-  <meta name="robots" content="noindex, nofollow" />
+  <link rel="canonical" href="https://themariaoffice.com/portfolio/" />
   <title>Maria Simbajon | Virtual Assistant Portfolio</title>
   <meta name="description" content="Portfolio of Maria Simbajon — virtual assistant for admin, websites, social media, CRM automation, customer support and business operations." />
   <meta property="og:type" content="website" />
@@ -22,7 +22,8 @@
   <meta name="twitter:image" content="https://themariaoffice.com/images/og-portfolio.jpg?v=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" /></noscript>
   <style>
     :root {
       --primary: #0B6E7F;
@@ -1969,14 +1970,14 @@
       .reveal { opacity: 1; transform: none; }
     }
   </style>
-<script src="/protect.js"></script>
+<script src="/protect.js" defer></script>
 </head>
 <body>
   <!-- Hero -->
   <!-- Site header: links back to the home page (addresses are set in SITE_LINKS below) -->
   <header class="site-header">
     <div class="container">
-      <a class="brand" data-link="home" href="#"><img src="../images/logo.png" alt="Maria Simbajon home" width="46" height="44" /></a>
+      <a class="brand" data-link="home" href="#"><img src="../images/logo-96.webp" alt="Maria Simbajon home" width="46" height="44" /></a>
       <nav class="main-nav" aria-label="Main">
         <a data-link="home" href="#">Home</a>
         <a data-link="about" href="#">About</a>
@@ -2026,7 +2027,7 @@
       </div>
       <!-- Intro video: autoplays muted on a loop (browsers only allow sound after a tap) -->
       <div class="hero-video">
-        <video id="introVideo" src="../images/intro.mp4" poster="../images/intro-poster.jpg" autoplay muted loop playsinline preload="auto" aria-label="Intro video: Maria Simbajon, Virtual Assistant"></video>
+        <video id="introVideo" src="../images/intro.mp4" poster="../images/intro-poster.webp" muted loop playsinline preload="none" aria-label="Intro video: Maria Simbajon, Virtual Assistant"></video>
         <button class="sound-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="Turn sound on" title="Turn sound on">
           <span class="ico" aria-hidden="true">
             <svg class="ico-off" viewBox="0 0 24 24" fill="none" stroke="#04222B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H3v6h3l5 4z" fill="#04222B"/><path d="M16 9.5l5 5M21 9.5l-5 5"/></svg>
@@ -2151,9 +2152,9 @@
     @media (prefers-reduced-motion: reduce) { .wa-float::before { animation: none; opacity: 0; } .wa-box, .wa-msg { transition: none; animation: none; } }
   </style>
   <div class="wa-widget" id="waWidget">
-    <div class="wa-box" id="waBox" role="dialog" aria-label="Chat with Maria Simbajon" aria-hidden="true">
+    <div class="wa-box" id="waBox" role="dialog" aria-label="Chat with Maria Simbajon" aria-hidden="true" inert>
       <div class="wa-head">
-        <div class="wa-av"><img src="../images/avatar-face.jpg" alt="Maria Simbajon" width="46" height="46" /><i></i></div>
+        <div class="wa-av"><img src="../images/avatar-face-96.webp" alt="Maria Simbajon" width="46" height="46" /><i></i></div>
         <div><b>Maria Simbajon</b><span>Online</span></div>
         <button class="wa-close" type="button" aria-label="Close chat">×</button>
       </div>
@@ -2168,7 +2169,7 @@
   <script>
     (function () {
       var w = document.getElementById("waWidget"), b = w.querySelector(".wa-float"), box = document.getElementById("waBox");
-      function set(o) { w.classList.toggle("open", o); b.setAttribute("aria-expanded", o); box.setAttribute("aria-hidden", !o); }
+      function set(o) { w.classList.toggle("open", o); b.setAttribute("aria-expanded", o); box.setAttribute("aria-hidden", !o); box.inert = !o; }
       b.addEventListener("click", function () { set(!w.classList.contains("open")); });
       w.querySelector(".wa-close").addEventListener("click", function () { set(false); });
       document.addEventListener("keydown", function (e) { if (e.key === "Escape") set(false); });
@@ -2797,7 +2798,7 @@
               <div class="phone">
                 <div class="phone-screen" role="button" tabindex="0" aria-label="Reel ${n + 1}: turn sound on or off">
                   <span class="phone-island" aria-hidden="true"></span>
-                  <video src="../images/${src}" poster="../images/${src.replace(/\.mp4$/i, ".jpg")}" muted loop playsinline preload="metadata"></video>
+                  <video src="../images/${src}" poster="../images/${src.replace(/\.mp4$/i, ".jpg")}" muted loop playsinline preload="none"></video>
                   <div class="reel-top">
                     <strong>Reels</strong>
                     <button class="reel-sound" type="button" aria-pressed="false">${soundIcon.off}<span>Tap for sound</span></button>
@@ -3393,6 +3394,7 @@
       if (!video || !btn) return;
       const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       let inView = true;
+      let loaded = document.readyState === "complete";
 
       // If the browser still refuses to play with sound, fall back to muted so the video keeps playing
       const play = () => {
@@ -3409,6 +3411,7 @@
       };
 
       if (reduceMotion) { video.removeAttribute("autoplay"); video.pause(); }
+      if (!loaded) addEventListener("load", () => { loaded = true; if (inView && video.dataset.userPaused !== "1" && !reduceMotion) play(); }, { once: true });
       setState();
 
 
@@ -3427,12 +3430,12 @@
       new IntersectionObserver((entries) => {
         inView = entries[0].isIntersecting;
         if (!inView) video.pause();
-        else if (video.dataset.userPaused !== "1" && (!reduceMotion || btn.dataset.started === "1")) play();
+        else if (loaded && video.dataset.userPaused !== "1" && (!reduceMotion || btn.dataset.started === "1")) play();
       }, { threshold: 0.35 }).observe(video);
 
       document.addEventListener("visibilitychange", () => {
         if (document.hidden) video.pause();
-        else if (inView && video.dataset.userPaused !== "1" && (!reduceMotion || btn.dataset.started === "1")) play();
+        else if (loaded && inView && video.dataset.userPaused !== "1" && (!reduceMotion || btn.dataset.started === "1")) play();
       });
     })();
 
