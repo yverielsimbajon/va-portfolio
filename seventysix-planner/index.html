@@ -261,6 +261,7 @@ body.kim .sec{border-top:1px solid var(--line);margin-top:0;padding-top:46px}
 .stbox.on{display:flex}
 .stbox img{max-height:92vh;width:auto;border-radius:10px}
 .stbox button{position:absolute;top:12px;right:14px;background:#fff;border:0;border-radius:50%;width:38px;height:38px;font-size:20px}
+.dunplan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:14px 0}.dunplan h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}.dunplan ol{list-style:none;font-size:14px;line-height:1.75}.dunplan a{color:var(--green)}
 .feedhead{padding-top:34px;border-top:1px solid var(--line);margin-top:30px}
 body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{display:none!important}
 </style>
@@ -283,7 +284,7 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
   <div class="caps">Our planning board · Maria &amp; Claude</div>
   <h1>Chelmsford · 23 to 29 November</h1>
   <p>14 posts, 2 a day. Final feed is the week we post. Tap a post to see it with its caption.</p>
-  <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
+  <div class="salons"><button class="on" data-s="chelm">Chelmsford</button><button data-s="dun">Great Dunmow</button></div>
 </div></header>
 
 <section class="wrap sec" id="stories">
@@ -335,6 +336,7 @@ WhatsApp the salon to book</div>
     <div class="caps" id="tabcaps">Feed A</div>
     <h2 id="tabtitle">Editorial magazine</h2>
     <p class="lead" id="tablead"></p>
+    <div class="dunplan" id="dunplan" style="display:none"></div>
     <div class="legend" id="legend"><span><i style="background:#2F4B3A"></i><i style="background:#EFE6E0;border:1px solid #d8ccc3"></i>Graphic post or reel text box (green or beige)</span><span><i style="background:url(img/sample-photo.jpg) center/cover"></i>Photo only + small 76 logo (sample photo for now)</span></div>
     <div class="styles">
       <div class="sty"><b>A · Editorial</b><p>Full photo, thin forest green line, big Cormorant title on a paper panel.</p></div>
@@ -557,7 +559,100 @@ Bouncy, glossy, bob-tastic ✨
 Fancy a change? WhatsApp or text 07432 027611 💕
 
 #seventysixsalon #bobhaircut #hairtransformation #chelmsfordhair #essexhairdresser`};
-const isDR=()=>tab==='DR';
+/* ===== Great Dunmow · week 23 Nov (Maria, 23 Nov) · white 76 logo · Dunmow girls only: Claudia, Madison, Gabriella + team ===== */
+const DUN={
+ O:['copper','kat','gabsp','rachel','brun','ashy','d20r','team','ami','cblonde','d20c','gabsr','nano','pkg'], // newest top-left
+ I:{copper:'img/dun/copper.jpg',kat:'img/dun/kat.jpg',gabsp:'img/dun/gabsp.jpg',rachel:'img/dun/rachel.jpg',brun:'img/dun/brun.jpg',ashy:'img/dun/ashy.jpg',d20r:'img/dun/d20r.jpg',team:'img/dun/team.jpg',ami:'img/dun/ami.jpg',cblonde:'img/dun/cblonde.jpg',d20c:'img/dun/d20c-1.jpg',gabsr:'img/dun/gabsr.jpg',nano:'img/dun/nano.jpg',pkg:'img/dun/pkg.jpg'},
+ S:{d20c:[2,3,4].map(i=>`img/dun/d20c-${i}.jpg`)},
+ V:{copper:'video/dun-copper.mp4',kat:'video/dun-kat.mp4',ashy:'video/dun-ashy.mp4',d20r:'video/dun-d20r.mp4',team:'video/dun-team.mp4',gabsr:'video/dun-gabsr.mp4',nano:'video/dun-nano.mp4'},
+ TY:{copper:'reel',kat:'reel',ashy:'reel',d20r:'reel',team:'reel',gabsr:'reel',nano:'reel',d20c:'carousel',gabsp:'photo',rachel:'photo',brun:'photo',ami:'photo',cblonde:'photo',pkg:'photo'},
+ W:{pkg:'Black Friday blow-dry package · £80',nano:'Reel · Nano bonds, Remi Cachet · Madison',gabsr:'Reel · Bright blonde, soft grow out · Gabriella',d20c:'Carousel · £20 blow-dries Friday · Madison',cblonde:'Photo · Soft blonde · Claudia',ami:'Review · Ami, colour with Madison',team:'Reel · The girls of 76 Dunmow',d20r:'Reel · £20 blow-dries tomorrow · Madison',ashy:'Reel · Ashy dreamy blonde · Claudia',brun:'Photo · Rich, glossy brunette · Madison',rachel:'Review · Rachel, cut with Gabriella',gabsp:'Photo · Bright blonde finish · Gabriella',kat:'Reel · The restyle (Kat from MobLand) · Claudia',copper:'Reel · Toned copper balayage · Madison'},
+ CAP:{
+ pkg:`The Black Friday blow-dry package 🖤
+4 blow-dries a month for £80, all with the same stylist. That's a saving of £60 ✨
+
+Available with all our stylists, except Nicky and Kimmy. Packages must be paid in full by 28.11.26.
+
+To buy yours, WhatsApp or text the salon on 07432 027611, or email SeventySix.salon@outlook.com 💕
+
+#seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
+ nano:`Nano bonds by Madison ✨
+Remi Cachet nano bond extensions, blended into our client's blonde highlights for long, full, bouncy hair 💛
+
+Want length and volume? Ask us about Remi Cachet.
+
+#seventysixsalon #nanobonds #remicachet #hairextensions #dunmowhair`,
+ gabsr:`Bright blonde, soft grow out ✨
+Gabriella placed a full head of highlights, then balayaged the halo section on top. Our client gets that bright blonde with a softer, easier grow out 💛
+
+Watch it go from before to after 😍
+
+#seventysixsalon #brightblonde #balayage #dunmowhair #essexhairdresser`,
+ d20c:`£20 blow-dries this Friday 💚
+Black Friday at 76 Dunmow! Madison is treating you to £20 blow-dries on Friday 27 November. Bouncy, glossy and ready for the weekend ✨
+
+Swipe for a little inspo from Madison's chair ➡️
+
+To book with Madison, WhatsApp or text the salon on 07432 027611, or email SeventySix.salon@outlook.com 💕
+
+#seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
+ cblonde:`Soft, bright blonde by Claudia ✨
+Colour, blonde highlights and a cut & style, finished with soft, bouncy waves 💛
+
+#seventysixsalon #blondehighlights #blondehair #dunmowhair #essexhairdresser`,
+ ami:`Reviews like this mean everything 🥹💕
+Thank you so much Ami for the lovely words. Madison loved getting your colour just right (and a blow-dry that beats the weather 😉).
+
+#seventysixsalon #clientlove #dunmowhair #essexhairdresser #team76`,
+ team:`The girls of 76 Dunmow 🖤
+Nicky, Claudia, Leah, Gabriella, Madison and Kelsey. Colour, cuts, extensions, bridal hair and makeup, all under one roof ✨
+
+Who's your 76 girl? 👇
+
+#seventysixsalon #dunmowhair #essexhairdresser #greatdunmow #hairteam`,
+ d20r:`£20 blow-dries this Friday 💨
+Black Friday at 76 Dunmow: Madison is doing £20 blow-dries on Friday 27 November ✨
+
+Spaces are limited, girls. WhatsApp or text 07432 027611, or email SeventySix.salon@outlook.com to grab yours.
+
+#seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
+ ashy:`Ashy dreamy blonde ✨
+Our client came in with a brassy blonde and left with a shiny, ashy, dreamy blonde. Half head highlights, finished with a cut and style by Claudia 😊
+
+Before to after, all in one visit 😍
+
+#seventysixsalon #ashblonde #blondehighlights #dunmowhair #essexhairdresser`,
+ brun:`Rich, glossy brunette 🤎
+An all over colour and tape extensions by Madison, for length and bounce that lasts all season.
+
+If you've never visited 76 Dunmow, maybe this is why ✨
+
+#seventysixsalon #tapeextensions #brunettehair #dunmowhair #essexhairextensions`,
+ rachel:`Reviews like this mean everything 🥹💕
+Thank you so much Rachel! Gabriella loved giving you your new cut, and we can't wait to see you again.
+
+#seventysixsalon #clientlove #dunmowhair #essexhairdresser #team76`,
+ gabsp:`The finish 😍
+Bright, soft blonde by Gabriella: a full head of highlights with a balayaged halo on top, so it grows out beautifully 💛
+
+#seventysixsalon #brightblonde #blondehighlights #dunmowhair #essexhairdresser`,
+ kat:`The restyle ✂️
+Our client brought Kat from MobLand as her inspo, and Claudia gave her a sharp, short restyle with soft textured layers 🖤
+
+Bringing your inspo pic? We love that 😍
+
+#seventysixsalon #restyle #shorthair #dunmowhair #essexhairdresser`,
+ copper:`Toned copper 🍂
+Balayage toned to a warm, glossy copper, finished with a cut and blow-dry by Madison ✨
+
+Copper season is here 😍
+
+#seventysixsalon #copperhair #balayage #dunmowhair #essexhairdresser`}};
+FEEDS.DN=['Final feed','Great Dunmow · ready to post',"The Dunmow week, 14 posts, 2 a day. Dunmow girls only (Claudia, Madison, Gabriella and the team), white 76 logo. 7 reels, Madison's £20 Friday blow-dries go out Tuesday night (carousel) and Thursday night (reel), the blow-dry package on Monday morning, and 2 real Goldie reviews (Ami for Madison, Rachel for Gabriella) that never touch. Same girl never side by side. Tap any post to see it with its caption."];
+const isDN=()=>tab==='DN';
+const HN=()=>isDN()?'seventysixsalon_dunmow':'seventysixsalon';
+const DX=()=>isDN()?DUN:{O:DRO,I:DRI,S:{},V:DRV,TY:DRTY,CAP:DRCAP};
+const isDR=()=>tab==='DR'||tab==='DN';
 const BF0={DR:DRI.emmabf,IG:'img/wk/emmabf-1.jpg'};let BFP='D',BF4='1';try{const v=localStorage.getItem('76bf-pick2');if(v!==null)BFP=v;BF4=localStorage.getItem('76bf-s4b')||'1'}catch(e){}
 function applyBF(){IGS.emmabf=['img/wk/emmabf-2.jpg','img/wk/emmabf-3.jpg',`img/dream/bf-slide4/${BF4}.jpg`,'img/wk/emmabf-4.jpg'];DRI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.DR;IGI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.IG}
 function setBF(v){BFP=v;try{localStorage.setItem('76bf-pick2',v)}catch(e){}applyBF();render()}
@@ -568,7 +663,10 @@ function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG();b.style.d
  +`<div class="bl" style="margin-top:10px">Slide 4 · colour collage (Option 1 chosen) · tap Emma's post and swipe to see it</div><div class="bo s4">`+'12345'.split('').map(x=>`<button data-v="${x}" class="${BF4===x?'on':''}"><img src="img/dream/bf-slide4/${x}.jpg" alt="">${x}</button>`).join('')+'</div>';
  b.querySelectorAll('.bo:not(.s4) button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v));
  b.querySelectorAll('.bo.s4 button').forEach(bt=>bt.onclick=()=>setBF4(bt.dataset.v))}
-function renderDR(){if(BFP!=='D'||BF4!=='1'){BFP='D';BF4='1';applyBF()}
+function renderDR(){if(isDN()){$('.hint').style.display='none';
+ $('#grid').innerHTML=DUN.O.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DUN.I[k]}" alt="">${ICO[DUN.TY[k]||'photo']}</div>`).join('');
+ document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k));return}
+ if(BFP!=='D'||BF4!=='1'){BFP='D';BF4='1';applyBF()}
  $('.hint').style.display='none';const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""><span class="yp">Your post</span></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
@@ -610,7 +708,16 @@ const cover=k=>isBP()&&BP[k]&&(BP[k].full||BP[k].img)?(BP[k].full||BP[k].img):`i
 const ICO={reel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm6 6v6l5-3z"/></svg>',carousel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v13h13" fill="none" stroke="#fff" stroke-width="2"/></svg>',photo:''};
 const slotOf=k=>isBP()&&BPO().includes(k)?bpSlot(k):SLOTS[order.indexOf(k)]||bpSlot(k);
 
-function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>(k==='DR'?'<span class="grp">Final<br><b>This week</b></span>':k==='P1'?'<span class="grp">Earlier · Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
+function renderSalon(){const D=isDN();
+ document.querySelectorAll('.salons button').forEach(b=>b.classList.toggle('on',(b.dataset.s==='dun')===D));
+ $('header h1').textContent=(D?'Great Dunmow':'Chelmsford')+' · 23 to 29 November';
+ $('#feed .caps').textContent='Instagram feed · '+(D?'Great Dunmow':'Chelmsford');
+ $('#feed p').textContent=D?"2 posts a day. Tap any post to see it with its caption. Dunmow girls only, white 76 logo.":"2 posts a day. Tap any post to see it with its caption. Tiles marked “Your post” are already on your page, so my new posts are everything above them.";
+ $('.phone .ig-head').innerHTML=D?'<div class="av" style="background:#2F4B3A"><img src="img/logo-white.png" alt=""></div><div><b>seventysixsalon_dunmow</b><small>SEVENTYSIX | GREAT DUNMOW SALON</small><small>Beauty, cosmetic &amp; personal care</small></div>':'<div class="av"><img src="img/logo-black.png" alt=""></div><div><b>seventysixsalon</b><small>SEVENTYSIX | CHELMSFORD SALON</small><small>Beauty, cosmetic &amp; personal care</small></div>';
+ const L=$('#dunplan');if(L){L.style.display=D?'':'none';if(D){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 9:30 am',d+' 7:30 pm']);
+  L.innerHTML='<h4>Dunmow posting plan (UK time)</h4><ol>'+[...DUN.O].reverse().map((k,i)=>`<li><b>${SL[i]}</b> · <a href="#" data-k="${k}">${DUN.W[k]}</a></li>`).join('')+'</ol>';
+  L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();openIG(a.dataset.k)})}}}
+function renderTabs(){renderSalon();$('#tabs').innerHTML=Object.entries(FEEDS).filter(([k])=>isDN()?k==='DN':k!=='DN').map(([k,[a,b]])=>(k==='DR'?'<span class="grp">Final<br><b>This week</b></span>':k==='P1'?'<span class="grp">Earlier · Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
  const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];}
 function renderGrid(){
@@ -745,9 +852,9 @@ function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
  const media=p.type==='reel'?`<video id="pv" src="${p.video}" poster="${cover(k)}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
   :imgs.length<2?`<img src="${imgs[0]}" alt="">`
   :`<img class="sz" src="${imgs[0]}" alt=""><div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="" draggable="false">`).join('')}</div><button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button><button class="sa n" id="sn" aria-label="Next slide">${ARR}</button><div class="dots">${imgs.map(()=>'<i></i>').join('')}</div>`;
- const AV='<div class="pav"><img src="img/logo-black.png" alt=""></div>';
+ const AV=isDN()?'<div class="pav" style="background:#2F4B3A"><img src="img/logo-white.png" alt=""></div>':'<div class="pav"><img src="img/logo-black.png" alt=""></div>';
  $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
-  <div class="ph">${AV}<div><b>seventysixsalon</b><span>SeventySix Salon, Chelmsford</span></div></div>
+  <div class="ph">${AV}<div><b>${HN()}</b><span>SeventySix Salon, ${isDN()?'Great Dunmow':'Chelmsford'}</span></div></div>
   <div class="pv">Cover design: ${'ABCD'.split('').map(x=>`<button data-v="${x}" class="${x===vv?'on':''}">${x}</button>`).join('')}${p.type==='reel'?'<span>reel cover</span>':''}</div>
   <div class="pbody">${p.draft?`<div class="draft">${p.draft}</div>`:''}<div class="pcap">${AV}<div class="tx"><b>seventysixsalon</b> ${fmt(p.cap)}<span class="when">${s[0]} · ${s[1]} UK · ${p.pil}</span></div></div>${p.tag?`<div class="tagl"><b>Collab / tag:</b> ${p.tag}</div>`:''}</div>
   <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div>
@@ -768,21 +875,21 @@ function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
  if(vd){vidCtl(vd);vd.muted=false;vd.volume=1;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();
   $('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
-function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=(D&&DRCAP[k])||IGCAP[k]||p.cap||(b.w);
- const imgs=[(D?DRI:IGI)[k]].concat(IGS[k]||[]),vid=(D?DRV:IGV)[k];
+function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=(D&&DX().CAP[k])||(!isDN()&&IGCAP[k])||p.cap||(b.w);
+ const imgs=[(D?DX().I:IGI)[k]].concat((isDN()?DUN.S[k]:IGS[k])||[]),vid=(D?DX().V:IGV)[k];
  const media=vid?`<video id="pv" src="${vid}" poster="${imgs[0]}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
   :imgs.length<2?`<img src="${imgs[0]}" alt="">`
   :`<img class="sz" src="${imgs[0]}" alt=""><div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="" draggable="false">`).join('')}</div><button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button><button class="sa n" id="sn" aria-label="Next slide">${ARR}</button><div class="dots">${imgs.map(()=>'<i></i>').join('')}</div>`;
- const AV='<div class="pav"><img src="img/logo-black.png" alt=""></div>';
+ const AV=isDN()?'<div class="pav" style="background:#2F4B3A"><img src="img/logo-white.png" alt=""></div>':'<div class="pav"><img src="img/logo-black.png" alt=""></div>';
  $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
-  <div class="ph">${AV}<div><b>seventysixsalon</b><span>SeventySix Salon, Chelmsford</span></div></div>
-  <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>seventysixsalon</b> ${fmt(cap)}</div></div></div>
+  <div class="ph">${AV}<div><b>${HN()}</b><span>SeventySix Salon, ${isDN()?'Great Dunmow':'Chelmsford'}</span></div></div>
+  <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>${HN()}</b> ${fmt(cap)}</div></div></div>
   <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div></div></div>`;
  if(k==='emmabf'&&(D||isIG())){const ps=document.querySelector('#pc .ps .ph');const row=document.createElement('div');row.className='pv';
   row.innerHTML='Black Friday cover: '+'ABCDEF'.split('').map(x=>`<button data-v="${x}" class="${BFP===x?'on':''}">${x}</button>`).join('')+'<button data-v="" class="'+(BFP===''?'on':'')+'">old</button>';
   ps.after(row);row.querySelectorAll('button').forEach(bt=>bt.onclick=()=>{setBF(bt.dataset.v);openIG('emmabf')})}
  $('#pop').classList.add('on');document.body.style.overflow='hidden';
- const F=D?DRO:[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
+ const F=D?DX().O:[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
  const tk=$('#tk');
  if(tk){const n=imgs.length,sp=$('#sp'),sn=$('#sn'),dots=[...document.querySelectorAll('.pm .dots i')];
   const upd=()=>{SI=Math.max(0,Math.min(n-1,Math.round(tk.scrollLeft/tk.clientWidth)));dots.forEach((d,j)=>d.classList.toggle('on',j===SI));
@@ -794,8 +901,8 @@ function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=
 function slideBy(d){const tk=$('#tk');if(!tk)return false;const n=tk.children.length,t=SI+d;if(t<0||t>=n)return false;tk.scrollTo({left:t*tk.clientWidth,behavior:'smooth'});return true}
 const closePop=()=>{const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
 $('#px').onclick=closePop;
-$('#pp').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DRO:[...BPO()].reverse(),i=F.indexOf(cur);if(i>0)openIG(F[i-1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
-$('#pn').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DRO:[...BPO()].reverse(),i=F.indexOf(cur);if(i<F.length-1)openIG(F[i+1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
+$('#pp').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DX().O:[...BPO()].reverse(),i=F.indexOf(cur);if(i>0)openIG(F[i-1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i>0)openPost(F[i-1])};
+$('#pn').onclick=()=>{if(isIG()||isDR()){const F=isDR()?DX().O:[...BPO()].reverse(),i=F.indexOf(cur);if(i<F.length-1)openIG(F[i+1]);return}const F=feedOrder(),i=F.indexOf(cur);if(i<F.length-1)openPost(F[i+1])};
 $('#pop').addEventListener('click',e=>{if(e.target.id==='pop')closePop()});
 document.addEventListener('keydown',e=>{if(!$('#pop').classList.contains('on'))return;
  if(e.key==='Escape')closePop();
@@ -813,6 +920,7 @@ $('#reset').onclick=()=>{order=[...DEFAULT];save();render();toast('Back to the s
 $('#days').onclick=()=>{showDays=!showDays;render()};
 /* Kimmy view: ?for=kimmy = stories + final feed only */
 const KIM=new URLSearchParams(location.search).get('for')==='kimmy';
+document.querySelectorAll('.salons button').forEach(b=>b.onclick=()=>{const t=b.dataset.s==='dun'?'DN':'DR';if(t===tab)return;tab=t;try{save()}catch(e){}render();document.getElementById('feed').scrollIntoView({behavior:'smooth'})});
 if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one forest green review, and reels with clean photo covers: Rachael's violet and balayage, Emma's walk-in, bob, Black Friday colours and balayage, plus the Remi Cachet reel. Tap any post to see it with its caption."]}
 {const bx=$('#stbox');document.querySelectorAll('.st-row button').forEach(b=>b.onclick=()=>{bx.querySelector('img').src='img/stories/'+b.dataset.s+'.jpg';bx.classList.add('on')});bx.onclick=e=>{if(e.target.tagName!=='IMG')bx.classList.remove('on')}}
 applyBF();render();
