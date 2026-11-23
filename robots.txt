@@ -1,4 +1,4 @@
+# Site is private: only people with the link. Crawling stays allowed so Google
+# can read the noindex tag on every page and drop anything it already listed.
 User-agent: *
 Allow: /
-
-Sitemap: https://themariaoffice.com/sitemap.xml

@@ -104,11 +104,11 @@ export default {
     const { pathname } = new URL(request.url);
     if (pathname === "/api/e") return recordEvent(request, env, ctx);
     if (pathname === "/api/stats") return statsPage(request, env);
-    // Home page is public on Google: drop the site-wide noindex header (_headers can't remove it on "/")
+    // Home page: hidden from Google, but keep link previews (_headers can't change the header on "/")
     if (pathname === "/") {
       const page = await env.ASSETS.fetch(request);
       const h = new Headers(page.headers);
-      h.delete("X-Robots-Tag");
+      h.set("X-Robots-Tag", "noindex, nofollow");
       return new Response(page.body, { status: page.status, statusText: page.statusText, headers: h });
     }
     const range = request.headers.get("Range");

@@ -4,7 +4,7 @@
   // (this is Yveriel.simbajon@gmail.com's account).
   "account_id": "7a45ee58aa09452ec45bdd95cd9aff35",
   "compatibility_date": "2026-10-01",
-  // worker.js only handles videos, the visitor log and the home page (removes its noindex header) (adds Range support so the intro video can skip/seek);
+  // worker.js only handles videos, the visitor log and the home page (sets its noindex header) (adds Range support so the intro video can skip/seek);
   // every other file is served straight from the static assets
   "main": "worker.js",
   // Visitor log (see worker.js). Secrets NTFY_TOPIC and STATS_KEY are set with `wrangler secret put`.

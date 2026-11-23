@@ -11,27 +11,25 @@
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
 
-# Public pages Google may list (portfolio, booking page; the home page is handled in worker.js). Everything else stays hidden.
+# Home, portfolio and booking page: hidden from Google too (only people with the link see them),
+# same header as the resumes so link previews still show in Messenger, WhatsApp, email.
+# The home page "/" gets this header from worker.js.
 /index.html
   ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
 
 /portfolio/
   ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
 
 /portfolio/index.html
   ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
 
 /discovery-call
   ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
 
 /discovery-call.html
   ! X-Robots-Tag
-
-/robots.txt
-  ! X-Robots-Tag
-
-/sitemap.xml
-  ! X-Robots-Tag
-
-/images/*
-  ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
