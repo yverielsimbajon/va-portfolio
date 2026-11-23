@@ -105,6 +105,13 @@ header p{color:#4A423D;margin-top:8px}
 .pm{position:relative;background:#000;display:flex;align-items:center;justify-content:center;flex:none}
 .pm img,.pm video{display:block;max-height:calc(100vh - 56px);width:auto;max-width:min(58vw,720px);object-fit:contain}
 .pm video{cursor:pointer}
+.vc{position:absolute;left:10px;right:10px;bottom:10px;z-index:4;display:flex;align-items:center;gap:6px;background:rgba(0,0,0,.55);backdrop-filter:blur(6px);border-radius:24px;padding:5px 10px;color:#fff;font:600 12px/1 -apple-system,'Segoe UI',sans-serif}
+.vc button{flex:none;width:30px;height:30px;border:0;background:none;color:#fff;display:flex;align-items:center;justify-content:center;border-radius:50%;padding:0}
+.vc button:hover{background:rgba(255,255,255,.15)}
+.vc button svg{width:18px;height:18px}
+.vc input{flex:1;min-width:40px;accent-color:#fff;height:4px;cursor:pointer}
+.vc .tm{flex:none;font-variant-numeric:tabular-nums;opacity:.9;min-width:68px;text-align:right}
+.pm button.snd{bottom:60px}
 .pm .sz{visibility:hidden}
 .pm .track{position:absolute;inset:0;display:flex;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scrollbar-width:none}
 .pm .track::-webkit-scrollbar{display:none}
@@ -246,11 +253,10 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
 <section class="wrap sec" id="stories">
   <div class="caps">Stories · Availability · Monday</div>
   <h2>This week's availability story</h2>
-  <p class="lead">Availability stays in Stories, never on the feed. Four looks for each salon. Tap any story to see it big, and tell me which one you like.</p>
+  <p class="lead">Availability stays in Stories, never on the feed. Tap any story to see it big, and tell me which one you like.</p>
   <div class="st-salon"><h3>Chelmsford <span>Black 76 logo</span></h3>
     <div class="st-row">
       <figure><button data-s="chelm-B"><img src="img/stories/chelm-B.jpg" alt="Chelmsford story option B" loading="lazy"></button><span class="pick">Our pick</span><figcaption><b>B</b>Book in with the girls · by stylist</figcaption></figure>
-      <figure><button data-s="chelm-A"><img src="img/stories/chelm-A.jpg" alt="Chelmsford story option A" loading="lazy"></button><figcaption><b>A</b>Grab a spot · photos on top</figcaption></figure>
       <figure><button data-s="chelm-C"><img src="img/stories/chelm-C.jpg" alt="Chelmsford story option C" loading="lazy"></button><figcaption><b>C</b>This week · day tiles</figcaption></figure>
       <figure><button data-s="chelm-D"><img src="img/stories/chelm-D.jpg" alt="Chelmsford story option D" loading="lazy"></button><figcaption><b>D</b>Big photo · list below</figcaption></figure>
     </div>
@@ -467,10 +473,10 @@ FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on I
 FEEDS.DR=['Final feed','Chelmsford · ready to post',"The final Chelmsford week (Maria, 23 Nov). Chelmsford girls only (Emma, Rachael and the team; Claudia is Dunmow). Every poster in one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), clean photo covers on the reels: Rachael's violet and balayage, Emma's walk into 76 (main character era), bob (bouncy, glossy, bob-tastic), Black Friday colours and balayage, plus the Remi Cachet reel. Emma's £150 Black Friday uses cover D with colour collage slide 4. Tap any post to see it with its caption. The Blueprint and Clean feed tabs are the earlier options."];
 {const d=FEEDS.DR;delete FEEDS.DR;const o={DR:d,...FEEDS};Object.keys(FEEDS).forEach(k=>delete FEEDS[k]);Object.assign(FEEDS,o)}
 /* dream feed (22 Nov): grid order newest first */
-const DRO=['violet','review','remi','tip','walk','emmafri','copper','bob','karen','pkg','money','balay','rachbalay','emmabf'];
-const DRI={remi:'img/dream/remi.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
+const DRO=['remi','violet','review','tip','copper','walk','money','balay','karen','rachbalay','bob','emmafri','pkg','emmabf'];
+const DRI={remi:'img/dream/remi-box.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tipp-1.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
 const DRTY={bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',rachbalay:'reel',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
-const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
+const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon-v2.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-premium.mp4'};
 const DRCAP={
  violet:`From blonde to violet & magenta 💜💖
 Rachael lightened the roots with Wella Blondor, toned the blonde, then sectioned our client's hair for two vivid shades: Wella Color Fresh Create in pure violet and magenta pink.
@@ -540,8 +546,8 @@ Bright through the lengths and blended at the root, so it grows out beautifully.
 
 #seventysixsalon #chelmsfordhair #blondebalayage #essexhairdresser #livedinblonde`};
 const IGI={emmabf:'img/wk/emmabf-1.jpg',money:'img/covers/money-D.jpg',violet:'img/wk/violet-clean.jpg',remi:'img/dream/remi.jpg',salon:'img/wk/salon-1.jpg',pkg:'img/wk/pkg-1.jpg',tip:'img/wk/tip-brassy-easy.jpg',bob:'img/covers/bob-D.jpg',emmafri:'img/wk/emmafri-bp.jpg',karen:'img/covers/review-A.jpg',review:'img/wk/review-chrissy.jpg',kimwork:'img/dream/kimmy-coming.jpg',team:'img/dream/kimmy-coming.jpg',copper:'img/covers/copper-D.jpg',balay:'img/wk/balay-bp.jpg'};
-const IGS={emmabf:[],tip:[2,3,4,5].map(i=>`img/slides/tip-${i}.jpg`),pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg'],salon:[2,3,4,5,6].map(i=>`img/slides/salon-${i}.jpg`)};
-const IGV={remi:'video/remi.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
+const IGS={emmabf:[],tip:[2,3,4,5,6,7].map(i=>`img/slides/tipp-${i}.jpg`),pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg'],salon:[2,3,4,5,6].map(i=>`img/slides/salon-${i}.jpg`)};
+const IGV={remi:'video/remi.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-premium.mp4'};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
 /* 22 Nov: Claudia off sick, her 2 slots became the extension reels (keep any saved drag order) */
@@ -685,6 +691,19 @@ const SND_ON='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 4
 const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
 const fmt=t=>esc(t).replace(/(^|\s)(#[\w]+)/g,'$1<a>$2</a>');
 const feedOrder=()=>[...order].reverse(); // grid order, newest first
+const VI={play:'<svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 4.5v15l13-7.5z"/></svg>',pause:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4.5" width="4" height="15" rx="1"/><rect x="14" y="4.5" width="4" height="15" rx="1"/></svg>',back:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 109-9 9 9 0 00-6.4 2.6L3 8"/><path d="M3 3v5h5"/><text x="12" y="15.5" font-size="7" text-anchor="middle" fill="currentColor" stroke="none" font-family="sans-serif" font-weight="700">5</text></svg>',fwd:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-9-9 9 9 0 016.4 2.6L21 8"/><path d="M21 3v5h-5"/><text x="12" y="15.5" font-size="7" text-anchor="middle" fill="currentColor" stroke="none" font-family="sans-serif" font-weight="700">5</text></svg>',start:'<svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="5" width="2.5" height="14" rx="1"/><path d="M19 5v14L9 12z"/></svg>'};
+/* reel controls: back to start, back 5 s, play/pause, forward 5 s, seek bar */
+function vidCtl(vd){const pm=vd.closest('.pm');if(!pm)return;const c=document.createElement('div');c.className='vc';
+ c.innerHTML=`<button data-a="start" aria-label="Back to start">${VI.start}</button><button data-a="back" aria-label="Back 5 seconds">${VI.back}</button><button data-a="pp" aria-label="Play or pause">${VI.pause}</button><button data-a="fwd" aria-label="Forward 5 seconds">${VI.fwd}</button><input type="range" min="0" max="1000" value="0" aria-label="Seek"><span class="tm">0:00 / 0:00</span>`;
+ pm.appendChild(c);const r=c.querySelector('input'),tm=c.querySelector('.tm'),pp=c.querySelector('[data-a=pp]');let drag=false;
+ const f=t=>{t=Math.max(0,t||0);return Math.floor(t/60)+':'+String(Math.floor(t%60)).padStart(2,'0')};
+ const upd=()=>{const d=vd.duration||0;if(!drag)r.value=d?Math.round(vd.currentTime/d*1000):0;tm.textContent=f(vd.currentTime)+' / '+f(d);pp.innerHTML=vd.paused?VI.play:VI.pause};
+ ['timeupdate','loadedmetadata','play','pause'].forEach(e=>vd.addEventListener(e,upd));
+ c.onclick=e=>{e.stopPropagation();const b=e.target.closest('button');if(!b)return;const a=b.dataset.a,d=vd.duration||0;
+  if(a==='pp')vd.paused?vd.play():vd.pause();else if(a==='start'){vd.currentTime=0;vd.play()}else if(a==='back')vd.currentTime=Math.max(0,vd.currentTime-5);else if(a==='fwd')vd.currentTime=Math.min(d-0.05,vd.currentTime+5);upd()};
+ r.addEventListener('input',()=>{drag=true;const d=vd.duration||0;if(d)vd.currentTime=r.value/1000*d;tm.textContent=f(vd.currentTime)+' / '+f(d)});
+ r.addEventListener('change',()=>{drag=false;upd()});
+ ['mousedown','touchstart','pointerdown'].forEach(e=>c.addEventListener(e,ev=>ev.stopPropagation(),{passive:true}));upd()}
 function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
  const imgs=[cover(k)].concat(p.n?Array.from({length:p.n},(_,i)=>`img/slides/${k}-${i+2}.jpg`):[]);
  const media=p.type==='reel'?`<video id="pv" src="${p.video}" poster="${cover(k)}" playsinline loop autoplay></video><button class="snd" id="snd" aria-label="Sound">${SND_ON}</button>`
@@ -710,7 +729,7 @@ function openPost(k){cur=k;SI=0;const p=POSTS[k],s=slotOf(k),vv=v(k);
   window.addEventListener('mouseup',e=>{if(mx===null)return;const dx=e.clientX-mx;mx=null;if(Math.abs(dx)>40)slideBy(dx<0?1:-1)});
   upd()}
  const vd=$('#pv');
- if(vd){vd.muted=false;vd.volume=1;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
+ if(vd){vidCtl(vd);vd.muted=false;vd.volume=1;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();
   $('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
 function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=(D&&DRCAP[k])||IGCAP[k]||p.cap||(b.w);
@@ -734,7 +753,7 @@ function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=
    sp.style.opacity=SI===0?0:1;sp.style.pointerEvents=SI===0?'none':'';sn.style.opacity=SI===n-1?0:1;sn.style.pointerEvents=SI===n-1?'none':''};
   tk.addEventListener('scroll',upd,{passive:true});sp.onclick=e=>{e.stopPropagation();slideBy(-1)};sn.onclick=e=>{e.stopPropagation();slideBy(1)};upd()}
  const vd=$('#pv');
- if(vd){vd.muted=false;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
+ if(vd){vidCtl(vd);vd.muted=false;const pr=vd.play();if(pr&&pr.catch)pr.catch(()=>{vd.muted=true;vd.play();$('#snd').innerHTML=SND_OFF});
   vd.onclick=()=>vd.paused?vd.play():vd.pause();$('#snd').onclick=e=>{e.stopPropagation();vd.muted=!vd.muted;$('#snd').innerHTML=vd.muted?SND_OFF:SND_ON}}}
 function slideBy(d){const tk=$('#tk');if(!tk)return false;const n=tk.children.length,t=SI+d;if(t<0||t>=n)return false;tk.scrollTo({left:t*tk.clientWidth,behavior:'smooth'});return true}
 const closePop=()=>{const vd=document.querySelector('#pc video');if(vd)vd.pause();$('#pop').classList.remove('on');$('#pc').innerHTML='';document.body.style.overflow=''};
