@@ -261,7 +261,7 @@ body.kim .sec{border-top:1px solid var(--line);margin-top:0;padding-top:46px}
 .st-row figcaption{font-size:13px;margin-top:6px;color:#4A423D}
 .st-row figcaption b{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--black);margin-right:4px}
 .st-row .pick{position:absolute;left:8px;top:8px;background:var(--green);color:#fff;font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px}
-.st-cap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:13.5px;white-space:pre-line;color:#4A423D}
+.st-cap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-top:10px;font-size:13.5px;white-space:pre-line;color:#4A423D;overflow-wrap:anywhere}
 .st-cap b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
 .stbox{position:fixed;inset:0;z-index:80;background:rgba(21,21,21,.88);display:none;align-items:center;justify-content:center;padding:16px}
 .stbox.on{display:flex}
@@ -277,7 +277,7 @@ body.kim .sec{border-top:1px solid var(--line);margin-top:0;padding-top:46px}
 .dunplan{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 18px;margin:14px 0}.dunplan h4{font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}.dunplan ol{list-style:none;font-size:14px;line-height:1.75}.dunplan a{color:var(--green)}
 .fsal{justify-content:flex-start;margin:14px 0 4px}
 .feedhead{padding-top:34px;border-top:1px solid var(--line);margin-top:30px}
-body.kim .st-cap{display:none}
+body.kim .st-cap,body.kim .mu-note{display:none}
 .mu-row img{aspect-ratio:4/5}
 #voucher-ad .st-row,body.kim #voucher-ad .mu-row{grid-template-columns:repeat(4,minmax(0,1fr))}
 .mu-reel{display:flex;gap:22px;align-items:flex-start;margin-top:22px;flex-wrap:wrap}
@@ -369,7 +369,7 @@ Can clients buy them over WhatsApp, or in the salon only?</div>
   </div>
 </section>
 <section class="wrap sec" id="stories">
-  <div class="caps">Stories · Availability · Monday</div>
+  <div class="caps">Stories · Availability Monday + makeup 1:1</div>
   <h2>This week's availability story</h2>
   <p class="lead">Availability stays in Stories, never on the feed. Kimmy picked Option A for both salons. Tap any story to see it big.</p>
   <div class="st-salon"><h3>Chelmsford <span>Black 76 logo</span></h3>
@@ -396,6 +396,15 @@ See above where you can grab a spot with Madison, Gabriella and Claudia this wee
 £20 blowdrys this Friday with Madison
 These appointments will go fast, girls
 WhatsApp the salon to book</div>
+  </div>
+  <div class="st-salon" id="makeup-story"><h3>One-to-one makeup story <span>Both salons · post any day this week</span></h3>
+    <p class="mu-note" style="font-size:14px;color:#4A423D;margin-top:4px">Kimmy (24 Nov): one makeup post in the feed and one in the story. Same design as the feed post, one story per page with its own logo colour. Put the WhatsApp link sticker in the empty space under "Tap below to book".</p>
+    <div class="st-row">
+      <figure><button><img src="img/makeup/mua-story-chelm.jpg" alt="Makeup 1:1 story Chelmsford" loading="lazy"></button><figcaption><b>Chelmsford</b> · Black 76 logo</figcaption></figure>
+      <figure><button><img src="img/makeup/mua-story-dun.jpg" alt="Makeup 1:1 story Dunmow" loading="lazy"></button><figcaption><b>Great Dunmow</b> · White 76 logo</figcaption></figure>
+    </div>
+    <div class="st-cap"><b>Link sticker · text "Book on WhatsApp"</b>Chelmsford: https://wa.me/447432027611?text=Hi%20Seventy%20Six%21%20I%27d%20like%20to%20book%20an%20appointment%20at%20Chelmsford%20%28from%20Instagram%29
+Great Dunmow: https://wa.me/447432027611?text=Hi%20Seventy%20Six%21%20I%27d%20like%20to%20book%20an%20appointment%20at%20Great%20Dunmow%20%28from%20Instagram%29</div>
   </div>
 </section>
 <div class="wrap feedhead" id="feed"><div class="caps">Instagram feed · Chelmsford</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 23 to 29 November</h2><div class="salons fsal"><button class="on" data-s="chelm">Chelmsford</button><button data-s="dun">Great Dunmow</button></div><p style="color:#4A423D;margin-top:6px">2 posts a day. Tap any post to see it with its caption. Tiles marked “Your post” are already on your page, so my new posts are everything above them.</p></div>
@@ -609,7 +618,7 @@ FEEDS.DR=['Final feed','Chelmsford · ready to post',"The final Chelmsford week 
 {const d=FEEDS.DR;delete FEEDS.DR;const o={DR:d,...FEEDS};Object.keys(FEEDS).forEach(k=>delete FEEDS[k]);Object.assign(FEEDS,o)}
 /* dream feed (22 Nov): grid order newest first */
 const DRO=['violet','review','remi','tip','copper','mua','balay','karen','money','voucher','rachbalay','pkg','walk','emmabf']; // Kimmy call 23 Nov: words every morning, photos/reels every evening, so offers never sit side by side. Earlier: less Emma, + gift voucher + 1-to-1 makeup
-const DRI={remi:'img/dream/remi-box.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review-beige.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tipp-1-k.jpg',voucher:'img/dream/voucher.jpg',mua:'img/makeup/mua-w3g.jpg?v=2',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
+const DRI={remi:'img/dream/remi-box.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review-beige.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tipp-1-k.jpg',voucher:'img/dream/voucher.jpg',mua:'img/makeup/mua-collab.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
 const DRTY={voucher:'photo',mua:'photo',bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',rachbalay:'reel',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
 const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/emma-salon-v2.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-ba3.mp4'};
 const DRCAP={ /* Kimmy 23 Nov: short + simple, stylist name, no technical how-to */
@@ -670,7 +679,7 @@ Learn the makeup that suits you, step by step, with just you in the chair ✨ A 
 
 To ask about it, WhatsApp or text the salon on 07432 027611 💕
 
-#seventysixsalon #makeuplesson #makeupartist #chelmsford #essexmakeup`,
+#seventysixsalon #makeuplesson #makeupartist #chelmsford #greatdunmow`,
  pkg:`The Black Friday blowdry package 🖤
 4 blowdrys a month for £80, all with the same stylist, saving you £60 ✨
 Available with all our stylists, except Nicky and Kimmy. Offer ends 28.11.26.
@@ -686,15 +695,15 @@ Swipe for a little inspo ➡️
 To book, WhatsApp or text the salon on 07432 027611 💕
 
 #seventysixsalon #blackfriday #chelmsfordhair #haircolour #essexhairdresser`};
-const DRW={violet:'Reel · Blonde to violet & magenta · Rachael',remi:'Reel · Remi Cachet extensions',review:'Review · Chrissy',tip:'Carousel · Why does blonde hair need aftercare?',copper:'Carousel · Blonde to copper · Rachael',walk:'Reel · Walk into 76 Chelmsford',balay:'Reel · Sun-kissed balayage · Emma',karen:'Review · Karen, colour with Kim',money:'Carousel · Halo money piece · Rachael',voucher:'Post · Christmas gift vouchers',rachbalay:'Reel · Soft, bright balayage · Rachael',mua:'Post · One-to-one makeup',pkg:'Carousel · Black Friday blowdry package · £80',emmabf:'Carousel · Black Friday £150 colour · Emma'};
+const DRW={violet:'Reel · Blonde to violet & magenta · Rachael',remi:'Reel · Remi Cachet extensions',review:'Review · Chrissy',tip:'Carousel · Why does blonde hair need aftercare?',copper:'Carousel · Blonde to copper · Rachael',walk:'Reel · Walk into 76 Chelmsford',balay:'Reel · Sun-kissed balayage · Emma',karen:'Review · Karen, colour with Kim',money:'Carousel · Halo money piece · Rachael',voucher:'Post · Christmas gift vouchers',rachbalay:'Reel · Soft, bright balayage · Rachael',mua:'Post · One-to-one makeup · collab with Dunmow',pkg:'Carousel · Black Friday blowdry package · £80',emmabf:'Carousel · Black Friday £150 colour · Emma'};
 /* ===== Great Dunmow · week 23 Nov (Maria, 23 Nov) · white 76 logo · Dunmow girls only: Claudia, Madison, Gabriella + team ===== */
 const DUN={
- O:['brun','nano','gabsp','rachel','ashy','team','cblonde','d20r','gabsr','ami','kat','copper','d20c','pkg'], // newest top-left
- I:{copper:'img/dun/copper.jpg?v=cr1',kat:'img/dun/kat.jpg?v=photo',gabsp:'img/dun/gabsp.jpg',rachel:'img/dun/rachel.jpg',brun:'img/dun/brun.jpg',ashy:'img/dun/ashy.jpg?v=6s',d20r:'img/dun/d20r.jpg?v=cr1',team:'img/dun/team.jpg?v=1700',ami:'img/dun/ami.jpg?v=3',cblonde:'img/dun/cblonde.jpg',d20c:'img/dun/d20c-1.jpg',gabsr:'img/dun/gabsr.jpg',nano:'img/dun/nano.jpg?v=cr1',pkg:'img/dun/pkg.jpg'},
+ O:['brun','nano','gabsp','rachel','ashy','mua','cblonde','team','d20r','gabsr','ami','kat','copper','d20c','pkg'], // newest top-left. 24 Nov: + makeup collab (Fri 8:00 am, posted by Chelmsford); team reel and Claudia soft blonde swapped so green tiles never touch
+ I:{mua:'img/makeup/mua-collab.jpg',copper:'img/dun/copper.jpg?v=cr1',kat:'img/dun/kat.jpg?v=photo',gabsp:'img/dun/gabsp.jpg',rachel:'img/dun/rachel.jpg',brun:'img/dun/brun.jpg',ashy:'img/dun/ashy.jpg?v=6s',d20r:'img/dun/d20r.jpg?v=cr1',team:'img/dun/team.jpg?v=1700',ami:'img/dun/ami.jpg?v=3',cblonde:'img/dun/cblonde.jpg',d20c:'img/dun/d20c-1.jpg',gabsr:'img/dun/gabsr.jpg',nano:'img/dun/nano.jpg?v=cr1',pkg:'img/dun/pkg.jpg'},
  S:{d20c:[2,3,4].map(i=>`img/dun/d20c-${i}.jpg`)},
  V:{copper:'video/dun-copper.mp4?v=cr1',kat:'video/dun-kat.mp4?v=touch',ashy:'video/dun-ashy.mp4?v=cr1',d20r:'video/dun-d20r.mp4?v=drys3',team:'video/dun-team.mp4?v=beautiful',gabsr:'video/dun-gabsr-ptb.mp4',nano:'video/dun-nano.mp4?v=cr1'},
- TY:{copper:'reel',kat:'reel',ashy:'reel',d20r:'reel',team:'reel',gabsr:'reel',nano:'reel',d20c:'carousel',gabsp:'photo',rachel:'photo',brun:'photo',ami:'photo',cblonde:'photo',pkg:'photo'},
- W:{pkg:'Black Friday blowdry package · £80',nano:'Reel · Nano bonds, Remi Cachet · Madison',gabsr:'Reel · Bright blonde, soft grow out · Gabriella',d20c:'Carousel · £20 blowdrys Friday · Madison',cblonde:'Photo · Soft blonde · Claudia',ami:'Review · Ami, colour with Madison',team:'Reel · The girls of 76 Dunmow',d20r:'Reel · £20 blowdrys tomorrow · Madison',ashy:'Reel · Ashy dreamy blonde · Claudia',brun:'Photo · Rich, glossy brunette · Madison',rachel:'Review · Rachel, cut with Gabriella',gabsp:'Photo · Bright blonde finish · Gabriella',kat:'Reel · The restyle (Kat from MobLand) · Claudia',copper:'Reel · Toned copper balayage · Madison'},
+ TY:{mua:'photo',copper:'reel',kat:'reel',ashy:'reel',d20r:'reel',team:'reel',gabsr:'reel',nano:'reel',d20c:'carousel',gabsp:'photo',rachel:'photo',brun:'photo',ami:'photo',cblonde:'photo',pkg:'photo'},
+ W:{mua:'Post · One-to-one makeup · collab, posted by Chelmsford',pkg:'Black Friday blowdry package · £80',nano:'Reel · Nano bonds, Remi Cachet · Madison',gabsr:'Reel · Bright blonde, soft grow out · Gabriella',d20c:'Carousel · £20 blowdrys Friday · Madison',cblonde:'Photo · Soft blonde · Claudia',ami:'Review · Ami, colour with Madison',team:'Reel · The girls of 76 Dunmow',d20r:'Reel · £20 blowdrys tomorrow · Madison',ashy:'Reel · Ashy dreamy blonde · Claudia',brun:'Photo · Rich, glossy brunette · Madison',rachel:'Review · Rachel, cut with Gabriella',gabsp:'Photo · Bright blonde finish · Gabriella',kat:'Reel · The restyle (Kat from MobLand) · Claudia',copper:'Reel · Toned copper balayage · Madison'},
  CAP:{
  pkg:`The Black Friday blowdry package 🖤
 4 blowdrys a month for £80 with the same stylist, saving you £60 ✨
@@ -763,6 +772,12 @@ Would you go copper this winter? 🍂
 
 #seventysixsalon #copperhair #balayage #autumnhair #dunmowhair`}};
 FEEDS.DN=['Final feed','Great Dunmow · ready to post',"The Dunmow week, 14 posts, 2 a day. Dunmow girls only (Claudia, Madison, Gabriella and the team), white 76 logo. 7 reels, Madison's £20 Friday blowdrys go out Tuesday night (carousel) and Thursday night (reel), the blowdry package on Monday morning, and 2 real Goldie reviews (Ami for Madison, Rachel for Gabriella) that never touch. Same girl never side by side. Tap any post to see it with its caption."];
+/* Kimmy 24 Nov: makeup 1:1 = ONE Instagram collab post, Chelmsford posts it, @seventysixsalon_dunmow = collaborator, so it shows on both grids */
+DUN.CAP.mua=DRCAP.mua;const COLLAB={mua:'Fri 8:00 am'};
+function planLis(O,W,dun){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 8:00 am',d+' 7:30 pm']);
+ const li=[...O].filter(k=>!(dun&&COLLAB[k])).reverse().map((k,i)=>[SL[i],k]);
+ if(dun)Object.keys(COLLAB).filter(k=>O.includes(k)).forEach(k=>li.splice(SL.indexOf(COLLAB[k]),0,[COLLAB[k],k]));
+ return li.map(([t,k])=>`<li><b>${t}</b> · <a href="#" data-k="${k}">${W[k]}</a></li>`).join('')}
 const isDN=()=>tab==='DN';
 const HN=()=>isDN()?'seventysixsalon_dunmow':'seventysixsalon';
 const DX=()=>isDN()?DUN:{O:DRO,I:DRI,S:{},V:DRV,TY:DRTY,CAP:DRCAP};
@@ -829,7 +844,7 @@ function renderSalon(){const D=isDN();
  $('#feed p').textContent=D?"2 posts a day. Tap any post to see it with its caption. Dunmow girls only, white 76 logo.":"2 posts a day. Tap any post to see it with its caption. Tiles marked “Your post” are already on your page, so my new posts are everything above them.";
  $('.phone .ig-head').innerHTML=D?'<div class="av" style="background:#fff"><img src="img/logo-black.png" alt=""></div><div><b>seventysixsalon_dunmow</b><small>SEVENTYSIX | GREAT DUNMOW SALON</small><small>Beauty, cosmetic &amp; personal care</small></div>':'<div class="av" style="background:#000"><img src="img/logo-white.png" alt=""></div><div><b>seventysixsalon</b><small>SEVENTYSIX | CHELMSFORD SALON</small><small>Beauty, cosmetic &amp; personal care</small></div>';
  const L=$('#dunplan');if(L){const FIN=D||tab==='DR';L.style.display=FIN?'':'none';if(FIN){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 8:00 am',d+' 7:30 pm']),PO=D?DUN.O:DRO,PW=D?DUN.W:DRW;
-  L.innerHTML='<h4>'+(D?'Dunmow':'Chelmsford')+' posting plan (UK time)</h4><ol>'+[...PO].reverse().map((k,i)=>`<li><b>${SL[i]}</b> · <a href="#" data-k="${k}">${PW[k]}</a></li>`).join('')+'</ol>';
+  L.innerHTML='<h4>'+(D?'Dunmow':'Chelmsford')+' posting plan (UK time)</h4><ol>'+planLis(PO,PW,D)+'</ol>';
   L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();openIG(a.dataset.k)})}}}
 function renderTabs(){renderSalon();$('#tabs').innerHTML=Object.entries(FEEDS).filter(([k])=>isDN()?k==='DN':k!=='DN').map(([k,[a,b]])=>(k==='DR'?'<span class="grp">Final<br><b>This week</b></span>':k==='P1'?'<span class="grp">Earlier · Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
@@ -996,8 +1011,8 @@ function openIG(k){cur=k;SI=0;const D=isDR(),b=BP[k]||{w:''},p=POSTS[k]||{},cap=
   :`<img class="sz" src="${imgs[0]}" alt=""><div class="track" id="tk">${imgs.map(u=>`<img src="${u}" alt="" draggable="false">`).join('')}</div><button class="sa p" id="sp" aria-label="Previous slide">${ARL}</button><button class="sa n" id="sn" aria-label="Next slide">${ARR}</button><div class="dots">${imgs.map(()=>'<i></i>').join('')}</div>`;
  const AV=isDN()?'<div class="pav" style="background:#2F4B3A"><img src="img/logo-white.png" alt=""></div>':'<div class="pav"><img src="img/logo-black.png" alt=""></div>';
  $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
-  <div class="ph">${AV}<div><b>${HN()}</b><span>SeventySix Salon, ${isDN()?'Great Dunmow':'Chelmsford'}</span></div></div>
-  <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>${HN()}</b> ${fmt(cap)}</div></div></div>
+  <div class="ph">${AV}<div><b>${COLLAB[k]?'seventysixsalon and seventysixsalon_dunmow':HN()}</b><span>SeventySix Salon, ${isDN()?'Great Dunmow':'Chelmsford'}</span></div></div>
+  <div class="pbody"><div class="pcap">${AV}<div class="tx"><b>${COLLAB[k]?'seventysixsalon':HN()}</b> ${fmt(cap)}</div></div>${COLLAB[k]?'<div class="tagl"><b>Collab:</b> posted from @seventysixsalon (Chelmsford), invite @seventysixsalon_dunmow as collaborator, it shows on both feeds</div>':''}</div>
   <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div></div></div>`;
  $('#pop').classList.add('on');document.body.style.overflow='hidden';
  const F=D?DX().O:[...BPO()].reverse(),i=F.indexOf(k);$('#pp').disabled=i<=0;$('#pn').disabled=i>=F.length-1;
@@ -1034,7 +1049,7 @@ $('#days').onclick=()=>{showDays=!showDays;render()};
 const KIM=true; // only the final feed now (Maria, 23 Nov: older options removed)
 
 document.querySelectorAll('.salons button').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.s==='dun'?'feed-dun':'feed').scrollIntoView({behavior:'smooth'}));
-if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Seven reels, Madison's £20 Black Friday blowdrys, the blowdry package on Monday, and two lovely Goldie reviews. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one soft nude review, and reels with clean photo covers: Rachael's violet, copper, money piece and balayage, Emma's balayage, Black Friday colours and walk-in, the Remi Cachet reel, Christmas gift vouchers and one-to-one makeup. The posting plan (days and times) is next to the feed. Tap any post to see it with its caption."]}
+if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Seven reels, Madison's £20 Black Friday blowdrys, the blowdry package on Monday, and two lovely Goldie reviews, plus the one-to-one makeup post shared with Chelmsford as a collab. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one soft nude review, and reels with clean photo covers: Rachael's violet, copper, money piece and balayage, Emma's balayage, Black Friday colours and walk-in, the Remi Cachet reel, Christmas gift vouchers and one-to-one makeup (a collab post with Dunmow, so it shows on both pages). The posting plan (days and times) is next to the feed. Tap any post to see it with its caption."]}
 {const bx=$('#stbox'),im=bx.querySelector('img'),lb=bx.querySelector('.slbl'),dt=bx.querySelector('.sdots');let set=[],i=0;
 const show=d=>{const f=set[i];im.src=f.querySelector('img').getAttribute('src');im.alt=f.querySelector('img').alt;lb.innerHTML=f.querySelector('figcaption').innerHTML+' · '+(i+1)+' of '+set.length;dt.innerHTML=set.map((_,k)=>'<i'+(k===i?' class="on"':'')+'></i>').join('');if(d){im.style.transition='none';im.style.transform='translateX('+(d*40)+'px)';im.style.opacity='.4';requestAnimationFrame(()=>{im.style.transition='';im.style.transform='';im.style.opacity=''})}};
 const go=d=>{if(set.length<2)return;i=(i+d+set.length)%set.length;show(d)};
@@ -1054,7 +1069,7 @@ function renderDun2(){
  document.querySelectorAll('#grid2 .t').forEach(el=>el.onclick=()=>op(el.dataset.k));
  const f=FEEDS.DN;if(f){$('#dcaps').textContent=f[0];$('#dtitle').textContent=f[1];$('#dlead').textContent=f[2]}
  const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 8:00 am',d+' 7:30 pm']);
- const L=$('#dunplan2');L.innerHTML='<h4>Dunmow posting plan (UK time)</h4><ol>'+[...DUN.O].reverse().map((k,i)=>`<li><b>${SL[i]}</b> · <a href="#" data-k="${k}">${DUN.W[k]}</a></li>`).join('')+'</ol>';
+ const L=$('#dunplan2');L.innerHTML='<h4>Dunmow posting plan (UK time)</h4><ol>'+planLis(DUN.O,DUN.W,true)+'</ol>';
  L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();op(a.dataset.k)})}
 renderDun2();
 if(location.hash.includes('t=DN'))setTimeout(()=>document.getElementById('feed-dun').scrollIntoView(),300);
