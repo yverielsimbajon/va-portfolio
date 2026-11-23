@@ -216,7 +216,7 @@ footer{text-align:center;padding:26px 16px 44px;color:var(--soft);font-size:13px
 <header><div class="wrap">
   <div class="caps">Our planning board · Maria &amp; Claude</div>
   <h1>Chelmsford · 23 to 29 November</h1>
-  <p>14 posts, 2 a day. The Blueprint: the 14 slots for the week. Drag to swap.</p>
+  <p>14 posts, 2 a day. Final feed is the week we post. Tap a post to see it with its caption.</p>
   <div class="salons"><button class="on">Chelmsford</button><button disabled title="Coming next">Dunmow · next</button></div>
 </div></header>
 
@@ -407,7 +407,8 @@ const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Ext
 const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
 const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick, made prettier on 22 Nov: only Chelmsford photos now (no product or stock pictures). Chrissy's review, Claudia's soft blonde and Emma's balayage reel close the week at the top, Rachael's violet pops on row 2, and Karen's review sits lower down so the two reviews never touch. Fair rotation: Emma 4 (2 are her Black Friday), Rachael 3, Remi Cachet reel 1, Kimmy 1, team 3 (the Inside 76 salon photos and 2 reviews), 1 tip. Emma's £150 goes out Monday 9:30 am, the blow-dry package Wednesday night, It's Black Friday on Friday night. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 9:30 am. Drag to swap."]};
 FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, Chelmsford photos only, no labels. Kimmy's slot says photo coming until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
-FEEDS.DR=['Dream feed',"Claude's free pick","If we forget the blueprint rules: how I would arrange the week to look its prettiest. Only Chelmsford girls (Emma, Rachael and the team; Claudia is Dunmow so she's out). Every poster is redesigned as one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), the reels get clean photo covers, Emma's bob is now a reel, Rachael's violet reel has real transitions, the walk into 76 reel replaces the salon photos, and the Remi Cachet reel is back with a new song. Chelmsford photos only. Posters never sit on top of or beside each other, the warm reds and the soft blondes are spread out, and Emma's £150 still goes out Monday morning. Tap a post to open it."];
+FEEDS.DR=['Final feed','Chelmsford · ready to post',"The final Chelmsford week (Maria, 23 Nov). Chelmsford girls only (Emma, Rachael and the team; Claudia is Dunmow). Every poster in one family (photo in a plain frame on soft paper, Cormorant titles, one forest green review), clean photo covers on the reels: Rachael's violet and balayage, Emma's walk into 76 (main character era), bob (bouncy, glossy, bob-tastic), Black Friday colours and balayage, plus the Remi Cachet reel. Emma's £150 Black Friday uses cover D with colour collage slide 4. Tap any post to see it with its caption. The Blueprint and Clean feed tabs are the earlier options."];
+{const d=FEEDS.DR;delete FEEDS.DR;const o={DR:d,...FEEDS};Object.keys(FEEDS).forEach(k=>delete FEEDS[k]);Object.assign(FEEDS,o)}
 /* dream feed (22 Nov): grid order newest first */
 const DRO=['violet','review','remi','tip','walk','emmafri','copper','bob','karen','pkg','money','balay','rachbalay','emmabf'];
 const DRI={remi:'img/dream/remi.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tip.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
@@ -462,13 +463,14 @@ const BF0={DR:DRI.emmabf,IG:'img/wk/emmabf-1.jpg'};let BFP='D',BF4='1';try{const
 function applyBF(){IGS.emmabf=['img/wk/emmabf-2.jpg','img/wk/emmabf-3.jpg',`img/dream/bf-slide4/${BF4}.jpg`,'img/wk/emmabf-4.jpg'];DRI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.DR;IGI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.IG}
 function setBF(v){BFP=v;try{localStorage.setItem('76bf-pick2',v)}catch(e){}applyBF();render()}
 function setBF4(v){BF4=v;try{localStorage.setItem('76bf-s4b',v)}catch(e){}applyBF();render()}
-function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG()||isDR();b.style.display=G?'block':'none';if(!G)return;
+function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG();b.style.display=G?'block':'none';if(!G)return;
  const old=isDR()?BF0.DR:BF0.IG;
  b.innerHTML=`<div class="bl">Emma £150 Black Friday · tap a cover to try it on the feed</div><div class="bo">`+'ABCDEF'.split('').map(x=>`<button data-v="${x}" class="${BFP===x?'on':''}"><img src="img/dream/bf-options/${x}.jpg" alt="">${x}</button>`).join('')+`<button data-v="" class="${BFP===''?'on':''}"><img src="${old}" alt="">old</button></div>`
  +`<div class="bl" style="margin-top:10px">Slide 4 · colour collage (Option 1 chosen) · tap Emma's post and swipe to see it</div><div class="bo s4">`+'12345'.split('').map(x=>`<button data-v="${x}" class="${BF4===x?'on':''}"><img src="img/dream/bf-slide4/${x}.jpg" alt="">${x}</button>`).join('')+'</div>';
  b.querySelectorAll('.bo:not(.s4) button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v));
  b.querySelectorAll('.bo.s4 button').forEach(bt=>bt.onclick=()=>setBF4(bt.dataset.v))}
-function renderDR(){const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
+function renderDR(){if(BFP!=='D'||BF4!=='1'){BFP='D';BF4='1';applyBF()}
+ $('.hint').style.display='none';const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
 /* clean Instagram feed: the real cover for each slot */
@@ -494,7 +496,7 @@ let mix=LS.mix||Object.fromEntries(DEFAULT.map(k=>[k,'A']));
 const okO=o=>o&&o.length===14&&o.every(k=>BP[k]);
 let bpOrders=Object.fromEntries(Object.entries(BP_OPTS).map(([k,o])=>[k,LS.bps&&okO(LS.bps[k])?LS.bps[k]:[...o]]));
 let bfPick=LS.bf||'emma-fade-0';
-let tab=LS.pick2&&LS.tab&&FEEDS[LS.tab]?LS.tab:'P2';
+let tab='DR';
 const isBP=()=>tab[0]==='P';
 const isIG=()=>tab==='IG';
 const BPO=()=>bpOrders[isBP()?tab:isIG()?'P2':'P1'];
@@ -509,7 +511,7 @@ const cover=k=>isBP()&&BP[k]&&(BP[k].full||BP[k].img)?(BP[k].full||BP[k].img):`i
 const ICO={reel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1zm6 6v6l5-3z"/></svg>',carousel:'<svg class="ico" viewBox="0 0 24 24" fill="#fff"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z"/><path d="M4 7v13h13" fill="none" stroke="#fff" stroke-width="2"/></svg>',photo:''};
 const slotOf=k=>isBP()&&BPO().includes(k)?bpSlot(k):SLOTS[order.indexOf(k)]||bpSlot(k);
 
-function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>(k==='P1'?'<span class="grp">Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
+function renderTabs(){$('#tabs').innerHTML=Object.entries(FEEDS).map(([k,[a,b]])=>(k==='DR'?'<span class="grp">Final<br><b>This week</b></span>':k==='P1'?'<span class="grp">Earlier · Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
  document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{tab=b.dataset.t;save();render()});
  const f=FEEDS[tab];$('#tabcaps').textContent=f[0];$('#tabtitle').textContent=f[1];$('#tablead').textContent=f[2];}
 function renderGrid(){
@@ -587,7 +589,7 @@ function renderIG(){
  wireDrag()}
 function render(){renderTabs();renderBFBar();const G=isIG()||isDR();
  ['.styles','#legend','.checks','#posts','#reset','#days'].forEach(q=>{const e=$(q);if(e)e.style.display=G?'none':''});
- if(G){isDR()?renderDR():renderIG();return}
+ $('.hint').style.display='';if(G){isDR()?renderDR():renderIG();return}
  const P=isBP();$('.styles').style.display=P?'none':'';$('#legend').style.display=P?'':'none';
  $('#reset').style.display=P?'none':'';$('#days').textContent=(showDays?'Hide':'Show')+(P?' days & names':' days on tiles');if(P){renderBP();return}renderGrid();renderChecks();renderPosts()}
 
