@@ -278,6 +278,11 @@ body.kim .sec{border-top:1px solid var(--line);margin-top:0;padding-top:46px}
 .fsal{justify-content:flex-start;margin:14px 0 4px}
 .feedhead{padding-top:34px;border-top:1px solid var(--line);margin-top:30px}
 body.kim .st-cap{display:none}
+.mu-row img{aspect-ratio:4/5}
+body.kim .mu-row{grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media(max-width:760px){body.kim .mu-row figure{flex:0 0 72%}}
+.mu-cap{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-top:14px;font-size:14px;white-space:pre-line;color:#4A423D;max-width:680px}
+.mu-cap b{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:4px}
 body.kim .st-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:14px}
 body.kim .st-row figcaption{font-size:14px;margin-top:8px}
 body.kim .st-row figcaption b{font-size:22px}
@@ -288,7 +293,7 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
 <body>
 <nav class="knav"><div class="wrap">
  <a class="brand" href="#top"><img src="img/logo-black.png" alt="76"><span>Seventy Six</span></a>
- <div class="links"><a href="#stories">Stories</a><a href="#feed" data-go="chelm">Chelmsford feed</a><a href="#feed-dun">Dunmow feed</a></div>
+ <div class="links"><a href="#makeup">Makeup 1:1</a><a href="#stories">Stories</a><a href="#feed" data-go="chelm">Chelmsford feed</a><a href="#feed-dun">Dunmow feed</a></div>
 </div></nav>
 <section class="khero" id="top"><div class="wrap">
  <img src="img/logo-black.png" alt="Seventy Six Salon logo">
@@ -306,6 +311,25 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
   <div class="salons"><button class="on" data-s="chelm">Chelmsford</button><button data-s="dun">Great Dunmow</button></div>
 </div></header>
 
+<section class="wrap sec" id="makeup">
+  <div class="caps">Post · Next week · Chelmsford</div>
+  <h2>Makeup 1:1</h2>
+  <p class="lead">One-to-one makeup package, £100. Learn how to do your own makeup at home with your own makeup bag. Here are 5 options to choose from. Tap any one to see it big.</p>
+  <div class="st-salon"><h3>Chelmsford <span>Black 76 logo</span></h3>
+    <div class="st-row mu-row">
+      <figure><button><img src="img/makeup/mua-1.jpg" alt="Makeup 1:1 option 1" loading="lazy"></button><figcaption><b>Option 1</b> · Green · photo left</figcaption></figure>
+      <figure><button><img src="img/makeup/mua-2.jpg" alt="Makeup 1:1 option 2" loading="lazy"></button><figcaption><b>Option 2</b> · Soft nude · editorial</figcaption></figure>
+      <figure><button><img src="img/makeup/mua-3.jpg" alt="Makeup 1:1 option 3" loading="lazy"></button><figcaption><b>Option 3</b> · Black · photo on top</figcaption></figure>
+      <figure><button><img src="img/makeup/mua-4.jpg" alt="Makeup 1:1 option 4" loading="lazy"></button><figcaption><b>Option 4</b> · Two photos · price circle</figcaption></figure>
+      <figure><button><img src="img/makeup/mua-5.jpg" alt="Makeup 1:1 option 5" loading="lazy"></button><figcaption><b>Option 5</b> · Nude · 3 steps</figcaption></figure>
+    </div>
+    <div class="mu-cap"><b>Caption</b>1:1 makeup lessons with our makeup artist 💄
+Learn how to do your own makeup at home with your own makeup bag! Just £100.
+WhatsApp the salon to book: 07432 027611
+
+#seventysixsalon #makeuplesson #chelmsfordmakeup #essexmakeup #onetoonemakeup</div>
+  </div>
+</section>
 <section class="wrap sec" id="stories">
   <div class="caps">Stories · Availability · Monday</div>
   <h2>This week's availability story</h2>
