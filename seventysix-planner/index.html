@@ -457,13 +457,16 @@ Fancy a change? WhatsApp or text 07432 027611 💕
 
 #seventysixsalon #bobhaircut #hairtransformation #chelmsfordhair #essexhairdresser`};
 const isDR=()=>tab==='DR';
-const BF0={DR:DRI.emmabf,IG:'img/wk/emmabf-1.jpg'};let BFP='';try{BFP=localStorage.getItem('76bf-pick')||''}catch(e){}
-function applyBF(){DRI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.DR;IGI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.IG}
-function setBF(v){BFP=v;try{localStorage.setItem('76bf-pick',v)}catch(e){}applyBF();render()}
+const BF0={DR:DRI.emmabf,IG:'img/wk/emmabf-1.jpg'};let BFP='D',BF4='1';try{const v=localStorage.getItem('76bf-pick2');if(v!==null)BFP=v;BF4=localStorage.getItem('76bf-s4')||'1'}catch(e){}
+function applyBF(){IGS.emmabf=['img/wk/emmabf-2.jpg','img/wk/emmabf-3.jpg',`img/dream/bf-slide4/${BF4}.jpg`,'img/wk/emmabf-4.jpg'];DRI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.DR;IGI.emmabf=BFP?`img/dream/bf-options/${BFP}.jpg`:BF0.IG}
+function setBF(v){BFP=v;try{localStorage.setItem('76bf-pick2',v)}catch(e){}applyBF();render()}
+function setBF4(v){BF4=v;try{localStorage.setItem('76bf-s4',v)}catch(e){}applyBF();render()}
 function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG()||isDR();b.style.display=G?'block':'none';if(!G)return;
  const old=isDR()?BF0.DR:BF0.IG;
- b.innerHTML=`<div class="bl">Emma £150 Black Friday · tap a cover to try it on the feed</div><div class="bo">`+'ABCDEF'.split('').map(x=>`<button data-v="${x}" class="${BFP===x?'on':''}"><img src="img/dream/bf-options/${x}.jpg" alt="">${x}</button>`).join('')+`<button data-v="" class="${BFP===''?'on':''}"><img src="${old}" alt="">old</button></div>`;
- b.querySelectorAll('button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v))}
+ b.innerHTML=`<div class="bl">Emma £150 Black Friday · tap a cover to try it on the feed</div><div class="bo">`+'ABCDEF'.split('').map(x=>`<button data-v="${x}" class="${BFP===x?'on':''}"><img src="img/dream/bf-options/${x}.jpg" alt="">${x}</button>`).join('')+`<button data-v="" class="${BFP===''?'on':''}"><img src="${old}" alt="">old</button></div>`
+ +`<div class="bl" style="margin-top:10px">New slide 4 · colour collage · tap Emma's post and swipe to see it</div><div class="bo s4">`+'12345'.split('').map(x=>`<button data-v="${x}" class="${BF4===x?'on':''}"><img src="img/dream/bf-slide4/${x}.jpg" alt="">${x}</button>`).join('')+'</div>';
+ b.querySelectorAll('.bo:not(.s4) button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v));
+ b.querySelectorAll('.bo.s4 button').forEach(bt=>bt.onclick=()=>setBF4(bt.dataset.v))}
 function renderDR(){const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""></div>`;
  $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
@@ -477,7 +480,7 @@ Bright through the lengths and blended at the root, so it grows out beautifully.
 
 #seventysixsalon #chelmsfordhair #blondebalayage #essexhairdresser #livedinblonde`};
 const IGI={emmabf:'img/wk/emmabf-1.jpg',money:'img/covers/money-D.jpg',violet:'img/wk/violet-clean.jpg',remi:'img/dream/remi.jpg',salon:'img/wk/salon-1.jpg',pkg:'img/wk/pkg-1.jpg',tip:'img/wk/tip-brassy-easy.jpg',bob:'img/covers/bob-D.jpg',emmafri:'img/wk/emmafri-bp.jpg',karen:'img/covers/review-A.jpg',review:'img/wk/review-chrissy.jpg',kimwork:'img/dream/kimmy-coming.jpg',team:'img/dream/kimmy-coming.jpg',copper:'img/covers/copper-D.jpg',balay:'img/wk/balay-bp.jpg'};
-const IGS={emmabf:[2,3,4].map(i=>`img/wk/emmabf-${i}.jpg`),pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg'],salon:[2,3,4,5,6].map(i=>`img/slides/salon-${i}.jpg`)};
+const IGS={emmabf:[],pkg:[2,3,4].map(i=>`img/wk/pkg-${i}.jpg`),money:['img/slides/money-2.jpg','img/slides/money-3.jpg'],bob:['img/slides/bob-2.jpg','img/slides/bob-3.jpg','img/slides/bob-4.jpg'],copper:['img/slides/copper-2.jpg','img/slides/copper-3.jpg','img/slides/copper-4.jpg'],salon:[2,3,4,5,6].map(i=>`img/slides/salon-${i}.jpg`)};
 const IGV={remi:'video/remi.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf.mp4'};
 let showDays=false;
 let LS={};try{LS=JSON.parse(localStorage.getItem('76plan-chelm-v2')||'{}')}catch(e){}
