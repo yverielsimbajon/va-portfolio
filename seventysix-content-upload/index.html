@@ -410,7 +410,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
     Gabs:'styled.by.gabriella', Madi:'hair.bymadison_x', Leah:'hairbyleahx', Nicky:'nickysteelehair', Kelsey:'khillbeauty', Emily:'hair_byemilye' };
   const TEAM = Object.keys(IG);
   const SALONS = ['Chelmsford','Dunmow'];
-  const SERVICES = ['Colour','Blonde & highlights','Balayage','Extensions','Cut & style','Blow dry','Keratin blowdry','Treatment','Bridal hair','Makeup','Salon & team'];
+  const SERVICES = ['Colour','Blonde & highlights','Balayage','Extensions','Cut & style','Blowdry','Keratin blowdry','Treatment','Bridal hair','Makeup','Salon & team'];
   const EXT_TYPES = ['Nano bonds','Tapes','Wefts','Not sure'];
   const EXT_BRANDS = ['Remi Cachet','Sway','Other'];
   const TAG = ['Yes','No','Not sure'];
@@ -771,7 +771,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
   if (preview === 'thanks') {
     const pos = ['50% 35%','10% 40%','90% 40%','35% 60%','65% 30%'];
     const sample = pos.map(p => ({ kind:'image', url:'img/team.jpg', pos:p }));
-    showThanks({ girl:'Emma', salon:'Chelmsford', service:'Balayage, Blow dry', details:'' }, sample, 0);
+    showThanks({ girl:'Emma', salon:'Chelmsford', service:'Balayage, Blowdry', details:'' }, sample, 0);
     $('card').classList.add('done');
   } else if (preview === 'sending') {
     $('card').classList.add('sending'); document.body.classList.add('is-sending'); $('sendHint').style.display = 'none';
