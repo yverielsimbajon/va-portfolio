@@ -648,7 +648,7 @@ FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on I
 FEEDS.DR=['Final feed','Chelmsford · ready to post',"The final Chelmsford week (Maria, 23 Nov). Chelmsford girls only (Emma, Rachael and the team; Claudia is Dunmow). Every poster in one family (photo in a plain frame on soft paper, Cormorant titles, one soft nude review), clean photo covers on the reels: Rachael's violet, copper, money piece and balayage, Emma's balayage, the walk into 76 (all the girls' work), the Remi Cachet reel, plus Kimmy's asks: Christmas gift vouchers and one-to-one makeup. Emma's £150 Black Friday uses cover D with colour collage slide 4. Kimmy's notes (23 Nov): less Emma, short captions with the stylist's name. Tap any post to see it with its caption. The Blueprint and Clean feed tabs are the earlier options."];
 {const d=FEEDS.DR;delete FEEDS.DR;const o={DR:d,...FEEDS};Object.keys(FEEDS).forEach(k=>delete FEEDS[k]);Object.assign(FEEDS,o)}
 /* dream feed (22 Nov): grid order newest first */
-const DRO=['violet','review','remi','tip','copper','mua','balay','karen','money','voucher','rachbalay','emmabridal','walk','rachcrop']; // Kimmy 24 Nov pm: grid = our work + a few main offers (vouchers, makeup); blowdry package + Emma £150 moved to stories. // Kimmy call 23 Nov: words every morning, photos/reels every evening, so offers never sit side by side. Earlier: less Emma, + gift voucher + 1-to-1 makeup
+const DRO=['violet','review','remi','rachcrop','copper','mua','balay','karen','money','voucher','rachbalay','emmabridal','walk','emmabf']; // 24 Nov: Mon posts already live (Emma £150 Mon 8 am, walk-in Mon 6 pm, Maria). Tip carousel out (Kimmy: work, not cream text). // Kimmy 24 Nov pm: grid = our work + a few main offers (vouchers, makeup); blowdry package + Emma £150 moved to stories. // Kimmy call 23 Nov: words every morning, photos/reels every evening, so offers never sit side by side. Earlier: less Emma, + gift voucher + 1-to-1 makeup
 const DRI={rachcrop:'img/dream/rachcrop.jpg',emmabridal:'img/dream/emmabridal.jpg',remi:'img/dream/remi-box.jpg',walk:'img/dream/walk.jpg',rachbalay:'img/dream/rachbalay.jpg',review:'img/dream/review-black.jpg',violet:'img/wk/violet-clean.jpg',tip:'img/dream/tipp-1-k.jpg',voucher:'img/voucher-ad/ad1-feed.jpg?v=3',mua:'img/makeup/mua-collab-o4.jpg',emmafri:'img/dream/emmafri-clean.jpg',copper:'img/covers/copper-D.jpg',bob:'img/covers/bob-D.jpg',karen:'img/dream/karen-green.jpg',pkg:'img/dream/pkg.jpg',balay:'img/dream/balay-clean.jpg',money:'img/covers/money-D.jpg',emmabf:'img/dream/emmabf.jpg'};
 const DRTY={rachcrop:'photo',emmabridal:'photo',voucher:'photo',mua:'photo',bob:'reel',remi:'reel',walk:'reel',violet:'reel',emmafri:'reel',balay:'reel',review:'photo',karen:'photo',tip:'carousel',rachbalay:'reel',money:'carousel',copper:'carousel',pkg:'carousel',emmabf:'carousel'};
 const DRV={rachbalay:'video/rachael-balayage.mp4',bob:'video/emma-bob.mp4',remi:'video/remi.mp4',walk:'video/walk-all-girls-v4.mp4',violet:'video/rachael-vivid.mp4',balay:'video/emma-balayage.mp4',emmafri:'video/emma-bf-ba3.mp4'};
@@ -684,11 +684,9 @@ Swipe for our easy tips and save this for your next wash day ✨
 Swipe to the end to see the before ➡️
 
 #seventysixsalon #copperhair #colourchange #chelmsfordhair #essexhairdresser`,
- walk:`POV: your walk into 76 Chelmsford ✨
+walk:`POV: your walk into 76 Chelmsford ✨ Down the lane, past the sign and straight into your chair. Calm, bright and all about you💫
 
-Fancy treating yourself before Christmas? WhatsApp or text 07432 027611 💕
-
-#seventysixsalon #chelmsfordsalon #saloninchelmsford #chelmsfordhair #essexhairdresser`,
+Fancy treating yourself before Christmas? WhatsApp or text 07432 027611 to book 💕`,
  balay:`Soft, sun-kissed balayage by our amazing stylist Emma ✨
 
 Want yours? WhatsApp or text 07432 027611 💕
@@ -723,19 +721,16 @@ Available with all our stylists, except Nicky and Kimmy. Offer ends 28.11.26.
 To buy yours, WhatsApp or text the salon on 07432 027611 💕
 
 #seventysixsalon #blackfriday #blowdry #chelmsfordhair #essexhairdresser`,
- emmabf:`Black Friday with our amazing stylist Emma 🖤
-Any colour service for £150, with a cut, blowdry and treatment included ✨
+emmabf:`Black Friday at 76 Chelmsford 🖤 This week only, Emma is treating you to any colour service for £150, with a cut, blowdry and treatment all included ✨
 
-Swipe for a little inspo ➡️
+Pretty pink, fiery red or golden caramel balayage. Swipe for a little inspo from Emma's chair
 
-To book, WhatsApp or text the salon on 07432 027611 💕
-
-#seventysixsalon #blackfriday #chelmsfordhair #haircolour #essexhairdresser`};
+➡️ To book with Emma, WhatsApp or text the salon on 07432 027611, or email`};
 const DRW={rachcrop:'Photo · Soft blonde, fresh cut · Rachael',emmabridal:'Photo · Bridal hair · Emma',violet:'Reel · Blonde to violet & magenta · Rachael',remi:'Reel · Remi Cachet extensions',review:'Review · Chrissy',tip:'Carousel · Why does blonde hair need aftercare?',copper:'Carousel · Blonde to copper · Rachael',walk:'Reel · Walk into 76 Chelmsford',balay:'Reel · Sun-kissed balayage · Emma',karen:'Review · Karen, colour with Kim',money:'Carousel · Halo money piece · Rachael',voucher:'Post · Christmas gift vouchers · collab with Dunmow',rachbalay:'Reel · Soft, bright balayage · Rachael',mua:'Post · One-to-one makeup · collab with Dunmow',pkg:'Carousel · Black Friday blowdry package · £80',emmabf:'Carousel · Black Friday £150 colour · Emma'};
 /* ===== Great Dunmow · week 23 Nov (Maria, 23 Nov) · white 76 logo · Dunmow girls only: Claudia, Madison, Gabriella + team ===== */
 const DUN={
- O:['gabsr','leah','ami','cblonde','nano','gabsp','mua','madib','kat','team','nicky','voucher','copper','ashy','rachel','brun'], // newest top-left. Kimmy 24 Nov pm: grid = hair & makeup work + only the main offers (voucher + makeup collabs). No £20 blowdrys this week (already posted). Blowdry package moved to stories. Reel covers = plain photo
- I:{madib:'img/dun/madib.jpg',nicky:'img/dun/nicky.jpg',leah:'img/dun/leah.jpg',voucher:'img/voucher-ad/ad1-feed.jpg?v=3',mua:'img/makeup/mua-collab-o4.jpg',copper:'img/dun/copper-clean.jpg',kat:'img/dun/kat.jpg?v=photo',gabsp:'img/dun/gabsp.jpg',rachel:'img/dun/rachel.jpg',brun:'img/dun/brun.jpg',ashy:'img/dun/ashy.jpg?v=6s',d20r:'img/dun/d20r-clean.jpg',team:'img/dun/team-clean.jpg',ami:'img/dun/ami-black.jpg',cblonde:'img/dun/cblonde.jpg',d20c:'img/dun/d20c-clean.jpg',gabsr:'img/dun/gabsr.jpg',nano:'img/dun/nano-clean.jpg',pkg:'img/dun/pkg.jpg'},
+ O:['madib','gabsr','ami','cblonde','nano','gabsp','mua','brun','kat','copper','team','voucher','rachel','ashy','d20c','pkg'], // newest top-left. 24 Nov: Mon posts already live (blowdry package Mon 8 am, £20 carousel Mon 6 pm, Maria). Rest = the girls' work + voucher/makeup collabs. Rachel review black, Ami green (no green tiles touching)
+ I:{madib:'img/dun/madib.jpg',nicky:'img/dun/nicky.jpg',leah:'img/dun/leah.jpg',voucher:'img/voucher-ad/ad1-feed.jpg?v=3',mua:'img/makeup/mua-collab-o4.jpg',copper:'img/dun/copper-clean.jpg',kat:'img/dun/kat.jpg?v=photo',gabsp:'img/dun/gabsp.jpg',rachel:'img/dun/rachel-black.jpg',brun:'img/dun/brun.jpg',ashy:'img/dun/ashy.jpg?v=6s',d20r:'img/dun/d20r-clean.jpg',team:'img/dun/team-clean.jpg',ami:'img/dun/ami-green.jpg',cblonde:'img/dun/cblonde.jpg',d20c:'img/dun/d20c-1.jpg',gabsr:'img/dun/gabsr.jpg',nano:'img/dun/nano-clean.jpg',pkg:'img/dun/pkg.jpg'},
  S:{d20c:[2,3,4].map(i=>`img/dun/d20c-${i}.jpg`)},
  V:{copper:'video/dun-copper-bd.mp4',kat:'video/dun-kat-bw.mp4',ashy:'video/dun-ashy-bw.mp4',d20r:'video/dun-d20r-bw.mp4',team:'video/dun-team.mp4?v=beautiful',gabsr:'video/dun-gabsr-ptb.mp4',nano:'video/dun-nano-bw.mp4'},
  TY:{madib:'photo',nicky:'photo',leah:'photo',voucher:'photo',mua:'photo',copper:'reel',kat:'reel',ashy:'reel',d20r:'reel',team:'reel',gabsr:'reel',nano:'reel',d20c:'carousel',gabsp:'photo',rachel:'photo',brun:'photo',ami:'photo',cblonde:'photo',pkg:'photo'},
@@ -752,11 +747,8 @@ const DUN={
 #seventysixsalon #layeredhair #haircut #dunmowhair #essexhairdresser`,
  pkg:`The Black Friday blowdry package 🖤
 4 blowdrys a month for £80 with the same stylist, saving you £60 ✨
-Available with all our stylists, except Nicky and Kimmy. Pay in full by 28.11.26.
 
-To buy yours, WhatsApp or text the salon on 07432 027611 💌
-
-#seventysixsalon #blackfriday #blowdry #greatdunmow #essexhairdresser`,
+All packages can be used for any month in 2027 but must be purchased & paid in full by 28.11.26!!`,
  nano:`Remi Cachet nano bonds by our amazing stylist Madison 💫
 
 Dreaming of extra length? Ask the girls about Remi Cachet 💬
@@ -767,12 +759,9 @@ Dreaming of extra length? Ask the girls about Remi Cachet 💬
 Stay till the end for the after 👀
 
 #seventysixsalon #balayage #highlights #dunmowhair #essexblonde`,
- d20c:`£20 blowdrys with our amazing stylist Madison 💚
-This Friday, 27 November, for Black Friday.
+ d20c:`£20 blowdrys with our amazing stylist Madison 💖 This Friday, 27 November, for Black Friday. Swipe through a few favourites from her chair
 
-Swipe through a few favourites from her chair ➡️
-
-To book, WhatsApp or text the salon on 07432 027611 💕
+➡️ To book, WhatsApp or text the salon on 07432 027611 💕
 
 #seventysixsalon #blackfriday #blowdry #dunmowhair #essexhairdresser`,
  cblonde:`Soft blonde waves by our amazing stylist Claudia 🌟
@@ -816,7 +805,7 @@ Our client brought in a picture of Kat from MobLand 🖤
 Would you go copper this winter? 🍂
 
 #seventysixsalon #copperhair #balayage #autumnhair #dunmowhair`}};
-FEEDS.DN=['Final feed','Great Dunmow · ready to post',"Kimmy (24 Nov): the grid is our work, with only the main offers; offers go in the stories. 14 posts of the girls' hair (Claudia, Madison, Gabriella, Nicky, Leah and the team) plus 2 collabs (gift vouchers Wed, makeup Fri). Reel covers are plain photos. Written posts mix black and green, not all cream (Kimmy). No £20 blowdrys this week (already posted). The blowdry package is in the stories. Tap any post to see it with its caption."];
+FEEDS.DN=['Final feed','Great Dunmow · ready to post',"Kimmy (24 Nov): the grid is our work, with only the main offers; offers go in the stories. 14 posts of the girls' hair (Claudia, Madison, Gabriella, Nicky, Leah and the team) plus 2 collabs (gift vouchers Wed, makeup Fri). Reel covers are plain photos. Written posts mix black and green, not all cream (Kimmy). Monday's blowdry package and £20 carousel are already posted (marked). No more £20 this week, more offers go in the stories. Tap any post to see it with its caption."];
 /* Kimmy 24 Nov: makeup 1:1 = ONE Instagram collab post, Chelmsford posts it, @seventysixsalon_dunmow = collaborator, so it shows on both grids */
 DUN.CAP.mua=DRCAP.mua;const COLLAB={mua:'Fri 8:00 am',voucher:'Wed 8:00 am'}; /* Kimmy 24 Nov: gift voucher on Dunmow too = collab like the makeup post; evening posts at 6:00 pm */
 DUN.CAP.voucher=DRCAP.voucher;
@@ -838,12 +827,14 @@ function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG();b.style.d
  +`<div class="bl" style="margin-top:10px">Slide 4 · colour collage (Option 1 chosen) · tap Emma's post and swipe to see it</div><div class="bo s4">`+'12345'.split('').map(x=>`<button data-v="${x}" class="${BF4===x?'on':''}"><img src="img/dream/bf-slide4/${x}.jpg" alt="">${x}</button>`).join('')+'</div>';
  b.querySelectorAll('.bo:not(.s4) button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v));
  b.querySelectorAll('.bo.s4 button').forEach(bt=>bt.onclick=()=>setBF4(bt.dataset.v))}
+const POSTED={emmabf:'Posted Mon',walk:'Posted Mon',pkg:'Posted Mon',d20c:'Posted Mon'}; /* Maria 24 Nov: already live on IG */
+const PB=k=>POSTED[k]?`<span class="yp">${POSTED[k]} ✓</span>`:'';
 function renderDR(){if(isDN()){$('.hint').style.display='none';
- $('#grid').innerHTML=DUN.O.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DUN.I[k]}" alt="">${ICO[DUN.TY[k]||'photo']}</div>`).join('');
+ $('#grid').innerHTML=DUN.O.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DUN.I[k]}" alt="">${ICO[DUN.TY[k]||'photo']}${PB(k)}</div>`).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k));return}
  if(BFP!=='D'||BF4!=='1'){BFP='D';BF4='1';applyBF()}
  $('.hint').style.display='none';const old=n=>`<div class="t old"><img src="img/now/chelm-${n}.jpg" alt=""><span class="yp">Your post</span></div>`;
- $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
+ $('#grid').innerHTML=[1,2,3].map(old).join('')+DRO.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DRI[k]}" alt="">${ICO[DRTY[k]||'photo']}${PB(k)}</div>`).join('')+[4,5,6,7,8,9].map(old).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k))}
 /* clean Instagram feed: the real cover for each slot */
 const IGCAP={karen:`Reviews like this mean everything 🥹💕
@@ -1095,7 +1086,7 @@ $('#days').onclick=()=>{showDays=!showDays;render()};
 const KIM=true; // only the final feed now (Maria, 23 Nov: older options removed)
 
 document.querySelectorAll('.salons button').forEach(b=>b.onclick=()=>document.getElementById(b.dataset.s==='dun'?'feed-dun':'feed').scrollIntoView({behavior:'smooth'}));
-if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Just the girls' hair: Claudia, Madison, Gabriella, Nicky, Leah and the team, reels with plain photo covers, two lovely Goldie reviews, and only the main offers (gift vouchers and one-to-one makeup, shared with Chelmsford). The other offers are in the stories. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one soft nude review, and reels with clean photo covers: Rachael's violet, copper, money piece and balayage, Emma's balayage and bridal hair, the walk-in reel with all the girls' work, the Remi Cachet reel, and only the main offers: Christmas gift vouchers and one-to-one makeup (a collab post with Dunmow, so it shows on both pages). The blowdry package and Emma's £150 are in the stories. The posting plan (days and times) is next to the feed. Tap any post to see it with its caption."]}
+if(KIM){document.body.classList.add('kim');tab='DR';document.querySelector('header .caps').textContent='Prepared for Kimmy · by Maria';document.querySelector('header p').textContent='Your stories and Instagram posts for the week. Tap anything to see it big.';document.querySelector('.salons').style.display='none';FEEDS.DN=['Instagram feed','Great Dunmow · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Dunmow girls' work with the white 76 logo: Claudia, Madison, Gabriella and the team. Just the girls' hair: Claudia, Madison, Gabriella, Nicky, Leah and the team, reels with plain photo covers, two lovely Goldie reviews, and only the main offers (gift vouchers and one-to-one makeup, shared with Chelmsford). The other offers are in the stories. Tap any post to see it with its caption."];document.querySelector('header h1').textContent='Seventy Six · 23 to 29 November';FEEDS.DR=['Instagram feed','Chelmsford · 23 to 29 Nov',"14 posts, 2 a day (morning and night), all Chelmsford girls' work. Real photos first, one soft nude review, and reels with clean photo covers: Rachael's violet, copper, money piece and balayage, Emma's balayage and bridal hair, the walk-in reel with all the girls' work, the Remi Cachet reel, and only the main offers: Christmas gift vouchers and one-to-one makeup (a collab post with Dunmow, so it shows on both pages). Emma's £150 and the walk-in reel went up on Monday (marked Posted). The blowdry package is in the stories. The posting plan (days and times) is next to the feed. Tap any post to see it with its caption."]}
 {const bx=$('#stbox'),im=bx.querySelector('img'),lb=bx.querySelector('.slbl'),dt=bx.querySelector('.sdots');let set=[],i=0;
 const show=d=>{const f=set[i];im.src=f.querySelector('img').getAttribute('src');im.alt=f.querySelector('img').alt;lb.innerHTML=f.querySelector('figcaption').innerHTML+' · '+(i+1)+' of '+set.length;dt.innerHTML=set.map((_,k)=>'<i'+(k===i?' class="on"':'')+'></i>').join('');if(d){im.style.transition='none';im.style.transform='translateX('+(d*40)+'px)';im.style.opacity='.4';requestAnimationFrame(()=>{im.style.transition='';im.style.transform='';im.style.opacity=''})}};
 const go=d=>{if(set.length<2)return;i=(i+d+set.length)%set.length;show(d)};
