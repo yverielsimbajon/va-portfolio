@@ -258,6 +258,7 @@ body.kim .sec{border-top:1px solid var(--line);margin-top:0;padding-top:46px}
 .st-row figure{position:relative}
 .st-row button{display:block;width:100%;border:1px solid var(--line);background:#fff;padding:0;border-radius:10px;overflow:hidden}
 .st-row img{width:100%;aspect-ratio:9/16;object-fit:cover}
+.st-row.gc{grid-template-columns:repeat(2,minmax(0,1fr))}.st-row.gc img{aspect-ratio:1240/585}@media(max-width:760px){.st-row.gc figure{flex:0 0 86%}}
 .st-row figcaption{font-size:13px;margin-top:6px;color:#4A423D}
 .st-row figcaption b{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--black);margin-right:4px}
 .st-row .pick{position:absolute;left:8px;top:8px;background:var(--green);color:#fff;font-size:11px;font-weight:700;border-radius:20px;padding:2px 9px}
@@ -296,7 +297,7 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
 <body>
 <nav class="knav"><div class="wrap">
  <a class="brand" href="#top"><img src="img/logo-black.png" alt="76"><span>Seventy Six</span></a>
- <div class="links"><a href="#makeup">Makeup 1:1</a><a href="#voucher-ad">Voucher ad</a><a href="#stories">Stories</a><a href="#feed" data-go="chelm">Chelmsford feed</a><a href="#feed-dun">Dunmow feed</a></div>
+ <div class="links"><a href="#makeup">Makeup 1:1</a><a href="#voucher-ad">Voucher ad</a><a href="#gift-cards">Gift cards</a><a href="#stories">Stories</a><a href="#feed" data-go="chelm">Chelmsford feed</a><a href="#feed-dun">Dunmow feed</a></div>
 </div></nav>
 <section class="khero" id="top"><div class="wrap">
  <img src="img/logo-black.png" alt="Seventy Six Salon logo">
@@ -365,18 +366,39 @@ How long are the vouchers valid for?
 Can clients buy them over WhatsApp, or in the salon only?</div>
   </div>
 </section>
+<section class="wrap sec" id="gift-cards">
+  <div class="caps">Gift vouchers · the cards</div>
+  <h2>Gift cards: £20, £40, £50, £75, £100</h2>
+  <p class="lead">One card for each amount. Each one comes as a PDF you can type into (To, From, Voucher no., Valid until), then email it, send it on WhatsApp, or print it for collecting in the salon. Maria has the files ready to send you.</p>
+  <div class="st-salon"><div class="st-row gc">
+      <figure><button><img src="img/gift-cards/card-20.jpg" alt="Gift voucher £20" loading="lazy"></button><figcaption><b>£20</b></figcaption></figure>
+      <figure><button><img src="img/gift-cards/card-40.jpg" alt="Gift voucher £40" loading="lazy"></button><figcaption><b>£40</b></figcaption></figure>
+      <figure><button><img src="img/gift-cards/card-50.jpg" alt="Gift voucher £50" loading="lazy"></button><figcaption><b>£50</b></figcaption></figure>
+      <figure><button><img src="img/gift-cards/card-75.jpg" alt="Gift voucher £75" loading="lazy"></button><figcaption><b>£75</b></figcaption></figure>
+      <figure><button><img src="img/gift-cards/card-100.jpg" alt="Gift voucher £100" loading="lazy"></button><figcaption><b>£100</b></figcaption></figure>
+  </div></div>
+</section>
 <section class="wrap sec" id="stories">
   <div class="caps">Stories · this week</div>
   <h2>This week's stories</h2>
-  <p class="lead">One story plan per salon, in day order. Availability and offers live in the stories, the grid is the girls' work (Kimmy, 24 Nov). Add the WhatsApp link sticker on every one. Tap any story to see it big.</p>
+  <p class="lead">Kimmy (24 Nov): stories every morning (6:30 am) and evening (8:30 pm), scheduled. Mornings = availability and offers; on the other days, and every evening, share that slot's new post to the story. Add the WhatsApp link sticker on the offer stories. Tap any story to see it big.</p>
   <div class="st-salon" id="stories-chelm"><h3>Chelmsford <span>Black 76 logo</span></h3>
     <div class="st-row">
-      <figure><button data-s="chelm-F"><img src="img/stories/chelm-F-bd.jpg" alt="Availability" loading="lazy"></button><figcaption><b>Mon</b> · Availability</figcaption></figure>
-      <figure><button><img src="img/stories/offer-pkg-chelm.jpg" alt="Blowdry package £80" loading="lazy"></button><figcaption><b>Tue</b> · Blowdry package £80</figcaption></figure>
-      <figure><button><img src="img/voucher-ad/ad4-story.jpg" alt="Gift vouchers" loading="lazy"></button><figcaption><b>Wed</b> · Gift vouchers</figcaption></figure>
-      <figure><button><img src="img/stories/repost-chelm.jpg" alt="Availability repost (Tue + Thu crossed off)" loading="lazy"></button><figcaption><b>Thu</b> · Availability repost (Tue + Thu crossed off)</figcaption></figure>
-      <figure><button><img src="img/stories/offer-emmabf.jpg" alt="Emma £150 colour, last call before Friday" loading="lazy"></button><figcaption><b>Thu</b> · Emma £150 colour, last call before Friday</figcaption></figure>
-      <figure><button><img src="img/makeup/mua-story-chelm-o4.jpg" alt="1:1 makeup lesson" loading="lazy"></button><figcaption><b>Fri</b> · 1:1 makeup lesson</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/chelm-F-bd.jpg" alt="Availability" loading="lazy"></button><figcaption><b>Mon 6:30 am</b> · Availability</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dream/walk.jpg" alt="Share tonight's post: Walk into 76 Chelmsford" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Mon 8:30 pm</b> · Share tonight's post: Walk into 76 Chelmsford</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/offer-pkg-chelm.jpg" alt="Blowdry package £80" loading="lazy"></button><figcaption><b>Tue 6:30 am</b> · Blowdry package £80</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dream/rachbalay.jpg" alt="Share tonight's post: Soft, bright balayage · Rachael" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Tue 8:30 pm</b> · Share tonight's post: Soft, bright balayage · Rachael</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/voucher-ad/ad4-story.jpg" alt="Gift vouchers" loading="lazy"></button><figcaption><b>Wed 6:30 am</b> · Gift vouchers</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/covers/money-D.jpg" alt="Share tonight's post: Halo money piece · Rachael" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Wed 8:30 pm</b> · Share tonight's post: Halo money piece · Rachael</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/repost-chelm.jpg" alt="Availability repost (Tue + Thu crossed off)" loading="lazy"></button><figcaption><b>Thu 6:30 am</b> · Availability repost (Tue + Thu crossed off)</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dream/balay-clean.jpg" alt="Share tonight's post: Sun-kissed balayage · Emma" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Thu 8:30 pm</b> · Share tonight's post: Sun-kissed balayage · Emma</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/offer-emmabf.jpg" alt="Emma £150 colour, last call before Friday" loading="lazy"></button><figcaption><b>Thu 8:30 pm</b> · Emma £150 colour, last call before Friday</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/makeup/mua-story-chelm-o4.jpg" alt="1:1 makeup lesson" loading="lazy"></button><figcaption><b>Fri 6:30 am</b> · 1:1 makeup lesson</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/covers/copper-D.jpg" alt="Share tonight's post: Blonde to copper · Rachael" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Fri 8:30 pm</b> · Share tonight's post: Blonde to copper · Rachael</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dream/rachcrop.jpg" alt="Share this morning's post: Soft blonde, fresh cut · Rachael" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sat 6:30 am</b> · Share this morning's post: Soft blonde, fresh cut · Rachael</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dream/remi-box.jpg" alt="Share tonight's post: Remi Cachet extensions" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sat 8:30 pm</b> · Share tonight's post: Remi Cachet extensions</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dream/review-black.jpg" alt="Share this morning's post: Review: Chrissy" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sun 6:30 am</b> · Share this morning's post: Review: Chrissy</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/wk/violet-clean.jpg" alt="Share tonight's post: Blonde to violet & magenta · Rachael" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sun 8:30 pm</b> · Share tonight's post: Blonde to violet & magenta · Rachael</figcaption></figure>
     </div>
     <div class="st-cap"><b>Monday availability caption</b>76 Salon Chelmsford
 See above where you can grab a spot with Emma and Madison this week
@@ -386,11 +408,20 @@ WhatsApp the salon to book</div>
   </div>
   <div class="st-salon" id="stories-dun"><h3>Great Dunmow <span>White 76 logo</span></h3>
     <div class="st-row">
-      <figure><button data-s="dun-A"><img src="img/stories/dun-A-bd.jpg" alt="Availability" loading="lazy"></button><figcaption><b>Mon</b> · Availability</figcaption></figure>
-      <figure><button><img src="img/stories/offer-pkg-dun.jpg" alt="Blowdry package £80" loading="lazy"></button><figcaption><b>Tue</b> · Blowdry package £80</figcaption></figure>
-      <figure><button><img src="img/voucher-ad/ad3-story.jpg" alt="Gift vouchers" loading="lazy"></button><figcaption><b>Wed</b> · Gift vouchers</figcaption></figure>
-      <figure><button><img src="img/stories/repost-dun-v2.jpg" alt="Availability repost (no £20, gift vouchers instead)" loading="lazy"></button><figcaption><b>Thu</b> · Availability repost (no £20, gift vouchers instead)</figcaption></figure>
-      <figure><button><img src="img/makeup/mua-story-dun-o4.jpg" alt="1:1 makeup lesson" loading="lazy"></button><figcaption><b>Fri</b> · 1:1 makeup lesson</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/dun-A-bd.jpg" alt="Availability" loading="lazy"></button><figcaption><b>Mon 6:30 am</b> · Availability</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/d20c-1.jpg" alt="Share tonight's post: £20 blowdrys Friday · Madison" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Mon 8:30 pm</b> · Share tonight's post: £20 blowdrys Friday · Madison</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/offer-pkg-dun.jpg" alt="Blowdry package £80" loading="lazy"></button><figcaption><b>Tue 6:30 am</b> · Blowdry package £80</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/rachel-black.jpg" alt="Share tonight's post: Review: Rachel, cut with Gabriella" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Tue 8:30 pm</b> · Share tonight's post: Review: Rachel, cut with Gabriella</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/voucher-ad/ad3-story.jpg" alt="Gift vouchers" loading="lazy"></button><figcaption><b>Wed 6:30 am</b> · Gift vouchers</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/copper-clean.jpg" alt="Share tonight's post: Toned copper balayage · Madison" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Wed 8:30 pm</b> · Share tonight's post: Toned copper balayage · Madison</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/stories/repost-dun-v2.jpg" alt="Availability repost (no £20, gift vouchers instead)" loading="lazy"></button><figcaption><b>Thu 6:30 am</b> · Availability repost (no £20, gift vouchers instead)</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/brun.jpg" alt="Share tonight's post: Rich, glossy brunette · Madison" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Thu 8:30 pm</b> · Share tonight's post: Rich, glossy brunette · Madison</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/makeup/mua-story-dun-o4.jpg" alt="1:1 makeup lesson" loading="lazy"></button><figcaption><b>Fri 6:30 am</b> · 1:1 makeup lesson</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/nano-clean.jpg" alt="Share tonight's post: Nano bonds, Remi Cachet · Madison" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Fri 8:30 pm</b> · Share tonight's post: Nano bonds, Remi Cachet · Madison</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/cblonde.jpg" alt="Share this morning's post: Soft blonde · Claudia" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sat 6:30 am</b> · Share this morning's post: Soft blonde · Claudia</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/ami-green.jpg" alt="Share tonight's post: Review: Ami, colour with Madison" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sat 8:30 pm</b> · Share tonight's post: Review: Ami, colour with Madison</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/creamy-1.jpg" alt="Share this morning's post: Creamy blonde balayage · Claudia" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sun 6:30 am</b> · Share this morning's post: Creamy blonde balayage · Claudia</figcaption></figure>
+      <figure><button style="position:relative"><img src="img/dun/madib.jpg" alt="Share tonight's post: Blonde with extensions · Madison" loading="lazy"><span style="position:absolute;left:6px;top:6px;background:rgba(248,243,239,.94);font:700 9.5px/1 'Open Sans',sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:4px 6px">Share post</span></button><figcaption><b>Sun 8:30 pm</b> · Share tonight's post: Blonde with extensions · Madison</figcaption></figure>
     </div>
     <div class="st-cap"><b>Monday availability caption</b>76 Salon Dunmow
 See above where you can grab a spot with Madison, Gabriella and Claudia this week
@@ -406,7 +437,7 @@ Great Dunmow: https://wa.me/447432027611?text=Hi%20Seventy%20Six%21%20I%27d%20li
 Week of 30 Nov: Option 5 · Brush halo
 Week of 7 Dec: Option 6 · Three looks
 Week of 14 Dec: Option 7 · Watch. Learn. Do it yourself.</div>
-    <div class="st-cap" style="white-space:pre-line;margin-top:10px"><b>Gift vouchers · feed post + story each week until Christmas</b>This week (23 Nov): Feed Option 1 (collab, both feeds, Wed 8:00 am) · Stories Chelmsford Option 4, Dunmow Option 3
+    <div class="st-cap" style="white-space:pre-line;margin-top:10px"><b>Gift vouchers · feed post + story each week until Christmas</b>This week (23 Nov): Feed Option 1 (collab, both feeds, Wed 6:30 am) · Stories Chelmsford Option 4, Dunmow Option 3
 Week of 30 Nov: Feed Chelmsford Option 4, Dunmow Option 2 · Stories Chelmsford Option 1, Dunmow Option 3
 Week of 7 Dec: Feed Chelmsford Option 3, Dunmow Option 1 · Stories Chelmsford Option 2, Dunmow Option 1
 Week of 14 Dec (last orders): Feed Chelmsford Option 2, Dunmow Option 3 · Stories Chelmsford Option 4, Dunmow Option 2</div>
@@ -580,9 +611,9 @@ Swipe to see what's on the wish lists at 76 this year…
 
 #seventysixsalon #team76 #christmas #chelmsfordhair #essexhairdresser`},
 };
-/* default posting order Mon 8:00 am → Sun 6:00 pm (chosen so the feed has no lines or diagonals) */
+/* default posting order Mon 6:30 am → Sun 8:30 pm (chosen so the feed has no lines or diagonals) */
 const DEFAULT=['emmabf','pkg','hotroots','teddy','violet','bob','week','brassy','review','santa','money','copper','bleach','salon'];
-const SLOTS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[[d,'8:00 am'],[d,'6:00 pm']]);
+const SLOTS=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[[d,'6:30 am'],[d,'8:30 pm']]);
 const RECO={emmabf:'B',pkg:'A',hotroots:'A',teddy:'D',violet:'D',bob:'D',week:'D',brassy:'C',review:'A',santa:'B',money:'D',copper:'D',bleach:'C',salon:'D'};
 const WHY={emmabf:"Polaroids of copper, blonde and red show Emma's range, with the £150 big underneath.",pkg:'An offer needs words, so Editorial: classy, photo on top, price on the panel.',
  hotroots:'Editorial so the foils photo carries it. Mixing A and C keeps the three tips from matching.',teddy:"Clean. Claudia's colour speaks for itself.",violet:'Clean. The colour is the hook, nothing should cover it.',
@@ -617,7 +648,7 @@ const BP_OPTS={P1:['emmabf','violet','tip','remi','kimwork','pkg','money','salon
  P3:['emmabf','kimwork','copper','karen','violet','pkg','money','bob','emmafri','remi','review','balay','tip','salon']};
 const GC={Emma:'#A0523D',Rachael:'#7B5E8C',Claudia:'#B08A5A',Kimmy:'#2F4B3A',Extensions:'#8A6E4B',Team:'#6B625C',Learn:'#4E6E83'};
 const BFO=[['emma-fade-0','Fade 2 (yours)'],...[1,2,3,4,5,6,7,8].map(i=>['emma-fade-'+i,'Fade '+i]),...[1,2,3,4,5,6].map(i=>['emma-box-'+i,'Box '+i])];
-const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 8:00 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick, made prettier on 22 Nov: only Chelmsford photos now (no product or stock pictures). Chrissy's review, Claudia's soft blonde and Emma's balayage reel close the week at the top, Rachael's violet pops on row 2, and Karen's review sits lower down so the two reviews never touch. Fair rotation: Emma 4 (2 are her Black Friday), Rachael 3, Remi Cachet reel 1, Kimmy 1, team 3 (the Inside 76 salon photos and 2 reviews), 1 tip. Emma's £150 goes out Monday 8:00 am, the blowdry package Wednesday night, It's Black Friday on Friday night. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 8:00 am. Drag to swap."]};
+const FEEDS={P1:['Blueprint 1','Photos on top',"The newest row is all the girls' work, so the top of the feed looks busy and real. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 6:30 am. Drag to swap."],P2:['Blueprint 2 · chosen ✓','Review up top',"Maria's pick, made prettier on 22 Nov: only Chelmsford photos now (no product or stock pictures). Chrissy's review, Claudia's soft blonde and Emma's balayage reel close the week at the top, Rachael's violet pops on row 2, and Karen's review sits lower down so the two reviews never touch. Fair rotation: Emma 4 (2 are her Black Friday), Rachael 3, Remi Cachet reel 1, Kimmy 1, team 3 (the Inside 76 salon photos and 2 reviews), 1 tip. Emma's £150 goes out Monday 6:30 am, the blowdry package Wednesday night, It's Black Friday on Friday night. Drag to swap."],P3:['Blueprint 3','Reel welcome',"Sunday night ends on the Inside 76 Chelmsford salon photos at top-left, like opening the salon door. Fair rotation: Emma 3 (2 are her Black Friday), Rachael 3, Kimmy 1, Remi Cachet reel 1, team 4 (2 are the Chrissy + Karen reviews), 1 tip. Chelmsford photos only (Claudia is Dunmow). 8 posts are photo only with the small 76 logo (sample photo of Claudia's balayage for now). The 3 graphic posts and the 3 reels carry green or beige (reels get the coloured text box and swipe design), and the same colour never touches. Emma's £150 goes out Monday 6:30 am. Drag to swap."]};
 FEEDS.IG=['Clean feed','Like Instagram',"Blueprint 2 as it will really look on Instagram: the finished covers only, Chelmsford photos only, no labels. Kimmy's slot says photo coming until she sends her own work. Tap a post to open it, drag to swap (it moves in Blueprint 2 too)."];
 FEEDS.DR=['Final feed','Chelmsford · ready to post',"The final Chelmsford week (Maria, 23 Nov). Chelmsford girls only (Emma, Rachael and the team; Claudia is Dunmow). Every poster in one family (photo in a plain frame on soft paper, Cormorant titles, one soft nude review), clean photo covers on the reels: Rachael's violet, copper, money piece and balayage, Emma's balayage, the walk into 76 (all the girls' work), the Remi Cachet reel, plus Kimmy's asks: Christmas gift vouchers and one-to-one makeup. Emma's £150 Black Friday uses cover D with colour collage slide 4. Kimmy's notes (23 Nov): less Emma, short captions with the stylist's name. Tap any post to see it with its caption. The Blueprint and Clean feed tabs are the earlier options."];
 {const d=FEEDS.DR;delete FEEDS.DR;const o={DR:d,...FEEDS};Object.keys(FEEDS).forEach(k=>delete FEEDS[k]);Object.assign(FEEDS,o)}
@@ -786,9 +817,9 @@ Would you go copper this winter? 🍂
 #seventysixsalon #copperhair #balayage #autumnhair #dunmowhair`}};
 FEEDS.DN=['Final feed','Great Dunmow · ready to post',"Kimmy (24 Nov): the grid is our work, with only the main offers; offers go in the stories. 14 posts of the girls' hair (Claudia, Madison, Gabriella, Nicky, Leah and the team) plus 2 collabs (gift vouchers Wed, makeup Fri). Reel covers are plain photos. Written posts mix black and green, not all cream (Kimmy). Monday's blowdry package and £20 carousel are already posted (marked). No more £20 this week, more offers go in the stories. Tap any post to see it with its caption."];
 /* Kimmy 24 Nov: makeup 1:1 = ONE Instagram collab post, Chelmsford posts it, @seventysixsalon_dunmow = collaborator, so it shows on both grids */
-DUN.CAP.mua=DRCAP.mua;const COLLAB={mua:'Fri 8:00 am',voucher:'Wed 8:00 am'}; /* Kimmy 24 Nov: gift voucher on Dunmow too = collab like the makeup post; evening posts at 6:00 pm */
+DUN.CAP.mua=DRCAP.mua;const COLLAB={mua:'Fri 6:30 am',voucher:'Wed 6:30 am'}; /* Kimmy 24 Nov: gift voucher on Dunmow too = collab like the makeup post; evening posts at 8:30 pm */
 DUN.CAP.voucher=DRCAP.voucher;
-function planLis(O,W,dun){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 8:00 am',d+' 6:00 pm']);
+function planLis(O,W,dun){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 6:30 am',d+' 8:30 pm']);
  const li=[...O].filter(k=>!(dun&&COLLAB[k])).reverse().map((k,i)=>[SL[i],k]);
  if(dun)Object.keys(COLLAB).filter(k=>O.includes(k)).forEach(k=>li.splice(SL.indexOf(COLLAB[k]),0,[COLLAB[k],k]));
  return li.map(([t,k])=>`<li><b>${t}</b> · <a href="#" data-k="${k}">${W[k]}</a></li>`).join('')}
@@ -861,7 +892,7 @@ function renderSalon(){const D=isDN();
  $('#feed .caps').textContent='Instagram feed · '+(D?'Great Dunmow':'Chelmsford');
  $('#feed p').textContent=D?"2 posts a day. Tap any post to see it with its caption. Dunmow girls only, white 76 logo.":"2 posts a day. Tap any post to see it with its caption. Tiles marked “Your post” are already on your page, so my new posts are everything above them.";
  $('.phone .ig-head').innerHTML=D?'<div class="av" style="background:#fff"><img src="img/logo-black.png" alt=""></div><div><b>seventysixsalon_dunmow</b><small>SEVENTYSIX | GREAT DUNMOW SALON</small><small>Beauty, cosmetic &amp; personal care</small></div>':'<div class="av" style="background:#000"><img src="img/logo-white.png" alt=""></div><div><b>seventysixsalon</b><small>SEVENTYSIX | CHELMSFORD SALON</small><small>Beauty, cosmetic &amp; personal care</small></div>';
- const L=$('#dunplan');if(L){const FIN=D||tab==='DR';L.style.display=FIN?'':'none';if(FIN){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 8:00 am',d+' 6:00 pm']),PO=D?DUN.O:DRO,PW=D?DUN.W:DRW;
+ const L=$('#dunplan');if(L){const FIN=D||tab==='DR';L.style.display=FIN?'':'none';if(FIN){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 6:30 am',d+' 8:30 pm']),PO=D?DUN.O:DRO,PW=D?DUN.W:DRW;
   L.innerHTML='<h4>'+(D?'Dunmow':'Chelmsford')+' posting plan (UK time)</h4><ol>'+planLis(PO,PW,D)+'</ol>';
   L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();openIG(a.dataset.k)})}}}
 function renderTabs(){renderSalon();$('#tabs').innerHTML=Object.entries(FEEDS).filter(([k])=>isDN()?k==='DN':k!=='DN').map(([k,[a,b]])=>(k==='DR'?'<span class="grp">Final<br><b>This week</b></span>':k==='P1'?'<span class="grp">Earlier · Step 1<br><b>Blueprint</b></span>':k==='R'?'<span class="grp">Step 2<br><b>Designs</b></span>':k==='IG'?'<span class="grp">Step 2<br><b>Preview</b></span>':'')+`<button class="tab${k===tab?' on':''}" data-t="${k}"><small>${a}</small><b>${b}</b></button>`).join('');
@@ -931,7 +962,7 @@ function renderBP(){
   [need.length===0,need.length?`${need.length} slots still need a photo (see the red notes below)`:'Every slot has its photo']]
   .map(([ok,t])=>`<li class="${ok?'ok':'no'}">${ok?'✓':'!'} <span style="color:#333">${t}</span></li>`).join('');
  $('#bal').innerHTML=Object.entries(gc).map(([k,n])=>`<span style="background:#E3ECE5">${k==='Learn'?'Tip':k} · ${n}</span>`).join('');
- $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 8:00 am to Sun 6:00 pm (UK)</div><div class="bpl">`+BPO().map(k=>{const b=BP[k],s=bpSlot(k);
+ $('#posts').innerHTML=`<div class="caps" style="margin-bottom:8px">The blueprint · 14 slots, Mon 6:30 am to Sun 8:30 pm (UK)</div><div class="bpl">`+BPO().map(k=>{const b=BP[k],s=bpSlot(k);
   return `<div class="prow"><div><div class="when">${s[0]} · ${s[1]}</div><span class="who" style="background:${GC[b.g]}">${b.g==='Learn'?'Tip':b.g}</span></div>
   <div><b>${b.w}</b><span class="pill">${b.k==='T'?(b.c==='g'?'Graphic · green':b.c==='b'?'Graphic · beige':'Carousel · photo'):b.k==='R'?(b.c==='g'?'Reel · green box':'Reel · beige box'):b.ty==='carousel'?'Carousel':'Photo'}</span><div style="font-size:12.5px;color:#4A423D;margin-top:4px">${b.x}</div>${b.need?`<div class="need">! ${b.need}</div>`:''}
   ${(k==='emmabf'||k==='pkg')?`<div style="display:flex;gap:6px;margin-top:8px;flex-wrap:wrap">${[1,2,3,4].map(i=>`<img src="img/wk/${k}-${i}.jpg" alt="Slide ${i}" loading="lazy" style="width:72px;height:90px;object-fit:cover;border-radius:4px">`).join('')}</div>`:''}</div></div>`}).join('')+'</div>';
@@ -1086,7 +1117,7 @@ function renderDun2(){
  const op=k=>{if(!PREV)PREV=tab;tab='DN';openIG(k)};
  document.querySelectorAll('#grid2 .t').forEach(el=>el.onclick=()=>op(el.dataset.k));
  const f=FEEDS.DN;if(f){$('#dcaps').textContent=f[0];$('#dtitle').textContent=f[1];$('#dlead').textContent=f[2]}
- const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 8:00 am',d+' 6:00 pm']);
+ const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 6:30 am',d+' 8:30 pm']);
  const L=$('#dunplan2');L.innerHTML='<h4>Dunmow posting plan (UK time)</h4><ol>'+planLis(DUN.O,DUN.W,true)+'</ol>';
  L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();op(a.dataset.k)})}
 renderDun2();
