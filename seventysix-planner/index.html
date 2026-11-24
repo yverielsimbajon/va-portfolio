@@ -291,6 +291,7 @@ body.kim .st-row{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-t
 body.kim .st-row figcaption{font-size:14px;margin-top:8px}
 body.kim .st-row figcaption b{font-size:22px}
 @media(max-width:760px){body.kim .st-row figure{flex:0 0 82%}}
+.phx{font-size:.9em;color:#2F5D46}
 body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{display:none!important}
 </style>
 </head>
@@ -827,7 +828,11 @@ DUN.CAP.voucher=DRCAP.voucher;
 function planLis(O,W,dun){const SL=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].flatMap(d=>[d+' 6:30 am',d+' 8:30 pm']);
  const li=[...O].filter(k=>!(dun&&COLLAB[k])).reverse().map((k,i)=>[SL[i],k]);
  if(dun)Object.keys(COLLAB).filter(k=>O.includes(k)).forEach(k=>li.splice(SL.indexOf(COLLAB[k]),0,[COLLAB[k],k]));
- return li.map(([t,k])=>`<li><b>${t}</b> · <a href="#" data-k="${k}">${W[k]}</a></li>`).join('')}
+ /* Maria 24 Nov: show date + PH time (week 23-29 Nov, UK = GMT so PH = UK + 8 h) */
+ const DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],dt=t=>{const[d,hm,ap]=t.split(' ');let[h,m]=hm.split(':').map(Number);h=h%12+(ap==='pm'?12:0);return[DN.indexOf(d),h,m]},
+  fmt=(di,h,m)=>{const dd=new Date(2026,10,23+di);return DN[(dd.getDay()+6)%7]+' '+dd.getDate()+' '+(dd.getMonth()===10?'Nov':'Dec')+', '+((h%12)||12)+':'+String(m).padStart(2,'0')+' '+(h<12?'am':'pm')},
+  ph=t=>{const[di,h,m]=dt(t),H=h+8;return fmt(di+Math.floor(H/24),H%24,m)},uk=t=>{const[di,h,m]=dt(t);return fmt(di,h,m)};
+ return li.map(([t,k])=>`<li><b>${uk(t)}</b> · <a href="#" data-k="${k}">${W[k]}</a><span class="phx"><br>🇵🇭 PH: <b>${ph(t)}</b></span></li>`).join('')}
 const isDN=()=>tab==='DN';
 const HN=()=>isDN()?'seventysixsalon_dunmow':'seventysixsalon';
 const DX=()=>isDN()?DUN:{O:DRO,I:DRI,S:{},V:DRV,TY:DRTY,CAP:DRCAP};
