@@ -12,6 +12,7 @@
   "assets": {
     "directory": "./",
     "binding": "ASSETS",
-    "run_worker_first": ["/", "/images/*.mp4", "/api/*"]
+    // Worker runs first on every request so blocked visitors (see worker.js) can't open any page
+    "run_worker_first": true
   }
 }

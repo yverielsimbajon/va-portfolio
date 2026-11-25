@@ -9,6 +9,13 @@ const NOISY = /bot|crawl|spider|preview|facebookexternalhit|whatsapp|slurp|headl
 const TTL = 60 * 60 * 24 * 180;
 const PUSH_TYPES = { print: "Print attempt", save: "Save attempt", printscreen: "PrintScreen pressed" };
 
+// Blocked visitors (Maria, 2026-11-25): the PH recruiter group that looked at the closed BLNX resume,
+// then the home page, portfolio and discovery-call page on 18 Nov. Visitor ids are the same hashed
+// ids shown in the visitor log (IP + browser), and the cities are matched only inside the Philippines.
+const BLOCKED_VISITORS = new Set(["3c7ad93bc2", "8e78d9c780", "95bdcb8bd5", "f9121a4bb1", "9005d0b1d6"]);
+const BLOCKED_PH_CITIES = new Set(["caloocan", "caloocan city", "san fernando", "city of san fernando", "marikina", "marikina city", "cainta"]);
+const BLOCKED_PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Not available</title></head><body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F4FCFC;font-family:system-ui,sans-serif;color:#173042;text-align:center;padding:24px"><div><h1 style="color:#0B6E7F;font-size:1.5rem;margin:0 0 10px">This page is not available</h1><p style="margin:0;color:#5B7482">Thank you for stopping by.</p></div></body></html>`;
+
 const sha = async (text) => {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
   return [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
@@ -99,11 +106,38 @@ var T=document.getElementById("tabs");[["Today",1],["7 days",7],["30 days",30],[
 draw();
 </script></body></html>`;
 
+// Returns a "not available" page for blocked visitors, or null for everyone else.
+// Page loads (not images/scripts) are logged as "blocked" so they show in the visitor report.
+async function blockedResponse(request, env, ctx, pathname) {
+  const cf = request.cf || {};
+  const ua = request.headers.get("user-agent") || "";
+  const ip = request.headers.get("cf-connecting-ip") || "";
+  const vid = (await sha(ip + "|" + ua + "|" + (env.STATS_KEY || ""))).slice(0, 10);
+  const city = String(cf.city || "").toLowerCase();
+  if (!BLOCKED_VISITORS.has(vid) && !(cf.country === "PH" && BLOCKED_PH_CITIES.has(city))) return null;
+  const isPage = (request.headers.get("accept") || "").includes("text/html");
+  if (isPage && env.EVENTS) {
+    const ev = {
+      ts: Date.now(), t: "blocked", p: pathname.slice(0, 120), c: cf.country || "?", city: cf.city || "", reg: cf.region || "",
+      dev: /mobile|android|iphone|ipad/i.test(ua) ? "mobile" : "desktop", ref: "", v: vid,
+    };
+    const key = "e:" + String(9999999999999 - ev.ts).padStart(13, "0") + ":" + vid + "blocked" + Math.random().toString(36).slice(2, 6);
+    ctx.waitUntil(env.EVENTS.put(key, "1", { metadata: ev, expirationTtl: TTL }));
+  }
+  if (!isPage) return new Response(null, { status: 403 });
+  return new Response(BLOCKED_PAGE, {
+    status: 403,
+    headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store", "X-Robots-Tag": "noindex, nofollow" },
+  });
+}
+
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
-    if (pathname === "/api/e") return recordEvent(request, env, ctx);
     if (pathname === "/api/stats") return statsPage(request, env);
+    const blocked = await blockedResponse(request, env, ctx, pathname);
+    if (blocked) return blocked;
+    if (pathname === "/api/e") return recordEvent(request, env, ctx);
     // Home page: hidden from Google, but keep link previews (_headers can't change the header on "/")
     if (pathname === "/") {
       const page = await env.ASSETS.fetch(request);
@@ -111,6 +145,9 @@ export default {
       h.set("X-Robots-Tag", "noindex, nofollow");
       return new Response(page.body, { status: page.status, statusText: page.statusText, headers: h });
     }
+    // Every other file (pages, images, scripts) goes straight to the static assets;
+    // only the videos need the Range handling below
+    if (!pathname.endsWith(".mp4")) return env.ASSETS.fetch(request);
     const range = request.headers.get("Range");
     // Ask for the whole file; the static assets service ignores Range headers
     const asset = await env.ASSETS.fetch(new Request(request.url, { method: "GET" }));
