@@ -20,6 +20,8 @@
 /* Design options: ?d=1 Classic Cream, 2 Full Photo, 3 Forest Green, 4 Black Luxe, 5 Soft Nude Cards */
 (function(){ var DEFAULT_D = '1'; var d = (location.search.match(/[?&]d=([1-5])/) || [])[1] || DEFAULT_D; document.documentElement.setAttribute('data-d', d); })();
 /* Thank-you options: ?t=1 Classic, 2 Team Photo, 3 Forest Green, 4 Your Uploads, 5 Receipt. Add &preview=thanks to see it without uploading. */
+/* Before/After picker options: ?b=1..5 (empty DEFAULT_B = original small buttons) */
+(function(){ var DEFAULT_B = ''; var b = (location.search.match(/[?&]b=([1-5])/) || [])[1] || DEFAULT_B; if (b) document.documentElement.setAttribute('data-b', b); })();
 (function(){ var DEFAULT_T = '5'; var t = (location.search.match(/[?&]t=([1-5])/) || [])[1] || DEFAULT_T; document.documentElement.setAttribute('data-t', t); })();
 </script>
 <link rel="icon" href="img/76-logo-black.png">
@@ -146,6 +148,61 @@ textarea.field{min-height:84px;resize:vertical;line-height:1.5}
 .ba button{flex:1;border:0;background:transparent;font-size:10px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding:7px 0;cursor:pointer;color:var(--soft)}
 .ba button+button{border-left:1px solid var(--line)}
 .ba button[aria-pressed="true"]{background:var(--ink);color:#fff}
+/* Before / After options: ?b=1 Big Colour Buttons, 2 Photo Stamp, 3 Photo + Side Buttons, 4 Corner Tab + Border, 5 Three-way Switch. No ?b = original. */
+.tagflag{display:none}
+.batip{display:none}
+html[data-b] .batip{display:block;margin-top:16px;padding:12px 14px;background:var(--white);border:1px solid var(--line);font-size:13.5px;line-height:1.45;text-align:center}
+html[data-b] .batip b{font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+html[data-b] .batip .tb{color:var(--ink)} html[data-b] .batip .ta{color:var(--green)}
+.ba .ic{display:none}
+html[data-b] .files{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+@media(min-width:560px){html[data-b] .files{grid-template-columns:repeat(3,minmax(0,1fr))}}
+html[data-b] .ba button{min-width:0;white-space:nowrap}
+/* 1: big colour buttons (Before = black, After = green), always filled so they are impossible to miss */
+html[data-b="1"] .ba{border:0;gap:8px;margin-top:8px}
+html[data-b="1"] .ba button{border:2px solid var(--ink);color:var(--ink);background:var(--white);font-size:12px;padding:12px 0;letter-spacing:.06em}
+html[data-b="1"] .ba button+button{border:2px solid var(--green);color:var(--green);margin:0}
+html[data-b="1"] .ba button[aria-pressed="true"]{background:var(--ink);color:#fff}
+html[data-b="1"] .ba button+button[aria-pressed="true"]{background:var(--green);color:#fff}
+html[data-b="1"] .ba button[aria-pressed="true"]::before{content:"✓ "}
+html[data-b="1"] .tile[data-tag="Before"] .thumb,html[data-b="1"] .tile[data-tag="After"] .thumb{outline-offset:-3px}
+/* 2: big stamp over the photo + same buttons below */
+html[data-b="2"] .tagflag{display:none;position:absolute;left:0;right:0;top:34%;transform:translateY(-50%);text-align:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:30px;letter-spacing:.14em;text-transform:uppercase;color:#fff;padding:7px 0;pointer-events:none}
+html[data-b="2"] .tile[data-tag="Before"] .tagflag{display:block;background:rgba(21,21,21,.82)}
+html[data-b="2"] .tile[data-tag="After"] .tagflag{display:block;background:rgba(47,75,58,.9)}
+html[data-b="2"] .ba{margin-top:8px;border:0;gap:6px}
+html[data-b="2"] .ba button{border:1px solid var(--taupe)!important;padding:11px 0;font-size:11px;color:var(--ink)}
+html[data-b="2"] .ba button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)!important;color:#fff}
+html[data-b="2"] .ba button+button[aria-pressed="true"]{background:var(--green);border-color:var(--green)!important}
+/* 3: each file becomes a row: photo on the left, two big stacked buttons on the right */
+html[data-b="3"] .files{grid-template-columns:1fr;gap:14px}
+html[data-b="3"] .tile{display:grid;grid-template-columns:120px 1fr;gap:14px;align-items:stretch;background:var(--white);border:1px solid var(--line);padding:10px}
+html[data-b="3"] .tile .ba{display:grid;grid-template-rows:1fr 1fr;gap:8px;margin:0;border:0}
+html[data-b="3"] .tile .ba button{border:2px solid var(--taupe);font-size:14px;letter-spacing:.18em;padding:0;background:var(--paper);color:var(--soft);display:flex;align-items:center;justify-content:center;gap:8px}
+html[data-b="3"] .tile .ba button+button{border:2px solid var(--taupe)}
+html[data-b="3"] .ba button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+html[data-b="3"] .ba button+button[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+html[data-b="3"] .ba button[aria-pressed="true"]::after{content:" ✓"}
+/* 4: coloured corner tab + thick coloured frame; untagged shows a dashed "Tap below" hint */
+html[data-b="4"] .tagflag{display:block;position:absolute;left:0;top:0;padding:7px 12px;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(110,98,91,.75)}
+html[data-b="4"] .tile[data-tag=""] .tagflag{background:rgba(110,98,91,.55);font-weight:600;letter-spacing:.1em;font-size:10px}
+html[data-b="4"] .tile[data-tag="Before"] .tagflag{background:var(--ink)}
+html[data-b="4"] .tile[data-tag="After"] .tagflag{background:var(--green)}
+html[data-b="4"] .tile[data-tag="Before"] .thumb{outline:4px solid var(--ink);outline-offset:-4px}
+html[data-b="4"] .tile[data-tag="After"] .thumb{outline:4px solid var(--green);outline-offset:-4px}
+html[data-b="4"] .ba{border:0;gap:6px;margin-top:8px}
+html[data-b="4"] .ba button{border:1px solid var(--taupe);padding:11px 0;font-size:11px}
+html[data-b="4"] .ba button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink)}
+html[data-b="4"] .ba button+button[aria-pressed="true"]{background:var(--green);border-color:var(--green)}
+html[data-b="4"] .badge{left:auto;right:6px}
+/* 5: three-way switch: Normal | Before | After, the chosen one slides in colour */
+html[data-b="5"] .ba{border:0;border-radius:999px;background:var(--nude);padding:3px;margin-top:8px;gap:0}
+html[data-b="5"] .ba button{border-radius:999px;font-size:12px;padding:10px 0;letter-spacing:0;text-transform:none}
+html[data-b="5"] .ba button+button{border:0}
+html[data-b="5"] .ba .none{color:var(--soft)}
+html[data-b="5"] .ba .none[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+html[data-b="5"] .ba .b-before[aria-pressed="true"]{background:var(--ink);color:#fff}
+html[data-b="5"] .ba .b-after[aria-pressed="true"]{background:var(--green);color:#fff}
 .count{margin-top:14px;font-size:13px;color:var(--soft)}
 .count:empty{display:none}
 
@@ -362,6 +419,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
         </label>
         <div class="files" id="files"></div>
         <p class="count" id="count"></p>
+        <p class="batip" id="batip">Is it a transformation? Tap <b class="tb">Before</b> or <b class="ta">After</b> on each photo. Normal photos: leave it.</p>
       </div>
 
       <div class="send">
@@ -539,11 +597,16 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
       const bar = document.createElement('div'); bar.className = 'bar'; bar.innerHTML = '<i></i>'; th.appendChild(bar);
       it.barEl = bar.firstChild;
       t.appendChild(th);
+      t.dataset.tag = it.tag || '';
+      const flag = document.createElement('span'); flag.className = 'tagflag'; flag.textContent = it.tag || 'Normal'; th.appendChild(flag);
       const ba = document.createElement('div'); ba.className = 'ba';
-      ['Before','After'].forEach(lbl => {
+      const three = document.documentElement.getAttribute('data-b') === '5';
+      (three ? ['Normal','Before','After'] : ['Before','After']).forEach(lbl => {
+        const val = lbl === 'Normal' ? '' : lbl;
         const b = document.createElement('button'); b.type = 'button'; b.textContent = lbl;
-        b.setAttribute('aria-pressed', String(it.tag === lbl));
-        b.addEventListener('click', () => { if (sending) return; it.tag = it.tag === lbl ? '' : lbl; renderFiles(); });
+        b.className = lbl === 'Normal' ? 'none' : 'b-' + lbl.toLowerCase();
+        b.setAttribute('aria-pressed', String(it.tag === val));
+        b.addEventListener('click', () => { if (sending) return; it.tag = three ? val : (it.tag === lbl ? '' : lbl); renderFiles(); });
         ba.appendChild(b);
       });
       t.appendChild(ba);
