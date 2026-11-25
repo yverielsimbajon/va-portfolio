@@ -22,6 +22,8 @@
 /* Thank-you options: ?t=1 Classic, 2 Team Photo, 3 Forest Green, 4 Your Uploads, 5 Receipt. Add &preview=thanks to see it without uploading. */
 /* Before/After picker options: ?b=1..5 (empty DEFAULT_B = original small buttons) */
 (function(){ var DEFAULT_B = ''; var b = (location.search.match(/[?&]b=([1-5])/) || [])[1] || DEFAULT_B; if (b) document.documentElement.setAttribute('data-b', b); })();
+/* Split upload options: ?u=1..5 = separate "Before" and "After" boxes (empty DEFAULT_U = one box). Overrides ?b. */
+(function(){ var DEFAULT_U = ''; var u = (location.search.match(/[?&]u=([1-5])/) || [])[1] || DEFAULT_U; if (u) { document.documentElement.setAttribute('data-u', u); document.documentElement.removeAttribute('data-b'); } })();
 (function(){ var DEFAULT_T = '5'; var t = (location.search.match(/[?&]t=([1-5])/) || [])[1] || DEFAULT_T; document.documentElement.setAttribute('data-t', t); })();
 </script>
 <link rel="icon" href="img/76-logo-black.png">
@@ -203,6 +205,72 @@ html[data-b="5"] .ba .none{color:var(--soft)}
 html[data-b="5"] .ba .none[aria-pressed="true"]{background:var(--white);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.15)}
 html[data-b="5"] .ba .b-before[aria-pressed="true"]{background:var(--ink);color:#fff}
 html[data-b="5"] .ba .b-after[aria-pressed="true"]{background:var(--green);color:#fff}
+/* Split Before / After upload boxes: ?u=1 Side by Side, 2 Numbered Steps, 3 Folder Strips, 4 Tabs, 5 Soft Cards + Arrow */
+.split{display:none}
+html[data-u] .split{display:grid;gap:14px;margin-bottom:8px}
+html[data-u] .ba,html[data-u] .batip{display:none}
+.split .tabs,.split .strip,.split .num,.split .arrow{display:none}
+.split .pan{min-width:0}
+.sbox{position:relative;display:block;text-align:center;cursor:pointer;padding:24px 12px 20px;transition:background .15s,border-color .15s}
+.sbox input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+.sbox b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1;letter-spacing:.12em;text-transform:uppercase}
+.sbox em{display:block;font-style:italic;font-size:13px;margin-top:6px;opacity:.8}
+.sbox .add{display:block;margin-top:12px;font-size:10px;letter-spacing:.2em}
+.split .cnt{font-style:normal}
+.split .cnt.has{font-weight:700}
+.sbox .add .cnt:not(.has)::before{content:"none yet"}
+.split .sfiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
+.split .other-h{grid-column:1/-1;margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.2}
+.split .other-h small{font-family:'Open Sans',sans-serif;font-size:12px;color:var(--soft)}
+html[data-u] #files{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+html[data-u] .drop{padding:20px 14px 18px}
+html[data-u] .drop svg{width:28px;height:28px;margin-bottom:6px}
+html[data-u] .drop b{font-size:21px}
+/* 1 side by side: Before = black outline, After = solid green */
+html[data-u="1"] .split{grid-template-columns:1fr 1fr;gap:10px}
+html[data-u="1"] .split .sfiles{grid-template-columns:1fr}
+html[data-u="1"] .pan-b .sbox{border:2px solid var(--ink);background:var(--white);color:var(--ink)}
+html[data-u="1"] .pan-a .sbox{border:2px solid var(--green);background:var(--green);color:#fff}
+html[data-u="1"] .sbox b{font-size:27px;letter-spacing:.08em}
+html[data-u="1"] .sbox{padding:28px 8px 22px;min-height:190px}
+/* 2 numbered steps, stacked: 1 Before then 2 After, dashed boxes */
+html[data-u="2"] .split .num{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;margin:0 auto 10px;font-weight:700;font-size:15px;color:#fff}
+html[data-u="2"] .pan-b .sbox{border:2px dashed var(--ink);background:var(--white)}
+html[data-u="2"] .pan-b .num{background:var(--ink)}
+html[data-u="2"] .pan-a .sbox{border:2px dashed var(--green);background:#EAF0EC;color:var(--green)}
+html[data-u="2"] .pan-a .num{background:var(--green)}
+html[data-u="2"] .split .arrow{display:block;text-align:center;font-size:22px;line-height:1;color:var(--taupe);margin:-4px 0}
+html[data-u="2"] .split .arrow::before{content:"↓"}
+/* 3 folder strips: coloured label strip on top, photos live inside the frame */
+html[data-u="3"] .split{gap:18px}
+html[data-u="3"] .pan{border:2px solid var(--ink);background:var(--white)}
+html[data-u="3"] .pan-a{border-color:var(--green)}
+html[data-u="3"] .split .strip{display:block;padding:10px 14px;color:#fff;background:var(--ink);font-weight:700;letter-spacing:.3em;text-transform:uppercase;font-size:13px}
+html[data-u="3"] .pan-a .strip{background:var(--green)}
+html[data-u="3"] .sbox{margin:12px;border:1px dashed var(--taupe);background:var(--paper);padding:18px 10px}
+html[data-u="3"] .sbox b{display:none}
+html[data-u="3"] .sbox em{font-size:15px;opacity:1}
+html[data-u="3"] .split .sfiles{margin:0 12px 12px}
+/* 4 tabs: pick Before or After on top, one box shows at a time */
+html[data-u="4"] .split .tabs{display:grid;grid-template-columns:1fr 1fr;border:2px solid var(--ink)}
+html[data-u="4"] .tabs button{border:0;background:var(--white);padding:14px 0;font-weight:700;letter-spacing:.2em;text-transform:uppercase;font-size:13px;cursor:pointer;color:var(--soft)}
+html[data-u="4"] .tabs button .cnt{display:block;font-size:10px;letter-spacing:.08em;font-weight:600;text-transform:none}
+html[data-u="4"] .split[data-tab="Before"] .tabs [data-t="Before"]{background:var(--ink);color:#fff}
+html[data-u="4"] .split[data-tab="After"] .tabs{border-color:var(--green)}
+html[data-u="4"] .split[data-tab="After"] .tabs [data-t="After"]{background:var(--green);color:#fff}
+html[data-u="4"] .pan{display:none}
+html[data-u="4"] .split[data-tab="Before"] .pan-b,html[data-u="4"] .split[data-tab="After"] .pan-a{display:block;margin-top:-14px}
+html[data-u="4"] .pan-b .sbox{border:2px solid var(--ink);border-top:0;background:var(--white)}
+html[data-u="4"] .pan-a .sbox{border:2px solid var(--green);border-top:0;background:#EAF0EC;color:var(--green)}
+/* 5 soft cards with an arrow between, luxe serif */
+html[data-u="5"] .split{grid-template-columns:1fr 22px 1fr;gap:6px;align-items:start}
+html[data-u="5"] .split .sfiles{grid-template-columns:1fr}
+html[data-u="5"] .split .arrow{display:block;align-self:start;text-align:center;font-family:'Cormorant Garamond',serif;font-size:28px;color:var(--taupe);margin-top:88px}
+html[data-u="5"] .split .arrow::before{content:"→"}
+html[data-u="5"] .sbox{border:1px solid var(--taupe);background:var(--nude);padding:30px 8px 22px;min-height:210px}
+html[data-u="5"] .pan-a .sbox{background:var(--blush);border-color:var(--green)}
+html[data-u="5"] .sbox b{font-style:italic;text-transform:none;letter-spacing:0;font-size:38px;font-weight:500}
+html[data-u="5"] .pan-a .sbox b{color:var(--green)}
 .count{margin-top:14px;font-size:13px;color:var(--soft)}
 .count:empty{display:none}
 
@@ -411,6 +479,23 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
       <div class="step" id="s-files">
         <div class="step-h"><span class="n">05</span><div><h2>Photos &amp; videos</h2><small>Full quality, straight from your camera roll.</small></div></div>
         <p class="need">Please add at least one photo or video.</p>
+        <div class="split" id="split" data-tab="Before">
+          <div class="tabs"><button type="button" data-t="Before">Before <i class="cnt" data-c="Before"></i></button><button type="button" data-t="After">After <i class="cnt" data-c="After"></i></button></div>
+          <div class="pan pan-b">
+            <div class="strip">Before</div>
+            <label class="sbox" data-tag="Before"><input type="file" accept="image/*,video/*" multiple>
+              <span class="num">1</span><b>Before</b><em>How your client came in</em><span class="caps add">Tap to add · <i class="cnt" data-c="Before"></i></span></label>
+            <div class="files sfiles" id="filesB"></div>
+          </div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="pan pan-a">
+            <div class="strip">After</div>
+            <label class="sbox" data-tag="After"><input type="file" accept="image/*,video/*" multiple>
+              <span class="num">2</span><b>After</b><em>The finished look</em><span class="caps add">Tap to add · <i class="cnt" data-c="After"></i></span></label>
+            <div class="files sfiles" id="filesA"></div>
+          </div>
+          <p class="other-h">Other photos &amp; videos <small>(not a before / after)</small></p>
+        </div>
         <label class="drop" id="drop">
           <input type="file" id="picker" accept="image/*,video/*" multiple>
           <svg viewBox="0 0 24 24" fill="none" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="1"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>
@@ -552,13 +637,14 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
   }
   function sizeText(n){ return n > 1e9 ? (n/1e9).toFixed(1) + ' GB' : n > 1e6 ? Math.round(n/1e6) + ' MB' : Math.max(1, Math.round(n/1e3)) + ' KB'; }
 
-  function addFiles(list){
+  function addFiles(list, tag){
     if (sending) return;
     [...list].forEach(f => {
       const kind = kindOf(f);
       if (!kind || !f.size) return;
-      if (st.files.some(x => x.file.name === f.name && x.file.size === f.size)) return;
-      st.files.push({ file:f, kind, tag:'', id:'', state:'', url: URL.createObjectURL(f) });
+      const dup = st.files.find(x => x.file.name === f.name && x.file.size === f.size);
+      if (dup) { if (tag) dup.tag = tag; return; }
+      st.files.push({ file:f, kind, tag:tag || '', id:'', state:'', url: URL.createObjectURL(f) });
     });
     renderFiles(); clearMissing('s-files');
   }
@@ -567,10 +653,24 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
   ['dragenter','dragover'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.add('over'); }));
   ['dragleave','drop'].forEach(ev => drop.addEventListener(ev, e => { e.preventDefault(); drop.classList.remove('over'); }));
   drop.addEventListener('drop', e => addFiles(e.dataTransfer.files));
+  /* split Before / After boxes (?u=1..5) */
+  document.querySelectorAll('.sbox').forEach(box => {
+    const tag = box.dataset.tag, inp = box.querySelector('input');
+    inp.addEventListener('change', e => { addFiles(e.target.files, tag); e.target.value = ''; });
+    ['dragenter','dragover'].forEach(ev => box.addEventListener(ev, e => { e.preventDefault(); box.classList.add('over'); }));
+    ['dragleave','drop'].forEach(ev => box.addEventListener(ev, e => { e.preventDefault(); box.classList.remove('over'); }));
+    box.addEventListener('drop', e => addFiles(e.dataTransfer.files, tag));
+  });
+  document.querySelectorAll('.split .tabs button').forEach(b => b.addEventListener('click', () => { $('split').dataset.tab = b.dataset.t; }));
 
   function renderFiles(){
-    const box = $('files'); box.innerHTML = '';
+    const split = document.documentElement.hasAttribute('data-u');
+    ['files','filesB','filesA'].forEach(id => { $(id).innerHTML = ''; });
+    const counts = { Before:0, After:0 };
+    st.files.forEach(it => { if (counts[it.tag] !== undefined) counts[it.tag]++; });
+    document.querySelectorAll('.split .cnt').forEach(c => { const n = counts[c.dataset.c]; c.textContent = n ? n + ' added' : ''; c.classList.toggle('has', !!n); });
     st.files.forEach((it, i) => {
+      const box = split && it.tag ? $(it.tag === 'Before' ? 'filesB' : 'filesA') : $('files');
       const t = document.createElement('div');
       t.className = 'tile' + (it.state ? ' ' + it.state : '');
       it.el = t;
@@ -613,7 +713,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
       box.appendChild(t);
     });
     const n = st.files.length, total = st.files.reduce((a,b) => a + b.file.size, 0);
-    $('count').textContent = n ? `${n} file${n>1?'s':''} · ${sizeText(total)} · tap Before / After if it's a transformation` : '';
+    $('count').textContent = n ? `${n} file${n>1?'s':''} · ${sizeText(total)}${split ? '' : " · tap Before / After if it's a transformation"}` : '';
   }
 
   /* ===== checks ===== */
