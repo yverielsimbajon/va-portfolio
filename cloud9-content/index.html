@@ -486,7 +486,7 @@ We clean windows, frames, tracks and sills, so the whole window is clean, not ju
 #WindowTracks #WindowCleaningSydney #Cloud9WindowCleaning`),
 ];
 const GRIDS={
- 'ig-dec':[...DEC].reverse().concat([NEXT[1],NEXT[4]]),
+ 'ig-dec':[...DEC].reverse().concat(['Sun 29 Nov','Sat 28 Nov'].map(d=>NEXT.find(p=>p.day===d)).filter(Boolean)),
  'ig-next':[...NEXT].reverse().concat([W2[5],JAMES]),
  'ig-w2':[...W2].reverse().concat([...W1].reverse().slice(0,3)),
  'ig-w1':[...W1].reverse()
