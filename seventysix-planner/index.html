@@ -841,7 +841,9 @@ function renderBFBar(){const b=$('#bfbar');if(!b)return;const G=isIG();b.style.d
  b.querySelectorAll('.bo:not(.s4) button').forEach(bt=>bt.onclick=()=>setBF(bt.dataset.v));
  b.querySelectorAll('.bo.s4 button').forEach(bt=>bt.onclick=()=>setBF4(bt.dataset.v))}
 const POSTED={emmabf:'Posted Mon',walk:'Posted Mon',pkg:'Posted Mon',d20c:'Posted Mon'}; /* Maria 24 Nov: already live on IG */
-const PB=k=>POSTED[k]?`<span class="yp">${POSTED[k]} ✓</span>`:'';
+/* Maria 25 Nov: rest of week 23-29 Nov posts are scheduled (stories she posts by hand, with music) */
+const SCHED=new Set(['violet','review','remi','kimbronde','copper','mua','balay','karen','money','voucher','rachbalay','kelseymu','kelxmas','creamy','ami','cblonde','nano','gabsr','brun','kat','team','rachel','ashy']);
+const PB=k=>POSTED[k]?`<span class="yp">${POSTED[k]} ✓</span>`:SCHED.has(k)?`<span class="yp">Scheduled ✓</span>`:'';
 function renderDR(){if(isDN()){$('.hint').style.display='none';
  $('#grid').innerHTML=DUN.O.map(k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${DUN.I[k]}" alt="">${ICO[DUN.TY[k]||'photo']}${PB(k)}</div>`).join('');
  document.querySelectorAll('.t.dr').forEach(el=>el.onclick=()=>openIG(el.dataset.k));return}
