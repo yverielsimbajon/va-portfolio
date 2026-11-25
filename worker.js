@@ -9,11 +9,20 @@ const NOISY = /bot|crawl|spider|preview|facebookexternalhit|whatsapp|slurp|headl
 const TTL = 60 * 60 * 24 * 180;
 const PUSH_TYPES = { print: "Print attempt", save: "Save attempt", printscreen: "PrintScreen pressed" };
 
-// Blocked visitors (Maria, 2026-11-25): the PH recruiter group that looked at the closed BLNX resume,
-// then the home page, portfolio and discovery-call page on 18 Nov. Visitor ids are the same hashed
-// ids shown in the visitor log (IP + browser), and the cities are matched only inside the Philippines.
+// Blocked visitors (Maria, 2026-11-25): nobody in the Philippines may open any page (home, portfolio,
+// booking, every resume, now and future), except Maria's own browsers. Her browsers carry the owner
+// cookie, set once by opening /me?k=<owner key>. Only the SHA-256 of that key is kept here (the repo is
+// public); the key itself is in her private notes. The visitor ids are the PH recruiter group from 18 Nov
+// (hashed IP + browser, as shown in the visitor log), blocked even if they come back from another country.
+const BLOCKED_COUNTRIES = new Set(["PH"]);
 const BLOCKED_VISITORS = new Set(["3c7ad93bc2", "8e78d9c780", "95bdcb8bd5", "f9121a4bb1", "9005d0b1d6"]);
-const BLOCKED_PH_CITIES = new Set(["caloocan", "caloocan city", "san fernando", "city of san fernando", "marikina", "marikina city", "cainta"]);
+const OWNER_HASH = "df08bcb1ecb152accfbd892e149e72d74700ce074e51e24654af78c37fddc524";
+const OWNER_COOKIE = "__mo";
+const cookieValue = (request, name) => {
+  const m = new RegExp("(?:^|;\\s*)" + name + "=([^;]*)").exec(request.headers.get("cookie") || "");
+  return m ? m[1] : "";
+};
+const isOwnerKey = async (key) => !!key && (await sha(key)) === OWNER_HASH;
 const BLOCKED_PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Not available</title></head><body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F4FCFC;font-family:system-ui,sans-serif;color:#173042;text-align:center;padding:24px"><div><h1 style="color:#0B6E7F;font-size:1.5rem;margin:0 0 10px">This page is not available</h1><p style="margin:0;color:#5B7482">Thank you for stopping by.</p></div></body></html>`;
 
 const sha = async (text) => {
@@ -113,8 +122,8 @@ async function blockedResponse(request, env, ctx, pathname) {
   const ua = request.headers.get("user-agent") || "";
   const ip = request.headers.get("cf-connecting-ip") || "";
   const vid = (await sha(ip + "|" + ua + "|" + (env.STATS_KEY || ""))).slice(0, 10);
-  const city = String(cf.city || "").toLowerCase();
-  if (!BLOCKED_VISITORS.has(vid) && !(cf.country === "PH" && BLOCKED_PH_CITIES.has(city))) return null;
+  if (!BLOCKED_VISITORS.has(vid) && !BLOCKED_COUNTRIES.has(cf.country)) return null;
+  if (await isOwnerKey(cookieValue(request, OWNER_COOKIE))) return null;
   const isPage = (request.headers.get("accept") || "").includes("text/html");
   if (isPage && env.EVENTS) {
     const ev = {
@@ -135,6 +144,21 @@ export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
     if (pathname === "/api/stats") return statsPage(request, env);
+    // Maria's unlock link: marks this browser as hers (about 13 months), then opens the home page
+    // with ?me=1 so protect.js also stops logging her visits
+    if (pathname === "/me") {
+      const key = new URL(request.url).searchParams.get("k") || "";
+      if (await isOwnerKey(key)) {
+        return new Response(null, {
+          status: 302,
+          headers: {
+            Location: "/?me=1",
+            "Set-Cookie": `${OWNER_COOKIE}=${key}; Max-Age=34560000; Path=/; Secure; HttpOnly; SameSite=Lax`,
+            "cache-control": "no-store",
+          },
+        });
+      }
+    }
     const blocked = await blockedResponse(request, env, ctx, pathname);
     if (blocked) return blocked;
     if (pathname === "/api/e") return recordEvent(request, env, ctx);
