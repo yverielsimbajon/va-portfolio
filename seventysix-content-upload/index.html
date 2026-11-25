@@ -23,7 +23,7 @@
 /* Before/After picker options: ?b=1..5 (empty DEFAULT_B = original small buttons) */
 (function(){ var DEFAULT_B = ''; var b = (location.search.match(/[?&]b=([1-5])/) || [])[1] || DEFAULT_B; if (b) document.documentElement.setAttribute('data-b', b); })();
 /* Split upload options: ?u=1..5 = separate "Before" and "After" boxes (empty DEFAULT_U = one box). Overrides ?b. */
-(function(){ var DEFAULT_U = ''; var u = (location.search.match(/[?&]u=([1-5])/) || [])[1] || DEFAULT_U; if (u) { document.documentElement.setAttribute('data-u', u); document.documentElement.removeAttribute('data-b'); } })();
+(function(){ var DEFAULT_U = '5'; var u = (location.search.match(/[?&]u=([1-5])/) || [])[1] || DEFAULT_U; if (u) { document.documentElement.setAttribute('data-u', u); document.documentElement.removeAttribute('data-b'); } })();
 (function(){ var DEFAULT_T = '5'; var t = (location.search.match(/[?&]t=([1-5])/) || [])[1] || DEFAULT_T; document.documentElement.setAttribute('data-t', t); })();
 </script>
 <link rel="icon" href="img/76-logo-black.png">
@@ -216,9 +216,16 @@ html[data-u] .ba,html[data-u] .batip{display:none}
 .sbox b{display:block;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:34px;line-height:1;letter-spacing:.12em;text-transform:uppercase}
 .sbox em{display:block;font-style:italic;font-size:13px;margin-top:6px;opacity:.8}
 .sbox .add{display:block;margin-top:12px;font-size:10px;letter-spacing:.2em}
+.sbox .got{display:block;margin-top:8px;font-size:12px}
+.split .more{display:none;position:relative;margin-top:10px;padding:12px 8px;text-align:center;cursor:pointer;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;line-height:1.4;border:1.5px solid var(--ink);background:var(--white);color:var(--ink)}
+.split .pan-a .more{border-color:var(--green);color:#fff;background:var(--green)}
+.split .more.show{display:block}
+.split .more input{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%}
+/* 5: "Tap to add" sits in its own button container */
+html[data-u="5"] .sbox .add{display:inline-block;margin-top:14px;padding:10px 14px;border:1.5px solid var(--ink);background:var(--white);color:var(--ink);font-weight:700;letter-spacing:.16em}
+html[data-u="5"] .pan-a .sbox .add{border-color:var(--green);background:var(--green);color:#fff}
 .split .cnt{font-style:normal}
 .split .cnt.has{font-weight:700}
-.sbox .add .cnt:not(.has)::before{content:"none yet"}
 .split .sfiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:10px}
 .split .other-h{grid-column:1/-1;margin-top:14px;font-family:'Cormorant Garamond',serif;font-size:21px;line-height:1.2}
 .split .other-h small{font-family:'Open Sans',sans-serif;font-size:12px;color:var(--soft)}
@@ -484,15 +491,17 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
           <div class="pan pan-b">
             <div class="strip">Before</div>
             <label class="sbox" data-tag="Before"><input type="file" accept="image/*,video/*" multiple>
-              <span class="num">1</span><b>Before</b><em>How your client came in</em><span class="caps add">Tap to add · <i class="cnt" data-c="Before"></i></span></label>
+              <span class="num">1</span><b>Before</b><em>How your client came in</em><span class="caps add">Tap to add</span><span class="got"><i class="cnt" data-c="Before"></i></span></label>
             <div class="files sfiles" id="filesB"></div>
+            <label class="more" data-c="Before"><input type="file" accept="image/*,video/*" multiple>+ Upload more photos / videos</label>
           </div>
           <div class="arrow" aria-hidden="true"></div>
           <div class="pan pan-a">
             <div class="strip">After</div>
             <label class="sbox" data-tag="After"><input type="file" accept="image/*,video/*" multiple>
-              <span class="num">2</span><b>After</b><em>The finished look</em><span class="caps add">Tap to add · <i class="cnt" data-c="After"></i></span></label>
+              <span class="num">2</span><b>After</b><em>The finished look</em><span class="caps add">Tap to add</span><span class="got"><i class="cnt" data-c="After"></i></span></label>
             <div class="files sfiles" id="filesA"></div>
+            <label class="more" data-c="After"><input type="file" accept="image/*,video/*" multiple>+ Upload more photos / videos</label>
           </div>
           <p class="other-h">Other photos &amp; videos <small>(not a before / after)</small></p>
         </div>
@@ -661,6 +670,10 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
     ['dragleave','drop'].forEach(ev => box.addEventListener(ev, e => { e.preventDefault(); box.classList.remove('over'); }));
     box.addEventListener('drop', e => addFiles(e.dataTransfer.files, tag));
   });
+  document.querySelectorAll('.split .more input').forEach(inp => {
+    const tag = inp.parentNode.dataset.c;
+    inp.addEventListener('change', e => { addFiles(e.target.files, tag); e.target.value = ''; });
+  });
   document.querySelectorAll('.split .tabs button').forEach(b => b.addEventListener('click', () => { $('split').dataset.tab = b.dataset.t; }));
 
   function renderFiles(){
@@ -669,6 +682,7 @@ html[data-t="5"] .t-where{display:block;margin-top:10px;font-size:12.5px}
     const counts = { Before:0, After:0 };
     st.files.forEach(it => { if (counts[it.tag] !== undefined) counts[it.tag]++; });
     document.querySelectorAll('.split .cnt').forEach(c => { const n = counts[c.dataset.c]; c.textContent = n ? n + ' added' : ''; c.classList.toggle('has', !!n); });
+    document.querySelectorAll('.split .more').forEach(m => m.classList.toggle('show', !!counts[m.dataset.c]));
     st.files.forEach((it, i) => {
       const box = split && it.tag ? $(it.tag === 'Before' ? 'filesB' : 'filesA') : $('files');
       const t = document.createElement('div');
