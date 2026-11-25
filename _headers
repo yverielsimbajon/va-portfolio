@@ -33,3 +33,8 @@
 /discovery-call.html
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
+
+# Cloud 9 colour options for Daniel: private, but show the link preview in WhatsApp
+/cloud9-colours/*
+  ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow

@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Cloud 9 · Colour Options</title>
+<meta name="description" content="Three colour options for the Cloud 9 Instagram feed, prepared by Maria.">
+<meta property="og:title" content="Cloud 9 · Three colour options for the feed">
+<meta property="og:description" content="Have a look and tell us 1, 2 or 3.">
+<meta property="og:image" content="https://themariaoffice.com/cloud9-colours/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://themariaoffice.com/cloud9-colours/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+html{-webkit-text-size-adjust:100%}img{max-width:100%}
+/* Layout: one column of three option sections; each = Instagram profile feed (left) + palette and notes (right), stacking on phones. */
+:root{
+  --bg:#F4F7FD; --card:#FFFFFF; --ink:#0F2547; --muted:#5A6A85; --line:#DCE4F2; --accent:#2F6BFF;
+  --f:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0A1426;--card:#111E36;--ink:#EAF0FF;--muted:#9EAEC9;--line:#22324F;--accent:#7FA4FF;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0A1426;--card:#111E36;--ink:#EAF0FF;--muted:#9EAEC9;--line:#22324F;--accent:#7FA4FF;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f);font-size:16px;line-height:1.5;margin:0}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 56px;display:flex;flex-direction:column;gap:40px}
+header.intro{display:flex;flex-direction:column;gap:14px;max-width:720px}
+.brandmark{width:150px;height:auto;display:block}
+.brandmark.dark{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .brandmark.light{display:none}:root:not([data-theme="light"]) .brandmark.dark{display:block}}
+:root[data-theme="dark"] .brandmark.light{display:none} :root[data-theme="dark"] .brandmark.dark{display:block}
+h1{font-size:clamp(30px,5vw,46px);line-height:1.08;letter-spacing:-.02em;font-weight:800;margin:6px 0 0;text-wrap:balance}
+.intro p{margin:0;color:var(--muted);font-size:17px;max-width:62ch}
+.intro p b{color:var(--ink)}
+.opt{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:36px;align-items:start}
+@media (max-width:900px){.opt{grid-template-columns:minmax(0,1fr);padding:14px;gap:24px}}
+.opt-head{display:flex;flex-direction:column;gap:6px}
+.num{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.opt h2{font-size:28px;line-height:1.15;letter-spacing:-.015em;margin:0;font-weight:800}
+.opt .feel{margin:0;color:var(--muted)}
+.chip{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;padding:5px 11px;border-radius:99px;border:1.5px solid var(--accent);color:var(--accent)}
+.side{display:flex;flex-direction:column;gap:22px;min-width:0}
+.sw{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 10px}
+.sw div{display:flex;align-items:center;gap:10px;min-width:0}
+.sw p{margin:0;min-width:0}
+.sw i{width:42px;height:42px;border-radius:12px;flex:none;box-shadow:inset 0 0 0 1px rgba(15,37,71,.16)}
+.sw b{display:block;font-size:14px;font-weight:700;line-height:1.2}
+.sw span{display:block;font-size:12.5px;color:var(--muted)}
+.bar{display:flex;height:14px;border-radius:99px;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(15,37,71,.16)}
+.uses{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px;font-size:14.5px}
+.uses li{display:flex;gap:10px}.uses li::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--accent);margin-top:9px}
+.label{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 -10px}
+
+/* Instagram profile mock (always light, like the app) */
+.ig{background:#fff;color:#111;border-radius:18px;border:1px solid var(--line);overflow:hidden;max-width:520px;width:100%;justify-self:center}
+.ig-top{display:flex;align-items:center;gap:14px;padding:16px 16px 12px}
+.av{width:64px;height:64px;border-radius:50%;flex:none;padding:3px;background:var(--ring)}
+.av div{width:100%;height:100%;border-radius:50%;border:3px solid #fff;background:var(--avbg);display:grid;place-items:center}
+.av img{width:74%;height:auto}
+.ig-name{min-width:0}
+.ig-name b{display:block;font-size:15px;font-weight:700;overflow-wrap:anywhere}
+.ig-name span{display:block;font-size:13px;color:#6b7280}
+.ig-tabs{display:flex;border-top:1px solid #eee}.ig-tabs div{flex:1;height:36px;display:grid;place-items:center;border-bottom:1.5px solid transparent}.ig-tabs div.on{border-color:#111}
+.ig-tabs svg{width:20px;height:20px;stroke:#9ca3af;fill:none;stroke-width:1.8}.ig-tabs .on svg{stroke:#111}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+
+/* Tiles: 4:5 posts, Think Renewable look, no gradients */
+.t{position:relative;aspect-ratio:4/5;overflow:hidden;container-type:inline-size;max-width:100%;background:#dde3ee}
+.t>img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.t .ic{position:absolute;top:5cqw;right:5cqw;width:9cqw;height:9cqw;fill:#fff;filter:drop-shadow(0 1px 3px rgba(0,0,0,.45));z-index:3}
+.t .lg{position:absolute;left:8cqw;top:8cqw;width:25cqw;height:auto;z-index:2}
+.t .h{margin:0;font-weight:700;letter-spacing:-.025em;line-height:1.1;font-size:10.4cqw;text-wrap:balance}
+.t mark{background:none;color:inherit}
+.t mark.box{padding:0 1.8cqw;border-radius:1.4cqw;white-space:nowrap}
+.t mark.hb{background:var(--hbg);color:var(--htx)}
+.t mark.sb{background:var(--sbg);color:var(--stx)}
+.t mark.pa{color:var(--pacc)}
+/* split: flat panel on top, photo panel below with one rounded corner */
+.t.split{background:var(--panel);color:var(--ptext)}
+.t.split .h{position:absolute;left:8cqw;right:8cqw;top:24cqw}
+.t.split .pp{position:absolute;left:0;right:0;bottom:0;height:52%;border-top-left-radius:9cqw;overflow:hidden}
+.t.split .pp img{width:100%;height:100%;object-fit:cover;display:block}
+/* card: flat panel card on a photo */
+.t .card{position:absolute;left:6cqw;right:6cqw;top:6cqw;background:var(--panel);color:var(--ptext);border-radius:4cqw;padding:20cqw 7cqw 8cqw;z-index:2}
+.t .card .lg.in{left:7cqw;top:7cqw}
+/* flat text tiles with a thin accent rule */
+.t.flat{color:var(--stext)}
+.t.flat.soft{background:var(--soft);box-shadow:inset 0 0 0 1px var(--sline)}
+.t.flat.cta{background:var(--cta)}
+.t.flat .body{position:absolute;left:8cqw;right:8cqw;top:30cqw;display:flex;flex-direction:column;gap:6cqw}
+.t.flat .ln{margin:0;font-size:5.6cqw;font-weight:600;line-height:1.35;padding-left:4cqw;border-left:1.2cqw solid var(--rule)}
+.t.flat .stars{font-size:7cqw;letter-spacing:.08em;line-height:1;color:var(--star)}
+.t .arr{position:absolute;right:7cqw;bottom:7cqw;width:13cqw;height:13cqw;border-radius:50%;background:var(--panel);display:grid;place-items:center}
+.t .arr svg{width:7cqw;height:7cqw;stroke:var(--ptext);fill:none;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+
+.pick{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.pick h2{margin:0;font-size:26px;font-weight:800;letter-spacing:-.015em}
+.pick p{margin:0;color:var(--muted);max-width:64ch}
+.answers{display:flex;flex-wrap:wrap;gap:10px}
+.answers span{font-weight:700;font-size:15px;padding:9px 16px;border-radius:99px;border:1.5px solid var(--line)}
+.note{font-size:13.5px;color:var(--muted);margin:0}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="intro">
+    <img class="brandmark light" src="img/logo-blue.png" alt="Cloud 9 Window Cleaning">
+    <img class="brandmark dark" src="img/logo-white.png" alt="Cloud 9 Window Cleaning">
+    <h1>Three colour options for the Cloud 9 Instagram feed</h1>
+    <p>Hi Daniel, here is how the feed could look in three colour combinations, in the Think Renewable style. The posts and photos are the same in all three. Only the colours change. <b>Have a look and tell us 1, 2 or 3.</b></p>
+  </header>
+
+  <section class="opt" style="--panel:#2F6BFF;--ptext:#fff;--pacc:#0F2547;--hbg:#fff;--htx:#2F6BFF;--soft:#fff;--stext:#0F2547;--sbg:#2F6BFF;--stx:#fff;--rule:#2F6BFF;--cta:#EAF1FF;--star:#2F6BFF;--sline:#E3E9F5;--ring:linear-gradient(45deg,#2F6BFF,#0F2547);--avbg:#2F6BFF">
+    <div class="ig" aria-label="Feed preview, option 1">
+      <div class="ig-top"><div class="av"><div><img src="img/logo-white.png" alt=""></div></div>
+        <div class="ig-name"><b>cloud9windowcleaningau</b><span>Window cleaning · Sydney</span></div></div>
+      <div class="ig-tabs"><div class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c1-4 4-5 6-5s5 1 6 5"/></svg></div></div>
+      <div class="grid"><div class="t"><img class="ph" src="img/v-c9-scrub.jpg" style="object-position:50% 40%" alt="Cloud 9 cleaner scrubbing a window"><svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg></div><div class="t split"><img class="lg" src="img/logo-white.png" alt="">
+          <p class="h">Pure water. <mark class="box hb">Spot-free</mark> glass.</p>
+          <div class="pp"><img src="img/v-p10.jpg" style="object-position:50% 30%" alt="Pure water pole cleaning"></div><svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg></div><div class="t"><img class="ph" src="img/v-grand-house.jpg" style="object-position:50% 80%" alt="Pole cleaning on a large home"></div><div class="t"><img class="ph" src="img/v-newhome-glass-balcony.jpg" style="object-position:50% 0%" alt="Sunny luxury home with glass balconies">
+          <div class="card"><img class="lg in" src="img/logo-white.png" alt=""><p class="h">Sunny days need <mark class="pa">clear glass.</mark></p></div><svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg></div><div class="t flat soft"><img class="lg" src="img/logo-blue.png" alt="">
+          <div class="body"><p class="h">Rainblock Tech, <mark class="box sb">free</mark> on maintenance plans.</p>
+          <p class="ln">Quarterly, triannual and biannual plans.</p></div><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span></div><div class="t"><img class="ph" src="img/v-c9-solar.jpg" style="object-position:50% 40%" alt="Solar panel cleaning"><svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg></div><div class="t split"><img class="lg" src="img/logo-white.png" alt="">
+          <p class="h">Frames, tracks and sills, <mark class="pa">done too.</mark></p>
+          <div class="pp"><img src="img/v-c9-detail.jpg" style="object-position:50% 25%" alt="Wiping a window frame"></div></div><div class="t"><img class="ph" src="img/v-c9-ute-side.jpg" style="object-position:50% 55%" alt="Cloud 9 ute"></div><div class="t flat cta"><img class="lg" src="img/logo-blue.png" alt="">
+          <div class="body"><span class="stars">★★★★★</span><p class="h">5.0 stars on Google.</p>
+          <p class="ln">Book your clean<br>0485 013 333</p></div></div></div>
+    </div>
+    <div class="side">
+      <div class="opt-head"><span class="num">Option 1</span><h2>Royal &amp; White</h2><p class="feel">Clean, calm and simple. This is close to the colours we use now.</p><span class="chip">Current look</span></div>
+      <div class="bar"><i style="flex:4;background:#2F6BFF"></i><i style="flex:3;background:#FFFFFF"></i><i style="flex:2;background:#EAF1FF"></i><i style="flex:1;background:#0F2547"></i></div>
+      <div class="sw"><div><i style="background:#2F6BFF"></i><p><b>Royal blue</b><span>#2F6BFF · main</span></p></div><div><i style="background:#FFFFFF"></i><p><b>White</b><span>#FFFFFF · space</span></p></div><div><i style="background:#EAF1FF"></i><p><b>Ice blue</b><span>#EAF1FF · soft tiles</span></p></div><div><i style="background:#0F2547"></i><p><b>Navy</b><span>#0F2547 · text, accent words</span></p></div></div>
+      <p class="label">How it is used</p>
+      <ul class="uses"><li>Royal blue panels with the photo underneath</li><li>White and ice blue for tip posts</li><li>Navy for text and one accent word</li></ul>
+    </div>
+  </section>
+  <section class="opt" style="--panel:#2F6BFF;--ptext:#fff;--pacc:#FFB627;--hbg:#FFB627;--htx:#0F2547;--soft:#fff;--stext:#0F2547;--sbg:#FFB627;--stx:#0F2547;--rule:#FFB627;--cta:#FFF3D6;--star:#F29D00;--sline:#E3E9F5;--ring:linear-gradient(45deg,#FFB627,#2F6BFF);--avbg:#2F6BFF">
+    <div class="ig" aria-label="Feed preview, option 2">
+      <div class="ig-top"><div class="av"><div><img src="img/logo-white.png" alt=""></div></div>
+        <div class="ig-name"><b>cloud9windowcleaningau</b><span>Window cleaning · Sydney</span></div></div>
+      <div class="ig-tabs"><div class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c1-4 4-5 6-5s5 1 6 5"/></svg></div></div>
+      <div class="grid"><div class="t"><img class="ph" src="img/v-c9-scrub.jpg" style="object-position:50% 40%" alt="Cloud 9 cleaner scrubbing a window"><svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg></div><div class="t split"><img class="lg" src="img/logo-white.png" alt="">
+          <p class="h">Pure water. <mark class="box hb">Spot-free</mark> glass.</p>
+          <div class="pp"><img src="img/v-p10.jpg" style="object-position:50% 30%" alt="Pure water pole cleaning"></div><svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg></div><div class="t"><img class="ph" src="img/v-grand-house.jpg" style="object-position:50% 80%" alt="Pole cleaning on a large home"></div><div class="t"><img class="ph" src="img/v-newhome-glass-balcony.jpg" style="object-position:50% 0%" alt="Sunny luxury home with glass balconies">
+          <div class="card"><img class="lg in" src="img/logo-white.png" alt=""><p class="h">Sunny days need <mark class="pa">clear glass.</mark></p></div><svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg></div><div class="t flat soft"><img class="lg" src="img/logo-blue.png" alt="">
+          <div class="body"><p class="h">Rainblock Tech, <mark class="box sb">free</mark> on maintenance plans.</p>
+          <p class="ln">Quarterly, triannual and biannual plans.</p></div><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span></div><div class="t"><img class="ph" src="img/v-c9-solar.jpg" style="object-position:50% 40%" alt="Solar panel cleaning"><svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg></div><div class="t split"><img class="lg" src="img/logo-white.png" alt="">
+          <p class="h">Frames, tracks and sills, <mark class="pa">done too.</mark></p>
+          <div class="pp"><img src="img/v-c9-detail.jpg" style="object-position:50% 25%" alt="Wiping a window frame"></div></div><div class="t"><img class="ph" src="img/v-c9-ute-side.jpg" style="object-position:50% 55%" alt="Cloud 9 ute"></div><div class="t flat cta"><img class="lg" src="img/logo-blue.png" alt="">
+          <div class="body"><span class="stars">★★★★★</span><p class="h">5.0 stars on Google.</p>
+          <p class="ln">Book your clean<br>0485 013 333</p></div></div></div>
+    </div>
+    <div class="side">
+      <div class="opt-head"><span class="num">Option 2</span><h2>Royal &amp; Sunshine</h2><p class="feel">Blue sky and Sydney sun. Brighter and friendlier, with a warm yellow-orange to make posts stand out.</p></div>
+      <div class="bar"><i style="flex:4;background:#2F6BFF"></i><i style="flex:3;background:#FFFFFF"></i><i style="flex:2;background:#FFB627"></i><i style="flex:1;background:#0F2547"></i></div>
+      <div class="sw"><div><i style="background:#2F6BFF"></i><p><b>Royal blue</b><span>#2F6BFF · main</span></p></div><div><i style="background:#FFB627"></i><p><b>Sunshine</b><span>#FFB627 · highlight words</span></p></div><div><i style="background:#FFFFFF"></i><p><b>White</b><span>#FFFFFF · space</span></p></div><div><i style="background:#0F2547"></i><p><b>Navy</b><span>#0F2547 · text</span></p></div></div>
+      <p class="label">How it is used</p>
+      <ul class="uses"><li>Royal blue stays the main colour</li><li>Sunshine for highlight words, lines and stars</li><li>White for tip posts and breathing space</li></ul>
+    </div>
+  </section>
+  <section class="opt" style="--panel:#0F2547;--ptext:#F8F5EF;--pacc:#C9A46A;--hbg:#E9DFCF;--htx:#0F2547;--soft:#E9DFCF;--stext:#0F2547;--sbg:#0F2547;--stx:#F8F5EF;--rule:#C9A46A;--cta:#F8F5EF;--star:#B8904F;--sline:#E7DFD1;--ring:linear-gradient(45deg,#C9A46A,#0F2547);--avbg:#0F2547">
+    <div class="ig" aria-label="Feed preview, option 3">
+      <div class="ig-top"><div class="av"><div><img src="img/logo-white.png" alt=""></div></div>
+        <div class="ig-name"><b>cloud9windowcleaningau</b><span>Window cleaning · Sydney</span></div></div>
+      <div class="ig-tabs"><div class="on"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><path d="M3 9h18M9 3l3 6M15 3l3 6"/></svg></div><div><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="12" cy="10" r="3"/><path d="M6 20c1-4 4-5 6-5s5 1 6 5"/></svg></div></div>
+      <div class="grid"><div class="t"><img class="ph" src="img/v-c9-scrub.jpg" style="object-position:50% 40%" alt="Cloud 9 cleaner scrubbing a window"><svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg></div><div class="t split"><img class="lg" src="img/logo-white.png" alt="">
+          <p class="h">Pure water. <mark class="box hb">Spot-free</mark> glass.</p>
+          <div class="pp"><img src="img/v-p10.jpg" style="object-position:50% 30%" alt="Pure water pole cleaning"></div><svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg></div><div class="t"><img class="ph" src="img/v-grand-house.jpg" style="object-position:50% 80%" alt="Pole cleaning on a large home"></div><div class="t"><img class="ph" src="img/v-newhome-glass-balcony.jpg" style="object-position:50% 0%" alt="Sunny luxury home with glass balconies">
+          <div class="card"><img class="lg in" src="img/logo-white.png" alt=""><p class="h">Sunny days need <mark class="pa">clear glass.</mark></p></div><svg class="ic" viewBox="0 0 24 24"><path d="M5 3h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm4.5 5.5v7l6-3.5z"/></svg></div><div class="t flat soft"><img class="lg" src="img/logo-blue.png" alt="">
+          <div class="body"><p class="h">Rainblock Tech, <mark class="box sb">free</mark> on maintenance plans.</p>
+          <p class="ln">Quarterly, triannual and biannual plans.</p></div><span class="arr"><svg viewBox="0 0 24 24"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span></div><div class="t"><img class="ph" src="img/v-c9-solar.jpg" style="object-position:50% 40%" alt="Solar panel cleaning"><svg class="ic" viewBox="0 0 24 24"><path d="M8 3h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM3 7v12a2 2 0 0 0 2 2h12v-2H5V7z"/></svg></div><div class="t split"><img class="lg" src="img/logo-white.png" alt="">
+          <p class="h">Frames, tracks and sills, <mark class="pa">done too.</mark></p>
+          <div class="pp"><img src="img/v-c9-detail.jpg" style="object-position:50% 25%" alt="Wiping a window frame"></div></div><div class="t"><img class="ph" src="img/v-c9-ute-side.jpg" style="object-position:50% 55%" alt="Cloud 9 ute"></div><div class="t flat cta"><img class="lg" src="img/logo-blue.png" alt="">
+          <div class="body"><span class="stars">★★★★★</span><p class="h">5.0 stars on Google.</p>
+          <p class="ln">Book your clean<br>0485 013 333</p></div></div></div>
+    </div>
+    <div class="side">
+      <div class="opt-head"><span class="num">Option 3</span><h2>Navy &amp; Sand</h2><p class="feel">Coastal luxury. Softer and more high-end, made for big homes. Royal blue stays for small touches.</p></div>
+      <div class="bar"><i style="flex:3;background:#0F2547"></i><i style="flex:3;background:#E9DFCF"></i><i style="flex:2;background:#F8F5EF"></i><i style="flex:1;background:#2F6BFF"></i><i style="flex:1;background:#C9A46A"></i></div>
+      <div class="sw"><div><i style="background:#0F2547"></i><p><b>Navy</b><span>#0F2547 · main</span></p></div><div><i style="background:#E9DFCF"></i><p><b>Sand</b><span>#E9DFCF · soft tiles</span></p></div><div><i style="background:#F8F5EF"></i><p><b>Pearl</b><span>#F8F5EF · space</span></p></div><div><i style="background:#2F6BFF"></i><p><b>Royal blue</b><span>#2F6BFF · logo, small touches</span></p></div><div><i style="background:#C9A46A"></i><p><b>Soft gold</b><span>#C9A46A · accent words, stars</span></p></div></div>
+      <p class="label">How it is used</p>
+      <ul class="uses"><li>Navy panels with the photo underneath</li><li>Sand and pearl for tip posts</li><li>Gold accent words, royal blue logo</li></ul>
+    </div>
+  </section>
+
+  <section class="pick">
+    <h2>Which one feels like Cloud 9?</h2>
+    <p>Just reply on WhatsApp with the number. A mix is fine too, for example “2, but less yellow” or “1 with the gold stars from 3”.</p>
+    <div class="answers"><span>1 · Royal &amp; White</span><span>2 · Royal &amp; Sunshine</span><span>3 · Navy &amp; Sand</span></div>
+    <p class="note">These are sample posts made only to compare colours. Real posts will use checked facts and the team’s own photos.</p>
+  </section>
+</div>
+</body>
+</html>
