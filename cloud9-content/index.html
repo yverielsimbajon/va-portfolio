@@ -133,7 +133,7 @@ footer{text-align:center;padding:30px 16px 50px;color:var(--soft);font-size:13px
 
 <nav><div class="wrap">
   <a href="#top"><img src="img/logo-blue.png" alt="Cloud 9 Window Cleaning"></a>
-  <div class="links"><a href="#next">Next week</a><a href="#past">Past weeks</a></div>
+  <div class="links"><a href="#next">Next week</a><a href="#dec">Nov 30 to Dec 6</a><a href="#past">Past weeks</a></div>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
@@ -151,6 +151,13 @@ footer{text-align:center;padding:30px 16px 50px;color:var(--soft);font-size:13px
     <span><svg viewBox="0 0 24 24"><path d="M8 3h12a1 1 0 011 1v12a1 1 0 01-1 1H8a1 1 0 01-1-1V4a1 1 0 011-1z" fill="#0F2547"/><path d="M4 7v13h13" fill="none" stroke="#0F2547" stroke-width="2"/></svg>Carousel</span>
     <span>White date = this weekend's posts</span>
   </div>
+</div></section>
+
+<section id="dec"><div class="wrap">
+  <div class="caps" style="text-align:center">Week after</div>
+  <h2 style="text-align:center">November 30 to December 6</h2>
+  <p class="lead" style="text-align:center;margin:8px auto 0;max-width:640px">Seven carousels in the new Royal &amp; Sunshine colours: six glass science tips and a client reviews post. Covers first, full slides to follow.</p>
+  <div class="ig" id="ig-dec" style="margin-top:28px"></div>
 </div></section>
 
 <section id="past"><div class="wrap">
@@ -409,7 +416,77 @@ Ready for crystal-clear windows? Send us a message for a free quote ☁️
 ];
 
 /* grids: newest top-left, 9 tiles */
+/* ---------- week after: 30 Nov to 6 Dec, Royal & Sunshine (posting order) ---------- */
+const DEC=[
+ C('carousel','Mon 30 Nov','img/w4-water-spots.jpg',`Why do water spots form? 💧
+
+Tap water carries dissolved minerals like calcium and magnesium. When a drop dries on the glass, the water leaves but the minerals stay behind as little white spots.
+
+That's why we rinse with pure, filtered water. With nothing left in the water, nothing stays on the glass as it dries.
+
+Spot-free windows across the North Shore, Northern Beaches, Sutherland Shire and beyond.
+📞 0485 013 333 · cloud9windowcleaning.com.au
+
+#Cloud9WindowCleaning #WindowCleaningSydney #PureWater`),
+ C('carousel','Tue 1 Dec','img/w4-salt-air.jpg',`Living by the beach? Your glass feels it. 🌊
+
+Sea breeze carries tiny drops of salty water. They land on your windows, dry, and leave a fine salt film behind.
+
+Day after day it builds into that hazy, dull look, right where your best view is.
+
+We clean windows, frames, tracks and sills, plus glass balustrades, so your ocean view stays clear.
+📞 0485 013 333 · cloud9windowcleaning.com.au
+
+#NorthernBeaches #WindowCleaningSydney #Cloud9WindowCleaning`),
+ C('carousel','Wed 2 Dec','img/w4-bird-droppings.jpg',`Bird droppings on glass? Act early. 🐦
+
+Fresh droppings wipe off easily. Left in the Sydney sun, they dry hard and bake onto the glass, and get much tougher to shift.
+
+A gentle, early clean is kinder to your windows than scrubbing later.
+
+Book your clean on 0485 013 333 or at cloud9windowcleaning.com.au
+
+#WindowCleaningSydney #Cloud9WindowCleaning #GlassCare`),
+ C('carousel','Thu 3 Dec','img/w4-reviews-1.jpg',`Kind words from the people we clean for. 💙
+
+Every week our team gets to see homes across Sydney shine a little brighter, and reading reviews like these is the best part of the job.
+
+Thank you Mary, Catherine and Sofia for taking the time to share your experience. It means the world to Hugo, Rohan, Ryan, Max, Josch and the whole Cloud 9 team.
+
+Ready for your own spotless glass? Book your clean: 0485 013 333 or cloud9windowcleaning.com.au
+
+#cloud9windowcleaning #sydneywindowcleaner #googlereviews #cleanwindows`,{slides:S('img/w4-reviews',4)}),
+ C('carousel','Fri 4 Dec','img/w4-sun-streaks.jpg',`Why does the sun show every streak? ☀️
+
+In the shade, glass looks clean. But when low morning or afternoon sun hits it at an angle, the light catches every streak, smear and spot on the surface.
+
+A proper clean and a streak-free finish means your glass looks good in any light.
+
+📞 0485 013 333 · cloud9windowcleaning.com.au
+
+#WindowCleaningSydney #StreakFree #Cloud9WindowCleaning`),
+ C('carousel','Sat 5 Dec','img/w4-pool-fence.jpg',`Why do pool fences go cloudy? 🏊
+
+Pool water carries calcium and chlorine. Every splash dries in the sun and leaves white mineral spots on the glass.
+
+Summer is here, so it's the perfect time to bring the sparkle back.
+
+Glass balustrade and pool fence cleaning, plus hard water spot removal, across the North Shore, Northern Beaches and Sutherland Shire.
+📞 0485 013 333 · cloud9windowcleaning.com.au
+
+#PoolFence #GlassBalustrade #Cloud9WindowCleaning`),
+ C('carousel','Sun 6 Dec','img/w4-window-tracks.jpg',`What is hiding in your window tracks? 👀
+
+Dust, leaves, dirt and little bugs all collect in the tracks. It's the part of the window nobody looks at, until the door starts to stick.
+
+We clean windows, frames, tracks and sills, so the whole window is clean, not just the glass.
+
+📞 0485 013 333 · cloud9windowcleaning.com.au
+
+#WindowTracks #WindowCleaningSydney #Cloud9WindowCleaning`),
+];
 const GRIDS={
+ 'ig-dec':[...DEC].reverse().concat([NEXT[1],NEXT[4]]),
  'ig-next':[...NEXT].reverse().concat([W2[5],JAMES]),
  'ig-w2':[...W2].reverse().concat([...W1].reverse().slice(0,3)),
  'ig-w1':[...W1].reverse()
