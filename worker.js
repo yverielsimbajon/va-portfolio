@@ -10,7 +10,7 @@ const TTL = 60 * 60 * 24 * 180;
 const PUSH_TYPES = { print: "Print attempt", save: "Save attempt", printscreen: "PrintScreen pressed" };
 
 // Blocked visitors (Maria, 2026-11-25): nobody in the Philippines may open any page (home, portfolio,
-// booking, every resume, now and future), except Maria's own browsers. Her browsers carry the owner
+// booking, every resume, now and future), except Maria's own browsers and her home WiFi. Her browsers carry the owner
 // cookie, set once by opening /me?k=<owner key>. Only the SHA-256 of that key is kept here (the repo is
 // public); the key itself is in her private notes. The visitor ids are the PH recruiter group from 18 Nov
 // (hashed IP + browser, as shown in the visitor log), blocked even if they come back from another country.
@@ -27,6 +27,11 @@ const cookieValue = (request, name) => {
   return m ? m[1] : "";
 };
 const isOwnerKey = async (key) => !!key && (await sha(key)) === OWNER_HASH;
+// Maria's home WiFi (Maria, 2026-11-26): any device on it gets through without the cookie.
+// Kept as SHA-256 of "<public IP>|<STATS_KEY secret>" so her home IP is not readable in this public repo.
+// If her WiFi's public IP changes (router restart), make the new hash the same way and replace it here.
+const OWNER_IP_HASHES = new Set(["fedc328e7bad963b314e36a804c77a46392b378f0eaf198bfb9df283ad22e151"]);
+const isOwnerIp = async (ip, env) => !!ip && !!env.STATS_KEY && OWNER_IP_HASHES.has(await sha(ip + "|" + env.STATS_KEY));
 const BLOCKED_PAGE = `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex, nofollow"><title>Not available</title></head><body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#F4FCFC;font-family:system-ui,sans-serif;color:#173042;text-align:center;padding:24px"><div><h1 style="color:#0B6E7F;font-size:1.5rem;margin:0 0 10px">This page is not available</h1><p style="margin:0;color:#5B7482">Thank you for stopping by.</p></div></body></html>`;
 
 const sha = async (text) => {
@@ -129,6 +134,7 @@ async function blockedResponse(request, env, ctx, pathname) {
   if (!BLOCKED_VISITORS.has(vid) && !BLOCKED_COUNTRIES.has(cf.country)) return null;
   if (isOpenPath(pathname) && !BLOCKED_VISITORS.has(vid)) return null;
   if (await isOwnerKey(cookieValue(request, OWNER_COOKIE))) return null;
+  if (!BLOCKED_VISITORS.has(vid) && (await isOwnerIp(ip, env))) return null;
   const isPage = (request.headers.get("accept") || "").includes("text/html");
   if (isPage && env.EVENTS) {
     const ev = {
