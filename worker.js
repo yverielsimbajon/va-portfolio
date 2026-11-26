@@ -16,10 +16,8 @@ const PUSH_TYPES = { print: "Print attempt", save: "Save attempt", printscreen: 
 // (hashed IP + browser, as shown in the visitor log), blocked even if they come back from another country.
 const BLOCKED_COUNTRIES = new Set(["PH"]);
 const BLOCKED_VISITORS = new Set(["3c7ad93bc2", "8e78d9c780", "95bdcb8bd5", "f9121a4bb1", "9005d0b1d6"]);
-// Client work pages stay open to everyone, PH included (Maria, 2026-11-26): Cloud 9 content page and the
-// Seventy Six weekly planner, with their images and videos.
-const OPEN_PATHS = ["/cloud9-content", "/seventysix-planner"];
-const isOpenPath = (p) => OPEN_PATHS.some((o) => p === o || p.startsWith(o + "/"));
+// No page is open to PH visitors any more, client pages included (Cloud 9 content page, 76 planner):
+// Maria, 2026-11-26. Every page, now and future, follows the same rule.
 const OWNER_HASH = "df08bcb1ecb152accfbd892e149e72d74700ce074e51e24654af78c37fddc524";
 const OWNER_COOKIE = "__mo";
 const cookieValue = (request, name) => {
@@ -132,7 +130,6 @@ async function blockedResponse(request, env, ctx, pathname) {
   const ip = request.headers.get("cf-connecting-ip") || "";
   const vid = (await sha(ip + "|" + ua + "|" + (env.STATS_KEY || ""))).slice(0, 10);
   if (!BLOCKED_VISITORS.has(vid) && !BLOCKED_COUNTRIES.has(cf.country)) return null;
-  if (isOpenPath(pathname) && !BLOCKED_VISITORS.has(vid)) return null;
   if (await isOwnerKey(cookieValue(request, OWNER_COOKIE))) return null;
   if (!BLOCKED_VISITORS.has(vid) && (await isOwnerIp(ip, env))) return null;
   const isPage = (request.headers.get("accept") || "").includes("text/html");
