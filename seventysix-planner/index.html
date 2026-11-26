@@ -298,7 +298,8 @@ body.kim .st-row figcaption b{font-size:22px}
 .tba{display:inline-block;margin-top:14px;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:clamp(40px,7vw,72px);line-height:1;color:var(--green);border:2px solid var(--green);border-radius:14px;padding:10px 28px}
 .wk2top p{color:#4A423D;max-width:640px;margin:8px auto 0}
 .w2extra{display:grid;grid-template-columns:repeat(2,minmax(0,140px));gap:10px}
-.w2extra .t{cursor:pointer;border-radius:6px}
+.w2extra .t{border-radius:6px}
+.t.w2{cursor:default}
 .need2{color:var(--warn);font-size:12.5px}
 body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{display:none!important}
 </style>
@@ -500,7 +501,7 @@ Week of 14 Dec (last orders): Feed Chelmsford Option 2, Dunmow Option 3 · Stori
   </div>
 </div>
 
-<div class="wrap wk2top" id="week2"><div class="caps">Next week · Week 2</div><h2 class="serif">Week 2 · 30 November to 6 December</h2><div class="tba">To be Arranged</div><p>Next week's Instagram feeds for both salons, 14 posts each, 2 a day (6:30 am and 8:30 pm UK). Tap any post to see it with its caption.</p></div>
+<div class="wrap wk2top" id="week2"><div class="caps">Next week · Week 2</div><h2 class="serif">Week 2 · 30 November to 6 December</h2><div class="tba">Editing / To be Arranged</div><p>Next week's Instagram feeds for both salons, 14 posts each, 2 a day (6:30 am and 8:30 pm UK). Still being edited, so the posts open once they're final.</p></div>
 <div class="wrap feedhead" id="week2-chelm"><div class="caps">Instagram feed · Chelmsford · Week 2</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 30 November to 6 December</h2><p style="color:#4A423D;margin-top:6px">Chelmsford girls' work: Rachael's bright blonde reel opens the week, Kimmy, Emma and Rachael carousels, the salon and the team, the blonde aftercare tip, plus gift vouchers (Option 4) and the makeup 1:1 collab (Option 5).</p></div>
 <div class="wrap main">
   <div class="phone">
@@ -509,7 +510,7 @@ Week of 14 Dec (last orders): Feed Chelmsford Option 2, Dunmow Option 3 · Stori
     <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>
     <div class="grid" id="w2grid-c"></div>
   </div>
-  <div class="side"><div class="dunplan" id="w2plan-c"></div><div class="dunplan"><h4>Extra reels · ready</h4><p style="font-size:13.5px;color:#4A423D;margin-bottom:10px">Two more Chelmsford reels, ready whenever we want to swap one in. Tap to watch.</p><div class="w2extra" id="w2extra"></div></div></div>
+  <div class="side"><div class="dunplan" id="w2plan-c"></div><div class="dunplan"><h4>Extra reels · ready</h4><p style="font-size:13.5px;color:#4A423D;margin-bottom:10px">Two more Chelmsford reels, ready whenever we want to swap one in.</p><div class="w2extra" id="w2extra"></div></div></div>
 </div>
 <div class="wrap feedhead" id="week2-dun"><div class="caps">Instagram feed · Great Dunmow · Week 2</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 30 November to 6 December</h2><p style="color:#4A423D;margin-top:6px">Dunmow girls' work with the white 76 logo: Madison, Gabriella, Nicky, Kelsey and the team, two client reviews, the wet hair tip, plus gift vouchers (Option 2) and the makeup 1:1 collab (Option 5).</p></div>
 <div class="wrap main">
@@ -1284,14 +1285,12 @@ function renderW2(){
  const DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],f=d=>{const x=new Date(2026,10,30+d);return DN[(x.getDay()+6)%7]+' '+x.getDate()+' '+(x.getMonth()===10?'Nov':'Dec')};
  [['W2C',W2C,'c','Chelmsford'],['W2D',W2D,'d','Dunmow']].forEach(([T,X,id,nm])=>{
   const op=k=>{if(!PREV)PREV=tab;tab=T;openIG(k)};
-  const tile=k=>`<div class="t dr" data-k="${k}" style="cursor:pointer"><img src="${X.I[k]}" alt="">${ICO[X.TY[k]||'photo']}</div>`;
+  const tile=k=>`<div class="t w2" data-k="${k}"><img src="${X.I[k]}" alt="">${ICO[X.TY[k]||'photo']}</div>`;
   $('#w2grid-'+id).innerHTML=X.O.map(tile).join('');
-  $('#w2grid-'+id).querySelectorAll('.t').forEach(el=>el.onclick=()=>op(el.dataset.k));
-  if(X.X){$('#w2extra').innerHTML=X.X.map(r=>tile(r[0])).join('');$('#w2extra').querySelectorAll('.t').forEach(el=>el.onclick=()=>op(el.dataset.k))}
+  if(X.X)$('#w2extra').innerHTML=X.X.map(r=>tile(r[0])).join('');
   const L=$('#w2plan-'+id);
   L.innerHTML='<h4>'+nm+' posting plan (UK time)</h4><ol>'+X.L.map(([k],i)=>{const d=i>>1,am=i%2===0;
-   return `<li><b>${f(d)}, ${am?'6:30 am':'8:30 pm'}</b> · <a href="#" data-k="${k}">${X.W[k]}</a>${X.N[k]?` <span class="need2">· ${X.N[k]}</span>`:''}<span class="phx"><br>🇵🇭 PH: <b>${am?f(d)+', 2:30 pm':f(d+1)+', 4:30 am'}</b></span></li>`}).join('')+'</ol>';
-  L.querySelectorAll('a').forEach(a=>a.onclick=e=>{e.preventDefault();op(a.dataset.k)})})}
+   return `<li><b>${f(d)}, ${am?'6:30 am':'8:30 pm'}</b> · ${X.W[k]}${X.N[k]?` <span class="need2">· ${X.N[k]}</span>`:''}<span class="phx"><br>🇵🇭 PH: <b>${am?f(d)+', 2:30 pm':f(d+1)+', 4:30 am'}</b></span></li>`}).join('')+'</ol>';})}
 renderW2();
 if(location.hash.includes('t=DN'))setTimeout(()=>document.getElementById('feed-dun').scrollIntoView(),300);
 </script>
