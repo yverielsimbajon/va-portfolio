@@ -115,10 +115,18 @@ html,body{overflow-x:hidden}
  .lp-body{padding-top:14px}
  .lp-logo{position:static;width:56px;height:56px;margin:0 0 10px 2px}
 }
+.edbar{position:fixed;right:16px;bottom:16px;z-index:50;display:flex;gap:8px;align-items:center;font-family:'Plus Jakarta Sans',sans-serif}
+.edbar button{border:0;border-radius:24px;padding:12px 20px;font:700 14px 'Plus Jakarta Sans',sans-serif;cursor:pointer;box-shadow:0 4px 14px rgba(15,37,71,.25)}
+.edbar .ed{background:var(--navy);color:#fff}.edbar .sv{background:var(--royal);color:#fff}.edbar .cx{background:#fff;color:var(--navy)}
+.edbar .msg{background:#fff;border-radius:14px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--navy);box-shadow:0 2px 8px rgba(0,0,0,.12)}
+body.editing .ek{outline:1.5px dashed #2F6BFF;outline-offset:3px;border-radius:3px;cursor:text}
+body.editing .ek:focus{outline:2px solid #2F6BFF;background:#F4F7FF}
+.editing-note{display:none}body.editing .editing-note{display:block;position:sticky;top:52px;z-index:19;background:#FDC840;color:#0F2547;text-align:center;font:600 13px 'Plus Jakarta Sans',sans-serif;padding:8px 16px}
 </style>
 </head>
 <body>
 <nav class="topnav"><a href="#revamp" data-s="revamp" class="on">Page revamp</a><a href="#company" data-s="company">Company page</a><a href="#personal" data-s="personal">Personal page</a></nav>
+<div class="editing-note">Edit the LinkedIn details (tagline, About, specialties, page details), then press Save.</div>
 
 <header class="hero">
   <div class="k">LinkedIn posting plan</div>
@@ -268,7 +276,10 @@ Window Cleaning Maintenance Plans</div>
 
 <p class="foot">Prepared for Cloud 9 Window Cleaning by <a href="https://themariaoffice.com/">Maria · The Maria Office</a></p>
 
+<div class="edbar"><span class="msg" id="edmsg" hidden></span><button class="cx" id="edcx" hidden>Cancel</button><button class="sv" id="edsv" hidden>Save</button><button class="ed" id="edon">✎ Edit details</button></div>
 <script>
+let EDITS={};
+function setCap(c,t){c.dataset.orig=t;const v=EDITS[t]??t;c.innerHTML=fmt(v);}
 const LOGO='img/logo-blue.png';
 const POSTS=[
  {date:'Fri 27 Nov',today:true,tag:'Image post',type:'Team milestone',img:'img/post-team-1000.jpg?v=1',
@@ -463,11 +474,12 @@ list.forEach((p,k)=>{
    ${p.opts?`<div class="opts">${Object.keys(p.opts).map((o,i)=>`<button data-o="${o}"${i?'':' class="on"'}>Caption ${o}</button>`).join('')}</div>`:''}
    <div class="head">${who}
     <span class="follow">+ Follow</span></div>
-   <div class="cap">${fmt(p.cap||p.opts.A)}</div>
+   <div class="cap"></div>
    ${media}
    <div class="acts"><span>${I.like}Like</span><span>${I.com}Comment</span><span>${I.rep}Repost</span><span>${I.send}Send</span></div>`;
   feed.appendChild(el);
-  if(p.opts)el.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{el.querySelectorAll('.opts button').forEach(x=>x.classList.toggle('on',x===b));el.querySelector('.cap').innerHTML=fmt(p.opts[b.dataset.o])});
+  setCap(el.querySelector('.cap'),p.cap||p.opts.A);
+  if(p.opts)el.querySelectorAll('.opts button').forEach(b=>b.onclick=()=>{el.querySelectorAll('.opts button').forEach(x=>x.classList.toggle('on',x===b));setCap(el.querySelector('.cap'),p.opts[b.dataset.o])});
   if(p.imgs){
     const tr=el.querySelector('.track'),pg=el.querySelector('.pg'),pv=el.querySelector('.nav.p'),nx=el.querySelector('.nav.n'),n=p.imgs.length;
     const cur=()=>Math.round(tr.scrollLeft/tr.clientWidth);
@@ -489,6 +501,38 @@ document.querySelectorAll('.copy .draft').forEach(d=>{const h=d.previousElementS
 const navA=[...document.querySelectorAll('.topnav a')];
 const secs=navA.map(a=>document.getElementById(a.dataset.s));
 addEventListener('scroll',()=>{let c=0;secs.forEach((el,i)=>{if(el.getBoundingClientRect().top<120)c=i});navA.forEach((a,i)=>a.classList.toggle('on',i===c))},{passive:true});
+// ---- Edit mode (Daniel, 2026-11-27): text changes are saved to the site (/api/edits/c9li) ----
+// Only the LinkedIn revamp details are editable (Maria 2026-11-27): name, tagline, About, specialties, page details
+const ESEL='.lp-name,.lp-tag,.copy .draft,.copy .sched td:last-child';
+const API='/api/edits/c9li';
+const plain=e=>e.innerText.replace(/ /g,' ').replace(/\n+$/,'');
+function eds(){return [...document.querySelectorAll(ESEL)]}
+eds().forEach(e=>{e.dataset.orig=plain(e);e.classList.add('ek')});
+function applyEdits(){eds().forEach(e=>{const o=e.dataset.orig,v=EDITS[o];if(v==null)return;
+  e.textContent=v});refreshCounts()}
+function refreshCounts(){document.querySelectorAll('.copy .draft').forEach(d=>{const h=d.previousElementSibling&&d.previousElementSibling.querySelector('.cnt');if(h&&d.dataset.max)h.textContent=`${d.textContent.length} / ${d.dataset.max} characters`})}
+fetch(API,{cache:'no-store'}).then(r=>r.ok?r.json():{edits:{}}).then(d=>{EDITS=d.edits||{};applyEdits()}).catch(()=>{});
+const $=id=>document.getElementById(id),msg=t=>{$('edmsg').textContent=t;$('edmsg').hidden=!t};
+let snap=null;
+function setMode(on){document.body.classList.toggle('editing',on);
+  eds().forEach(e=>{if(on){try{e.contentEditable='plaintext-only'}catch(_){e.contentEditable='true'}}else e.removeAttribute('contenteditable')});
+  if(on){snap=new Map(eds().map(e=>[e,e.innerHTML]))}
+  $('edon').hidden=on;$('edsv').hidden=!on;$('edcx').hidden=!on;if(on)msg('')}
+$('edon').onclick=()=>setMode(true);
+$('edcx').onclick=()=>{if(snap)snap.forEach((h,e)=>e.innerHTML=h);setMode(false)};
+$('edsv').onclick=async()=>{
+  const next={...EDITS};
+  // the same text can appear twice (tagline in the preview + copy box): a changed copy wins over an untouched one
+  const pick={};
+  eds().forEach(e=>{const o=e.dataset.orig,v=plain(e);if(o==null)return;const cur=EDITS[o]??o;
+    if(!(o in pick)||(v!==cur&&pick[o]===cur))pick[o]=v});
+  for(const [o,v] of Object.entries(pick)){if(v===o)delete next[o];else next[o]=v}
+  $('edsv').disabled=true;msg('Saving...');
+  try{const r=await fetch(API,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({edits:next})});
+    if(!r.ok)throw 0;EDITS=next;setMode(false);applyEdits();msg('Saved ✓');setTimeout(()=>msg(''),2500)}
+  catch(_){msg('Not saved, please try again')}
+  $('edsv').disabled=false};
+
 </script>
 </body>
 </html>
