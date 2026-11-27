@@ -148,38 +148,6 @@ async function blockedResponse(request, env, ctx, pathname) {
   });
 }
 
-// Client edit pages (Maria, 2026-11-27): Daniel edits the Cloud 9 LinkedIn plan page in his browser.
-// GET returns the saved edits ({original text: new text}); POST saves them. Every save also keeps a
-// dated copy (doc:<page>:h:<time>, 180 days) so an older version can always be brought back, and
-// pings Maria's phone through ntfy.
-const EDIT_PAGES = new Set(["c9li"]);
-async function pageEdits(request, env, ctx, page) {
-  const key = "doc:" + page;
-  if (request.method === "GET") {
-    const v = (await env.EVENTS.get(key)) || '{"edits":{}}';
-    return new Response(v, { headers: { "content-type": "application/json", "cache-control": "no-store" } });
-  }
-  if (request.method !== "POST") return new Response(null, { status: 405 });
-  const raw = await request.text();
-  if (raw.length > 200000) return new Response("too big", { status: 413 });
-  let b;
-  try { b = JSON.parse(raw); } catch { return new Response("bad json", { status: 400 }); }
-  const edits = {};
-  for (const [k, v] of Object.entries((b && b.edits) || {})) {
-    if (typeof k === "string" && typeof v === "string" && k.length <= 5000 && v.length <= 5000) edits[k] = v;
-  }
-  const doc = JSON.stringify({ edits, savedAt: new Date().toISOString(), by: String(b.by || "").slice(0, 60) });
-  await env.EVENTS.put(key, doc);
-  await env.EVENTS.put(key + ":h:" + String(9999999999999 - Date.now()).padStart(13, "0"), doc, { expirationTtl: TTL });
-  if (env.NTFY_TOPIC) {
-    ctx.waitUntil(fetch("https://ntfy.sh/" + encodeURIComponent(env.NTFY_TOPIC), {
-      method: "POST", headers: { Title: "Cloud 9 LinkedIn page edited", Tags: "pencil" },
-      body: Object.keys(edits).length + " edited parts saved. themariaoffice.com/cloud9-linkedin/",
-    }).catch(() => {}));
-  }
-  return new Response(doc, { headers: { "content-type": "application/json", "cache-control": "no-store" } });
-}
-
 export default {
   async fetch(request, env, ctx) {
     const { pathname } = new URL(request.url);
@@ -202,8 +170,6 @@ export default {
     const blocked = await blockedResponse(request, env, ctx, pathname);
     if (blocked) return blocked;
     if (pathname === "/api/e") return recordEvent(request, env, ctx);
-    const ed = /^\/api\/edits\/([a-z0-9-]+)$/.exec(pathname);
-    if (ed && EDIT_PAGES.has(ed[1])) return pageEdits(request, env, ctx, ed[1]);
     // Home page: hidden from Google, but keep link previews (_headers can't change the header on "/")
     if (pathname === "/") {
       const page = await env.ASSETS.fetch(request);
