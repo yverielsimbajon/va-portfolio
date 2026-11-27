@@ -11,6 +11,11 @@
   ! X-Robots-Tag
   X-Robots-Tag: noindex, nofollow
 
+# 76 own product range research for Kimmy: private, link preview in WhatsApp
+/seventysixproducts/*
+  ! X-Robots-Tag
+  X-Robots-Tag: noindex, nofollow
+
 # Home, portfolio and booking page: hidden from Google too (only people with the link see them),
 # same header as the resumes so link previews still show in Messenger, WhatsApp, email.
 # The home page "/" gets this header from worker.js.
