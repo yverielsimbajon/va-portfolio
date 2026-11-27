@@ -101,9 +101,9 @@ td.y{font-weight:600;color:var(--green)}
 .zoom{display:block;border:1px solid var(--line);cursor:zoom-in}
 #zbox{position:fixed;inset:0;background:rgba(20,20,20,.92);z-index:50;display:none;overflow:auto;-webkit-overflow-scrolling:touch}
 #zbox.on{display:block}
-#zbox img{width:2800px;max-width:none;margin:0 auto}
-#zbox .x{position:fixed;top:14px;right:14px;background:#fff;color:#141414;border:0;border-radius:40px;padding:9px 16px;font:600 14px 'Open Sans',sans-serif;cursor:pointer}
-@media (min-width:1500px){#zbox img{width:100%;max-width:2800px}}
+#zbox img{width:1150px;max-width:none;margin:60px 0 0}
+#zbox .x{position:fixed;z-index:2;top:14px;right:14px;background:#fff;color:#141414;border:0;border-radius:40px;padding:9px 16px;font:600 14px 'Open Sans',sans-serif;cursor:pointer}
+@media (min-width:1200px){#zbox img{width:100%;max-width:2800px;margin:60px auto 0}}
 
 /* rules */
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
