@@ -98,6 +98,13 @@ th{font-weight:600;color:var(--green);background:var(--paper)}
 td.y{font-weight:600;color:var(--green)}
 .plan{margin-top:16px;background:var(--paper);border:1px solid var(--line);padding:16px 18px;font-size:15px}
 
+.zoom{display:block;border:1px solid var(--line);cursor:zoom-in}
+#zbox{position:fixed;inset:0;background:rgba(20,20,20,.92);z-index:50;display:none;overflow:auto;-webkit-overflow-scrolling:touch}
+#zbox.on{display:block}
+#zbox img{width:2800px;max-width:none;margin:0 auto}
+#zbox .x{position:fixed;top:14px;right:14px;background:#fff;color:#141414;border:0;border-radius:40px;padding:9px 16px;font:600 14px 'Open Sans',sans-serif;cursor:pointer}
+@media (min-width:1500px){#zbox img{width:100%;max-width:2800px}}
+
 /* rules */
 .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px}
 .rule{background:#fff;border:1px solid var(--line);padding:18px 20px;font-size:15px}
@@ -162,7 +169,7 @@ footer a{color:var(--soft)}
     <img class="logo" src="img/76-logo-black.png" alt="Seventy Six">
     <div class="caps">Research for Kimmy</div>
     <h1>Your own<br>product range</h1>
-    <p>Where to get your 5 products made, what other people say about each supplier, the UK rules, and name ideas.<br>Prepared by Maria &middot; 27 November 2026</p>
+    <p>A little research on where your 5 products could be made, what other salons say about each supplier, the simple UK rules, and a few name ideas, for you to look through whenever you have a moment.<br>Prepared by Maria &middot; 27 November 2026</p>
     <nav class="jump">
       <a href="#answer">Short answer</a>
       <a href="#suppliers">Suppliers</a>
@@ -178,30 +185,30 @@ footer a{color:var(--soft)}
 
 <section id="answer">
   <h2>The short answer</h2>
-  <p class="lead">You don't need to invent a formula. UK labs already have safe, tested sulphate-free formulas and will put your 76 label on them.</p>
+  <p class="lead">The lovely news is that you won't need to create a formula from scratch. UK labs already have safe, tested sulphate-free formulas, and they'd be happy to put your beautiful 76 label on them.</p>
   <div class="answers">
-    <div class="ans"><div class="n">1</div><b>"Private label"</b><p>A UK lab's ready formula with your own label and branding. Quickest and safest way to start.</p></div>
-    <div class="ans"><div class="n">2</div><b>Start small</b><p>Some suppliers start from 6 or 12 bottles. Test with the team and clients first, then order bigger.</p></div>
-    <div class="ans"><div class="n">3</div><b>Stay UK</b><p>UK suppliers are set up for the UK safety report and notification. Buying from abroad puts those jobs on you.</p></div>
-    <div class="ans"><div class="n">4</div><b>Keep "76" in the name</b><p>Your clients already trust the name, and both salon shelves sell it for you.</p></div>
+    <div class="ans"><div class="n">1</div><b>"Private label"</b><p>A UK lab's ready-made formula with your own label and branding. It's the quickest and safest way to begin.</p></div>
+    <div class="ans"><div class="n">2</div><b>Start small</b><p>Some suppliers start from just 6 or 12 bottles, so you and the team could try them with clients first, then order more once you love them.</p></div>
+    <div class="ans"><div class="n">3</div><b>Stay UK</b><p>UK suppliers already look after the UK safety report and notification, which keeps things easy for you. With suppliers from abroad, those steps would be left with you.</p></div>
+    <div class="ans"><div class="n">4</div><b>Keep "76" in the name</b><p>Your clients already know and trust the 76 name, so it would feel right at home on both salon shelves.</p></div>
   </div>
 </section>
 
 <section>
   <h2>Your 5 products</h2>
-  <p class="lead">What to ask each supplier for.</p>
+  <p class="lead">What we could ask each supplier for.</p>
   <div class="prods">
     <div class="prod"><div class="gar">Shampoo</div><p>No SLS / SLES (the harsh sulphates). Gentle and colour-safe, good for blondes and extensions.</p></div>
     <div class="prod"><div class="gar">Conditioner</div><p>Colour-safe and extension-safe, light and rinses clean.</p></div>
-    <div class="prod"><div class="gar">Hair mask</div><p>A rich repair mask. A lovely add-on after colour or blonde appointments.</p></div>
-    <div class="prod"><div class="gar">Growth oil</div><p>Usually rosemary + peppermint in a light oil (argan, almond). Careful with the wording, see UK rules.</p></div>
-    <div class="prod"><div class="gar">Dry shampoo</div><p>Powder (no gas, travel-friendly) or aerosol spray (not every lab can make it). Dry shampoo normally has no sulphates anyway.</p></div>
+    <div class="prod"><div class="gar">Hair mask</div><p>A rich repair mask, a lovely add-on after colour or blonde appointments.</p></div>
+    <div class="prod"><div class="gar">Growth oil</div><p>Usually rosemary + peppermint in a light oil (argan, almond). There's a little note on wording in the UK rules below.</p></div>
+    <div class="prod"><div class="gar">Dry shampoo</div><p>Powder (travel-friendly) or aerosol spray (only some labs make it). Dry shampoo usually has no sulphates anyway.</p></div>
   </div>
 </section>
 
 <section id="suppliers">
   <h2>Where to get them made</h2>
-  <p class="lead">Facts are from each supplier's own website, reviews from Trustpilot and Google, Instagram checked on 27 Nov 2026. Minimums and prices can change, so we confirm by email before ordering.</p>
+  <p class="lead">All details are from each supplier's own website, with reviews from Trustpilot and Google, and Instagram checked on 27 Nov 2026. Minimums and prices can change, so I'd be happy to confirm everything by email before you order.</p>
 
   <!-- OPTIONS -->
   <article class="sup">
@@ -213,15 +220,15 @@ footer a{color:var(--soft)}
       <dl class="rows">
         <dt>Minimum order</dt><dd>"Order as few as 12 pieces". Orders from just £60.</dd>
         <dt>Your 5 products</dt><dd><span class="yes">Shampoo, conditioner, treatment, dry shampoo</span>, plus a biotin + caffeine scalp serum and an argan oil serum.</dd>
-        <dt>Free-from</dt><dd>Their <b>Natural 100%</b> shampoo and conditioner are free from sulphates, SLS, SLES, parabens and artificial fragrance, and vegan. Only pick from that range, as some of their other products do contain sulphates.</dd>
+        <dt>Free-from</dt><dd>Their <b>Natural 100%</b> shampoo and conditioner are free from sulphates, SLS, SLES, parabens and artificial fragrance, and vegan. It would be best to choose from that range, as a few of their other products do contain sulphates.</dd>
         <dt>Label</dt><dd>Their design team helps with the label artwork. They can also fill your own bottles.</dd>
         <dt>Samples</dt><dd>Register on their site (approved in about 24 hours), then call. UK delivery £9.45.</dd>
       </dl>
       <div class="rev">
         <span class="stars">★★★★★</span> <span class="score">4.6 / 5 on Trustpilot &middot; 22 reviews</span>
-        <p>Very happy customers. People say the design team is patient and helpful with label changes, and one says they sorted early mistakes quickly. Instagram: 6.2K followers, quieter lately (last post March 2026).</p>
+        <p>Lovely, happy customers. People say the design team is patient and helpful with label changes, and one mentions they sorted any early hiccups quickly. Instagram: 6.2K followers, last post March 2026.</p>
       </div>
-      <div class="fit"><b>Good fit?</b> Yes. The only small-order supplier with a dry shampoo too, so they could do the whole range in one go.</div>
+      <div class="fit"><b>Why they're lovely:</b> They're the only small-order supplier with a dry shampoo too, so they could make your whole range in one go.</div>
       <div class="btns">
         <a class="btn main" href="https://www.optionsltd.co.uk/salons" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Website</a>
         <a class="btn" href="https://www.instagram.com/optionsltd1/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
@@ -242,16 +249,16 @@ footer a{color:var(--soft)}
       <div class="where">Feel For Hair Ltd &middot; sustainable white label haircare for salons &middot; made in the UK</div>
       <dl class="rows">
         <dt>Minimum order</dt><dd>Just 6 per retail product (4 for professional sizes).</dd>
-        <dt>Your 5 products</dt><dd><span class="yes">Shampoo, conditioner, deep repair mask.</span> No dry shampoo or growth oil.</dd>
-        <dt>Free-from</dt><dd>Organic, naturally-derived ingredients. Sulphate-free is not stated, so we ask.</dd>
-        <dt>Look</dt><dd>Recyclable, refillable amber glass. Very premium, suits the 76 black and nude look.</dd>
+        <dt>Your 5 products</dt><dd><span class="yes">Shampoo, conditioner, deep repair mask.</span> They don't make a dry shampoo or growth oil.</dd>
+        <dt>Free-from</dt><dd>Organic, naturally-derived ingredients. Sulphate-free isn't mentioned yet, so I can kindly check with them.</dd>
+        <dt>Look</dt><dd>Recyclable, refillable amber glass. Very premium, and it would suit the 76 black and nude look beautifully.</dd>
         <dt>Label</dt><dd>Ready templates, or your own artwork from scratch.</dd>
       </dl>
       <div class="rev">
         <span class="score">No public reviews found yet</span> (not on Trustpilot or Google).
-        <p>Very active on Instagram: 1.9K followers, posting several times a week (latest 26 Nov 2026). We can ask them for 2 or 3 salons that use them.</p>
+        <p>Very active on Instagram: 1.9K followers, posting several times a week (latest 26 Nov 2026). I can ask them for 2 or 3 salons who use them, so you can hear from them directly.</p>
       </div>
-      <div class="fit"><b>Good fit?</b> Yes for shampoo, conditioner and mask, if you want the luxury glass look.</div>
+      <div class="fit"><b>Why they're lovely:</b> A beautiful choice for shampoo, conditioner and mask if you'd love the luxury glass look.</div>
       <div class="btns">
         <a class="btn main" href="https://reyu.co.uk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Website</a>
         <a class="btn" href="https://www.instagram.com/reyu_uk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
@@ -273,13 +280,13 @@ footer a{color:var(--soft)}
         <dt>What you get</dt><dd>200 x 50 ml square bottles of hair oil (argan, pumpkin seed, camellia) with your labels. Rosemary can be added "to support hair growth".</dd>
         <dt>Price</dt><dd>£934 ex VAT (£1,120.80 inc VAT) = about £4.67 a bottle. Their in-house labelling is £80 ex VAT extra.</dd>
         <dt>Legal side</dt><dd>They act as the Responsible Person, and do safety reports (CPSR) and registration.</dd>
-        <dt>Timing</dt><dd>About 3-4 weeks. <b>Closed 20 Nov 2026 - 7 Jan 2027</b>, so January at the earliest.</dd>
+        <dt>Timing</dt><dd>About 3-4 weeks. They're <b>away for the holidays from 20 Nov 2026 to 7 Jan 2027</b>, so January would be the earliest.</dd>
       </dl>
       <div class="rev">
         <span class="stars">★★★★☆</span> <span class="score">4.2 / 5 on Trustpilot &middot; 17 reviews</span>
-        <p>People love the products. The main complaint is slow replies to emails and DMs. The owner replied that it's a tiny team (just her and her brother). Instagram: 10K followers, last posted early Nov 2026.</p>
+        <p>People really love the products. A few mention that replies to emails and messages can take a little while, and the owner kindly explained it's a tiny family team (just her and her brother). Instagram: 10K followers, last posted early Nov 2026.</p>
       </div>
-      <div class="fit"><b>Good fit?</b> Good for the growth oil. 200 bottles is a bigger first order, and replies can be slow.</div>
+      <div class="fit"><b>Why they're lovely:</b> A lovely option for the growth oil. Just to note, 200 bottles is a larger first order, and replies may need a little patience.</div>
       <div class="btns">
         <a class="btn main" href="https://witcheslabprofessional.co.uk/index.php?route=product/product&amp;product_id=76" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Website</a>
         <a class="btn" href="https://www.instagram.com/witcheslabprofessional/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
@@ -297,16 +304,16 @@ footer a{color:var(--soft)}
       <h3>Cosmiko</h3>
       <div class="where">Thorp Arch Estate, Wetherby, West Yorkshire &middot; "conceived, developed and manufactured in the UK"</div>
       <dl class="rows">
-        <dt>Your 5 products</dt><dd><span class="yes">Shampoos, conditioners, conditioning hair mask, hair oils</span> (incl. argan repair oil), serums. No dry shampoo.</dd>
+        <dt>Your 5 products</dt><dd><span class="yes">Shampoos, conditioners, conditioning hair mask, hair oils</span> (incl. argan repair oil), serums. They don't make a dry shampoo.</dd>
         <dt>Free-from</dt><dd>Hair range "free from SLS and Parabens".</dd>
-        <dt>Minimum order</dt><dd>Not on their site, so we ask. They also offer a UK cosmetic notification service.</dd>
+        <dt>Minimum order</dt><dd>Not shown on their website, so I can kindly ask. They also offer a UK cosmetic notification service.</dd>
         <dt>Samples</dt><dd>£10 inc VAT per sample pack.</dd>
       </dl>
       <div class="rev">
         <span class="stars">★★★★☆</span> <span class="score">3.9 / 5 on Google &middot; 7 reviews</span>
-        <p>Only a few reviews and no Trustpilot page. Small Instagram (391 followers, last post July 2026). Their bottles are plain stock ones, so the label does all the work.</p>
+        <p>A small number of reviews so far, and no Trustpilot page yet. Instagram: 391 followers, last post July 2026. Their bottles are simple and classic, so your 76 label would really shine.</p>
       </div>
-      <div class="fit"><b>Good fit?</b> For later, when you're ready for a bigger run. Cheap samples, so worth trying now.</div>
+      <div class="fit"><b>Why they're lovely:</b> A nice one for later, when you're ready for a bigger order. Their samples are only £10, so they're lovely to try now.</div>
       <div class="btns">
         <a class="btn main" href="https://cosmiko.co.uk/private-label-hair-care/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Website</a>
         <a class="btn" href="https://www.instagram.com/cosmiko_uk/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>Instagram</a>
@@ -317,30 +324,30 @@ footer a{color:var(--soft)}
     </div>
   </article>
 
-  <h3 style="margin:34px 0 12px">Bigger later (your own custom formula)</h3>
+  <h3 style="margin:34px 0 12px">For later on (your very own custom formula)</h3>
   <div class="small-sups">
     <div class="mini">
       <h3>Hera Beauty</h3>
-      <p>Peterborough. GMP-certified UK lab with 200+ ready formulas, can also make your own custom formula. From 1,000 units, 8-12 weeks.</p>
+      <p>Peterborough. GMP-certified UK lab with 200+ ready formulas, can also make your own custom formula. From 1,000 units, 8-12 weeks, so perhaps one for the future.</p>
       <div class="btns"><a class="btn main" href="https://herabeauty.co.uk/" target="_blank" rel="noopener">Website</a><a class="btn" href="tel:+441733396195">01733 396 195</a></div>
     </div>
     <div class="mini">
       <h3>Wordsworth UK</h3>
-      <p>Middleton, Manchester. UK factory, from 5,000 units. Too big for a start, good to know for the future.</p>
+      <p>Middleton, Manchester. UK factory, from 5,000 units. A little big for the beginning, but lovely to know about for the future.</p>
       <div class="btns"><a class="btn main" href="https://wordsworth-uk.co.uk/conditioner/" target="_blank" rel="noopener">Website</a></div>
     </div>
   </div>
 
-  <h3 style="margin:34px 0 12px">Checked, but not a fit</h3>
+  <h3 style="margin:34px 0 12px">Also checked, but maybe not right for now</h3>
   <div class="small-sups">
     <div class="mini">
       <h3>SalonServe</h3>
-      <p>Big UK salon supplier with an "Own Brand Me" private label service (25 per product, £35 set-up). But their own-brand range is skincare, body, wax, nails and massage oils only. No shampoo, conditioner or hair mask.</p>
+      <p>Big UK salon supplier with an "Own Brand Me" private label service (25 per product, £35 set-up). Their own-brand range is skincare, body, wax, nails and massage oils, so sadly they don't offer shampoo, conditioner or hair mask yet.</p>
       <div class="btns"><a class="btn" href="https://salonserve.com/pages/private-label" target="_blank" rel="noopener">Website</a></div>
     </div>
     <div class="mini">
       <h3>Selfnamed</h3>
-      <p>No minimum order and a free online label designer, but it ships from the EU and US. Bringing it into the UK yourself makes you responsible for the UK safety report and notification.</p>
+      <p>No minimum order and a free online label designer, which is lovely. It ships from the EU and US though, so the UK safety report and notification would be left with you.</p>
       <div class="btns"><a class="btn" href="https://www.selfnamed.com/en" target="_blank" rel="noopener">Website</a></div>
     </div>
   </div>
@@ -348,41 +355,32 @@ footer a{color:var(--soft)}
 
 <section id="compare">
   <h2>Which supplier covers which product</h2>
-  <p class="lead">At a glance.</p>
-  <div class="tbl">
-  <table>
-    <tr><th>Supplier</th><th>Shampoo</th><th>Conditioner</th><th>Mask</th><th>Growth oil</th><th>Dry shampoo</th><th>Min. order</th><th>Reviews</th></tr>
-    <tr><td><b>Options Ltd</b></td><td class="y">yes</td><td class="y">yes</td><td class="y">treatment</td><td>scalp serum</td><td class="y">yes</td><td>12</td><td>4.6 ★ (22)</td></tr>
-    <tr><td><b>REYU</b></td><td class="y">yes</td><td class="y">yes</td><td class="y">yes</td><td>-</td><td>-</td><td>6</td><td>none yet</td></tr>
-    <tr><td><b>Witches Lab</b></td><td>-</td><td>-</td><td>-</td><td class="y">yes</td><td>-</td><td>200</td><td>4.2 ★ (17)</td></tr>
-    <tr><td><b>Cosmiko</b></td><td class="y">yes</td><td class="y">yes</td><td class="y">yes</td><td class="y">hair oils</td><td>-</td><td>ask</td><td>3.9 ★ (7)</td></tr>
-  </table>
-  </div>
-  <div class="plan"><b>Simple plan:</b> Options Ltd could do all 5 in one go. Or mix: <b>REYU</b> for shampoo, conditioner and mask (premium glass look), <b>Options Ltd</b> for dry shampoo, and <b>Witches Lab</b> or <b>Cosmiko</b> for the oil. One supplier makes matching labels easier.</div>
+  <p class="lead">Tap the photo to zoom.</p>
+  <a class="zoom" href="img/compare.jpg" onclick="openZoom(event)"><img src="img/compare.jpg" alt="Which supplier makes which product: Options Ltd, REYU, Witches Lab and Cosmiko compared"></a>
 </section>
 
 <section id="rules">
   <h2>UK rules in plain words</h2>
-  <p class="lead">Your supplier usually helps with most of this, but it's good to know.</p>
+  <p class="lead">Please don't worry, your supplier usually helps with most of this. It's just nice to know.</p>
   <div class="rules">
     <div class="rule"><b>Responsible Person</b>Every cosmetic sold in Great Britain needs one, with a real UK address (no PO box). Most private label suppliers do this or help with it.</div>
     <div class="rule"><b>Safety report (CPSR)</b>Each product needs a safety report from a qualified safety assessor.</div>
     <div class="rule"><b>Notification</b>Each product goes on the government's online portal (SCPN) before it's sold.</div>
     <div class="rule"><b>Label</b>Ingredients list, Responsible Person's name and UK address, batch number, how long it lasts once opened, size and any warnings. The supplier normally gives you this text.</div>
-    <div class="rule"><b>"Toxin free"</b>Best not to use it on labels or posts. UK claims must be proven and can't make legal ingredients look bad. Safer, still strong: <i>"sulphate-free"</i>, <i>"paraben-free"</i>, <i>"gentle on colour"</i>, once the supplier confirms it.</div>
-    <div class="rule"><b>Growth oil wording</b>"Regrows hair" or "stops hair loss" needs proof and can count as a medical claim. Safer: <i>"for a healthy scalp"</i>, <i>"for stronger-looking hair"</i>.</div>
+    <div class="rule"><b>Lovely "free-from" wording</b>In the UK, product claims need to be backed up, so a gentle suggestion is to use clear words like <i>"sulphate-free"</i>, <i>"paraben-free"</i> and <i>"gentle on colour"</i> on labels and posts, once the supplier confirms them. They sound just as lovely and are easy to stand behind.</div>
+    <div class="rule"><b>Growth oil wording</b>Words like "regrows hair" would need medical proof, so a softer, lovely way to say it is <i>"for a healthy scalp"</i> or <i>"for stronger-looking hair"</i>. Clients will still understand exactly what it's for.</div>
   </div>
 </section>
 
 <section id="names">
   <h2>Name ideas</h2>
-  <p class="lead">Keeping 76 in the name. Website addresses checked 27 Nov 2026: all of these are still free to buy.</p>
+  <p class="lead">A few ideas that keep the 76 name, just to get you started. I checked the website addresses on 27 Nov 2026 and all of these are still available.</p>
   <div class="names">
     <div class="name"><div class="gar">Seventy Six Ritual</div><p>Feels luxury, like a spa routine. "Your 76 ritual".</p><div class="dom">seventysixritual.com + .co.uk free</div></div>
     <div class="name"><div class="gar">Seventy Six Haircare</div><p>Simple and clear, matches the salon.</p><div class="dom">seventysixhaircare.com + .co.uk free</div></div>
     <div class="name"><div class="gar">76 Botanics</div><p>Natural and plant-based. Fits the forest green.</p><div class="dom">76botanics.com + .co.uk free</div></div>
     <div class="name"><div class="gar">Seventy Six Signature</div><p>"The products we use and love in salon."</p><div class="dom">seventysixsignature.co.uk free</div></div>
-    <div class="name"><div class="gar">Seventy Six Pure</div><p>Says clean and free-from, without saying "toxin".</p><div class="dom">seventysixpure.com free</div></div>
+    <div class="name"><div class="gar">Seventy Six Pure</div><p>Feels clean, gentle and free-from.</p><div class="dom">seventysixpure.com free</div></div>
   </div>
   <h3 style="margin:30px 0 4px">Product names (example with "Seventy Six Ritual")</h3>
   <div class="line-list">
@@ -392,19 +390,19 @@ footer a{color:var(--soft)}
     <div><span class="gar">The Root Oil</span>rosemary scalp &amp; hair oil</div>
     <div><span class="gar">The Refresh</span>dry shampoo</div>
   </div>
-  <p class="note">Before deciding, the name also needs a free UK trade mark check (class 3, cosmetics) on the UK IPO website. seventysixhair.co.uk is already taken.</p>
+  <p class="note">Once you have a favourite, it's a good idea to do a free UK trade mark check (class 3, cosmetics) on the UK IPO website, and I'm happy to help with that.</p>
   <div class="btns"><a class="btn" href="https://trademarks.ipo.gov.uk/ipo-tmtext" target="_blank" rel="noopener">UK trade mark search</a></div>
 </section>
 
 <section id="next">
   <h2>Next steps</h2>
-  <p class="lead">Nice and easy, one step at a time.</p>
+  <p class="lead">Nice and easy, one step at a time, whenever you're ready.</p>
   <ol class="steps">
-    <li>Kimmy picks a name style (76 name or a new name).</li>
-    <li>Maria emails Options Ltd, REYU, Cosmiko and Witches Lab for samples, minimums, prices and who does the safety report.</li>
-    <li>The team tries the samples for 2 weeks (blondes, extensions, colour clients).</li>
-    <li>First small order (6-12 of each), sell in both salons, see what sells best.</li>
-    <li>Then reorder bigger, add an online shop and plan the launch content.</li>
+    <li>You choose a name style you love (a 76 name or something new).</li>
+    <li>I'll kindly email Options Ltd, REYU, Cosmiko and Witches Lab for samples, minimums, prices and who looks after the safety report.</li>
+    <li>You and the team try the samples for about 2 weeks (blondes, extensions, colour clients).</li>
+    <li>A first small order (6-12 of each) for both salons, to see which ones your clients love most.</li>
+    <li>Then a bigger reorder, an online shop if you'd like one, and some lovely launch content.</li>
   </ol>
 </section>
 
@@ -412,9 +410,11 @@ footer a{color:var(--soft)}
 
 <footer>
   <div class="wrap">
-    Prepared for Seventy Six Salon by Maria &middot; 27 November 2026. Facts from each supplier's own website, Trustpilot, Google and Instagram on that day. Photos belong to each supplier and are shown for reference only. UK rules: <a href="https://www.gov.uk/guidance/making-cosmetic-products-available-to-consumers-in-great-britain" target="_blank" rel="noopener">GOV.UK cosmetics guidance</a> &middot; <a href="https://www.ctpa.org.uk/resources-claims" target="_blank" rel="noopener">CTPA claims guidance</a>.
+    Prepared with care for Seventy Six Salon by Maria &middot; 27 November 2026. Facts from each supplier's own website, Trustpilot, Google and Instagram on that day. Photos belong to each supplier and are shown for reference only. UK rules: <a href="https://www.gov.uk/guidance/making-cosmetic-products-available-to-consumers-in-great-britain" target="_blank" rel="noopener">GOV.UK cosmetics guidance</a> &middot; <a href="https://www.ctpa.org.uk/resources-claims" target="_blank" rel="noopener">CTPA claims guidance</a>.
   </div>
 </footer>
 
+<div id="zbox" onclick="if(event.target.tagName!=='IMG')this.classList.remove('on')"><button class="x" onclick="document.getElementById('zbox').classList.remove('on')">Close &times;</button><img src="img/compare.jpg" alt=""></div>
+<script>function openZoom(e){e.preventDefault();document.getElementById('zbox').classList.add('on')}</script>
 </body>
 </html>
