@@ -89,16 +89,132 @@ img{display:block;max-width:100%}
 .topnav a{text-decoration:none;font-size:14px;font-weight:700;color:var(--navy);padding:8px 16px;border-radius:20px;border:1px solid var(--line);white-space:nowrap}
 .topnav a.on{background:var(--navy);border-color:var(--navy);color:#fff}
 .anchor{scroll-margin-top:70px}
+.lp-cover img{width:100%;aspect-ratio:1128/191;object-fit:cover}
+.lp-body{position:relative;padding:44px 16px 12px;font-family:'Plus Jakarta Sans',sans-serif}
+.lp-logo{position:absolute;left:16px;top:-40px;width:80px;height:80px;border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 0 0 3px #fff,0 0 0 4px var(--line)}
+.lp-logo img{width:100%;height:100%;object-fit:contain}
+.lp-name{font-size:20px;font-weight:700;color:var(--ink)}
+.lp-tag{font-size:14px;line-height:1.45;margin-top:4px;color:var(--ink)}
+.lp-meta{font-size:13px;color:var(--muted);margin-top:6px}
+.lp-btns{display:flex;gap:8px;margin-top:12px}
+.lp-btns span{font-size:14px;font-weight:700;padding:6px 16px;border-radius:18px}
+.lp-btns .b1{background:#0A66C2;color:#fff}.lp-btns .b2{border:1px solid #0A66C2;color:#0A66C2}
+.opts .lbl{font:700 12px 'Plus Jakarta Sans',sans-serif;color:var(--navy);align-self:center;width:42px}
+.opts{flex-wrap:wrap}
+.cp{margin-top:8px;border:1px solid var(--royal);background:#fff;color:var(--royal);font:700 13px 'Plus Jakarta Sans',sans-serif;padding:6px 14px;border-radius:16px;cursor:pointer}
+.cp.ok{background:var(--royal);color:#fff}
+.cnt{font-size:12px;font-weight:600;color:var(--muted);margin-left:6px}
 </style>
 </head>
 <body>
-<nav class="topnav"><a href="#company" data-s="company" class="on">Company page</a><a href="#personal" data-s="personal">Personal page</a></nav>
+<nav class="topnav"><a href="#revamp" data-s="revamp" class="on">Page revamp</a><a href="#company" data-s="company">Company page</a><a href="#personal" data-s="personal">Personal page</a></nav>
 
 <header class="hero">
   <div class="k">LinkedIn posting plan</div>
   <h1>Cloud 9 Window Cleaning on LinkedIn</h1>
   <p>Part 1: the Cloud 9 company page, 2 posts a month from today, Friday 27 November. Part 2: Daniel's own profile, 1 post a month. Every post has its date and a ready-to-post caption.</p>
 </header>
+
+<div class="feed" style="padding-bottom:0">
+  <div class="series pill anchor" id="revamp">Company page revamp · new cover, logo and About</div>
+  <div class="card lp">
+    <div class="lp-cover"><img id="cv" src="img/cover-B.jpg?v=1" alt="New LinkedIn cover"></div>
+    <div class="lp-body">
+      <div class="lp-logo"><img id="lg" src="img/logo-royal.jpg?v=1" alt="Cloud 9 logo"></div>
+      <div class="lp-name">Cloud 9 Window Cleaning | Sydney</div>
+      <div class="lp-tag">Premium window cleaning for Sydney homes. Pure water, 4-in-1 deep clean, rated 5.0 stars on Google.</div>
+      <div class="lp-meta">Facilities Services · Sydney, NSW · 11-50 employees</div>
+      <div class="lp-btns"><span class="b1">Visit website ↗</span><span class="b2">+ Follow</span></div>
+    </div>
+    <div class="opts" style="padding:4px 16px 0"><span class="lbl">Cover</span><button data-c="A">A · Photo + fade</button><button data-c="B" class="on">B · Half photo</button><button data-c="C">C · Clean white</button></div>
+    <div class="opts" style="padding:8px 16px 16px"><span class="lbl">Logo</span><button data-l="logo-royal.jpg" class="on">Royal blue (new)</button><button data-l="logo-blue.png">White (current)</button></div>
+  </div>
+
+  <div class="note">
+    <h2>What changes and why</h2>
+    <table class="sched">
+      <tr><td>Cover</td><td>Busy logo collage → one real Cloud 9 job photo with a clean royal panel. Pick A, B or C above.</td></tr>
+      <tr><td>Logo</td><td>Optional: white logo on royal blue, so it stands out in the feed.</td></tr>
+      <tr><td>Tagline</td><td>"Dirty windows?" → a calm, premium line with the 5.0 Google rating.</td></tr>
+      <tr><td>Overview</td><td>Rewritten: story, services, maintenance plans, how we work, contact.</td></tr>
+      <tr><td>Industry</td><td>"Individual and Family Services" (wrong) → <b>Facilities Services</b></td></tr>
+      <tr><td>Type</td><td>"Public Company" (wrong, it means listed on the stock exchange) → <b>Privately Held</b></td></tr>
+      <tr><td>Specialties</td><td>None → 12 search keywords</td></tr>
+      <tr><td>Button</td><td>Custom button "Visit website" → cloud9windowcleaning.com.au</td></tr>
+      <tr><td>Phone</td><td>Add 0485 013 333</td></tr>
+    </table>
+  </div>
+
+  <div class="note copy">
+    <h2>Copy and paste · Edit page</h2>
+    <h3>Tagline <span class="cnt"></span></h3>
+    <div class="draft" data-max="120">Premium window cleaning for Sydney homes. Pure water, 4-in-1 deep clean, rated 5.0 stars on Google.</div>
+    <button class="cp">Copy tagline</button>
+
+    <h3>Overview <span class="cnt"></span></h3>
+    <div class="draft" data-max="2000">Cloud 9 Window Cleaning was created with one simple mission: to bring Sydney homeowners a cleaner, clearer and more premium window cleaning experience.
+
+What started as a small operation has grown into one of Sydney's highest-rated window cleaning teams. We're rated 5.0 stars on Google and trusted across the North Shore, Northern Beaches, Sutherland Shire, Eastern Suburbs, Inner West, St George and Greater Sydney.
+
+What we do
+• Residential window cleaning with our 4-in-1 deep clean: glass, frames, tracks and sills
+• Pure deionised water cleaning, a 100% chemical-free process
+• Solar panel cleaning
+• Glass balustrade and pool fence cleaning
+• Hard water spot removal
+
+Maintenance plans
+Quarterly, triannual and biannual plans keep your glass looking fresh all year. Every plan includes free Cloud 9 Rainblock Tech, and quarterly clients get our 365 Day Unlimited Touch Up Policy.
+
+How we work
+Every home we service gets the same care, attention and professionalism we'd expect for our own. We use state-of-the-art equipment, including carbon-fibre poles that reach up to 3 storeys safely from the ground.
+
+Book your clean: 0485 013 333
+cloud9windowcleaning.com.au</div>
+    <button class="cp">Copy overview</button>
+
+    <h3>Specialties <span class="small" style="margin:0">(add one at a time)</span></h3>
+    <div class="draft">Window Cleaning
+Residential Window Cleaning
+Pure Water Window Cleaning
+Deionised Water Cleaning
+Solar Panel Cleaning
+Glass Balustrade Cleaning
+Pool Fence Cleaning
+Hard Water Stain Removal
+Frame, Track and Sill Cleaning
+Skylight Cleaning
+Multi-Storey Window Cleaning
+Window Cleaning Maintenance Plans</div>
+    <button class="cp">Copy specialties</button>
+
+    <h3>Page details</h3>
+    <table class="sched">
+      <tr><td>Website</td><td>https://www.cloud9windowcleaning.com.au/</td></tr>
+      <tr><td>Phone</td><td>0485 013 333</td></tr>
+      <tr><td>Industry</td><td>Facilities Services</td></tr>
+      <tr><td>Size</td><td>11-50 employees (keep)</td></tr>
+      <tr><td>Type</td><td>Privately Held</td></tr>
+      <tr><td>Location</td><td>Sydney, NSW, Australia (keep as primary)</td></tr>
+      <tr><td>Button</td><td>Visit website · https://www.cloud9windowcleaning.com.au/</td></tr>
+      <tr><td>Founded</td><td>Daniel to confirm the year</td></tr>
+    </table>
+    <p class="small">Cover size 1128 × 191 (uploaded at 2× for sharpness). Words sit in the middle and right so the logo circle at the bottom-left never covers them. After 11 December, the James Spenceley welcome post can be pinned to the top of the page.</p>
+  </div>
+
+  <div class="note">
+    <h2>Facts check</h2>
+    <table class="sched">
+      <tr><td>Story</td><td>Website, About Us "Our Story"</td></tr>
+      <tr><td>5.0 stars</td><td>Website, Home "5.0 stars on Google"</td></tr>
+      <tr><td>Areas</td><td>Website footer "Areas Served"</td></tr>
+      <tr><td>Services</td><td>Website, Home "Our Services"</td></tr>
+      <tr><td>Plans</td><td>Website, Home "Save Big With Our Maintenance Offers" (no discount % used)</td></tr>
+      <tr><td>Poles</td><td>Website, Residential Window page "Safe 3-Storey Reach"</td></tr>
+      <tr><td>Skylights</td><td>Google review (Tanya Ooi): skylights cleaned</td></tr>
+    </table>
+  </div>
+</div>
 
 <div class="feed" style="padding-bottom:0">
   <div class="series pill anchor" id="company">Part 1 · Cloud 9 company page · 2 posts a month</div>
@@ -350,6 +466,10 @@ render(POSTS,document.getElementById('feed'),`<div class="av"><img src="${LOGO}"
     <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>`);
 render(DAN,document.getElementById('dan'),`<div class="av dan"><img src="img/dan-avatar.jpg?v=2" alt="Daniel Vincent"></div>
     <div class="who"><div class="n">Daniel Vincent</div><div class="s">Founder &amp; Owner, Cloud 9 Window Cleaning</div><div class="s">Now · 🌐</div></div>`);
+document.querySelectorAll('[data-c]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-c]').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('cv').src=`img/cover-${b.dataset.c}.jpg?v=1`});
+document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-l]').forEach(x=>x.classList.toggle('on',x===b));document.getElementById('lg').src=`img/${b.dataset.l}?v=1`});
+document.querySelectorAll('.copy .draft').forEach(d=>{const h=d.previousElementSibling.querySelector('.cnt');if(h&&d.dataset.max)h.textContent=`${d.textContent.length} / ${d.dataset.max} characters`;
+  const b=d.nextElementSibling;b.onclick=async()=>{try{await navigator.clipboard.writeText(d.textContent)}catch(e){const r=document.createRange();r.selectNodeContents(d);getSelection().removeAllRanges();getSelection().addRange(r);document.execCommand('copy')}const t=b.textContent;b.textContent='Copied';b.classList.add('ok');setTimeout(()=>{b.textContent=t;b.classList.remove('ok')},1500)}});
 const navA=[...document.querySelectorAll('.topnav a')];
 const secs=navA.map(a=>document.getElementById(a.dataset.s));
 addEventListener('scroll',()=>{let c=0;secs.forEach((el,i)=>{if(el.getBoundingClientRect().top<120)c=i});navA.forEach((a,i)=>a.classList.toggle('on',i===c))},{passive:true});
