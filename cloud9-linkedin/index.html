@@ -7,7 +7,7 @@
 <title>Cloud 9 · LinkedIn Plan</title>
 <meta name="description" content="Cloud 9 Window Cleaning LinkedIn company page posting plan, prepared by Maria.">
 <meta property="og:title" content="Cloud 9 · LinkedIn Plan">
-<meta property="og:description" content="Cloud 9 company page on LinkedIn: 2 posts a month from 27 November, with ready-to-post captions.">
+<meta property="og:description" content="Cloud 9 on LinkedIn: company page 2 posts a month, plus Daniel's own profile once a month, with ready-to-post captions.">
 <meta property="og:image" content="https://themariaoffice.com/cloud9-linkedin/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -92,7 +92,7 @@ img{display:block;max-width:100%}
 <header class="hero">
   <div class="k">LinkedIn posting plan</div>
   <h1>Cloud 9 Window Cleaning on LinkedIn</h1>
-  <p>Company page only, 2 posts a month, starting today, Friday 27 November. Every post below is in posting order with its date and a ready-to-post caption.</p>
+  <p>Part 1: the Cloud 9 company page, 2 posts a month from today, Friday 27 November. Part 2: Daniel's own profile, 1 post a month. Every post has its date and a ready-to-post caption.</p>
 </header>
 
 <div class="feed" style="padding-bottom:0">
@@ -110,7 +110,24 @@ img{display:block;max-width:100%}
     <p class="small">The second December post goes out on the 18th, before Christmas. New posts get added from March onwards.</p>
   </div>
 </div>
+<div class="feed" style="padding-bottom:0"><div class="series pill">Part 1 · Cloud 9 company page · 2 posts a month</div></div>
 <main class="feed feed2" id="feed"></main>
+
+<div class="feed" style="padding-bottom:0">
+  <div class="series pill">Part 2 · Daniel's profile · 1 post a month</div>
+  <div class="note">
+    <h2>Posting schedule · Daniel's own profile</h2>
+    <table class="sched">
+      <tr><td>Tue 15 Dec</td><td>Thank you for 2026 (year in review)</td></tr>
+      <tr><td>Tue 19 Jan</td><td>Founder story: how Cloud 9 grew</td></tr>
+      <tr><td>Tue 16 Feb</td><td>The sales job I almost walked away from</td></tr>
+      <tr><td>Tue 16 Mar</td><td>What I tell every new starter on day one</td></tr>
+      <tr><td>Tue 13 Apr</td><td>What "doing it properly" looks like</td></tr>
+    </table>
+    <p class="small">Written in Daniel's voice, on Tuesdays so they never land on the same day as a company post. Photos are team and job photos only.</p>
+  </div>
+</div>
+<main class="feed feed2" id="dan"></main>
 
 <div class="feed" style="margin-top:0;padding-bottom:0">
   <div class="note">
@@ -238,6 +255,73 @@ You may also recognise him from our Instagram, where he shares what a day on the
 
 #MeetTheTeam #Sydney #Leadership`}
 ];
+const DAN=[
+ {date:'Tue 15 Dec',tag:'Photo post',type:'Year in review',img:'img/dan-3-team-full.jpg?v=1',wide:true,
+  cap:`2026, done. What a year.
+
+→ We passed 1,000 five-star Google reviews
+→ James Spenceley came on board as an investor
+→ Our team kept growing, across Sydney
+
+None of it happens without the crew who turn up every day, and the homeowners who trust us with their homes.
+
+Thank you to every one of you. Have a safe and happy Christmas with your families, and I'll see you in 2027.
+
+#Teamwork #SmallBusiness #Sydney`},
+ {date:'Tue 19 Jan',tag:'Photo post',type:'Founder story',imgs:['img/dan-5-ute.jpg?v=1','img/dan-1-team.jpg?v=1'],gal:true,
+  cap:`I'm 22, and I lead a team of 40.
+
+A year and a half ago I started Cloud 9 Window Cleaning. Today we look after homes across Sydney, from the North Shore and Northern Beaches to the Sutherland Shire.
+
+People ask me how it grew so fast. Honestly, it's simple:
+→ Show up on time
+→ Do the job properly
+→ Look after the people who do the work
+
+The team in the second photo is the real reason. I just get to lead them.
+
+#Entrepreneurship #Leadership #Sydney`},
+ {date:'Tue 16 Feb',tag:'Photo post',type:'Personal lesson',img:'img/dan-2-team-van.jpg?v=1',wide:true,
+  cap:`I almost didn't choose sales.
+
+Three or four years ago I was starting my first sales job, and I nearly walked away from it.
+
+I'm so glad I stayed. Sales changed my life, and the lives of the people around me.
+
+If I could tell my younger self one thing: apply yourself, find the right company, and do it properly. You'll go places you never dreamed of.
+
+Now I get to say that to every new person who joins Cloud 9.
+
+#Sales #CareerGrowth #Mindset`},
+ {date:'Tue 16 Mar',tag:'Photo post',type:'Culture · new starters',img:'img/dan-5-scrub.jpg?v=1',
+  cap:`What I tell every new starter on day one.
+
+Every person who joins Cloud 9 gets a welcome video from me before their first day.
+
+Here's what I say:
+1. Be proud. Lots of people applied, and you were chosen.
+2. We picked you for your character and your potential.
+3. We're going to grow together: your skills, your confidence, your income.
+
+Then it's training day, and a seat in the team chat.
+
+Small business is a people business. It starts with how you welcome someone.
+
+#Hiring #CompanyCulture #Leadership`},
+ {date:'Tue 13 Apr',tag:'Photo post',type:'Behind the work',imgs:[1,2,3,4].map(i=>`img/dan-6-job-${i}.jpg?v=2`),gal:true,
+  cap:`What "doing it properly" looks like.
+
+→ Pure deionised water, so glass dries spot-free
+→ Frames, tracks and sills, not just the glass
+→ Water-fed poles that reach upper storeys from the ground
+→ Solar panels and balustrades looked after too
+
+None of it is fancy. It's the detail, done every single time, that turns a clean into a five-star review.
+
+Proud of the crew. Swipe for a normal day on the job.
+
+#SmallBusiness #Sydney #CustomerExperience`}
+];
 const I={
  like:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M7 11v9H4v-9h3zm0 0l4-7c1.5 0 2.5 1 2.2 2.6L12.6 10H19a2 2 0 012 2.3l-1.2 6A2 2 0 0117.8 20H7"/></svg>',
  com:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/></svg>',
@@ -275,6 +359,8 @@ list.forEach((p,k)=>{
 }
 render(POSTS,document.getElementById('feed'),`<div class="av"><img src="${LOGO}" alt="Cloud 9"></div>
     <div class="who"><div class="n">Cloud 9 Window Cleaning</div><div class="s">Window cleaning · Sydney, NSW</div><div class="s">Now · 🌐</div></div>`);
+render(DAN,document.getElementById('dan'),`<div class="av dan"><img src="img/dan-avatar.jpg?v=2" alt="Daniel Vincent"></div>
+    <div class="who"><div class="n">Daniel Vincent</div><div class="s">Founder &amp; Owner, Cloud 9 Window Cleaning</div><div class="s">Now · 🌐</div></div>`);
 </script>
 </body>
 </html>
