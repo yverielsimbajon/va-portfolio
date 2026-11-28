@@ -588,8 +588,8 @@ const W2DRAG={done:false};
  [W2C,W2D].forEach(X=>{const b=$('#w2reset-'+X.id);if(b)b.onclick=()=>{try{localStorage.removeItem('w2ord-'+X.id)}catch(e){}location.reload()}});
 })();
 /* Maria 28 Nov: GTA 6 reel cover options (1 tools flatlay dark, 2 straightener dark, 3 salon chair no overlay); pick saved per browser */
-/* Maria 28 Nov: Rachael bright blonde reel cover options (1 current, 2 Sophie IMG_9990, 3 balayage IMG_0857) */
-W2C.CO={gta:['../img/wk2/c-gta.jpg?v=2','../img/wk2/c-gta-2.jpg','../img/wk2/c-gta-3.jpg'],bright:['../img/wk2/c-bright.jpg','../img/wk2/c-bright-2.jpg','../img/wk2/c-bright-3.jpg']};W2D.CO={};
+/* Maria 28 Nov: Rachael "I'm an artist" reel cover options (1 current, 2 Sophie IMG_9990, 3 balayage IMG_0857) */
+W2C.CO={gta:['../img/wk2/c-gta.jpg?v=2','../img/wk2/c-gta-2.jpg','../img/wk2/c-gta-3.jpg'],rachartist:['../img/wk2/c-rachartist.jpg','../img/wk2/c-rachartist-2.jpg','../img/wk2/c-rachartist-3.jpg']};W2D.CO={};
 [W2C,W2D].forEach(X=>Object.keys(X.CO).forEach(k=>{const u=X.CO[k][+w2ls('w2cov-'+X.id+'-'+k)||0];if(u)X.I[k]=u}));
 renderW2();
 /* ===== post popup: same Instagram view as the live planner, now for every Week 2 tile ===== */
