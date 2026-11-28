@@ -137,7 +137,7 @@ header p{color:#4A423D;margin-top:8px}
 .pcap .tx a{color:#00376B;text-decoration:none}
 .pcap .when{display:block;margin-top:12px;font-size:12px;color:var(--igsoft)}
 .tagl{margin:14px 0 0 46px;font-size:12.5px;color:#555;background:#F6F2EE;border-radius:8px;padding:8px 10px;line-height:1.5}
-.covs{display:flex;align-items:flex-start;gap:8px;margin:14px 0 0 46px;font-size:12.5px;color:#555}.covs b{padding-top:4px;margin-right:2px}
+.covs{display:flex;align-items:flex-start;gap:8px;margin:0;padding:10px 16px;border-bottom:1px solid var(--igline);flex:none;font-size:12.5px;color:#555}.covs b{padding-top:4px;margin-right:2px}
 .cov{border:2px solid transparent;background:none;padding:0;border-radius:8px;cursor:pointer;width:64px;text-align:center;font:inherit;font-size:11px;color:#555}.cov img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px}.cov span{display:block;padding:3px 0}.cov.on{border-color:#2F5D46;color:#2F5D46;font-weight:600}
 .draft{margin:0 0 12px;font-size:12.5px;background:#FBEDE8;color:#8a3b25;border-radius:8px;padding:8px 10px}
 .pact{border-top:1px solid var(--igline);padding:8px 16px 14px;flex:none}
@@ -160,7 +160,8 @@ header p{color:#4A423D;margin-top:8px}
  .pm img,.pm video{max-width:100%;width:100%;max-height:72vh}
  .pact{order:3;border-top:0}
  .pbody{order:4;overflow:visible;flex:none;padding-top:4px}
- .tagl,.covs{margin-left:0}
+ .tagl{margin-left:0}
+ .covs{order:0}
  .px{color:#000;top:8px;right:8px}
  .pnav{display:none}
 }
@@ -621,7 +622,8 @@ function openW2(X,k){CUR={X,k};SI=0;
  const HN=chelm?'seventysixsalon':'seventysixsalon_dunmow';
  $('#pc').innerHTML=`<div class="pm">${media}</div><div class="ps">
   <div class="ph">${AV}<div><b>${collab?'seventysixsalon and seventysixsalon_dunmow':HN}</b><span>SeventySix Salon, ${chelm?'Chelmsford':'Great Dunmow'}</span></div></div>
-  <div class="pbody">${X.N[k]?`<div class="draft">Note: ${X.N[k]}</div>`:''}<div class="pcap">${AV}<div class="tx"><b>${collab?'seventysixsalon':HN}</b> ${fmt(X.CAP[k])}<span class="when">${when}</span></div></div>${X.CO&&X.CO[k]?`<div class="covs"><b>Cover</b>${X.CO[k].map((u,j)=>`<button class="cov${X.I[k]===u?' on':''}" data-j="${j}" aria-label="Cover option ${j+1}"><img src="${u}" alt=""><span>Option ${j+1}</span></button>`).join('')}</div>`:''}${collab?'<div class="tagl"><b>Collab:</b> posted from @seventysixsalon (Chelmsford), invite @seventysixsalon_dunmow as collaborator, it shows on both feeds</div>':''}</div>
+  ${X.CO&&X.CO[k]?`<div class="covs"><b>Cover</b>${X.CO[k].map((u,j)=>`<button class="cov${X.I[k]===u?' on':''}" data-j="${j}" aria-label="Cover option ${j+1}"><img src="${u}" alt=""><span>Option ${j+1}</span></button>`).join('')}</div>`:''}
+  <div class="pbody">${X.N[k]?`<div class="draft">Note: ${X.N[k]}</div>`:''}<div class="pcap">${AV}<div class="tx"><b>${collab?'seventysixsalon':HN}</b> ${fmt(X.CAP[k])}<span class="when">${when}</span></div></div>${collab?'<div class="tagl"><b>Collab:</b> posted from @seventysixsalon (Chelmsford), invite @seventysixsalon_dunmow as collaborator, it shows on both feeds</div>':''}</div>
   <div class="pact"><div class="icons"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20.5s-8-4.6-8-10.4A4.4 4.4 0 0112 7.6a4.4 4.4 0 018 2.5c0 5.8-8 10.4-8 10.4z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a8.5 8.5 0 01-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1121 12z"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M22 3L9.2 10.8M22 3l-7 18-3.8-8.2L3 9z"/></svg><svg class="sv" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V4a1 1 0 011-1h12a1 1 0 011 1z"/></svg></div>
   <div class="dt">${when.split(' · ')[0]} · ${ty==='reel'?'Reel':ty==='carousel'?'Carousel':'Photo'}</div></div></div>`;
  document.querySelectorAll('#pc .cov').forEach(b=>b.onclick=()=>{const j=+b.dataset.j;w2ls('w2cov-'+X.id+'-'+k,String(j));X.I[k]=X.CO[k][j];renderW2();openW2(X,k)});
