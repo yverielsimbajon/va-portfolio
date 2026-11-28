@@ -304,6 +304,11 @@ body.kim .st-row figcaption b{font-size:22px}
 .vchk input{width:20px;height:20px;margin-top:3px;accent-color:#2F3B2F;flex:none;cursor:pointer}
 .vchk label{flex:1;cursor:pointer;line-height:1.4}.vchk li.dn label b{text-decoration:line-through;color:#8a8079;font-weight:500}
 .vchk .st{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:4px;margin-left:6px;vertical-align:1px;background:#2F3B2F;color:#fff}.vchk .st.ok{background:#E3EDE6;color:#2F5D46}
+.vchk .vx{background:none;border:0;color:#8a8079;font-size:20px;line-height:1;cursor:pointer;padding:0 4px}.vchk .vx:hover{color:var(--warn)}
+.vadd{display:flex;gap:8px;margin-top:10px}.vadd input{flex:1;min-width:0;border:1px solid var(--line);border-radius:8px;padding:8px 10px;font:inherit;font-size:13.5px;background:#fff}.vadd button{border:0;border-radius:8px;background:#2F3B2F;color:#fff;font-weight:700;font-size:13px;padding:0 14px;cursor:pointer}
+.grid .t.w2{touch-action:manipulation;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.grid .t.dragsrc{opacity:.35}.grid .t.dragover{outline:3px solid #2F5D46;outline-offset:-3px}
+.dragghost{position:fixed;z-index:200;pointer-events:none;opacity:.85;box-shadow:0 10px 30px rgba(0,0,0,.3);transform:scale(1.05)}
+.draghint{font-size:12.5px;color:#4A423D;text-align:center;margin:8px 0 0}.draghint button{background:none;border:0;color:var(--green);text-decoration:underline;cursor:pointer;font:inherit;font-size:12.5px}
 .vchk .sm{display:block;font-size:12.5px;color:#4A423D}.vchk .cnt{float:right;font-size:12.5px;letter-spacing:0;text-transform:none;color:#4A423D;font-weight:600}
 body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{display:none!important}
 </style>
@@ -324,7 +329,7 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
     <div class="ig-bio">HAIR • MAKEUP • BRIDAL<br>Colour, Cut &amp; Extension specialists</div>
     <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>
     <div class="grid" id="w2grid-c"></div>
-  </div>
+  <p class="draghint">Drag a photo onto another to swap them · <button id="w2reset-c">Reset order</button></p></div>
   <div class="side"><div class="dunplan vchk" id="w2chk-c"></div><div class="dunplan" id="w2plan-c"></div><div class="dunplan"><h4>Ready for Week 3 · Chelmsford</h4><p style="font-size:13.5px;color:#4A423D;margin-bottom:10px">Did not fit this week's 14-post structure, already made, goes into Week 3.</p><div class="w2extra" id="w2extra-c"></div></div></div>
 </div>
 <div class="wrap feedhead" id="week2-dun"><div class="caps">Instagram feed · Great Dunmow · Week 2</div><h2 class="serif" style="font-weight:500;font-size:clamp(28px,4.4vw,40px);line-height:1.05;margin-top:4px">14 posts, 30 November to 6 December</h2><p style="color:#4A423D;margin-top:6px">Our weekly structure, white 76 logo: 6 hair (Madison, Gabriella, Nicky + 2 still needed from the girls), 1 makeup look (Kelsey's glowy base), 1 makeup lesson (1:1 collab, Option 5), 1 gift voucher (Option 2), 1 trend reel, 1 tip (wet hair), 1 salon, 1 team, 1 review.</p></div>
@@ -334,7 +339,7 @@ body.kim .tabs,body.kim .bfbar,body.kim #reset,body.kim #days,body.kim #copy{dis
     <div class="ig-bio">HAIR • MAKEUP • BRIDAL<br>Colour, Cut &amp; Extension specialists</div>
     <div class="ig-tabs"><span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M10 8.5l5 3.5-5 3.5z" fill="currentColor"/></svg></span><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></span></div>
     <div class="grid" id="w2grid-d"></div>
-  </div>
+  <p class="draghint">Drag a photo onto another to swap them · <button id="w2reset-d">Reset order</button></p></div>
   <div class="side"><div class="dunplan vchk" id="w2chk-d"></div><div class="dunplan" id="w2plan-d"></div><div class="dunplan"><h4>Ready for Week 3 · Dunmow</h4><p style="font-size:13.5px;color:#4A423D;margin-bottom:10px">Did not fit this week's 14-post structure, already made, goes into Week 3.</p><div class="w2extra" id="w2extra-d"></div></div></div>
 </div>
 
@@ -501,32 +506,68 @@ WhatsApp or text 07432 027611 to book with Leah ✨
 #seventysixsalon #team76 #dunmowhair #essexhairdresser`]]};
 [W2C,W2D].forEach(X=>{X.I={};X.S={};X.V={};X.TY={};X.CAP={};X.W={};X.N={};
  [...X.L,...(X.X||[])].forEach(([k,ty,w,img,sl,vid,cap,need])=>{X.I[k]=img;X.S[k]=sl;if(vid)X.V[k]=vid;X.TY[k]=ty;X.CAP[k]=cap;X.W[k]=w;if(need)X.N[k]=need});
- X.O=X.L.map(r=>r[0]).reverse()});
-/* Maria 28 Nov: Chelmsford feed keeps only the ready posts, the rest go back to the to-make checklist */
-W2C.O=W2C.O.filter(k=>['crev','after','autumn'].includes(k));W2C.ready=true;
+ X.O=[]});
+/* Maria 28 Nov: Chelmsford feed keeps only these posts for now */
+W2C.keep=['crev','after','autumn'];
+/* the weekly videos to make (Maria tells Claude each week), listed above the posting plan */
+W2C.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Emma','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Rachael','Trendy video · general (salon)'];
+W2D.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Leah','Trendy video · general (salon)'];
+W2C.id='c';W2D.id='d';
+const w2ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
+const w2O=X=>{X.O=X.L.map(r=>r[0]).reverse().filter(k=>!X.keep||X.keep.includes(k))};
+/* drag and drop: a saved order (same posts only) is put back on load */
+[W2C,W2D].forEach(X=>{const o=w2ls('w2ord-'+X.id);if(o){try{const ks=JSON.parse(o),cur=X.L.map(r=>r[0]);
+ if(ks.length===cur.length&&ks.every(k=>cur.includes(k)))X.L=ks.map(k=>X.L.find(r=>r[0]===k))}catch(e){}}w2O(X)});
 function renderW2(){
  const f=w2f;
  [['W2C',W2C,'c','Chelmsford'],['W2D',W2D,'d','Dunmow']].forEach(([T,X,id,nm])=>{
-  X.id=id;
-  const tile=k=>`<div class="t w2" data-k="${k}"><img src="${X.I[k]}" alt="">${ICO[X.TY[k]||'photo']}${X.TY[k]==='reel'&&!X.V[k]?'<span class="tmk">To make</span>':''}</div>`;
+  const tile=k=>`<div class="t w2" data-k="${k}"><img src="${X.I[k]}" alt="" draggable="false">${ICO[X.TY[k]||'photo']}${X.TY[k]==='reel'&&!X.V[k]?'<span class="tmk">To make</span>':''}</div>`;
   $('#w2grid-'+id).innerHTML=X.O.map(tile).join('');
   if(X.X)$('#w2extra-'+id).innerHTML=X.X.map(r=>tile(r[0])).join('');
-  /* video checklist: every reel in the 14, listed before the posting plan; ticked = edited and ready */
-  const CK=$('#w2chk-'+id),sk=k=>'w2chk2-wk2-'+id+'-'+k;
-  const MEM=X.MEM||(X.MEM={});
-  const isReady=k=>X.O.includes(k)&&!(X.TY[k]==='reel'&&!X.V[k])&&!X.N[k],tyn={reel:'Reel',carousel:'Carousel',photo:'Photo'};
-  const vids=X.L.map((r,i)=>[r[0],i]);
-  const got=k=>{if(k in MEM)return MEM[k];try{const v=localStorage.getItem(sk(k));if(v!==null)return v==='1'}catch(e){}return isReady(k)};
-  const drawChk=()=>{const n=vids.filter(([k])=>got(k)).length;
-   CK.innerHTML=`<h4>${nm} posts to edit / make <span class="cnt">${n} of ${vids.length} done</span></h4><ol>`+vids.map(([k,i])=>{const d=i>>1,am=i%2===0,ok=got(k);
-    return `<li class="${ok?'dn':''}"><input type="checkbox" id="${sk(k)}" data-k="${k}"${ok?' checked':''}><label for="${sk(k)}"><b>${X.W[k]}</b><span class="st ${isReady(k)?'ok':''}">${isReady(k)?'Ready':'To make'}</span><span class="sm">${tyn[X.TY[k]]||'Photo'} · posts ${f(d)}, ${am?'6:30 am':'8:30 pm'} UK${X.N[k]?' · '+X.N[k]:''}</span></label></li>`}).join('')+'</ol>';
-   CK.querySelectorAll('input').forEach(c=>c.onchange=()=>{MEM[c.dataset.k]=c.checked;try{localStorage.setItem(sk(c.dataset.k),c.checked?'1':'0')}catch(e){}drawChk()})};
-  drawChk();
+  drawVid(X,nm);
   const L=$('#w2plan-'+id);
   L.innerHTML='<h4>'+nm+' posting plan (UK time)</h4><ol>'+X.L.map(([k],i)=>{const d=i>>1,am=i%2===0;
    return `<li><b>${f(d)}, ${am?'6:30 am':'8:30 pm'}</b> · ${X.O.includes(k)?`<a href="#" data-k="${k}">${X.W[k]}</a>`:`<span style="color:#8a8079">${X.W[k]} · to make</span>`}${X.N[k]?` <span class="need2">· ${X.N[k]}</span>`:''}<span class="phx"><br>🇵🇭 PH: <b>${am?f(d)+', 2:30 pm':f(d+1)+', 4:30 am'}</b></span></li>`}).join('')+'</ol>';
-  document.querySelectorAll('#w2grid-'+id+' .t, '+(X.X?'#w2extra-'+id+' .t, ':'')+'#w2plan-'+id+' a').forEach(el=>{el.onclick=e=>{e.preventDefault();openW2(X,el.dataset.k)}});})}
+  document.querySelectorAll('#w2grid-'+id+' .t, '+(X.X?'#w2extra-'+id+' .t, ':'')+'#w2plan-'+id+' a').forEach(el=>{el.onclick=e=>{e.preventDefault();if(W2DRAG.done){W2DRAG.done=false;return}openW2(X,el.dataset.k)}});})}
 const w2f=d=>{const DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],x=new Date(2026,10,30+d);return DN[(x.getDay()+6)%7]+' '+x.getDate()+' '+(x.getMonth()===10?'Nov':'Dec')};
+/* videos checklist: base list from the week + her own added lines, ticks saved in this browser */
+function drawVid(X,nm){const CK=$('#w2chk-'+X.id),kb='w2vid-wk2-'+X.id;
+ if(!X.VA){X.VA=[];X.VH=[];try{X.VA=JSON.parse(w2ls(kb+'-add')||'[]');X.VH=JSON.parse(w2ls(kb+'-hid')||'[]')}catch(e){}}let add=X.VA,hid=X.VH;
+ X.VM=X.VM||{};
+ const items=X.VID.filter(t=>!hid.includes(t)).concat(add);
+ const got=t=>t in X.VM?X.VM[t]:w2ls(kb+'|'+t)==='1';
+ const n=items.filter(got).length;
+ CK.innerHTML=`<h4>${nm} videos to make <span class="cnt">${n} of ${items.length} done</span></h4><ol>`+items.map((t,i)=>{const ok=got(t);
+  return `<li class="${ok?'dn':''}"><input type="checkbox" id="vk-${X.id}-${i}" data-i="${i}"${ok?' checked':''}><label for="vk-${X.id}-${i}"><b>${t.replace(/&/g,"&amp;").replace(/</g,"&lt;")}</b></label><button class="vx" data-i="${i}" aria-label="Remove">×</button></li>`}).join('')+
+  `</ol><form class="vadd"><input type="text" placeholder="Add a video, e.g. Trendy video transformation · Emma" aria-label="Add a video"><button>Add</button></form>`;
+ CK.querySelectorAll('input[type=checkbox]').forEach(c=>c.onchange=()=>{const t=items[c.dataset.i];X.VM[t]=c.checked;w2ls(kb+'|'+t,c.checked?'1':'0');drawVid(X,nm)});
+ CK.querySelectorAll('.vx').forEach(b=>b.onclick=()=>{const t=items[b.dataset.i];
+  if(add.includes(t))add.splice(add.indexOf(t),1);else hid.push(t);w2ls(kb+'-add',JSON.stringify(add));w2ls(kb+'-hid',JSON.stringify(hid));drawVid(X,nm)});
+ CK.querySelector('.vadd').onsubmit=e=>{e.preventDefault();const v=e.target.querySelector('input').value.trim();if(!v)return;
+  if(hid.includes(v))hid.splice(hid.indexOf(v),1);if(!X.VID.includes(v)&&!add.includes(v))add.push(v);w2ls(kb+'-add',JSON.stringify(add));w2ls(kb+'-hid',JSON.stringify(hid));drawVid(X,nm)}}
+/* drag a feed photo onto another one to swap their places (and their posting times) */
+const W2DRAG={done:false};
+(function(){let st=null,ghost=null,over=null,timer=null;
+ const X4=g=>g.id==='w2grid-c'?W2C:W2D;
+ const tileAt=(x,y)=>{const el=document.elementFromPoint(x,y);return el&&el.closest('.grid .t.w2')};
+ const begin=()=>{st.on=true;const r=st.el.getBoundingClientRect();ghost=st.el.cloneNode(true);ghost.className='t w2 dragghost';
+  Object.assign(ghost.style,{width:r.width+'px',height:r.height+'px'});document.body.appendChild(ghost);st.el.classList.add('dragsrc');move(st.x,st.y)};
+ const move=(x,y)=>{if(!ghost)return;ghost.style.left=(x-ghost.offsetWidth/2)+'px';ghost.style.top=(y-ghost.offsetHeight/2)+'px';
+  const t=tileAt(x,y);const ok=t&&t!==st.el&&t.parentNode===st.grid?t:null;if(over!==ok){if(over)over.classList.remove('dragover');over=ok;if(over)over.classList.add('dragover')}};
+ const end=()=>{clearTimeout(timer);if(st&&st.on){W2DRAG.done=true;setTimeout(()=>W2DRAG.done=false,400);
+   if(over){const X=X4(st.grid),a=st.el.dataset.k,b=over.dataset.k,ia=X.L.findIndex(r=>r[0]===a),ib=X.L.findIndex(r=>r[0]===b);
+    [X.L[ia],X.L[ib]]=[X.L[ib],X.L[ia]];w2ls('w2ord-'+X.id,JSON.stringify(X.L.map(r=>r[0])));w2O(X);renderW2()}}
+  if(ghost)ghost.remove();ghost=null;if(over)over.classList.remove('dragover');over=null;document.querySelectorAll('.dragsrc').forEach(e=>e.classList.remove('dragsrc'));st=null};
+ document.addEventListener('pointerdown',e=>{const t=e.target.closest('.grid .t.w2');if(!t||e.button>0)return;
+  st={el:t,grid:t.parentNode,x:e.clientX,y:e.clientY,on:false,touch:e.pointerType!=='mouse'};
+  if(st.touch)timer=setTimeout(()=>{if(st&&!st.on)begin()},300);else e.preventDefault()});
+ document.addEventListener('pointermove',e=>{if(!st)return;const dx=e.clientX-st.x,dy=e.clientY-st.y;
+  if(!st.on){if(Math.hypot(dx,dy)>8){if(st.touch){clearTimeout(timer);st=null}else begin()}if(!st||!st.on)return}move(e.clientX,e.clientY)});
+ document.addEventListener('touchmove',e=>{if(st&&st.on)e.preventDefault()},{passive:false});
+ document.addEventListener('contextmenu',e=>{if(st&&st.touch)e.preventDefault()});
+ document.addEventListener('pointerup',end);document.addEventListener('pointercancel',()=>{if(st&&st.on)return;end()});
+ [W2C,W2D].forEach(X=>{const b=$('#w2reset-'+X.id);if(b)b.onclick=()=>{try{localStorage.removeItem('w2ord-'+X.id)}catch(e){}location.reload()}});
+})();
 renderW2();
 /* ===== post popup: same Instagram view as the live planner, now for every Week 2 tile ===== */
 let CUR=null,SI=0;
