@@ -510,8 +510,10 @@ WhatsApp or text 07432 027611 to book with Leah ✨
 /* Maria 28 Nov: Chelmsford feed keeps only these posts for now */
 W2C.keep=['crev','after','autumn'];
 /* the weekly videos to make (Maria tells Claude each week), listed above the posting plan */
-W2C.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Emma','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Rachael','Trendy video · general (salon)'];
-W2D.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Leah','Trendy video · general (salon)'];
+/* full week, 14 per salon (weekly structure); a '✓' at the start = already made, ticked by default */
+W2C.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Emma','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Rachael','✓Hair carousel · Autumn brunette · Kimmy','Trendy video · general (salon)','Makeup look · Kelsey','Makeup lesson · 1:1 collab (Option 5)','Gift voucher post (Option 4)','✓Tip · Why does blonde hair need aftercare?','Salon / equipment post','Team post','✓Review · What Chelmsford girls are saying'];
+W2D.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Leah','✓Hair carousel · Blonde with extensions · Madison','✓Hair photo · Soft blonde waves · Gabriella','Trendy video · general (salon)','✓Makeup look · The perfect glowy base · Kelsey','Makeup lesson · 1:1 collab (Option 5)','✓Gift voucher post (Option 2)','✓Tip · Why you should never straighten wet hair','✓Salon · 76 Dunmow shop','✓Team · Meet Nicky','Review · new Goldie review needed'];
+[W2C,W2D].forEach(X=>{X.VDEF=new Set(X.VID.filter(t=>t[0]==='✓').map(t=>t.slice(1)));X.VID=X.VID.map(t=>t[0]==='✓'?t.slice(1):t)});
 W2C.id='c';W2D.id='d';
 const w2ls=(k,v)=>{try{if(v===undefined)return localStorage.getItem(k);localStorage.setItem(k,v)}catch(e){return null}};
 const w2O=X=>{X.O=X.L.map(r=>r[0]).reverse().filter(k=>!X.keep||X.keep.includes(k))};
@@ -535,9 +537,9 @@ function drawVid(X,nm){const CK=$('#w2chk-'+X.id),kb='w2vid-wk2-'+X.id;
  if(!X.VA){X.VA=[];X.VH=[];try{X.VA=JSON.parse(w2ls(kb+'-add')||'[]');X.VH=JSON.parse(w2ls(kb+'-hid')||'[]')}catch(e){}}let add=X.VA,hid=X.VH;
  X.VM=X.VM||{};
  const items=X.VID.filter(t=>!hid.includes(t)).concat(add);
- const got=t=>t in X.VM?X.VM[t]:w2ls(kb+'|'+t)==='1';
+ const got=t=>{if(t in X.VM)return X.VM[t];const v=w2ls(kb+'|'+t);return v===null?X.VDEF.has(t):v==='1'};
  const n=items.filter(got).length;
- CK.innerHTML=`<h4>${nm} videos to make <span class="cnt">${n} of ${items.length} done</span></h4><ol>`+items.map((t,i)=>{const ok=got(t);
+ CK.innerHTML=`<h4>${nm} this week to make (14) <span class="cnt">${n} of ${items.length} done</span></h4><ol>`+items.map((t,i)=>{const ok=got(t);
   return `<li class="${ok?'dn':''}"><input type="checkbox" id="vk-${X.id}-${i}" data-i="${i}"${ok?' checked':''}><label for="vk-${X.id}-${i}"><b>${t.replace(/&/g,"&amp;").replace(/</g,"&lt;")}</b></label><button class="vx" data-i="${i}" aria-label="Remove">×</button></li>`}).join('')+
   `</ol><form class="vadd"><input type="text" placeholder="Add a video, e.g. Trendy video transformation · Emma" aria-label="Add a video"><button>Add</button></form>`;
  CK.querySelectorAll('input[type=checkbox]').forEach(c=>c.onchange=()=>{const t=items[c.dataset.i];X.VM[t]=c.checked;w2ls(kb+'|'+t,c.checked?'1':'0');drawVid(X,nm)});
