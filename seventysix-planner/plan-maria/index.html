@@ -502,6 +502,8 @@ WhatsApp or text 07432 027611 to book with Leah ✨
 [W2C,W2D].forEach(X=>{X.I={};X.S={};X.V={};X.TY={};X.CAP={};X.W={};X.N={};
  [...X.L,...(X.X||[])].forEach(([k,ty,w,img,sl,vid,cap,need])=>{X.I[k]=img;X.S[k]=sl;if(vid)X.V[k]=vid;X.TY[k]=ty;X.CAP[k]=cap;X.W[k]=w;if(need)X.N[k]=need});
  X.O=X.L.map(r=>r[0]).reverse()});
+/* Maria 28 Nov: Chelmsford feed keeps only the ready posts, the rest go back to the to-make checklist */
+W2C.O=W2C.O.filter(k=>['crev','after','autumn'].includes(k));W2C.ready=true;
 function renderW2(){
  const f=w2f;
  [['W2C',W2C,'c','Chelmsford'],['W2D',W2D,'d','Dunmow']].forEach(([T,X,id,nm])=>{
@@ -510,18 +512,19 @@ function renderW2(){
   $('#w2grid-'+id).innerHTML=X.O.map(tile).join('');
   if(X.X)$('#w2extra-'+id).innerHTML=X.X.map(r=>tile(r[0])).join('');
   /* video checklist: every reel in the 14, listed before the posting plan; ticked = edited and ready */
-  const CK=$('#w2chk-'+id),sk=k=>'w2chk-wk2-'+id+'-'+k;
+  const CK=$('#w2chk-'+id),sk=k=>'w2chk2-wk2-'+id+'-'+k;
   const MEM=X.MEM||(X.MEM={});
-  const got=k=>{if(k in MEM)return MEM[k];try{const v=localStorage.getItem(sk(k));if(v!==null)return v==='1'}catch(e){}return !!X.V[k]};
-  const vids=X.L.map((r,i)=>[r[0],i]).filter(([k])=>X.TY[k]==='reel');
+  const isReady=k=>X.O.includes(k)&&!(X.TY[k]==='reel'&&!X.V[k])&&!X.N[k],tyn={reel:'Reel',carousel:'Carousel',photo:'Photo'};
+  const vids=X.L.map((r,i)=>[r[0],i]);
+  const got=k=>{if(k in MEM)return MEM[k];try{const v=localStorage.getItem(sk(k));if(v!==null)return v==='1'}catch(e){}return isReady(k)};
   const drawChk=()=>{const n=vids.filter(([k])=>got(k)).length;
-   CK.innerHTML=`<h4>${nm} videos to edit / make <span class="cnt">${n} of ${vids.length} done</span></h4><ol>`+vids.map(([k,i])=>{const d=i>>1,am=i%2===0,ok=got(k);
-    return `<li class="${ok?'dn':''}"><input type="checkbox" id="${sk(k)}" data-k="${k}"${ok?' checked':''}><label for="${sk(k)}"><b>${X.W[k]}</b><span class="st ${X.V[k]?'ok':''}">${X.V[k]?'Edited':'To make'}</span><span class="sm">Posts ${f(d)}, ${am?'6:30 am':'8:30 pm'} UK${X.N[k]?' · '+X.N[k]:''}</span></label></li>`}).join('')+'</ol>';
+   CK.innerHTML=`<h4>${nm} posts to edit / make <span class="cnt">${n} of ${vids.length} done</span></h4><ol>`+vids.map(([k,i])=>{const d=i>>1,am=i%2===0,ok=got(k);
+    return `<li class="${ok?'dn':''}"><input type="checkbox" id="${sk(k)}" data-k="${k}"${ok?' checked':''}><label for="${sk(k)}"><b>${X.W[k]}</b><span class="st ${isReady(k)?'ok':''}">${isReady(k)?'Ready':'To make'}</span><span class="sm">${tyn[X.TY[k]]||'Photo'} · posts ${f(d)}, ${am?'6:30 am':'8:30 pm'} UK${X.N[k]?' · '+X.N[k]:''}</span></label></li>`}).join('')+'</ol>';
    CK.querySelectorAll('input').forEach(c=>c.onchange=()=>{MEM[c.dataset.k]=c.checked;try{localStorage.setItem(sk(c.dataset.k),c.checked?'1':'0')}catch(e){}drawChk()})};
   drawChk();
   const L=$('#w2plan-'+id);
   L.innerHTML='<h4>'+nm+' posting plan (UK time)</h4><ol>'+X.L.map(([k],i)=>{const d=i>>1,am=i%2===0;
-   return `<li><b>${f(d)}, ${am?'6:30 am':'8:30 pm'}</b> · <a href="#" data-k="${k}">${X.W[k]}</a>${X.N[k]?` <span class="need2">· ${X.N[k]}</span>`:''}<span class="phx"><br>🇵🇭 PH: <b>${am?f(d)+', 2:30 pm':f(d+1)+', 4:30 am'}</b></span></li>`}).join('')+'</ol>';
+   return `<li><b>${f(d)}, ${am?'6:30 am':'8:30 pm'}</b> · ${X.O.includes(k)?`<a href="#" data-k="${k}">${X.W[k]}</a>`:`<span style="color:#8a8079">${X.W[k]} · to make</span>`}${X.N[k]?` <span class="need2">· ${X.N[k]}</span>`:''}<span class="phx"><br>🇵🇭 PH: <b>${am?f(d)+', 2:30 pm':f(d+1)+', 4:30 am'}</b></span></li>`}).join('')+'</ol>';
   document.querySelectorAll('#w2grid-'+id+' .t, '+(X.X?'#w2extra-'+id+' .t, ':'')+'#w2plan-'+id+' a').forEach(el=>{el.onclick=e=>{e.preventDefault();openW2(X,el.dataset.k)}});})}
 const w2f=d=>{const DN=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'],x=new Date(2026,10,30+d);return DN[(x.getDay()+6)%7]+' '+x.getDate()+' '+(x.getMonth()===10?'Nov':'Dec')};
 renderW2();
