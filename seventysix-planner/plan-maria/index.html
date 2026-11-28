@@ -403,9 +403,9 @@ Hair by our amazing stylist Emma ✨
 Extensions at 76 Chelmsford, WhatsApp or text 07432 027611 to book 💕
 
 #seventysixsalon #chelmsfordhair #hairextensions #essexhairdresser #hairgoals`], /* Maria 28 Nov: GTA 6 extensions trend reel (HD 11:43), replaces the 'Can I see some of your work' trend placeholder */
- ['softbl','carousel','Soft blonde, fresh cut · Rachael','../img/wk2/c-softblonde-1.jpg',w2s('c-softblonde',4),'',`Soft blonde and a fresh cut by our amazing stylist Rachael 💛
+ ['nickysanta','reel','TREND · “Dear Santa, make my blonde look like this” · Nicky','../img/wk2/c-nickysanta.jpg',[],'../video/wk2-nicky-santa.mp4',`Dear Santa... 🎄 Blonde by our amazing stylist Nicky ✨
 
-#seventysixsalon #blondehighlights #shorthair #chelmsfordhair #essexhairdresser`],
+#seventysixsalon #blondehair #wellahair #essexhair #christmashair`], /* Maria 28 Nov: Nicky Dear Santa trend reel (Chelmsford 4K 18:44), replaces the Rachael soft blonde carousel (moved to extras + Week 3 Ready from Week 2) */
  ['relax','photo',"Relax, you're in good hands · Salon",'../img/wk2/c-salon.jpg',[],'',`Relax, you're in good hands 🌿
 
 Our Chelmsford salon is ready for you. WhatsApp or text 07432 027611 to book 💕
@@ -436,6 +436,9 @@ Colour, cut, extensions and makeup, all under one roof. WhatsApp or text 07432 0
 
 #seventysixsalon #team76 #chelmsfordhair #essexhairdresser`]],
  X:[
+ ['softbl','carousel','Soft blonde, fresh cut · Rachael','../img/wk2/c-softblonde-1.jpg',w2s('c-softblonde',4),'',`Soft blonde and a fresh cut by our amazing stylist Rachael 💛
+
+#seventysixsalon #blondehighlights #shorthair #chelmsfordhair #essexhairdresser`],
  ['tone','carousel','Toned, glossy brunette · Rachael','../img/wk2/c-tone-1.jpg',w2s('c-tone',3),'',`Toned, glossy brunette by our amazing stylist Rachael 🤎
 
 Swipe for the details ➡️
@@ -525,10 +528,10 @@ WhatsApp or text 07432 027611 to book with Leah ✨
  [...X.L,...(X.X||[])].forEach(([k,ty,w,img,sl,vid,cap,need])=>{X.I[k]=img;X.S[k]=sl;if(vid)X.V[k]=vid;X.TY[k]=ty;X.CAP[k]=cap;X.W[k]=w;if(need)X.N[k]=need});
  X.O=[]});
 /* Maria 28 Nov: Chelmsford feed keeps only these posts for now */
-W2C.keep=['crev','after','autumn','trust','gta','cvch','rachartist'];
+W2C.keep=['crev','after','autumn','trust','gta','cvch','rachartist','nickysanta'];
 /* the weekly videos to make (Maria tells Claude each week), listed above the posting plan */
 /* full week, 14 per salon (weekly structure); a '✓' at the start = already made, ticked by default */
-W2C.VID=['Trendy video transformation · Kimmy','✓Trendy video transformation · Emma','Trendy video transformation · Nicky','Trendy video transformation · Claudia','✓Trendy video transformation · Rachael','✓Hair carousel · Autumn brunette · Kimmy','✓Trendy video · general (salon) · GTA 6 extensions','Makeup look · Kelsey','Makeup lesson · 1:1 collab (Option 5)','✓Gift voucher post (Option 2)','✓Tip · Why does blonde hair need aftercare?','Salon / equipment post','Team post','✓Review · What Chelmsford girls are saying'];
+W2C.VID=['Trendy video transformation · Kimmy','✓Trendy video transformation · Emma','✓Trendy video transformation · Nicky · Dear Santa','Trendy video transformation · Claudia','✓Trendy video transformation · Rachael','✓Hair carousel · Autumn brunette · Kimmy','✓Trendy video · general (salon) · GTA 6 extensions','Makeup look · Kelsey','Makeup lesson · 1:1 collab (Option 5)','✓Gift voucher post (Option 2)','✓Tip · Why does blonde hair need aftercare?','Salon / equipment post','Team post','✓Review · What Chelmsford girls are saying'];
 W2D.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Leah','✓Hair carousel · Blonde with extensions · Madison','✓Hair photo · Soft blonde waves · Gabriella','Trendy video · general (salon)','✓Makeup look · The perfect glowy base · Kelsey','Makeup lesson · 1:1 collab (Option 5)','✓Gift voucher post (Option 2)','✓Tip · Why you should never straighten wet hair','✓Salon · 76 Dunmow shop','✓Team · Meet Nicky','Review · new Goldie review needed'];
 [W2C,W2D].forEach(X=>{X.VDEF=new Set(X.VID.filter(t=>t[0]==='✓').map(t=>t.slice(1)));X.VID=X.VID.map(t=>t[0]==='✓'?t.slice(1):t)});
 W2C.id='c';W2D.id='d';
