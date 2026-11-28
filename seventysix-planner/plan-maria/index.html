@@ -515,10 +515,10 @@ WhatsApp or text 07432 027611 to book with Leah ✨
  [...X.L,...(X.X||[])].forEach(([k,ty,w,img,sl,vid,cap,need])=>{X.I[k]=img;X.S[k]=sl;if(vid)X.V[k]=vid;X.TY[k]=ty;X.CAP[k]=cap;X.W[k]=w;if(need)X.N[k]=need});
  X.O=[]});
 /* Maria 28 Nov: Chelmsford feed keeps only these posts for now */
-W2C.keep=['crev','after','autumn','trust','gta'];
+W2C.keep=['crev','after','autumn','trust','gta','cvch'];
 /* the weekly videos to make (Maria tells Claude each week), listed above the posting plan */
 /* full week, 14 per salon (weekly structure); a '✓' at the start = already made, ticked by default */
-W2C.VID=['Trendy video transformation · Kimmy','✓Trendy video transformation · Emma','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Rachael','✓Hair carousel · Autumn brunette · Kimmy','✓Trendy video · general (salon) · GTA 6 extensions','Makeup look · Kelsey','Makeup lesson · 1:1 collab (Option 5)','Gift voucher post (Option 4)','✓Tip · Why does blonde hair need aftercare?','Salon / equipment post','Team post','✓Review · What Chelmsford girls are saying'];
+W2C.VID=['Trendy video transformation · Kimmy','✓Trendy video transformation · Emma','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Rachael','✓Hair carousel · Autumn brunette · Kimmy','✓Trendy video · general (salon) · GTA 6 extensions','Makeup look · Kelsey','Makeup lesson · 1:1 collab (Option 5)','✓Gift voucher post (Option 2)','✓Tip · Why does blonde hair need aftercare?','Salon / equipment post','Team post','✓Review · What Chelmsford girls are saying'];
 W2D.VID=['Trendy video transformation · Kimmy','Trendy video transformation · Nicky','Trendy video transformation · Claudia','Trendy video transformation · Leah','✓Hair carousel · Blonde with extensions · Madison','✓Hair photo · Soft blonde waves · Gabriella','Trendy video · general (salon)','✓Makeup look · The perfect glowy base · Kelsey','Makeup lesson · 1:1 collab (Option 5)','✓Gift voucher post (Option 2)','✓Tip · Why you should never straighten wet hair','✓Salon · 76 Dunmow shop','✓Team · Meet Nicky','Review · new Goldie review needed'];
 [W2C,W2D].forEach(X=>{X.VDEF=new Set(X.VID.filter(t=>t[0]==='✓').map(t=>t.slice(1)));X.VID=X.VID.map(t=>t[0]==='✓'?t.slice(1):t)});
 W2C.id='c';W2D.id='d';
